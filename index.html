@@ -1,1 +1,555 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMERBODY & Co. | Natural Weight Loss Transformation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .bg-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1559348349-86f1f65817fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(233, 106, 37, 0.3);
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.1;
+            font-size: 6rem;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #E96A25;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-orange-600">SUMMERBODY & Co.</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#programs" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Programs</a>
+                        <a href="#testimonials" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Results</a>
+                        <a href="#process" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Our Process</a>
+                        <a href="#cta" class="bg-orange-600 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-700 transition duration-300">Start Today</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-900 hover:text-orange-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">About</a>
+                <a href="#programs" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Programs</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Results</a>
+                <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Our Process</a>
+                <a href="#cta" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-orange-600 hover:bg-orange-700">Start Today</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-hero text-white pt-32 pb-24 lg:pt-40 lg:pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Transform Your Life <span class="text-orange-400">Naturally</span></h1>
+                    <p class="text-xl md:text-2xl mb-8">After losing 178 pounds naturally, I'm now helping others achieve the same life-changing results.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#cta" class="bg-orange-600 hover:bg-orange-700 text-white text-lg font-semibold py-4 px-8 rounded-full text-center transition duration-300">Start Your Transformation Today</a>
+                        <a href="#programs" class="bg-white text-orange-600 hover:bg-gray-100 text-lg font-semibold py-4 px-8 rounded-full text-center transition duration-300">View Programs</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1522956728227-887884da35dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Happy customer transformation" class="rounded-lg shadow-2xl w-full max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">From Personal Struggle to Professional Success</h2>
+                <div class="h-1 w-20 bg-orange-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Founder photo" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">My Journey</h3>
+                    <p class="text-gray-700 mb-6">After struggling with obesity for most of my life, I finally found the strength to change. Through trial, error, and relentless determination, I lost 178 pounds naturally - no surgeries, no magic pills, just real lifestyle changes that anyone can implement.</p>
+                    <p class="text-gray-700 mb-6">What began as a personal quest for health evolved into a scientific approach incorporating <span class="font-semibold text-orange-600">Lean Six Sigma methodologies</span> to create a results-driven program that works systematically for real people with real lives.</p>
+                    <p class="text-gray-700 mb-6">From middle school dropout to college graduate, from weight-loss warrior to business owner - I've turned my pain into purpose and now help others do the same.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">178 lbs Lost</span>
+                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">Lean Six Sigma</span>
+                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">Real Results</span>
+                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">Community Focused</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Transformation Programs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the path that fits your goals and budget</p>
+                <div class="h-1 w-20 bg-orange-600 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="bg-orange-600 p-6 text-center">
+                        <h3 class="text-2xl font-bold text-white">Jumpstart Guide</h3>
+                        <div class="mt-4">
+                            <span class="text-white text-4xl font-bold">$27</span>
+                            <span class="text-orange-200 block">or Free with email</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">7-day meal plan & shopping list</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Beginner workout routine</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Mindset reset guide</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Email support for 7 days</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block mt-8 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-center rounded-full font-medium transition duration-300">Get Instant Access</a>
+                    </div>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover transform scale-105">
+                    <div class="bg-orange-700 p-6 text-center relative">
+                        <div class="absolute top-2 right-2 bg-white text-orange-700 text-xs font-bold px-2 py-1 rounded">MOST POPULAR</div>
+                        <h3 class="text-2xl font-bold text-white">Transformation Tracker</h3>
+                        <div class="mt-4">
+                            <span class="text-white text-4xl font-bold">$297-397</span>
+                            <span class="text-orange-200 block">per month</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700"><strong>Weekly 1:1 coaching calls</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Customized nutrition plan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Personalized workout program</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Accountability partner</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">24/7 text support</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block mt-8 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-center rounded-full font-medium transition duration-300">Book Free Consultation</a>
+                    </div>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="bg-orange-800 p-6 text-center">
+                        <h3 class="text-2xl font-bold text-white">Grand Slam Transformation</h3>
+                        <div class="mt-4">
+                            <span class="text-white text-4xl font-bold">$2,500</span>
+                            <span class="text-orange-200 block">90-day program</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700"><strong>VIP all-access plan</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Full body transformation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">3x weekly coaching sessions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Grocery store tours</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Kitchen makeover guide</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Lifetime alumni support</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="block mt-8 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-center rounded-full font-medium transition duration-300">Apply Now (Limited Spots)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Real People, Real Results</h2>
+                <div class="h-1 w-20 bg-orange-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left text-orange-600"></i>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                        </div>
+                        <p class="text-gray-700 italic">"After years of failed diets and expensive programs, I finally found something that worked. 57 pounds gone in 4 months, and more importantly, I've kept it off!"</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Client profile" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold">Marcus J.</h4>
+                            <p class="text-gray-600 text-sm">Down 57 lbs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left text-orange-600"></i>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                        </div>
+                        <p class="text-gray-700 italic">"The personalized coaching made all the difference. They helped me work around my busy schedule and knee issues. 82 pounds down and feeling better at 52 than I did at 32!"</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Client profile" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold">Lisa T.</h4>
+                            <p class="text-gray-600 text-sm">Down 82 lbs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left text-orange-600"></i>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                            <i class="fas fa-star text-orange-400"></i>
+                        </div>
+                        <p class="text-gray-700 italic">"My entire family has benefited from this program. Not only did I lose 63 pounds, but my husband lost 45 and our eating habits have completely changed for the better."</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Client profile" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-semibold">Danielle & Michael R.</h4>
+                            <p class="text-gray-600 text-sm">Family Transformation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Testimonials -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">Hear Their Stories</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900 rounded-lg overflow-hidden aspect-[16/9]">
+                        <div class="w-full h-full bg-orange-100 flex items-center justify-center">
+                            <div class="text-center p-8">
+                                <i class="fas fa-play-circle text-orange-600 text-6xl mb-4"></i>
+                                <p class="text-gray-700">Watch Transformational Story 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg overflow-hidden aspect-[16/9]">
+                        <div class="w-full h-full bg-orange-100 flex items-center justify-center">
+                            <div class="text-center p-8">
+                                <i class="fas fa-play-circle text-orange-600 text-6xl mb-4"></i>
+                                <p class="text-gray-700">Watch Transformational Story 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Behind the Scenes Section -->
+    <section id="process" class="py-16 bg-orange-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">The SUMMERBODY Method</h2>
+                    <p class="text-xl mb-6">Behind every successful transformation is a carefully designed process built on Lean Six Sigma principles.</p>
+                    <p class="mb-6">What began as a personal weight loss journey evolved into a scientific approach to wellness transformation. As part of my Lean Six Sigma Green Belt certification, I analyzed and improved every aspect of our program delivery:</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
+                            <span>Strategic funnel mapping to guide clients seamlessly from awareness to results</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
+                            <span>Value stream analysis to eliminate waste and focus on what delivers real transformation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
+                            <span>Revised sales scripts that ensure perfect program-fit alignment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
+                            <span>Improved packaging of services for maximum impact and client success</span>
+                        </li>
+                    </ul>
+                    <p>The result? A streamlined, results-driven program that consistently delivers exceptional outcomes for our clients while maintaining operational excellence for our business.</p>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Process illustration" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Your Transformation?</h2>
+                <p class="text-xl max-w-3xl mx-auto">Take the first step toward a healthier, happier you today.</p>
+                <div class="h-1 w-20 bg-orange-600 mx-auto mt-4"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-file-download"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Free Jumpstart Guide</h3>
+                        <p class="text-gray-300 mb-6">Get our free 7-day starter guide to begin your journey today.</p>
+                        <form class="space-y-4">
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-600">
+                            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">Download Now</button>
+                        </form>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Free Consultation</h3>
+                        <p class="text-gray-300 mb-6">Schedule a free 30-minute discovery call to discuss your goals.</p>
+                        <select class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white mb-4 focus:outline-none focus:ring-2 focus:ring-orange-600">
+                            <option>Select Session Type</option>
+                            <option>Weight Loss Consult</option>
+                            <option>Nutrition Review</option>
+                            <option>Program Q&A</option>
+                        </select>
+                        <a href="#" class="block w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">Book Now</a>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-8 rounded-lg text-center">
+                        <div class="text-orange-400 text-4xl mb-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Join Our Community</h3>
+                        <p class="text-gray-300 mb-6">Get weekly tips, recipes, and motivation straight to your inbox.</p>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="First Name" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-600">
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-600">
+                            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-white text-2xl font-bold mb-4">SUMMERBODY & Co.</h3>
+                    <p class="mb-4">Helping real people achieve real transformations through sustainable, natural weight loss solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-orange-400 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-orange-400 transition duration-300">About</a></li>
+                        <li><a href="#programs" class="hover:text-orange-400 transition duration-300">Programs</a></li>
+                        <li><a href="#testimonials" class="hover:text-orange-400 transition duration-300">Results</a></li>
+                        <li><a href="#process" class="hover:text-orange-400 transition duration-300">Our Process</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-orange-400"></i>
+                            <span>123 Wellness Way, Suite 101<br>Healthville, HV 12345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-orange-400"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-orange-400"></i>
+                            <span>hello@summerbodyco.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-sm text-gray-500">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        &copy; 2023 SUMMERBODY & Co. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="hover:text-orange-400 transition duration-300">Privacy Policy</a>
+                        <a href="#" class="hover:text-orange-400 transition duration-300">Terms of Service</a>
+                        <a href="#" class="hover:text-orange-400 transition duration-300">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                // Scroll to target
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
