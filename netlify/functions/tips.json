@@ -1,0 +1,51 @@
+{
+  "_doc": "22 King's Takes, one per answer per question. All takes approved by King Apr 26-27 2026.",
+  "_brand": { "primary": "#F15002", "dark": "#000000", "white": "#FFFFFF", "smoke": "#F5F5F5" },
+
+  "Q1": {
+    "_question": "How many ounces of water did you drink yesterday?",
+    "_pillar": "Pillar 01 - Water Protocol",
+    "Less than 32 oz": { "take": "Most 'hunger' is dehydration in costume. Drink half your body weight in ounces every single day. 200 lbs = 100 oz floor, not goal. Run this for 7 days and watch a third of your cravings disappear. Costs zero. Pro tip: if plain water is boring, infuse it with lemon, cucumber, mint, or fresh fruit. Skip the artificial sweeteners and dyes." },
+    "32 to 64 oz": { "take": "Almost there. But almost doesn't close pants sizes. Half your body weight in ounces is the floor, not the finish line. 200 lbs means 100 oz minimum. Here's the move: add 16 oz before every single meal. You'll eat less without trying and hit your number without counting. Do this for 7 days straight and your cravings drop by week two. Not might. Will." },
+    "64 to 100 oz": { "take": "You're in the zone where your body starts telling the truth. Most people never get here. You already did. Lock this in for 7 days straight and watch two things happen: your skin clears and the scale starts moving. Not because you changed your diet, but because your body is finally operating with the fuel it actually needs. Stay here." },
+    "Over 100 oz": { "take": "You're winning the cheapest game in the entire fitness world and most people don't even know it exists. Now here's the upgrade: drink half of it before noon. Morning hydration crushes afternoon cravings before they start. I dropped 180 lbs and this was a non-negotiable from day one. Free. Repeatable. Yours." }
+  },
+
+  "Q2": {
+    "_question": "Last time you ate, were you actually hungry, or were you bored, tired, or stressed?",
+    "_pillar": "Pillar 02 - Hunger Honesty",
+    "Truly hungry": { "take": "70% of what you call 'hunger' is dehydration, fatigue, or emotion in a wig. Next urge: drink 16 oz of water, set a 15-minute timer. Still hungry after, eat without guilt. Do this for one week and your weekly calories drop a third without a diet." },
+    "Bored": { "take": "Bored eating never loses to willpower. It loses to friction. Move your snacks out of eyesight. Put them somewhere that requires actual effort to reach. Out of sight, out of mouth. That one change alone dramatically cuts mindless eating per week. No diet. No restriction. Just friction." },
+    "Tired": { "take": "Your body is asking for sleep, not food. That 3pm pull toward the vending machine isn't hunger. It's exhaustion pretending to be hunger. Seven hours the night before significantly reduces those cravings the next day. I know that sounds too simple. I thought the same thing before I lost 180 lbs. Try it three nights in a row and then tell me I'm wrong." },
+    "Stressed": { "take": "Stress eating is real chemistry. Chronic cortisol elevation directly increases appetite and drives cravings for calorie-dense food. That's documented science, not motivation speak. Walk 10 minutes before you reach for anything. Just 10. Half the urge is dead before you get back. Motion is the antidote." },
+    "Honestly, I'm not sure": { "take": "That's the most honest answer in this whole quiz. Most people pick something that sounds better. You didn't. That's where real change starts. For the next 3 days, write down WHY you ate. Not what you ate, just the why. The pattern shows itself in 72 hours and it will surprise you. Awareness comes before everything else. You can't skip it and you can't fake it." }
+  },
+
+  "Q3": {
+    "_question": "Pick the one you trust most: the scale, the mirror, or how your clothes fit.",
+    "_pillar": "Pillar 03 - Measurement Truth",
+    "Scale": { "take": "The scale is the most dishonest tool in your house. It swings 2 to 5 pounds in a single day based on water, sodium, and food weight alone. Weighing yourself daily is not tracking progress. It's tracking water retention. Stop. Trust two things only: how your clothes fit and a side-by-side photo at 30 days. Those two never lie. The scale will." },
+    "Mirror": { "take": "The mirror lies in both directions. It exaggerates on bad days and hides progress on good ones. Don't stop using it. Just don't use it alone. Pair it with how your clothes actually fit. When the same jeans are loose where they weren't last month, that's real data. Bad lighting is not data." },
+    "How clothes fit": { "take": "The scale is the biggest liar in your house. It swings 2-5 lbs a day on water and food weight alone. You're already trusting the right metric. Pair it with a 30-day side-by-side photo and you've got the only two measurements that matter." },
+    "None, I avoid all three": { "take": "Avoidance is information. It tells me the pressure you've been putting on yourself has been too heavy. Here's where to start: how your clothes fit. No number. No judgment. Just notice whether the waistband feels different month to month. That's the whole assignment. The first measurement is always the hardest. After that it gets easier. Start there." }
+  },
+
+  "Q4": {
+    "_question": "When was the last time a single bad meal made you give up on a streak?",
+    "_pillar": "Pillar 04 - All-or-Nothing Reset",
+    "This week": { "take": "It's a fresh wound. The lesson is still hot. Lock this in: one bad meal is one bad meal. Not a bad day. Not a bad week. The next meal is the only one that matters right now. Don't wait for Monday. Monday is a trap I fell into a hundred times before I figured this out. Restart at the next meal. That's the whole rule." },
+    "This month": { "take": "All-or-nothing thinking has killed more transformations than bad food ever did. One bad meal is not a bad week. Don't restart Monday. Restart at the next meal. The plan you actually follow beats the perfect plan you keep quitting on." },
+    "Months ago": { "take": "You've already proven you can recover. That's not a small thing. That's the muscle most people never build. The people who lose weight permanently aren't the ones with perfect streaks. They're the ones who get back up faster every time. Stop counting streaks and start counting good decisions per day. Eight good out of ten beats any 100-day streak you'll eventually break chasing perfection." },
+    "I never quit on myself": { "take": "That's the rarest answer in this quiz. Genuinely. But let me push you on something. Never quitting and never adjusting are two different things. The plan you started with should look different now. Data changes the plan. You don't quit. You evolve. Make sure you're doing both." },
+    "I quit constantly": { "take": "I hear you. And I need you to hear me: I quit more times than I can count before I lost 180 pounds. The difference wasn't willpower. It was that I finally stopped trying to be perfect. Perfect is exactly why most people quit. Aim for 51% better than yesterday. Win the day. Then the week. Then the month. You don't need to overhaul your whole life tonight. You need one better decision than you made yesterday. That's it." }
+  },
+
+  "Q5": {
+    "_question": "How much sun did you get yesterday outside, not through a window?",
+    "_pillar": "Pillar 05 - Circadian Rhythm",
+    "None": { "take": "This explains the 9pm carb cravings and the 3pm crash. Your body has no idea what time it is. It's firing hunger and energy signals at random because there's no anchor. The fix is free: step outside for 10 minutes before you look at your phone tomorrow morning. Eyes open, not staring at the sun. Just outside. That one change starts resetting everything. Start tomorrow. Not next week. Tomorrow." },
+    "Under 15 min": { "take": "30 minutes of morning sunlight (eyes open, not staring) sets your circadian rhythm for the day. Better sleep that night. Honest hunger signals the next day. The cheapest fat-loss tool nobody uses. Step outside before you check your phone." },
+    "15 to 30 min": { "take": "You're closer than most people ever get. Push it to 30 in the morning specifically and something shifts. Sleep gets better that night, hunger signals get honest the next day, energy stops crashing in the afternoon. It compounds fast. Add 5 minutes tomorrow and don't stop until it's a non-negotiable. Cheapest, most underrated tool in the game." },
+    "Over 30 min": { "take": "You're using the most underrated fat-loss tool on the planet and I'd bet most people around you have no idea why you do it. The people who lock this consistently don't fight hunger the same way everyone else does. Their body is calibrated. Yours is too. Protect this habit like it costs money, because what it's doing for you is worth more than most programs people pay for." }
+  }
+}

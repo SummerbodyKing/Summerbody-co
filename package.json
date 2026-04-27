@@ -1,0 +1,9 @@
+{
+  "name": "sweatdepartment-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for SUMMERBODY quiz email pipeline",
+  "private": true,
+  "dependencies": {
+    "resend": "^4.8.0"
+  }
+}
