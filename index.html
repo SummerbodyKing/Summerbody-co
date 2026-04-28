@@ -777,20 +777,6 @@ footer p { color: rgba(255, 255, 255, 0.6); font-size: 14px; margin-bottom: 16px
   </div>
 </section>
 
-<section id="quiz" class="quiz">
-  <div class="quiz-wrap reveal">
-    <div class="quiz-header">
-      <span class="eyebrow">Find Out Where You Really Are</span>
-      <h2>The 5-Question Reality Check</h2>
-      <p>Each answer comes back with a tip you can use today. Takes under 90 seconds.</p>
-    </div>
-    <div class="quiz-card" id="quizCard">
-      <div class="quiz-progress" id="quizProgress"></div>
-      <div id="quizContent"></div>
-    </div>
-  </div>
-</section>
-
 <section class="why-matters reveal">
   <img src="photos/for-the-ones-with-100.png" class="why-matters-figure" alt="" onerror="this.style.display='none'">
   <div class="why-matters-inner">
@@ -808,6 +794,20 @@ footer p { color: rgba(255, 255, 255, 0.6); font-size: 14px; margin-bottom: 16px
         <a href="#quiz" class="btn btn-ghost">Take The Quiz</a>
         <a href="#offers" class="btn btn-dark">See The Offers</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" class="quiz">
+  <div class="quiz-wrap reveal">
+    <div class="quiz-header">
+      <span class="eyebrow">Find Out Where You Really Are</span>
+      <h2>The 5-Question Reality Check</h2>
+      <p>Each answer comes back with a tip you can use today. Takes under 90 seconds.</p>
+    </div>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-progress" id="quizProgress"></div>
+      <div id="quizContent"></div>
     </div>
   </div>
 </section>
@@ -1089,7 +1089,11 @@ function submitEmail() {
       '<div class="quiz-result">' +
       '<h3>You\'re In, ' + (name || 'team') + '.</h3>' +
       '<p>Your Tips Report is on the way. Check your inbox in the next 5 minutes.</p>' +
-      '<a href="https://www.skool.com/team-summerbody-1207" target="_blank" class="btn btn-primary">While You Wait, Join The Community</a>' +
+      '<p style="font-size:13px; opacity:0.75; margin-top:-8px; margin-bottom:24px;"><strong>Don\'t see it?</strong> Check your Promotions tab or Spam folder. Move it to Primary so the rest of your plan lands where it should.</p>' +
+      '<p style="font-size:14px; letter-spacing:1.5px; text-transform:uppercase; opacity:0.85; margin-bottom:14px;">While you wait, here\'s the same playbook I used to drop 180 lbs:</p>' +
+      '<a href="https://www.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint" target="_blank" class="btn btn-primary">Get The $2.97 5-Pillar Quick Start Guide</a>' +
+      '<p style="margin-top:22px; font-size:14px;">Or roll with the team in <a href="https://www.skool.com/team-summerbody-1207" target="_blank" style="color:var(--orange); text-decoration:underline; font-weight:600;">the free Skool community &rarr;</a></p>' +
+      '<p style="margin-top:18px; font-size:12px; opacity:0.6;">Ready to work with King 1:1? <a href="#offers" style="color:inherit; text-decoration:underline;">See the VIP coaching option &rarr;</a></p>' +
       '</div>';
   }).catch(function() {
     alert('Something went wrong. Please try again or email me directly at contact@sweatdepartment.com');

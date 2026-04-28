@@ -173,9 +173,14 @@ async function sendResendEmail({ apiKey, fromEmail, toEmail, firstName, tipsArra
     const result = await resend.emails.send({
       from: fromEmail,
       to: toEmail,
+      reply_to: 'contact@sweatdepartment.com',
       subject,
       html,
       text,
+      headers: {
+        'List-Unsubscribe': '<mailto:contact@sweatdepartment.com?subject=Unsubscribe>',
+        'X-Entity-Ref-ID': 'sweat-department-quiz',
+      },
     });
 
     if (result.error) {
