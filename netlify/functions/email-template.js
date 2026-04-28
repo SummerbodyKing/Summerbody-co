@@ -57,7 +57,7 @@ function buildEmailHtml({ firstName, tipsArray, ebookUrl, skoolUrl }) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your SUMMERBODY 5-Pillar Plan</title>
+<title>Your SWEAT DEPARTMENT 5-Pillar Plan</title>
 </head>
 <body style="margin:0; padding:0; background:${BRAND.smoke}; font-family:${BODY_FONT}; color:${BRAND.dark};">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${BRAND.smoke};">
@@ -66,12 +66,9 @@ function buildEmailHtml({ firstName, tipsArray, ebookUrl, skoolUrl }) {
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; background:${BRAND.white};">
 
         <tr>
-          <td style="background:${BRAND.dark}; padding:28px 32px; text-align:left;">
-            <div style="font-family:${HEADING_FONT}; font-size:32px; letter-spacing:2px; color:${BRAND.white}; font-weight:700; text-transform:uppercase;">
-              SUMMERBODY <span style="color:${BRAND.primary};">&amp; Co.</span>
-            </div>
-            <div style="font-family:${BODY_FONT}; font-size:12px; color:${BRAND.white}; opacity:0.7; margin-top:4px; letter-spacing:1px; text-transform:uppercase;">
-              Real People. Real Results. Naturally.
+          <td style="background:${BRAND.dark}; padding:16px 32px; text-align:left; border-top:4px solid ${BRAND.primary};">
+            <div style="font-family:${BODY_FONT}; font-size:13px; letter-spacing:4px; color:${BRAND.white}; font-weight:500; text-transform:uppercase;">
+              Sweat <span style="color:${BRAND.primary};">Department</span>
             </div>
           </td>
         </tr>
@@ -86,7 +83,7 @@ function buildEmailHtml({ firstName, tipsArray, ebookUrl, skoolUrl }) {
               You took the quiz. I read your answers. Below are five takes built specifically off of what you told me, one per pillar.
             </p>
             <p style="margin:0 0 24px 0; font-family:${BODY_FONT}; font-size:16px; line-height:1.6; color:${BRAND.dark};">
-              I lost 180 pounds naturally with these exact pillars. No surgery. No pills. No magic. Read these once tonight. Read them again tomorrow morning. Then pick ONE and run it for 7 days.
+              I lost 180 pounds naturally with these exact pillars. No weight-loss surgery. No Ozempic. No quitting on myself. Read these once tonight. Read them again tomorrow morning. Then pick ONE and run it for 7 days.
             </p>
           </td>
         </tr>
@@ -145,7 +142,7 @@ function buildEmailHtml({ firstName, tipsArray, ebookUrl, skoolUrl }) {
               Win the next meal. Then the next. Then the day.
             </p>
             <p style="margin:0; font-family:${BODY_FONT}; font-size:14px; line-height:1.6; color:${BRAND.dark}; font-weight:700;">
-              King SUMMERBODY
+              KING SUMMERBODY
             </p>
           </td>
         </tr>
@@ -153,7 +150,7 @@ function buildEmailHtml({ firstName, tipsArray, ebookUrl, skoolUrl }) {
         <tr>
           <td style="background:${BRAND.dark}; padding:18px 32px; text-align:center;">
             <div style="font-family:${BODY_FONT}; font-size:11px; color:${BRAND.white}; opacity:0.6; line-height:1.6;">
-              SUMMERBODY &amp; Co. &middot; You're getting this because you took the 5-Pillar Quiz.<br>
+              SWEAT DEPARTMENT LLC. &middot; You're getting this because you took the 5-Pillar Quiz.<br>
               Reply to this email if you have a question. A human reads every reply.
             </div>
           </td>
@@ -174,7 +171,7 @@ function buildEmailText({ firstName, tipsArray, ebookUrl, skoolUrl }) {
   lines.push('');
   lines.push('You took the quiz. I read your answers. Below are five takes built specifically off of what you told me, one per pillar.');
   lines.push('');
-  lines.push('I lost 180 pounds naturally with these exact pillars. No surgery. No pills. No magic. Read these once tonight. Read them again tomorrow morning. Then pick ONE and run it for 7 days.');
+  lines.push('I lost 180 pounds naturally with these exact pillars. No weight-loss surgery. No Ozempic. No quitting on myself. Read these once tonight. Read them again tomorrow morning. Then pick ONE and run it for 7 days.');
   lines.push('');
   tipsArray.forEach((t, i) => {
     lines.push('---');
@@ -193,7 +190,7 @@ function buildEmailText({ firstName, tipsArray, ebookUrl, skoolUrl }) {
   lines.push(skoolUrl || 'https://www.skool.com/');
   lines.push('');
   lines.push('Win the next meal. Then the next. Then the day.');
-  lines.push('King SUMMERBODY');
+  lines.push('KING SUMMERBODY');
   return lines.join('\n');
 }
 
