@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+
 <style>
 :root {
   --brand-orange: #F15002;
@@ -1085,16 +1087,59 @@ function submitEmail() {
     body: formData.toString(),
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
   }).then(function() {
+    var ANSWER_SCORES = [
+      [1, 2, 3, 4],
+      [4, 2, 2, 1, 1],
+      [1, 2, 4, 1],
+      [1, 2, 3, 4, 1],
+      [1, 2, 3, 4]
+    ];
+    var PILLAR_NAMES = ['Water Protocol', 'Hunger Honesty', 'Measurement Truth', 'All-or-Nothing Reset', 'Circadian Rhythm'];
+    var LEVEL_NAMES = ['', 'Beginner', 'Builder', 'Pro', 'Master'];
+    var LEVEL_LINES = ['',
+      'You are at the start. That is not a knock. That is data, and data is the only thing that beats this game.',
+      'You are warming up. Now lock it in for 7 straight days and watch what shifts.',
+      'You are doing this right. The next level is consistency, not effort.',
+      'You are already here. Now teach somebody else and lock yours in deeper.'
+    ];
+
+    var lowestScore = 99, lowestIdx = 0;
+    quizState.answers.forEach(function(ansIdx, qIdx) {
+      var score = ANSWER_SCORES[qIdx][ansIdx];
+      if (score < lowestScore) { lowestScore = score; lowestIdx = qIdx; }
+    });
+
+    var pillarName = PILLAR_NAMES[lowestIdx];
+    var levelName = LEVEL_NAMES[lowestScore];
+    var levelLine = LEVEL_LINES[lowestScore];
+    var winTip = QUIZ[lowestIdx].tip;
+    var displayName = name || 'You';
+
     document.getElementById('quizContent').innerHTML =
-      '<div class="quiz-result">' +
-      '<h3>You\'re In, ' + (name || 'team') + '.</h3>' +
-      '<p>Your Tips Report is on the way. Check your inbox in the next 5 minutes.</p>' +
-      '<p style="font-size:13px; opacity:0.75; margin-top:-8px; margin-bottom:24px;"><strong>Don\'t see it?</strong> Check your Promotions tab or Spam folder. Move it to Primary so the rest of your plan lands where it should.</p>' +
-      '<p style="font-size:14px; letter-spacing:1.5px; text-transform:uppercase; opacity:0.85; margin-bottom:14px;">While you wait, here\'s the same playbook I used to drop 180 lbs:</p>' +
-      '<a href="https://www.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint" target="_blank" class="btn btn-primary">Get The $2.97 5-Pillar Quick Start Guide</a>' +
-      '<p style="margin-top:22px; font-size:14px;">Or roll with the team in <a href="https://www.skool.com/team-summerbody-1207" target="_blank" style="color:var(--orange); text-decoration:underline; font-weight:600;">the free Skool community &rarr;</a></p>' +
-      '<p style="margin-top:18px; font-size:12px; opacity:0.6;">Ready to work with King 1:1? <a href="#offers" style="color:inherit; text-decoration:underline;">See the VIP coaching option &rarr;</a></p>' +
+      '<div class="quiz-result mini-win-result">' +
+        '<div style="font-size:64px; line-height:1; margin-bottom:6px;">🎉</div>' +
+        '<div style="font-size:11px; letter-spacing:3px; color:var(--brand-orange); font-weight:700; text-transform:uppercase; margin-bottom:8px;">' + displayName + ', you scored as a</div>' +
+        '<h2 style="font-family:\'Anton\',\'Impact\',sans-serif; font-size:42px; line-height:1.05; color:var(--white); margin:0 0 14px 0; font-weight:400; text-transform:uppercase; letter-spacing:1px;">' + pillarName + '<br><span style="color:var(--brand-orange);">' + levelName + '</span></h2>' +
+        '<p style="font-size:15px; line-height:1.5; opacity:0.9; max-width:480px; margin:0 auto 28px auto;">' + levelLine + '</p>' +
+        '<div style="background:rgba(241,80,2,0.08); border-left:4px solid var(--brand-orange); padding:20px 24px; max-width:520px; margin:0 auto 28px auto; text-align:left;">' +
+          '<div style="font-size:11px; letter-spacing:3px; color:var(--brand-orange); font-weight:700; text-transform:uppercase; margin-bottom:8px;">Your First Win &mdash; Start Here</div>' +
+          '<p style="font-size:15px; line-height:1.6; color:var(--white); margin:0;">' + winTip + '</p>' +
+        '</div>' +
+        '<p style="font-size:14px; opacity:0.9; margin:0 0 4px 0;">Your full 5-Pillar plan is hitting your inbox in <strong>3 minutes</strong>.</p>' +
+        '<p style="font-size:12px; opacity:0.6; margin:0 0 28px 0;"><strong>Don\'t see it?</strong> Check Promotions / Spam. Move it to Primary so the rest lands right.</p>' +
+        '<p style="font-size:12px; letter-spacing:2px; text-transform:uppercase; opacity:0.85; margin:0 0 14px 0;">While you wait:</p>' +
+        '<a href="https://www.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint" target="_blank" class="btn btn-primary">Get The $2.97 5-Pillar Quick Start Guide</a>' +
+        '<p style="margin:22px 0 0 0; font-size:14px;">Or roll with the team in <a href="https://www.skool.com/team-summerbody-1207" target="_blank" style="color:var(--brand-orange); text-decoration:underline; font-weight:600;">the free Skool community &rarr;</a></p>' +
+        '<p style="margin:14px 0 0 0; font-size:12px; opacity:0.6;">Ready to work with King 1:1? <a href="#offers" style="color:inherit; text-decoration:underline;">See the VIP coaching option &rarr;</a></p>' +
       '</div>';
+
+    if (typeof confetti === 'function') {
+      confetti({ particleCount: 90, spread: 65, origin: { y: 0.5 }, colors: ['#F15002', '#FFFFFF', '#F5F5F5'] });
+      setTimeout(function() {
+        confetti({ particleCount: 50, spread: 80, angle: 55, origin: { x: 0, y: 0.6 }, colors: ['#F15002', '#FFFFFF'] });
+        confetti({ particleCount: 50, spread: 80, angle: 125, origin: { x: 1, y: 0.6 }, colors: ['#F15002', '#FFFFFF'] });
+      }, 280);
+    }
   }).catch(function() {
     alert('Something went wrong. Please try again or email me directly at contact@sweatdepartment.com');
   });
