@@ -1,555 +1,1180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUMMERBODY & Co. | Natural Weight Loss Transformation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .bg-hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1559348349-86f1f65817fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(233, 106, 37, 0.3);
-        }
-        
-        .quote-icon {
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            opacity: 0.1;
-            font-size: 6rem;
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #E96A25;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sweat Department | I Lost 180 lbs. Now I Show You How.</title>
+<meta name="description" content="The Sweat Department by King SUMMERBODY. I lost 180 lbs naturally and kept it off 10 years. The 5 Pillar Quick Start Guide, the community, and the coaching that finally holds you accountable.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --brand-orange: #F15002;
+  --orange-bright: #FF6E01;
+  --orange-deep:   #F62900;
+  --black:         #000000;
+  --white:         #FFFFFF;
+  --smoke:         #F5F5F5;
+  --gray:          #cbd5e0;
+  --headline-font: 'Anton', 'Bebas Neue', 'Impact', sans-serif;
+  --body-font: 'Montserrat', system-ui, sans-serif;
+  --container-max: 1280px;
+  --section-padding: 96px 24px;
+  --radius: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body-font);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+h1, h2, h3 {
+  font-family: var(--headline-font);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  font-weight: 400;
+}
+h1 { font-size: clamp(48px, 7vw, 96px); }
+h2 { font-size: clamp(36px, 5vw, 72px); }
+h3 { font-size: clamp(24px, 3vw, 40px); }
+.eyebrow {
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brand-orange);
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.ticker {
+  background: var(--black);
+  color: var(--white);
+  padding: 10px 0;
+  border-bottom: 2px solid var(--brand-orange);
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-size: 14px;
+  font-weight: 500;
+}
+.ticker-track {
+  display: flex;
+  gap: 64px;
+  white-space: nowrap;
+  animation: scroll-left 120s linear infinite;
+  width: max-content;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+nav {
+  background: var(--black);
+  color: var(--white);
+  padding: 20px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+.logo {
+  font-family: var(--headline-font);
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  color: var(--white);
+}
+.logo .orange { color: var(--brand-orange); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover { color: var(--brand-orange); }
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 2px solid transparent;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary {
+  background: var(--brand-orange);
+  color: var(--white);
+  border-color: var(--brand-orange);
+  box-shadow: 0 4px 16px rgba(241, 80, 2, 0.3);
+}
+.btn-primary:hover {
+  background: var(--white);
+  color: var(--brand-orange);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(241, 80, 2, 0.5);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+.btn-ghost:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translateY(-3px) scale(1.02);
+}
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+.btn-dark:hover {
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+  transform: translateY(-3px);
+}
+.hero {
+  background: var(--black);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 120px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(241, 80, 2, 0.20) 0%, transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(241, 80, 2, 0.15) 0%, transparent 35%);
+  pointer-events: none;
+  animation: gradient-shift 12s ease-in-out infinite;
+}
+@keyframes gradient-shift {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.15) rotate(2deg); opacity: 0.85; }
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(241, 80, 2, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.15s ease-out;
+  left: var(--mouseX, 50%);
+  top: var(--mouseY, 50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  filter: blur(20px);
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-content .eyebrow { color: var(--brand-orange); font-size: 14px; letter-spacing: 3px; }
+.hero h1 { margin: 16px 0; color: var(--white); }
+.hero h1 .orange { color: var(--brand-orange); display: block; position: relative; }
+.hero h1 .orange::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--brand-orange);
+  margin-top: 16px;
+  animation: pulse-bar 2.5s ease-in-out infinite;
+}
+@keyframes pulse-bar {
+  0%, 100% { width: 80px; opacity: 1; }
+  50% { width: 140px; opacity: 0.6; }
+}
+.hero-sub {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+  max-width: 560px;
+  line-height: 1.5;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-image { position: relative; transition: transform 0.4s ease-out; }
+.hero-image img { width: 100%; filter: grayscale(100%) contrast(1.15); }
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: -12px; left: -12px; right: 12px; bottom: 12px;
+  border: 4px solid var(--brand-orange);
+  pointer-events: none;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+.hero-image:hover::before { top: 12px; left: 12px; right: -12px; bottom: -12px; }
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 24px;
+  border-top: 4px solid var(--brand-orange);
+}
+.hero-stat {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat .num {
+  font-family: var(--headline-font);
+  font-size: 36px;
+  color: var(--brand-orange);
+  display: block;
+  line-height: 1;
+}
+.hero-stat .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 6px;
+  display: block;
+}
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--brand-orange);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: float-up 8s ease-in infinite;
+}
+@keyframes float-up {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  100% { transform: translateY(-100px) scale(1); opacity: 0; }
+}
+.three-day-band { background: var(--white); padding: var(--section-padding); text-align: center; }
+.three-day-band h2 { color: var(--black); margin-bottom: 48px; }
+.three-day-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.three-day-card {
+  padding: 32px 24px;
+  border-top: 4px solid var(--brand-orange);
+  text-align: left;
+  background: var(--white);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.three-day-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.three-day-card .label {
+  font-family: var(--headline-font);
+  font-size: 36px;
+  color: var(--brand-orange);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.three-day-card p { font-size: 17px; color: #333; }
+.clients { background: var(--white); padding: var(--section-padding); text-align: center; }
+.clients h2 { color: var(--black); margin-bottom: 16px; }
+.clients .sub { font-size: 18px; color: #555; margin-bottom: 48px; }
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.client-tile {
+  background: var(--brand-orange);
+  color: var(--white);
+  padding: 32px 16px;
+  border-radius: 12px;
+  font-family: var(--headline-font);
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 120px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+.client-tile:hover {
+  transform: translateY(-8px) rotateX(8deg) rotateY(-8deg);
+  box-shadow: 0 20px 40px rgba(241, 80, 2, 0.4);
+}
+.pillars { background: var(--smoke); padding: var(--section-padding); }
+.pillars-header { text-align: center; margin-bottom: 48px; }
+.pillars-header h2 { color: var(--black); margin-bottom: 12px; }
+.pillars-header p { color: #555; max-width: 700px; margin: 0 auto; }
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.pillar {
+  background: var(--white);
+  border-left: 4px solid var(--brand-orange);
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+.pillar:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  border-left-width: 8px;
+}
+.pillar .num {
+  font-family: var(--headline-font);
+  font-size: 56px;
+  color: var(--brand-orange);
+  line-height: 1;
+  margin-bottom: 12px;
+  display: block;
+}
+.pillar h3 { font-size: 22px; margin-bottom: 8px; color: var(--black); }
+.pillar p { font-size: 15px; color: #555; line-height: 1.5; }
+.why-matters {
+  background: linear-gradient(135deg, var(--orange-bright) 0%, var(--orange-deep) 100%);
+  color: var(--white);
+  padding: 160px 24px 120px;
+  position: relative;
+  overflow: visible;
+  margin-top: 140px;
+}
+.why-matters-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.why-matters-text { text-align: left; padding-right: 16px; }
+.why-matters-figure {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 130%;
+  width: auto;
+  max-width: 48%;
+  z-index: 1;
+  pointer-events: none;
+  align-self: end;
+}
+.why-matters h2 { color: var(--white); margin-bottom: 32px; }
+.why-matters p { font-size: 18px; line-height: 1.6; margin-bottom: 20px; }
+.why-matters .accountability-quote { text-align: left; margin: 32px 0; max-width: 100%; }
+.why-matters .why-cta { justify-content: flex-start; }
+.accountability-quote {
+  font-family: var(--headline-font);
+  font-size: clamp(28px, 4vw, 56px);
+  text-transform: uppercase;
+  margin: 48px auto 32px;
+  max-width: 900px;
+  line-height: 1.1;
+}
+.why-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+.quiz { background: var(--black); color: var(--white); padding: var(--section-padding); }
+.quiz-wrap { max-width: 760px; margin: 0 auto; }
+.quiz-header { text-align: center; margin-bottom: 48px; }
+.quiz-header h2 { color: var(--white); margin-bottom: 12px; }
+.quiz-header p { color: rgba(255, 255, 255, 0.75); }
+.quiz-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+}
+.quiz-progress { display: flex; gap: 8px; margin-bottom: 32px; }
+.quiz-progress span {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+.quiz-progress span.active { background: var(--brand-orange); }
+.quiz-q { font-size: 22px; margin-bottom: 24px; line-height: 1.4; }
+.quiz-options { display: flex; flex-direction: column; gap: 10px; }
+.quiz-option {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.quiz-option:hover {
+  border-color: var(--brand-orange);
+  background: rgba(241, 80, 2, 0.1);
+  transform: translateX(8px);
+}
+.quiz-result { text-align: center; padding: 32px 0; }
+.quiz-result h3 { color: var(--brand-orange); margin-bottom: 16px; }
+.quiz-result p { color: rgba(255, 255, 255, 0.85); margin-bottom: 24px; }
+.email-capture { display: flex; gap: 8px; max-width: 480px; margin: 24px auto 0; }
+.email-capture input {
+  flex: 1;
+  padding: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+}
+.email-capture input::placeholder { color: rgba(255, 255, 255, 0.4); }
+.offers { background: var(--white); padding: var(--section-padding); text-align: center; }
+.offers-header { margin-bottom: 48px; }
+.offers-header h2 { color: var(--black); margin-bottom: 12px; }
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.offer-card {
+  background: var(--black);
+  color: var(--white);
+  padding: 40px 32px;
+  border-radius: 12px;
+  text-align: left;
+  position: relative;
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.offer-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.20); }
+.offer-card.featured {
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+  transform: translateY(-12px);
+  box-shadow: 0 16px 40px rgba(241, 80, 2, 0.3);
+}
+.offer-card.featured:hover { transform: translateY(-20px) scale(1.04); box-shadow: 0 32px 80px rgba(241, 80, 2, 0.5); }
+.offer-tag {
+  display: inline-block;
+  background: var(--brand-orange);
+  color: var(--white);
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.offer-card.featured .offer-tag { background: var(--black); }
+.offer-card h3 { font-size: 28px; margin-bottom: 8px; color: var(--white); }
+.offer-price {
+  font-family: var(--headline-font);
+  font-size: 56px;
+  color: var(--brand-orange);
+  line-height: 1;
+  margin: 16px 0;
+}
+.offer-card.featured .offer-price { color: var(--white); }
+.offer-list { list-style: none; margin: 24px 0; }
+.offer-list li {
+  padding: 8px 0;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.offer-list li::before { content: '✓'; color: var(--brand-orange); font-weight: 700; margin-right: 8px; }
+.offer-card.featured .offer-list li::before { color: var(--white); }
+.offer-card .btn { width: 100%; }
+.offer-guarantee { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 12px; letter-spacing: 0.5px; text-align: center; }
+.letter {
+  background: var(--white);
+  color: var(--black);
+  padding: 140px 24px 120px;
+  position: relative;
+  overflow: visible;
+  margin-top: 140px;
+}
+.letter-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.letter-text { text-align: left; padding-right: 16px; }
+.letter-text h2 { color: var(--black); margin: 12px 0 24px; }
+.letter-text p { font-size: 17px; color: #333; margin-bottom: 16px; line-height: 1.7; }
+.letter-text .sig {
+  font-family: var(--headline-font);
+  font-size: 32px;
+  color: var(--brand-orange);
+  margin-top: 24px;
+  text-transform: uppercase;
+}
+.letter-figure {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 130%;
+  width: auto;
+  max-width: 48%;
+  z-index: 1;
+  pointer-events: none;
+  filter: grayscale(100%) contrast(1.05);
+}
+.faq { background: var(--smoke); padding: var(--section-padding); }
+.faq-header { text-align: center; margin-bottom: 48px; }
+.faq-header h2 { color: var(--black); }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  background: var(--white);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-left: 4px solid var(--brand-orange);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.faq-item:hover { transform: translateX(4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.faq-q {
+  padding: 20px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  color: var(--black);
+}
+.faq-q .toggle { color: var(--brand-orange); font-size: 24px; transition: transform 0.3s ease; }
+.faq-item.open .toggle { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  color: #555;
+  font-size: 16px;
+}
+.faq-item.open .faq-a { max-height: 800px; padding: 0 24px 20px; }
+.faq-group-h {
+  font-family: var(--headline-font);
+  color: var(--brand-orange);
+  font-size: 24px;
+  margin: 32px 0 16px 4px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.faq-group-h:first-child { margin-top: 0; }
+footer { background: var(--black); color: var(--white); padding: 64px 24px 32px; text-align: center; }
+footer .logo { display: inline-block; margin-bottom: 16px; }
+footer p { color: rgba(255, 255, 255, 0.6); font-size: 14px; margin-bottom: 16px; }
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.footer-links a:hover { color: var(--brand-orange); }
+.footer-mantra {
+  font-family: var(--headline-font);
+  font-size: 24px;
+  color: var(--brand-orange);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 32px 0 16px;
+}
+.footer-tagline {
+  font-family: var(--headline-font);
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 880px) {
+  .hero .container { grid-template-columns: 1fr; gap: 32px; }
+  .hero { padding: 48px 0 64px; }
+  .three-day-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .email-capture { flex-direction: column; }
+  .why-matters { margin-top: 0; padding: 80px 24px; }
+  .why-matters-inner { grid-template-columns: 1fr; }
+  .why-matters-figure { display: none; }
+  .letter { padding: 80px 24px; margin-top: 0; }
+  .letter-inner { grid-template-columns: 1fr; }
+  .letter-figure { display: none; }
+  :root { --section-padding: 64px 20px; }
+}
+</style>
 </head>
-<body class="bg-white">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-orange-600">SUMMERBODY & Co.</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-8">
-                        <a href="#home" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Home</a>
-                        <a href="#about" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">About</a>
-                        <a href="#programs" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Programs</a>
-                        <a href="#testimonials" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Results</a>
-                        <a href="#process" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Our Process</a>
-                        <a href="#cta" class="bg-orange-600 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-700 transition duration-300">Start Today</a>
-                    </div>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-900 hover:text-orange-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-4 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">About</a>
-                <a href="#programs" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Programs</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Results</a>
-                <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-orange-600">Our Process</a>
-                <a href="#cta" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-orange-600 hover:bg-orange-700">Start Today</a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-hero text-white pt-32 pb-24 lg:pt-40 lg:pb-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-12 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Transform Your Life <span class="text-orange-400">Naturally</span></h1>
-                    <p class="text-xl md:text-2xl mb-8">After losing 178 pounds naturally, I'm now helping others achieve the same life-changing results.</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#cta" class="bg-orange-600 hover:bg-orange-700 text-white text-lg font-semibold py-4 px-8 rounded-full text-center transition duration-300">Start Your Transformation Today</a>
-                        <a href="#programs" class="bg-white text-orange-600 hover:bg-gray-100 text-lg font-semibold py-4 px-8 rounded-full text-center transition duration-300">View Programs</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="https://images.unsplash.com/photo-1522956728227-887884da35dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Happy customer transformation" class="rounded-lg shadow-2xl w-full max-w-md">
-                </div>
-            </div>
-        </div>
-    </section>
+<form name="quiz-results" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="first_name">
+  <input type="email" name="email">
+  <input type="text" name="answers">
+  <input type="text" name="bot-field">
+</form>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">From Personal Struggle to Professional Success</h2>
-                <div class="h-1 w-20 bg-orange-600 mx-auto"></div>
-            </div>
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Founder photo" class="rounded-lg shadow-xl w-full">
-                </div>
-                <div class="lg:w-1/2">
-                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">My Journey</h3>
-                    <p class="text-gray-700 mb-6">After struggling with obesity for most of my life, I finally found the strength to change. Through trial, error, and relentless determination, I lost 178 pounds naturally - no surgeries, no magic pills, just real lifestyle changes that anyone can implement.</p>
-                    <p class="text-gray-700 mb-6">What began as a personal quest for health evolved into a scientific approach incorporating <span class="font-semibold text-orange-600">Lean Six Sigma methodologies</span> to create a results-driven program that works systematically for real people with real lives.</p>
-                    <p class="text-gray-700 mb-6">From middle school dropout to college graduate, from weight-loss warrior to business owner - I've turned my pain into purpose and now help others do the same.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">178 lbs Lost</span>
-                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">Lean Six Sigma</span>
-                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">Real Results</span>
-                        <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">Community Focused</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
 
-    <!-- Programs Section -->
-    <section id="programs" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Transformation Programs</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the path that fits your goals and budget</p>
-                <div class="h-1 w-20 bg-orange-600 mx-auto mt-4"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Program 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover">
-                    <div class="bg-orange-600 p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white">Jumpstart Guide</h3>
-                        <div class="mt-4">
-                            <span class="text-white text-4xl font-bold">$27</span>
-                            <span class="text-orange-200 block">or Free with email</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">7-day meal plan & shopping list</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Beginner workout routine</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Mindset reset guide</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Email support for 7 days</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="block mt-8 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-center rounded-full font-medium transition duration-300">Get Instant Access</a>
-                    </div>
-                </div>
-                
-                <!-- Program 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover transform scale-105">
-                    <div class="bg-orange-700 p-6 text-center relative">
-                        <div class="absolute top-2 right-2 bg-white text-orange-700 text-xs font-bold px-2 py-1 rounded">MOST POPULAR</div>
-                        <h3 class="text-2xl font-bold text-white">Transformation Tracker</h3>
-                        <div class="mt-4">
-                            <span class="text-white text-4xl font-bold">$297-397</span>
-                            <span class="text-orange-200 block">per month</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700"><strong>Weekly 1:1 coaching calls</strong></span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Customized nutrition plan</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Personalized workout program</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Accountability partner</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">24/7 text support</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="block mt-8 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-center rounded-full font-medium transition duration-300">Book Free Consultation</a>
-                    </div>
-                </div>
-                
-                <!-- Program 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 card-hover">
-                    <div class="bg-orange-800 p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white">Grand Slam Transformation</h3>
-                        <div class="mt-4">
-                            <span class="text-white text-4xl font-bold">$2,500</span>
-                            <span class="text-orange-200 block">90-day program</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700"><strong>VIP all-access plan</strong></span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Full body transformation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">3x weekly coaching sessions</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Grocery store tours</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Kitchen makeover guide</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-orange-600 mt-1 mr-3"></i>
-                                <span class="text-gray-700">Lifetime alumni support</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="block mt-8 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-center rounded-full font-medium transition duration-300">Apply Now (Limited Spots)</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<nav>
+  <div class="container">
+    <a href="#" class="logo">THE SWEAT <span class="orange">DEPARTMENT</span></a>
+    <ul class="nav-links">
+      <li><a href="#story">Story</a></li>
+      <li><a href="#pillars">5 Pillars</a></li>
+      <li><a href="#quiz">Take The Quiz</a></li>
+      <li><a href="#offers">Get Started</a></li>
+    </ul>
+    <a href="#offers" class="btn btn-primary">Join Now</a>
+  </div>
+</nav>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Real People, Real Results</h2>
-                <div class="h-1 w-20 bg-orange-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
-                    <div class="quote-icon">
-                        <i class="fas fa-quote-left text-orange-600"></i>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex items-center space-x-2 mb-2">
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                        </div>
-                        <p class="text-gray-700 italic">"After years of failed diets and expensive programs, I finally found something that worked. 57 pounds gone in 4 months, and more importantly, I've kept it off!"</p>
-                    </div>
-                    <div class="flex items-center">
-                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Client profile" class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="text-lg font-semibold">Marcus J.</h4>
-                            <p class="text-gray-600 text-sm">Down 57 lbs</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
-                    <div class="quote-icon">
-                        <i class="fas fa-quote-left text-orange-600"></i>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex items-center space-x-2 mb-2">
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                        </div>
-                        <p class="text-gray-700 italic">"The personalized coaching made all the difference. They helped me work around my busy schedule and knee issues. 82 pounds down and feeling better at 52 than I did at 32!"</p>
-                    </div>
-                    <div class="flex items-center">
-                        <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Client profile" class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="text-lg font-semibold">Lisa T.</h4>
-                            <p class="text-gray-600 text-sm">Down 82 lbs</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
-                    <div class="quote-icon">
-                        <i class="fas fa-quote-left text-orange-600"></i>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex items-center space-x-2 mb-2">
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                            <i class="fas fa-star text-orange-400"></i>
-                        </div>
-                        <p class="text-gray-700 italic">"My entire family has benefited from this program. Not only did I lose 63 pounds, but my husband lost 45 and our eating habits have completely changed for the better."</p>
-                    </div>
-                    <div class="flex items-center">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Client profile" class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="text-lg font-semibold">Danielle & Michael R.</h4>
-                            <p class="text-gray-600 text-sm">Family Transformation</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Video Testimonials -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">Hear Their Stories</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gray-900 rounded-lg overflow-hidden aspect-[16/9]">
-                        <div class="w-full h-full bg-orange-100 flex items-center justify-center">
-                            <div class="text-center p-8">
-                                <i class="fas fa-play-circle text-orange-600 text-6xl mb-4"></i>
-                                <p class="text-gray-700">Watch Transformational Story 1</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-900 rounded-lg overflow-hidden aspect-[16/9]">
-                        <div class="w-full h-full bg-orange-100 flex items-center justify-center">
-                            <div class="text-center p-8">
-                                <i class="fas fa-play-circle text-orange-600 text-6xl mb-4"></i>
-                                <p class="text-gray-700">Watch Transformational Story 2</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="hero">
+  <div id="particles"></div>
+  <div class="container">
+    <div class="hero-content reveal">
+      <span class="eyebrow">King SUMMERBODY · The Sweat Department</span>
+      <h1>I'm 1/2 The Man <span class="orange">I Used To Be.</span></h1>
+      <p class="hero-sub">I lost 180 lbs naturally. No weight-loss surgery. No ozempic. No quitting on myself. Now I show others how, with the same accountability that finally worked on me.</p>
+      <div class="hero-ctas">
+        <a href="#quiz" class="btn btn-primary">Take The Quiz</a>
+        <a href="https://www.skool.com/team-summerbody-1207" target="_blank" class="btn btn-ghost">Join The Community</a>
+        <a href="https://www.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint" target="_blank" class="btn btn-ghost">Get The $2.97 Guide</a>
+      </div>
+    </div>
+    <div class="hero-image reveal" id="heroImage">
+      <img src="photos/hero-side-by-side.png" alt="King SUMMERBODY - 180 lbs lost"
+           onerror="this.src='photos/king-portrait.png'">
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num" data-count="400">0</span><span class="label">Starting Weight</span></div>
+        <div class="hero-stat"><span class="num" data-count="180">0</span><span class="label">Lbs Lost</span></div>
+        <div class="hero-stat"><span class="num" data-count="10">0</span><span class="label">Years Kept Off</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Behind the Scenes Section -->
-    <section id="process" class="py-16 bg-orange-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">The SUMMERBODY Method</h2>
-                    <p class="text-xl mb-6">Behind every successful transformation is a carefully designed process built on Lean Six Sigma principles.</p>
-                    <p class="mb-6">What began as a personal weight loss journey evolved into a scientific approach to wellness transformation. As part of my Lean Six Sigma Green Belt certification, I analyzed and improved every aspect of our program delivery:</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
-                            <span>Strategic funnel mapping to guide clients seamlessly from awareness to results</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
-                            <span>Value stream analysis to eliminate waste and focus on what delivers real transformation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
-                            <span>Revised sales scripts that ensure perfect program-fit alignment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-white mt-1 mr-3"></i>
-                            <span>Improved packaging of services for maximum impact and client success</span>
-                        </li>
-                    </ul>
-                    <p>The result? A streamlined, results-driven program that consistently delivers exceptional outcomes for our clients while maintaining operational excellence for our business.</p>
-                </div>
-                <div class="lg:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Process illustration" class="rounded-lg shadow-xl w-full">
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="story" class="three-day-band reveal">
+  <div class="container">
+    <span class="eyebrow">The Sweat Department</span>
+    <h2>One Story. One Method. One Team.</h2>
+    <div class="three-day-grid">
+      <div class="three-day-card">
+        <div class="label">One Story</div>
+        <p>I started at 400 lbs. I lost 180 lbs naturally and kept it off for 10 years. While I did it I lost my mom, survived surgery complications, and built this work in her honor. I'm still going.</p>
+      </div>
+      <div class="three-day-card">
+        <div class="label">One Method</div>
+        <p>The 5 Pillar System: a daily framework you can run while you live your actual life. No gym. No calorie counting. No starvation. The exact system that took me from 400 lbs.</p>
+      </div>
+      <div class="three-day-card">
+        <div class="label">One Team</div>
+        <p>TEAM = Together WE Achieve More. Real accountability calls and texts, not an app that doesn't ask what you ate today. Better &amp; Beyond from this point on.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CTA Section -->
-    <section id="cta" class="py-16 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Your Transformation?</h2>
-                <p class="text-xl max-w-3xl mx-auto">Take the first step toward a healthier, happier you today.</p>
-                <div class="h-1 w-20 bg-orange-600 mx-auto mt-4"></div>
-            </div>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-gray-800 p-8 rounded-lg text-center">
-                        <div class="text-orange-400 text-4xl mb-4">
-                            <i class="fas fa-file-download"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Free Jumpstart Guide</h3>
-                        <p class="text-gray-300 mb-6">Get our free 7-day starter guide to begin your journey today.</p>
-                        <form class="space-y-4">
-                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-600">
-                            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">Download Now</button>
-                        </form>
-                    </div>
-                    
-                    <div class="bg-gray-800 p-8 rounded-lg text-center">
-                        <div class="text-orange-400 text-4xl mb-4">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Free Consultation</h3>
-                        <p class="text-gray-300 mb-6">Schedule a free 30-minute discovery call to discuss your goals.</p>
-                        <select class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white mb-4 focus:outline-none focus:ring-2 focus:ring-orange-600">
-                            <option>Select Session Type</option>
-                            <option>Weight Loss Consult</option>
-                            <option>Nutrition Review</option>
-                            <option>Program Q&A</option>
-                        </select>
-                        <a href="#" class="block w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">Book Now</a>
-                    </div>
-                    
-                    <div class="bg-gray-800 p-8 rounded-lg text-center">
-                        <div class="text-orange-400 text-4xl mb-4">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Join Our Community</h3>
-                        <p class="text-gray-300 mb-6">Get weekly tips, recipes, and motivation straight to your inbox.</p>
-                        <form class="space-y-4">
-                            <input type="text" placeholder="First Name" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-600">
-                            <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-600">
-                            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="clients reveal">
+  <div class="container">
+    <span class="eyebrow">As Seen On · Trusted By</span>
+    <h2>Real Brands. Real People.</h2>
+    <p class="sub">Featured on E!'s Dr. 90210, plus partnerships across Fortune 500 brands, family movements, and private clients.</p>
+    <div class="client-grid">
+      <a href="https://www.imdb.com/" target="_blank" class="client-tile" style="text-decoration: none;">E! Network<br>Dr. 90210</a>
+      <div class="client-tile">CSN<br>Credit Success Network</div>
+      <div class="client-tile">GymGuyz</div>
+      <div class="client-tile">Clean Corner<br>Valet Concierge</div>
+      <div class="client-tile">Transformation<br>Experts</div>
+      <div class="client-tile">The<br>Negrotarian</div>
+      <div class="client-tile">Campbell<br>Family Reunion</div>
+      <div class="client-tile">Graham<br>Family Reunion</div>
+      <div class="client-tile">Women In Leadership<br>#IWillMovement</div>
+      <div class="client-tile">Project Management<br>Institute</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="col-span-2">
-                    <h3 class="text-white text-2xl font-bold mb-4">SUMMERBODY & Co.</h3>
-                    <p class="mb-4">Helping real people achieve real transformations through sustainable, natural weight loss solutions.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-orange-400"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-white font-medium text-lg mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-orange-400 transition duration-300">Home</a></li>
-                        <li><a href="#about" class="hover:text-orange-400 transition duration-300">About</a></li>
-                        <li><a href="#programs" class="hover:text-orange-400 transition duration-300">Programs</a></li>
-                        <li><a href="#testimonials" class="hover:text-orange-400 transition duration-300">Results</a></li>
-                        <li><a href="#process" class="hover:text-orange-400 transition duration-300">Our Process</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-medium text-lg mb-4">Contact Us</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-orange-400"></i>
-                            <span>123 Wellness Way, Suite 101<br>Healthville, HV 12345</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 mr-2 text-orange-400"></i>
-                            <span>(555) 123-4567</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope mt-1 mr-2 text-orange-400"></i>
-                            <span>hello@summerbodyco.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-sm text-gray-500">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-4 md:mb-0">
-                        &copy; 2023 SUMMERBODY & Co. All rights reserved.
-                    </div>
-                    <div class="flex space-x-6">
-                        <a href="#" class="hover:text-orange-400 transition duration-300">Privacy Policy</a>
-                        <a href="#" class="hover:text-orange-400 transition duration-300">Terms of Service</a>
-                        <a href="#" class="hover:text-orange-400 transition duration-300">Disclaimer</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<section id="pillars" class="pillars reveal">
+  <div class="container">
+    <div class="pillars-header">
+      <span class="eyebrow">The Method</span>
+      <h2>The 5 Pillars That Beat 180 Pounds</h2>
+      <p>Not a diet. Not a gym membership. A daily system you can run while you live your actual life.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar"><span class="num">01</span><h3>Pillar One</h3><p>The cheapest fat-loss tool nobody uses correctly. Free. You probably skip it daily.</p></div>
+      <div class="pillar"><span class="num">02</span><h3>Pillar Two</h3><p>No gym required. The post-meal trick that beats most diabetes meds, and you can do it in slippers.</p></div>
+      <div class="pillar"><span class="num">03</span><h3>Pillar Three</h3><p>Skip this and your hunger jumps 24% the next day. Most people get this completely wrong.</p></div>
+      <div class="pillar"><span class="num">04</span><h3>Pillar Four</h3><p>Runs your hunger, your mood, and your energy. Heal it and the weight follows.</p></div>
+      <div class="pillar"><span class="num">05</span><h3>Pillar Five</h3><p>Crowd the bad food out with so much real food there's no room left to backslide.</p></div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+<section class="why-matters reveal">
+  <img src="photos/for-the-ones-with-100.png" class="why-matters-figure" alt="" onerror="this.style.display='none'">
+  <div class="why-matters-inner">
+    <div></div>
+    <div class="why-matters-text">
+      <span class="eyebrow" style="color: var(--white);">Why This Matters</span>
+      <h2>For The Ones With 100+ Lbs To Lose</h2>
+      <p style="font-size: 14px; opacity: 0.85; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 32px;">And anyone tired of quitting on themselves.</p>
+      <p>Most people who try to lose weight quit because nobody calls them when they slip. Apps don't ask you what you ate yesterday. Influencers don't text you when you skip a workout.</p>
+      <div class="accountability-quote">
+        "Fat people know what to do.<br>They just won't do it.<br>Until somebody holds them to it."
+      </div>
+      <p>That's what I sell. Not a meal plan. Not a workout calendar. The accountability I lacked when I was 400 lbs. The accountability I built when I lost the 180. The accountability my beta clients call me at 9 PM about when they're staring down a bag of chips.</p>
+      <div class="why-cta">
+        <a href="#quiz" class="btn btn-ghost">Take The Quiz</a>
+        <a href="#offers" class="btn btn-dark">See The Offers</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                const mobileMenu = document.getElementById('mobile-menu');
-                
-                // Close mobile menu if open
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-                
-                // Scroll to target
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+<section id="quiz" class="quiz">
+  <div class="quiz-wrap reveal">
+    <div class="quiz-header">
+      <span class="eyebrow">Find Out Where You Really Are</span>
+      <h2>The 5-Question Reality Check</h2>
+      <p>Each answer comes back with a tip you can use today. Takes under 90 seconds.</p>
+    </div>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-progress" id="quizProgress"></div>
+      <div id="quizContent"></div>
+    </div>
+  </div>
+</section>
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg');
-            } else {
-                nav.classList.remove('shadow-lg');
-            }
-        });
-    </script>
+<section id="offers" class="offers reveal">
+  <div class="container">
+    <div class="offers-header">
+      <span class="eyebrow">Pick Your Starting Line</span>
+      <h2>Three Ways To Step In</h2>
+    </div>
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <span class="offer-tag">Free</span>
+        <h3>The Community</h3>
+        <div class="offer-price">$0</div>
+        <ul class="offer-list">
+          <li>Access to Team SUMMERBODY on Skool</li>
+          <li>Daily group support</li>
+          <li>Weekly group calls with King</li>
+          <li>Real-time accountability</li>
+        </ul>
+        <a href="https://www.skool.com/team-summerbody-1207" target="_blank" class="btn btn-primary">Join Free</a>
+      </div>
+
+      <div class="offer-card featured">
+        <span class="offer-tag">Most Popular</span>
+        <h3>Break The Cycle</h3>
+        <div class="offer-price">$2.97</div>
+        <ul class="offer-list">
+          <li>The 5 Pillar Quick Start Guide PDF</li>
+          <li>The exact system I used at 400 lbs</li>
+          <li>A daily framework you can run today</li>
+          <li>Lifetime access</li>
+        </ul>
+        <a href="https://www.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint" target="_blank" class="btn btn-dark">Get The Guide</a>
+      </div>
+
+      <div class="offer-card">
+        <span class="offer-tag">High Touch</span>
+        <h3>VIP Coaching</h3>
+        <div class="offer-price">$597</div>
+        <ul class="offer-list">
+          <li>Direct accountability with King</li>
+          <li>Custom 5 Pillar build-out</li>
+          <li>Text and call check-ins</li>
+          <li>Premium product bundle included</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Book A Call</a>
+        <div class="offer-guarantee">Results-backed guarantee. Terms apply.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="letter reveal">
+  <img src="photos/king-portrait.png" class="letter-figure" alt=""
+       onerror="this.src='photos/king-portrait.jpg'">
+  <div class="letter-inner">
+    <div class="letter-text">
+      <span class="eyebrow">A Letter From</span>
+      <h2>King SUMMERBODY</h2>
+      <p>Listen to me closely. When I was 400 lbs, every "expert" told me to count calories. None of them asked me what time I went to bed, how much water I'd had, or whether I'd seen the sun that day.</p>
+      <p>I lost 180 lbs without a single calorie counted. I did it on the 5 Pillars you'll find inside this work. I did it without a gym for the first 70 lbs, because I thought people that are "too-fat" didn't belong in a gym. I was wrong about the gym, but I was right about one thing: it's not the gym you need. It's a community.</p>
+      <p>I did this while working through grief. While my mom passed. Coronavirus, COVID-19, complications from gynecomastia and loose skin removal surgery, all while pursuing a college degree, tested whether I'd quit. I didn't quit. Not because I'm special. Because I had people watching and I made it public.</p>
+      <p>You do not need another app. The reason I can charge for what I do isn't because I'm certified, even though I am. It's because I lived it. Half the man I used to be. Still going. You need somebody who calls you when you are in the trenches and slip. Operation Six Pack is real. That's what The Sweat Department is. Welcome to the team.</p>
+      <div class="sig">— King SUMMERBODY</div>
+    </div>
+    <div></div>
+  </div>
+</section>
+
+<section class="faq reveal">
+  <div class="container">
+    <div class="faq-header">
+      <span class="eyebrow">Frequently Asked</span>
+      <h2>The Real Questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <h3 class="faq-group-h">About The Program</h3>
+
+      <div class="faq-item">
+        <div class="faq-q">Is this another diet? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>No diet. No counting. No restriction lists. The Quick Start Guide is a daily system, not a meal plan. The point is to crowd out the bad food, not to eliminate it through willpower.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a gym? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>No. I lost the first 70 lbs without one. I thought people that are "too-fat" didn't belong in a gym, so I built the system to work in your kitchen, your neighborhood, and your bedroom. The truth is, you don't need the gym. You need a community. The gym is optional. The community is mandatory.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is this different from MyFitnessPal or Noom? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>Apps don't text you. Apps don't pick up the phone when you're about to eat a bag of chips. Apps don't lose 180 lbs themselves. I do all three.</p></div>
+      </div>
+
+      <h3 class="faq-group-h">Is This For Me?</h3>
+
+      <div class="faq-item">
+        <div class="faq-q">What if I have 100+ lbs to lose? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>That's exactly who I built this for first. I'm not the trainer for the 20 lbs of vanity weight crowd. I'm the trainer for the people doctors give warnings to. I started where you are.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I don't have 100+ lbs to lose? Is this still for me? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>Yes. The 5 Pillars don't care how much you have to lose. Whether it's 20 lbs, 50 lbs, or you've already lost it and you want to keep it off, the system is the same. I've kept the 180 off for 10 years using these exact pillars. Like changing the oil in your car, this work never stops.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I don't have time? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>You watch TV. You scroll Instagram. You drive somewhere. The 5 Pillars fit inside the time you already have. If you tell me you have no time but you watched a show last night, we have a different problem to solve and I can help with that too.</p></div>
+      </div>
+
+      <h3 class="faq-group-h">Pricing &amp; Guarantee</h3>
+
+      <div class="faq-item">
+        <div class="faq-q">What's the guarantee on VIP Coaching? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>VIP Coaching is results-backed. Follow the program as designed and you get the results, or your money back per the terms. Note: my coaching time is non-refundable. The guarantee covers the system and tools you receive. Full terms shared on the discovery call.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's actually included in the $597 VIP price? <span class="toggle">+</span></div>
+        <div class="faq-a"><p>Direct accountability with King, your custom 5 Pillar build-out, scheduled text and call check-ins, and the premium product bundle that supports the system. Everything you need to run the program is bundled in. No surprise add-ons.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="#" class="logo">THE SWEAT <span class="orange">DEPARTMENT</span></a>
+    <div class="footer-mantra">All Eyes On Me. SUMMERBODY.</div>
+    <div class="footer-tagline">Better &amp; Beyond.</div>
+    <div class="footer-links">
+      <a href="https://www.sweatdepartment.com" target="_blank">Shop</a>
+      <a href="https://www.skool.com/team-summerbody-1207" target="_blank">Community</a>
+      <a href="https://www.instagram.com/kingsummerbody" target="_blank">@KingSUMMERBODY</a>
+      <a href="https://www.instagram.com/sweatdepartment" target="_blank">@SweatDepartment</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#offers">Coaching</a>
+    </div>
+    <p>&copy; 2026 The Sweat Department LLC · Hollywood, FL</p>
+    <p style="font-size: 12px; opacity: 0.5;">TEAM = Together WE Achieve More · Better &amp; Beyond · Half The Man I Used To Be · 180 Lbs Lost Naturally</p>
+  </div>
+</footer>
+
+<script>
+const TICKER_TIPS = [
+  "🥒 Cucumbers and tomatoes are fruits, not veggies. Both clear skin and improve sleep.",
+  "💧 Drink half your body weight in ounces of water daily. 200 lbs = 100 oz.",
+  "☀️ 30 minutes of morning sun = better sleep that night. No supplement needed.",
+  "🍳 Eating protein FIRST in a meal cuts your blood sugar spike by 30%.",
+  "🚶🏿 A 10-minute walk after a meal lowers blood glucose more than most diabetes meds.",
+  "😴 Sleep under 6 hours = next-day hunger up 24%. Sleep is a fat-loss tool.",
+  "🥑 Avocado isn't a vegetable, it's a fat. Eat it like olive oil, not lettuce.",
+  "🏋🏿‍♂️ Muscle burns 3x more calories at rest than fat. Lift, don't just cardio.",
+  "🍎 An apple before a meal cuts your meal calories by 15%. Fiber is a free trick.",
+  "🧂 Most people aren't eating too much salt. They're eating too little potassium.",
+  "🥥 Coconut water has more potassium than a banana. And tastes like vacation.",
+  "🧠 You can't out-train a bad diet. 80% of body composition is what's on your fork.",
+  "🌱 The 5 Pillar Quick Start Guide is $2.97 today. The price of two coffees.",
+  "🎯 Perfection is not the goal. The next right choice is.",
+  "🔥 King SUMMERBODY lost 180 lbs naturally. No gym for the first 70."
+];
+
+const QUIZ = [
+  { q: "How many ounces of water did you drink yesterday?",
+    options: ["Less than 32 oz", "32 to 64 oz", "64 to 100 oz", "Over 100 oz"],
+    tip: "Most 'hunger' is dehydration in a costume. Drink half your body weight in ounces every single day. 200 lbs = 100 oz floor, not goal. Run this for 7 days and watch a third of your phantom cravings disappear. Costs zero." },
+  { q: "Last time you ate, were you actually hungry, or were you bored, tired, or stressed?",
+    options: ["Truly hungry", "Bored", "Tired", "Stressed", "Honestly, I'm not sure"],
+    tip: "70% of what you call 'hunger' is dehydration, fatigue, or emotion in a wig. Next urge: drink 16 oz of water, set a 15-minute timer. Still hungry after, eat without guilt. Do this for one week and your weekly calories drop a third without a diet." },
+  { q: "Pick the one you trust most: the scale, the mirror, or how your clothes fit.",
+    options: ["Scale", "Mirror", "How clothes fit", "None, I avoid all three"],
+    tip: "The scale is the biggest liar in your house. It swings 2-5 lbs a day on water and food weight alone. Stop weighing daily, it kills momentum. Trust two things only: how your clothes fit and a side-by-side photo every 30 days. Those don't lie." },
+  { q: "When was the last time a single bad meal made you give up on a streak?",
+    options: ["This week", "This month", "Months ago", "I never quit on myself", "I quit constantly"],
+    tip: "All-or-nothing thinking has killed more transformations than bad food ever did. One bad meal is not a bad week. Don't restart Monday. Restart at the next meal. The plan you actually follow beats the perfect plan you keep quitting on." },
+  { q: "How much sun did you get yesterday outside, not through a window?",
+    options: ["None", "Under 15 min", "15 to 30 min", "Over 30 min"],
+    tip: "30 minutes of morning sunlight (eyes open, not staring) sets your circadian rhythm for the day. Better sleep that night. Honest hunger signals the next day. The cheapest fat-loss tool nobody uses. Step outside before you check your phone." }
+];
+
+function renderTicker() {
+  const track = document.getElementById('tickerTrack');
+  if (!track) return;
+  const dayIndex = new Date().getDate() % TICKER_TIPS.length;
+  const rotated = TICKER_TIPS.slice(dayIndex).concat(TICKER_TIPS.slice(0, dayIndex));
+  const fullSet = rotated.concat(rotated);
+  track.innerHTML = fullSet.map(function(tip){ return '<span>' + tip + '</span>'; }).join('');
+}
+
+var quizState = { current: 0, answers: [] };
+
+function renderQuizProgress() {
+  var p = document.getElementById('quizProgress');
+  if (!p) return;
+  var html = '';
+  for (var i = 0; i < QUIZ.length; i++) {
+    html += '<span class="' + (i <= quizState.current ? 'active' : '') + '"></span>';
+  }
+  p.innerHTML = html;
+}
+
+function renderQuizQuestion() {
+  renderQuizProgress();
+  var q = QUIZ[quizState.current];
+  var optionsHtml = '';
+  for (var i = 0; i < q.options.length; i++) {
+    optionsHtml += '<button class="quiz-option" onclick="answerQuiz(' + i + ')">' + q.options[i] + '</button>';
+  }
+  document.getElementById('quizContent').innerHTML =
+    '<div class="quiz-q">' + (quizState.current + 1) + '. ' + q.q + '</div>' +
+    '<div class="quiz-options">' + optionsHtml + '</div>';
+}
+
+function answerQuiz(index) {
+  quizState.answers.push(index);
+  var q = QUIZ[quizState.current];
+  var nextLabel = (quizState.current === QUIZ.length - 1) ? 'See My Result' : 'Next Question';
+  document.getElementById('quizContent').innerHTML =
+    '<div class="quiz-result"><h3>King\'s Take:</h3><p>' + q.tip + '</p>' +
+    '<button class="btn btn-primary" onclick="advanceQuiz()">' + nextLabel + '</button></div>';
+}
+
+function advanceQuiz() {
+  quizState.current++;
+  if (quizState.current >= QUIZ.length) {
+    showQuizFinal();
+  } else {
+    renderQuizQuestion();
+  }
+}
+
+function showQuizFinal() {
+  var p = document.getElementById('quizProgress');
+  var pHtml = '';
+  for (var i = 0; i < QUIZ.length; i++) pHtml += '<span class="active"></span>';
+  p.innerHTML = pHtml;
+  var inputBase = 'padding: 16px; border: 2px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: var(--white); border-radius: 8px; font-family: inherit; font-size: 15px;';
+  document.getElementById('quizContent').innerHTML =
+    '<div class="quiz-result">' +
+    '<h3>You\'re Closer Than You Think.</h3>' +
+    '<p>Drop your first name and email. I\'ll send you the full Tips Report with all 5 pillars and a special offer on the Quick Start Guide.</p>' +
+    '<div style="display: flex; flex-direction: column; gap: 8px; max-width: 480px; margin: 24px auto 0;">' +
+    '<input type="text" id="quizName" placeholder="First name" style="' + inputBase + '">' +
+    '<input type="email" id="quizEmail" placeholder="your@email.com" style="' + inputBase + '">' +
+    '<button class="btn btn-primary" onclick="submitEmail()" style="margin-top: 4px;">Send My Tips</button>' +
+    '</div>' +
+    '<p style="margin-top: 32px; font-size: 14px; opacity: 0.7;">Or jump straight in:</p>' +
+    '<div style="display:flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">' +
+    '<a href="https://www.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint" target="_blank" class="btn btn-primary">Get The $2.97 Guide</a>' +
+    '<a href="https://www.skool.com/team-summerbody-1207" target="_blank" class="btn btn-ghost">Join The Community</a>' +
+    '</div></div>';
+}
+
+function submitEmail() {
+  var nameEl = document.getElementById('quizName');
+  var name = nameEl ? nameEl.value.trim() : '';
+  var email = document.getElementById('quizEmail').value.trim();
+  if (!email || email.indexOf('@') === -1) { alert('Please enter a valid email'); return; }
+  if (!name) { alert('Drop your first name so I know who I am writing to.'); return; }
+
+  var answersText = quizState.answers.map(function(ans, i) {
+    var q = QUIZ[i];
+    return 'Q' + (i+1) + ': ' + q.q + ' | A: ' + q.options[ans];
+  }).join('\n');
+
+  var formData = new URLSearchParams();
+  formData.append('form-name', 'quiz-results');
+  formData.append('first_name', name);
+  formData.append('email', email);
+  formData.append('answers', answersText);
+
+  fetch('/', {
+    method: 'POST',
+    body: formData.toString(),
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+  }).then(function() {
+    document.getElementById('quizContent').innerHTML =
+      '<div class="quiz-result">' +
+      '<h3>You\'re In, ' + (name || 'team') + '.</h3>' +
+      '<p>Your Tips Report is on the way. Check your inbox in the next 5 minutes.</p>' +
+      '<a href="https://www.skool.com/team-summerbody-1207" target="_blank" class="btn btn-primary">While You Wait, Join The Community</a>' +
+      '</div>';
+  }).catch(function() {
+    alert('Something went wrong. Please try again or email me directly at contact@sweatdepartment.com');
+  });
+}
+
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.addEventListener('click', function() { q.parentElement.classList.toggle('open'); });
+});
+
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+setTimeout(function() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) el.classList.add('visible');
+  });
+}, 100);
+
+var hero = document.querySelector('.hero');
+if (hero) {
+  hero.addEventListener('mousemove', function(e) {
+    var rect = hero.getBoundingClientRect();
+    var x = ((e.clientX - rect.left) / rect.width) * 100;
+    var y = ((e.clientY - rect.top) / rect.height) * 100;
+    hero.style.setProperty('--mouseX', x + '%');
+    hero.style.setProperty('--mouseY', y + '%');
+  });
+
+  var heroImage = document.getElementById('heroImage');
+  if (heroImage) {
+    hero.addEventListener('mousemove', function(e) {
+      var rect = hero.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      heroImage.style.transform = 'perspective(1000px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg)';
+    });
+    hero.addEventListener('mouseleave', function() {
+      heroImage.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+    });
+  }
+}
+
+function spawnParticles() {
+  var container = document.getElementById('particles');
+  if (!container) return;
+  for (var i = 0; i < 20; i++) {
+    var p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = (Math.random() * 100) + '%';
+    p.style.animationDelay = (Math.random() * 8) + 's';
+    p.style.animationDuration = (6 + Math.random() * 6) + 's';
+    container.appendChild(p);
+  }
+}
+
+function animateCounter(el) {
+  var target = parseInt(el.dataset.count);
+  var duration = 2000;
+  var start = performance.now();
+  function update(now) {
+    var progress = Math.min((now - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+var counterObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.hero-stat .num').forEach(function(el) { counterObserver.observe(el); });
+
+renderTicker();
+renderQuizQuestion();
+spawnParticles();
+</script>
+
 </body>
 </html>
