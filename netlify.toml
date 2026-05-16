@@ -3,3 +3,31 @@
 
 [functions]
   node_bundler = "esbuild"
+
+# Defense-in-depth redirects so any hit to /products/*, /cart, /checkout, or /collections/*
+# on the apex domain auto-forwards to the Shopify shop subdomain.
+# Added Fri May 16, 2026 after buy-button 404 incident.
+
+[[redirects]]
+  from = "/products/*"
+  to = "https://shop.sweatdepartment.com/products/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cart"
+  to = "https://shop.sweatdepartment.com/cart"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checkout"
+  to = "https://shop.sweatdepartment.com/checkout"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/collections/*"
+  to = "https://shop.sweatdepartment.com/collections/:splat"
+  status = 301
+  force = true
