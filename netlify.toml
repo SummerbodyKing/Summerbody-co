@@ -4,6 +4,45 @@
 [functions]
   node_bundler = "esbuild"
 
+# KING SUMMERBODY brand short URLs
+# Added Tue May 26, 2026 — CanvasRebel feature live, brand short URLs needed.
+
+[[redirects]]
+  from = "/canvasrebel"
+  to = "https://kingsummerbody-1.optins.com/the-no-math-meal-blueprint?utm_source=canvasrebel&utm_medium=feature&utm_campaign=story2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/call"
+  to = "https://calendly.com/contact-sweatdepartment/discovery-call"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/free"
+  to = "https://kingsummerbody-1.optins.com/the-no-math-meal-blueprint?utm_source=ig_personal&utm_medium=bio"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reset"
+  to = "https://kingsummerbody-1.optins.com/5-day-holiday-reset?utm_source=email&utm_medium=campaign"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/purium"
+  to = "https://ishoppurium.com/homepage?giftcard=summerbody"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guide"
+  to = "https://shop.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint"
+  status = 301
+  force = true
+
 # Defense-in-depth redirects so any hit to /products/*, /cart, /checkout, or /collections/*
 # on the apex domain auto-forwards to the Shopify shop subdomain.
 # Added Fri May 16, 2026 after buy-button 404 incident.
