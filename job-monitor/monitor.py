@@ -541,9 +541,16 @@ def fetch_jobs(fetcher: Fetcher, target: dict) -> list[dict]:
 # Filtering
 # --------------------------------------------------------------------------- #
 def matches_filters(job: dict, keywords: list[str], match_in: str,
-                    location_filter: str) -> bool:
-    if location_filter:
-        if location_filter.lower() not in (job.get("location", "")).lower():
+                    location_filter) -> bool:
+    # location_filter may be a single string or a list of strings. A job
+    # passes if its location contains ANY of the given terms (case-insensitive).
+    locs = location_filter
+    if isinstance(locs, str):
+        locs = [locs] if locs.strip() else []
+    locs = [l for l in (locs or []) if str(l).strip()]
+    if locs:
+        job_loc = (job.get("location", "")).lower()
+        if not any(str(l).lower().strip() in job_loc for l in locs):
             return False
     if not keywords or match_in == "all":
         return True

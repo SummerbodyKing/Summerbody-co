@@ -18,18 +18,35 @@ respect_robots: true            # honor robots.txt (recommended: keep true)
 
 # ---- Filtering --------------------------------------------------------------
 # Keywords are case-insensitive. Empty list = match all jobs.
+# A keyword matches as a substring, so "marketing" also catches "Digital
+# Marketing" and "Marketing Operations".
 keywords:
-  - communications
   - marketing
-  - public information
+  - communications
+  - content
+  - social media manager
+  - digital strategist
+  - brand manager
+  - customer success
+  - demand generation       # the ModMed role you wanted most
+  - sales operations        # ModMed "Sales Operations Business Partner"
+  - revenue operations      # ModMed "Revenue Operations Analyst, Sales"
 
 # Where to look for keywords:
 #   title_or_description  (default) | title_only | all (ignore keywords)
 match_in: title_or_description
 
-# Only notify for jobs whose location contains this text (case-insensitive).
-# Leave "" for any location.
-location_filter: ""             # e.g. "Hollywood"
+# Only notify for jobs whose location contains ANY of these terms
+# (case-insensitive). Use [] for any location. Remote roles usually say
+# "Remote" in their location text, so "Remote" catches them.
+location_filter:
+  - Remote
+  - Hybrid
+  - Boca Raton
+  - Delray
+  - Boynton
+  - Lake Worth
+  - Pompano
 
 # ---- Notifications ----------------------------------------------------------
 notify:
@@ -59,19 +76,25 @@ notify:
 # Supported explicit types: greenhouse | lever | workday | governmentjobs |
 #                           rss | html | auto
 targets:
-  # --- Example: a city/county careers site (GovernmentJobs/NeoGov) ----------
-  # - name: hollywood-fl
-  #   url: "https://www.governmentjobs.com/careers/hollywoodfl"
+  # --- ModMed (Workday) -----------------------------------------------------
+  # NOTE: point at the BOARD (all jobs), not a single job page. The monitor
+  # watches the whole board and alerts you when a NEW posting appears.
+  - name: modmed
+    url: "https://modmed.wd501.myworkdayjobs.com/en-US/ModMed12"
+    type: workday
 
-  # --- Example: Greenhouse board --------------------------------------------
-  # - name: some-company
-  #   url: "https://boards.greenhouse.io/somecompany"
+  # --- AP Companies (iSolved Hire) ------------------------------------------
+  # The link you gave was a single posting. To catch NEW jobs there, we need
+  # the company's jobs LISTING page. Best guess below — run --test to confirm
+  # it parses; it may be JS-rendered and need Playwright. If it finds nothing,
+  # send me the page that lists ALL of their openings.
+  - name: ap-companies
+    url: "https://apcompanies.isolvedhire.com/jobs/"
+    enabled: true
 
-  # --- Example: Lever board -------------------------------------------------
-  # - name: another-company
-  #   url: "https://jobs.lever.co/anothercompany"
-
-  # --- Example: a plain careers page (HTML / RSS auto-detect) ----------------
-  # - name: city-of-x
-  #   url: "https://www.cityofx.org/jobs"
-  #   enabled: true
+  # --- Indeed link you sent: NOT usable -------------------------------------
+  # Indeed's terms forbid automated scraping, so this monitor refuses it. To
+  # watch that role, find the EMPLOYER's own careers page (often Workday/
+  # Greenhouse/Lever) and add it here instead.
+  # - name: some-employer
+  #   url: "https://careers.someemployer.com/"
