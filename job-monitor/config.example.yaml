@@ -1,0 +1,77 @@
+# ---------------------------------------------------------------------------
+# Job monitor configuration.
+#
+# Copy this file to  config.yaml  and edit it. config.yaml is gitignored so
+# your ntfy topic / email password never get committed.
+# ---------------------------------------------------------------------------
+
+# A clear, honest User-Agent. Put a real contact in it so site admins can
+# reach you if needed. This is part of being a polite monitor.
+user_agent: "JobMonitor/1.0 (+https://github.com/SummerbodyKing/Summerbody-co; contact: sb2kfit@gmail.com)"
+
+# How often to poll each site (minutes). Politeness floor is 15; lower values
+# are automatically raised to 15.
+check_interval_minutes: 20
+
+request_timeout_seconds: 30
+respect_robots: true            # honor robots.txt (recommended: keep true)
+
+# ---- Filtering --------------------------------------------------------------
+# Keywords are case-insensitive. Empty list = match all jobs.
+keywords:
+  - communications
+  - marketing
+  - public information
+
+# Where to look for keywords:
+#   title_or_description  (default) | title_only | all (ignore keywords)
+match_in: title_or_description
+
+# Only notify for jobs whose location contains this text (case-insensitive).
+# Leave "" for any location.
+location_filter: ""             # e.g. "Hollywood"
+
+# ---- Notifications ----------------------------------------------------------
+notify:
+  channel: ntfy                 # ntfy | email
+
+  ntfy:
+    server: "https://ntfy.sh"
+    # Pick a long, hard-to-guess topic name (anyone who knows it can read your
+    # alerts). Then subscribe to this exact topic in the ntfy phone app.
+    topic: "CHANGE-ME-to-a-secret-topic-name"
+    priority: "default"         # min | low | default | high | max
+
+  email:                        # fallback; only used if channel: email
+    smtp_host: ""               # e.g. "smtp.gmail.com"
+    smtp_port: 587
+    use_tls: true               # true = STARTTLS (587); false = SSL (465)
+    username: ""
+    password: ""                # use an app password, not your login password
+    from_addr: ""
+    to_addr: ""
+
+# ---- Targets ----------------------------------------------------------------
+# Add one block per careers page / job board. 'type' is optional — by default
+# the monitor auto-detects Greenhouse, Lever, Workday, GovernmentJobs/NeoGov,
+# RSS/Atom feeds, then falls back to HTML (and Playwright for JS pages).
+#
+# Supported explicit types: greenhouse | lever | workday | governmentjobs |
+#                           rss | html | auto
+targets:
+  # --- Example: a city/county careers site (GovernmentJobs/NeoGov) ----------
+  # - name: hollywood-fl
+  #   url: "https://www.governmentjobs.com/careers/hollywoodfl"
+
+  # --- Example: Greenhouse board --------------------------------------------
+  # - name: some-company
+  #   url: "https://boards.greenhouse.io/somecompany"
+
+  # --- Example: Lever board -------------------------------------------------
+  # - name: another-company
+  #   url: "https://jobs.lever.co/anothercompany"
+
+  # --- Example: a plain careers page (HTML / RSS auto-detect) ----------------
+  # - name: city-of-x
+  #   url: "https://www.cityofx.org/jobs"
+  #   enabled: true

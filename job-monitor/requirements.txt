@@ -1,0 +1,10 @@
+# Core (required)
+requests>=2.31
+PyYAML>=6.0
+beautifulsoup4>=4.12
+feedparser>=6.0
+lxml>=5.0
+
+# Optional: only needed for JavaScript-rendered careers pages.
+# After installing, you must also run:  playwright install chromium
+playwright>=1.40

@@ -1,0 +1,12 @@
+# Secrets / local config
+config.yaml
+
+# Runtime state and logs
+data/
+logs/
+
+# Python virtual environment
+venv/
+.venv/
+__pycache__/
+*.pyc
