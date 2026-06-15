@@ -1,0 +1,69 @@
+# ============================================================
+#  KINGsjobs configuration
+#  Edit this file to add/remove sites or change filters.
+# ============================================================
+
+# Employer careers pages to watch.
+# - ModMed uses Workday (official JSON feed - the reliable path).
+#   The URL is the careers SITE base, NOT a single job, so we see ALL new jobs.
+# - AP Companies uses isolvedHire (we read its job listing).
+targets:
+  - name: ModMed
+    url: https://modmed.wd501.myworkdayjobs.com/en-US/ModMed12
+  - name: APCompanies
+    url: https://apcompanies.isolvedhire.com/jobs/1763012
+
+# Case-insensitive. A job matches if ANY keyword appears in its title/location.
+# Empty list ([]) means "match every job".
+keywords:
+  - communications
+  - marketing
+  - public information
+  - content
+  - social media manager
+  - digital strategist
+  - brand manager
+  - customer success
+
+# A job matches if its location contains ANY of these (case-insensitive).
+# "remote" catches ModMed's "Remote - USA" postings. Empty list = any location.
+# NOTE: if a source doesn't report a location, the job is kept (better a
+# false alert than a missed one) - tighten later if it gets noisy.
+locations:
+  - remote
+  - boca raton
+  - delray beach
+  - boynton beach
+  - lake worth
+  - pompano
+
+# Minimum 15 (politeness floor). Default 20.
+check_interval_minutes: 20
+
+# -------- Phone push via ntfy.sh (primary) --------
+# 1. Install the free "ntfy" app on your phone (App Store / Google Play).
+# 2. In the app, tap + and SUBSCRIBE to the exact topic below.
+# 3. Keep this name secret-ish (anyone who knows it can see your alerts).
+#    Change it to anything you like, then re-subscribe in the app to match.
+ntfy_topic: kingsjobs-sb2k-a7q3mn
+
+# A clear, honest User-Agent so site owners know who is calling.
+user_agent: "KINGsjobs/1.0 (personal job alert; sb2kfit@gmail.com)"
+
+# -------- Email fallback (optional, off by default) --------
+email:
+  enabled: false
+  host: smtp.gmail.com
+  port: 587
+  user: ""
+  password: ""        # use an app password, NOT your real password
+  from_addr: ""
+  to_addr: ""
+
+# -------- Keep the LIVE web page in sync (optional, off by default) --------
+# When enabled, each run re-publishes the dashboard to your KINGsjobs Netlify
+# site. Get a token at app.netlify.com > User settings > Applications.
+netlify:
+  enabled: false
+  site_id: ""
+  auth_token: ""

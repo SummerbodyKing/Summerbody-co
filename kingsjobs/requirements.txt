@@ -1,0 +1,7 @@
+requests>=2.31
+PyYAML>=6.0
+beautifulsoup4>=4.12
+lxml>=4.9
+# Optional - only needed for JavaScript-rendered career pages.
+# Install separately:  pip install playwright && playwright install chromium
+# playwright>=1.40
