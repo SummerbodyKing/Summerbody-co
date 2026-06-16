@@ -10,124 +10,115 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --purple:#4A1D72;
-  --deep:#36135A;
-  --bright:#7B3FF2;
-  --lav:#F1EAFC;
-  --coral:#F2683C;
-  --yellow:#FBB540;
-  --sky:#6FA8DC;
-  --violet:#9B6BF0;
-  --bluebg:#EAF2FC;
-  --paper:#FFFFFF;
-  --ink:#2A2342;
-  --line:#E7DEF4;
-  --muted:#6A5F84;
+  --purple:#4A1D72;--deep:#36135A;--bright:#7B3FF2;--lav:#F1EAFC;
+  --coral:#F2683C;--yellow:#FBB540;--sky:#6FA8DC;--violet:#9B6BF0;
+  --bluebg:#EAF2FC;--paper:#FFFFFF;--ink:#2A2342;--line:#E7DEF4;--muted:#6A5F84;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
 h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.12;color:var(--purple);font-weight:700}
-.wrap{max-width:980px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
 a{color:var(--bright);text-decoration:none}
-.btn{display:inline-block;padding:13px 24px;border-radius:30px;font-weight:600;font-family:'Inter';transition:transform .15s ease, box-shadow .15s ease}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--coral);color:#fff;box-shadow:0 8px 22px rgba(242,104,60,.32)}
-.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.btn{display:inline-block;padding:13px 26px;border-radius:30px;font-weight:600;transition:transform .18s ease, box-shadow .18s ease}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 8px 22px rgba(242,104,60,.35)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
 .kicker{display:inline-block;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--bright);margin-bottom:14px}
 
-/* top bar */
+/* paint splats */
+.splat{position:absolute;z-index:1;pointer-events:none}
+.splat svg{width:100%;height:100%;display:block}
+
 .topbar{background:var(--deep);color:#fff;font-size:13px}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:10px 22px}
 .topbar a{color:#e4d6f7}
 
 /* hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(155deg,#5A2A92,#36135A);color:#fff;padding:70px 0 76px}
-.hero h1{color:#fff;font-size:46px;font-weight:800;max-width:18ch}
-.hero p{color:#e7dcf6;font-size:18px;margin:18px 0 28px;max-width:54ch}
-.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
-.blob{position:absolute;border-radius:50%;filter:blur(1px);opacity:.9;animation:float 7s ease-in-out infinite}
-.blob.c{width:70px;height:70px;background:var(--coral);top:60px;right:9%}
-.blob.y{width:46px;height:46px;background:var(--yellow);top:150px;right:22%;animation-delay:1.2s}
-.blob.v{width:90px;height:90px;background:var(--violet);bottom:30px;right:4%;animation-delay:.6s;opacity:.65}
-.blob.s{width:38px;height:38px;background:var(--sky);bottom:70px;left:6%;animation-delay:1.8s}
-.blob.c2{width:28px;height:28px;background:var(--coral);top:40px;left:14%;opacity:.7;animation-delay:2.4s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero{position:relative;overflow:hidden;background:linear-gradient(155deg,#5A2A92,#36135A);color:#fff;padding:74px 0 80px}
+.hero h1{color:#fff;font-size:48px;font-weight:800;max-width:17ch}
+.hero p{color:#e7dcf6;font-size:18px;margin:18px 0 26px;max-width:56ch}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.riskline{margin-top:16px;font-size:14px;color:#cdbbe9}
 
 /* sections */
-section{padding:58px 0;border-bottom:1px solid var(--line);position:relative}
-section h2{font-size:31px;margin-bottom:8px}
-.lead{color:var(--muted);font-size:17px;max-width:62ch;margin-bottom:26px}
+section{padding:58px 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+section h2{font-size:32px;margin-bottom:8px}
+.lead{color:var(--muted);font-size:17px;max-width:64ch;margin-bottom:26px}
 
-/* video */
 .video{background:var(--bluebg)}
-.video-box{aspect-ratio:16/9;background:linear-gradient(155deg,#5A2A92,#36135A);border-radius:16px;display:flex;align-items:center;justify-content:center;color:#d9c9f2;font-size:15px}
+.video-box{aspect-ratio:16/9;background:linear-gradient(155deg,#5A2A92,#36135A);border-radius:18px;display:flex;align-items:center;justify-content:center;color:#d9c9f2;font-size:15px}
 
-/* funnel */
+/* shared tile hover-lift */
+.tile{background:#fff;border:1px solid var(--line);border-radius:16px;transition:transform .2s ease, box-shadow .2s ease}
+.tile:hover{transform:translateY(-8px);box-shadow:0 18px 34px rgba(74,29,114,.16)}
+
 .funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:6px 0 22px}
-.stage{background:var(--lav);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stage{padding:16px;background:var(--lav)!important}
 .stage b{display:block;color:var(--purple);font-family:'Poppins';font-size:18px;margin-bottom:4px}
 .stage span{font-size:13px;color:var(--muted)}
 .tactics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;border-top:4px solid var(--bright)}
+.card{padding:18px;border-top:4px solid var(--bright)}
 .card:nth-child(2){border-top-color:var(--coral)}
 .card:nth-child(3){border-top-color:var(--yellow)}
 .card h3{font-size:16px;color:var(--purple);margin-bottom:6px}
 .card p{font-size:14px;color:var(--muted)}
 
-/* table */
 table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line)}
 th{background:var(--purple);color:#fff;font-weight:600;font-size:13px}
 tr:last-child td{border-bottom:none}
 .note{font-size:12px;color:var(--muted);margin-top:10px;font-style:italic}
 
-/* calendar */
 .cal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.week{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;border-top:4px solid var(--violet)}
+.week{padding:16px;border-top:4px solid var(--violet)}
 .week b{font-family:'Poppins';color:var(--bright);font-size:15px}
 .week ul{margin:8px 0 0 16px;font-size:13px;color:var(--muted)}
 
-/* plan */
 .plan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.phase{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.phase{padding:22px}
 .phase:nth-child(1){border-top:5px solid var(--coral)}
 .phase:nth-child(2){border-top:5px solid var(--yellow)}
 .phase:nth-child(3){border-top:5px solid var(--bright)}
 .phase h3{color:var(--purple);font-size:18px;margin-bottom:8px}
-.phase ul{margin-left:16px;font-size:14px;color:var(--ink)}
+.phase ul{margin-left:16px;font-size:14px}
 .phase li{margin-bottom:6px}
 
-/* proof */
+/* resume */
+.resume{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+.role{padding:18px;border-left:4px solid var(--bright)}
+.role:nth-child(2n){border-left-color:var(--coral)}
+.role h3{font-size:16px;color:var(--purple)}
+.role .meta{font-size:13px;color:var(--bright);font-weight:600;margin:2px 0 8px}
+.role ul{margin-left:16px;font-size:13.5px;color:var(--muted)}
+.role li{margin-bottom:5px}
+.eduline{margin-top:18px;font-size:15px;color:var(--ink)}
+.eduline b{color:var(--purple)}
+
 .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}
-.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.stat{padding:22px}
 .stat:nth-child(1) b{color:var(--coral)}
 .stat:nth-child(2) b{color:var(--bright)}
 .stat:nth-child(3) b{color:var(--violet)}
 .stat:nth-child(4) b{color:var(--yellow)}
 .stat b{display:block;font-family:'Poppins';font-size:26px}
 .stat span{font-size:13px;color:var(--muted)}
-.creds{margin-top:22px;font-size:15px;color:var(--ink)}
-.creds b{color:var(--purple)}
 
-/* cta footer */
 .foot{position:relative;overflow:hidden;background:linear-gradient(155deg,#5A2A92,#36135A);color:#fff;text-align:center}
-.foot h2{color:#fff}
-.foot p{color:#e7dcf6;margin:10px 0 22px}
-.contact{color:#e4d6f7;font-size:15px;margin-top:18px}
-.contact a{color:#fff;font-weight:600}
-
+.foot h2{color:#fff}.foot p{color:#e7dcf6;margin:10px 0 22px}
+.contact{color:#e4d6f7;font-size:15px;margin-top:18px}.contact a{color:#fff;font-weight:600}
 .disclaimer{background:#fff;color:var(--muted);font-size:12px;text-align:center;padding:22px;line-height:1.6}
 
 @media(max-width:760px){
-  .hero h1{font-size:33px}
+  .hero h1{font-size:34px}
   .funnel,.proof{grid-template-columns:1fr 1fr}
-  .tactics,.plan,.cal{grid-template-columns:1fr}
-  .blob{display:none}
+  .tactics,.plan,.cal,.resume{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="splat" viewBox="0 0 220 220"><g fill="currentColor"><path d="M108 26c16-7 33 3 38 20 17 0 31 14 26 31 15 7 19 28 5 39 9 14-1 33-18 33-3 16-22 24-36 14-11 12-31 9-37-6-17 2-30-12-25-28-15-8-16-29-2-38-6-15 7-31 23-28 4-15 13-23 29-23z"/><circle cx="30" cy="46" r="9"/><circle cx="196" cy="60" r="11"/><circle cx="44" cy="186" r="7"/><circle cx="190" cy="170" r="9"/><circle cx="176" cy="28" r="5"/><circle cx="20" cy="120" r="6"/><circle cx="120" cy="206" r="6"/></g></symbol></svg>
 
 <div class="topbar"><div class="wrap">
   <span>Terrence Michael Scott</span>
@@ -135,15 +126,19 @@ tr:last-child td{border-bottom:none}
 </div></div>
 
 <header class="hero">
-  <span class="blob c"></span><span class="blob y"></span><span class="blob v"></span><span class="blob s"></span><span class="blob c2"></span>
+  <span class="splat" style="width:150px;height:150px;color:var(--coral);top:30px;right:6%;opacity:.9;transform:rotate(15deg)"><svg><use href="#splat"/></svg></span>
+  <span class="splat" style="width:90px;height:90px;color:var(--yellow);top:160px;right:24%;opacity:.85;transform:rotate(-20deg)"><svg><use href="#splat"/></svg></span>
+  <span class="splat" style="width:120px;height:120px;color:var(--violet);bottom:-10px;right:3%;opacity:.6;transform:rotate(40deg)"><svg><use href="#splat"/></svg></span>
+  <span class="splat" style="width:70px;height:70px;color:var(--sky);bottom:40px;left:4%;opacity:.8;transform:rotate(10deg)"><svg><use href="#splat"/></svg></span>
   <div class="wrap">
   <span class="kicker" style="color:#FBB540">Demand Generation Specialist &middot; R4527</span>
-  <h1>I did not just apply. I started the work.</h1>
-  <p>A 2 minute look at how I would run demand generation for ModMed's Key Segment, with the funnel, a sample weekly report, and a first 90 day plan.</p>
+  <h1>Most people send a resume. I sent you a campaign.</h1>
+  <p>Two minutes here shows you exactly how I would run demand gen for ModMed's Key Segment: the funnel, a sample weekly report, my first 90 days, and my resume. All in one place.</p>
   <div class="cta">
     <a class="btn btn-primary" href="#book">Book a 15 minute call</a>
     <a class="btn btn-ghost" href="#video">Watch my 90 second intro</a>
   </div>
+  <p class="riskline">Worst case, you walk away with free demand-gen ideas for the Key Segment. No risk to you.</p>
 </div></header>
 
 <section class="video" id="video"><div class="wrap">
@@ -164,15 +159,15 @@ tr:last-child td{border-bottom:none}
   <h2>Full funnel, mapped end to end</h2>
   <p class="lead">A 30 day campaign for 1 to 3 provider practices, themed "Get your evenings back."</p>
   <div class="funnel">
-    <div class="stage"><b>MQL</b><span>Paid social and email drive a "time back" guide download and webinar signups.</span></div>
-    <div class="stage"><b>SAL</b><span>Score on practice size and role, then hand qualified leads to Sales Development.</span></div>
-    <div class="stage"><b>SQL</b><span>SDR books demos for doctor owners who fit the Key Segment profile.</span></div>
-    <div class="stage"><b>Pipeline</b><span>Track demo to opportunity, report weekly, and feed wins back into targeting.</span></div>
+    <div class="tile stage"><b>MQL</b><span>Paid social and email drive a "time back" guide download and webinar signups.</span></div>
+    <div class="tile stage"><b>SAL</b><span>Score on practice size and role, then hand qualified leads to Sales Development.</span></div>
+    <div class="tile stage"><b>SQL</b><span>SDR books demos for doctor owners who fit the Key Segment profile.</span></div>
+    <div class="tile stage"><b>Pipeline</b><span>Track demo to opportunity, report weekly, and feed wins back into targeting.</span></div>
   </div>
   <div class="tactics">
-    <div class="card"><h3>Email</h3><p>Subject tests: "Home by dinner, charts still done" and "The 6pm note problem." Short, plain, one ask.</p></div>
-    <div class="card"><h3>Landing page</h3><p>One promise, one form, one proof point. A 3 field form and a download that answers the top question doctors ask.</p></div>
-    <div class="card"><h3>Paid social</h3><p>Meta and LinkedIn to small practice owners. Test pain led versus outcome led creative, hold spend to the best CPL.</p></div>
+    <div class="tile card"><h3>Email</h3><p>Subject tests: "Home by dinner, charts still done" and "The 6pm note problem." Short, plain, one ask.</p></div>
+    <div class="tile card"><h3>Landing page</h3><p>One promise, one form, one proof point. A 3 field form and a download that answers the top question doctors ask.</p></div>
+    <div class="tile card"><h3>Paid social</h3><p>Meta and LinkedIn to small practice owners. Test pain led versus outcome led creative, hold spend to the best CPL.</p></div>
   </div>
 </div></section>
 
@@ -195,10 +190,10 @@ tr:last-child td{border-bottom:none}
   <span class="kicker">Kept in order</span>
   <h2>Sample campaign calendar</h2>
   <div class="cal">
-    <div class="week"><b>Week 1</b><ul><li>Brief and assets</li><li>Landing page live</li><li>Email 1 send</li></ul></div>
-    <div class="week"><b>Week 2</b><ul><li>Paid social launch</li><li>A/B subject test</li><li>First report</li></ul></div>
-    <div class="week"><b>Week 3</b><ul><li>Shift spend to winners</li><li>Webinar push</li><li>SDR sync</li></ul></div>
-    <div class="week"><b>Week 4</b><ul><li>Retarget non openers</li><li>Pipeline review</li><li>Month recap</li></ul></div>
+    <div class="tile week"><b>Week 1</b><ul><li>Brief and assets</li><li>Landing page live</li><li>Email 1 send</li></ul></div>
+    <div class="tile week"><b>Week 2</b><ul><li>Paid social launch</li><li>A/B subject test</li><li>First report</li></ul></div>
+    <div class="tile week"><b>Week 3</b><ul><li>Shift spend to winners</li><li>Webinar push</li><li>SDR sync</li></ul></div>
+    <div class="tile week"><b>Week 4</b><ul><li>Retarget non openers</li><li>Pipeline review</li><li>Month recap</li></ul></div>
   </div>
 </div></section>
 
@@ -206,26 +201,42 @@ tr:last-child td{border-bottom:none}
   <span class="kicker">If you hire me</span>
   <h2>My first 90 days</h2>
   <div class="plan">
-    <div class="phase"><h3>Days 1 to 30</h3><ul><li>Learn the product and both segments</li><li>Audit current campaigns and reports</li><li>Clean CRM data and tighten tracking</li></ul></div>
-    <div class="phase"><h3>Days 31 to 60</h3><ul><li>Run my first Key Segment campaign</li><li>Stand up a clean weekly report</li><li>Tighten the lead to SDR handoff</li></ul></div>
-    <div class="phase"><h3>Days 61 to 90</h3><ul><li>Scale what is working by segment</li><li>Cut spend on weak channels</li><li>Share a clear pipeline story</li></ul></div>
+    <div class="tile phase"><h3>Days 1 to 30</h3><ul><li>Learn the product and both segments</li><li>Audit current campaigns and reports</li><li>Clean CRM data and tighten tracking</li></ul></div>
+    <div class="tile phase"><h3>Days 31 to 60</h3><ul><li>Run my first Key Segment campaign</li><li>Stand up a clean weekly report</li><li>Tighten the lead to SDR handoff</li></ul></div>
+    <div class="tile phase"><h3>Days 61 to 90</h3><ul><li>Scale what is working by segment</li><li>Cut spend on weak channels</li><li>Share a clear pipeline story</li></ul></div>
   </div>
 </div></section>
 
 <section style="background:var(--lav)"><div class="wrap">
+  <span class="kicker">The resume</span>
+  <h2>Where I have done this work</h2>
+  <p class="lead">Sixteen plus years across marketing, sales operations, and customer success. The marketing thread runs through all of it.</p>
+  <div class="resume">
+    <div class="tile role"><h3>SUMMERBODY &amp; Co. &middot; Founder &amp; Marketing Lead</h3><div class="meta">2019 to Present</div><ul><li>Full funnel marketing across email, paid social, events, and sponsorships for the brand and client accounts.</li><li>Built and segmented a 12,000+ contact email list; managed paid budgets up to $500 a day.</li><li>Ran 25+ multi channel campaigns with 6%+ year over year audience growth.</li></ul></div>
+    <div class="tile role"><h3>Embraer Aerospace &middot; Commercial Account Manager, EMEA</h3><div class="meta">2024 to 2025</div><ul><li>Owned data tracking and reporting across cross functional teams.</li><li>Held 93%+ SLA performance and improved delivery rates 25%.</li></ul></div>
+    <div class="tile role"><h3>Global Resources &middot; Client Strategy &amp; Sales Consultant</h3><div class="meta">2023</div><ul><li>Led sales and marketing workshops for SMB clients.</li><li>Built KPI tracking tools that lifted efficiency 16%.</li></ul></div>
+    <div class="tile role"><h3>Ringmaster Technologies &middot; Sales Operations &amp; Enablement Manager</h3><div class="meta">2022 to 2023</div><ul><li>Built Salesforce workflows and rolled out SaaS tools.</li><li>Drove a 30% buy in increase and 7% revenue lift.</li></ul></div>
+    <div class="tile role"><h3>Great Virtualworks &middot; Sales Operations Manager</h3><div class="meta">2017 to 2020</div><ul><li>Used Salesforce to optimize campaign performance and conversion.</li><li>Saved $50k a year applying Lean Six Sigma.</li></ul></div>
+    <div class="tile role"><h3>American Express &middot; Platinum Card Sales</h3><div class="meta">2013 to 2017</div><ul><li>Managed high value portfolios with 6% year over year revenue growth.</li><li>Built retention strategies for key clients.</li></ul></div>
+  </div>
+  <p class="eduline"><b>Education and certifications:</b> B.S. Marketing, Nova Southeastern University. Salesforce Associate, PMP, Lean Six Sigma Green Belt, Asana Workflow AI.</p>
+  <p style="margin-top:18px"><a class="btn btn-primary" href="[ADD RESUME PDF LINK]">Download the full resume (PDF)</a></p>
+</div></section>
+
+<section><div class="wrap">
   <span class="kicker">Why me</span>
   <h2>Proof, not promises</h2>
   <div class="proof">
-    <div class="stat"><b>12,000+</b><span>email contacts built and segmented</span></div>
-    <div class="stat"><b>$500/day</b><span>top paid media budget managed</span></div>
-    <div class="stat"><b>25+</b><span>multi channel campaigns run</span></div>
-    <div class="stat"><b>6%+</b><span>year over year audience growth</span></div>
+    <div class="tile stat"><b>12,000+</b><span>email contacts built and segmented</span></div>
+    <div class="tile stat"><b>$500/day</b><span>top paid media budget managed</span></div>
+    <div class="tile stat"><b>25+</b><span>multi channel campaigns run</span></div>
+    <div class="tile stat"><b>6%+</b><span>year over year audience growth</span></div>
   </div>
-  <p class="creds"><b>Foundation:</b> B.S. in Marketing (Nova Southeastern). Salesforce Associate, PMP, Lean Six Sigma Green Belt. Strong in Excel and Google Sheets. I have run email, paid social, and events for my own brand and client accounts, holding click through above the paid social benchmark.</p>
 </div></section>
 
 <section class="foot" id="book">
-  <span class="blob c" style="top:30px;left:8%"></span><span class="blob y" style="top:40px;right:12%"></span>
+  <span class="splat" style="width:110px;height:110px;color:var(--coral);top:20px;left:6%;opacity:.85;transform:rotate(20deg)"><svg><use href="#splat"/></svg></span>
+  <span class="splat" style="width:80px;height:80px;color:var(--yellow);top:30px;right:10%;opacity:.85;transform:rotate(-15deg)"><svg><use href="#splat"/></svg></span>
   <div class="wrap">
   <h2>Let us talk for 15 minutes</h2>
   <p>I will walk you through any part of this and answer anything you want.</p>
