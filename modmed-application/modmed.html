@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Terrence Scott | Demand Generation Specialist (R4527)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B3C49;
+  --deep:#08313B;
+  --teal:#14B8C4;
+  --teal-soft:#E6F6F8;
+  --coral:#F2683C;
+  --paper:#FFFFFF;
+  --mist:#F4F8F9;
+  --ink:#16242B;
+  --line:#DCE7EA;
+  --muted:#5A6B72;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.1;color:var(--navy)}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+a{color:var(--teal);text-decoration:none}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:600;font-family:'Inter';transition:transform .15s ease, box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 8px 20px rgba(242,104,60,.28)}
+.btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
+.kicker{display:inline-block;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--teal);margin-bottom:14px}
+
+/* top bar */
+.topbar{background:var(--deep);color:#fff;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:10px 22px}
+.topbar a{color:#cfeef1}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--navy),var(--deep));color:#fff;padding:64px 0 70px}
+.hero h1{color:#fff;font-size:44px;font-weight:700;max-width:18ch}
+.hero p{color:#d7e7ea;font-size:18px;margin:18px 0 26px;max-width:54ch}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+
+/* sections */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+section h2{font-size:30px;margin-bottom:8px}
+.lead{color:var(--muted);font-size:17px;max-width:62ch;margin-bottom:26px}
+
+/* video */
+.video{background:var(--mist)}
+.video-box{aspect-ratio:16/9;background:#0d2730;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#9fc3cb;font-size:15px;border:1px dashed #2c5560}
+
+/* funnel */
+.funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:6px 0 22px}
+.stage{background:var(--teal-soft);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stage b{display:block;color:var(--navy);font-family:'Fraunces';font-size:18px;margin-bottom:4px}
+.stage span{font-size:13px;color:var(--muted)}
+.tactics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{font-size:16px;color:var(--navy);margin-bottom:6px}
+.card p{font-size:14px;color:var(--muted)}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-weight:600;font-size:13px}
+tr:last-child td{border-bottom:none}
+.note{font-size:12px;color:var(--muted);margin-top:10px;font-style:italic}
+
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.week{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.week b{font-family:'Fraunces';color:var(--teal);font-size:15px}
+.week ul{margin:8px 0 0 16px;font-size:13px;color:var(--muted)}
+
+/* plan */
+.plan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.phase{background:var(--mist);border:1px solid var(--line);border-radius:14px;padding:20px}
+.phase h3{color:var(--coral);font-size:18px;margin-bottom:8px}
+.phase ul{margin-left:16px;font-size:14px;color:var(--ink)}
+.phase li{margin-bottom:6px}
+
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.stat b{display:block;font-family:'Fraunces';font-size:26px;color:var(--navy)}
+.stat span{font-size:13px;color:var(--muted)}
+.creds{margin-top:22px;font-size:15px;color:var(--ink)}
+.creds b{color:var(--navy)}
+
+/* cta footer */
+.foot{background:linear-gradient(160deg,var(--navy),var(--deep));color:#fff;text-align:center}
+.foot h2{color:#fff}
+.foot p{color:#d7e7ea;margin:10px 0 22px}
+.contact{color:#cfeef1;font-size:15px;margin-top:18px}
+.contact a{color:#fff;font-weight:600}
+
+.disclaimer{background:#fff;color:var(--muted);font-size:12px;text-align:center;padding:22px;line-height:1.6}
+
+@media(max-width:760px){
+  .hero h1{font-size:32px}
+  .funnel,.proof{grid-template-columns:1fr 1fr}
+  .tactics,.plan,.cal{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>Terrence Michael Scott</span>
+  <span>Built for ModMed &middot; Demand Generation Specialist (R4527)</span>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Demand Generation Specialist &middot; R4527</span>
+  <h1>I did not just apply. I started the work.</h1>
+  <p>A 2 minute look at how I would run demand generation for ModMed's Key Segment, with the funnel, a sample weekly report, and a first 90 day plan.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#book">Book a 15 minute call</a>
+    <a class="btn btn-ghost" href="#video">Watch my 90 second intro</a>
+  </div>
+</div></header>
+
+<section class="video" id="video"><div class="wrap">
+  <span class="kicker">Hello in person</span>
+  <h2>90 seconds, face to face</h2>
+  <p class="lead">A quick hello so you know the person behind the work before we ever meet.</p>
+  <div class="video-box">[ Add 90 second intro video here ]</div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="kicker">What I see in this role</span>
+  <h2>Two segments, two playbooks</h2>
+  <p class="lead">R4527 splits across the Key Segment (1 to 3 providers) and the Strategic Segment (4 to 19 providers). The Key Segment buyer is a doctor owner with a lean budget who needs time back fast. The Strategic buyer weighs total cost of ownership and staff retention across multiple sites. Same funnel, different message. Below is a sample built for the Key Segment.</p>
+</div></section>
+
+<section style="background:var(--mist)"><div class="wrap">
+  <span class="kicker">Sample campaign &middot; Key Segment</span>
+  <h2>Full funnel, mapped end to end</h2>
+  <p class="lead">A 30 day campaign for 1 to 3 provider practices, themed "Get your evenings back."</p>
+  <div class="funnel">
+    <div class="stage"><b>MQL</b><span>Paid social and email drive a "time back" guide download and webinar signups.</span></div>
+    <div class="stage"><b>SAL</b><span>Score on practice size and role, then hand qualified leads to Sales Development.</span></div>
+    <div class="stage"><b>SQL</b><span>SDR books demos for doctor owners who fit the Key Segment profile.</span></div>
+    <div class="stage"><b>Pipeline</b><span>Track demo to opportunity, report weekly, and feed wins back into targeting.</span></div>
+  </div>
+  <div class="tactics">
+    <div class="card"><h3>Email</h3><p>Subject tests: "Home by dinner, charts still done" and "The 6pm note problem." Short, plain, one ask.</p></div>
+    <div class="card"><h3>Landing page</h3><p>One promise, one form, one proof point. A 3 field form and a download that answers the top question doctors ask.</p></div>
+    <div class="card"><h3>Paid social</h3><p>Meta and LinkedIn to small practice owners. Test pain led versus outcome led creative, hold spend to the best CPL.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="kicker">The day to day of this role</span>
+  <h2>Sample weekly performance report</h2>
+  <p class="lead">This is the work the job is really about. Clean numbers, a trend, and one clear next step.</p>
+  <table>
+    <tr><th>Metric</th><th>Week 1</th><th>Week 2</th><th>Trend</th><th>Note</th></tr>
+    <tr><td>MQLs</td><td>42</td><td>57</td><td>Up 36%</td><td>Webinar creative outperformed</td></tr>
+    <tr><td>SALs</td><td>19</td><td>28</td><td>Up 47%</td><td>Tighter scoring helped</td></tr>
+    <tr><td>SQLs</td><td>7</td><td>11</td><td>Up 57%</td><td>SDR follow up under 1 hour</td></tr>
+    <tr><td>Pipeline added</td><td>$58k</td><td>$84k</td><td>Up 45%</td><td>Two multi location demos</td></tr>
+    <tr><td>Cost per lead</td><td>$41</td><td>$33</td><td>Down 20%</td><td>Shifted spend to top ad set</td></tr>
+  </table>
+  <p class="note">Sample figures for illustration. Method is real, numbers are placeholders.</p>
+</div></section>
+
+<section style="background:var(--mist)"><div class="wrap">
+  <span class="kicker">Kept in order</span>
+  <h2>Sample campaign calendar</h2>
+  <div class="cal">
+    <div class="week"><b>Week 1</b><ul><li>Brief and assets</li><li>Landing page live</li><li>Email 1 send</li></ul></div>
+    <div class="week"><b>Week 2</b><ul><li>Paid social launch</li><li>A/B subject test</li><li>First report</li></ul></div>
+    <div class="week"><b>Week 3</b><ul><li>Shift spend to winners</li><li>Webinar push</li><li>SDR sync</li></ul></div>
+    <div class="week"><b>Week 4</b><ul><li>Retarget non openers</li><li>Pipeline review</li><li>Month recap</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="kicker">If you hire me</span>
+  <h2>My first 90 days</h2>
+  <div class="plan">
+    <div class="phase"><h3>Days 1 to 30</h3><ul><li>Learn the product and both segments</li><li>Audit current campaigns and reports</li><li>Clean CRM data and tighten tracking</li></ul></div>
+    <div class="phase"><h3>Days 31 to 60</h3><ul><li>Run my first Key Segment campaign</li><li>Stand up a clean weekly report</li><li>Tighten the lead to SDR handoff</li></ul></div>
+    <div class="phase"><h3>Days 61 to 90</h3><ul><li>Scale what is working by segment</li><li>Cut spend on weak channels</li><li>Share a clear pipeline story</li></ul></div>
+  </div>
+</div></section>
+
+<section style="background:var(--mist)"><div class="wrap">
+  <span class="kicker">Why me</span>
+  <h2>Proof, not promises</h2>
+  <div class="proof">
+    <div class="stat"><b>12,000+</b><span>email contacts built and segmented</span></div>
+    <div class="stat"><b>$500/day</b><span>top paid media budget managed</span></div>
+    <div class="stat"><b>25+</b><span>multi channel campaigns run</span></div>
+    <div class="stat"><b>[confirm]%</b><span>click through, above benchmark</span></div>
+  </div>
+  <p class="creds"><b>Foundation:</b> B.S. in Marketing (Nova Southeastern). Salesforce Associate, PMP, Lean Six Sigma Green Belt. Strong in Excel and Google Sheets. I have run email, paid social, and events for my own brand and for client accounts.</p>
+</div></section>
+
+<section class="foot" id="book"><div class="wrap">
+  <h2>Let us talk for 15 minutes</h2>
+  <p>I will walk you through any part of this and answer anything you want.</p>
+  <a class="btn btn-primary" href="[CALENDLY LINK]">Book a time</a>
+  <p class="contact">Terrence Michael Scott<br>
+  <a href="tel:9545343282">954.534.3282</a> &middot; <a href="mailto:Scott.Terrence.1@gmail.com">Scott.Terrence.1@gmail.com</a> &middot; <a href="https://linkedin.com/in/kingsummerbody">LinkedIn</a></p>
+</div></section>
+
+<div class="disclaimer">
+  Independent concept created by Terrence Michael Scott to show how I would approach this role. Not affiliated with, authorized by, or endorsed by Modernizing Medicine. No company logo or seal is used and no data is collected on this page. Sample metrics are for illustration only.
+</div>
+
+</body>
+</html>
