@@ -17,7 +17,7 @@ Audience: MailerLite warm list (~188 subs as of June 2026)
 
 | # | Send Date | File | Subject | Theme | Status |
 |---|---|---|---|---|---|
-| E3 | Tue Jun 17, 2026 | `E03-2026-06-17.md` | I broke my promise. Here's the truth. | Mother's Day grief + system promise | DRAFT |
+| E3 | **Tue Jun 16, 2026 @ 14:30 ET (SENT)** | `E03-2026-06-17.md` | I broke my promise. Here's the truth. | Mother's Day grief + system promise | **✅ SENT** |
 | E4 | Tue Jun 24, 2026 | `E04-2026-06-24.md` | The cheapest fat-loss tool nobody uses correctly | Pillar 1 — Water Protocol | DRAFT |
 | E5 | Tue Jul 1, 2026 | `E05-2026-07-01.md` | Half the year is gone. What did you do with it? | July mid-year reset | DRAFT |
 | E6 | Tue Jul 8, 2026 | `E06-2026-07-08.md` | The part of my story I haven't told publicly | Vulnerability + soft sell | DRAFT |
