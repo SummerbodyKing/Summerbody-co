@@ -13,10 +13,12 @@
   --bg:#FFFFFF;--ink:#241247;--muted:#6B6385;
   --purple:#5B2A8C;--violet:#7C4DCC;--lilac:#B79CE6;--yellow:#F4C20D;
   --card:#FFFFFF;--line:rgba(36,18,71,.10);
+  --cur:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMyAyIEwzIDIwLjUgTDggMTUuOCBMMTEuMiAyMi41IEwxMy43IDIxLjMgTDEwLjUgMTQuOCBMMTcgMTQuOCBaIiBmaWxsPSIjM2QyYTVjIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMS4zIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+") 5 4;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--ink);background:transparent;line-height:1.55;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:transparent;line-height:1.55;overflow-x:hidden;cursor:var(--cur),auto}
+a,button,.btn,.tab,.tile{cursor:var(--cur),auto}
 h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.05;color:var(--ink);font-weight:700;letter-spacing:-.02em}
 .wrap{max-width:1080px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
 a{color:var(--purple);text-decoration:none}
@@ -33,12 +35,8 @@ a{color:var(--purple);text-decoration:none}
 @keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(5vw,-5vw) scale(1.06)}66%{transform:translate(-4vw,-3vw) scale(1.1)}}
 @media(prefers-reduced-motion:reduce){.waterbg span{animation:none}}
 
-/* custom cursor — slightly bigger, easy to find; does NOT carry the background glow */
-.cursor{position:fixed;top:0;left:0;width:42px;height:42px;border-radius:50%;pointer-events:none;z-index:95;
-  border:1.5px solid rgba(91,42,140,.55);background:radial-gradient(circle,rgba(124,77,204,.22),rgba(124,77,204,.06) 60%,transparent 72%);
-  transform:translate(-50%,-50%);will-change:transform;transition:width .2s ease,height .2s ease,background .2s ease}
-.cursor.big{width:66px;height:66px;background:radial-gradient(circle,rgba(124,77,204,.30),rgba(244,194,13,.12) 60%,transparent 74%)}
-.hello{position:fixed;top:0;left:0;pointer-events:none;z-index:96;transform:translate(-50%,-50%);
+/* "Hello!" bubble that rides beside the (large) arrow in the hero only */
+.hello{position:fixed;top:0;left:0;pointer-events:none;z-index:96;
   font-family:'Space Grotesk';font-weight:700;font-size:14px;color:#fff;background:linear-gradient(120deg,var(--purple),var(--violet));
   padding:7px 14px;border-radius:22px;white-space:nowrap;box-shadow:0 10px 24px rgba(91,42,140,.40);opacity:0;transition:opacity .45s ease}
 .hello.show{opacity:1}
@@ -77,7 +75,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 
 /* hero */
 .hero{position:relative;overflow:hidden;padding:92px 0 100px}
-.hero .grid{display:grid;grid-template-columns:1.4fr .6fr;gap:46px;align-items:center}
+.hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center}
 .hero h1{font-size:clamp(44px,7vw,84px);max-width:14ch}
 .reveal-h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.04em}
 .reveal-h1 .w>i{display:inline-block;font-style:normal;transform:translateY(116%);animation:wordup .85s cubic-bezier(.2,.85,.25,1) both}
@@ -88,7 +86,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .riskline{margin-top:20px;font-size:14px;color:var(--muted)}
 
 /* orb = photo + spinning swirl + pop-in */
-.orb{position:relative;aspect-ratio:1/1;justify-self:end;width:100%;max-width:330px;animation:pop .9s cubic-bezier(.34,1.56,.64,1) both}
+.orb{position:relative;aspect-ratio:1/1;justify-self:end;width:100%;max-width:420px;animation:pop .9s cubic-bezier(.34,1.56,.64,1) both}
 @keyframes pop{0%{opacity:0;transform:scale(.82)}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.orb{animation:none}}
 .orb .swirl{position:absolute;inset:-15px;border-radius:50%;z-index:0;filter:blur(3px);
@@ -96,8 +94,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.orb .swirl{animation:none}}
 .orb .photo{position:absolute;inset:9px;border-radius:50%;overflow:hidden;z-index:2;background:#efeaf6;box-shadow:0 20px 44px -18px rgba(91,42,140,.55)}
-.orb .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block}
-@media(max-width:820px){.hero .grid{grid-template-columns:1fr}.orb{justify-self:start;max-width:230px;margin-top:6px}}
+.orb .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block}
+@media(max-width:820px){.hero .grid{grid-template-columns:1fr}.orb{justify-self:start;max-width:300px;margin-top:6px}}
 
 /* sections (transparent so the water flows behind) */
 section{padding:64px 0;position:relative;overflow:hidden}
@@ -171,8 +169,7 @@ tr:last-child td{border-bottom:none}
 </head>
 <body>
 <div class="waterbg"><span class="w1"></span><span class="w2"></span><span class="w3"></span><span class="w4"></span></div>
-<div class="cursor" id="cursor"></div>
-<div class="hello" id="hello">Hello.</div>
+<div class="hello" id="hello">Hello!</div>
 
 <nav><div class="wrap">
   <div class="logo">
@@ -321,26 +318,17 @@ tr:last-child td{border-bottom:none}
       wrap.appendChild(inner);h1.appendChild(wrap);h1.appendChild(document.createTextNode(' '));
     });
   }
-  /* custom cursor + first-section "Hello" */
-  var cur=document.getElementById('cursor'),hello=document.getElementById('hello'),hero=document.querySelector('.hero');
-  if(cur&&window.matchMedia('(hover:hover)').matches){
-    var mx=innerWidth/2,my=innerHeight*0.3,cx=mx,cy=my,hx=mx,hy=my,t=0,dismissed=false;
+  /* "Hello!" bubble rides beside the cursor in the first section only; gone after you scroll past the hero, back only on reload */
+  var hello=document.getElementById('hello'),hero=document.querySelector('.hero');
+  if(hello&&window.matchMedia('(hover:hover)').matches){
+    var mx=innerWidth/2,my=innerHeight*0.3,hx=mx,hy=my,dismissed=false;
     addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;},{passive:true});
     addEventListener('scroll',function(){
       var hb=hero?hero.offsetHeight*0.55:400;
-      if(scrollY>hb&&!dismissed){dismissed=true;if(hello)hello.classList.remove('show');}
+      if(scrollY>hb&&!dismissed){dismissed=true;hello.classList.remove('show');}
     },{passive:true});
-    if(hello){setTimeout(function(){if(!dismissed)hello.classList.add('show');},650);}
-    document.addEventListener('mouseover',function(e){if(e.target.closest('a,button'))cur.classList.add('big');});
-    document.addEventListener('mouseout',function(e){if(e.target.closest('a,button'))cur.classList.remove('big');});
-    (function loop(){
-      t+=0.045;
-      cx+=(mx-cx)*0.20;cy+=(my-cy)*0.20;
-      cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
-      if(hello){var ox=30+Math.sin(t)*9,oy=30+Math.cos(t*0.9)*9;hx+=(mx-hx)*0.10;hy+=(my-hy)*0.10;
-        hello.style.transform='translate('+(hx+ox)+'px,'+(hy+oy)+'px) translate(-50%,-50%)';}
-      requestAnimationFrame(loop);
-    })();
+    setTimeout(function(){if(!dismissed)hello.classList.add('show');},600);
+    (function loop(){hx+=(mx-hx)*0.22;hy+=(my-hy)*0.22;hello.style.transform='translate('+(hx+24)+'px,'+(hy+22)+'px)';requestAnimationFrame(loop);})();
   }
 })();
 </script>
