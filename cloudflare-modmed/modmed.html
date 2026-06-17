@@ -161,6 +161,16 @@ tr:last-child td{border-bottom:none}
 .contact{color:rgba(255,255,255,.9);font-size:15px;margin-top:20px}.contact a{color:#fff;font-weight:600}
 .disclaimer{background:rgba(255,255,255,.6);color:var(--muted);font-size:12px;text-align:center;padding:24px;line-height:1.6;position:relative;z-index:2}
 
+/* role toggle (Director R4540 / Demand Gen R4527) */
+.switchwrap{padding:26px 0 0;text-align:center;position:relative;z-index:2}
+.switchwrap .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:12px}
+.roleswitch{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;background:rgba(255,255,255,.65);border:1px solid var(--line);border-radius:34px;padding:6px}
+.roleswitch .rs{cursor:var(--cur),pointer;border:none;background:transparent;color:var(--purple);font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;padding:10px 18px;border-radius:28px;transition:.18s}
+.roleswitch .rs:hover{transform:translateY(-1px)}
+.roleswitch .rs.active{background:var(--purple);color:#fff}
+body[data-view="director"] [data-role="demandgen"]{display:none}
+body[data-view="demandgen"] [data-role="director"]{display:none}
+
 @media(max-width:760px){
   .funnel,.proof{grid-template-columns:1fr 1fr}
   .tactics,.plan,.cal,.resume{grid-template-columns:1fr}
@@ -174,12 +184,9 @@ tr:last-child td{border-bottom:none}
 <nav><div class="wrap">
   <div class="logo">
     <span class="mono">TMS</span>
-    <span class="nav-tag">Demand Generation &middot; R4527</span>
+    <span class="nav-tag">Digital Marketing &middot; ModMed</span>
   </div>
   <div class="tabs">
-    <a class="tab" href="#campaign">Campaign</a>
-    <a class="tab" href="#report">Report</a>
-    <a class="tab" href="#plan">90-Day Plan</a>
     <a class="tab" href="#resume">Resume</a>
     <a class="tab" href="#book">Contact</a>
   </div>
@@ -189,14 +196,14 @@ tr:last-child td{border-bottom:none}
 <header class="hero">
   <div class="wrap"><div class="grid">
     <div>
-      <span class="kicker">Demand Generation Specialist &middot; R4527</span>
+      <span class="kicker">Digital Marketing &middot; ModMed</span>
       <h1 class="reveal-h1" id="h1">Most people send a resume. I sent you a campaign.</h1>
-      <p class="lede">Two minutes here shows you exactly how I would run demand gen for ModMed's Key Segment: the funnel, a sample weekly report, my first 90 days, and my resume. All in one place.</p>
+      <p class="lede">Two minutes here shows you how I'd drive ModMed's digital growth &mdash; the strategy, the AI, the plan, and my resume. All in one place.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#book"><span>Book a 15 minute call</span> <span class="arr">&rarr;</span></a>
-        <a class="btn btn-ghost" href="#campaign"><span>See the campaign</span></a>
+        <a class="btn btn-ghost" href="#resume"><span>See the resume</span></a>
       </div>
-      <p class="riskline">Worst case, you walk away with free demand-gen ideas for the Key Segment. No risk to you.</p>
+      <p class="riskline">Worst case, you walk away with free, AI-driven growth ideas for ModMed. No risk to you.</p>
     </div>
     <div class="orb">
       <div class="swirl"></div>
@@ -205,13 +212,53 @@ tr:last-child td{border-bottom:none}
   </div></div>
 </header>
 
-<section><div class="wrap">
+<div class="switchwrap"><div class="wrap">
+  <div class="lbl">I'm a strong fit for two openings on your team &mdash; pick the one you're hiring for:</div>
+  <div class="roleswitch">
+    <button type="button" class="rs active" data-v="director">Director, Digital Marketing &middot; R4540</button>
+    <button type="button" class="rs" data-v="demandgen">Demand Gen Specialist &middot; R4527</button>
+  </div>
+</div></div>
+
+<!-- ===== DIRECTOR TRACK (R4540) ===== -->
+<section data-role="director"><div class="wrap">
+  <span class="kicker">The mandate</span>
+  <h2>The AI-driven growth engine I'd lead</h2>
+  <p class="lead">Own the full-funnel digital demand generation strategy that drives qualified pipeline and ARR for ModMed's EHR, practice management, and RCM solutions &mdash; with AI embedded in every workflow.</p>
+  <div class="tactics">
+    <div class="tile card"><h3>AI-driven demand gen</h3><p>Integrated campaigns across paid search, paid social, display, programmatic, and ABM to accelerate new-practice acquisition and cross-sell.</p></div>
+    <div class="tile card"><h3>Next-gen search: SEO + GEO</h3><p>Optimize for Google and Bing and for Generative Engine Optimization across AI-search and conversational discovery platforms.</p></div>
+    <div class="tile card"><h3>Martech &amp; AI orchestration</h3><p>Audit and expand the stack; pilot and scale AI tools that automate workflows, personalize outreach, and optimize ad spend.</p></div>
+    <div class="tile card"><h3>Generative content workflows</h3><p>Embed generative AI into creative production, multi-variant testing, and localized landing-page generation to lift conversion.</p></div>
+    <div class="tile card"><h3>Predictive analytics</h3><p>Shift from reactive reporting to ML-based attribution and behavioral data across MQLs, SQLs, CPA, and pipeline ROI.</p></div>
+    <div class="tile card"><h3>Team &amp; exec alignment</h3><p>Lead the digital team and translate AI-driven insight into clear, actionable plans for executive stakeholders.</p></div>
+  </div>
+</div></section>
+
+<section class="tint" data-role="director"><div class="wrap">
+  <span class="kicker">Why me for an AI-forward role</span>
+  <h2>I don't just talk AI &mdash; you're reading it.</h2>
+  <p class="lead">This landing page &mdash; its copy, its variants, its build &mdash; was produced with LLMs and AI workflows. That's generative content and rapid multi-variant testing in action, the same approach I'd bring to ModMed's campaigns, GEO, and content engine. I've also built AI into real operations, including an AI reception system for a 200-plus-member organization.</p>
+</div></section>
+
+<section data-role="director" id="plan-director"><div class="wrap">
+  <span class="kicker">If you hire me</span>
+  <h2>My first 90 days as Director</h2>
+  <div class="plan">
+    <div class="tile phase"><h3>Days 1 to 30</h3><ul><li>Audit the martech/AI stack, paid + organic, and the GEO/SEO baseline</li><li>Meet the team and key stakeholders; map the fastest wins</li><li>Stand up predictive, ML-attribution reporting</li></ul></div>
+    <div class="tile phase"><h3>Days 31 to 60</h3><ul><li>Deploy AI-driven campaign workflows across paid and ABM</li><li>Pilot programmatic and intent-data targeting for SMB practices</li><li>Launch a GEO and generative-content test program</li></ul></div>
+    <div class="tile phase"><h3>Days 61 to 90</h3><ul><li>Scale what lifts pipeline and ARR; cut what doesn't</li><li>Grow ModMed's presence across AI-search ecosystems</li><li>Hand the team a repeatable, AI-driven growth engine</li></ul></div>
+  </div>
+</div></section>
+<!-- ===== END DIRECTOR TRACK ===== -->
+
+<section data-role="demandgen"><div class="wrap">
   <span class="kicker">What I see in this role</span>
   <h2>Two segments, two playbooks</h2>
   <p class="lead">R4527 splits across the Key Segment (1 to 3 providers) and the Strategic Segment (4 to 19 providers). The Key Segment buyer is a doctor owner with a lean budget who needs time back fast. The Strategic buyer weighs total cost of ownership and staff retention across multiple sites. Same funnel, different message. Below is a sample built for the Key Segment.</p>
 </div></section>
 
-<section class="tint" id="campaign"><div class="wrap">
+<section class="tint" id="campaign" data-role="demandgen"><div class="wrap">
   <span class="kicker">Sample campaign &middot; Key Segment</span>
   <h2>Full funnel, mapped end to end</h2>
   <p class="lead">A 30 day campaign for 1 to 3 provider practices, themed "Get your evenings back."</p>
@@ -228,7 +275,7 @@ tr:last-child td{border-bottom:none}
   </div>
 </div></section>
 
-<section id="report"><div class="wrap">
+<section id="report" data-role="demandgen"><div class="wrap">
   <span class="kicker">The day to day of this role</span>
   <h2>Sample weekly performance report</h2>
   <p class="lead">This is the work the job is really about. Clean numbers, a trend, and one clear next step.</p>
@@ -243,7 +290,7 @@ tr:last-child td{border-bottom:none}
   <p class="note">Sample figures for illustration. Method is real, numbers are placeholders.</p>
 </div></section>
 
-<section class="tint"><div class="wrap">
+<section class="tint" data-role="demandgen"><div class="wrap">
   <span class="kicker">Kept in order</span>
   <h2>Sample campaign calendar</h2>
   <div class="cal">
@@ -254,7 +301,7 @@ tr:last-child td{border-bottom:none}
   </div>
 </div></section>
 
-<section id="plan"><div class="wrap">
+<section id="plan" data-role="demandgen"><div class="wrap">
   <span class="kicker">If you hire me</span>
   <h2>My first 90 days</h2>
   <div class="plan">
@@ -306,6 +353,15 @@ tr:last-child td{border-bottom:none}
 
 <script>
 (function(){
+  /* role toggle: Director (R4540) shows by default; button switches to Demand Gen (R4527) */
+  document.body.dataset.view='director';
+  document.querySelectorAll('.roleswitch .rs').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.body.dataset.view=b.dataset.v;
+      document.querySelectorAll('.roleswitch .rs').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+    });
+  });
   /* headline words rise up out of the page on load */
   var h1=document.getElementById('h1');
   if(h1){
