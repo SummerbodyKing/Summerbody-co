@@ -553,6 +553,66 @@
   .badge.earned { opacity:1; filter:none; border-color:rgba(255,85,0,0.4); background:linear-gradient(160deg,var(--surface2),#1a0800); }
   .badge .bi { font-size:30px; } .badge .bn { font-size:12px; font-weight:700; margin-top:8px; } .badge .bd { font-size:10px; color:var(--text-dim); margin-top:3px; }
 
+  /* ── 14-DAY PATH ── */
+  .path-progress-bar { position:relative; height:30px; background:var(--surface2); border:1px solid var(--border);
+    border-radius:16px; overflow:hidden; margin-bottom:26px; display:flex; align-items:center; }
+  .path-progress-fill { position:absolute; left:0; top:0; bottom:0; width:0%;
+    background:linear-gradient(90deg,var(--orange),#ff8800); transition:width 0.6s ease; }
+  .path-progress-bar span { position:relative; z-index:1; font-size:12px; font-weight:700; padding-left:14px; color:#fff; mix-blend-mode:difference; }
+
+  .path-journey { position:relative; }
+  .path-node { display:flex; gap:16px; align-items:stretch; position:relative; padding-bottom:14px; }
+  .path-rail { display:flex; flex-direction:column; align-items:center; width:54px; flex-shrink:0; }
+  .path-dot { width:54px; height:54px; border-radius:50%; background:var(--surface2); border:2px solid var(--border);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:800; font-size:18px;
+    color:var(--text-dim); flex-shrink:0; transition:all 0.2s; z-index:2; }
+  .path-line { width:3px; flex:1; background:var(--border); margin:2px 0; min-height:18px; }
+  .path-node.done .path-dot { background:var(--green); border-color:var(--green); color:#000; box-shadow:0 0 16px rgba(34,197,94,0.5); }
+  .path-node.done .path-line { background:var(--green); }
+  .path-node.today .path-dot { border-color:var(--orange); color:var(--orange); box-shadow:0 0 20px rgba(255,85,0,0.6); animation:pulseBtn 2s infinite; }
+  .path-card { flex:1; background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:16px 18px; cursor:pointer; transition:all 0.15s; }
+  .path-card:hover { border-color:var(--orange); transform:translateX(4px); }
+  .path-node.today .path-card { border-color:rgba(255,85,0,0.4); background:linear-gradient(120deg,#1a0800,var(--surface)); }
+  .path-card-top { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+  .path-phase { font-size:10px; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); }
+  .path-topic { font-size:15px; font-weight:800; margin:2px 0 4px; }
+  .path-date { font-size:11px; color:var(--text-dim); font-family:var(--font-mono); }
+  .path-steps { display:flex; gap:5px; margin-top:10px; }
+  .path-step-dot { flex:1; height:5px; border-radius:3px; background:var(--border); }
+  .path-step-dot.on { background:var(--orange); }
+  .path-cta { font-size:12px; color:var(--orange); font-weight:700; margin-top:8px; }
+
+  /* ── MODALS ── */
+  .modal-overlay { display:none; position:fixed; inset:0; z-index:9000; background:rgba(0,0,0,0.78);
+    backdrop-filter:blur(4px); align-items:flex-start; justify-content:center; padding:40px 16px; overflow-y:auto; }
+  .modal-overlay.show { display:flex; }
+  .modal-box { background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    width:100%; max-width:600px; padding:26px; position:relative; animation:fadeUp 0.3s both; }
+  .modal-close { position:absolute; top:16px; right:16px; background:var(--surface2); border:1px solid var(--border);
+    color:var(--text-dim); width:32px; height:32px; border-radius:8px; cursor:pointer; font-size:16px; }
+  .modal-close:hover { color:var(--orange); border-color:var(--orange); }
+  .step-card { display:flex; gap:14px; align-items:center; padding:16px; border-radius:12px;
+    background:var(--surface2); border:1px solid var(--border); margin-bottom:12px; cursor:pointer; transition:all 0.15s; }
+  .step-card:hover { border-color:var(--orange); }
+  .step-card.done { border-color:rgba(34,197,94,0.4); background:rgba(34,197,94,0.06); }
+  .step-ico { width:44px; height:44px; border-radius:11px; background:var(--orange-glow); border:1px solid rgba(255,85,0,0.3);
+    display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+  .step-card.done .step-ico { background:rgba(34,197,94,0.12); border-color:rgba(34,197,94,0.3); }
+  .step-info { flex:1; } .step-info .st { font-weight:800; font-size:15px; } .step-info .sd { font-size:12.5px; color:var(--text-dim); margin-top:2px; }
+  .step-check { font-size:20px; color:var(--text-muted); } .step-card.done .step-check { color:var(--green); }
+
+  /* Boss quiz */
+  .boss-q-text { font-size:16px; font-weight:600; line-height:1.6; margin:16px 0 18px; }
+  .boss-progress { display:flex; gap:5px; margin-bottom:6px; }
+  .boss-pip { flex:1; height:6px; border-radius:3px; background:var(--border); }
+  .boss-pip.right { background:var(--green); } .boss-pip.wrong { background:var(--red); } .boss-pip.cur { background:var(--orange); }
+  .boss-result { text-align:center; padding:14px 0; }
+  .boss-result .bigscore { font-family:var(--font-mono); font-size:54px; font-weight:900; }
+  .boss-result.pass .bigscore { color:var(--green); } .boss-result.fail .bigscore { color:var(--orange); }
+
+  @media (max-width:768px){ .modal-overlay{ padding:16px 10px; } .path-dot{ width:46px;height:46px;font-size:15px; } .path-rail{ width:46px; } }
+
   /* DO THIS NEXT coach card */
   .coach { background: linear-gradient(135deg, #1a0800, var(--surface)); border:1px solid rgba(255,85,0,0.35);
     border-radius:12px; padding:20px 22px; margin-bottom:24px; }
@@ -633,6 +693,7 @@
   <div class="nav-brand">SWEAT DEPT <span>·</span> PMP CMD</div>
   <div class="nav-tabs">
     <button class="nav-tab active" data-page="dashboard" onclick="showPage('dashboard')">War Room</button>
+    <button class="nav-tab" data-page="path" onclick="showPage('path')">14-Day Path</button>
     <button class="nav-tab" data-page="learn" onclick="showPage('learn')">Learn</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
     <button class="nav-tab" data-page="flashcards" onclick="showPage('flashcards')">Flashcards</button>
@@ -653,6 +714,7 @@
 <!-- ══ MOBILE BOTTOM NAV ══ -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mnav-btn active" data-page="dashboard" onclick="showPage('dashboard')"><span>🏠</span>Home</button>
+  <button class="mnav-btn" data-page="path" onclick="showPage('path')"><span>🗺️</span>Path</button>
   <button class="mnav-btn" data-page="learn" onclick="showPage('learn')"><span>📊</span>Learn</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
   <button class="mnav-btn" data-page="flashcards" onclick="showPage('flashcards')"><span>🃏</span>Cards</button>
@@ -791,6 +853,26 @@
     </div>
     <div class="badge-grid" id="badgeGrid"></div>
   </div>
+</div>
+
+<!-- ══════════════════════════════════════════ 14-DAY PATH ══ -->
+<div class="page" id="page-path">
+  <div class="deck-intro">
+    <h2>Your 14-Day <em>Path</em></h2>
+    <p>One level per day, built from your sprint schedule. Each level is 4 steps: Watch it, See it, Drill it, then beat the Boss. Clear all 4 and the day locks in green. Keep the chain alive.</p>
+  </div>
+  <div class="path-progress-bar"><div class="path-progress-fill" id="pathFill"></div><span id="pathPct">0% of the path complete</span></div>
+  <div id="pathJourney"></div>
+</div>
+
+<!-- Day-level modal -->
+<div class="modal-overlay" id="dayModal" onclick="if(event.target===this)closeDay()">
+  <div class="modal-box" id="dayModalBox"></div>
+</div>
+
+<!-- Boss quiz modal -->
+<div class="modal-overlay" id="bossModal" onclick="if(event.target===this)closeBoss()">
+  <div class="modal-box" id="bossModalBox"></div>
 </div>
 
 <!-- ══════════════════════════════════════════ PRACTICE ══ -->
@@ -1763,6 +1845,7 @@ let state = {
   studyLog: [],
   domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
   xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
+  path: {}, // day# -> {watch,learn,drill,boss,bossScore}
 };
 
 // Load from localStorage
@@ -1779,6 +1862,7 @@ function loadState() {
       state.bestStreak = parsed.bestStreak || 0;
       state.badges = parsed.badges || {};
       state.muted = parsed.muted || false;
+      state.path = parsed.path || {};
     }
   } catch(e) {}
 }
@@ -1790,7 +1874,7 @@ function saveState() {
       wrongLog: state.wrongLog,
       studyLog: state.studyLog,
       domainStats: state.domainStats,
-      xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted
+      xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path
     }));
   } catch(e) {}
 }
@@ -1997,10 +2081,12 @@ function renderCoach(){
     ];
   }
 
+  const dStatus = dayDone(day) ? '<b style="color:var(--green)">cleared ✓</b>' : `${daySteps(day)}/4 steps done`;
   el.innerHTML = `
     <div class="coach-label">⚡ Do This Next</div>
-    <div class="coach-today">Today is <b>Day ${day} of 14</b> · ${getDaysLeft()} days to exam · Focus: <b>${d.topic}</b></div>
+    <div class="coach-today">Today is <b>Day ${day} of 14</b> · ${getDaysLeft()} days to exam · Focus: <b>${d.topic}</b> · ${dStatus}</div>
     <div class="coach-headline">${headline}</div>
+    <div class="coach-actions" style="margin-bottom:6px"><button class="btn btn-primary" onclick="showPage('path');setTimeout(()=>openDay(${day}),250)">▶ Open Today's Level (Day ${day})</button></div>
     ${steps.map(s=>`<div class="coach-step"><span class="cs-n">${s[0]}</span><span>${s[1]}</span></div>`).join('')}
   `;
 }
@@ -2242,6 +2328,9 @@ const BADGES = [
   {id:'formula', icon:'🧮', name:'Formula Flex', desc:'Use the EVM Lab', test:()=>state.badges.formula},
   {id:'half', icon:'📚', name:'Halfway', desc:'Answer 25 questions', test:()=>Object.keys(state.answers).length>=25},
   {id:'all50', icon:'🎓', name:'Full Sweep', desc:'Answer all 50', test:()=>Object.keys(state.answers).length>=50},
+  {id:'boss1', icon:'🎯', name:'Boss Slayer', desc:'Clear 1 day', test:()=>DAYS.some(d=>dayDone(d.d))},
+  {id:'half14', icon:'🗺️', name:'Halfway There', desc:'Clear 7 days', test:()=>DAYS.filter(d=>dayDone(d.d)).length>=7},
+  {id:'sprint', icon:'🏁', name:'Sprint Complete', desc:'Clear all 14 days', test:()=>DAYS.every(d=>dayDone(d.d))},
   {id:'xp500', icon:'👑', name:'King Summerbody', desc:'Earn 500 XP', test:()=>state.xp>=500},
 ];
 function domainPct(d){ const s=state.domainStats[d]; return s&&s.total>0?Math.round(s.correct/s.total*100):0; }
@@ -2378,6 +2467,8 @@ function startDay(){
   if(!state.timerRunning) toggleTimer();
   playSound('levelup');
   showToast('Timer running. Lock in. Better and Beyond.', 'success');
+  showPage('path');
+  setTimeout(()=>openDay(getCurrentDay()), 350);
 }
 
 // ══════════════════════════════════════
@@ -2741,6 +2832,183 @@ function loadTopicVideo(topic){
   document.getElementById('videoFrame').src = `https://www.youtube.com/embed?listType=search&list=${q}`;
 }
 
+// ══════════════════════════════════════
+// 14-DAY GUIDED PATH ENGINE
+// ══════════════════════════════════════
+// Each day = lessons to see, a drill filter, a video topic, and a Boss question pool.
+const DAY_PLAN = {
+  1:  {lessons:['ls-blueprint','ls-mindset'], drill:'all', video:'PMP exam overview and mindset 3 step method', boss:[1,2,6,43,10]},
+  2:  {lessons:['ls-mindset','ls-spectrum'], drill:'Process', video:'PMP integration and scope management change control', boss:[12,39,13,18]},
+  3:  {lessons:['ls-evm','ls-quad'], drill:'Process', video:'PMP schedule and cost management earned value', boss:[11,25,15,42]},
+  4:  {lessons:['ls-coq','ls-comm'], drill:'Process', video:'PMP quality resource communications management', boss:[19,48,24,33]},
+  5:  {lessons:['ls-riskmatrix','ls-riskresp','ls-contract','ls-power'], drill:'Process', video:'PMP risk procurement stakeholder management', boss:[16,17,21,22,45,35]},
+  6:  {lessons:['ls-tuckman','ls-motivation'], drill:'People', video:'PMP servant leadership team development', boss:[2,3,5,32,49,46]},
+  7:  {lessons:['ls-conflict','ls-engage'], drill:'People', video:'PMP conflict resolution stakeholder engagement', boss:[40,4,9,23,35]},
+  8:  {lessons:['ls-spectrum'], drill:'Process', video:'PMP agile scrum manifesto explained', boss:[20,34,41,33]},
+  9:  {lessons:['ls-spectrum'], drill:'Business Environment', video:'PMP kanban XP hybrid approaches', boss:[27,28,29,43]},
+  10: {lessons:['ls-evm','ls-quad','ls-comm'], drill:'Process', video:'PMP EVM calculations forecasting EAC ETC', boss:[15,42,24,11]},
+  11: {lessons:['ls-blueprint'], drill:'all', video:'PMP full mock exam strategy tips', boss:'mock'},
+  12: {lessons:[], drill:'wrong', video:'PMP weak area review hardest topics', boss:'weak'},
+  13: {lessons:['ls-blueprint'], drill:'all', video:'PMP exam day strategy second mock', boss:'mock'},
+  14: {lessons:['ls-mindset','ls-blueprint'], drill:'all', video:'PMP exam day what to expect last minute tips', boss:[1,21,30,47,40]},
+};
+const PHASE = d => d<=5 ? 'Phase 1 · Foundations' : d<=10 ? 'Phase 2 · Domains & Agile' : 'Phase 3 · Mock & Polish';
+function dayState(d){ if(!state.path[d]) state.path[d]={watch:false,learn:false,drill:false,boss:false,bossScore:null}; return state.path[d]; }
+function daySteps(d){ const s=state.path[d]||{}; return ['watch','learn','drill','boss'].filter(k=>s[k]).length; }
+function dayDone(d){ return daySteps(d)===4; }
+
+function renderPath(){
+  const today = getCurrentDay();
+  const done = DAYS.filter(d=>dayDone(d.d)).length;
+  const totalSteps = DAYS.reduce((s,d)=>s+daySteps(d.d),0);
+  const pct = Math.round(totalSteps/(14*4)*100);
+  document.getElementById('pathFill').style.width = pct+'%';
+  document.getElementById('pathPct').textContent = `${pct}% of the path complete · ${done}/14 days cleared`;
+
+  document.getElementById('pathJourney').innerHTML = '<div class="path-journey">' + DAYS.map((d,i)=>{
+    const steps = daySteps(d.d);
+    const cls = dayDone(d.d) ? 'done' : d.d===today ? 'today' : '';
+    const dotInner = dayDone(d.d) ? '✓' : d.d;
+    const cta = dayDone(d.d) ? 'Cleared — review anytime' : d.d===today ? `▶ Continue today's level (${steps}/4)` : steps>0 ? `Resume (${steps}/4)` : 'Open level';
+    const pips = ['watch','learn','drill','boss'].map(k=>`<div class="path-step-dot ${(state.path[d.d]||{})[k]?'on':''}"></div>`).join('');
+    return `<div class="path-node ${cls}">
+      <div class="path-rail"><div class="path-dot">${dotInner}</div>${i<DAYS.length-1?'<div class="path-line"></div>':''}</div>
+      <div class="path-card" onclick="openDay(${d.d})">
+        <div class="path-card-top"><span class="path-phase">${PHASE(d.d)}</span><span class="path-date">${d.date}</span></div>
+        <div class="path-topic">Day ${d.d}: ${d.topic}</div>
+        <div class="path-steps">${pips}</div>
+        <div class="path-cta">${cta}</div>
+      </div>
+    </div>`;
+  }).join('') + '</div>';
+}
+
+let activeDay = null;
+function openDay(d){
+  activeDay = d;
+  const plan = DAY_PLAN[d]; const s = dayState(d); const info = DAYS[d-1];
+  const isMock = plan.boss==='mock' || plan.boss==='weak';
+  const steps = [
+    {k:'watch', ico:'▶️', t:'Watch it', d:'A short video that teaches today\'s topic out loud', fn:`pathWatch(${d})`},
+    {k:'learn', ico:'📊', t:'See it', d: plan.lessons.length? 'Open the visual diagrams for this topic' : 'Skim the mindset and blueprint', fn:`pathLearn(${d})`},
+    {k:'drill', ico:'✍️', t:'Drill it', d:'Warm up on practice questions for this topic', fn:`pathDrill(${d})`},
+    {k:'boss', ico:'🎯', t: isMock?'Boss Raid (Mock Exam)':'Beat the Boss', d: isMock?'A bigger timed mix — pass to clear the day':'A short quiz on today\'s topic. 70%+ clears the day', fn:`startBoss(${d})`},
+  ];
+  document.getElementById('dayModalBox').innerHTML = `
+    <button class="modal-close" onclick="closeDay()">✕</button>
+    <div class="path-phase">${PHASE(d)} · ${info.date}</div>
+    <h2 style="font-size:22px;font-weight:900;margin:4px 0 4px">Day ${d}: ${info.topic}</h2>
+    <p style="color:var(--text-dim);font-size:13px;margin-bottom:18px">Do the 4 steps in order. Finish the Boss to lock the day in green ${dayDone(d)?'· <b style="color:var(--green)">CLEARED ✓</b>':''}</p>
+    ${steps.map(st=>`
+      <div class="step-card ${s[st.k]?'done':''}" onclick="${st.fn}">
+        <div class="step-ico">${st.ico}</div>
+        <div class="step-info"><div class="st">${st.t}</div><div class="sd">${st.d}</div></div>
+        <div class="step-check">${s[st.k]?'✓':'○'}</div>
+      </div>`).join('')}
+  `;
+  document.getElementById('dayModal').classList.add('show');
+}
+function closeDay(){ document.getElementById('dayModal').classList.remove('show'); renderPath(); }
+function markStep(d,k){ const s=dayState(d); if(!s[k]){ s[k]=true; saveState(); checkDayComplete(d); } }
+function checkDayComplete(d){
+  if(dayDone(d)){
+    playSound('streak10'); fireConfetti();
+    addXP(50); checkBadges();
+    showToast(`🏆 DAY ${d} CLEARED! +50 XP. Keep the chain alive.`, 'success');
+  }
+  saveState();
+}
+function pathWatch(d){ markStep(d,'watch'); loadTopicVideo(DAY_PLAN[d].video.replace('PMP ','')); }
+function pathLearn(d){
+  markStep(d,'learn');
+  const lessons = DAY_PLAN[d].lessons;
+  closeDay();
+  if(lessons.length) learnTopic(lessons[0]); else showPage('learn');
+}
+function pathDrill(d){
+  markStep(d,'drill');
+  closeDay();
+  drillDomain(DAY_PLAN[d].drill==='wrong' ? 'all' : DAY_PLAN[d].drill);
+}
+
+// ── BOSS QUIZ ──
+let boss = null;
+function bossPool(d){
+  const plan = DAY_PLAN[d];
+  if(plan.boss==='mock'){ return shuffle([...QUESTIONS]).slice(0,10); }
+  if(plan.boss==='weak'){
+    const ids = state.wrongLog.map(w=>w.qId);
+    const pool = QUESTIONS.filter(q=>ids.includes(q.id));
+    return (pool.length?pool:shuffle([...QUESTIONS]).slice(0,8));
+  }
+  return plan.boss.map(id=>QUESTIONS.find(q=>q.id===id)).filter(Boolean);
+}
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function startBoss(d){
+  const pool = bossPool(d);
+  if(!pool.length){ showToast('No questions available for this boss yet','error'); return; }
+  boss = {day:d, qs:pool, idx:0, right:0, answers:[]};
+  document.getElementById('dayModal').classList.remove('show');
+  document.getElementById('bossModal').classList.add('show');
+  renderBoss();
+}
+function renderBoss(){
+  const box = document.getElementById('bossModalBox');
+  const q = boss.qs[boss.idx];
+  const pips = boss.qs.map((_,i)=>{ let c=''; if(i<boss.idx) c=boss.answers[i]?'right':'wrong'; else if(i===boss.idx) c='cur'; return `<div class="boss-pip ${c}"></div>`; }).join('');
+  box.innerHTML = `
+    <button class="modal-close" onclick="closeBoss()">✕</button>
+    <div class="path-phase">🎯 Boss · Day ${boss.day} · Question ${boss.idx+1} of ${boss.qs.length}</div>
+    <div class="boss-progress" style="margin-top:10px">${pips}</div>
+    <div class="boss-q-text">${q.text}</div>
+    <div class="options" id="bossOptions">
+      ${q.options.map((opt,i)=>`<button class="option" onclick="bossAnswer(${i})"><span class="option-letter">${'ABCD'[i]}</span><span>${opt}</span></button>`).join('')}
+    </div>`;
+}
+function bossAnswer(i){
+  const q = boss.qs[boss.idx];
+  const correct = i===q.answer;
+  boss.answers[boss.idx] = correct;
+  if(correct) boss.right++;
+  // reveal briefly
+  const opts = document.querySelectorAll('#bossOptions .option');
+  opts.forEach((o,idx)=>{ o.onclick=null; if(idx===q.answer) o.classList.add('reveal-correct'); if(idx===i&&!correct) o.classList.add('wrong'); });
+  playSound(correct?'correct':'wrong');
+  // record into the real wrong log / stats too, so the boss actually teaches
+  if(state.answers[q.id]===undefined){
+    state.answers[q.id]={chosen:i,correct};
+    if(state.domainStats[q.domain]){ state.domainStats[q.domain].total++; if(correct) state.domainStats[q.domain].correct++; }
+    if(!correct && state.wrongLog.findIndex(w=>w.qId===q.id)===-1){
+      state.wrongLog.push({qId:q.id,domain:q.domain,question:q.text.substring(0,100)+'...',myAnswer:q.options[i],correctAnswer:q.options[q.answer],principle:q.principle,date:new Date().toISOString()});
+    }
+    saveState();
+  }
+  setTimeout(()=>{ boss.idx++; if(boss.idx>=boss.qs.length) finishBoss(); else renderBoss(); }, 850);
+}
+function finishBoss(){
+  const pct = Math.round(boss.right/boss.qs.length*100);
+  const pass = pct>=70;
+  const s = dayState(boss.day);
+  s.bossScore = pct;
+  if(pass){ markStep(boss.day,'boss'); addXP(30); }
+  saveState();
+  document.getElementById('bossModalBox').innerHTML = `
+    <button class="modal-close" onclick="closeBoss()">✕</button>
+    <div class="boss-result ${pass?'pass':'fail'}">
+      <div class="bigscore">${pct}%</div>
+      <div style="font-size:18px;font-weight:800;margin-top:6px">${pass?'BOSS DEFEATED 🏆':'So close — run it back'}</div>
+      <div style="color:var(--text-dim);font-size:13px;margin-top:8px">${boss.right} of ${boss.qs.length} correct. ${pass?'Day step cleared, +30 XP.':'Hit 70% to clear the boss. Review your misses, then retry.'}</div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+        ${pass?'':`<button class="btn btn-primary" onclick="startBoss(${boss.day})">↻ Retry Boss</button>`}
+        <button class="btn btn-secondary" onclick="closeBoss();showPage('wronglog')">Review misses</button>
+        <button class="btn ${pass?'btn-primary':'btn-secondary'}" onclick="closeBoss()">${pass?'Continue':'Close'}</button>
+      </div>
+    </div>`;
+  if(pass){ playSound('levelup'); fireConfetti(); }
+  updateGameUI(); checkBadges();
+}
+function closeBoss(){ document.getElementById('bossModal').classList.remove('show'); if(document.getElementById('page-path').classList.contains('active')) renderPath(); updateDashboard(); }
+
 function clearWrongLog() {
   if (confirm('Clear all wrong answers? This cannot be undone.')) {
     state.wrongLog = [];
@@ -2816,6 +3084,7 @@ function showPage(pageId) {
   if (pageId === 'wronglog') renderWrongLog();
   if (pageId === 'studylog') renderStudyLog();
   if (pageId === 'dashboard') updateDashboard();
+  if (pageId === 'path') renderPath();
   if (pageId === 'learn') initLearn();
   if (pageId === 'flashcards') renderFlashcard();
   if (pageId === 'videos') renderVideoGrid();
