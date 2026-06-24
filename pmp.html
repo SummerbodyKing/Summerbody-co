@@ -2894,7 +2894,6 @@ function questionAids(q){
   html += `<div class="mm-aids-cta">
     <button class="btn btn-secondary btn-sm" onclick="learnTopic('${lesson}')">📊 See the visual for this topic</button>
     ${fs.length?`<button class="btn btn-secondary btn-sm" onclick="showPage('formulas')">🧮 Open Formula Lab</button>`:''}
-    <button class="btn btn-secondary btn-sm" onclick="toggleQNote(${q.id})">📝 Capture this in a note</button>
   </div>`;
   html += '</div>';
   return html;
