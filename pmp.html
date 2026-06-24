@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWEAT DEPT · PMP Command Center</title>
+<style>
+  :root {
+    --orange: #FF5500;
+    --orange-dim: #cc4400;
+    --orange-glow: rgba(255,85,0,0.15);
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --surface3: #222222;
+    --border: #2a2a2a;
+    --text: #f0f0f0;
+    --text-dim: #888888;
+    --text-muted: #555555;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --blue: #f59e0b;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; height: 56px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 800; font-size: 13px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--orange);
+  }
+  .nav-brand span { color: var(--text-dim); font-weight: 400; }
+  .nav-tabs { display: flex; gap: 4px; }
+  .nav-tab {
+    background: none; border: none; color: var(--text-dim);
+    padding: 6px 14px; border-radius: 6px; cursor: pointer;
+    font-size: 13px; font-family: var(--font-main);
+    transition: all 0.15s;
+  }
+  .nav-tab:hover { background: var(--surface2); color: var(--text); }
+  .nav-tab.active { background: var(--orange); color: #fff; font-weight: 600; }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .day-badge {
+    background: var(--surface2); border: 1px solid var(--border);
+    padding: 4px 10px; border-radius: 20px;
+    font-size: 12px; color: var(--orange); font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .timer-display {
+    font-family: var(--font-mono); font-size: 16px;
+    color: var(--green); font-weight: 700; letter-spacing: 0.1em;
+    min-width: 70px; text-align: right;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  main { padding-top: 56px; min-height: 100vh; }
+  .page { display: none; padding: 32px 24px; max-width: 1100px; margin: 0 auto; }
+  .page.active { display: block; }
+
+  /* ── DASHBOARD ── */
+  .dash-hero {
+    background: linear-gradient(135deg, var(--surface) 0%, #1a0800 100%);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    border-radius: 12px; padding: 28px 32px; margin-bottom: 24px;
+  }
+  .dash-hero-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+  .dash-hero h1 { font-size: 26px; font-weight: 800; line-height: 1.2; }
+  .dash-hero h1 em { color: var(--orange); font-style: normal; }
+  .countdown-big {
+    text-align: right;
+  }
+  .countdown-big .num { font-family: var(--font-mono); font-size: 48px; font-weight: 900; color: var(--orange); line-height: 1; }
+  .countdown-big .label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+  .progress-bar-wrap { margin-top: 12px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dim); margin-bottom: 6px; }
+  .progress-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--orange), #ff8800); border-radius: 3px; transition: width 0.5s ease; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; position: relative; overflow: hidden;
+  }
+  .stat-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  }
+  .stat-card.orange::before { background: var(--orange); }
+  .stat-card.green::before { background: var(--green); }
+  .stat-card.blue::before { background: var(--blue); }
+  .stat-card.yellow::before { background: var(--yellow); }
+  .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 8px; }
+  .stat-value { font-size: 32px; font-weight: 800; font-family: var(--font-mono); line-height: 1; }
+  .stat-value.orange { color: var(--orange); }
+  .stat-value.green { color: var(--green); }
+  .stat-value.blue { color: var(--blue); }
+  .stat-value.yellow { color: var(--yellow); }
+  .stat-sub { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px;
+  }
+  .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 16px; }
+
+  /* Domain bars */
+  .domain-bar { margin-bottom: 14px; }
+  .domain-bar-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .domain-name { font-size: 13px; font-weight: 600; }
+  .domain-pct { font-family: var(--font-mono); font-size: 13px; }
+  .domain-pct.good { color: var(--green); }
+  .domain-pct.warn { color: var(--yellow); }
+  .domain-pct.bad { color: var(--red); }
+  .domain-track { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .domain-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+  .domain-fill.people { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+  .domain-fill.process { background: linear-gradient(90deg, var(--orange), #ff8800); }
+  .domain-fill.bizenv { background: linear-gradient(90deg, #22c55e, #4ade80); }
+  .domain-weight { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Day schedule */
+  .day-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .day-row:last-child { border-bottom: none; }
+  .day-num { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); width: 40px; }
+  .day-topic { flex: 1; font-size: 13px; }
+  .day-status {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border);
+  }
+  .day-status.done { background: var(--green); }
+  .day-status.today { background: var(--orange); box-shadow: 0 0 8px var(--orange); }
+  .day-hours { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); width: 40px; text-align: right; }
+
+  /* Timer controls */
+  .timer-section { text-align: center; padding: 20px 0; }
+  .timer-big { font-family: var(--font-mono); font-size: 56px; font-weight: 900; color: var(--green); letter-spacing: 0.05em; line-height: 1; margin-bottom: 16px; }
+  .timer-controls { display: flex; gap: 12px; justify-content: center; }
+  .btn {
+    padding: 10px 24px; border-radius: 8px; border: none;
+    font-family: var(--font-main); font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .btn-primary { background: var(--orange); color: #fff; }
+  .btn-primary:hover { background: var(--orange-dim); }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: var(--surface3); }
+  .btn-sm { padding: 6px 14px; font-size: 12px; }
+
+  /* ── STUDY MODE ── */
+  .study-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+  .study-header h2 { font-size: 20px; font-weight: 800; }
+  .filter-row { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-dim);
+    font-size: 12px; font-family: var(--font-main); cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--orange); color: var(--text); }
+  .filter-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; font-weight: 600; }
+
+  .question-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px; margin-bottom: 20px;
+  }
+  .q-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; }
+  .q-badge {
+    padding: 3px 10px; border-radius: 20px; font-size: 11px;
+    font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .q-badge.people { background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+  .q-badge.process { background: rgba(255,85,0,0.15); color: var(--orange); border: 1px solid rgba(255,85,0,0.3); }
+  .q-badge.bizenv { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+  .q-num { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+  .q-difficulty { font-size: 11px; padding: 3px 8px; border-radius: 10px; }
+  .q-difficulty.hard { background: rgba(239,68,68,0.15); color: #f87171; }
+  .q-difficulty.medium { background: rgba(245,158,11,0.15); color: #fbbf24; }
+  .q-difficulty.easy { background: rgba(34,197,94,0.15); color: #4ade80; }
+
+  .q-text { font-size: 16px; line-height: 1.7; margin-bottom: 24px; font-weight: 500; }
+
+  .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .option {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 16px; border-radius: 8px;
+    border: 2px solid var(--border); cursor: pointer;
+    background: var(--surface2); transition: all 0.15s;
+    text-align: left; font-family: var(--font-main); font-size: 14px;
+    color: var(--text); line-height: 1.5;
+  }
+  .option:hover { border-color: var(--orange); background: var(--orange-glow); }
+  .option.selected { border-color: var(--orange); background: var(--orange-glow); }
+  .option.correct { border-color: var(--green); background: rgba(34,197,94,0.1); }
+  .option.wrong { border-color: var(--red); background: rgba(239,68,68,0.1); }
+  .option.reveal-correct { border-color: var(--green); background: rgba(34,197,94,0.08); }
+  .option-letter {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--border); display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    transition: all 0.15s;
+  }
+  .option.correct .option-letter { background: var(--green); color: #000; }
+  .option.wrong .option-letter { background: var(--red); color: #fff; }
+  .option.reveal-correct .option-letter { background: var(--green); color: #000; }
+
+  .q-controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .speak-btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface2); color: var(--text-dim);
+    font-size: 13px; font-family: var(--font-main); cursor: pointer;
+    transition: all 0.15s;
+  }
+  .speak-btn:hover { border-color: var(--orange); color: var(--orange); }
+  .speak-btn.speaking { border-color: var(--orange); color: var(--orange); background: var(--orange-glow); }
+
+  .explanation {
+    margin-top: 20px; padding: 16px; border-radius: 8px;
+    background: var(--surface2); border: 1px solid var(--border);
+    font-size: 14px; line-height: 1.7; display: none;
+  }
+  .explanation.show { display: block; }
+  .explanation strong { color: var(--orange); }
+  .principle-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    background: rgba(255,85,0,0.15); color: var(--orange);
+    font-size: 11px; font-weight: 700; margin-bottom: 8px;
+  }
+
+  .q-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+  .q-progress-text { font-size: 13px; color: var(--text-dim); }
+
+  /* ── WRONG ANSWERS LOG ── */
+  .wrong-log { }
+  .wrong-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    border-radius: 8px; padding: 16px; margin-bottom: 12px;
+  }
+  .wrong-item-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .wrong-item-q { font-size: 14px; font-weight: 500; flex: 1; margin-right: 12px; }
+  .wrong-item-meta { font-size: 12px; color: var(--text-dim); text-align: right; flex-shrink: 0; }
+  .wrong-item-detail { font-size: 13px; color: var(--text-dim); margin-top: 6px; }
+  .wrong-item-detail .my-ans { color: var(--red); }
+  .wrong-item-detail .right-ans { color: var(--green); }
+
+  .empty-state {
+    text-align: center; padding: 60px 20px;
+    color: var(--text-dim);
+  }
+  .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
+  .empty-state p { font-size: 14px; }
+
+  /* ── STUDY LOG ── */
+  .log-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 24px; }
+  .log-day {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 8px; text-align: center;
+    cursor: pointer; transition: all 0.15s; min-height: 80px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  }
+  .log-day:hover { border-color: var(--orange); }
+  .log-day.has-data { border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.05); }
+  .log-day.today { border-color: var(--orange); background: var(--orange-glow); }
+  .log-day-num { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .log-day-date { font-size: 11px; color: var(--text-dim); }
+  .log-day-hours { font-family: var(--font-mono); font-size: 18px; font-weight: 800; color: var(--green); }
+  .log-day-label { font-size: 10px; color: var(--text-muted); }
+
+  .log-input-section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; margin-bottom: 20px;
+  }
+  .log-input-section h3 { font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+  .log-form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; }
+  .form-group label { display: block; font-size: 12px; color: var(--text-dim); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 12px; color: var(--text);
+    font-family: var(--font-main); font-size: 14px; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus {
+    border-color: var(--orange); box-shadow: 0 0 0 2px var(--orange-glow);
+  }
+
+  /* ── FORMULAS ── */
+  .formula-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .formula-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px;
+  }
+  .formula-card h3 { font-size: 14px; font-weight: 700; color: var(--orange); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .formula-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .formula-row:last-child { border-bottom: none; }
+  .formula-name { font-size: 13px; color: var(--text); font-weight: 600; }
+  .formula-eq { font-family: var(--font-mono); font-size: 13px; color: var(--orange); }
+  .formula-hint { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-left: 3px solid var(--orange); border-radius: 8px;
+    padding: 12px 16px; font-size: 13px; max-width: 300px;
+    transform: translateY(100px); opacity: 0; transition: all 0.3s;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.success { border-left-color: var(--green); }
+  .toast.error { border-left-color: var(--red); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .formula-grid { grid-template-columns: 1fr; }
+    .log-grid { grid-template-columns: repeat(4, 1fr); }
+    .log-form { grid-template-columns: 1fr; }
+    .nav-tabs { display: none; }
+  }
+
+  /* ════════════════════════════════════════════════════════
+     V2 — LEARNING DECK, GAMIFICATION, SPLASH, VISUALS
+     ════════════════════════════════════════════════════════ */
+
+  /* Ambient background canvases */
+  #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.55; }
+  #confetti { position: fixed; inset: 0; z-index: 9998; pointer-events: none; }
+  nav, main, .toast { position: relative; z-index: 1; }
+  nav { z-index: 100; }
+  body::before {
+    content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,85,0,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,85,0,0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 30%, transparent 75%);
+  }
+
+  /* ── SPLASH SCREEN ── */
+  #splash {
+    position: fixed; inset: 0; z-index: 9999;
+    background: radial-gradient(ellipse at 50% 30%, #1a0800 0%, #080808 70%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px; transition: opacity 0.6s ease, visibility 0.6s;
+  }
+  #splash.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  .splash-brand { font-size: 13px; letter-spacing: 0.35em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px; animation: fadeUp 0.6s both; }
+  .splash-logo { font-size: clamp(40px, 9vw, 86px); font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 6px; animation: fadeUp 0.6s 0.1s both; }
+  .splash-logo em { color: var(--orange); font-style: normal; text-shadow: 0 0 40px rgba(255,85,0,0.5); }
+  .splash-day { font-family: var(--font-mono); color: var(--orange); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 22px; animation: fadeUp 0.6s 0.2s both; }
+  .splash-topic { font-size: 18px; font-weight: 600; max-width: 520px; margin-bottom: 8px; animation: fadeUp 0.6s 0.25s both; }
+  .splash-quote { color: var(--text-dim); font-size: 14px; max-width: 460px; margin: 0 auto 34px; font-style: italic; animation: fadeUp 0.6s 0.3s both; }
+  .splash-start {
+    font-family: var(--font-main); font-size: 18px; font-weight: 800; letter-spacing: 0.05em;
+    color: #fff; background: var(--orange); border: none; cursor: pointer;
+    padding: 18px 46px; border-radius: 14px; text-transform: uppercase;
+    box-shadow: 0 0 0 0 rgba(255,85,0,0.6); animation: pulseBtn 1.8s infinite, fadeUp 0.6s 0.35s both;
+    transition: transform 0.15s;
+  }
+  .splash-start:hover { transform: scale(1.04); }
+  .splash-foot { margin-top: 26px; font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; animation: fadeUp 0.6s 0.4s both; }
+  @keyframes pulseBtn { 0%{box-shadow:0 0 0 0 rgba(255,85,0,0.55);} 70%{box-shadow:0 0 0 22px rgba(255,85,0,0);} 100%{box-shadow:0 0 0 0 rgba(255,85,0,0);} }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px);} to {opacity:1; transform:none;} }
+
+  /* ── NAV gamification chips ── */
+  .xp-chip, .streak-chip {
+    display: flex; align-items: center; gap: 5px;
+    background: var(--surface2); border: 1px solid var(--border);
+    padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700;
+    font-family: var(--font-mono);
+  }
+  .xp-chip { color: var(--orange); }
+  .streak-chip { color: var(--yellow); }
+  .streak-chip.hot { border-color: var(--orange); box-shadow: 0 0 12px rgba(255,85,0,0.4); }
+  .nav-icon-btn { background:none; border:1px solid var(--border); color:var(--text-dim); width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:14px; transition:all .15s;}
+  .nav-icon-btn:hover { border-color: var(--orange); color: var(--orange); }
+  .timer-display.running { animation: timerGlow 2s infinite; }
+  @keyframes timerGlow { 0%,100%{text-shadow:0 0 0 rgba(34,197,94,0);} 50%{text-shadow:0 0 12px rgba(34,197,94,0.7);} }
+
+  /* XP float + streak flame */
+  .xp-float { position: fixed; z-index: 9997; font-family: var(--font-mono); font-weight: 900; font-size: 22px; color: var(--orange); pointer-events: none; text-shadow: 0 0 14px rgba(255,85,0,0.7); animation: xpFly 1.1s ease-out forwards; }
+  @keyframes xpFly { 0%{opacity:0; transform: translateY(0) scale(0.6);} 20%{opacity:1;} 100%{opacity:0; transform: translateY(-90px) scale(1.3);} }
+  .streak-flame { display:inline-block; animation: flameWiggle 0.5s ease-in-out infinite alternate; }
+  @keyframes flameWiggle { from{transform:scale(1) rotate(-4deg);} to{transform:scale(1.18) rotate(4deg);} }
+
+  /* ── SECTION HEADINGS for learn deck ── */
+  .deck-intro { margin-bottom: 26px; }
+  .deck-intro h2 { font-size: 24px; font-weight: 900; letter-spacing: -0.01em; }
+  .deck-intro h2 em { color: var(--orange); font-style: normal; }
+  .deck-intro p { color: var(--text-dim); font-size: 14px; margin-top: 6px; max-width: 680px; }
+  .lesson-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+
+  .lesson {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 26px 28px; margin-bottom: 22px;
+    scroll-margin-top: 72px; position: relative; overflow: hidden;
+  }
+  .lesson::after { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background: linear-gradient(180deg, var(--orange), transparent); }
+  .lesson-head { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+  .lesson-ico { width: 40px; height: 40px; flex-shrink:0; border-radius: 10px; background: var(--orange-glow); border:1px solid rgba(255,85,0,0.3); display:flex;align-items:center;justify-content:center; font-size: 20px; }
+  .lesson-head h3 { font-size: 18px; font-weight: 800; }
+  .lesson-sub { color: var(--text-dim); font-size: 13px; margin: 2px 0 20px; }
+  .lesson-takeaway {
+    margin-top: 18px; padding: 12px 16px; border-radius: 10px;
+    background: var(--orange-glow); border: 1px solid rgba(255,85,0,0.25);
+    font-size: 13.5px; line-height: 1.6;
+  }
+  .lesson-takeaway b { color: var(--orange); }
+
+  /* Animated reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Donut / radial */
+  .donut-wrap { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .ring-track { fill: none; stroke: var(--surface3); stroke-width: 22; }
+  .ring-seg { fill: none; stroke-width: 22; stroke-linecap: butt; transition: stroke-dashoffset 1.2s ease; }
+  .legend-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+  .legend-item .lt { font-weight: 700; font-size: 14px; }
+  .legend-item .ld { font-size: 12px; color: var(--text-dim); }
+
+  /* Generic stat strip */
+  .fact-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 12px; margin-top: 18px; }
+  .fact { background: var(--surface2); border:1px solid var(--border); border-radius: 10px; padding: 14px; text-align:center; }
+  .fact .fv { font-family: var(--font-mono); font-size: 24px; font-weight: 800; color: var(--orange); }
+  .fact .fl { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+  /* 2x2 matrix grids (power/interest, conflict) */
+  .matrix2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0; }
+  .cell {
+    border-radius: 10px; padding: 16px; min-height: 96px; border:1px solid var(--border);
+    display:flex; flex-direction:column; justify-content:center; transition: transform .15s;
+  }
+  .cell:hover { transform: scale(1.02); }
+  .cell h4 { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+  .cell p { font-size: 12px; color: var(--text-dim); line-height: 1.45; }
+  .cell.hi { background: rgba(255,85,0,0.12); border-color: rgba(255,85,0,0.35); }
+  .cell.hi h4 { color: var(--orange); }
+  .cell.mid { background: rgba(245,158,11,0.10); border-color: rgba(245,158,11,0.3); }
+  .cell.mid h4 { color: var(--yellow); }
+  .cell.lo { background: var(--surface2); }
+  .axis-x { text-align:center; font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:6px; }
+  .axis-label { font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; }
+
+  /* Ladder / steps */
+  .ladder { display: flex; flex-direction: column; gap: 8px; }
+  .rung { display:flex; align-items:center; gap:14px; padding: 14px 16px; border-radius:10px; background: var(--surface2); border:1px solid var(--border); border-left: 3px solid var(--orange); position: relative; }
+  .rung .rn { font-family: var(--font-mono); font-weight:800; color: var(--orange); width: 26px; }
+  .rung .rt { font-weight: 700; font-size: 14px; }
+  .rung .rd { font-size: 12px; color: var(--text-dim); }
+  .rung.up { border-left-color: var(--green); } .rung.up .rn { color: var(--green); }
+
+  /* horizontal spectrum bar */
+  .spectrum { height: 14px; border-radius: 8px; margin: 26px 0 6px; position: relative;
+    background: linear-gradient(90deg, #888 0%, var(--orange) 50%, var(--green) 100%); }
+  .spectrum.risk { background: linear-gradient(90deg, var(--green) 0%, var(--yellow) 50%, var(--red) 100%); }
+  .spectrum-mark { position:absolute; top:-8px; transform:translateX(-50%); font-size:18px; }
+  .spectrum-labels { display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); margin-top:8px; }
+
+  /* Risk heat matrix */
+  .heat { display: grid; grid-template-columns: 70px repeat(5, 1fr); gap: 4px; margin: 8px 0; font-size: 11px; }
+  .heat .hcell { aspect-ratio: 2/1; border-radius: 6px; display:flex; align-items:center; justify-content:center; font-weight:700; color:#000; }
+  .heat .hlabel { display:flex; align-items:center; justify-content:center; color: var(--text-dim); font-size:10px; text-align:center; }
+
+  /* Comm channels interactive */
+  .calc-row { display:flex; gap: 12px; align-items:center; flex-wrap:wrap; margin-bottom: 12px; }
+  .calc-row input[type=range] { flex:1; accent-color: var(--orange); }
+  .calc-out { font-family: var(--font-mono); font-size: 32px; font-weight: 900; color: var(--orange); }
+
+  /* EVM lab */
+  .evm-lab { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+  .evm-inputs { display: flex; flex-direction: column; gap: 12px; }
+  .evm-field label { display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim); margin-bottom:5px; }
+  .evm-field input { width:100%; background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:10px 12px; color:var(--text); font-family:var(--font-mono); font-size:15px; outline:none; }
+  .evm-field input:focus { border-color: var(--orange); box-shadow: 0 0 0 2px var(--orange-glow); }
+  .evm-results { display:grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
+  .evm-res { background: var(--surface2); border:1px solid var(--border); border-radius:10px; padding:12px 14px; }
+  .evm-res .rk { font-size:11px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; }
+  .evm-res .rv { font-family:var(--font-mono); font-size:20px; font-weight:800; margin-top:3px; }
+  .evm-res.good { border-color: rgba(34,197,94,0.4); } .evm-res.good .rv { color: var(--green); }
+  .evm-res.bad { border-color: rgba(239,68,68,0.4); } .evm-res.bad .rv { color: var(--red); }
+  .evm-res .ri { font-size:11px; color:var(--text-dim); margin-top:4px; line-height:1.4; }
+  @media (max-width:768px){ .evm-lab{ grid-template-columns:1fr; } }
+
+  /* ── FLASHCARDS ── */
+  .fc-stage { display:flex; flex-direction:column; align-items:center; gap:18px; }
+  .flashcard { width: 100%; max-width: 560px; height: 320px; perspective: 1400px; cursor: pointer; }
+  .fc-inner { position: relative; width:100%; height:100%; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flashcard.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face {
+    position:absolute; inset:0; backface-visibility:hidden; border-radius:16px;
+    border:1px solid var(--border); padding:30px; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center;
+  }
+  .fc-front { background: linear-gradient(140deg, var(--surface) 0%, #1a0800 100%); }
+  .fc-back { background: var(--surface2); transform: rotateY(180deg); }
+  .fc-tag { font-size:11px; color:var(--orange); text-transform:uppercase; letter-spacing:0.12em; font-weight:700; margin-bottom:14px; }
+  .fc-term { font-size:26px; font-weight:800; line-height:1.25; }
+  .fc-def { font-size:15px; line-height:1.65; color:var(--text); }
+  .fc-hint { position:absolute; bottom:14px; left:0; right:0; font-size:11px; color:var(--text-muted); }
+  .fc-controls { display:flex; gap:12px; align-items:center; }
+  .fc-count { font-family:var(--font-mono); font-size:13px; color:var(--text-dim); min-width:70px; text-align:center; }
+
+  /* ── VIDEO VAULT ── */
+  .video-stage { background:#000; border:1px solid var(--border); border-radius:14px; overflow:hidden; aspect-ratio:16/9; margin-bottom:18px; }
+  .video-stage iframe { width:100%; height:100%; border:0; }
+  .video-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; }
+  .vid-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; cursor:pointer; transition:all .15s; text-align:left; }
+  .vid-card:hover { border-color:var(--orange); transform:translateY(-4px); }
+  .vid-thumb { aspect-ratio:16/9; background:linear-gradient(135deg,#1a0800,#080808); display:flex;align-items:center;justify-content:center; position:relative; }
+  .vid-thumb .play { width:46px;height:46px;border-radius:50%; background:rgba(255,85,0,0.9); display:flex;align-items:center;justify-content:center; color:#fff; font-size:18px; }
+  .vid-thumb .dur { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,0.8); color:#fff; font-size:11px; padding:2px 6px; border-radius:4px; font-family:var(--font-mono); }
+  .vid-meta { padding:12px 14px; }
+  .vid-meta .vt { font-size:13px; font-weight:700; line-height:1.35; }
+  .vid-meta .vc { font-size:11px; color:var(--text-dim); margin-top:5px; }
+  .vid-domain { display:inline-block; font-size:10px; padding:2px 7px; border-radius:10px; margin-top:8px; text-transform:uppercase; letter-spacing:0.05em; }
+
+  /* Achievements */
+  .badge-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; }
+  .badge { background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:18px 12px; text-align:center; opacity:0.4; filter:grayscale(1); transition:all .3s; }
+  .badge.earned { opacity:1; filter:none; border-color:rgba(255,85,0,0.4); background:linear-gradient(160deg,var(--surface2),#1a0800); }
+  .badge .bi { font-size:30px; } .badge .bn { font-size:12px; font-weight:700; margin-top:8px; } .badge .bd { font-size:10px; color:var(--text-dim); margin-top:3px; }
+
+  @media (max-width:768px){
+    .evm-lab{grid-template-columns:1fr;} .matrix2{grid-template-columns:1fr;}
+    .heat{ font-size:9px; } .flashcard{ height:300px; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<canvas id="confetti"></canvas>
+
+<!-- ══════════════════════════════════════════ SPLASH ══ -->
+<div id="splash">
+  <div class="splash-brand">SWEAT DEPT · MENTAL FITNESS DIVISION</div>
+  <div class="splash-logo">PMP <em>COMMAND CENTER</em></div>
+  <div class="splash-day" id="splashDay">DAY 1 OF 14 · 14 DAYS TO EXAM</div>
+  <div class="splash-topic" id="splashTopic">Today: Orientation + PM Fundamentals</div>
+  <div class="splash-quote" id="splashQuote">"Gather the information first. Never escalate first, never reject, never delay. Solve the problem in front of you."</div>
+  <button class="splash-start" onclick="startDay()">▶ START DAY</button>
+  <div class="splash-foot">Better and Beyond · Together WE Achieve More</div>
+</div>
+
+<nav>
+  <div class="nav-brand">SWEAT DEPT <span>·</span> PMP CMD</div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('dashboard')">War Room</button>
+    <button class="nav-tab" onclick="showPage('learn')">Learn</button>
+    <button class="nav-tab" onclick="showPage('study')">Practice</button>
+    <button class="nav-tab" onclick="showPage('flashcards')">Flashcards</button>
+    <button class="nav-tab" onclick="showPage('formulas')">Formula Lab</button>
+    <button class="nav-tab" onclick="showPage('videos')">Videos</button>
+    <button class="nav-tab" onclick="showPage('wronglog')">Wrong Log</button>
+    <button class="nav-tab" onclick="showPage('studylog')">Journal</button>
+  </div>
+  <div class="nav-right">
+    <div class="streak-chip" id="streakChip" title="Current correct-answer streak"><span class="streak-flame">🔥</span> <span id="streakNum">0</span></div>
+    <div class="xp-chip" id="xpChip" title="Experience points">⚡ <span id="xpNum">0</span></div>
+    <div class="day-badge" id="dayBadge">DAY 1 of 14</div>
+    <div class="timer-display" id="navTimer">00:00:00</div>
+    <button class="nav-icon-btn" id="muteBtn" onclick="toggleMute()" title="Toggle sound">🔊</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════ DASHBOARD ══ -->
+<main>
+<div class="page active" id="page-dashboard">
+  <div class="dash-hero">
+    <div class="dash-hero-top">
+      <div>
+        <h1>Better &amp; Beyond.<br><em>Pass the PMP.</em></h1>
+        <p style="color:var(--text-dim);font-size:14px;margin-top:8px;">14 days. 112 hours. One exam. Jul 8, 2026.</p>
+      </div>
+      <div class="countdown-big">
+        <div class="num" id="daysLeft">14</div>
+        <div class="label">Days Left</div>
+      </div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label">
+        <span>Sprint Progress</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card orange">
+      <div class="stat-label">Total Study Hours</div>
+      <div class="stat-value orange" id="statHours">0.0</div>
+      <div class="stat-sub">of 112 hrs target</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-label">Questions Answered</div>
+      <div class="stat-value green" id="statAnswered">0</div>
+      <div class="stat-sub" id="statAccuracy">— accuracy</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-label">Wrong Answers Logged</div>
+      <div class="stat-value blue" id="statWrong">0</div>
+      <div class="stat-sub">needs review</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Today's Timer</div>
+      <div class="stat-value yellow" id="statToday">0:00</div>
+      <div class="stat-sub">
+        <button class="btn btn-primary btn-sm" id="timerBtn" onclick="toggleTimer()">▶ Start</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Domain Performance</div>
+      <div class="domain-bar">
+        <div class="domain-bar-top">
+          <span class="domain-name">People</span>
+          <span class="domain-pct warn" id="pctPeople">—%</span>
+        </div>
+        <div class="domain-track"><div class="domain-fill people" id="fillPeople" style="width:0%"></div></div>
+        <div class="domain-weight">42% of exam · Lead, motivate, manage conflict</div>
+      </div>
+      <div class="domain-bar">
+        <div class="domain-bar-top">
+          <span class="domain-name">Process</span>
+          <span class="domain-pct warn" id="pctProcess">—%</span>
+        </div>
+        <div class="domain-track"><div class="domain-fill process" id="fillProcess" style="width:0%"></div></div>
+        <div class="domain-weight">50% of exam · Technical PM work, EVM, risk, quality</div>
+      </div>
+      <div class="domain-bar">
+        <div class="domain-bar-top">
+          <span class="domain-name">Business Environment</span>
+          <span class="domain-pct warn" id="pctBizenv">—%</span>
+        </div>
+        <div class="domain-track"><div class="domain-fill bizenv" id="fillBizenv" style="width:0%"></div></div>
+        <div class="domain-weight">8% of exam · Compliance, value delivery, strategy</div>
+      </div>
+      <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border);">
+        <div style="font-size:12px;color:var(--text-dim);">Target: Above Target in all 3 domains = ~70%+ consistently</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">14-Day Sprint Schedule</div>
+      <div id="daySchedule"></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-title">Study Session Timer</div>
+    <div class="timer-section">
+      <div class="timer-big" id="bigTimer">00:00:00</div>
+      <div class="timer-controls">
+        <button class="btn btn-primary" id="mainTimerBtn" onclick="toggleTimer()">▶ Start Session</button>
+        <button class="btn btn-secondary" onclick="resetTimer()">Reset</button>
+        <button class="btn btn-secondary" onclick="logTimerSession()">Log &amp; Stop</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">PMI-ism Mindset · The 3-Step Method</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;">
+      <div style="padding:16px;background:var(--surface2);border-radius:8px;">
+        <div style="color:var(--orange);font-size:20px;font-weight:900;font-family:var(--font-mono);">01</div>
+        <div style="font-weight:700;margin:8px 0 6px;">Understand the Problem</div>
+        <div style="font-size:13px;color:var(--text-dim);">Strip away fluff. Restate the real issue in your own words before touching the answers.</div>
+      </div>
+      <div style="padding:16px;background:var(--surface2);border-radius:8px;">
+        <div style="color:var(--orange);font-size:20px;font-weight:900;font-family:var(--font-mono);">02</div>
+        <div style="font-weight:700;margin:8px 0 6px;">Eliminate by Principles</div>
+        <div style="font-size:13px;color:var(--text-dim);">Kill answers that contradict the 23 PMI mindset principles. Never delay. Never escalate first. Never reject.</div>
+      </div>
+      <div style="padding:16px;background:var(--surface2);border-radius:8px;">
+        <div style="color:var(--orange);font-size:20px;font-weight:900;font-family:var(--font-mono);">03</div>
+        <div style="font-weight:700;margin:8px 0 6px;">Choose the Best Answer</div>
+        <div style="font-size:13px;color:var(--text-dim);">Pick what completely solves the problem. If Principle #1 (gather info first) is one of 4 options — it is almost always the answer.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div class="card-title" style="margin:0;">Achievements &amp; Streak</div>
+      <div style="font-size:12px;color:var(--text-dim);">Best streak: <b style="color:var(--orange)" id="bestStreakDash">0</b> · XP: <b style="color:var(--orange)" id="xpDash">0</b></div>
+    </div>
+    <div class="badge-grid" id="badgeGrid"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ PRACTICE ══ -->
+<div class="page" id="page-study">
+  <div class="study-header">
+    <h2>Practice Questions</h2>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 50</span>
+      <button class="speak-btn" id="speakAllBtn" onclick="speakQuestion()">🔊 Read Question</button>
+      <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
+    <button class="filter-btn" onclick="filterDomain('People',this)">People (42%)</button>
+    <button class="filter-btn" onclick="filterDomain('Process',this)">Process (50%)</button>
+    <button class="filter-btn" onclick="filterDomain('Business Environment',this)">Biz Env (8%)</button>
+    <button class="filter-btn" onclick="filterDomain('wrong',this)">❌ Wrong Only</button>
+  </div>
+
+  <div id="questionArea"></div>
+
+  <div class="q-nav">
+    <button class="btn btn-secondary" onclick="prevQ()">← Previous</button>
+    <span class="q-progress-text" id="qProgressText">0 correct, 0 wrong</span>
+    <button class="btn btn-primary" onclick="nextQ()">Next →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ WRONG LOG ══ -->
+<div class="page" id="page-wronglog">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <h2 style="font-size:20px;font-weight:800;">Wrong Answer Log</h2>
+    <button class="btn btn-secondary btn-sm" onclick="clearWrongLog()">Clear All</button>
+  </div>
+  <div id="wrongLogContent"></div>
+</div>
+
+<!-- ══════════════════════════════════════════ STUDY LOG ══ -->
+<div class="page" id="page-studylog">
+  <h2 style="font-size:20px;font-weight:800;margin-bottom:24px;">Daily Study Log</h2>
+
+  <div class="log-input-section">
+    <h3>Log Today's Session</h3>
+    <div class="log-form">
+      <div class="form-group">
+        <label>Hours Studied</label>
+        <input type="number" id="logHours" min="0" max="12" step="0.25" placeholder="e.g. 2.5">
+      </div>
+      <div class="form-group">
+        <label>Topic / Focus Area</label>
+        <input type="text" id="logTopic" placeholder="e.g. Risk Management, EVM formulas">
+      </div>
+      <div>
+        <button class="btn btn-primary" onclick="saveLog()" style="height:38px;">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-title" style="margin-bottom:12px;">Sprint Calendar</div>
+  <div class="log-grid" id="logGrid"></div>
+
+  <div class="card" style="margin-top:16px;">
+    <div class="card-title">Log Entries</div>
+    <div id="logEntries"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ FORMULAS ══ -->
+<div class="page" id="page-formulas">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+    <h2 style="font-size:20px;font-weight:800;">Formula Lab</h2>
+    <button class="speak-btn" onclick="speakFormulas()">🔊 Read All Formulas</button>
+  </div>
+
+  <!-- INTERACTIVE EVM CALCULATOR -->
+  <div class="lesson" style="margin-bottom:24px">
+    <div class="lesson-head"><div class="lesson-ico">🧮</div><h3>Live EVM Calculator</h3></div>
+    <div class="lesson-sub">Type your numbers. Every metric solves instantly, color-coded good or bad, with a plain-English read.</div>
+    <div class="evm-lab">
+      <div class="evm-inputs">
+        <div class="evm-field"><label>BAC — Budget at Completion ($)</label><input type="number" id="inBAC" value="500000" oninput="calcEVM()"></div>
+        <div class="evm-field"><label>% Complete (0–100)</label><input type="number" id="inPct" value="40" oninput="calcEVM()"></div>
+        <div class="evm-field"><label>AC — Actual Cost ($)</label><input type="number" id="inAC" value="220000" oninput="calcEVM()"></div>
+        <div class="evm-field"><label>PV — Planned Value ($)</label><input type="number" id="inPV" value="225000" oninput="calcEVM()"></div>
+        <button class="speak-btn" onclick="speakEVM()" style="justify-content:center">🔊 Read Interpretation</button>
+      </div>
+      <div class="evm-results" id="evmResults"></div>
+    </div>
+  </div>
+
+  <div class="formula-grid">
+    <div class="formula-card">
+      <h3>EVM — Inputs</h3>
+      <div class="formula-row">
+        <div><div class="formula-name">PV — Planned Value</div><div class="formula-hint">Where you planned to be</div></div>
+        <div class="formula-eq">Budget × % Scheduled</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">EV — Earned Value</div><div class="formula-hint">Work actually done</div></div>
+        <div class="formula-eq">BAC × % Complete</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">AC — Actual Cost</div><div class="formula-hint">What you actually spent</div></div>
+        <div class="formula-eq">Given</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">BAC</div><div class="formula-hint">Total approved budget</div></div>
+        <div class="formula-eq">Given</div>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <h3>EVM — Variances</h3>
+      <div class="formula-row">
+        <div><div class="formula-name">CV — Cost Variance</div><div class="formula-hint">Negative = over budget</div></div>
+        <div class="formula-eq">EV − AC</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">SV — Schedule Variance</div><div class="formula-hint">Negative = behind schedule</div></div>
+        <div class="formula-eq">EV − PV</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">CPI — Cost Index</div><div class="formula-hint">&lt;1 over budget. &gt;1 under budget</div></div>
+        <div class="formula-eq">EV ÷ AC</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">SPI — Schedule Index</div><div class="formula-hint">&lt;1 behind. &gt;1 ahead</div></div>
+        <div class="formula-eq">EV ÷ PV</div>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <h3>EVM — Forecasts</h3>
+      <div class="formula-row">
+        <div><div class="formula-name">EAC (typical)</div><div class="formula-hint">Current rate continues</div></div>
+        <div class="formula-eq">BAC ÷ CPI</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">EAC (atypical)</div><div class="formula-hint">One-off variance</div></div>
+        <div class="formula-eq">AC + (BAC − EV)</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">ETC</div><div class="formula-hint">Cost to finish remaining work</div></div>
+        <div class="formula-eq">EAC − AC</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">VAC</div><div class="formula-hint">Over/under at completion</div></div>
+        <div class="formula-eq">BAC − EAC</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">TCPI</div><div class="formula-hint">Efficiency needed on remaining work</div></div>
+        <div class="formula-eq">(BAC−EV) ÷ (BAC−AC)</div>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <h3>Estimating &amp; Other</h3>
+      <div class="formula-row">
+        <div><div class="formula-name">PERT (Beta)</div><div class="formula-hint">Weighted 3-point estimate</div></div>
+        <div class="formula-eq">(O + 4M + P) ÷ 6</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">Triangular</div><div class="formula-hint">Simple average</div></div>
+        <div class="formula-eq">(O + M + P) ÷ 3</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">Std Deviation σ</div><div class="formula-hint">Activity risk spread</div></div>
+        <div class="formula-eq">(P − O) ÷ 6</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">Comm Channels</div><div class="formula-hint">n = number of stakeholders</div></div>
+        <div class="formula-eq">n(n − 1) ÷ 2</div>
+      </div>
+      <div class="formula-row">
+        <div><div class="formula-name">EMV</div><div class="formula-hint">Expected Monetary Value</div></div>
+        <div class="formula-eq">Probability × Impact</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;">
+    <div class="card-title" style="margin-bottom:12px;">The Golden Rule for CPI &amp; SPI</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="padding:12px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;">
+        <div style="color:var(--green);font-weight:800;font-size:15px;">Above 1.0 = GOOD</div>
+        <div style="font-size:13px;color:var(--text-dim);margin-top:4px;">CPI &gt; 1 → under budget · SPI &gt; 1 → ahead of schedule</div>
+      </div>
+      <div style="padding:12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;">
+        <div style="color:var(--red);font-weight:800;font-size:15px;">Below 1.0 = BAD</div>
+        <div style="font-size:13px;color:var(--text-dim);margin-top:4px;">CV negative → over budget · SV negative → behind schedule</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ LEARN DECK ══ -->
+<div class="page" id="page-learn">
+  <div class="deck-intro">
+    <h2>Visual <em>Learning Deck</em></h2>
+    <p>See the concept, do not just read it. Every PMP idea that trips people up, drawn as a chart, a grid, or an infographic you can actually picture on exam day. Scroll, hover, and use the interactive tools.</p>
+  </div>
+
+  <div class="lesson-nav" id="lessonNav"></div>
+
+  <!-- 1. EXAM BLUEPRINT -->
+  <div class="lesson reveal" id="ls-blueprint">
+    <div class="lesson-head"><div class="lesson-ico">🎯</div><h3>The Exam Blueprint</h3></div>
+    <div class="lesson-sub">180 questions · 230 minutes · 3 domains. Process is half the exam. People is almost half. Study where the points are.</div>
+    <div class="donut-wrap">
+      <svg width="220" height="220" viewBox="0 0 220 220" id="blueprintDonut">
+        <circle class="ring-track" cx="110" cy="110" r="80"></circle>
+        <circle class="ring-seg" id="segProcess" cx="110" cy="110" r="80" stroke="#FF5500" transform="rotate(-90 110 110)"></circle>
+        <circle class="ring-seg" id="segPeople" cx="110" cy="110" r="80" stroke="#f59e0b" transform="rotate(-90 110 110)"></circle>
+        <circle class="ring-seg" id="segBiz" cx="110" cy="110" r="80" stroke="#22c55e" transform="rotate(-90 110 110)"></circle>
+        <text x="110" y="104" text-anchor="middle" fill="#f0f0f0" font-size="30" font-weight="800" font-family="monospace">180</text>
+        <text x="110" y="124" text-anchor="middle" fill="#888" font-size="11" letter-spacing="1">QUESTIONS</text>
+      </svg>
+      <div>
+        <div class="legend-item"><span class="legend-dot" style="background:#FF5500"></span><div><div class="lt">Process — 50%</div><div class="ld">Technical PM work: EVM, schedule, risk, quality, procurement</div></div></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span><div><div class="lt">People — 42%</div><div class="ld">Lead, motivate, build teams, resolve conflict, serve</div></div></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span><div><div class="lt">Business Environment — 8%</div><div class="ld">Compliance, value delivery, organizational strategy</div></div></div>
+      </div>
+    </div>
+    <div class="fact-strip">
+      <div class="fact"><div class="fv">230</div><div class="fl">Minutes</div></div>
+      <div class="fact"><div class="fv">~1.3</div><div class="fl">Min / Question</div></div>
+      <div class="fact"><div class="fv">2</div><div class="fl">Breaks (after 60 &amp; 120)</div></div>
+      <div class="fact"><div class="fv">50%</div><div class="fl">Half is agile/hybrid</div></div>
+    </div>
+    <div class="lesson-takeaway"><b>Exam hack:</b> Half the exam is agile or hybrid. If a question says sprint, backlog, product owner, or velocity, switch your brain into agile mode and the predictive answers become wrong.</div>
+  </div>
+
+  <!-- 2. EVM S-CURVE + INTERPRETATION -->
+  <div class="lesson reveal" id="ls-evm">
+    <div class="lesson-head"><div class="lesson-ico">📈</div><h3>Earned Value — The S-Curve</h3></div>
+    <div class="lesson-sub">Three lines tell the whole story. PV is the plan, EV is what you earned, AC is what you paid. Where they sit tells you over or under, ahead or behind.</div>
+    <svg viewBox="0 0 520 260" width="100%" style="max-width:560px" id="evmCurve">
+      <line x1="50" y1="220" x2="500" y2="220" stroke="#2a2a2a"></line>
+      <line x1="50" y1="20" x2="50" y2="220" stroke="#2a2a2a"></line>
+      <text x="275" y="250" fill="#888" font-size="11" text-anchor="middle">TIME →</text>
+      <text x="20" y="120" fill="#888" font-size="11" text-anchor="middle" transform="rotate(-90 20 120)">$ COST</text>
+      <!-- PV planned (dashed) -->
+      <path d="M50,210 C160,190 260,120 380,60 L470,40" fill="none" stroke="#888" stroke-width="2.5" stroke-dasharray="6 5"></path>
+      <!-- EV earned (green) -->
+      <path d="M50,210 C150,200 230,160 320,120 L380,105" fill="none" stroke="#22c55e" stroke-width="3"></path>
+      <!-- AC actual (red) -->
+      <path d="M50,210 C140,195 220,140 310,90 L370,72" fill="none" stroke="#ef4444" stroke-width="3"></path>
+      <line x1="380" y1="60" x2="380" y2="105" stroke="#888" stroke-width="1" stroke-dasharray="3 3"></line>
+      <line x1="370" y1="72" x2="380" y2="72" stroke="#ef4444" stroke-width="1" stroke-dasharray="3 3"></line>
+      <text x="475" y="40" fill="#888" font-size="11">PV</text>
+      <text x="385" y="108" fill="#22c55e" font-size="11">EV</text>
+      <text x="375" y="66" fill="#ef4444" font-size="11">AC</text>
+      <text x="392" y="86" fill="#f59e0b" font-size="10">SV gap</text>
+    </svg>
+    <div class="fact-strip" style="margin-top:8px">
+      <div class="fact"><div class="fv" style="color:#ef4444">CV = EV − AC</div><div class="fl">Negative = over budget</div></div>
+      <div class="fact"><div class="fv" style="color:#f59e0b">SV = EV − PV</div><div class="fl">Negative = behind schedule</div></div>
+      <div class="fact"><div class="fv" style="color:#22c55e">CPI = EV ÷ AC</div><div class="fl">Below 1 = over budget</div></div>
+      <div class="fact"><div class="fv" style="color:#FF5500">SPI = EV ÷ PV</div><div class="fl">Below 1 = behind schedule</div></div>
+    </div>
+    <div class="lesson-takeaway"><b>Memory anchor:</b> Always start the formula with EV. Earned Value is the hero. Minus the other letter gives a variance, divided by the other letter gives an index. Below 1.0 or negative is always bad.</div>
+  </div>
+
+  <!-- 3. CPI / SPI QUADRANT (interactive) -->
+  <div class="lesson reveal" id="ls-quad">
+    <div class="lesson-head"><div class="lesson-ico">🧭</div><h3>CPI / SPI Health Quadrant</h3></div>
+    <div class="lesson-sub">Drag the sliders. The dot shows exactly how your project is doing. Top right is the only place you want to be.</div>
+    <div style="display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:center" class="quadwrap">
+      <svg viewBox="0 0 260 260" width="100%" style="max-width:300px" id="quadPlot">
+        <rect x="30" y="30" width="100" height="100" fill="rgba(239,68,68,0.10)"></rect>
+        <rect x="130" y="30" width="100" height="100" fill="rgba(245,158,11,0.10)"></rect>
+        <rect x="30" y="130" width="100" height="100" fill="rgba(245,158,11,0.10)"></rect>
+        <rect x="130" y="130" width="100" height="100" fill="rgba(34,197,94,0.12)"></rect>
+        <line x1="130" y1="30" x2="130" y2="230" stroke="#2a2a2a"></line>
+        <line x1="30" y1="130" x2="230" y2="130" stroke="#2a2a2a"></line>
+        <text x="180" y="150" fill="#22c55e" font-size="9" text-anchor="middle">UNDER + AHEAD</text>
+        <text x="80" y="150" fill="#f59e0b" font-size="9" text-anchor="middle">OVER + AHEAD</text>
+        <text x="180" y="115" fill="#f59e0b" font-size="9" text-anchor="middle">UNDER + BEHIND</text>
+        <text x="80" y="115" fill="#ef4444" font-size="9" text-anchor="middle">OVER + BEHIND</text>
+        <text x="130" y="248" fill="#888" font-size="9" text-anchor="middle">CPI →</text>
+        <text x="14" y="130" fill="#888" font-size="9" text-anchor="middle" transform="rotate(-90 14 130)">SPI →</text>
+        <circle id="quadDot" cx="130" cy="130" r="8" fill="#FF5500" stroke="#fff" stroke-width="2"></circle>
+      </svg>
+      <div>
+        <div class="evm-field" style="margin-bottom:14px"><label>CPI = <span id="cpiVal" style="color:var(--orange)">1.00</span></label><input type="range" id="cpiSlide" min="0.5" max="1.5" step="0.01" value="1" style="width:100%;accent-color:var(--orange)"></div>
+        <div class="evm-field"><label>SPI = <span id="spiVal" style="color:var(--orange)">1.00</span></label><input type="range" id="spiSlide" min="0.5" max="1.5" step="0.01" value="1" style="width:100%;accent-color:var(--orange)"></div>
+        <div id="quadVerdict" style="margin-top:14px;font-size:13px;color:var(--text-dim);line-height:1.5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. TUCKMAN -->
+  <div class="lesson reveal" id="ls-tuckman">
+    <div class="lesson-head"><div class="lesson-ico">🪜</div><h3>Tuckman — Team Development Stages</h3></div>
+    <div class="lesson-sub">Every team climbs these five steps. When a question describes confusion or conflict, find the matching rung.</div>
+    <div class="ladder">
+      <div class="rung"><span class="rn">1</span><div><div class="rt">Forming</div><div class="rd">Team meets. Polite, unsure, dependent on the PM for direction.</div></div></div>
+      <div class="rung"><span class="rn">2</span><div><div class="rt">Storming</div><div class="rd">Conflict over roles and approach. Friction, little output. (Most "team is arguing" questions live here.)</div></div></div>
+      <div class="rung"><span class="rn">3</span><div><div class="rt">Norming</div><div class="rd">Team agrees on ground rules, builds trust, settles into a rhythm.</div></div></div>
+      <div class="rung up"><span class="rn">4</span><div><div class="rt">Performing</div><div class="rd">High output, self-organizing, minimal PM intervention needed.</div></div></div>
+      <div class="rung up"><span class="rn">5</span><div><div class="rt">Adjourning</div><div class="rd">Work is done, team disbands, lessons learned captured.</div></div></div>
+    </div>
+    <div class="lesson-takeaway"><b>Trigger words:</b> "confusion over roles" and "arguing about approach" = Storming. "Highly productive" = Performing. The PM's coaching style changes per stage: directing, then coaching, then supporting, then delegating.</div>
+  </div>
+
+  <!-- 5. CONFLICT MODES -->
+  <div class="lesson reveal" id="ls-conflict">
+    <div class="lesson-head"><div class="lesson-ico">🤝</div><h3>Conflict Resolution Modes</h3></div>
+    <div class="lesson-sub">Thomas-Kilmann grid: how assertive vs how cooperative. PMI's favorite is always Collaborate.</div>
+    <div style="display:flex;justify-content:space-between"><span class="axis-label">▲ More assertive</span><span class="axis-label">More cooperative ▶</span></div>
+    <div class="matrix2">
+      <div class="cell mid"><h4>Forcing / Compete</h4><p>Impose your decision. Win-lose. Fast but damages relationships.</p></div>
+      <div class="cell hi"><h4>Collaborate ⭐</h4><p>Open up the disagreement, find a win-win. PMI's preferred mode, every time it is an option.</p></div>
+      <div class="cell lo"><h4>Avoid / Withdraw</h4><p>Sidestep the conflict. Lose-lose. Only buys time.</p></div>
+      <div class="cell mid"><h4>Smooth / Accommodate</h4><p>Emphasize agreement, downplay the difference. Temporary peace.</p></div>
+    </div>
+    <div style="margin-top:10px" class="cell lo"><h4>Compromise (the middle)</h4><p>Both sides give something up. Lose-lose-ish. Good when time is short and stakes are even, but never the best answer when Collaborate is offered.</p></div>
+    <div class="lesson-takeaway"><b>Exam default:</b> When two people disagree and you can pick "facilitate a discussion to find a solution both accept," that is Collaborate. Choose it unless the question blocks it.</div>
+  </div>
+
+  <!-- 6. POWER / INTEREST -->
+  <div class="lesson reveal" id="ls-power">
+    <div class="lesson-head"><div class="lesson-ico">📊</div><h3>Stakeholder Power / Interest Grid</h3></div>
+    <div class="lesson-sub">How much can they affect the project (power) vs how much do they care (interest). That decides how you engage them.</div>
+    <div style="display:flex;justify-content:space-between"><span class="axis-label">▲ High power</span><span class="axis-label">High interest ▶</span></div>
+    <div class="matrix2">
+      <div class="cell mid"><h4>Keep Satisfied</h4><p>High power, low interest. Give them what they need, do not overload. (Senior execs not close to the work.)</p></div>
+      <div class="cell hi"><h4>Manage Closely ⭐</h4><p>High power, high interest. Frequent, detailed updates. They can make or break you. (The sponsor, the CEO who cares.)</p></div>
+      <div class="cell lo"><h4>Monitor</h4><p>Low power, low interest. Minimal effort, occasional check-in.</p></div>
+      <div class="cell mid"><h4>Keep Informed</h4><p>Low power, high interest. Keep them in the loop. (End users, store managers.)</p></div>
+    </div>
+    <div class="lesson-takeaway"><b>Remember:</b> High power + high interest = Manage Closely. That CEO with high interest is not "keep satisfied," they are "manage closely."</div>
+  </div>
+
+  <!-- 7. STAKEHOLDER ENGAGEMENT LADDER -->
+  <div class="lesson reveal" id="ls-engage">
+    <div class="lesson-head"><div class="lesson-ico">📶</div><h3>5 Stakeholder Engagement Levels</h3></div>
+    <div class="lesson-sub">Where a stakeholder sits today vs where you need them. The PM's job is to move everyone up toward Supportive or Leading.</div>
+    <div class="ladder">
+      <div class="rung"><span class="rn">1</span><div><div class="rt">Unaware</div><div class="rd">Does not know the project exists.</div></div></div>
+      <div class="rung"><span class="rn">2</span><div><div class="rt">Resistant</div><div class="rd">Aware, and openly opposes the project or change.</div></div></div>
+      <div class="rung"><span class="rn">3</span><div><div class="rt">Neutral</div><div class="rd">Aware, neither supports nor opposes.</div></div></div>
+      <div class="rung up"><span class="rn">4</span><div><div class="rt">Supportive</div><div class="rd">Aware and supports the work.</div></div></div>
+      <div class="rung up"><span class="rn">5</span><div><div class="rt">Leading</div><div class="rd">Actively champions and drives the project forward.</div></div></div>
+    </div>
+    <div class="lesson-takeaway"><b>On the Stakeholder Engagement Assessment Matrix:</b> C = current level, D = desired level. The gap between them is exactly the engagement work you plan.</div>
+  </div>
+
+  <!-- 8. RISK MATRIX -->
+  <div class="lesson reveal" id="ls-riskmatrix">
+    <div class="lesson-head"><div class="lesson-ico">🌡️</div><h3>Probability / Impact Risk Matrix</h3></div>
+    <div class="lesson-sub">Score = probability × impact. Red corner gets your attention and your money first.</div>
+    <div class="heat" id="heatGrid"></div>
+    <div class="lesson-takeaway"><b>Reserves:</b> <b style="color:var(--green)">Contingency reserve</b> covers KNOWN risks you identified and analyzed (PM controls it). <b style="color:var(--yellow)">Management reserve</b> covers UNKNOWN unknowns (management controls it, needs a change request to access).</div>
+  </div>
+
+  <!-- 9. RISK RESPONSES -->
+  <div class="lesson reveal" id="ls-riskresp">
+    <div class="lesson-head"><div class="lesson-ico">🛡️</div><h3>Risk Response Strategies</h3></div>
+    <div class="lesson-sub">Threats and opportunities are mirror images. Memorize both columns side by side.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="quadwrap">
+      <div>
+        <div style="color:var(--red);font-weight:800;font-size:13px;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.06em">Threats (negative)</div>
+        <div class="ladder">
+          <div class="rung" style="border-left-color:var(--red)"><span class="rn" style="color:var(--red)">A</span><div><div class="rt">Avoid</div><div class="rd">Eliminate the threat. Change the plan so it cannot happen.</div></div></div>
+          <div class="rung" style="border-left-color:var(--red)"><span class="rn" style="color:var(--red)">T</span><div><div class="rt">Transfer</div><div class="rd">Shift impact to a third party. Insurance, warranty, outsourcing.</div></div></div>
+          <div class="rung" style="border-left-color:var(--red)"><span class="rn" style="color:var(--red)">M</span><div><div class="rt">Mitigate</div><div class="rd">Reduce probability or impact. Add testing, build redundancy.</div></div></div>
+          <div class="rung" style="border-left-color:var(--red)"><span class="rn" style="color:var(--red)">A</span><div><div class="rt">Accept</div><div class="rd">Take no action, set a contingency. Active or passive.</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div style="color:var(--green);font-weight:800;font-size:13px;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.06em">Opportunities (positive)</div>
+        <div class="ladder">
+          <div class="rung up"><span class="rn">E</span><div><div class="rt">Exploit</div><div class="rd">Make sure it happens. The opposite of avoid.</div></div></div>
+          <div class="rung up"><span class="rn">S</span><div><div class="rt">Share</div><div class="rd">Partner with a third party who can best capture it.</div></div></div>
+          <div class="rung up"><span class="rn">E</span><div><div class="rt">Enhance</div><div class="rd">Increase probability or impact. The opposite of mitigate.</div></div></div>
+          <div class="rung up"><span class="rn">A</span><div><div class="rt">Accept</div><div class="rd">Take it if it comes, do not chase it.</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="lesson-takeaway"><b>Escalate</b> is the fifth option for both: when the risk is outside your authority or project scope, hand it to the right level. Insurance is always <b>Transfer</b>.</div>
+  </div>
+
+  <!-- 10. DELIVERY SPECTRUM -->
+  <div class="lesson reveal" id="ls-spectrum">
+    <div class="lesson-head"><div class="lesson-ico">🎚️</div><h3>Predictive ↔ Hybrid ↔ Agile</h3></div>
+    <div class="lesson-sub">It is a spectrum, not a switch. Half the exam lives on the right side. Keywords tell you where you are.</div>
+    <div class="spectrum"><span class="spectrum-mark" style="left:0%">🏗️</span><span class="spectrum-mark" style="left:50%">🔀</span><span class="spectrum-mark" style="left:100%">🏃</span></div>
+    <div class="spectrum-labels"><span><b>Predictive / Waterfall</b><br>Fixed scope, plan upfront</span><span style="text-align:center"><b>Hybrid</b><br>Best of both</span><span style="text-align:right"><b>Agile / Scrum</b><br>Adapt, iterate, deliver value fast</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px" class="quadwrap">
+      <div class="cell lo"><h4 style="color:#888">Predictive keywords</h4><p>WBS, Gantt, baseline, Change Control Board (CCB), change request, phase gate, scope statement, critical path.</p></div>
+      <div class="cell hi"><h4>Agile keywords</h4><p>Sprint, backlog, velocity, Product Owner, Scrum Master, retrospective, Definition of Done, burndown, iteration, story points.</p></div>
+    </div>
+    <div class="lesson-takeaway"><b>First move on every situational question:</b> spot the keywords and lock the environment. In predictive you submit a change request. In agile you add it to the backlog. Same situation, different correct answer.</div>
+  </div>
+
+  <!-- 11. COMM CHANNELS interactive -->
+  <div class="lesson reveal" id="ls-comm">
+    <div class="lesson-head"><div class="lesson-ico">🕸️</div><h3>Communication Channels</h3></div>
+    <div class="lesson-sub">Add one person and the lines explode. The formula is n(n−1)/2. Move the slider and watch the web grow.</div>
+    <div style="display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:center" class="quadwrap">
+      <svg viewBox="0 0 200 200" width="100%" style="max-width:220px" id="commGraph"></svg>
+      <div>
+        <div class="calc-row"><span style="font-size:13px;color:var(--text-dim);min-width:90px">People: <b id="commN" style="color:var(--orange);font-size:18px">6</b></span><input type="range" id="commSlide" min="2" max="20" step="1" value="6"></div>
+        <div class="calc-out"><span id="commCount">15</span> <span style="font-size:16px;color:var(--text-dim);font-weight:400">channels</span></div>
+        <div style="font-size:13px;color:var(--text-dim);margin-top:10px;font-family:var(--font-mono)">n(n−1)/2 = <span id="commMath">6×5/2</span></div>
+      </div>
+    </div>
+    <div class="lesson-takeaway"><b>Exam trap:</b> when a team grows from 6 to 8, they want the NEW channels added. Calculate both (15 and 28) and subtract = 13. Never just plug in the new number.</div>
+  </div>
+
+  <!-- 12. COST OF QUALITY -->
+  <div class="lesson reveal" id="ls-coq">
+    <div class="lesson-head"><div class="lesson-ico">✅</div><h3>Cost of Quality</h3></div>
+    <div class="lesson-sub">Pay a little now to prevent, or pay a lot later to fix. Prevention is always cheapest.</div>
+    <div class="matrix2">
+      <div class="cell hi"><h4>Prevention</h4><p>Before defects: training, documented process, requirement reviews, test plans. (Cost of Conformance)</p></div>
+      <div class="cell hi"><h4>Appraisal</h4><p>During: inspection, testing, audits to catch defects. (Cost of Conformance)</p></div>
+      <div class="cell mid"><h4>Internal Failure</h4><p>Found before delivery: rework, scrap. (Cost of Non-Conformance)</p></div>
+      <div class="cell mid" style="background:rgba(239,68,68,0.10);border-color:rgba(239,68,68,0.3)"><h4 style="color:var(--red)">External Failure</h4><p>Found after delivery: warranty, recalls, lost trust. The most expensive of all.</p></div>
+    </div>
+    <div class="lesson-takeaway"><b>QA vs QC:</b> Quality Assurance = auditing the PROCESS (are we following standards? proactive). Quality Control = inspecting the DELIVERABLE (does the output meet spec? reactive).</div>
+  </div>
+
+  <!-- 13. CONTRACT RISK SPECTRUM -->
+  <div class="lesson reveal" id="ls-contract">
+    <div class="lesson-head"><div class="lesson-ico">📄</div><h3>Contract Types — Who Holds the Risk</h3></div>
+    <div class="lesson-sub">Slide from fixed price to cost plus and the risk moves from seller to buyer.</div>
+    <div class="spectrum risk"><span class="spectrum-mark" style="left:0%">🧱</span><span class="spectrum-mark" style="left:50%">⚖️</span><span class="spectrum-mark" style="left:100%">💸</span></div>
+    <div class="spectrum-labels"><span><b>Fixed Price (FP)</b><br>Seller holds risk.<br>Buyer safest. Scope must be clear.</span><span style="text-align:center"><b>Time &amp; Materials</b><br>Shared. Good for staff augmentation.</span><span style="text-align:right"><b>Cost Plus (CPFF/CPIF)</b><br>Buyer holds risk.<br>Seller safest. Use when scope is fuzzy.</span></div>
+    <div class="lesson-takeaway"><b>Pick by certainty:</b> Well-defined scope → Fixed Price protects the buyer. Uncertain scope → Cost Plus protects the seller. Insurance against a specific risk is risk Transfer, not a contract type.</div>
+  </div>
+
+  <!-- 14. MOTIVATION -->
+  <div class="lesson reveal" id="ls-motivation">
+    <div class="lesson-head"><div class="lesson-ico">🔋</div><h3>Motivation Theories at a Glance</h3></div>
+    <div class="lesson-sub">The names PMI loves to test, boiled down to one line each.</div>
+    <div class="ladder">
+      <div class="rung"><span class="rn">M</span><div><div class="rt">Maslow's Hierarchy</div><div class="rd">Physiological → Safety → Social → Esteem → Self-actualization. Lower needs first.</div></div></div>
+      <div class="rung"><span class="rn">H</span><div><div class="rt">Herzberg Two-Factor</div><div class="rd">Hygiene (salary, security) stops dissatisfaction but does not motivate. Motivators (recognition, growth, challenge) actually drive people.</div></div></div>
+      <div class="rung"><span class="rn">XY</span><div><div class="rt">McGregor X &amp; Y</div><div class="rd">Theory X: people avoid work, must be controlled. Theory Y: people are self-motivated. PMI leans Y.</div></div></div>
+      <div class="rung"><span class="rn">V</span><div><div class="rt">Vroom Expectancy</div><div class="rd">Motivation = belief that effort leads to reward that I value.</div></div></div>
+      <div class="rung"><span class="rn">M3</span><div><div class="rt">McClelland Needs</div><div class="rd">Achievement, Affiliation, Power. Match the task to what drives the person.</div></div></div>
+    </div>
+    <div class="lesson-takeaway"><b>Classic question:</b> someone already paid well wants more motivation. Herzberg says more salary is a hygiene factor, it will not motivate. Give recognition, challenge, and growth instead.</div>
+  </div>
+
+  <!-- 15. 23 PRINCIPLES MINDSET -->
+  <div class="lesson reveal" id="ls-mindset">
+    <div class="lesson-head"><div class="lesson-ico">🧠</div><h3>The PMI Mindset — 3-Step Method</h3></div>
+    <div class="lesson-sub">Muhammad's framework. This is how you solve any situational question, even ones you have never seen.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px" class="quadwrap">
+      <div class="cell hi"><h4>1 · Understand</h4><p>Strip the fluff. Restate the real problem in your own words before looking at answers.</p></div>
+      <div class="cell hi"><h4>2 · Eliminate</h4><p>Kill answers that contradict the mindset. Never delay, never escalate first, never reject, never blame.</p></div>
+      <div class="cell hi"><h4>3 · Choose</h4><p>Pick the answer that fully solves the problem. Gather-info-first is almost always right when offered.</p></div>
+    </div>
+    <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="cell lo"><h4 style="color:var(--green)">PMI always does this</h4><p>Gather info first · Be a servant leader · Remove blockers · Trust the team (they are the experts) · Collaborate · Refer to the plan and lessons learned · Deliver value · Close the project formally, always.</p></div>
+      <div class="cell lo"><h4 style="color:var(--red)">PMI never does this</h4><p>Escalate first · Reject a request outright · Blame or punish · Remove a team member to "fix" things · Accept a delay · Gold-plate (add unapproved scope) · Use the words only / always / never.</p></div>
+    </div>
+    <div class="lesson-takeaway"><b>Flip to the Flashcards tab</b> to drill all 23 principles and key terms with spaced-repetition cards. <b>The principle behind every practice question is tagged</b> so you learn the rule, not just the answer.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ FLASHCARDS ══ -->
+<div class="page" id="page-flashcards">
+  <div class="deck-intro">
+    <h2>Flashcard <em>Deck</em></h2>
+    <p>Tap a card to flip. Front is the cue, back is the answer. Mark what you know to push it back in the rotation.</p>
+  </div>
+  <div class="filter-row" id="fcFilters">
+    <button class="filter-btn active" onclick="fcFilter('all',this)">All Cards</button>
+    <button class="filter-btn" onclick="fcFilter('Principle',this)">23 Principles</button>
+    <button class="filter-btn" onclick="fcFilter('Term',this)">Key Terms</button>
+    <button class="filter-btn" onclick="fcFilter('Formula',this)">Formulas</button>
+    <button class="filter-btn" onclick="fcFilter('Agile',this)">Agile</button>
+  </div>
+  <div class="fc-stage">
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="fc-inner">
+        <div class="fc-face fc-front">
+          <div class="fc-tag" id="fcTag">PRINCIPLE</div>
+          <div class="fc-term" id="fcTerm">Tap to begin</div>
+          <div class="fc-hint">tap to flip</div>
+        </div>
+        <div class="fc-face fc-back">
+          <div class="fc-def" id="fcDef"></div>
+          <div class="fc-hint">tap to flip back</div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-controls">
+      <button class="btn btn-secondary" onclick="fcPrev()">← Prev</button>
+      <span class="fc-count" id="fcCount">1 / 1</span>
+      <button class="btn btn-secondary" onclick="speakCard()">🔊 Read</button>
+      <button class="btn btn-secondary" onclick="fcShuffle()">🔀 Shuffle</button>
+      <button class="btn btn-primary" onclick="fcNext()">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ VIDEOS ══ -->
+<div class="page" id="page-videos">
+  <div class="deck-intro">
+    <h2>Video <em>Vault</em></h2>
+    <p>Watch the concept taught out loud. Pick a topic to load it in the player below, or paste any YouTube link to study it right here. Each card opens a focused search on the best free PMP teachers (Andrew Ramdayal, Muhammad, PMI).</p>
+  </div>
+  <div class="video-stage"><iframe id="videoFrame" src="" title="PMP video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  <div class="calc-row" style="margin-bottom:20px">
+    <input type="text" id="videoUrl" placeholder="Paste a YouTube link or video ID to watch it here" style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none">
+    <button class="btn btn-primary" onclick="loadCustomVideo()">Load</button>
+  </div>
+  <div class="video-grid" id="videoGrid"></div>
+</div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════
+// QUESTION BANK — Built from uploaded docs
+// Muhammad's 23 Principles + Study Sprint + Risk/Quality/Stakeholder sessions
+// ══════════════════════════════════════
+const QUESTIONS = [
+  // ── PEOPLE DOMAIN ──────────────────────────────────────
+  {
+    id:1, domain:"People", difficulty:"medium",
+    principle:"P1 — Gather info first",
+    text:"A team member tells the PM that another team member is not performing up to standard. The PM has not personally observed this. What should the PM do FIRST?",
+    options:["A. Immediately escalate to HR","B. Investigate and gather more information before taking any action","C. Remove the underperforming team member from the project","D. Call a team meeting and address the issue publicly"],
+    answer:1,
+    explanation:"<strong>Principle #1</strong> — Always take a step back and gather information before acting. Option B is the only answer that respects this. You never escalate first (A), never remove someone without facts (C), and never expose a team member publicly (D) — that creates friction."
+  },
+  {
+    id:2, domain:"People", difficulty:"easy",
+    principle:"P3 — Servant Leadership",
+    text:"An agile team member tells the PM they are stuck on a blocker and cannot proceed with their sprint task. As a servant leader, what should the PM do?",
+    options:["A. Tell the team member to figure it out independently","B. Remove the impediment and help the team member get unblocked","C. Reassign the task to another team member","D. Escalate the blocker to the project sponsor"],
+    answer:1,
+    explanation:"<strong>Principle #3 — Servant Leadership</strong>: The PM serves the team by removing impediments and enabling them to do their best work. A servant leader does not micromanage, does not pass the problem, and does not immediately escalate."
+  },
+  {
+    id:3, domain:"People", difficulty:"medium",
+    principle:"P16 — Self-organizing teams",
+    text:"Two developers on an agile team disagree on how to implement a minor feature. The disagreement is not affecting sprint progress and both approaches are technically valid. What should the PM do?",
+    options:["A. Let the team resolve the conflict themselves","B. Step in and make a final decision to save time","C. Remove the feature from the sprint","D. Escalate to the product owner immediately"],
+    answer:0,
+    explanation:"<strong>Principle #16 — Agile teams are self-organizing.</strong> When a conflict is minor and not affecting progress, the PM does not step in. The team has the autonomy and expertise to work it out. Only step in when conflict is actively damaging progress or the project."
+  },
+  {
+    id:4, domain:"People", difficulty:"hard",
+    principle:"P16 — Self-organizing teams",
+    text:"Two senior developers on an agile project strongly disagree on how to build a critical feature. The disagreement has caused a slowdown and the product owner is worried it won't be completed on time. What should the PM do?",
+    options:["A. Let the team resolve it — they are self-organizing","B. Step in and facilitate a discussion to resolve the conflict and keep the sprint on track","C. Remove one developer from the project","D. Escalate to the product owner"],
+    answer:1,
+    explanation:"<strong>Key distinction from the previous question:</strong> This conflict IS affecting project progress and creating schedule risk. When there is real risk of delay, the PM steps in. Option B is correct — facilitate, do not dictate. (C) creates team friction. (D) is premature escalation."
+  },
+  {
+    id:5, domain:"People", difficulty:"easy",
+    principle:"P23 — Never reduce team capacity",
+    text:"A junior developer joins the project team. The senior developer is leading a critical feature. The client wants faster delivery. What should the PM do about onboarding the junior developer?",
+    options:["A. Assign the senior developer to train the junior developer while continuing the feature","B. Ask the junior developer to learn independently to avoid impacting the senior developer's workload","C. Bring in an external trainer at additional cost","D. Pause the critical feature until the junior developer is onboarded"],
+    answer:1,
+    explanation:"<strong>Principle #23</strong> — Never give a team member extra tasks that reduce their capacity to focus on the primary project. Assigning training (A) pulls the senior dev away from critical work. External trainer (C) costs money unnecessarily. Pausing (D) causes delay. B is correct — the junior dev should ramp up independently."
+  },
+  {
+    id:6, domain:"People", difficulty:"medium",
+    principle:"P8 — PM makes decisions",
+    text:"A team member is struggling with a technical issue and suggests escalating to the VP of Engineering immediately. What should the PM do?",
+    options:["A. Agree and contact the VP right away","B. Work with the team to find a solution before escalating","C. Submit a change request first","D. Assign a different team member to take over"],
+    answer:1,
+    explanation:"<strong>Principle #8 — The PM makes decisions.</strong> The PM does not run to senior management before trying to solve the problem. Gather the team, investigate, attempt resolution. Only escalate when you truly cannot resolve it. This is also Principle #1 in action."
+  },
+  {
+    id:7, domain:"People", difficulty:"medium",
+    principle:"P7 — Team are the experts",
+    text:"A PM is making a scheduling decision for the next sprint and needs to estimate task durations. What is the BEST approach?",
+    options:["A. Make estimates independently based on past experience","B. Consult with the development team to estimate since they are the experts","C. Use the project plan as the sole reference","D. Ask the project sponsor to set the deadlines"],
+    answer:1,
+    explanation:"<strong>Principle #7 — Your team members are the experts.</strong> Estimates should come from the people doing the work, not from the PM alone. The team has hands-on technical knowledge of what each task requires."
+  },
+  {
+    id:8, domain:"People", difficulty:"hard",
+    principle:"P19 — Refer to wronglog/lessons learned",
+    text:"A PM managing a CRM implementation recalls that a similar technical issue occurred on a previous project. The client is pressuring for a quick fix. What should the PM do?",
+    options:["A. Instruct the team to fix the issue immediately to avoid delay","B. Refer to the Lessons Learned register from the previous project to see how the issue was resolved","C. Escalate to the sponsor for additional resources","D. Ask the client for an extension"],
+    answer:1,
+    explanation:"<strong>Principle #19</strong> — When the question explicitly mentions a similar completed past project, ALWAYS refer to it. The Lessons Learned register exists exactly for this situation. Asking for an extension (D) causes delay. Escalating (C) is premature."
+  },
+  {
+    id:9, domain:"People", difficulty:"medium",
+    principle:"P6 — Ground rules",
+    text:"During a retrospective, team members reveal they cannot complete sprint tasks because of constant interruptions and requests from other teams. What should the PM do?",
+    options:["A. Identify root causes of the interruptions and establish clear ground rules to minimize external disruptions","B. Bring in an external coach","C. Advise team members not to let interruptions affect their capacity","D. Break tasks into smaller pieces to work around the interruptions"],
+    answer:0,
+    explanation:"<strong>Hack:</strong> When you see 'ground rules' as an answer option and the situation involves collective team behavior problems — it is almost always the answer. Ground rules address the systemic cause. Root cause analysis (also in A) is another high-value PMI approach. A combines both."
+  },
+  {
+    id:10, domain:"People", difficulty:"medium",
+    principle:"P1 + P7",
+    text:"A PM is assigned a new project but the organization has no PMO and no formal policies or procedures. What should the PM do FIRST?",
+    options:["A. Consult a subject matter expert to determine the best way forward","B. Discuss with the team members how to proceed","C. Select a framework (agile or predictive) and start executing","D. Guide the team to create their own governance from scratch"],
+    answer:0,
+    explanation:"<strong>Tricky one:</strong> Normally we would go to the team (Principle #7). But the question says the organization has NO formal policies and NO PMO — which means the team likely has no knowledge base either. When NEITHER the PM nor team knows what to do, bring in an SME. If the question mentioned any existing PM knowledge in the org, B would be better."
+  },
+
+  // ── PROCESS DOMAIN ─────────────────────────────────────
+  {
+    id:11, domain:"Process", difficulty:"medium",
+    principle:"P2 — Never accept delay",
+    text:"A project is two weeks behind schedule due to delayed material delivery. Several tasks depend on the delayed materials. What should the PM do?",
+    options:["A. Update the schedule to reflect the delay and continue","B. Ask the team to work overtime to catch up","C. Inform the client and request a deadline extension","D. Assess the critical path and reassign resources from non-critical tasks to critical ones"],
+    answer:3,
+    explanation:"<strong>Principle #2 — Never settle for a delay.</strong> When the schedule is threatened, look at the critical path to understand what can be done. Reassigning from non-critical to critical activities is the scheduling compression technique that recovers without adding cost. Updating the schedule (A) accepts the delay. Overtime (B) and extension (C) are last resorts."
+  },
+  {
+    id:12, domain:"Process", difficulty:"easy",
+    principle:"P6 — Change control",
+    text:"A team member suggests adding a new feature during execution that was not in the original scope. The PM thinks it is a good idea. What should the PM do?",
+    options:["A. Add it immediately since it improves the product","B. Submit a change request through the formal change control process","C. Add it to the backlog and discuss at the next sprint","D. Ask the team member to implement it quietly to avoid stakeholder concern"],
+    answer:1,
+    explanation:"<strong>Principle #6 — All scope changes go through the change request process.</strong> In a predictive project, the Change Control Board must approve changes. Never add scope without approval — that is gold plating. Note: In agile, the answer would be to add it to the backlog (C) — but only if the question indicates an agile or hybrid approach."
+  },
+  {
+    id:13, domain:"Process", difficulty:"hard",
+    principle:"P22 — Critical path",
+    text:"A project has a looming schedule issue. A senior manager suggests reassigning resources from another project to speed up completion. The project plan clearly outlines resource allocation, and making this change would affect later tasks. What should the PM do?",
+    options:["A. Follow the manager's suggestion without questioning it","B. Refer back to the project plan, assess the impact of the proposed change before making a decision","C. Submit a change request immediately","D. Inform stakeholders the deadline cannot be met"],
+    answer:1,
+    explanation:"<strong>Principle #11 + Principle #1</strong> — In a predictive project, your plan is your map. Always refer to it. Before making any resource change, assess the impact. The answer is B — investigate via the plan first. This is also Principle #1: take a step back before acting."
+  },
+  {
+    id:14, domain:"Process", difficulty:"medium",
+    principle:"P10 — Closing phase always occurs",
+    text:"Midway through a software project, the client terminates the engagement due to changing business priorities. Some deliverables are complete and the team has moved on. What should the PM do?",
+    options:["A. Move on since the client ended the project","B. Conduct a formal project closeout — document deliverables, close contracts, capture lessons learned","C. Leave documentation incomplete since the project is terminated","D. Ask the client if they want to skip the closing phase"],
+    answer:1,
+    explanation:"<strong>Principle #10 — The closing phase ALWAYS occurs.</strong> Whether a project is completed or terminated, the PM must close it formally: sign off contracts, release resources, capture lessons learned, archive documents. The client does not decide whether to close — the PM is responsible for this."
+  },
+  {
+    id:15, domain:"Process", difficulty:"hard",
+    principle:"EVM",
+    text:"A project has a CPI of 0.85 and an SPI of 0.92. BAC is $500,000 and AC is $220,000. The project is currently 40% complete. What is the EAC using the typical formula?",
+    options:["A. $588,235","B. $500,000","C. $480,000","D. $565,000"],
+    answer:0,
+    explanation:"<strong>EVM Calculation:</strong> EV = BAC × % complete = $500,000 × 0.40 = $200,000. CPI = EV ÷ AC = $200,000 ÷ $220,000 ≈ 0.909 (close to given 0.85 — use given). EAC (typical) = BAC ÷ CPI = $500,000 ÷ 0.85 = $588,235. When CPI &lt; 1, the project is over budget and EAC will be HIGHER than BAC."
+  },
+  {
+    id:16, domain:"Process", difficulty:"medium",
+    principle:"Risk Management — PIQRIIN",
+    text:"A PM is reviewing the risk register during project execution and discovers that several risks that were previously ranked low have increased in probability due to external market changes. What should the PM do?",
+    options:["A. Wait until the next scheduled risk review to update the register","B. Immediately close these risks since they were already analyzed","C. Perform a risk reassessment and update the risk register with the new probability ratings","D. Escalate to the sponsor since the risk environment has changed"],
+    answer:2,
+    explanation:"<strong>Key term: Risk Reassessment.</strong> Periodic reviews of the risk register and watch list are called RISK REASSESSMENTS. This is a high-frequency PMP exam term. When risk conditions change, you do not wait (A), close risks (B), or escalate first (D). You perform a reassessment and update the register."
+  },
+  {
+    id:17, domain:"Process", difficulty:"medium",
+    principle:"Risk — Reserve types",
+    text:"A project team is identifying risks when they realize there are certain unknown risks that cannot be identified or analyzed. Management wants assurance the project can handle them. What should the PM do?",
+    options:["A. Calculate EMV for these unknown risks","B. Allocate a percentage of project cost as management reserve based on past project history","C. Allocate additional contingency reserve","D. Notify management that unknown risks cannot be planned for"],
+    answer:1,
+    explanation:"<strong>Critical distinction:</strong> Contingency reserves cover KNOWN risks (identified, analyzed). Management reserves cover UNKNOWN risks (unknown unknowns). EMV (A) requires known probability and impact — you cannot calculate EMV for truly unknown risks. The answer is B — management reserve funded by historical reference."
+  },
+  {
+    id:18, domain:"Process", difficulty:"medium",
+    principle:"P11 — Refer to the plan",
+    text:"A project is running behind schedule. A senior manager suggests reallocating resources from another ongoing project to help. The project plan clearly shows current allocations. What should the PM do FIRST?",
+    options:["A. Implement the change immediately as the manager suggested","B. Refer to the project plan and assess the impact of reallocating resources before deciding","C. Reject the suggestion since the plan is locked","D. Ask the sponsor to authorize the reallocation"],
+    answer:1,
+    explanation:"<strong>Principle #11 — Your plan is your map.</strong> In a predictive project, always reference the project plan before making decisions. Principle #1 also applies: take a step back, assess impact, then decide. Never blindly follow a suggestion that could affect downstream tasks without understanding the consequences."
+  },
+  {
+    id:19, domain:"Process", difficulty:"medium",
+    principle:"Quality — QA vs QC",
+    text:"A quality auditor visits a project and examines whether the team is following documented coding standards and peer review procedures. What type of quality activity is this?",
+    options:["A. Quality Control (QC)","B. Quality Assurance (QA)","C. Inspection","D. Testing"],
+    answer:1,
+    explanation:"<strong>QA vs QC:</strong> QA focuses on PROCESS quality — are standards and procedures being followed? QC focuses on DELIVERABLE quality — does the output meet specifications? Auditing processes = QA. Inspecting deliverables, testing, acceptance = QC. Remember: QA is proactive (prevent defects), QC is reactive (find defects)."
+  },
+  {
+    id:20, domain:"Process", difficulty:"easy",
+    principle:"Agile — Risk-adjusted backlog",
+    text:"An agile team is planning a sprint and the product owner wants to add a risk spike to investigate whether a new API integration will work before building the full feature. When should this spike be added?",
+    options:["A. At the end of the project after all features are delivered","B. During backlog refinement and prioritized at the top of the sprint","C. Only after the full feature is built and tested","D. It should not be added — spikes waste sprint capacity"],
+    answer:1,
+    explanation:"<strong>Risk-Adjusted Backlog + Risk Spikes:</strong> A spike is a short, time-boxed backlog item used to investigate or test something risky before committing to building the full feature. Spikes are added during BACKLOG REFINEMENT and prioritized high — because you want to resolve uncertainty EARLY, when change is cheapest."
+  },
+  {
+    id:21, domain:"Process", difficulty:"medium",
+    principle:"Procurement — Contract types",
+    text:"A company with a low risk threshold and low profit margin on a project is considering purchasing insurance to protect against a specific risk. What type of risk response is this?",
+    options:["A. Escalation","B. Transference","C. Acceptance","D. Avoidance"],
+    answer:1,
+    explanation:"<strong>Risk Response — Transference:</strong> Purchasing insurance transfers the financial impact of a risk to a third party. The risk is not eliminated — it is shifted. Avoidance (D) eliminates the risk entirely. Acceptance (C) acknowledges the risk without action. Transference is always the correct answer when insurance or outsourcing is described."
+  },
+  {
+    id:22, domain:"Process", difficulty:"hard",
+    principle:"Risk — Risk owner",
+    text:"Which of the following is the PRIMARY responsibility of a risk owner?",
+    options:["A. Identify new risks and create workarounds as they occur","B. Respond to risk triggers and implement the planned risk response","C. Report to the PM that a risk has occurred and note consequences","D. Quantitatively analyze risks assigned by the project manager"],
+    answer:1,
+    explanation:"<strong>Risk Owner:</strong> A risk owner's primary job is to FOLLOW THE PLAN — specifically, to monitor for the risk trigger and then execute the planned response when that trigger fires. They are not responsible for creating new workarounds (A), just reporting (C), or analyzing other risks (D). They own ONE risk and act on it."
+  },
+  {
+    id:23, domain:"Process", difficulty:"medium",
+    principle:"Stakeholder — 5 engagement levels",
+    text:"A project stakeholder is aware of the project but openly opposes it and works against its success. Which stakeholder engagement level does this represent?",
+    options:["A. Unaware","B. Neutral","C. Resistant","D. Supportive"],
+    answer:2,
+    explanation:"<strong>5 Stakeholder Engagement Levels (memorize these):</strong> Unaware — does not know the project exists. Resistant — opposes the project. Neutral — neither supports nor opposes. Supportive — supports the project. Leading — actively champions and promotes the project. The PM's goal is to move stakeholders toward Supportive or Leading."
+  },
+  {
+    id:24, domain:"Process", difficulty:"medium",
+    principle:"Communication",
+    text:"A project team of 6 people is joined by 2 additional team members. How many new communication channels were added?",
+    options:["A. 8","B. 13","C. 21","D. 15"],
+    answer:1,
+    explanation:"<strong>Formula: n(n-1)/2</strong> Original 6 people: 6×5/2 = 15 channels. New 8 people: 8×7/2 = 28 channels. New channels added = 28 − 15 = 13. Always calculate total channels for each scenario then subtract. This formula appears on almost every exam."
+  },
+  {
+    id:25, domain:"Process", difficulty:"hard",
+    principle:"Schedule — Compression",
+    text:"A project is 3 weeks behind schedule. There is budget available but no tasks that can be performed in parallel. What schedule compression technique should be used?",
+    options:["A. Fast tracking — overlap tasks","B. Crashing — add resources to critical path tasks","C. Scope reduction","D. Accept the delay and update the baseline"],
+    answer:1,
+    explanation:"<strong>Fast Tracking vs Crashing:</strong> Fast tracking = overlap tasks that were planned sequentially. Use when tasks CAN be done in parallel. Crashing = add more resources (people, money) to shorten duration. Use when you have budget but CANNOT overlap tasks. This question explicitly says tasks cannot be parallel — therefore CRASH. Always identify the constraint first."
+  },
+
+  // ── BUSINESS ENVIRONMENT ──────────────────────────────
+  {
+    id:26, domain:"Business Environment", difficulty:"medium",
+    principle:"P4 — Value driven",
+    text:"A client requests a new feature that was not in the original scope. The project is already on a tight budget. What should the PM do?",
+    options:["A. Tell the client the feature cannot be done","B. Discuss the feasibility with the team and explore options before making a decision","C. Add the feature immediately to satisfy the client","D. Submit a change request without analyzing impact"],
+    answer:1,
+    explanation:"<strong>Principle #18 — Never immediately reject a request or opportunity. Principle #1 — Gather information first.</strong> B combines both: you take a step back, discuss with the team (experts), and explore options. Only after this analysis do you submit a change request or inform the client of constraints. Never say 'no' outright."
+  },
+  {
+    id:27, domain:"Business Environment", difficulty:"easy",
+    principle:"P15 — Introduce agile slowly",
+    text:"A traditionally predictive organization wants to adopt agile practices. The CEO has asked the PM to implement agile. What should the PM do?",
+    options:["A. Immediately implement agile across all projects","B. Introduce agile concepts gradually by starting with a pilot project","C. Overhaul all PMO processes at once","D. Wait until the team is comfortable before starting"],
+    answer:1,
+    explanation:"<strong>Principle #15 — When transitioning to agile, introduce it SLOWLY through a pilot project or Inception deck.</strong> Culture change does not stick when forced all at once. A pilot lets the team experience agile without disrupting all ongoing work. Never wait (D = delay). Never overhaul all at once (C = chaos)."
+  },
+  {
+    id:28, domain:"Business Environment", difficulty:"medium",
+    principle:"P4 — Value driven + Hybrid",
+    text:"A company is transitioning to agile but some stakeholders still prefer predictive approaches. The sponsor needs results fast or the project will be cancelled. What is the BEST approach?",
+    options:["A. Use full agile — deliver fast iterations","B. Use full predictive — follow established processes","C. Use a hybrid approach combining both predictive and agile elements","D. Pause the project until all stakeholders agree on the approach"],
+    answer:2,
+    explanation:"<strong>Hybrid approach:</strong> When there are elements of both predictive (resistant stakeholders, compliance requirements) and agile (need for speed, uncertainty), use HYBRID. A hybrid combines both: predictive for stability and governance, agile for fast value delivery. Pause (D) causes delay — never acceptable."
+  },
+  {
+    id:29, domain:"Business Environment", difficulty:"hard",
+    principle:"Agile — MVP + Value",
+    text:"A client's requested 12-month project timeline must now be compressed to 4 months. What is the BEST response?",
+    options:["A. Explain delivery cannot be done in 4 months","B. Evaluate the backlog, prioritize essential features, and create an MVP deliverable within the new timeline","C. Request additional budget and resources to crash the schedule","D. Assess the critical path and inform stakeholders the compressed timeline is unachievable"],
+    answer:1,
+    explanation:"<strong>MVP = Minimum Viable Product.</strong> When timelines compress, the PMI answer is almost never 'reject the request' (A, D violate Principle #18). Instead, find a way to deliver VALUE within constraints. An MVP delivers the most critical features first. This shows the client progress, gets feedback, and keeps the project alive. Note that C might follow B — but B is FIRST."
+  },
+  {
+    id:30, domain:"Business Environment", difficulty:"medium",
+    principle:"P21 — No 'only/always/never'",
+    text:"A stakeholder requests a feature enhancement. The PM responds that the feature can ONLY be added if the client agrees to extend the schedule AND increase the budget. Is this the right response?",
+    options:["A. Yes — setting conditions is responsible PM behavior","B. No — the word 'only' eliminates all other possibilities and is a red flag answer","C. Yes — the PM should protect the baseline at all costs","D. It depends on the contract type"],
+    answer:1,
+    explanation:"<strong>Principle #21 — Never use 'only,' 'always,' or 'never' in your thinking.</strong> On the exam, answers containing 'only,' 'always,' or 'never' are almost always wrong because they restrict all possibilities. The correct response reviews feasibility with the team and explores options (Principle #1 + #18) — not issues an ultimatum."
+  },
+
+  // ── EXTRA HIGH-VALUE QUESTIONS ──────────────────────────
+  {
+    id:31, domain:"Process", difficulty:"hard",
+    principle:"Risk — Large project complexity",
+    text:"A $100M hybrid project has 34 team members in 4 countries, 2,256 work packages, 1,300 stakeholders, and 7 phases. At the end of planning, only 6 risks were identified. What is the problem?",
+    options:["A. The risk management plan was not followed","B. The identify risks process is incomplete — 6 risks is insufficient for a project of this scale","C. The risk register needs quantitative analysis","D. The sponsor has not approved the risk management plan"],
+    answer:1,
+    explanation:"<strong>Project complexity drives risk volume.</strong> A project with 34 team members, 4 countries, 7 phases, and 1,300 stakeholders CANNOT have only 6 identified risks. The correct answer is B — the Identify Risks process is clearly incomplete. This signals a systemic process failure, not a documentation problem. PMI expects risk count to scale with project complexity."
+  },
+  {
+    id:32, domain:"People", difficulty:"medium",
+    principle:"P3 — Servant leadership",
+    text:"After a successful project, the client praises the PM for delivering on time. The PM then holds a team meeting. What is the MOST important thing the PM should do during the meeting?",
+    options:["A. Communicate the client's positive feedback to the project team","B. Discuss the next project's scope","C. Record the client feedback in meeting minutes","D. Analyze ways to improve future delivery timelines"],
+    answer:0,
+    explanation:"<strong>Servant Leadership — recognize the team.</strong> The team BUILT the project. They are the reason it was delivered on time. A servant leader immediately shares positive recognition with the team. This boosts morale, reinforces good behavior, and acknowledges their contribution. Everything else (B, C, D) can happen — but A is FIRST and MOST important."
+  },
+  {
+    id:33, domain:"Process", difficulty:"medium",
+    principle:"Agile — Definition of Done",
+    text:"An agile team is establishing quality standards at the start of a new project. What should the PM guide the team to focus on?",
+    options:["A. Identify the tools and methods for project success, ensuring testing is done early and continuously","B. Conduct user acceptance testing at the end of all sprints","C. Confirm the definition of done with the product owner when all acceptance criteria are met","D. Ensure all product documentation is complete before the first sprint begins"],
+    answer:0,
+    explanation:"<strong>Agile Quality — early and continuous.</strong> At the START of an agile project, quality means: establishing how you will test, what tools you will use, and ensuring testing is built into every iteration. The Definition of Done (C) IS important — but it is established at the beginning, not confirmed when criteria are met. D is predictive thinking, not agile."
+  },
+  {
+    id:34, domain:"Process", difficulty:"easy",
+    principle:"Agile — Sprint rules",
+    text:"An agile team is midway through a sprint. The client suddenly requests feedback on newly delivered features but the team has not yet heard from them. The product owner is concerned. What should the PM do?",
+    options:["A. Pause the sprint and wait for client feedback","B. Escalate to the client's management","C. Complete the sprint as planned and gather client feedback during the sprint review at the end","D. Remove the features from the sprint"],
+    answer:2,
+    explanation:"<strong>Sprint integrity:</strong> You do not interrupt or pause a sprint once it has started. The sprint goal is fixed. Client feedback is gathered at the END of each sprint during the Sprint Review — not mid-sprint. Pausing (A) causes delay. Escalating (B) is premature. D removes value. The sprint runs to completion."
+  },
+  {
+    id:35, domain:"Process", difficulty:"hard",
+    principle:"Stakeholder — Power/Interest grid",
+    text:"A project has a CEO (high power, high interest) and store managers (medium influence, high interest). According to stakeholder engagement strategy, how should the PM treat the CEO?",
+    options:["A. Keep informed — they have high interest but limited ability to act","B. Manage closely — provide frequent updates and progress reports","C. Monitor — check in occasionally","D. Keep satisfied — high power but limited interest"],
+    answer:1,
+    explanation:"<strong>Power vs Interest Grid:</strong> High Power + High Interest = MANAGE CLOSELY. This stakeholder can kill or champion the project and cares deeply about outcomes. They need frequent, detailed updates. Keep Satisfied = High Power, Low Interest (give them what they need, don't overwhelm). Keep Informed = Low Power, High Interest. Monitor = Low Power, Low Interest."
+  },
+  // Add final questions
+  {
+    id:36, domain:"People", difficulty:"medium",
+    principle:"P14 — SME when no one knows",
+    text:"A PM is managing a complex manufacturing project. The team encounters a machinery problem they cannot fix. The team lacks the technical expertise. A similar problem occurred in a past project but was not well documented. What should the PM do?",
+    options:["A. Investigate internally and attempt to troubleshoot to avoid delay","B. Consult a subject matter expert with the technical knowledge to resolve the issue","C. Continue with other tasks while the team solves the issue themselves","D. Escalate immediately to the project sponsor"],
+    answer:1,
+    explanation:"<strong>Principle #14 — When you and your team have no clue, bring in an SME.</strong> The key conditions: (1) team lacks expertise AND (2) the past project reference is not well documented (so Lessons Learned won't help). When both conditions are true, an SME is required. If the past project had good documentation, refer to Lessons Learned first."
+  },
+  {
+    id:37, domain:"Process", difficulty:"medium",
+    principle:"Agile — Burndown chart",
+    text:"An agile team's risk burn-down chart shows that the number of high-risk items has not decreased over three consecutive sprints despite mitigation efforts. What does this indicate?",
+    options:["A. The team is identifying too many risks","B. The risk responses are not effective and should be reassessed","C. The project should be escalated to the sponsor","D. The burn-down chart is being measured incorrectly"],
+    answer:1,
+    explanation:"<strong>Risk Burn-Down Chart:</strong> A healthy risk burn-down shows risks decreasing over time. If the chart is flat (not decreasing), the risk responses are NOT working. The correct action is to reassess and update the risk responses — go back to Plan Risk Responses and adjust the strategy. A flat or rising line is a red flag requiring immediate action."
+  },
+  {
+    id:38, domain:"Business Environment", difficulty:"easy",
+    principle:"P10 — Closing always happens",
+    text:"A project has been completed and the client has signed off. However, the PM moves immediately to the next project without formally closing the current one. What is the RISK of this approach?",
+    options:["A. No risk — if the client signed off, the project is complete","B. Lessons learned are lost, contracts may not be properly closed, and resources may not be properly released","C. The sponsor may object to the pace","D. The next project will be affected by the confusion"],
+    answer:1,
+    explanation:"<strong>Principle #10 — Closing phase ALWAYS occurs.</strong> Skipping closeout means: lessons learned are never captured (wasted institutional knowledge), contracts are not formally closed (financial and legal risk), resources are not officially released (creates overlap confusion), and final payments may not trigger. Closeout is not optional — even if the client is happy."
+  },
+  {
+    id:39, domain:"Process", difficulty:"medium",
+    principle:"Integration — Change control",
+    text:"During execution, a scope change is approved by the CCB. What must the PM update as a result?",
+    options:["A. Only the WBS","B. Only the schedule","C. The project management plan and all affected subsidiary plans and baselines","D. The project charter"],
+    answer:2,
+    explanation:"<strong>Integrated Change Control:</strong> When a scope change is approved, it is NOT enough to update just the WBS or schedule. ALL affected baselines (scope, schedule, cost) and the project management plan must be updated. This is integrated change control — changes ripple through all connected plans. The charter (D) is rarely updated."
+  },
+  {
+    id:40, domain:"People", difficulty:"easy",
+    principle:"Conflict resolution",
+    text:"Two team members have a conflict over technical priorities. The PM facilitates a discussion where both parties openly explore the disagreement and find a mutually acceptable solution. What conflict resolution technique is this?",
+    options:["A. Smoothing / Accommodating","B. Forcing","C. Collaborating / Problem Solving","D. Compromising"],
+    answer:2,
+    explanation:"<strong>5 Conflict Resolution Modes:</strong> Collaborating/Problem Solving = explore the disagreement openly, find a win-win — PMI's PREFERRED approach. Compromising = both give something up. Smoothing = acknowledge the conflict exists but minimize it. Forcing = impose your position. Withdrawing = avoid the conflict entirely. When in doubt on the exam — Collaborate first."
+  },
+  {
+    id:41, domain:"Process", difficulty:"medium",
+    principle:"Agile — Product Owner",
+    text:"In a Scrum project, who is responsible for prioritizing the product backlog?",
+    options:["A. The Scrum Master","B. The Development Team","C. The Project Sponsor","D. The Product Owner"],
+    answer:3,
+    explanation:"<strong>Scrum Roles:</strong> Product Owner — owns and prioritizes the backlog, represents the client, defines acceptance criteria. Scrum Master — servant leader, removes impediments, facilitates ceremonies. Development Team — self-organizing, does the actual work, estimates tasks. The Product Owner is the ONLY one with authority to prioritize the backlog."
+  },
+  {
+    id:42, domain:"Process", difficulty:"hard",
+    principle:"EVM Calculation",
+    text:"A project has BAC = $800,000, AC = $400,000, EV = $350,000, PV = $420,000. Is the project over or under budget, and ahead or behind schedule?",
+    options:["A. Under budget and ahead of schedule","B. Over budget and behind schedule","C. Under budget and behind schedule","D. Over budget and ahead of schedule"],
+    answer:1,
+    explanation:"<strong>EVM Analysis:</strong> CV = EV − AC = $350K − $400K = −$50K (NEGATIVE = over budget). SV = EV − PV = $350K − $420K = −$70K (NEGATIVE = behind schedule). CPI = 350/400 = 0.875 (below 1 = over budget). SPI = 350/420 = 0.833 (below 1 = behind schedule). Both are bad. The project is over budget AND behind schedule."
+  },
+  {
+    id:43, domain:"People", difficulty:"medium",
+    principle:"P12 — Predictive vs Agile keywords",
+    text:"A PM reads: 'The team must update the Change Control Board before implementing any changes.' This language indicates what type of project?",
+    options:["A. Agile","B. Hybrid","C. Predictive / Waterfall","D. Scrum"],
+    answer:2,
+    explanation:"<strong>Keyword Recognition:</strong> CCB (Change Control Board), Integrated Change Control, formal change requests, baselines, WBS, Gantt = PREDICTIVE. Sprint, backlog, velocity, Product Owner, Scrum Master, iteration, DoD, retrospective, burndown = AGILE. Recognizing the environment from keywords lets you identify the right answer framework immediately."
+  },
+  {
+    id:44, domain:"Process", difficulty:"medium",
+    principle:"Risk — Risk register vs report",
+    text:"Which document provides a SUMMARY view of the overall project risk profile, while the other provides DETAILED information on each individual risk?",
+    options:["A. Risk register provides summary; risk report provides detail","B. Risk report provides summary; risk register provides detail","C. Both serve the same purpose","D. The risk management plan provides both"],
+    answer:1,
+    explanation:"<strong>Risk Register vs Risk Report:</strong> Risk Register = detailed listing of every identified risk, its description, owner, probability, impact, response plan. Risk Report = high-level SUMMARY of the overall risk posture of the project. The register is the detail; the report is the executive summary. This distinction appears frequently on the PMP."
+  },
+  {
+    id:45, domain:"Process", difficulty:"easy",
+    principle:"Procurement",
+    text:"A project manager is unsure about the total cost of a construction project. Which contract type is MOST appropriate to protect the seller from cost overruns?",
+    options:["A. Fixed Price (FP / Lump Sum)","B. Time and Materials (T&M)","C. Cost Plus Fixed Fee (CPFF)","D. Fixed Price Incentive Fee (FPIF)"],
+    answer:2,
+    explanation:"<strong>Contract Types — Risk allocation:</strong> Fixed Price = buyer has LOW risk; seller absorbs cost overruns. Cost Reimbursable (Cost Plus) = seller has LOW risk; buyer pays all costs plus fee. T&M = hybrid, commonly used for staff augmentation. When the SELLER wants to minimize risk and costs are uncertain, Cost Plus (C) protects them. When scope is well defined, Fixed Price benefits the buyer."
+  },
+  {
+    id:46, domain:"People", difficulty:"hard",
+    principle:"Tuckman + Team development",
+    text:"A newly formed project team is experiencing confusion over roles, arguing about the best approach, and struggling to produce any output. Which stage of team development does this represent?",
+    options:["A. Norming","B. Storming","C. Performing","D. Forming"],
+    answer:1,
+    explanation:"<strong>Tuckman's 5 Stages:</strong> Forming — team comes together, polite, unclear. Storming — conflict, arguments over approach, roles unclear (this question). Norming — team builds cohesion, agrees on rules. Performing — team is productive and high-functioning. Adjourning — project ends, team disperses. The confusion + conflict described = Storming."
+  },
+  {
+    id:47, domain:"Business Environment", difficulty:"medium",
+    principle:"Business value",
+    text:"A PM is asked to evaluate whether a project should continue. The project is behind schedule, but an analysis shows the remaining work will still deliver significant business value that exceeds the remaining cost. What should the PM recommend?",
+    options:["A. Cancel the project since it is behind schedule","B. Continue the project because the business value outweighs the remaining cost","C. Escalate immediately to the board","D. Reduce scope to recover the schedule first"],
+    answer:1,
+    explanation:"<strong>Principle #4 — Choose the most value-driven answer.</strong> In Business Environment questions, business value is the primary lens. A project that is behind schedule but still delivers value exceeding its cost should continue. Schedule variance alone is not sufficient reason to cancel if the value case is strong. Scope reduction (D) might be considered but the question asks what to RECOMMEND about continuation."
+  },
+  {
+    id:48, domain:"Process", difficulty:"medium",
+    principle:"Quality — Prevention vs Appraisal",
+    text:"A software team spends time reviewing requirements documents and creating detailed test plans before writing any code. This is an example of what type of quality cost?",
+    options:["A. External Failure","B. Internal Failure","C. Appraisal","D. Prevention"],
+    answer:3,
+    explanation:"<strong>Cost of Quality (COQ):</strong> Prevention costs = activities done BEFORE defects occur (training, process documentation, requirement reviews, test plans). Appraisal costs = inspection, testing DURING production to find defects. Internal Failure = defects found before delivery (rework). External Failure = defects found AFTER delivery (warranty, recall). Prevention is always cheapest."
+  },
+  {
+    id:49, domain:"People", difficulty:"easy",
+    principle:"Motivation theories",
+    text:"A PM wants to motivate a team member who is already receiving a competitive salary and good benefits. According to Herzberg's Motivation-Hygiene theory, what will MOST effectively motivate this person?",
+    options:["A. Increasing salary further","B. Providing more challenging work, recognition, and opportunities for growth","C. Improving the physical work environment","D. Adding more job security"],
+    answer:1,
+    explanation:"<strong>Herzberg Two-Factor Theory:</strong> Hygiene Factors (prevent dissatisfaction but do NOT motivate): salary, job security, benefits, work environment. Motivators (actually motivate): achievement, recognition, challenging work, responsibility, advancement. Once hygiene needs are met, more salary does NOT motivate. Growth, recognition, and challenge are the true motivators."
+  },
+  {
+    id:50, domain:"Process", difficulty:"hard",
+    principle:"Integration — Lessons learned",
+    text:"A PM is closing a project that ran 6 months over schedule due to scope creep and poor stakeholder communication. What is the MOST important output of the closing process that will benefit future projects?",
+    options:["A. Final project report","B. Formal acceptance from the client","C. Lessons learned register","D. Final budget reconciliation"],
+    answer:2,
+    explanation:"<strong>Lessons Learned Register — the crown jewel of project closeout.</strong> This document captures what went wrong (scope creep, communication failures), what went right, and what should be done differently. It becomes an Organizational Process Asset (OPA) that directly improves future projects. While client acceptance (B) is required to CLOSE, lessons learned is the most VALUABLE output for the organization going forward."
+  }
+];
+
+// ══════════════════════════════════════
+// APP STATE
+// ══════════════════════════════════════
+const SPRINT_START = new Date('2026-06-24');
+const EXAM_DATE = new Date('2026-07-08');
+
+const DAYS = [
+  {d:1,date:'Jun 24',topic:'Orientation + PM Fundamentals',phase:1},
+  {d:2,date:'Jun 25',topic:'Integration + Scope Management',phase:1},
+  {d:3,date:'Jun 26',topic:'Schedule + Cost Management',phase:1},
+  {d:4,date:'Jun 27',topic:'Quality + Resource + Communications',phase:1},
+  {d:5,date:'Jun 28',topic:'Risk + Procurement + Stakeholders',phase:1},
+  {d:6,date:'Jun 29',topic:'People Domain I — Teams + Leadership',phase:2},
+  {d:7,date:'Jun 30',topic:'People Domain II — Conflict + Stakeholders',phase:2},
+  {d:8,date:'Jul 1', topic:'Agile Core — Scrum + Manifesto',phase:2},
+  {d:9,date:'Jul 2', topic:'Kanban, XP + Hybrid Approaches',phase:2},
+  {d:10,date:'Jul 3',topic:'Calculations Day — EVM + Forecasting',phase:2},
+  {d:11,date:'Jul 4',topic:'Full Mock Exam #1 + Deep Review',phase:3},
+  {d:12,date:'Jul 5',topic:'Weak-Area Reinforcement',phase:3},
+  {d:13,date:'Jul 6',topic:'Full Mock Exam #2 + Strategy Polish',phase:3},
+  {d:14,date:'Jul 7',topic:'TAPER DAY — Prime, Don\'t Cram',phase:3},
+];
+
+let state = {
+  timerRunning: false,
+  timerSeconds: 0,
+  timerInterval: null,
+  todaySeconds: 0,
+  currentQ: 0,
+  filteredQs: [...QUESTIONS],
+  answers: {}, // qId -> answerIndex
+  wrongLog: [],
+  studyLog: [],
+  domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
+  xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
+};
+
+// Load from localStorage
+function loadState() {
+  try {
+    const saved = localStorage.getItem('pmp_state_v2');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      state.answers = parsed.answers || {};
+      state.wrongLog = parsed.wrongLog || [];
+      state.studyLog = parsed.studyLog || [];
+      state.domainStats = parsed.domainStats || state.domainStats;
+      state.xp = parsed.xp || 0;
+      state.bestStreak = parsed.bestStreak || 0;
+      state.badges = parsed.badges || {};
+      state.muted = parsed.muted || false;
+    }
+  } catch(e) {}
+}
+
+function saveState() {
+  try {
+    localStorage.setItem('pmp_state_v2', JSON.stringify({
+      answers: state.answers,
+      wrongLog: state.wrongLog,
+      studyLog: state.studyLog,
+      domainStats: state.domainStats,
+      xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted
+    }));
+  } catch(e) {}
+}
+
+// ══════════════════════════════════════
+// TIMER
+// ══════════════════════════════════════
+function toggleTimer() {
+  if (state.timerRunning) {
+    clearInterval(state.timerInterval);
+    state.timerRunning = false;
+    document.getElementById('timerBtn').textContent = '▶ Start';
+    document.getElementById('mainTimerBtn').textContent = '▶ Start Session';
+  } else {
+    state.timerInterval = setInterval(() => {
+      state.timerSeconds++;
+      state.todaySeconds++;
+      updateTimerDisplays();
+    }, 1000);
+    state.timerRunning = true;
+    document.getElementById('timerBtn').textContent = '⏸ Pause';
+    document.getElementById('mainTimerBtn').textContent = '⏸ Pause Session';
+  }
+}
+
+function resetTimer() {
+  clearInterval(state.timerInterval);
+  state.timerRunning = false;
+  state.timerSeconds = 0;
+  document.getElementById('timerBtn').textContent = '▶ Start';
+  document.getElementById('mainTimerBtn').textContent = '▶ Start Session';
+  updateTimerDisplays();
+}
+
+function logTimerSession() {
+  if (state.timerSeconds < 60) { showToast('Session too short to log (under 1 min)', 'error'); return; }
+  const hrs = (state.timerSeconds / 3600).toFixed(2);
+  state.studyLog.push({ date: new Date().toISOString(), hours: parseFloat(hrs), topic: 'Timed study session', day: getCurrentDay() });
+  saveState();
+  resetTimer();
+  updateDashboard();
+  showToast(`Session logged: ${hrs} hrs`, 'success');
+}
+
+function updateTimerDisplays() {
+  const s = state.timerSeconds;
+  const h = Math.floor(s/3600).toString().padStart(2,'0');
+  const m = Math.floor((s%3600)/60).toString().padStart(2,'0');
+  const sec = (s%60).toString().padStart(2,'0');
+  const timeStr = `${h}:${m}:${sec}`;
+  document.getElementById('bigTimer').textContent = timeStr;
+  document.getElementById('navTimer').textContent = timeStr;
+
+  const todayH = Math.floor(state.todaySeconds/3600);
+  const todayM = Math.floor((state.todaySeconds%3600)/60);
+  document.getElementById('statToday').textContent = `${todayH}:${todayM.toString().padStart(2,'0')}`;
+}
+
+// ══════════════════════════════════════
+// DASHBOARD
+// ══════════════════════════════════════
+function getCurrentDay() {
+  const today = new Date();
+  const diff = Math.floor((today - SPRINT_START) / (1000*60*60*24)) + 1;
+  return Math.min(Math.max(diff, 1), 14);
+}
+
+function getDaysLeft() {
+  const today = new Date();
+  const diff = Math.ceil((EXAM_DATE - today) / (1000*60*60*24));
+  return Math.max(diff, 0);
+}
+
+function updateDashboard() {
+  const day = getCurrentDay();
+  const daysLeft = getDaysLeft();
+  document.getElementById('daysLeft').textContent = daysLeft;
+  document.getElementById('dayBadge').textContent = `DAY ${day} of 14`;
+
+  // Progress
+  const pct = Math.round((day/14)*100);
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
+
+  // Total hours
+  const totalHrs = state.studyLog.reduce((sum, e) => sum + (e.hours || 0), 0);
+  document.getElementById('statHours').textContent = totalHrs.toFixed(1);
+
+  // Q stats
+  const answered = Object.keys(state.answers).length;
+  const correct = Object.values(state.answers).filter(a => a.correct).length;
+  const accuracy = answered > 0 ? Math.round((correct/answered)*100) : 0;
+  document.getElementById('statAnswered').textContent = answered;
+  document.getElementById('statAccuracy').textContent = answered > 0 ? `${accuracy}% accuracy` : '— accuracy';
+  document.getElementById('statWrong').textContent = state.wrongLog.length;
+
+  // Domain bars
+  ['People','Process','Business Environment'].forEach(d => {
+    const key = d === 'Business Environment' ? 'bizenv' : d.toLowerCase();
+    const stats = state.domainStats[d];
+    const pct = stats.total > 0 ? Math.round((stats.correct/stats.total)*100) : 0;
+    const el = document.getElementById('pct' + (d==='Business Environment'?'Bizenv':d.charAt(0).toUpperCase()+d.slice(1)));
+    const fill = document.getElementById('fill' + (d==='Business Environment'?'Bizenv':d.charAt(0).toUpperCase()+d.slice(1)));
+    if (el) {
+      el.textContent = stats.total > 0 ? pct + '%' : '—%';
+      el.className = 'domain-pct ' + (pct >= 70 ? 'good' : pct >= 50 ? 'warn' : 'bad');
+    }
+    if (fill) fill.style.width = pct + '%';
+  });
+
+  // Day schedule
+  const sched = document.getElementById('daySchedule');
+  sched.innerHTML = DAYS.map(d => {
+    const status = d.d < day ? 'done' : d.d === day ? 'today' : '';
+    const hoursLogged = state.studyLog.filter(l => l.day === d.d).reduce((s,l)=>s+l.hours,0);
+    return `<div class="day-row">
+      <div class="day-num">D${d.d}</div>
+      <div>
+        <div class="day-topic" style="font-size:12px">${d.topic}</div>
+        <div style="font-size:10px;color:var(--text-muted)">${d.date}</div>
+      </div>
+      <div class="day-status ${status}"></div>
+      <div class="day-hours">${hoursLogged > 0 ? hoursLogged.toFixed(1)+'h' : ''}</div>
+    </div>`;
+  }).join('');
+
+  // Achievements
+  const bd = document.getElementById('bestStreakDash'); if(bd) bd.textContent = state.bestStreak;
+  const xd = document.getElementById('xpDash'); if(xd) xd.textContent = state.xp;
+  const bg = document.getElementById('badgeGrid');
+  if(bg) bg.innerHTML = BADGES.map(b=>{
+    const earned = !!state.badges[b.id];
+    return `<div class="badge ${earned?'earned':''}"><div class="bi">${b.icon}</div><div class="bn">${b.name}</div><div class="bd">${b.desc}</div></div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════
+// STUDY LOG
+// ══════════════════════════════════════
+function renderStudyLog() {
+  const grid = document.getElementById('logGrid');
+  const entries = document.getElementById('logEntries');
+
+  grid.innerHTML = DAYS.map(d => {
+    const hoursLogged = state.studyLog.filter(l => l.day === d.d).reduce((s,l)=>s+l.hours,0);
+    const today = getCurrentDay() === d.d;
+    const hasData = hoursLogged > 0;
+    return `<div class="log-day ${hasData?'has-data':''} ${today?'today':''}">
+      <div class="log-day-num">DAY ${d.d}</div>
+      <div class="log-day-date">${d.date}</div>
+      ${hasData ? `<div class="log-day-hours">${hoursLogged.toFixed(1)}</div><div class="log-day-label">hrs</div>` : '<div class="log-day-hours" style="color:var(--text-muted);font-size:12px">—</div>'}
+    </div>`;
+  }).join('');
+
+  if (state.studyLog.length === 0) {
+    entries.innerHTML = '<div class="empty-state"><div class="icon">📚</div><p>No sessions logged yet. Start your timer and log sessions above.</p></div>';
+  } else {
+    entries.innerHTML = [...state.studyLog].reverse().map(e => `
+      <div class="day-row">
+        <div class="day-num">D${e.day || '?'}</div>
+        <div class="day-topic" style="flex:1">${e.topic || 'Study session'}</div>
+        <div class="day-hours" style="width:60px;color:var(--green)">${e.hours.toFixed(2)}h</div>
+        <div class="day-hours" style="width:80px;color:var(--text-muted);font-size:11px">${new Date(e.date).toLocaleDateString()}</div>
+      </div>`).join('');
+  }
+}
+
+function saveLog() {
+  const hrs = parseFloat(document.getElementById('logHours').value);
+  const topic = document.getElementById('logTopic').value.trim();
+  if (!hrs || hrs <= 0) { showToast('Enter valid hours', 'error'); return; }
+  state.studyLog.push({ date: new Date().toISOString(), hours: hrs, topic: topic || 'Study session', day: getCurrentDay() });
+  document.getElementById('logHours').value = '';
+  document.getElementById('logTopic').value = '';
+  saveState();
+  renderStudyLog();
+  updateDashboard();
+  showToast(`Logged ${hrs}h — ${topic || 'session'}`, 'success');
+}
+
+// ══════════════════════════════════════
+// QUESTIONS
+// ══════════════════════════════════════
+let currentFilter = 'all';
+
+function filterDomain(domain, btn) {
+  currentFilter = domain;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  if (domain === 'all') {
+    state.filteredQs = [...QUESTIONS];
+  } else if (domain === 'wrong') {
+    const wrongIds = state.wrongLog.map(w => w.qId);
+    state.filteredQs = QUESTIONS.filter(q => wrongIds.includes(q.id));
+  } else {
+    state.filteredQs = QUESTIONS.filter(q => q.domain === domain);
+  }
+
+  if (state.filteredQs.length === 0) {
+    document.getElementById('questionArea').innerHTML = '<div class="empty-state"><div class="icon">✅</div><p>No questions in this category yet.</p></div>';
+    return;
+  }
+  state.currentQ = 0;
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const qs = state.filteredQs;
+  if (qs.length === 0) return;
+  const q = qs[state.currentQ];
+  const savedAnswer = state.answers[q.id];
+  const domainClass = q.domain === 'Business Environment' ? 'bizenv' : q.domain.toLowerCase().replace(/ /g,'');
+
+  document.getElementById('qCounter').textContent = `Question ${state.currentQ + 1} of ${qs.length}`;
+
+  const optionsHtml = q.options.map((opt, i) => {
+    let cls = 'option';
+    if (savedAnswer !== undefined) {
+      if (i === q.answer) cls += ' reveal-correct';
+      if (i === savedAnswer.chosen && savedAnswer.correct) cls += ' correct';
+      if (i === savedAnswer.chosen && !savedAnswer.correct) cls += ' wrong';
+    }
+    return `<button class="${cls}" onclick="selectAnswer(${q.id}, ${i})">
+      <span class="option-letter">${['A','B','C','D'][i]}</span>
+      <span>${opt}</span>
+    </button>`;
+  }).join('');
+
+  const explanationHtml = savedAnswer !== undefined ? `
+    <div class="explanation show">
+      <div class="principle-tag">${q.principle}</div>
+      <div>${q.explanation}</div>
+    </div>` : '';
+
+  document.getElementById('questionArea').innerHTML = `
+    <div class="question-card">
+      <div class="q-meta">
+        <span class="q-badge ${domainClass}">${q.domain}</span>
+        <span class="q-num">#${q.id}</span>
+        <span class="q-difficulty ${q.difficulty}">${q.difficulty}</span>
+      </div>
+      <div class="q-text">${q.text}</div>
+      <div class="options">${optionsHtml}</div>
+      <div class="q-controls">
+        <button class="speak-btn" onclick="speakQuestion()">🔊 Read Question</button>
+        <button class="speak-btn" onclick="speakOptions()">🔊 Read Options</button>
+        ${savedAnswer !== undefined ? `<button class="speak-btn" onclick="speakExplanation()">🔊 Read Explanation</button>` : ''}
+      </div>
+      ${explanationHtml}
+    </div>`;
+
+  updateQProgress();
+}
+
+function selectAnswer(qId, chosen) {
+  if (state.answers[qId] !== undefined) return; // already answered
+  const q = QUESTIONS.find(q => q.id === qId);
+  if (!q) return;
+
+  const correct = chosen === q.answer;
+  state.answers[qId] = { chosen, correct };
+
+  // Update domain stats
+  if (state.domainStats[q.domain] === undefined) state.domainStats[q.domain] = {correct:0,total:0};
+  state.domainStats[q.domain].total++;
+  if (correct) state.domainStats[q.domain].correct++;
+
+  // Log wrong answers
+  if (!correct) {
+    const existing = state.wrongLog.findIndex(w => w.qId === qId);
+    if (existing === -1) {
+      state.wrongLog.push({
+        qId, domain: q.domain,
+        question: q.text.substring(0,100) + '...',
+        myAnswer: q.options[chosen],
+        correctAnswer: q.options[q.answer],
+        principle: q.principle,
+        date: new Date().toISOString()
+      });
+    }
+  }
+
+  // ── Gamification ──
+  if (correct) {
+    let gain = q.difficulty === 'hard' ? 20 : 10;
+    state.streak++;
+    if (state.streak > state.bestStreak) state.bestStreak = state.streak;
+    if (state.streak === 5) { gain += 25; playSound('streak5'); fireConfetti(); showToast('🔥 5 STREAK! +25 XP bonus', 'success'); }
+    else if (state.streak === 10) { gain += 50; playSound('streak10'); fireConfetti(); showToast('🔥🔥 10 STREAK! +50 XP bonus', 'success'); }
+    else { playSound('correct'); }
+    addXP(gain);
+    fireConfetti(0.5);
+    showToast('✅ Correct! ' + q.principle, 'success');
+  } else {
+    state.streak = 0;
+    playSound('wrong');
+    showToast('❌ Wrong. Review the explanation, then retry it in the Wrong Log.', 'error');
+  }
+  updateGameUI();
+  checkBadges();
+
+  saveState();
+  renderQuestion();
+  updateDashboard();
+}
+
+// ══════════════════════════════════════
+// GAMIFICATION — XP, STREAK, BADGES
+// ══════════════════════════════════════
+function addXP(amount) {
+  state.xp += amount;
+  const chip = document.getElementById('xpChip');
+  const r = chip.getBoundingClientRect();
+  const f = document.createElement('div');
+  f.className = 'xp-float';
+  f.textContent = '+' + amount;
+  f.style.left = (r.left + r.width/2) + 'px';
+  f.style.top = (r.bottom + 4) + 'px';
+  document.body.appendChild(f);
+  setTimeout(() => f.remove(), 1100);
+}
+
+function updateGameUI() {
+  document.getElementById('xpNum').textContent = state.xp;
+  document.getElementById('streakNum').textContent = state.streak;
+  const chip = document.getElementById('streakChip');
+  chip.classList.toggle('hot', state.streak >= 3);
+}
+
+const BADGES = [
+  {id:'first', icon:'🎯', name:'First Reps', desc:'Answer 1 question', test:()=>Object.keys(state.answers).length>=1},
+  {id:'fire', icon:'🔥', name:'On Fire', desc:'5 in a row', test:()=>state.bestStreak>=5},
+  {id:'unstop', icon:'⚡', name:'Unstoppable', desc:'10 in a row', test:()=>state.bestStreak>=10},
+  {id:'people', icon:'🤝', name:'People Person', desc:'70%+ People', test:()=>domainPct('People')>=70},
+  {id:'process', icon:'⚙️', name:'Process King', desc:'70%+ Process', test:()=>domainPct('Process')>=70},
+  {id:'biz', icon:'📈', name:'Biz Builder', desc:'70%+ Biz Env', test:()=>domainPct('Business Environment')>=70},
+  {id:'ready', icon:'🏆', name:'EXAM READY', desc:'All 3 at 70%+', test:()=>['People','Process','Business Environment'].every(d=>domainPct(d)>=70)},
+  {id:'hours8', icon:'💪', name:'8 Hours Strong', desc:'8 hrs in a day', test:()=>maxDayHours()>=8},
+  {id:'formula', icon:'🧮', name:'Formula Flex', desc:'Use the EVM Lab', test:()=>state.badges.formula},
+  {id:'half', icon:'📚', name:'Halfway', desc:'Answer 25 questions', test:()=>Object.keys(state.answers).length>=25},
+  {id:'all50', icon:'🎓', name:'Full Sweep', desc:'Answer all 50', test:()=>Object.keys(state.answers).length>=50},
+  {id:'xp500', icon:'👑', name:'King Summerbody', desc:'Earn 500 XP', test:()=>state.xp>=500},
+];
+function domainPct(d){ const s=state.domainStats[d]; return s&&s.total>0?Math.round(s.correct/s.total*100):0; }
+function maxDayHours(){ const by={}; state.studyLog.forEach(l=>by[l.day]=(by[l.day]||0)+l.hours); return Math.max(0,...Object.values(by)); }
+function checkBadges() {
+  BADGES.forEach(b => {
+    if (!state.badges[b.id] && b.test()) {
+      state.badges[b.id] = new Date().toISOString();
+      playSound('levelup');
+      fireConfetti();
+      showToast(`${b.icon} BADGE UNLOCKED: ${b.name}`, 'success');
+    }
+  });
+  saveState();
+}
+
+// ══════════════════════════════════════
+// WEB AUDIO — sound effects (no files)
+// ══════════════════════════════════════
+let audioCtx = null;
+function ac(){ if(!audioCtx){ try{ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } return audioCtx; }
+function tone(freq, start, dur, type='triangle', vol=0.18) {
+  const c = ac(); if(!c || state.muted) return;
+  const o = c.createOscillator(), g = c.createGain();
+  o.type = type; o.frequency.setValueAtTime(freq, c.currentTime+start);
+  g.gain.setValueAtTime(0.0001, c.currentTime+start);
+  g.gain.exponentialRampToValueAtTime(vol, c.currentTime+start+0.02);
+  g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime+start+dur);
+  o.connect(g); g.connect(c.destination);
+  o.start(c.currentTime+start); o.stop(c.currentTime+start+dur+0.02);
+}
+function playSound(kind){
+  if(state.muted) return;
+  if(kind==='correct'){ tone(440,0,0.12); tone(587,0.08,0.16); }
+  else if(kind==='wrong'){ tone(165,0,0.18,'sawtooth',0.14); tone(123,0.1,0.22,'sawtooth',0.14); }
+  else if(kind==='streak5'){ [440,554,659].forEach((f,i)=>tone(f,i*0.09,0.18)); }
+  else if(kind==='streak10'){ [440,554,659,880,1047].forEach((f,i)=>tone(f,i*0.08,0.2)); }
+  else if(kind==='levelup'){ [523,659,784,1047].forEach((f,i)=>tone(f,i*0.07,0.2,'sine')); }
+}
+function toggleMute(){
+  state.muted = !state.muted;
+  document.getElementById('muteBtn').textContent = state.muted ? '🔇' : '🔊';
+  saveState();
+  if(!state.muted) playSound('correct');
+}
+
+// ══════════════════════════════════════
+// CONFETTI (canvas burst)
+// ══════════════════════════════════════
+let confettiParts = [];
+function fireConfetti(scale=1){
+  const cv = document.getElementById('confetti');
+  const n = Math.round(70*scale);
+  const colors = ['#FF5500','#ff8800','#ffffff','#f59e0b'];
+  for(let i=0;i<n;i++){
+    confettiParts.push({
+      x: window.innerWidth/2, y: window.innerHeight*0.4,
+      vx: (Math.random()-0.5)*12, vy: (Math.random()-0.9)*12 - 2,
+      size: 4+Math.random()*6, color: colors[i%colors.length],
+      rot: Math.random()*6, vr:(Math.random()-0.5)*0.4, life: 1
+    });
+  }
+  if(!confettiRunning) runConfetti();
+}
+let confettiRunning = false;
+function runConfetti(){
+  confettiRunning = true;
+  const cv = document.getElementById('confetti');
+  const ctx = cv.getContext('2d');
+  cv.width = window.innerWidth; cv.height = window.innerHeight;
+  (function frame(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    confettiParts.forEach(p=>{
+      p.vy += 0.32; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life -= 0.012;
+      ctx.save(); ctx.globalAlpha = Math.max(0,p.life);
+      ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.color; ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.6);
+      ctx.restore();
+    });
+    confettiParts = confettiParts.filter(p=>p.life>0 && p.y<cv.height+20);
+    if(confettiParts.length>0) requestAnimationFrame(frame);
+    else { ctx.clearRect(0,0,cv.width,cv.height); confettiRunning=false; }
+  })();
+}
+
+// ══════════════════════════════════════
+// PARTICLE BACKGROUND (orange embers)
+// ══════════════════════════════════════
+function initParticles(){
+  const cv = document.getElementById('particles');
+  const ctx = cv.getContext('2d');
+  let parts = [];
+  function resize(){ cv.width=window.innerWidth; cv.height=window.innerHeight;
+    parts = Array.from({length: Math.min(60, Math.round(window.innerWidth/24))}, ()=>({
+      x: Math.random()*cv.width, y: Math.random()*cv.height,
+      r: 0.6+Math.random()*2, vy: -(0.15+Math.random()*0.5), vx:(Math.random()-0.5)*0.25,
+      a: 0.1+Math.random()*0.5
+    }));
+  }
+  resize(); window.addEventListener('resize', resize);
+  (function frame(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    parts.forEach(p=>{
+      p.y += p.vy; p.x += p.vx;
+      if(p.y < -5){ p.y = cv.height+5; p.x = Math.random()*cv.width; }
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7);
+      ctx.fillStyle = `rgba(255,${85+Math.random()*40|0},0,${p.a})`; ctx.fill();
+    });
+    requestAnimationFrame(frame);
+  })();
+}
+
+// ══════════════════════════════════════
+// SPLASH / START DAY
+// ══════════════════════════════════════
+const QUOTES = [
+  '"Gather the information first. Never escalate first, never reject, never delay."',
+  '"You are the servant leader. Remove the blocker, clear the path, let the team win."',
+  '"Your team are the experts. Ask them, trust them, then decide."',
+  '"Never settle for a delay. Look at the critical path and find the recovery."',
+  '"Deliver value. When in doubt, choose the answer that solves the real problem."',
+  '"Better and Beyond. Together WE Achieve More."',
+];
+function setupSplash(){
+  const day = getCurrentDay();
+  const d = DAYS[day-1] || DAYS[0];
+  document.getElementById('splashDay').textContent = `DAY ${day} OF 14 · ${getDaysLeft()} DAYS TO EXAM`;
+  document.getElementById('splashTopic').textContent = 'Today: ' + d.topic;
+  document.getElementById('splashQuote').textContent = QUOTES[day % QUOTES.length];
+}
+function startDay(){
+  document.getElementById('splash').classList.add('hidden');
+  ac(); // unlock audio on user gesture
+  if(!state.timerRunning) toggleTimer();
+  playSound('levelup');
+  showToast('Timer running. Lock in. Better and Beyond.', 'success');
+}
+
+// ══════════════════════════════════════
+// LEARN DECK — interactive visuals
+// ══════════════════════════════════════
+let learnInit = false;
+function initLearn(){
+  buildLessonNav();
+  buildHeatMatrix();
+  drawCommGraph(parseInt(document.getElementById('commSlide').value));
+  updateQuad();
+  if(!learnInit){
+    learnInit = true;
+    // scroll reveal
+    const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }), {threshold:0.12});
+    document.querySelectorAll('#page-learn .reveal').forEach(el=>io.observe(el));
+    // donut animation
+    animateDonut();
+    // wire interactions
+    document.getElementById('commSlide').addEventListener('input', e=>drawCommGraph(parseInt(e.target.value)));
+    document.getElementById('cpiSlide').addEventListener('input', updateQuad);
+    document.getElementById('spiSlide').addEventListener('input', updateQuad);
+  }
+}
+function buildLessonNav(){
+  const nav = document.getElementById('lessonNav');
+  if(nav.children.length) return;
+  const items = [
+    ['ls-blueprint','🎯 Blueprint'],['ls-evm','📈 Earned Value'],['ls-quad','🧭 CPI/SPI'],
+    ['ls-tuckman','🪜 Tuckman'],['ls-conflict','🤝 Conflict'],['ls-power','📊 Power/Interest'],
+    ['ls-engage','📶 Engagement'],['ls-riskmatrix','🌡️ Risk Matrix'],['ls-riskresp','🛡️ Risk Responses'],
+    ['ls-spectrum','🎚️ Agile/Predictive'],['ls-comm','🕸️ Channels'],['ls-coq','✅ Quality'],
+    ['ls-contract','📄 Contracts'],['ls-motivation','🔋 Motivation'],['ls-mindset','🧠 Mindset']
+  ];
+  nav.innerHTML = items.map(([id,label])=>`<button class="filter-btn" onclick="document.getElementById('${id}').scrollIntoView({behavior:'smooth'})">${label}</button>`).join('');
+}
+function animateDonut(){
+  const C = 2*Math.PI*80; // circumference
+  // Process 50, People 42, Biz 8 (start angles cumulative)
+  const segs = [
+    {el:'segProcess', pct:50, off:0},
+    {el:'segPeople', pct:42, off:50},
+    {el:'segBiz', pct:8, off:92},
+  ];
+  segs.forEach(s=>{
+    const el = document.getElementById(s.el);
+    const len = C*s.pct/100;
+    el.style.strokeDasharray = `${len} ${C-len}`;
+    el.style.strokeDashoffset = `${-C*s.off/100}`;
+    el.style.strokeDashoffset = `${-C*s.off/100}`;
+    // animate from 0
+    el.style.strokeDasharray = `0 ${C}`;
+    setTimeout(()=>{ el.style.strokeDasharray = `${len} ${C-len}`; el.style.strokeDashoffset = `${-C*s.off/100}`; }, 100);
+  });
+}
+function buildHeatMatrix(){
+  const g = document.getElementById('heatGrid');
+  if(g.children.length) return;
+  const impacts = [1,2,3,4,5];
+  const probs = [5,4,3,2,1];
+  let html = '<div class="hlabel"></div>' + impacts.map(i=>`<div class="hlabel">Impact ${i}</div>`).join('');
+  probs.forEach(p=>{
+    html += `<div class="hlabel">Prob ${p}</div>`;
+    impacts.forEach(i=>{
+      const score = p*i;
+      const c = score>=15 ? '#ef4444' : score>=8 ? '#f59e0b' : '#22c55e';
+      html += `<div class="hcell" style="background:${c}">${score}</div>`;
+    });
+  });
+  g.innerHTML = html;
+}
+function drawCommGraph(n){
+  document.getElementById('commN').textContent = n;
+  const channels = n*(n-1)/2;
+  document.getElementById('commCount').textContent = channels;
+  document.getElementById('commMath').textContent = `${n}×${n-1}/2`;
+  const svg = document.getElementById('commGraph');
+  const cx=100, cy=100, R=78;
+  const pts = Array.from({length:n}, (_,i)=>{ const a=-Math.PI/2 + i*2*Math.PI/n; return [cx+R*Math.cos(a), cy+R*Math.sin(a)]; });
+  let lines='', dots='';
+  for(let i=0;i<n;i++) for(let j=i+1;j<n;j++)
+    lines += `<line x1="${pts[i][0].toFixed(1)}" y1="${pts[i][1].toFixed(1)}" x2="${pts[j][0].toFixed(1)}" y2="${pts[j][1].toFixed(1)}" stroke="rgba(255,85,0,0.28)" stroke-width="1"></line>`;
+  pts.forEach(p=>dots+=`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="5" fill="#FF5500"></circle>`);
+  svg.innerHTML = lines + dots;
+}
+function updateQuad(){
+  const cpi = parseFloat(document.getElementById('cpiSlide').value);
+  const spi = parseFloat(document.getElementById('spiSlide').value);
+  document.getElementById('cpiVal').textContent = cpi.toFixed(2);
+  document.getElementById('spiVal').textContent = spi.toFixed(2);
+  // map 0.5..1.5 to plot 30..230, center 1.0 -> 130
+  const x = 30 + (cpi-0.5)*200;
+  const y = 230 - (spi-0.5)*200;
+  const dot = document.getElementById('quadDot');
+  dot.setAttribute('cx', Math.max(30,Math.min(230,x)));
+  dot.setAttribute('cy', Math.max(30,Math.min(230,y)));
+  const budget = cpi>=1 ? '<b style="color:var(--green)">under/on budget</b>' : '<b style="color:var(--red)">over budget</b>';
+  const sched = spi>=1 ? '<b style="color:var(--green)">ahead/on schedule</b>' : '<b style="color:var(--red)">behind schedule</b>';
+  document.getElementById('quadVerdict').innerHTML = `CPI ${cpi.toFixed(2)} → ${budget}.<br>SPI ${spi.toFixed(2)} → ${sched}.`;
+}
+
+// ══════════════════════════════════════
+// FLASHCARDS
+// ══════════════════════════════════════
+const FLASHCARDS = [
+  // 23 Principles
+  {type:'Principle', term:'P1 — Gather Information First', def:'Before acting, take a step back and investigate. Never escalate, reject, or punish before you understand the facts.'},
+  {type:'Principle', term:'P2 — Never Accept a Delay', def:'A schedule slip is a problem to solve, not a fact to accept. Check the critical path and compress before asking for an extension.'},
+  {type:'Principle', term:'P3 — Servant Leadership', def:'Serve the team. Remove impediments, shield them from noise, and let them do their best work. Do not micromanage.'},
+  {type:'Principle', term:'P4 — Be Value Driven', def:'Choose the option that delivers the most business value. Value beats process for its own sake.'},
+  {type:'Principle', term:'P5 — Lead With Empathy', def:'Understand people before judging them. Address the person, not just the task.'},
+  {type:'Principle', term:'P6 — Set Ground Rules', def:'When team behavior is the problem, establish or revisit ground rules. Then address root causes.'},
+  {type:'Principle', term:'P7 — The Team Are the Experts', def:'Estimates and technical decisions come from the people doing the work, not from the PM alone.'},
+  {type:'Principle', term:'P8 — The PM Makes Decisions', def:'Try to solve it yourself with the team before running to senior management. You own the call.'},
+  {type:'Principle', term:'P9 — Be Proactive', def:'Anticipate problems and act early. Risk management is proactive, workarounds are last resort.'},
+  {type:'Principle', term:'P10 — Closing Always Happens', def:'Whether a project finishes or is terminated, you always close it formally: contracts, resources, lessons learned.'},
+  {type:'Principle', term:'P11 — Refer to the Plan', def:'In a predictive project, the plan is your map. Assess impact against it before changing anything.'},
+  {type:'Principle', term:'P12 — Read the Environment', def:'Recognize predictive vs agile from keywords, then apply the matching framework.'},
+  {type:'Principle', term:'P14 — Use an SME When Stuck', def:'When neither you nor the team has the knowledge and there is no documented past project, bring in a subject matter expert.'},
+  {type:'Principle', term:'P15 — Introduce Agile Slowly', def:'Transition to agile through a pilot project, not a big-bang overhaul. Culture change must be gradual.'},
+  {type:'Principle', term:'P16 — Teams Self-Organize', def:'Let the team resolve minor conflicts themselves. Only step in when progress or the project is at real risk.'},
+  {type:'Principle', term:'P18 — Never Reject Outright', def:'Do not say no to a request immediately. Explore options and feasibility with the team first.'},
+  {type:'Principle', term:'P19 — Use Lessons Learned', def:'When a question mentions a similar past project, refer to the lessons learned register before anything else.'},
+  {type:'Principle', term:'P21 — No Only / Always / Never', def:'Answers containing absolute words (only, always, never) are almost always wrong. They restrict possibilities.'},
+  {type:'Principle', term:'P22 — Watch the Critical Path', def:'Schedule decisions revolve around the critical path. Reassign from non-critical to critical to recover.'},
+  {type:'Principle', term:'P23 — Protect Team Capacity', def:'Do not pile extra tasks on a person doing critical work. Never reduce the capacity that drives the project.'},
+  // Key terms
+  {type:'Term', term:'QA vs QC', def:'Quality Assurance audits the PROCESS (proactive, prevent defects). Quality Control inspects the DELIVERABLE (reactive, find defects).'},
+  {type:'Term', term:'Contingency vs Management Reserve', def:'Contingency = known risks, PM controls it. Management reserve = unknown unknowns, management controls it (needs a change request).'},
+  {type:'Term', term:'Risk Reassessment', def:'Periodic review of the risk register and watchlist as conditions change. Update probability and impact, do not wait.'},
+  {type:'Term', term:'Risk Owner', def:'Monitors one risk for its trigger and executes the planned response when it fires. Not a creator of new workarounds.'},
+  {type:'Term', term:'Risk Register vs Risk Report', def:'Register = detailed list of every individual risk. Report = high-level summary of overall project risk.'},
+  {type:'Term', term:'Fast Tracking vs Crashing', def:'Fast track = overlap sequential tasks (no extra cost, adds risk). Crash = add resources to critical path (costs money).'},
+  {type:'Term', term:'5 Conflict Modes', def:'Collaborate (win-win, preferred), Compromise, Smooth, Force, Withdraw. Pick Collaborate unless blocked.'},
+  {type:'Term', term:'Tuckman Stages', def:'Forming, Storming, Norming, Performing, Adjourning. Confusion + conflict = Storming.'},
+  {type:'Term', term:'Power / Interest Grid', def:'High power + high interest = Manage Closely. High power low interest = Keep Satisfied. Low power high interest = Keep Informed. Low/low = Monitor.'},
+  {type:'Term', term:'Engagement Levels', def:'Unaware, Resistant, Neutral, Supportive, Leading. Move stakeholders up toward Supportive/Leading.'},
+  {type:'Term', term:'Cost of Quality', def:'Prevention + Appraisal (conformance) vs Internal + External failure (non-conformance). External failure is most expensive.'},
+  {type:'Term', term:'Contract Risk', def:'Fixed Price = seller holds risk (buyer safe). Cost Plus = buyer holds risk (seller safe). T&M = shared.'},
+  {type:'Term', term:'Herzberg Two-Factor', def:'Hygiene factors (salary, security) prevent dissatisfaction. Motivators (recognition, growth, challenge) actually motivate.'},
+  {type:'Term', term:'Transference', def:'Move a risk impact to a third party. Insurance and outsourcing are always Transfer.'},
+  // Formulas
+  {type:'Formula', term:'EAC (typical)', def:'BAC ÷ CPI. Use when current cost performance will continue.'},
+  {type:'Formula', term:'CV / SV', def:'CV = EV − AC (cost variance). SV = EV − PV (schedule variance). Negative is bad.'},
+  {type:'Formula', term:'CPI / SPI', def:'CPI = EV ÷ AC. SPI = EV ÷ PV. Below 1.0 is bad.'},
+  {type:'Formula', term:'PERT (Beta)', def:'(Optimistic + 4×Most Likely + Pessimistic) ÷ 6. Weighted three-point estimate.'},
+  {type:'Formula', term:'Standard Deviation', def:'(P − O) ÷ 6. The spread/risk of an activity estimate.'},
+  {type:'Formula', term:'Communication Channels', def:'n(n − 1) ÷ 2 where n = number of people. For growth, calculate both and subtract.'},
+  {type:'Formula', term:'EMV', def:'Expected Monetary Value = Probability × Impact. Used in decision trees.'},
+  // Agile
+  {type:'Agile', term:'Scrum Roles', def:'Product Owner prioritizes the backlog. Scrum Master removes impediments. Dev Team self-organizes and estimates.'},
+  {type:'Agile', term:'Definition of Done', def:'Shared checklist a backlog item must meet to be complete. Set at the start, applied every sprint.'},
+  {type:'Agile', term:'Spike', def:'A short, time-boxed investigation to reduce uncertainty before building. Added in refinement, prioritized high.'},
+  {type:'Agile', term:'Sprint Integrity', def:'Do not interrupt or change scope mid-sprint. Gather feedback at the Sprint Review at the end.'},
+  {type:'Agile', term:'MVP', def:'Minimum Viable Product. The smallest release that delivers real value. Use it when timelines compress.'},
+  {type:'Agile', term:'Burndown / Burnup', def:'Burndown shows work remaining trending to zero. A flat risk burndown means responses are not working.'},
+  {type:'Agile', term:'Velocity', def:'Average story points a team completes per sprint. Used to forecast, never to compare teams.'},
+];
+let fcState = { list: [...FLASHCARDS], idx: 0, flipped: false, filter: 'all' };
+function fcFilter(type, btn){
+  fcState.filter = type;
+  document.querySelectorAll('#fcFilters .filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  fcState.list = type==='all' ? [...FLASHCARDS] : FLASHCARDS.filter(c=>c.type===type);
+  fcState.idx = 0; fcState.flipped = false;
+  renderFlashcard();
+}
+function renderFlashcard(){
+  const c = fcState.list[fcState.idx];
+  if(!c) return;
+  const card = document.getElementById('flashcard');
+  card.classList.remove('flipped'); fcState.flipped = false;
+  document.getElementById('fcTag').textContent = c.type;
+  document.getElementById('fcTerm').textContent = c.term;
+  document.getElementById('fcDef').textContent = c.def;
+  document.getElementById('fcCount').textContent = `${fcState.idx+1} / ${fcState.list.length}`;
+}
+function flipCard(){
+  fcState.flipped = !fcState.flipped;
+  document.getElementById('flashcard').classList.toggle('flipped', fcState.flipped);
+}
+function fcNext(){ fcState.idx = (fcState.idx+1)%fcState.list.length; renderFlashcard(); }
+function fcPrev(){ fcState.idx = (fcState.idx-1+fcState.list.length)%fcState.list.length; renderFlashcard(); }
+function fcShuffle(){ for(let i=fcState.list.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [fcState.list[i],fcState.list[j]]=[fcState.list[j],fcState.list[i]]; } fcState.idx=0; renderFlashcard(); showToast('Deck shuffled'); }
+function speakCard(){ const c=fcState.list[fcState.idx]; if(c) speak(`${c.term}. ${c.def}`); }
+
+// ══════════════════════════════════════
+// VIDEO VAULT
+// ══════════════════════════════════════
+const VIDEOS = [
+  {t:'How to Pass the PMP on Your First Try', c:'Andrew Ramdayal', d:'People', q:'Andrew Ramdayal how to pass the PMP exam first try', dur:'video'},
+  {t:'PMP Exam Cram — Full Course', c:'Andrew Ramdayal (TIA)', d:'Process', q:'Andrew Ramdayal PMP exam cram full course', dur:'course'},
+  {t:'The PMP Mindset — Crash Course', c:'Muhammad (PMP Coach)', d:'People', q:'PMP mindset crash course Muhammad three step method', dur:'video'},
+  {t:'Earned Value Management Explained', c:'PMP Prep', d:'Process', q:'earned value management EVM PMP explained CPI SPI EAC', dur:'topic'},
+  {t:'Agile & Scrum for the PMP', c:'PMP Prep', d:'Process', q:'agile scrum for PMP exam explained Andrew Ramdayal', dur:'topic'},
+  {t:'Risk Management Deep Dive', c:'PMP Prep', d:'Process', q:'PMP risk management responses register reserves explained', dur:'topic'},
+  {t:'Stakeholder Engagement & Power/Interest', c:'PMP Prep', d:'People', q:'PMP stakeholder engagement power interest grid explained', dur:'topic'},
+  {t:'Conflict Resolution & Tuckman', c:'PMP Prep', d:'People', q:'PMP conflict resolution modes Tuckman team development', dur:'topic'},
+  {t:'Cost of Quality & QA vs QC', c:'PMP Prep', d:'Process', q:'PMP cost of quality QA vs QC explained', dur:'topic'},
+  {t:'Procurement & Contract Types', c:'PMP Prep', d:'Process', q:'PMP procurement contract types fixed price cost plus explained', dur:'topic'},
+  {t:'Communication Channels Formula', c:'PMP Prep', d:'Process', q:'PMP communication channels formula explained', dur:'topic'},
+  {t:'Business Environment & Value Delivery', c:'PMP Prep', d:'Business Environment', q:'PMP business environment domain compliance value delivery', dur:'topic'},
+];
+function domColor(d){ return d==='People'?'#f59e0b':d==='Process'?'#FF5500':'#22c55e'; }
+function renderVideoGrid(){
+  const grid = document.getElementById('videoGrid');
+  if(grid.children.length) return;
+  grid.innerHTML = VIDEOS.map((v,i)=>`
+    <div class="vid-card" onclick="playVideo(${i})">
+      <div class="vid-thumb"><div class="play">▶</div><span class="dur">${v.dur}</span></div>
+      <div class="vid-meta">
+        <div class="vt">${v.t}</div>
+        <div class="vc">${v.c}</div>
+        <span class="vid-domain" style="background:${domColor(v.d)}22;color:${domColor(v.d)}">${v.d}</span>
+      </div>
+    </div>`).join('');
+}
+function playVideo(i){
+  const v = VIDEOS[i];
+  const frame = document.getElementById('videoFrame');
+  // YouTube search-playlist embed: loads the most relevant video for the topic
+  frame.src = `https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(v.q)}`;
+  document.querySelector('.video-stage').scrollIntoView({behavior:'smooth'});
+  showToast('Loading: ' + v.t);
+}
+function loadCustomVideo(){
+  const raw = document.getElementById('videoUrl').value.trim();
+  if(!raw){ showToast('Paste a YouTube link first','error'); return; }
+  let id = raw;
+  const m = raw.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/);
+  if(m) id = m[1];
+  document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${id}`;
+  showToast('Loaded your video');
+}
+
+// ══════════════════════════════════════
+// INTERACTIVE EVM CALCULATOR
+// ══════════════════════════════════════
+let lastEVM = null;
+function calcEVM(){
+  const BAC = parseFloat(document.getElementById('inBAC').value)||0;
+  const pct = (parseFloat(document.getElementById('inPct').value)||0)/100;
+  const AC = parseFloat(document.getElementById('inAC').value)||0;
+  const PV = parseFloat(document.getElementById('inPV').value)||0;
+  const EV = BAC*pct;
+  const CV = EV-AC, SV = EV-PV;
+  const CPI = AC? EV/AC : 0, SPI = PV? EV/PV : 0;
+  const EAC = CPI? BAC/CPI : 0;
+  const EACa = AC+(BAC-EV);
+  const ETC = EAC-AC, VAC = BAC-EAC;
+  const TCPI = (BAC-AC)!==0 ? (BAC-EV)/(BAC-AC) : 0;
+  const f = n => '$'+Math.round(n).toLocaleString();
+  const cells = [
+    {k:'EV (Earned Value)', v:f(EV), good:null, i:'Work actually completed'},
+    {k:'CV (Cost Variance)', v:f(CV), good:CV>=0, i:CV>=0?'On/under budget':'Over budget'},
+    {k:'SV (Schedule Variance)', v:f(SV), good:SV>=0, i:SV>=0?'On/ahead of schedule':'Behind schedule'},
+    {k:'CPI', v:CPI.toFixed(3), good:CPI>=1, i:CPI>=1?`$1 spent = $${CPI.toFixed(2)} earned`:`$1 spent = only $${CPI.toFixed(2)} earned`},
+    {k:'SPI', v:SPI.toFixed(3), good:SPI>=1, i:SPI>=1?'Ahead of plan':'Behind plan'},
+    {k:'EAC (typical)', v:f(EAC), good:EAC<=BAC, i:'BAC ÷ CPI — forecast total cost'},
+    {k:'EAC (atypical)', v:f(EACa), good:EACa<=BAC, i:'AC + (BAC − EV) — one-off variance'},
+    {k:'ETC', v:f(ETC), good:null, i:'Cost still to go (EAC − AC)'},
+    {k:'VAC', v:f(VAC), good:VAC>=0, i:VAC>=0?'Will finish under budget':'Will finish over budget'},
+    {k:'TCPI', v:TCPI.toFixed(3), good:TCPI<=1, i:TCPI<=1?'Achievable efficiency':'Hard — must beat current pace'},
+  ];
+  document.getElementById('evmResults').innerHTML = cells.map(c=>{
+    const cls = c.good===null?'':c.good?'good':'bad';
+    return `<div class="evm-res ${cls}"><div class="rk">${c.k}</div><div class="rv">${c.v}</div><div class="ri">${c.i}</div></div>`;
+  }).join('');
+  lastEVM = {CPI,SPI,EAC,CV,SV,BAC};
+  if(!state.badges.formula){ state.badges.formula = new Date().toISOString(); checkBadges(); }
+}
+function speakEVM(){
+  if(!lastEVM) calcEVM();
+  const e = lastEVM;
+  const budget = e.CPI>=1?'under or on budget':'over budget';
+  const sched = e.SPI>=1?'ahead of or on schedule':'behind schedule';
+  speak(`Your CPI is ${e.CPI.toFixed(2)}, meaning the project is ${budget}. Your SPI is ${e.SPI.toFixed(2)}, meaning the project is ${sched}. The estimate at completion is ${Math.round(e.EAC).toLocaleString()} dollars.`);
+}
+
+function prevQ() {
+  if (state.currentQ > 0) { state.currentQ--; renderQuestion(); }
+}
+
+function nextQ() {
+  if (state.currentQ < state.filteredQs.length - 1) { state.currentQ++; renderQuestion(); }
+  else showToast('You reached the end of this set!');
+}
+
+function updateQProgress() {
+  const answered = Object.keys(state.answers).length;
+  const correct = Object.values(state.answers).filter(a => a.correct).length;
+  document.getElementById('qProgressText').textContent = `${correct} correct, ${answered - correct} wrong`;
+}
+
+// ══════════════════════════════════════
+// WRONG LOG
+// ══════════════════════════════════════
+function renderWrongLog() {
+  const el = document.getElementById('wrongLogContent');
+  if (state.wrongLog.length === 0) {
+    el.innerHTML = '<div class="empty-state"><div class="icon">🎯</div><p>No wrong answers yet. Start practicing!</p></div>';
+    return;
+  }
+
+  // Group by domain
+  const byDomain = {};
+  state.wrongLog.forEach(w => {
+    if (!byDomain[w.domain]) byDomain[w.domain] = [];
+    byDomain[w.domain].push(w);
+  });
+
+  el.innerHTML = Object.entries(byDomain).map(([domain, items]) => `
+    <div style="margin-bottom:24px;">
+      <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin-bottom:12px;">
+        ${domain} — ${items.length} mistake${items.length!==1?'s':''}
+      </div>
+      ${items.map(w => `
+        <div class="wrong-item">
+          <div class="wrong-item-top">
+            <div class="wrong-item-q">${w.question}</div>
+            <div class="wrong-item-meta">
+              <div>${new Date(w.date).toLocaleDateString()}</div>
+              <div style="color:var(--orange);font-size:11px;margin-top:2px;">${w.principle}</div>
+            </div>
+          </div>
+          <div class="wrong-item-detail">
+            <span>My answer: </span><span class="my-ans">${w.myAnswer}</span>
+          </div>
+          <div class="wrong-item-detail">
+            <span>Correct: </span><span class="right-ans">${w.correctAnswer}</span>
+          </div>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+function clearWrongLog() {
+  if (confirm('Clear all wrong answers? This cannot be undone.')) {
+    state.wrongLog = [];
+    saveState();
+    renderWrongLog();
+    updateDashboard();
+    showToast('Wrong log cleared');
+  }
+}
+
+// ══════════════════════════════════════
+// TEXT TO SPEECH
+// ══════════════════════════════════════
+function speak(text) {
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 0.9;
+  utterance.pitch = 1;
+  window.speechSynthesis.speak(utterance);
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+
+function speakQuestion() {
+  const q = state.filteredQs[state.currentQ];
+  if (!q) return;
+  speak(`Question ${state.currentQ + 1}. Domain: ${q.domain}. ${q.text}`);
+}
+
+function speakOptions() {
+  const q = state.filteredQs[state.currentQ];
+  if (!q) return;
+  const text = q.options.map((opt, i) => `Option ${['A','B','C','D'][i]}: ${opt}`).join('. ');
+  speak(text);
+}
+
+function speakExplanation() {
+  const q = state.filteredQs[state.currentQ];
+  if (!q) return;
+  const clean = q.explanation.replace(/<[^>]+>/g, '');
+  speak(`Explanation: ${clean}`);
+}
+
+function speakFormulas() {
+  const text = `
+    Earned Value inputs: PV equals budgeted cost of scheduled work.
+    EV equals BAC times percent complete.
+    AC equals actual cost spent.
+    Cost Variance CV equals EV minus AC. Negative means over budget.
+    Schedule Variance SV equals EV minus PV. Negative means behind schedule.
+    Cost Performance Index CPI equals EV divided by AC. Below one is over budget.
+    Schedule Performance Index SPI equals EV divided by PV. Below one is behind schedule.
+    Estimate at Completion typical formula: EAC equals BAC divided by CPI.
+    PERT estimate: O plus four M plus P, divided by 6.
+    Communication channels: n times n minus 1, divided by 2.
+    Expected Monetary Value: Probability times Impact.
+  `;
+  speak(text);
+}
+
+// ══════════════════════════════════════
+// NAV
+// ══════════════════════════════════════
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t => {
+    if (t.textContent.toLowerCase().includes(pageId.replace('log','').replace('study','practice').replace('wrong','wrong'))) {
+      t.classList.add('active');
+    }
+  });
+
+  if (pageId === 'study') renderQuestion();
+  if (pageId === 'wronglog') renderWrongLog();
+  if (pageId === 'studylog') renderStudyLog();
+  if (pageId === 'dashboard') updateDashboard();
+  if (pageId === 'learn') initLearn();
+  if (pageId === 'flashcards') renderFlashcard();
+  if (pageId === 'videos') renderVideoGrid();
+  if (pageId === 'formulas') calcEVM();
+  window.scrollTo({top:0});
+}
+
+// Fix nav tab activation
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ══════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════
+function showToast(msg, type = '') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + type;
+  setTimeout(() => t.className = 'toast', 3000);
+}
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+loadState();
+updateDashboard();
+renderQuestion();
+initParticles();
+setupSplash();
+updateGameUI();
+document.getElementById('muteBtn').textContent = state.muted ? '🔇' : '🔊';
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  const activePage = document.querySelector('.page.active');
+  if (!activePage || activePage.id !== 'page-study') return;
+  if (e.key === 'ArrowRight' || e.key === 'n') nextQ();
+  if (e.key === 'ArrowLeft' || e.key === 'p') prevQ();
+  if (e.key === 'r' || e.key === 'R') speakQuestion();
+  if (['1','2','3','4'].includes(e.key)) {
+    const q = state.filteredQs[state.currentQ];
+    if (q && state.answers[q.id] === undefined) selectAnswer(q.id, parseInt(e.key)-1);
+  }
+});
+</script>
+</body>
+</html>
