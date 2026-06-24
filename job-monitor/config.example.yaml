@@ -1,0 +1,103 @@
+# ---------------------------------------------------------------------------
+# Job monitor configuration.
+#
+# Copy this file to  config.yaml  and edit it. config.yaml is gitignored so
+# your ntfy topic / email password never get committed.
+# ---------------------------------------------------------------------------
+
+# A clear, honest User-Agent. Put a real contact in it so site admins can
+# reach you if needed. This is part of being a polite monitor.
+user_agent: "JobMonitor/1.0 (+https://github.com/SummerbodyKing/Summerbody-co; contact: sb2kfit@gmail.com)"
+
+# How often to poll each site (minutes). Politeness floor is 15; lower values
+# are automatically raised to 15.
+check_interval_minutes: 20
+
+request_timeout_seconds: 30
+respect_robots: true            # honor robots.txt (recommended: keep true)
+
+# ---- Filtering --------------------------------------------------------------
+# Keywords are case-insensitive. Empty list = match all jobs.
+# A keyword matches as a substring, so "marketing" also catches "Digital
+# Marketing" and "Marketing Operations".
+keywords:
+  - marketing
+  - communications
+  - content
+  - social media manager
+  - digital strategist
+  - brand manager
+  - customer success
+  - demand generation       # the ModMed role you wanted most
+  - sales operations        # ModMed "Sales Operations Business Partner"
+  - revenue operations      # ModMed "Revenue Operations Analyst, Sales"
+
+# Where to look for keywords:
+#   title_or_description  (default) | title_only | all (ignore keywords)
+match_in: title_or_description
+
+# Only notify for jobs whose location contains ANY of these terms
+# (case-insensitive). Use [] for any location. Remote roles usually say
+# "Remote" in their location text, so "Remote" catches them.
+location_filter:
+  - Remote
+  - Hybrid
+  - Boca Raton
+  - Delray
+  - Boynton
+  - Lake Worth
+  - Pompano
+
+# ---- Notifications ----------------------------------------------------------
+notify:
+  channel: ntfy                 # ntfy | email
+
+  ntfy:
+    server: "https://ntfy.sh"
+    # Pick a long, hard-to-guess topic name (anyone who knows it can read your
+    # alerts). Then subscribe to this exact topic in the ntfy phone app.
+    # Leave blank here if you set it via the JOBMON_NTFY_TOPIC environment
+    # variable instead (e.g. the GitHub Actions secret NTFY_TOPIC for the
+    # cloud runner). Blank + no env var = notifications are skipped (safe).
+    topic: ""
+    priority: "default"         # min | low | default | high | max
+
+  email:                        # fallback; only used if channel: email
+    smtp_host: ""               # e.g. "smtp.gmail.com"
+    smtp_port: 587
+    use_tls: true               # true = STARTTLS (587); false = SSL (465)
+    username: ""
+    password: ""                # use an app password, not your login password
+    from_addr: ""
+    to_addr: ""
+
+# ---- Targets ----------------------------------------------------------------
+# Add one block per careers page / job board. 'type' is optional — by default
+# the monitor auto-detects Greenhouse, Lever, Workday, GovernmentJobs/NeoGov,
+# RSS/Atom feeds, then falls back to HTML (and Playwright for JS pages).
+#
+# Supported explicit types: greenhouse | lever | workday | governmentjobs |
+#                           rss | html | auto
+targets:
+  # --- ModMed (Workday) -----------------------------------------------------
+  # NOTE: point at the BOARD (all jobs), not a single job page. The monitor
+  # watches the whole board and alerts you when a NEW posting appears.
+  - name: modmed
+    url: "https://modmed.wd501.myworkdayjobs.com/en-US/ModMed12"
+    type: workday
+
+  # --- AP Companies (iSolved Hire) ------------------------------------------
+  # The link you gave was a single posting. To catch NEW jobs there, we need
+  # the company's jobs LISTING page. Best guess below — run --test to confirm
+  # it parses; it may be JS-rendered and need Playwright. If it finds nothing,
+  # send me the page that lists ALL of their openings.
+  - name: ap-companies
+    url: "https://apcompanies.isolvedhire.com/jobs/"
+    enabled: true
+
+  # --- Indeed link you sent: NOT usable -------------------------------------
+  # Indeed's terms forbid automated scraping, so this monitor refuses it. To
+  # watch that role, find the EMPLOYER's own careers page (often Workday/
+  # Greenhouse/Lever) and add it here instead.
+  # - name: some-employer
+  #   url: "https://careers.someemployer.com/"

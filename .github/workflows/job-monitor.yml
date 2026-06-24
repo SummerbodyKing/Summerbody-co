@@ -1,0 +1,65 @@
+name: Job monitor
+
+# Runs the job monitor in the cloud (GitHub's servers) on a schedule, so you
+# don't have to install anything on your PC or leave it running. It checks the
+# careers boards in job-monitor/config.example.yaml and pushes a phone alert
+# (via ntfy) for each NEW matching job.
+#
+# REQUIRED ONE-TIME SETUP (you do this once, in the browser):
+#   1. Install the free "ntfy" app on your phone and subscribe to a secret
+#      topic name (e.g. sb2k-jobs-7h3kq9).
+#   2. In this repo on GitHub: Settings -> Secrets and variables -> Actions
+#      -> New repository secret. Name it exactly:  NTFY_TOPIC
+#      Value: the same secret topic name from step 1.
+# That's it. Without the secret, it still runs but skips notifications.
+
+on:
+  schedule:
+    - cron: "*/20 * * * *"   # every 20 minutes
+  workflow_dispatch:          # lets you (or me) run it on demand from the Actions tab
+
+permissions:
+  contents: read
+
+concurrency:
+  group: job-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        # Only what the active targets need (Workday JSON + HTML scrape).
+        run: pip install requests PyYAML beautifulsoup4 lxml
+
+      - name: Restore saved "seen jobs" state
+        # Rolling cache so we remember which jobs we've already alerted on
+        # between runs. If the cache is ever lost, the next run silently
+        # re-baselines (no alert flood).
+        uses: actions/cache@v4
+        with:
+          path: job-monitor/data
+          key: jobmon-state-${{ github.run_id }}
+          restore-keys: |
+            jobmon-state-
+
+      - name: Prepare config
+        run: cp job-monitor/config.example.yaml job-monitor/config.yaml
+
+      - name: Run the monitor
+        env:
+          JOBMON_NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python job-monitor/monitor.py --config job-monitor/config.yaml
+
+      - name: Show recent log (for debugging)
+        if: always()
+        run: tail -n 50 job-monitor/logs/monitor.log || true
