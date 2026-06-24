@@ -553,6 +553,16 @@
   .badge.earned { opacity:1; filter:none; border-color:rgba(255,85,0,0.4); background:linear-gradient(160deg,var(--surface2),#1a0800); }
   .badge .bi { font-size:30px; } .badge .bn { font-size:12px; font-weight:700; margin-top:8px; } .badge .bd { font-size:10px; color:var(--text-dim); margin-top:3px; }
 
+  /* Notes */
+  .notepad { width:100%; min-height:200px; resize:vertical; background:var(--surface2); border:1px solid var(--border);
+    border-radius:10px; padding:14px; color:var(--text); font-family:var(--font-main); font-size:14px; line-height:1.6; outline:none; }
+  .notepad:focus { border-color:var(--orange); box-shadow:0 0 0 2px var(--orange-glow); }
+  .q-note { margin-top:14px; }
+  .q-note label { display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim); margin-bottom:6px; }
+  .q-note textarea { width:100%; min-height:70px; resize:vertical; background:var(--surface2); border:1px solid var(--border);
+    border-radius:8px; padding:10px 12px; color:var(--text); font-family:var(--font-main); font-size:13.5px; line-height:1.55; outline:none; }
+  .q-note textarea:focus { border-color:var(--orange); box-shadow:0 0 0 2px var(--orange-glow); }
+
   /* ── 14-DAY PATH ── */
   .path-progress-bar { position:relative; height:30px; background:var(--surface2); border:1px solid var(--border);
     border-radius:16px; overflow:hidden; margin-bottom:26px; display:flex; align-items:center; }
@@ -892,6 +902,7 @@
     <button class="filter-btn" onclick="filterDomain('Process',this)">Process (50%)</button>
     <button class="filter-btn" onclick="filterDomain('Business Environment',this)">Biz Env (8%)</button>
     <button class="filter-btn" onclick="filterDomain('wrong',this)">❌ Wrong Only</button>
+    <button class="filter-btn" onclick="filterDomain('brushup',this)">⭐ Brush Up</button>
   </div>
 
   <div id="questionArea"></div>
@@ -914,7 +925,20 @@
 
 <!-- ══════════════════════════════════════════ STUDY LOG ══ -->
 <div class="page" id="page-studylog">
-  <h2 style="font-size:20px;font-weight:800;margin-bottom:24px;">Daily Study Log</h2>
+  <h2 style="font-size:20px;font-weight:800;margin-bottom:24px;">Journal &amp; Notes</h2>
+
+  <!-- NOTEPAD -->
+  <div class="log-input-section">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <h3 style="margin:0">📝 My Notes</h3>
+      <span style="font-size:11px;color:var(--text-muted)" id="notesSaved">auto-saves as you type</span>
+    </div>
+    <textarea id="notepad" class="notepad" placeholder="Drop anything here — formulas to memorize, tricky concepts, exam-day reminders, mistakes to avoid. It saves automatically and stays on this device."></textarea>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+      <button class="btn btn-secondary btn-sm" onclick="speak(state.notes||'No notes yet')">🔊 Read my notes</button>
+      <button class="btn btn-secondary btn-sm" onclick="downloadNotes()">⬇ Export notes</button>
+    </div>
+  </div>
 
   <div class="log-input-section">
     <h3>Log Today's Session</h3>
@@ -1846,6 +1870,7 @@ let state = {
   domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
   xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
   path: {}, // day# -> {watch,learn,drill,boss,bossScore}
+  notes: '', questionNotes: {}, brushUp: [],
 };
 
 // Load from localStorage
@@ -1863,6 +1888,9 @@ function loadState() {
       state.badges = parsed.badges || {};
       state.muted = parsed.muted || false;
       state.path = parsed.path || {};
+      state.notes = parsed.notes || '';
+      state.questionNotes = parsed.questionNotes || {};
+      state.brushUp = parsed.brushUp || [];
     }
   } catch(e) {}
 }
@@ -1874,7 +1902,8 @@ function saveState() {
       wrongLog: state.wrongLog,
       studyLog: state.studyLog,
       domainStats: state.domainStats,
-      xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path
+      xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
+      notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp
     }));
   } catch(e) {}
 }
@@ -1964,8 +1993,9 @@ function updateDashboard() {
   document.getElementById('statHours').textContent = totalHrs.toFixed(1);
 
   // Q stats
-  const answered = Object.keys(state.answers).length;
-  const correct = Object.values(state.answers).filter(a => a.correct).length;
+  const realAns = Object.values(state.answers).filter(a => !a.unsure);
+  const answered = realAns.length;
+  const correct = realAns.filter(a => a.correct).length;
   const accuracy = answered > 0 ? Math.round((correct/answered)*100) : 0;
   document.getElementById('statAnswered').textContent = answered;
   document.getElementById('statAccuracy').textContent = answered > 0 ? `${accuracy}% accuracy` : '— accuracy';
@@ -2114,6 +2144,18 @@ function renderStudyLog() {
   const grid = document.getElementById('logGrid');
   const entries = document.getElementById('logEntries');
 
+  // Notepad
+  const pad = document.getElementById('notepad');
+  if (pad) {
+    pad.value = state.notes || '';
+    pad.oninput = () => {
+      state.notes = pad.value;
+      document.getElementById('notesSaved').textContent = 'saving…';
+      clearTimeout(window._notesTimer);
+      window._notesTimer = setTimeout(() => { saveState(); document.getElementById('notesSaved').textContent = 'saved ✓'; }, 500);
+    };
+  }
+
   grid.innerHTML = DAYS.map(d => {
     const hoursLogged = state.studyLog.filter(l => l.day === d.d).reduce((s,l)=>s+l.hours,0);
     const today = getCurrentDay() === d.d;
@@ -2166,6 +2208,8 @@ function filterDomain(domain, btn) {
   } else if (domain === 'wrong') {
     const wrongIds = state.wrongLog.map(w => w.qId);
     state.filteredQs = QUESTIONS.filter(q => wrongIds.includes(q.id));
+  } else if (domain === 'brushup') {
+    state.filteredQs = QUESTIONS.filter(q => state.brushUp.includes(q.id));
   } else {
     state.filteredQs = QUESTIONS.filter(q => q.domain === domain);
   }
@@ -2202,9 +2246,13 @@ function renderQuestion() {
 
   const explanationHtml = savedAnswer !== undefined ? `
     <div class="explanation show">
+      ${savedAnswer.unsure ? '<div style="color:var(--yellow);font-weight:700;font-size:12px;margin-bottom:8px">🤔 You flagged this to brush up — here is the answer to learn now.</div>' : ''}
       <div class="principle-tag">${q.principle}</div>
       <div>${q.explanation}</div>
     </div>` : '';
+
+  const inBrush = state.brushUp.includes(q.id);
+  const noteVal = state.questionNotes[q.id] || '';
 
   document.getElementById('questionArea').innerHTML = `
     <div class="question-card">
@@ -2212,18 +2260,77 @@ function renderQuestion() {
         <span class="q-badge ${domainClass}">${q.domain}</span>
         <span class="q-num">#${q.id}</span>
         <span class="q-difficulty ${q.difficulty}">${q.difficulty}</span>
+        ${inBrush ? '<span class="q-difficulty" style="background:rgba(245,158,11,0.15);color:var(--yellow)">⭐ brush up</span>' : ''}
       </div>
       <div class="q-text">${q.text}</div>
       <div class="options">${optionsHtml}</div>
       <div class="q-controls">
-        <button class="speak-btn" onclick="speakQuestion()">🔊 Read Question</button>
-        <button class="speak-btn" onclick="speakOptions()">🔊 Read Options</button>
-        ${savedAnswer !== undefined ? `<button class="speak-btn" onclick="speakExplanation()">🔊 Read Explanation</button>` : ''}
+        ${savedAnswer === undefined ? `<button class="speak-btn" onclick="markUnsure(${q.id})" style="border-color:rgba(245,158,11,0.4);color:var(--yellow)">🤔 Not Sure</button>` : ''}
+        <button class="speak-btn" onclick="toggleBrushUp(${q.id})">${inBrush ? '⭐ In Brush-Up' : '☆ Brush Up'}</button>
+        <button class="speak-btn" onclick="toggleQNote(${q.id})">📝 Note</button>
+        <button class="speak-btn" onclick="speakQuestion()">🔊 Question</button>
+        <button class="speak-btn" onclick="speakOptions()">🔊 Options</button>
+        ${savedAnswer !== undefined ? `<button class="speak-btn" onclick="speakExplanation()">🔊 Explanation</button>` : ''}
+      </div>
+      <div class="q-note" id="qnote-${q.id}" style="display:${noteVal?'block':'none'}">
+        <label>📝 My note on this question</label>
+        <textarea oninput="saveQNote(${q.id}, this.value)" placeholder="Why is the answer what it is? What tripped me up?">${noteVal.replace(/</g,'&lt;')}</textarea>
       </div>
       ${explanationHtml}
     </div>`;
 
   updateQProgress();
+}
+
+function markUnsure(qId){
+  if (state.answers[qId] !== undefined) return;
+  const q = QUESTIONS.find(q => q.id === qId);
+  if (!q) return;
+  state.answers[qId] = { chosen: null, correct: false, unsure: true };
+  if (!state.brushUp.includes(qId)) state.brushUp.push(qId);
+  saveState();
+  renderQuestion();
+  updateDashboard();
+  showToast('🤔 Flagged to brush up. Answer revealed so you can learn it.', '');
+}
+function toggleBrushUp(qId){
+  const i = state.brushUp.indexOf(qId);
+  if (i === -1) { state.brushUp.push(qId); showToast('⭐ Added to Brush Up'); }
+  else { state.brushUp.splice(i,1); showToast('Removed from Brush Up'); }
+  saveState();
+  renderQuestion();
+}
+function toggleQNote(qId){
+  const el = document.getElementById('qnote-' + qId);
+  if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+function saveQNote(qId, val){
+  if (val.trim()) state.questionNotes[qId] = val;
+  else delete state.questionNotes[qId];
+  clearTimeout(window._qnoteTimer);
+  window._qnoteTimer = setTimeout(saveState, 400);
+}
+function downloadNotes(){
+  let txt = 'SWEAT DEPT · PMP COMMAND CENTER — MY NOTES\n' + '='.repeat(44) + '\n\n';
+  txt += (state.notes || '(no general notes)') + '\n\n';
+  const qn = Object.entries(state.questionNotes);
+  if (qn.length) {
+    txt += 'NOTES ON SPECIFIC QUESTIONS\n' + '-'.repeat(28) + '\n';
+    qn.forEach(([id,note]) => {
+      const q = QUESTIONS.find(x => x.id == id);
+      txt += `\nQ#${id} (${q?q.domain:''} · ${q?q.principle:''})\n${q?q.text:''}\nNote: ${note}\n`;
+    });
+  }
+  if (state.brushUp.length) {
+    txt += '\n\nBRUSH-UP LIST (flagged to review)\n' + '-'.repeat(28) + '\n';
+    state.brushUp.forEach(id => { const q = QUESTIONS.find(x=>x.id===id); if(q) txt += `\n• [${q.domain}] ${q.principle} — ${q.text}`; });
+  }
+  const blob = new Blob([txt], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'pmp-notes.txt';
+  a.click();
+  showToast('Notes exported');
 }
 
 function selectAnswer(qId, chosen) {
@@ -2758,9 +2865,11 @@ function nextQ() {
 }
 
 function updateQProgress() {
-  const answered = Object.keys(state.answers).length;
-  const correct = Object.values(state.answers).filter(a => a.correct).length;
-  document.getElementById('qProgressText').textContent = `${correct} correct, ${answered - correct} wrong`;
+  const real = Object.values(state.answers).filter(a => !a.unsure);
+  const correct = real.filter(a => a.correct).length;
+  const wrong = real.length - correct;
+  const unsure = state.brushUp.length;
+  document.getElementById('qProgressText').textContent = `${correct} correct, ${wrong} wrong, ${unsure} to brush up`;
 }
 
 // ══════════════════════════════════════
