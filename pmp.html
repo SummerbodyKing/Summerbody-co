@@ -814,6 +814,17 @@
   .drill-actions { display:flex; align-items:center; gap:14px; margin-top:16px; flex-wrap:wrap; }
   .drill-exam { font-size:11.5px; color:var(--text-muted); }
   @media (max-width:600px){ .drill-opts { grid-template-columns:1fr; } }
+
+  /* ════ LESSON CHECK-YOURSELF QUIZ ════ */
+  .lesson-quiz { margin-top:18px; }
+  .lq-intro { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    background:var(--surface2); border:1px dashed rgba(255,85,0,.4); border-radius:12px; padding:14px 16px; }
+  .lq-card { background:linear-gradient(135deg,#140600,var(--surface)); border:1px solid rgba(255,85,0,.32); border-radius:14px; padding:16px; }
+  .lq-head { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .lq-h { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--orange); }
+  .lq-sub { font-size:12.5px; color:var(--text-dim); margin-top:4px; }
+  .lq-prog { font-size:11px; color:var(--text-muted); font-weight:600; }
+  .lq-next { display:flex; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -3272,6 +3283,8 @@ function initLearn(){
     // interactive learn-by-doing exercises
     ['tuckman','conflict','power','engage'].forEach(setupExercise);
     setupEvmExercise();
+    // fresh "check yourself" questions on every lesson
+    injectLessonQuizzes();
   }
 }
 function buildLessonNav(){
@@ -3457,6 +3470,94 @@ function answerEvm(btn, choice){
     CV = EV − AC = $${EV.toLocaleString()} − $${AC.toLocaleString()} = <b>$${CV.toLocaleString()}</b> (${CV<0?'over':'under'} budget, CPI ${CPI})<br>
     SV = EV − PV = $${EV.toLocaleString()} − $${PV.toLocaleString()} = <b>$${SV.toLocaleString()}</b> (${SV<0?'behind':'ahead'}, SPI ${SPI})
     <div class="ex-next"><button class="btn btn-secondary btn-sm" onclick="newEvmEx()">Next drill →</button></div>`;
+}
+
+// ══════════════════════════════════════
+// 🎯 LESSON "CHECK YOURSELF" — every visual lesson gets fresh questions
+// Pulls real exam questions mapped to each lesson's topic, randomised so
+// they change each time, and records results into your readiness score.
+// ══════════════════════════════════════
+function lessonQuestions(lsId){
+  return QUESTIONS.filter(q => lessonFor((q.text||'') + ' ' + (q.principle||'')) === lsId);
+}
+const lessonQuizState = {};
+function injectLessonQuizzes(){
+  const ids = ['ls-evm','ls-quad','ls-tuckman','ls-conflict','ls-power','ls-engage','ls-riskmatrix',
+    'ls-riskresp','ls-spectrum','ls-comm','ls-coq','ls-contract','ls-motivation','ls-blueprint','ls-mindset'];
+  ids.forEach(id=>{
+    const sec = document.getElementById(id);
+    if(!sec || sec.querySelector('.lesson-quiz')) return;
+    const pool = lessonQuestions(id);
+    if(!pool.length) return;
+    const box = document.createElement('div');
+    box.className = 'lesson-quiz';
+    box.id = 'lq-' + id;
+    sec.appendChild(box);
+    lessonQuizIntro(id);
+  });
+}
+function lessonQuizIntro(lsId){
+  const box = document.getElementById('lq-' + lsId); if(!box) return;
+  const n = lessonQuestions(lsId).length;
+  const st = lessonQuizState[lsId];
+  const tag = st ? `<span class="lq-prog">${st.right}/${st.done} right this session</span>` : '';
+  box.innerHTML = `<div class="lq-intro">
+      <div><div class="lq-h">🎯 Check yourself</div>
+        <div class="lq-sub">${n} exam question${n>1?'s':''} on this topic — randomised, so they change each time. ${tag}</div></div>
+      <button class="btn btn-primary btn-sm" onclick="startLessonQuiz('${lsId}')">${st?'Keep going →':'Quiz me →'}</button>
+    </div>`;
+}
+function startLessonQuiz(lsId){
+  const box = document.getElementById('lq-' + lsId); if(!box) return;
+  const pool = lessonQuestions(lsId); if(!pool.length) return;
+  const st = lessonQuizState[lsId] || (lessonQuizState[lsId] = {done:0, right:0, lastId:null});
+  let q = pool[Math.floor(Math.random()*pool.length)];
+  if(pool.length>1){ let guard=0; while(q.id===st.lastId && guard++<10) q = pool[Math.floor(Math.random()*pool.length)]; }
+  st.lastId = q.id; st.answered = false; st.q = q;
+  box.innerHTML = `
+    <div class="lq-card">
+      <div class="lq-head"><span class="lq-h">🎯 Check yourself</span><span class="lq-prog">${st.right}/${st.done} right · ${q.domain}</span></div>
+      <div class="q-text" style="font-size:15px;margin:8px 0 12px">${q.text}</div>
+      <div class="options" id="lqopts-${lsId}">
+        ${q.options.map((o,i)=>`<button class="option" onclick="answerLessonQuiz('${lsId}',${i})"><span class="option-letter">${'ABCD'[i]}</span><span>${o}</span></button>`).join('')}
+      </div>
+      <div id="lqfb-${lsId}"></div>
+    </div>`;
+}
+function recordRealAnswer(q, chosenIdx, correct){
+  if(state.answers[q.id] !== undefined) return;
+  state.answers[q.id] = {chosen:chosenIdx, correct};
+  if(state.domainStats[q.domain]){ state.domainStats[q.domain].total++; if(correct) state.domainStats[q.domain].correct++; }
+  if(!correct && state.wrongLog.findIndex(w=>w.qId===q.id)===-1){
+    state.wrongLog.push({qId:q.id, domain:q.domain, question:q.text.substring(0,100)+'...',
+      myAnswer:q.options[chosenIdx], correctAnswer:q.options[q.answer], principle:q.principle, date:new Date().toISOString()});
+  }
+  saveState();
+}
+function answerLessonQuiz(lsId, idx){
+  const st = lessonQuizState[lsId]; if(!st || st.answered) return;
+  st.answered = true;
+  const q = st.q;
+  const correct = idx === q.answer;
+  st.done++; if(correct) st.right++;
+  recordRealAnswer(q, idx, correct);
+  document.querySelectorAll('#lqopts-'+lsId+' .option').forEach((o,i)=>{
+    o.onclick = null;
+    if(i===q.answer) o.classList.add('reveal-correct');
+    if(i===idx && !correct) o.classList.add('wrong');
+  });
+  if(correct){ playSound('correct'); addXP(5); updateGameUI(); } else playSound('wrong');
+  document.getElementById('lqfb-'+lsId).innerHTML = `
+    <div class="explanation show" style="margin-top:12px">
+      <div class="principle-tag">${q.principle}</div>
+      <div>${q.explanation}</div>
+    </div>
+    ${questionAids(q)}
+    <div class="lq-next">
+      <button class="btn btn-primary btn-sm" onclick="startLessonQuiz('${lsId}')">Another question →</button>
+      <span class="lq-prog">${st.right}/${st.done} right this session</span>
+    </div>`;
+  if(typeof renderReadiness==='function') renderReadiness();
 }
 
 // ══════════════════════════════════════
