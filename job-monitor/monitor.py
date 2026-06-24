@@ -136,6 +136,18 @@ def load_config(path: Path) -> dict:
                     "raising to %s.", interval, MIN_INTERVAL_MINUTES)
         interval = MIN_INTERVAL_MINUTES
     cfg["check_interval_minutes"] = interval
+
+    # Environment overrides (handy for cloud/CI runs where secrets live in env
+    # rather than in the committed config file).
+    env_topic = os.environ.get("JOBMON_NTFY_TOPIC", "").strip()
+    if env_topic:
+        cfg["notify"]["ntfy"]["topic"] = env_topic
+    env_server = os.environ.get("JOBMON_NTFY_SERVER", "").strip()
+    if env_server:
+        cfg["notify"]["ntfy"]["server"] = env_server
+    env_channel = os.environ.get("JOBMON_CHANNEL", "").strip()
+    if env_channel:
+        cfg["notify"]["channel"] = env_channel
     return cfg
 
 

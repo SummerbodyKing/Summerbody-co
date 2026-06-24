@@ -56,7 +56,10 @@ notify:
     server: "https://ntfy.sh"
     # Pick a long, hard-to-guess topic name (anyone who knows it can read your
     # alerts). Then subscribe to this exact topic in the ntfy phone app.
-    topic: "CHANGE-ME-to-a-secret-topic-name"
+    # Leave blank here if you set it via the JOBMON_NTFY_TOPIC environment
+    # variable instead (e.g. the GitHub Actions secret NTFY_TOPIC for the
+    # cloud runner). Blank + no env var = notifications are skipped (safe).
+    topic: ""
     priority: "default"         # min | low | default | high | max
 
   email:                        # fallback; only used if channel: email
