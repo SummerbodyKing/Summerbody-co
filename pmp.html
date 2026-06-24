@@ -718,6 +718,7 @@
     .donut-wrap { flex-direction: column; }
   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -753,6 +754,7 @@
     <div class="xp-chip" id="xpChip" title="Experience points">⚡ <span id="xpNum">0</span></div>
     <div class="day-badge" id="dayBadge">DAY 1 of 14</div>
     <div class="timer-display" id="navTimer">00:00:00</div>
+    <button class="nav-icon-btn" id="syncBtn" onclick="openSync()" title="Sync across devices">☁️</button>
     <button class="nav-icon-btn" id="muteBtn" onclick="toggleMute()" title="Toggle sound">🔊</button>
   </div>
 </nav>
@@ -927,6 +929,11 @@
 <!-- AI coach modal -->
 <div class="modal-overlay" id="aiModal" onclick="if(event.target===this)document.getElementById('aiModal').classList.remove('show')">
   <div class="modal-box" id="aiModalBox"></div>
+</div>
+
+<!-- Sync / account modal -->
+<div class="modal-overlay" id="syncModal" onclick="if(event.target===this)document.getElementById('syncModal').classList.remove('show')">
+  <div class="modal-box" id="syncModalBox"></div>
 </div>
 
 <!-- ══════════════════════════════════════════ PRACTICE ══ -->
@@ -2231,18 +2238,20 @@ function loadState() {
   } catch(e) {}
 }
 
+function stateSnapshot() {
+  return {
+    answers: state.answers,
+    wrongLog: state.wrongLog,
+    studyLog: state.studyLog,
+    domainStats: state.domainStats,
+    xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
+    notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
+    aiQuestions: state.aiQuestions
+  };
+}
 function saveState() {
-  try {
-    localStorage.setItem('pmp_state_v2', JSON.stringify({
-      answers: state.answers,
-      wrongLog: state.wrongLog,
-      studyLog: state.studyLog,
-      domainStats: state.domainStats,
-      xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
-      notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
-      aiQuestions: state.aiQuestions
-    }));
-  } catch(e) {}
+  try { localStorage.setItem('pmp_state_v2', JSON.stringify(stateSnapshot())); } catch(e) {}
+  cloudPushDebounced();
 }
 
 // ══════════════════════════════════════
@@ -3816,6 +3825,134 @@ function showToast(msg, type = '') {
 }
 
 // ══════════════════════════════════════
+// CLOUD SYNC — Supabase (cross-device)
+// ══════════════════════════════════════
+const SB_URL = 'https://fyhxtghbuayikllxmzyi.supabase.co';
+const SB_KEY = 'sb_publishable_mxoxdYsVmTL_O9KQYV6zDQ_hFqT3Elm';
+let sb = null, sbUser = null, cloudTimer = null;
+
+function initCloud(){
+  if(!window.supabase){ return; }
+  try { sb = window.supabase.createClient(SB_URL, SB_KEY); } catch(e){ return; }
+  sb.auth.getSession().then(({data})=>{
+    if(data && data.session){ sbUser = data.session.user; cloudPull(true); }
+    updateSyncUI();
+  });
+  sb.auth.onAuthStateChange((_e, session)=>{ sbUser = session ? session.user : null; updateSyncUI(); });
+}
+function updateSyncUI(){
+  const btn = document.getElementById('syncBtn');
+  if(btn) btn.style.color = sbUser ? 'var(--green)' : '';
+}
+function cloudPushDebounced(){
+  if(!sb || !sbUser) return;
+  clearTimeout(cloudTimer);
+  cloudTimer = setTimeout(cloudPush, 1500);
+}
+async function cloudPush(){
+  if(!sb || !sbUser) return;
+  try {
+    await sb.from('progress').upsert({ user_id: sbUser.id, data: stateSnapshot(), updated_at: new Date().toISOString() });
+    const s = document.getElementById('syncStatus'); if(s) s.textContent = 'Synced ' + new Date().toLocaleTimeString();
+  } catch(e){}
+}
+async function cloudPull(silent){
+  if(!sb || !sbUser) return;
+  try {
+    const { data, error } = await sb.from('progress').select('data').eq('user_id', sbUser.id).maybeSingle();
+    if(error) throw error;
+    if(data && data.data){ mergeCloud(data.data); saveStateLocalOnly();
+      updateDashboard(); renderQuestion();
+      if(!silent) showToast('Pulled your progress from the cloud ☁️', 'success');
+      else showToast('Synced ☁️ welcome back', 'success');
+    }
+    cloudPush(); // push the merged result back up
+  } catch(e){ if(!silent) showToast('Could not reach the cloud', 'error'); }
+}
+function saveStateLocalOnly(){ try { localStorage.setItem('pmp_state_v2', JSON.stringify(stateSnapshot())); } catch(e){} }
+// Merge cloud data into local without losing progress (maxes for numbers, unions for lists)
+function mergeCloud(c){
+  if(!c) return;
+  state.xp = Math.max(state.xp||0, c.xp||0);
+  state.bestStreak = Math.max(state.bestStreak||0, c.bestStreak||0);
+  state.answers = Object.assign({}, c.answers||{}, state.answers||{});
+  state.questionNotes = Object.assign({}, c.questionNotes||{}, state.questionNotes||{});
+  state.badges = Object.assign({}, c.badges||{}, state.badges||{});
+  // unions by id/qId
+  const uniqBy = (arr, key) => { const m={}; (arr||[]).forEach(x=>{ const k=key(x); if(k!=null) m[k]=x; }); return Object.values(m); };
+  state.wrongLog = uniqBy([...(c.wrongLog||[]), ...(state.wrongLog||[])], w=>w.qId);
+  state.aiQuestions = uniqBy([...(c.aiQuestions||[]), ...(state.aiQuestions||[])], q=>q.id);
+  state.brushUp = Array.from(new Set([...(c.brushUp||[]), ...(state.brushUp||[])]));
+  // studyLog: concat unique by date
+  state.studyLog = uniqBy([...(c.studyLog||[]), ...(state.studyLog||[])], e=>e.date);
+  // notes: keep the longer text
+  if((c.notes||'').length > (state.notes||'').length) state.notes = c.notes;
+  // domainStats: take the record with more attempts per domain
+  ['People','Process','Business Environment'].forEach(d=>{
+    const cs=(c.domainStats||{})[d], ls=state.domainStats[d];
+    if(cs && (!ls || cs.total > ls.total)) state.domainStats[d] = cs;
+  });
+  // path: OR the step booleans per day
+  const cp = c.path||{};
+  Object.keys(cp).forEach(day=>{
+    state.path[day] = state.path[day] || {};
+    ['watch','learn','drill','boss'].forEach(k=>{ if(cp[day][k]) state.path[day][k]=true; });
+    if(cp[day].bossScore!=null) state.path[day].bossScore = Math.max(state.path[day].bossScore||0, cp[day].bossScore);
+  });
+  // re-merge AI questions into the live bank
+  state.aiQuestions.forEach(q=>{ if(!QUESTIONS.find(x=>x.id===q.id)) QUESTIONS.push(q); });
+}
+
+function openSync(){
+  const box = document.getElementById('syncModalBox');
+  if(!sb){
+    box.innerHTML = '<button class="modal-close" onclick="document.getElementById(\'syncModal\').classList.remove(\'show\')">✕</button><h2 style="font-size:18px;font-weight:800">Sync unavailable</h2><p style="color:var(--text-dim);font-size:14px;margin-top:8px">The cloud library could not load (you may be offline, or opening the file directly). Open the app from your Netlify URL with internet to sync.</p>';
+  } else if(sbUser){
+    box.innerHTML = `<button class="modal-close" onclick="document.getElementById('syncModal').classList.remove('show')">✕</button>
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:6px">☁️ Synced</h2>
+      <p style="color:var(--text-dim);font-size:14px">Signed in as <b style="color:var(--text)">${sbUser.email||'your account'}</b>. Your XP, streaks, notes, weak spots and path follow you on any device — just sign in with the same email.</p>
+      <div id="syncStatus" style="font-size:12px;color:var(--green);margin-top:10px">Auto-syncing on every change.</div>
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="cloudPush();showToast('Pushed to cloud ☁️','success')">⬆ Sync now</button>
+        <button class="btn btn-secondary" onclick="cloudPull(false)">⬇ Pull latest</button>
+        <button class="btn btn-secondary" onclick="cloudLogout()">Log out</button>
+      </div>`;
+  } else {
+    box.innerHTML = `<button class="modal-close" onclick="document.getElementById('syncModal').classList.remove('show')">✕</button>
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:6px">☁️ Sync across devices</h2>
+      <p style="color:var(--text-dim);font-size:14px;margin-bottom:16px">Create a free account (just email + password) and your progress follows you between phone and laptop. Use the same login on every device.</p>
+      <div class="evm-field" style="margin-bottom:10px"><label>Email</label><input type="email" id="syncEmail" placeholder="you@email.com" style="font-family:var(--font-main)"></div>
+      <div class="evm-field" style="margin-bottom:16px"><label>Password (min 6 chars)</label><input type="password" id="syncPass" placeholder="••••••••" style="font-family:var(--font-main)"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="cloudSignIn()">Sign in</button>
+        <button class="btn btn-secondary" onclick="cloudSignUp()">Create account</button>
+      </div>
+      <div id="syncMsg" style="font-size:13px;color:var(--text-dim);margin-top:12px"></div>`;
+  }
+  document.getElementById('syncModal').classList.add('show');
+}
+function syncMsg(m, ok){ const el=document.getElementById('syncMsg'); if(el){ el.textContent=m; el.style.color = ok?'var(--green)':'var(--red)'; } }
+async function cloudSignUp(){
+  const email=document.getElementById('syncEmail').value.trim(), pass=document.getElementById('syncPass').value;
+  if(!email||pass.length<6){ syncMsg('Enter an email and a password of at least 6 characters.'); return; }
+  syncMsg('Creating account…', true);
+  const { data, error } = await sb.auth.signUp({ email, password: pass });
+  if(error){ syncMsg(error.message); return; }
+  if(data.session){ sbUser=data.session.user; await cloudPush(); updateSyncUI(); openSync(); showToast('Account created — you are synced ☁️','success'); }
+  else { syncMsg('Account created. If email confirmation is on, confirm via email then Sign in.', true); }
+}
+async function cloudSignIn(){
+  const email=document.getElementById('syncEmail').value.trim(), pass=document.getElementById('syncPass').value;
+  if(!email||!pass){ syncMsg('Enter your email and password.'); return; }
+  syncMsg('Signing in…', true);
+  const { data, error } = await sb.auth.signInWithPassword({ email, password: pass });
+  if(error){ syncMsg(error.message); return; }
+  sbUser=data.user; updateSyncUI();
+  await cloudPull(false); openSync();
+}
+async function cloudLogout(){ await sb.auth.signOut(); sbUser=null; updateSyncUI(); openSync(); showToast('Logged out (progress stays on this device)'); }
+
+// ══════════════════════════════════════
 // INIT
 // ══════════════════════════════════════
 loadState();
@@ -3824,6 +3961,7 @@ renderQuestion();
 initParticles();
 setupSplash();
 updateGameUI();
+initCloud();
 document.getElementById('muteBtn').textContent = state.muted ? '🔇' : '🔊';
 
 // Keyboard shortcuts
