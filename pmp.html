@@ -924,6 +924,11 @@
   <div class="modal-box" id="bossModalBox"></div>
 </div>
 
+<!-- AI coach modal -->
+<div class="modal-overlay" id="aiModal" onclick="if(event.target===this)document.getElementById('aiModal').classList.remove('show')">
+  <div class="modal-box" id="aiModalBox"></div>
+</div>
+
 <!-- ══════════════════════════════════════════ PRACTICE ══ -->
 <div class="page" id="page-study">
   <div class="study-header">
@@ -933,6 +938,7 @@
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
+      <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
   <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">88 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
@@ -2196,7 +2202,7 @@ let state = {
   domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
   xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
   path: {}, // day# -> {watch,learn,drill,boss,bossScore}
-  notes: '', questionNotes: {}, brushUp: [], qTimes: [],
+  notes: '', questionNotes: {}, brushUp: [], qTimes: [], aiQuestions: [],
 };
 
 // Load from localStorage
@@ -2218,6 +2224,9 @@ function loadState() {
       state.questionNotes = parsed.questionNotes || {};
       state.brushUp = parsed.brushUp || [];
       state.qTimes = parsed.qTimes || [];
+      state.aiQuestions = parsed.aiQuestions || [];
+      // merge persisted AI-generated questions back into the live bank
+      state.aiQuestions.forEach(q => { if(!QUESTIONS.find(x => x.id === q.id)) QUESTIONS.push(q); });
     }
   } catch(e) {}
 }
@@ -2230,7 +2239,8 @@ function saveState() {
       studyLog: state.studyLog,
       domainStats: state.domainStats,
       xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
-      notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes
+      notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
+      aiQuestions: state.aiQuestions
     }));
   } catch(e) {}
 }
@@ -2640,6 +2650,66 @@ function retakeQuestions(){
   renderQuestion();
   updateDashboard();
   showToast('Answers cleared — run them fresh. 💪', 'success');
+}
+
+// ══════════════════════════════════════
+// AI COACH — generate fresh questions on weak spots
+// ══════════════════════════════════════
+function aiModal(html){
+  document.getElementById('aiModalBox').innerHTML = '<button class="modal-close" onclick="document.getElementById(\'aiModal\').classList.remove(\'show\')">✕</button>' + html;
+  document.getElementById('aiModal').classList.add('show');
+}
+function weakestDomain(){
+  let weak='Business Environment', lo=101;
+  ['People','Process','Business Environment'].forEach(d=>{ const p=domainPct(d); const s=state.domainStats[d]; if(s&&s.total>=2&&p<lo){lo=p;weak=d;} });
+  return weak;
+}
+async function aiGenerate(){
+  const domain = weakestDomain();
+  aiModal(`<h2 style="font-size:20px;font-weight:800;margin-bottom:8px">🧠 AI Coach</h2>
+    <p style="color:var(--text-dim);font-size:14px">Writing 5 fresh <b style="color:var(--orange)">${domain}</b> questions targeted at your weak spot…</p>
+    <div style="text-align:center;padding:24px"><div style="font-size:32px" class="streak-flame">⚡</div></div>`);
+  try {
+    const avoid = QUESTIONS.map(q=>q.principle).filter((v,i,a)=>a.indexOf(v)===i);
+    const res = await fetch('/.netlify/functions/ai-coach', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ domain, count:5, difficulty:'mixed', avoidTopics: avoid })
+    });
+    const data = await res.json();
+    if (data.error === 'not_configured') return aiSetupHelp();
+    if (data.error || !data.questions || !data.questions.length) {
+      return aiModal(`<h2 style="font-size:18px;font-weight:800;margin-bottom:8px">Hmm, no questions came back</h2>
+        <p style="color:var(--text-dim);font-size:14px">${data.error==='api_error'?'The Claude API returned an error ('+(data.status||'')+'). Double-check your API key and that your Anthropic account has credit.':'Try again in a moment.'}</p>
+        <div style="margin-top:16px"><button class="btn btn-primary" onclick="aiGenerate()">↻ Try again</button></div>`);
+    }
+    // inject new questions into the bank + persist
+    let nextId = Math.max(...QUESTIONS.map(q=>q.id), 999) + 1;
+    const added = data.questions.map(q=>({
+      id: nextId++, domain: q.domain||domain, difficulty: q.difficulty||'medium',
+      principle: '🧠 AI · '+(q.principle||domain), text:q.text, options:q.options, answer:q.answer,
+      explanation: q.explanation||'', aiGen:true
+    }));
+    added.forEach(q=>{ QUESTIONS.push(q); state.aiQuestions.push(q); });
+    saveState();
+    document.getElementById('aiModal').classList.remove('show');
+    showPage('study');
+    state.filteredQs = added; state.currentQ = 0; renderQuestion();
+    fireConfetti(0.5); showToast(`🧠 ${added.length} fresh ${domain} questions ready`, 'success');
+  } catch(e) {
+    aiModal(`<h2 style="font-size:18px;font-weight:800;margin-bottom:8px">The AI Coach needs the live site</h2>
+      <p style="color:var(--text-dim);font-size:14px;line-height:1.6">The AI brain runs on a server, so it only works on your deployed Netlify site, not a file opened directly from disk. Open the app through your Netlify URL and try again.</p>`);
+  }
+}
+function aiSetupHelp(){
+  aiModal(`<h2 style="font-size:20px;font-weight:800;margin-bottom:10px">🔌 Turn on the AI Coach</h2>
+    <p style="color:var(--text-dim);font-size:14px;line-height:1.65">The backend is built and deployed. It just needs your Anthropic API key (this powers Claude). One-time setup:</p>
+    <ol style="font-size:14px;line-height:1.8;margin:14px 0 14px 18px;color:var(--text)">
+      <li>Get a key at <b>console.anthropic.com</b> → API Keys (add a few dollars of credit).</li>
+      <li>In <b>Netlify</b> → your site → <b>Site configuration → Environment variables</b>.</li>
+      <li>Add a variable named <b style="color:var(--orange)">ANTHROPIC_API_KEY</b> with your key as the value.</li>
+      <li>Trigger a redeploy (Deploys → Trigger deploy), then tap the AI button again.</li>
+    </ol>
+    <p style="font-size:12px;color:var(--text-muted)">Your key stays private on the server and is never exposed in the app. Cost is pay-as-you-go (about a penny per batch of questions).</p>`);
 }
 
 function renderQuestion() {
