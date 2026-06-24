@@ -716,7 +716,62 @@
     .heat{ font-size:9px; } .flashcard{ height:300px; }
     .quadwrap { grid-template-columns: 1fr !important; }
     .donut-wrap { flex-direction: column; }
+    .today-hero { flex-direction: column; gap: 18px; }
+    .today-ring-wrap { flex-direction: row; gap: 14px; align-items: center; }
+    .rs-block { padding: 14px; }
+    .rs-time { min-width: 52px; }
   }
+
+  /* ════ TODAY — HOUR-BY-HOUR RUN SHEET ════ */
+  .today-hero { display:flex; justify-content:space-between; align-items:center; gap:24px;
+    background: linear-gradient(135deg,#1a0800,var(--surface)); border:1px solid rgba(255,85,0,0.35);
+    border-radius:20px; padding:26px 28px; margin-bottom:18px; }
+  .today-kicker { font-size:11px; font-weight:800; letter-spacing:2px; color:var(--orange); margin-bottom:6px; }
+  .today-hero h1 { font-size:30px; font-weight:900; line-height:1.05; margin:0 0 8px; }
+  .today-hero p { color:var(--text-dim); font-size:13.5px; max-width:560px; line-height:1.5; margin:0; }
+  .today-ring-wrap { display:flex; flex-direction:column; align-items:center; gap:8px; flex:0 0 auto; }
+  .today-ring { width:120px; height:120px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background: conic-gradient(var(--orange) 0deg, var(--surface3) 0deg); transition: background .5s ease; }
+  .today-ring-hole { width:92px; height:92px; border-radius:50%; background:var(--surface); display:flex; flex-direction:column;
+    align-items:center; justify-content:center; }
+  .today-ring-hole .trn { font-size:26px; font-weight:900; color:var(--orange); }
+  .today-ring-hole .trl { font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase; }
+  .today-ring-cap { font-size:11px; color:var(--text-dim); font-weight:600; }
+
+  .now-banner { background:var(--surface); border:1px solid rgba(255,85,0,.4); border-left:4px solid var(--orange);
+    border-radius:14px; padding:14px 18px; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+  .now-banner.alldone { border-color:rgba(34,197,94,.5); border-left-color:var(--green); }
+  .now-banner .nb-l { font-size:11px; color:var(--text-muted); letter-spacing:1.5px; font-weight:800; text-transform:uppercase; }
+  .now-banner .nb-t { font-size:17px; font-weight:800; margin-top:2px; }
+  .now-banner .nb-d { font-size:12.5px; color:var(--text-dim); margin-top:2px; }
+  .now-banner .btn { white-space:nowrap; }
+
+  .rs-block { display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; padding:16px 18px; margin-bottom:10px; transition: all .2s; position:relative; }
+  .rs-block.current { border-color:var(--orange); box-shadow:0 0 0 1px var(--orange), 0 8px 30px rgba(255,85,0,.18); background:linear-gradient(135deg,#160700,var(--surface)); }
+  .rs-block.done { opacity:.62; }
+  .rs-block.locked { opacity:.5; }
+  .rs-block.brk { background:var(--surface2); border-style:dashed; }
+  .rs-time { min-width:64px; text-align:center; flex:0 0 auto; padding-top:2px; }
+  .rs-time .rt-clock { font-size:14px; font-weight:800; color:var(--text); }
+  .rs-time .rt-dur { font-size:10.5px; color:var(--text-muted); margin-top:2px; }
+  .rs-ico { width:42px; height:42px; border-radius:11px; background:var(--surface3); display:flex; align-items:center; justify-content:center; font-size:21px; flex:0 0 auto; }
+  .rs-block.current .rs-ico { background:rgba(255,85,0,.18); }
+  .rs-body { flex:1 1 auto; min-width:0; }
+  .rs-tag { font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--orange); margin-bottom:3px; }
+  .rs-block.brk .rs-tag { color:var(--text-muted); }
+  .rs-title { font-size:15.5px; font-weight:800; line-height:1.2; }
+  .rs-desc { font-size:12.5px; color:var(--text-dim); margin-top:3px; line-height:1.45; }
+  .rs-cta { margin-top:11px; display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .rs-check { flex:0 0 auto; width:26px; height:26px; border-radius:50%; border:2px solid var(--border); display:flex; align-items:center; justify-content:center;
+    font-size:14px; color:var(--text-muted); cursor:pointer; background:none; transition:all .15s; }
+  .rs-check.on { border-color:var(--green); background:var(--green); color:#04210f; }
+  .rs-phasebar { display:flex; align-items:center; gap:10px; margin:22px 0 10px; }
+  .rs-phasebar .pl { font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); white-space:nowrap; }
+  .rs-phasebar .pr { flex:1; height:1px; background:var(--border); }
+  .today-foot { margin-top:18px; padding:18px 20px; background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    font-size:12.5px; color:var(--text-dim); line-height:1.6; }
+  .today-foot b { color:var(--text); }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -739,7 +794,8 @@
 <nav>
   <div class="nav-brand">SWEAT DEPT <span>·</span> PMP CMD</div>
   <div class="nav-tabs">
-    <button class="nav-tab active" data-page="dashboard" onclick="showPage('dashboard')">War Room</button>
+    <button class="nav-tab active" data-page="today" onclick="showPage('today')">▶ Today</button>
+    <button class="nav-tab" data-page="dashboard" onclick="showPage('dashboard')">War Room</button>
     <button class="nav-tab" data-page="path" onclick="showPage('path')">14-Day Path</button>
     <button class="nav-tab" data-page="learn" onclick="showPage('learn')">Learn</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
@@ -761,7 +817,8 @@
 
 <!-- ══ MOBILE BOTTOM NAV ══ -->
 <div class="mobile-nav" id="mobileNav">
-  <button class="mnav-btn active" data-page="dashboard" onclick="showPage('dashboard')"><span>🏠</span>Home</button>
+  <button class="mnav-btn active" data-page="today" onclick="showPage('today')"><span>▶️</span>Today</button>
+  <button class="mnav-btn" data-page="dashboard" onclick="showPage('dashboard')"><span>🏠</span>War Room</button>
   <button class="mnav-btn" data-page="path" onclick="showPage('path')"><span>🗺️</span>Path</button>
   <button class="mnav-btn" data-page="learn" onclick="showPage('learn')"><span>📊</span>Learn</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
@@ -772,9 +829,30 @@
   <button class="mnav-btn" data-page="studylog" onclick="showPage('studylog')"><span>📅</span>Journal</button>
 </div>
 
-<!-- ══════════════════════════════════════════ DASHBOARD ══ -->
+<!-- ══════════════════════════════════════════ TODAY — HOUR-BY-HOUR RUN SHEET ══ -->
 <main>
-<div class="page active" id="page-dashboard">
+<div class="page active" id="page-today">
+  <div class="today-hero">
+    <div class="today-hero-left">
+      <div class="today-kicker" id="todayKicker">YOUR PLAN FOR TODAY</div>
+      <h1 id="todayTitle">Day 1</h1>
+      <p id="todaySub">Your run sheet builds itself. Do each block in order, top to bottom. Finish them all and today is done — anything after that is bonus.</p>
+    </div>
+    <div class="today-ring-wrap">
+      <div class="today-ring" id="todayRing"><div class="today-ring-hole"><div class="trn" id="todayRingNum">0%</div><div class="trl">today</div></div></div>
+      <div class="today-ring-cap" id="todayRingCap">0 / 0 blocks</div>
+    </div>
+  </div>
+
+  <div class="now-banner" id="nowBanner"></div>
+
+  <div id="runSheet"></div>
+
+  <div class="today-foot" id="todayFoot"></div>
+</div>
+
+<!-- ══════════════════════════════════════════ DASHBOARD ══ -->
+<div class="page" id="page-dashboard">
   <div class="dash-hero">
     <div class="dash-hero-top">
       <div>
@@ -2209,6 +2287,7 @@ let state = {
   domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
   xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
   path: {}, // day# -> {watch,learn,drill,boss,bossScore}
+  runsheet: {}, // "day:blockId" -> true  (hour-by-hour Today engine)
   notes: '', questionNotes: {}, brushUp: [], qTimes: [], aiQuestions: [],
 };
 
@@ -2227,6 +2306,7 @@ function loadState() {
       state.badges = parsed.badges || {};
       state.muted = parsed.muted || false;
       state.path = parsed.path || {};
+      state.runsheet = parsed.runsheet || {};
       state.notes = parsed.notes || '';
       state.questionNotes = parsed.questionNotes || {};
       state.brushUp = parsed.brushUp || [];
@@ -2245,6 +2325,7 @@ function stateSnapshot() {
     studyLog: state.studyLog,
     domainStats: state.domainStats,
     xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
+    runsheet: state.runsheet,
     notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
     aiQuestions: state.aiQuestions
   };
@@ -3579,6 +3660,209 @@ function dayState(d){ if(!state.path[d]) state.path[d]={watch:false,learn:false,
 function daySteps(d){ const s=state.path[d]||{}; return ['watch','learn','drill','boss'].filter(k=>s[k]).length; }
 function dayDone(d){ return daySteps(d)===4; }
 
+// ══════════════════════════════════════
+// TODAY — HOUR-BY-HOUR RUN SHEET (the Day Engine)
+// Builds an 8-hour, timeboxed, self-rolling plan from each day's DAY_PLAN.
+// Every block launches a REAL activity already in the app and checks itself off.
+// ══════════════════════════════════════
+const DAY_START_HOUR = 9; // 9:00 AM start; purely a visual run-sheet clock
+function fmtClock(mins){
+  let h = Math.floor(mins/60), m = mins%60;
+  const ap = h>=12 ? 'PM':'AM'; let hh = h%12; if(hh===0) hh=12;
+  return `${hh}:${m.toString().padStart(2,'0')} ${ap}`;
+}
+// A block: {id, dur, brk?, phase, tag, ico, title, desc, action, stepKey?, cta}
+function buildRunSheet(d){
+  const plan = DAY_PLAN[d]; const info = DAYS[d-1];
+  const lessonName = (info.topic||'').replace(/—.*/,'').trim();
+  let blocks = [];
+  const warm = {id:'warmup', dur:20, phase:'Warm-Up', tag:'Wake the brain', ico:'🔥',
+    title:'Warm-up — yesterday\'s misses + 5 flashcards',
+    desc: d>1 ? 'Re-attempt the questions you got wrong, then flip 5 cards. Recall before new learning locks it in.' : 'Flip 5 flashcards to meet the 23 principles. This is your first contact with the material.',
+    cta:'Start warm-up', action:`runStart(${d},'warmup','flashcards')`};
+
+  if(plan.boss==='mock'){
+    // MOCK EXAM DAY
+    blocks = [
+      warm,
+      {id:'review-blueprint', dur:25, phase:'Prime', tag:'Frame the exam', ico:'🧭', stepKey:'learn',
+        title:'See it — re-read the exam blueprint & 3-step method', desc:'Reset the lens before a full mock: People 42% · Process 50% · Biz 8%.',
+        cta:'Open blueprint', action:`runStart(${d},'review-blueprint','pathLearn')`},
+      {id:'mock', dur:120, phase:'The Mock', tag:'Boss Raid', ico:'🎯', stepKey:'boss',
+        title:'FULL MOCK EXAM — timed, no notes', desc:'Sit it like the real thing. Target 70%+. This is the single most important block of the day.',
+        cta:'▶ Start the mock', action:`runStart(${d},'mock','boss')`},
+      {id:'break1', dur:15, brk:true, phase:'The Mock', tag:'Break', ico:'☕', title:'Step away — 15 min', desc:'Walk, water, breathe. Do not review yet.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
+      {id:'deep-review', dur:90, phase:'Deep Review', tag:'Where the points are', ico:'⚠️', stepKey:'drill',
+        title:'Deep review — every miss, one by one', desc:'For each wrong answer: read the explanation out loud, watch the topic video, write the rule in your Journal.',
+        cta:'Open Wrong Log', action:`runStart(${d},'deep-review','wronglog')`},
+      {id:'ai-gap', dur:40, phase:'Deep Review', tag:'Close the gap', ico:'🤖',
+        title:'AI Coach — fresh questions on your weakest domain', desc:'Generate brand-new questions targeting exactly what you missed, and drill them.',
+        cta:'Generate questions', action:`runStart(${d},'ai-gap','coach')`},
+      {id:'journal', dur:20, phase:'Lock It In', tag:'Make it stick', ico:'📝',
+        title:'Journal — today\'s 3 biggest lessons', desc:'Write the three rules you will never miss again. Closing the day is how it sticks.',
+        cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
+    ];
+  } else if(plan.boss==='weak'){
+    // WEAK-AREA REINFORCEMENT DAY
+    blocks = [
+      warm,
+      {id:'watch', dur:35, phase:'Re-teach', tag:'Hear it again', ico:'▶️', stepKey:'watch',
+        title:'Watch it — your hardest topics, taught out loud', desc:'A focused video on the areas you keep missing.', cta:'Play video', action:`runStart(${d},'watch','watch')`},
+      {id:'fix', dur:75, phase:'Re-teach', tag:'Fix the leaks', ico:'⚠️', stepKey:'drill',
+        title:'Re-attempt every wrong answer', desc:'Work through the full Wrong Log until each one feels easy. Re-do, don\'t just re-read.', cta:'Open Wrong Log', action:`runStart(${d},'fix','wronglog')`},
+      {id:'break1', dur:10, brk:true, phase:'Re-teach', tag:'Break', ico:'☕', title:'Reset — 10 min', desc:'Short break.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
+      {id:'ai-gap', dur:50, phase:'Reinforce', tag:'New reps', ico:'🤖',
+        title:'AI Coach — new questions on your weak spot', desc:'Generate and drill fresh questions on your lowest domain.', cta:'Generate questions', action:`runStart(${d},'ai-gap','coach')`},
+      {id:'cards', dur:40, phase:'Reinforce', tag:'Memory', ico:'🃏',
+        title:'Flashcards — principles & formulas', desc:'Run the full deck. Anything you blank on goes back into the warm-up.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
+      {id:'boss', dur:50, phase:'Prove It', tag:'Beat the Boss', ico:'🎯', stepKey:'boss',
+        title:'Beat the Boss — clear the day', desc:'A mix from everything you missed. 70%+ locks the day green.', cta:'▶ Start the Boss', action:`runStart(${d},'boss','boss')`},
+      {id:'journal', dur:20, phase:'Lock It In', tag:'Make it stick', ico:'📝',
+        title:'Journal — what finally clicked', desc:'Write what you understand now that you didn\'t this morning.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
+    ];
+  } else if(d===14){
+    // TAPER DAY — light, confidence
+    blocks = [
+      {id:'cards', dur:30, phase:'Taper', tag:'Light touch', ico:'🃏', title:'Flashcards — a calm full pass', desc:'Flip through everything once. Recognise, don\'t cram.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
+      {id:'watch', dur:25, phase:'Taper', tag:'Exam day', ico:'▶️', stepKey:'watch', title:'Watch it — exam-day, what to expect', desc:'Logistics, pacing, the 3-step method one last time.', cta:'Play video', action:`runStart(${d},'watch','watch')`},
+      {id:'learn', dur:25, phase:'Taper', tag:'Mindset', ico:'📊', stepKey:'learn', title:'See it — mindset & blueprint refresh', desc:'A gentle re-read. You already know this.', cta:'Open lesson', action:`runStart(${d},'learn','pathLearn')`},
+      {id:'boss', dur:30, phase:'Taper', tag:'Confidence', ico:'🎯', stepKey:'boss', title:'Beat the Boss — a light confidence set', desc:'A short, winnable set. End on a high.', cta:'▶ Start', action:`runStart(${d},'boss','boss')`},
+      {id:'drill', dur:1, phase:'Taper', tag:'Done', ico:'✅', stepKey:'drill', title:'Mark today complete — then REST', desc:'Sleep is your last study tool. Stop here. You are ready.', cta:'Mark complete', action:`runStart(${d},'drill','done')`},
+      {id:'journal', dur:15, phase:'Taper', tag:'Tomorrow', ico:'📝', title:'Journal — your exam-day plan', desc:'Write when you wake, what you eat, when you arrive. Remove every decision from exam morning.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
+    ];
+  } else {
+    // STANDARD LEARNING DAY — Watch → See → Drill → Cards → Formulas → Boss → Fix → Journal
+    const isCalc = (plan.lessons||[]).includes('ls-evm');
+    blocks = [
+      warm,
+      {id:'watch', dur:40, phase:'Learn It', tag:'Hear it', ico:'▶️', stepKey:'watch',
+        title:`Watch it — ${lessonName}`, desc:'A short video that teaches today\'s topic out loud. Watch first; it frames everything else.', cta:'▶ Play today\'s video', action:`runStart(${d},'watch','watch')`},
+      {id:'learn', dur:50, phase:'Learn It', tag:'See it + do it', ico:'📊', stepKey:'learn',
+        title:'See it — visual lessons (drag, click, earn XP)', desc:'Open today\'s diagrams and play the click-to-learn exercises. You don\'t just read it — you do it.', cta:'Open visual lessons', action:`runStart(${d},'learn','pathLearn')`},
+      {id:'break1', dur:10, brk:true, phase:'Learn It', tag:'Break', ico:'☕', title:'Stand up — 10 min', desc:'Reset your focus.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
+      {id:'drill', dur:60, phase:'Practice It', tag:'Reps', ico:'✍️', stepKey:'drill',
+        title:`Drill it — ${plan.drill==='all'?'mixed':plan.drill} practice questions`, desc:'Work a focused set. Hit the 🔊 to hear each one. Wrong answers auto-file into your Weak Spots.', cta:'Start drilling', action:`runStart(${d},'drill','drill')`},
+      {id:'lunch', dur:45, brk:true, phase:'Practice It', tag:'Lunch', ico:'🍽️', title:'Lunch — 45 min', desc:'Real break. Step fully away from the screen.', cta:'I\'m back', action:`runStart(${d},'lunch','rest')`},
+      {id:'cards', dur:40, phase:'Lock It In', tag:'Memory', ico:'🃏',
+        title:'Flashcards — today\'s principles & terms', desc:'Flip the deck for today\'s topic. Say the answer out loud before you flip.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
+      {id:'formulas', dur:isCalc?50:30, phase:'Lock It In', tag:isCalc?'Calculations':'Numbers', ico:'🧮',
+        title:isCalc?'Formula Lab — run 5 EVM scenarios out loud':'Formula Lab — 3 quick reps', desc:'Plug numbers into CPI, SPI, EAC. Watching the formula react is how it stops being memorisation.', cta:'Open Formula Lab', action:`runStart(${d},'formulas','formulas')`},
+      {id:'break2', dur:10, brk:true, phase:'Lock It In', tag:'Break', ico:'☕', title:'Last reset — 10 min', desc:'Almost there.', cta:'I\'m back', action:`runStart(${d},'break2','rest')`},
+      {id:'boss', dur:50, phase:'Prove It', tag:'Beat the Boss', ico:'🎯', stepKey:'boss',
+        title:'Beat the Boss — clear the day', desc:'A short quiz on today\'s topic. 70%+ locks the day in green and keeps your chain alive.', cta:'▶ Start the Boss', action:`runStart(${d},'boss','boss')`},
+      {id:'fix', dur:35, phase:'Prove It', tag:'Plug leaks', ico:'⚠️',
+        title:'Fix your misses', desc:'Re-attempt anything you missed today. Read each explanation out loud.', cta:'Open Wrong Log', action:`runStart(${d},'fix','wronglog')`},
+      {id:'journal', dur:20, phase:'Lock It In', tag:'Make it stick', ico:'📝',
+        title:'Journal — today\'s 3 takeaways', desc:'Write the three things you never want to miss again. Closing the loop is how it sticks overnight.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
+    ];
+  }
+  // assign clock times sequentially
+  let t = DAY_START_HOUR*60;
+  blocks.forEach(b=>{ b.start = t; t += b.dur; });
+  return blocks;
+}
+function rsKey(d,id){ return d+':'+id; }
+function blockDone(d,b){ return b.stepKey ? !!dayState(d)[b.stepKey] : !!state.runsheet[rsKey(d,b.id)]; }
+function markBlockDone(d,b){
+  if(b.stepKey){ const s=dayState(d); if(!s[b.stepKey]){ s[b.stepKey]=true; checkDayComplete(d); } }
+  state.runsheet[rsKey(d,b.id)] = true;
+  saveState();
+}
+function toggleBlock(d,id){
+  const b = buildRunSheet(d).find(x=>x.id===id); if(!b) return;
+  if(blockDone(d,b)){
+    if(b.stepKey) dayState(d)[b.stepKey]=false;
+    delete state.runsheet[rsKey(d,id)];
+  } else { markBlockDone(d,b); }
+  saveState(); renderToday();
+}
+// launch the real activity behind a block, mark it complete, and roll on
+function runStart(d, id, kind){
+  const b = buildRunSheet(d).find(x=>x.id===id);
+  // The Boss only checks off when the learner actually passes (70%+) — finishBoss handles that.
+  // Every other block checks off the moment you start it.
+  if(b && kind!=='boss') markBlockDone(d,b);
+  switch(kind){
+    case 'watch':     pathWatch(d); break;
+    case 'pathLearn': pathLearn(d); break;
+    case 'learn':     pathLearn(d); break;
+    case 'drill':     pathDrill(d); break;
+    case 'boss':      showPage('path'); setTimeout(()=>startBoss(d),200); break;
+    case 'flashcards':showPage('flashcards'); break;
+    case 'formulas':  showPage('formulas'); break;
+    case 'wronglog':  showPage('wronglog'); break;
+    case 'studylog':  showPage('studylog'); break;
+    case 'coach':     showPage('dashboard'); setTimeout(()=>{ const c=document.getElementById('coachCard'); if(c) c.scrollIntoView({behavior:'smooth'}); },200); break;
+    case 'rest':      renderToday(); showToast('Break logged — back to it 💪','success'); break;
+    case 'done':      renderToday(); break;
+    default: renderToday();
+  }
+}
+function renderToday(){
+  const d = getCurrentDay();
+  const info = DAYS[d-1] || DAYS[0];
+  const blocks = buildRunSheet(d);
+  const study = blocks.filter(b=>!b.brk);
+  const doneN = study.filter(b=>blockDone(d,b)).length;
+  const pct = study.length ? Math.round(doneN/study.length*100) : 0;
+  const current = blocks.find(b=>!b.brk && !blockDone(d,b));
+
+  // header
+  document.getElementById('todayKicker').textContent = `${PHASE(d).toUpperCase()} · ${info.date.toUpperCase()}`;
+  document.getElementById('todayTitle').textContent = `Day ${d}: ${info.topic}`;
+  const ring = document.getElementById('todayRing');
+  ring.style.background = `conic-gradient(var(--orange) ${pct*3.6}deg, var(--surface3) 0deg)`;
+  document.getElementById('todayRingNum').textContent = pct+'%';
+  document.getElementById('todayRingCap').textContent = `${doneN} / ${study.length} blocks`;
+
+  // now banner
+  const nb = document.getElementById('nowBanner');
+  if(!current){
+    nb.className = 'now-banner alldone';
+    nb.innerHTML = `<div><div class="nb-l" style="color:var(--green)">✅ Today is done</div>
+      <div class="nb-t">Every block cleared. That\'s a full study day in the bank.</div>
+      <div class="nb-d">Anything you do now is bonus — pre-learn tomorrow, or rest. Come back tomorrow and the next run sheet builds itself.</div></div>
+      <button class="btn btn-secondary" onclick="showPage('path')">See the 14-day chain →</button>`;
+  } else {
+    nb.className = 'now-banner';
+    nb.innerHTML = `<div><div class="nb-l">▶ Do this now · ${fmtClock(current.start)}</div>
+      <div class="nb-t">${current.title}</div>
+      <div class="nb-d">${current.desc}</div></div>
+      <button class="btn btn-primary" onclick="document.getElementById('rsb-${current.id}').scrollIntoView({behavior:'smooth',block:'center'})">Take me to it ↓</button>`;
+  }
+
+  // blocks, grouped by phase
+  let html = ''; let lastPhase = null;
+  blocks.forEach(b=>{
+    if(b.phase !== lastPhase){ html += `<div class="rs-phasebar"><span class="pl">${b.phase}</span><span class="pr"></span></div>`; lastPhase = b.phase; }
+    const done = blockDone(d,b);
+    const isCur = current && b.id===current.id;
+    const cls = ['rs-block']; if(b.brk) cls.push('brk'); if(done) cls.push('done'); else if(isCur) cls.push('current');
+    html += `<div class="rs-block ${cls.join(' ')}" id="rsb-${b.id}">
+      <div class="rs-time"><div class="rt-clock">${fmtClock(b.start)}</div><div class="rt-dur">${b.dur} min</div></div>
+      <div class="rs-ico">${b.ico}</div>
+      <div class="rs-body">
+        <div class="rs-tag">${b.tag}</div>
+        <div class="rs-title">${b.title}</div>
+        <div class="rs-desc">${b.desc}</div>
+        <div class="rs-cta">
+          ${done ? `<span style="color:var(--green);font-weight:700;font-size:13px">✓ Done</span> <button class="btn btn-secondary btn-sm" onclick="${b.action}">Do it again</button>`
+                 : `<button class="btn ${isCur?'btn-primary':'btn-secondary'} btn-sm" onclick="${b.action}">${b.cta}</button>`}
+        </div>
+      </div>
+      <button class="rs-check ${done?'on':''}" title="Toggle done" onclick="event.stopPropagation();toggleBlock(${d},'${b.id}')">${done?'✓':''}</button>
+    </div>`;
+  });
+  document.getElementById('runSheet').innerHTML = html;
+
+  // footer
+  const totalMin = study.reduce((s,b)=>s+b.dur,0);
+  document.getElementById('todayFoot').innerHTML = `<b>How this works:</b> every block opens a real part of the app and checks itself off when you start it.
+    Work top to bottom — the orange block is where you are now. Today is <b>${study.length} study blocks (~${(totalMin/60).toFixed(1)}h of focused work)</b>, and it
+    rebuilds itself tomorrow for Day ${Math.min(d+1,14)}. Miss a day? The plan still points you at the next thing — it never leaves you guessing.
+    <br><br><b>Exam:</b> ${info.date==='Jul 7'?'tomorrow':'Jul 8, 2026'} · Mocks land on Day 11 &amp; Day 13 automatically.`;
+}
+
 function renderPath(){
   const today = getCurrentDay();
   const done = DAYS.filter(d=>dayDone(d.d)).length;
@@ -3802,6 +4086,7 @@ function showPage(pageId) {
   // sync active state on BOTH desktop tabs and mobile bottom bar
   document.querySelectorAll('[data-page]').forEach(t => t.classList.toggle('active', t.dataset.page === pageId));
 
+  if (pageId === 'today') renderToday();
   if (pageId === 'study') renderQuestion();
   if (pageId === 'wronglog') renderWrongLog();
   if (pageId === 'studylog') renderStudyLog();
@@ -3957,6 +4242,7 @@ async function cloudLogout(){ await sb.auth.signOut(); sbUser=null; updateSyncUI
 // ══════════════════════════════════════
 loadState();
 updateDashboard();
+renderToday();
 renderQuestion();
 initParticles();
 setupSplash();
