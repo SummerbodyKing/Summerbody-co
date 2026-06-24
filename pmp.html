@@ -788,6 +788,32 @@
   .mm-f-expr { font-size:17px; font-weight:900; color:var(--orange); margin:5px 0; font-family:var(--font-main); letter-spacing:.3px; }
   .mm-f-hint { font-size:11px; color:var(--text-muted); line-height:1.4; }
   .mm-aids-cta { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+
+  /* ════ FORMULA DRILL ════ */
+  .drill-card { background:linear-gradient(135deg,#160700,var(--surface)); border:1px solid rgba(255,85,0,.4); border-radius:16px; padding:20px; margin-bottom:24px; }
+  .drill-top { display:flex; justify-content:space-between; align-items:flex-start; gap:14px; flex-wrap:wrap; }
+  .drill-kicker { font-size:11px; font-weight:800; letter-spacing:1.5px; color:var(--orange); }
+  .drill-focus { font-size:12.5px; color:var(--text-dim); margin-top:4px; }
+  .drill-stats { display:flex; gap:14px; }
+  .drill-stats .ds { text-align:center; }
+  .drill-stats .dsv { font-size:20px; font-weight:900; }
+  .drill-stats .dsl { font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.5px; }
+  .drill-fam { display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--orange);
+    background:rgba(255,85,0,.12); border:1px solid rgba(255,85,0,.3); padding:3px 10px; border-radius:20px; margin:16px 0 12px; }
+  .drill-prompt { font-size:16px; line-height:1.5; font-weight:600; margin-bottom:16px; }
+  .drill-opts { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .drill-opt { padding:14px 16px; border:1.5px solid var(--border); border-radius:12px; background:var(--surface2); color:var(--text);
+    font-size:15px; font-weight:700; cursor:pointer; transition:all .15s; font-family:var(--font-main); }
+  .drill-opt:hover:not(:disabled){ border-color:var(--orange); }
+  .drill-opt:disabled{ cursor:default; }
+  .drill-opt.right { border-color:var(--green); background:rgba(34,197,94,.18); color:var(--green); }
+  .drill-opt.wrong { border-color:var(--red); background:rgba(239,68,68,.15); color:var(--red); }
+  .drill-fb-in { margin-top:14px; padding:13px 15px; border-radius:12px; font-size:13.5px; line-height:1.55; }
+  .drill-fb-in.ok { background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.35); }
+  .drill-fb-in.no { background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.3); }
+  .drill-actions { display:flex; align-items:center; gap:14px; margin-top:16px; flex-wrap:wrap; }
+  .drill-exam { font-size:11.5px; color:var(--text-muted); }
+  @media (max-width:600px){ .drill-opts { grid-template-columns:1fr; } }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -1125,6 +1151,9 @@
     <h2 style="font-size:20px;font-weight:800;">Formula Lab</h2>
     <button class="speak-btn" onclick="speakFormulas()">🔊 Read All Formulas</button>
   </div>
+
+  <!-- 🎯 FORMULA DRILL — fresh numbers every time, themed to today -->
+  <div id="formulaDrill"></div>
 
   <!-- INTERACTIVE EVM CALCULATOR -->
   <div class="lesson" style="margin-bottom:24px">
@@ -2304,6 +2333,7 @@ let state = {
   xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
   path: {}, // day# -> {watch,learn,drill,boss,bossScore}
   runsheet: {}, // "day:blockId" -> true  (hour-by-hour Today engine)
+  drillStats: {seen:0, right:0, streak:0, best:0}, // Formula Drill (fresh-numbers reps)
   notes: '', questionNotes: {}, brushUp: [], qTimes: [], aiQuestions: [],
 };
 
@@ -2323,6 +2353,7 @@ function loadState() {
       state.muted = parsed.muted || false;
       state.path = parsed.path || {};
       state.runsheet = parsed.runsheet || {};
+      state.drillStats = parsed.drillStats || state.drillStats;
       state.notes = parsed.notes || '';
       state.questionNotes = parsed.questionNotes || {};
       state.brushUp = parsed.brushUp || [];
@@ -2341,7 +2372,7 @@ function stateSnapshot() {
     studyLog: state.studyLog,
     domainStats: state.domainStats,
     xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
-    runsheet: state.runsheet,
+    runsheet: state.runsheet, drillStats: state.drillStats,
     notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
     aiQuestions: state.aiQuestions
   };
@@ -3598,6 +3629,145 @@ function calcEVM(){
   lastEVM = {CPI,SPI,EAC,CV,SV,BAC};
   if(!state.badges.formula){ state.badges.formula = new Date().toISOString(); checkBadges(); }
 }
+
+// ══════════════════════════════════════
+// 🎯 FORMULA DRILL — fresh numbers every time, themed to today's path topic
+// Real generators (not a fixed list): every problem is newly randomised, the
+// answer is checked, the worked solution is shown, and accuracy is tracked
+// against the exam bar. This is the "content that changes" pattern.
+// ══════════════════════════════════════
+function _ri(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+function _money(n){ return '$'+Math.round(n).toLocaleString(); }
+function _ratio(n){ return n.toFixed(2); }
+function _int(n){ return String(Math.round(n)); }
+
+// each generator returns {family, prompt, fmt, correct, wrongs[], work}
+const DRILL_GENS = {
+  cpi(){ const ev=_ri(20,80)*5000, ac=_ri(20,80)*5000; const r=ev/ac;
+    return {family:'CPI', fmt:_ratio, correct:r, wrongs:[ac/ev, ev/(ac+ev), r+0.12, r-0.15],
+      prompt:`A project reports <b>EV = ${_money(ev)}</b> and <b>AC = ${_money(ac)}</b>.<br>What is the <b>CPI</b> (2 decimals)?`,
+      work:`CPI = EV ÷ AC = ${_money(ev)} ÷ ${_money(ac)} = <b>${r.toFixed(2)}</b>. ${r>=1?'≥ 1 → under/on budget 👍':'< 1 → over budget ⚠️'}`}; },
+  spi(){ const ev=_ri(20,80)*5000, pv=_ri(20,80)*5000; const r=ev/pv;
+    return {family:'SPI', fmt:_ratio, correct:r, wrongs:[pv/ev, ev/(pv+ev), r+0.1, r-0.13],
+      prompt:`A project reports <b>EV = ${_money(ev)}</b> and <b>PV = ${_money(pv)}</b>.<br>What is the <b>SPI</b> (2 decimals)?`,
+      work:`SPI = EV ÷ PV = ${_money(ev)} ÷ ${_money(pv)} = <b>${r.toFixed(2)}</b>. ${r>=1?'≥ 1 → ahead/on schedule 👍':'< 1 → behind schedule ⚠️'}`}; },
+  cv(){ const ev=_ri(20,80)*5000, ac=_ri(20,80)*5000; const v=ev-ac;
+    return {family:'CV', fmt:_money, correct:v, wrongs:[ac-ev, ev+ac, v+15000, v-20000],
+      prompt:`A project reports <b>EV = ${_money(ev)}</b> and <b>AC = ${_money(ac)}</b>.<br>What is the <b>Cost Variance (CV)</b>?`,
+      work:`CV = EV − AC = ${_money(ev)} − ${_money(ac)} = <b>${_money(v)}</b>. ${v>=0?'Positive → on/under budget 👍':'Negative → over budget ⚠️'}`}; },
+  sv(){ const ev=_ri(20,80)*5000, pv=_ri(20,80)*5000; const v=ev-pv;
+    return {family:'SV', fmt:_money, correct:v, wrongs:[pv-ev, ev+pv, v+10000, v-25000],
+      prompt:`A project reports <b>EV = ${_money(ev)}</b> and <b>PV = ${_money(pv)}</b>.<br>What is the <b>Schedule Variance (SV)</b>?`,
+      work:`SV = EV − PV = ${_money(ev)} − ${_money(pv)} = <b>${_money(v)}</b>. ${v>=0?'Positive → on/ahead of schedule 👍':'Negative → behind schedule ⚠️'}`}; },
+  eac(){ const bac=_ri(40,120)*10000, ev=_ri(20,70)*5000, ac=_ri(20,70)*5000; const cpi=ev/ac, eac=bac/cpi;
+    return {family:'EAC', fmt:_money, correct:eac, wrongs:[bac*cpi, bac-ev+ac, eac*1.15, eac*0.85],
+      prompt:`<b>BAC = ${_money(bac)}</b>, <b>EV = ${_money(ev)}</b>, <b>AC = ${_money(ac)}</b>.<br>What is the typical <b>EAC</b> (forecast total cost)?`,
+      work:`CPI = EV ÷ AC = ${cpi.toFixed(2)}. EAC = BAC ÷ CPI = ${_money(bac)} ÷ ${cpi.toFixed(2)} = <b>${_money(eac)}</b>. ${eac>bac?'Above BAC → projected over budget ⚠️':'At/under BAC 👍'}`}; },
+  etc(){ const eac=_ri(50,120)*10000, ac=_ri(10,40)*10000; const v=eac-ac;
+    return {family:'ETC', fmt:_money, correct:v, wrongs:[eac+ac, ac-eac, v+30000, v-30000],
+      prompt:`A project has <b>EAC = ${_money(eac)}</b> and has spent <b>AC = ${_money(ac)}</b>.<br>What is the <b>ETC</b> (cost still to go)?`,
+      work:`ETC = EAC − AC = ${_money(eac)} − ${_money(ac)} = <b>${_money(v)}</b> still needed to finish.`}; },
+  channels(){ const a=_ri(5,12), b=a+_ri(2,6); const ca=a*(a-1)/2, cb=b*(b-1)/2, added=cb-ca;
+    return {family:'Channels', fmt:_int, correct:added, wrongs:[cb, b*(b-1), (b-a), added+a],
+      prompt:`A team grows from <b>${a}</b> people to <b>${b}</b> people.<br>How many <b>additional communication channels</b> are created?`,
+      work:`Channels = n(n−1)÷2. At ${b}: ${b}×${b-1}÷2 = ${cb}. At ${a}: ${a}×${a-1}÷2 = ${ca}. Added = ${cb} − ${ca} = <b>${added}</b>.`}; },
+  pert(){ const o=_ri(2,8), m=o+_ri(2,8), p=m+_ri(2,10); const e=(o+4*m+p)/6;
+    return {family:'PERT', fmt:_ratio, correct:e, wrongs:[(o+m+p)/3, (o+4*m+p)/4, e+1.5, e-1.2],
+      prompt:`An activity is estimated <b>O=${o}</b>, <b>M=${m}</b>, <b>P=${p}</b> days.<br>What is the <b>PERT (Beta)</b> expected duration (2 decimals)?`,
+      work:`PERT = (O + 4M + P) ÷ 6 = (${o} + 4×${m} + ${p}) ÷ 6 = ${(o+4*m+p)}÷6 = <b>${e.toFixed(2)}</b> days.`}; },
+  emv(){ const prob=_ri(1,9)*5, impact=_ri(10,90)*1000; const v=-(prob/100)*impact;
+    return {family:'EMV', fmt:_money, correct:v, wrongs:[(prob/100)*impact, -impact, v*1.5, v*0.5],
+      prompt:`A risk has a <b>${prob}%</b> probability of a <b>${_money(impact)}</b> cost impact (a threat).<br>What is its <b>EMV</b>?`,
+      work:`EMV = Probability × Impact = ${prob}% × −${_money(impact)} = <b>${_money(v)}</b> (negative because it is a threat). Sum EMVs to size your contingency reserve.`}; },
+  interpret(){ const ev=_ri(20,80)*5000, ac=_ri(20,80)*5000, pv=_ri(20,80)*5000; const over=ev<ac, behind=ev<pv;
+    const ans=`${over?'Over budget':'Under budget'}, ${behind?'behind schedule':'ahead of schedule'}`;
+    const opts=['Under budget, ahead of schedule','Under budget, behind schedule','Over budget, ahead of schedule','Over budget, behind schedule'];
+    return {family:'Interpret', choices: shuffle(opts.map(o=>({t:o, correct:o===ans}))),
+      prompt:`<b>EV = ${_money(ev)}</b>, <b>AC = ${_money(ac)}</b>, <b>PV = ${_money(pv)}</b>.<br>Is the project over/under budget and ahead/behind schedule?`,
+      work:`CV = EV − AC = ${_money(ev-ac)} → ${over?'over budget':'under budget'}. SV = EV − PV = ${_money(ev-pv)} → ${behind?'behind schedule':'ahead of schedule'}. Compare EV to AC for cost, EV to PV for schedule.`}; },
+};
+function drillFamiliesFor(d){
+  const map = {
+    3:['cpi','spi','cv','sv','eac','interpret'],
+    4:['channels','pert'],
+    5:['emv','interpret'],
+    10:['cpi','spi','cv','sv','eac','etc','interpret'],
+  };
+  return map[d] || ['cpi','spi','cv','sv','eac','etc','channels','pert','emv','interpret'];
+}
+let curDrill = null;
+function newDrill(){
+  const fams = drillFamiliesFor(getCurrentDay());
+  const key = fams[_ri(0,fams.length-1)];
+  const g = DRILL_GENS[key]();
+  // build 4 choices (numeric generators) or use provided choice list
+  let choices;
+  if(g.choices){ choices = g.choices; }
+  else {
+    const correctStr = g.fmt(g.correct);
+    const seen = new Set([correctStr]);
+    const wrongs = [];
+    (g.wrongs||[]).forEach(w=>{ const s=g.fmt(w); if(!seen.has(s)){ seen.add(s); wrongs.push(s); } });
+    let guard=0;
+    while(wrongs.length<3 && guard++<30){ const s=g.fmt(g.correct*(0.6+Math.random())); if(!seen.has(s)){ seen.add(s); wrongs.push(s); } }
+    choices = shuffle([{t:correctStr,correct:true}, ...wrongs.slice(0,3).map(t=>({t,correct:false}))]);
+  }
+  curDrill = {g, choices, answered:false};
+  renderFormulaDrill();
+}
+function renderFormulaDrill(){
+  const el = document.getElementById('formulaDrill'); if(!el) return;
+  if(!curDrill){ newDrill(); return; }
+  const {g, choices, answered} = curDrill;
+  const st = state.drillStats;
+  const acc = st.seen ? Math.round(st.right/st.seen*100) : 0;
+  const accColor = st.seen<3?'var(--text-dim)':acc>=80?'var(--green)':acc>=60?'var(--yellow)':'var(--orange)';
+  const today = DAYS[getCurrentDay()-1];
+  el.innerHTML = `
+    <div class="drill-card">
+      <div class="drill-top">
+        <div><div class="drill-kicker">🎯 FORMULA DRILL · fresh numbers every time</div>
+          <div class="drill-focus">Today's focus: <b>${today?today.topic:'mixed formulas'}</b></div></div>
+        <div class="drill-stats">
+          <div class="ds"><div class="dsv" style="color:${accColor}">${st.seen?acc+'%':'—'}</div><div class="dsl">accuracy</div></div>
+          <div class="ds"><div class="dsv">${st.streak}</div><div class="dsl">streak</div></div>
+          <div class="ds"><div class="dsv">${st.best}</div><div class="dsl">best</div></div>
+        </div>
+      </div>
+      <div class="drill-fam">${g.family}</div>
+      <div class="drill-prompt">${g.prompt}</div>
+      <div class="drill-opts" id="drillOpts">
+        ${choices.map((c,i)=>`<button class="drill-opt" onclick="answerDrill(${i})" ${answered?'disabled':''}>${c.t}</button>`).join('')}
+      </div>
+      <div class="drill-fb" id="drillFb"></div>
+      <div class="drill-actions">
+        <button class="btn btn-secondary btn-sm" onclick="newDrill()">${answered?'Next problem →':'↻ Skip / new numbers'}</button>
+        <span class="drill-exam">Formula questions are guaranteed exam points — aim for 90%+ here.</span>
+      </div>
+    </div>`;
+}
+function answerDrill(i){
+  if(!curDrill || curDrill.answered) return;
+  curDrill.answered = true;
+  const {choices, g} = curDrill;
+  const correct = choices[i].correct;
+  const st = state.drillStats;
+  st.seen++; if(correct){ st.right++; st.streak++; if(st.streak>st.best) st.best=st.streak; } else { st.streak=0; }
+  saveState();
+  document.querySelectorAll('#drillOpts .drill-opt').forEach((b,idx)=>{
+    b.disabled = true;
+    if(choices[idx].correct) b.classList.add('right');
+    else if(idx===i) b.classList.add('wrong');
+  });
+  playSound(correct?'correct':'wrong');
+  document.getElementById('drillFb').innerHTML =
+    `<div class="drill-fb-in ${correct?'ok':'no'}"><b>${correct?'✅ Correct':'❌ Not quite'}</b> — ${g.work}</div>`;
+  // refresh the stat chips without wiping the feedback
+  const acc = st.seen ? Math.round(st.right/st.seen*100) : 0;
+  const chips = document.querySelectorAll('#formulaDrill .ds .dsv');
+  if(chips.length===3){ chips[0].textContent = acc+'%'; chips[1].textContent = st.streak; chips[2].textContent = st.best; }
+  const skip = document.querySelector('.drill-actions .btn'); if(skip) skip.textContent = 'Next problem →';
+}
 function speakEVM(){
   if(!lastEVM) calcEVM();
   const e = lastEVM;
@@ -4152,7 +4322,7 @@ function showPage(pageId) {
   if (pageId === 'learn') initLearn();
   if (pageId === 'flashcards') renderFlashcard();
   if (pageId === 'videos') renderVideoGrid();
-  if (pageId === 'formulas') calcEVM();
+  if (pageId === 'formulas') { calcEVM(); renderFormulaDrill(); }
   window.scrollTo({top:0});
 }
 
