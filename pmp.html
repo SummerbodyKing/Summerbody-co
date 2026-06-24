@@ -553,6 +553,24 @@
   .badge.earned { opacity:1; filter:none; border-color:rgba(255,85,0,0.4); background:linear-gradient(160deg,var(--surface2),#1a0800); }
   .badge .bi { font-size:30px; } .badge .bn { font-size:12px; font-weight:700; margin-top:8px; } .badge .bd { font-size:10px; color:var(--text-dim); margin-top:3px; }
 
+  /* My Exam Readiness */
+  .ready-top { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  .ready-gauge { position:relative; width:130px; height:130px; flex-shrink:0; }
+  .ready-gauge .rg-num { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .ready-gauge .rg-num .v { font-family:var(--font-mono); font-size:30px; font-weight:900; }
+  .ready-gauge .rg-num .l { font-size:9px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.1em; }
+  .ready-verdict { flex:1; min-width:200px; }
+  .ready-verdict .rv-title { font-size:16px; font-weight:800; margin-bottom:4px; }
+  .ready-verdict .rv-sub { font-size:13px; color:var(--text-dim); line-height:1.5; }
+  .pace-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:18px; }
+  .pace-box { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:12px; text-align:center; }
+  .pace-box .pv { font-family:var(--font-mono); font-size:20px; font-weight:800; }
+  .pace-box .pl { font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; margin-top:3px; }
+  .exam-segments { display:flex; gap:4px; margin-top:18px; align-items:center; }
+  .seg { flex:1; height:30px; border-radius:6px; background:var(--surface2); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--text-dim); }
+  .seg-break { width:34px; flex:0 0 auto; font-size:9px; color:var(--orange); text-align:center; }
+
   /* Notes */
   .notepad { width:100%; min-height:200px; resize:vertical; background:var(--surface2); border:1px solid var(--border);
     border-radius:10px; padding:14px; color:var(--text); font-family:var(--font-main); font-size:14px; line-height:1.6; outline:none; }
@@ -785,6 +803,9 @@
     </div>
   </div>
 
+  <!-- MY EXAM READINESS — about me -->
+  <div class="card" id="readinessCard" style="margin-bottom:24px;"></div>
+
   <div class="two-col">
     <div class="card">
       <div class="card-title">Domain Performance</div>
@@ -889,12 +910,14 @@
 <div class="page" id="page-study">
   <div class="study-header">
     <h2>Practice Questions</h2>
-    <div style="display:flex;gap:10px;align-items:center;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 50</span>
-      <button class="speak-btn" id="speakAllBtn" onclick="speakQuestion()">🔊 Read Question</button>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 88</span>
+      <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
+      <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
     </div>
   </div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">88 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -963,6 +986,11 @@
   <div class="card" style="margin-top:16px;">
     <div class="card-title">Log Entries</div>
     <div id="logEntries"></div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <div class="card-title">📝 My Question Notes &amp; ⭐ Brush-Up List</div>
+    <div id="qNotesList"></div>
   </div>
 </div>
 
@@ -1831,6 +1859,281 @@ const QUESTIONS = [
     options:["A. Final project report","B. Formal acceptance from the client","C. Lessons learned register","D. Final budget reconciliation"],
     answer:2,
     explanation:"<strong>Lessons Learned Register — the crown jewel of project closeout.</strong> This document captures what went wrong (scope creep, communication failures), what went right, and what should be done differently. It becomes an Organizational Process Asset (OPA) that directly improves future projects. While client acceptance (B) is required to CLOSE, lessons learned is the most VALUABLE output for the organization going forward."
+  },
+
+  // ══════════ EXPANSION PACK — built from PMBOK 7 + ECO ══════════
+  // ── BUSINESS ENVIRONMENT (weak-area focus) ──
+  {
+    id:51, domain:"Business Environment", difficulty:"medium", principle:"Compliance — plan it in",
+    text:"A PM is starting a project in a heavily regulated industry. What should the PM do FIRST regarding compliance?",
+    options:["A. Begin execution and handle compliance issues as they come up","B. Identify all applicable compliance requirements and build them into the plan","C. Delegate compliance entirely to the legal department","D. Assume standard company policy already covers it"],
+    answer:1,
+    explanation:"<strong>Business Environment — Compliance is proactive.</strong> You identify every applicable legal, regulatory, and policy requirement up front and bake it into the plan. Reacting later (A), fully delegating (C), or assuming coverage (D) all create compliance risk. Compliance is planned, not improvised."
+  },
+  {
+    id:52, domain:"Business Environment", difficulty:"hard", principle:"Compliance is non-negotiable",
+    text:"Meeting a mandatory safety regulation will delay delivery by two weeks. The sponsor is pushing for the original date. What should the PM do?",
+    options:["A. Skip the requirement to hit the date","B. Deliver on time and document the gap for later","C. Comply with the regulation even though it delays delivery, and communicate the schedule impact","D. Ask the sponsor to waive the regulation"],
+    answer:2,
+    explanation:"<strong>Compliance always wins.</strong> Regulatory and safety requirements are non-negotiable. The PM complies and transparently communicates the impact. You never skip (A), ship a known gap (B), or waive a legal requirement (D). Protecting compliance protects the organization."
+  },
+  {
+    id:53, domain:"Business Environment", difficulty:"medium", principle:"Business case — NPV",
+    text:"A PM must select one of two projects. Project A has an NPV of $50,000; Project B has an NPV of $80,000. Which should be selected?",
+    options:["A. Project A","B. Project B","C. Cannot decide without the IRR","D. The one that costs less"],
+    answer:1,
+    explanation:"<strong>NPV rule: higher is better.</strong> Net Present Value already accounts for the time value of money, so the higher NPV ($80,000, Project B) is the more valuable choice. With NPV you do not need IRR or cost to decide. Always pick the higher NPV."
+  },
+  {
+    id:54, domain:"Business Environment", difficulty:"medium", principle:"Business case — IRR",
+    text:"Project X has an IRR of 18% and Project Y has an IRR of 12%. Which is the more financially attractive investment?",
+    options:["A. Project X","B. Project Y","C. They are equal","D. Cannot tell without payback period"],
+    answer:0,
+    explanation:"<strong>IRR rule: higher is better.</strong> The Internal Rate of Return is the project's effective annual return. 18% beats 12%, so Project X is more attractive. Remember the pattern: for NPV, IRR, and benefit-cost ratio, HIGHER is better; for payback period, SHORTER is better."
+  },
+  {
+    id:55, domain:"Business Environment", difficulty:"easy", principle:"Business case — Payback",
+    text:"Project A recovers its investment in 18 months; Project B in 30 months. Based on payback period alone, which is preferred?",
+    options:["A. Project A","B. Project B","C. Neither, payback is irrelevant","D. The one with the larger budget"],
+    answer:0,
+    explanation:"<strong>Payback period: shorter is better.</strong> Project A returns the money faster (18 months), which means less time at risk. Payback is the one financial metric where the SMALLER number wins. It ignores the time value of money, which is why NPV is usually preferred for bigger decisions."
+  },
+  {
+    id:56, domain:"Business Environment", difficulty:"medium", principle:"Benefits realization",
+    text:"After a project delivers its product, who is primarily responsible for ensuring the business benefits are actually realized over time?",
+    options:["A. The project manager during execution","B. The sponsor / business owner, tracked through the benefits management plan","C. The QA auditor","D. The Scrum Master"],
+    answer:1,
+    explanation:"<strong>Benefits outlive the project.</strong> Benefits are often realized after the project closes, so the sponsor or business owner owns them, guided by the benefits management plan. The PM delivers the capability; the business realizes the value. This is a core Business Environment idea."
+  },
+  {
+    id:57, domain:"Business Environment", difficulty:"hard", principle:"Value-driven decision",
+    text:"Midway through, analysis shows the product will no longer deliver positive ROI because of a market shift. What should the PM recommend?",
+    options:["A. Continue because significant work is already done","B. Escalate the updated business case to the sponsor for a continue-or-kill decision","C. Quietly cut scope to save money","D. Finish the project, then evaluate"],
+    answer:1,
+    explanation:"<strong>Value governs continuation.</strong> When the business case collapses, the PM surfaces it to the sponsor with updated data for a continue/kill call. Sunk effort (A) is irrelevant. Hiding scope cuts (C) or finishing blindly (D) wastes money. Projects exist to deliver value, not just to finish."
+  },
+  {
+    id:58, domain:"Business Environment", difficulty:"medium", principle:"External change — assess impact",
+    text:"A new government regulation is announced mid-project that changes some product requirements. What should the PM do FIRST?",
+    options:["A. Ignore it until the project ends","B. Assess the impact on scope, schedule, and cost, then raise a change request","C. Immediately halt the entire project","D. Tell the team to quietly comply"],
+    answer:1,
+    explanation:"<strong>External changes get assessed, not ignored.</strong> A regulatory shift is an external business-environment change: evaluate its impact on the baselines, then route it through change control. Ignoring (A) risks non-compliance, halting (C) is an overreaction, and quiet compliance (D) skips governance."
+  },
+  {
+    id:59, domain:"Business Environment", difficulty:"medium", principle:"Org change — ADKAR",
+    text:"A new system rollout has low adoption because staff do not understand WHY the change is happening. In the ADKAR model, which element is missing?",
+    options:["A. Awareness","B. Ability","C. Reinforcement","D. Desire"],
+    answer:0,
+    explanation:"<strong>ADKAR = Awareness, Desire, Knowledge, Ability, Reinforcement.</strong> Not understanding WHY the change is needed is a gap in Awareness, the very first step. You cannot build desire or ability until people are aware of the reason for change. Adoption problems usually trace back to an early ADKAR step."
+  },
+  {
+    id:60, domain:"Business Environment", difficulty:"medium", principle:"Org change readiness",
+    text:"Before deploying a major organizational change, what should the PM assess to improve adoption?",
+    options:["A. Only the technical build quality","B. Stakeholder readiness and resistance, supported by a change management plan","C. The server hardware capacity","D. The contract type"],
+    answer:1,
+    explanation:"<strong>Change management is people work.</strong> Adoption depends on assessing readiness and resistance and managing the transition with a change management plan (think Kotter or ADKAR). A flawless technical build still fails if people are not ready to use it."
+  },
+  {
+    id:61, domain:"Business Environment", difficulty:"medium", principle:"PMO types",
+    text:"A PMO that supplies templates, training, and best practices but does NOT dictate how projects are run is which type?",
+    options:["A. Directive PMO","B. Controlling PMO","C. Supportive PMO","D. Functional PMO"],
+    answer:2,
+    explanation:"<strong>Three PMO types by degree of control:</strong> Supportive (low control, provides templates and guidance), Controlling (medium, requires compliance with frameworks), Directive (high, takes over and manages the projects directly). Templates and best practices with no mandate = Supportive."
+  },
+  {
+    id:62, domain:"Business Environment", difficulty:"easy", principle:"OPA vs EEF",
+    text:"Company policies, historical lessons learned, and standardized templates are examples of what?",
+    options:["A. Enterprise Environmental Factors (EEFs)","B. Organizational Process Assets (OPAs)","C. Work performance data","D. Project artifacts"],
+    answer:1,
+    explanation:"<strong>OPA vs EEF:</strong> OPAs are things the organization CREATES and can change, like processes, templates, and lessons learned. EEFs are conditions you do NOT control, like market conditions, regulations, and organizational culture. Policies and templates are OPAs."
+  },
+  {
+    id:63, domain:"Business Environment", difficulty:"hard", principle:"Sunk cost",
+    text:"A project has spent $400K of a $500K budget but will no longer deliver value. A manager says 'we have already spent $400K, we have to finish.' What is the BEST response?",
+    options:["A. Agree, finishing avoids wasting the $400K","B. The $400K is a sunk cost; decide based on remaining value versus remaining cost","C. Double the budget to push it through","D. Blame the team for the overspend"],
+    answer:1,
+    explanation:"<strong>Ignore sunk costs.</strong> Money already spent cannot be recovered and must not drive a forward-looking decision. Compare the value still to be gained against the cost still to be spent. The 'we already spent it' argument is the classic sunk-cost trap."
+  },
+  {
+    id:64, domain:"Business Environment", difficulty:"easy", principle:"Projects vs operations",
+    text:"Which of the following is OPERATIONS, not a project?",
+    options:["A. Building a new mobile app","B. Running monthly payroll on an ongoing basis","C. Launching a new product line","D. Migrating to a new data center"],
+    answer:1,
+    explanation:"<strong>Projects are temporary and unique; operations are ongoing and repetitive.</strong> Monthly payroll runs continuously with no defined end, so it is operations. The others have a start, an end, and a unique deliverable, which makes them projects."
+  },
+  {
+    id:65, domain:"Business Environment", difficulty:"medium", principle:"Non-compliance response",
+    text:"During an internal audit, the PM finds the team has been skipping a required compliance step to save time. What should the PM do?",
+    options:["A. Stay quiet to avoid delaying the project","B. Stop the non-compliant activity, report it, and remediate","C. Wait until the project closes to address it","D. Blame the auditor for slowing things down"],
+    answer:1,
+    explanation:"<strong>Act on non-compliance immediately.</strong> The PM stops the non-compliant work, reports it through the right channel, and fixes it. Concealing it (A, C) escalates legal and reputational risk. Compliance integrity is part of the PM's professional responsibility."
+  },
+
+  // ── AGILE / SCRUM ──
+  {
+    id:66, domain:"Process", difficulty:"easy", principle:"Agile — Scrum Master",
+    text:"In a Scrum team, who facilitates the events and removes impediments but has NO authority over how the team does its work?",
+    options:["A. The Product Owner","B. The Scrum Master","C. The Project Sponsor","D. The Functional Manager"],
+    answer:1,
+    explanation:"<strong>Scrum Master = servant leader.</strong> They coach, facilitate ceremonies, and clear impediments, but they do not assign work or command the team. The Product Owner owns the backlog; the developers own how the work gets done."
+  },
+  {
+    id:67, domain:"Process", difficulty:"medium", principle:"Agile — Velocity misuse",
+    text:"A manager wants to compare two Scrum teams by their velocity to see which is more productive. Is this appropriate?",
+    options:["A. Yes, the team with higher velocity is better","B. No, velocity is team-specific and is used for that team's own forecasting, not cross-team comparison","C. Yes, as long as both estimate in hours","D. No, because velocity is not a real metric"],
+    answer:1,
+    explanation:"<strong>Never compare teams by velocity.</strong> Story points are relative and calibrated within a single team, so velocity only forecasts that team's future. Comparing teams punishes honest estimation and is an anti-pattern."
+  },
+  {
+    id:68, domain:"Process", difficulty:"easy", principle:"Agile — Story points",
+    text:"Story points estimate a backlog item based on what?",
+    options:["A. Exact hours of effort","B. Relative size, complexity, and uncertainty","C. The project manager's gut feel","D. Calendar days"],
+    answer:1,
+    explanation:"<strong>Story points are relative.</strong> They capture size, complexity, and uncertainty compared to other items, not precise hours. This lets teams estimate quickly and consistently without false precision."
+  },
+  {
+    id:69, domain:"Process", difficulty:"medium", principle:"Agile — Sprint Review",
+    text:"At the end of a sprint, the team demonstrates the product increment to stakeholders and gathers feedback. Which event is this?",
+    options:["A. Sprint Retrospective","B. Daily Scrum","C. Sprint Review","D. Backlog Refinement"],
+    answer:2,
+    explanation:"<strong>Review vs Retrospective:</strong> The Sprint Review inspects the PRODUCT with stakeholders and adapts the backlog. The Retrospective inspects the TEAM'S PROCESS and improves how they work. Demo + stakeholder feedback = Sprint Review."
+  },
+  {
+    id:70, domain:"Process", difficulty:"easy", principle:"Agile — Daily Scrum",
+    text:"What is the primary purpose of the daily standup (Daily Scrum)?",
+    options:["A. A status report to the project manager","B. For the team to synchronize and surface impediments for the day","C. To re-plan the entire sprint","D. To demo the product to the client"],
+    answer:1,
+    explanation:"<strong>The standup is for the team, by the team.</strong> It is a short synchronization to align on the day's plan and raise blockers, not a status meeting for a manager. Keep it timeboxed (about 15 minutes)."
+  },
+  {
+    id:71, domain:"Process", difficulty:"easy", principle:"Agile — Information radiator",
+    text:"A large, highly visible chart on the wall that shows sprint progress to anyone passing by is called a what?",
+    options:["A. Status report","B. Information radiator","C. Risk register","D. Gantt chart"],
+    answer:1,
+    explanation:"<strong>Information radiator = big visible chart.</strong> Burndown/burnup charts, task boards, and Kanban boards radiate information transparently so anyone can see status at a glance, supporting agile's value of transparency."
+  },
+  {
+    id:72, domain:"Process", difficulty:"medium", principle:"Agile — Backlog refinement",
+    text:"The ongoing activity of adding detail, estimates, and order to product backlog items is known as?",
+    options:["A. Sprint planning","B. Backlog refinement (grooming)","C. The retrospective","D. Release planning"],
+    answer:1,
+    explanation:"<strong>Backlog refinement</strong> keeps the top of the backlog ready: items are clarified, estimated, split, and re-ordered so each sprint can start cleanly. It is continuous, not a one-time event."
+  },
+  {
+    id:73, domain:"Process", difficulty:"medium", principle:"Agile — Prioritization",
+    text:"A Product Owner needs to decide which features are essential versus optional for the next release. Which technique helps prioritize?",
+    options:["A. Monte Carlo simulation","B. MoSCoW (Must have, Should have, Could have, Will not have)","C. Critical path method","D. Earned value management"],
+    answer:1,
+    explanation:"<strong>MoSCoW</strong> sorts requirements into Must, Should, Could, and Will-not-have-now, making release scope decisions explicit. Monte Carlo and critical path are schedule/risk tools, and EVM is a performance tool, not prioritization."
+  },
+  {
+    id:74, domain:"Process", difficulty:"easy", principle:"Agile — Increment",
+    text:"At the end of each sprint, an agile team should produce what?",
+    options:["A. A complete project plan","B. A potentially shippable product increment","C. A signed contract","D. A change request"],
+    answer:1,
+    explanation:"<strong>Each sprint yields a done, potentially shippable increment.</strong> It meets the Definition of Done and could be released, which is how agile delivers value early and often and gathers real feedback."
+  },
+  {
+    id:75, domain:"Business Environment", difficulty:"hard", principle:"Agile contracting",
+    text:"A client insists on fixed scope, fixed price, and fixed date for a highly uncertain product. What is the BEST way to reduce risk?",
+    options:["A. Accept all three constraints exactly as stated","B. Propose a flexible contract (for example fixed price per iteration with variable scope) and educate the client on the uncertainty","C. Refuse the project outright","D. Pad the estimate heavily and hide the buffer"],
+    answer:1,
+    explanation:"<strong>Match the contract to the uncertainty.</strong> Locking all three constraints on an uncertain product guarantees pain. A flexible or incremental contract shares risk and keeps value flowing. Refusing (C) violates 'never reject outright,' and hiding padding (D) is unethical."
+  },
+
+  // ── EVM CALCULATION DRILLS ──
+  {
+    id:76, domain:"Process", difficulty:"medium", principle:"EVM — Cost Variance",
+    text:"BAC = $200,000. The project is 50% complete and AC = $120,000. What is the Cost Variance (CV)?",
+    options:["A. -$20,000","B. +$20,000","C. -$120,000","D. $80,000"],
+    answer:0,
+    explanation:"<strong>EV first.</strong> EV = BAC x % complete = $200,000 x 0.50 = $100,000. CV = EV - AC = $100,000 - $120,000 = -$20,000. Negative CV means over budget. Always compute EV before any variance or index."
+  },
+  {
+    id:77, domain:"Process", difficulty:"hard", principle:"EVM — EAC atypical",
+    text:"BAC = $400,000, EV = $100,000, AC = $150,000. The overrun was a one-time (atypical) event. What is the EAC?",
+    options:["A. $450,000","B. $400,000","C. $600,000","D. $300,000"],
+    answer:0,
+    explanation:"<strong>Atypical EAC = AC + (BAC - EV).</strong> = $150,000 + ($400,000 - $100,000) = $150,000 + $300,000 = $450,000. Use this when the variance will NOT continue. Use EAC = BAC / CPI when the current rate WILL continue (typical)."
+  },
+  {
+    id:78, domain:"Process", difficulty:"medium", principle:"EVM — VAC",
+    text:"BAC = $500,000 and EAC = $590,000. What is the Variance at Completion (VAC)?",
+    options:["A. -$90,000 (will finish over budget)","B. +$90,000 (will finish under budget)","C. -$590,000","D. $1,090,000"],
+    answer:0,
+    explanation:"<strong>VAC = BAC - EAC.</strong> = $500,000 - $590,000 = -$90,000. Negative VAC means you are forecast to finish OVER budget by $90,000. VAC is the budget version of looking ahead to the finish line."
+  },
+  {
+    id:79, domain:"Process", difficulty:"hard", principle:"EVM — TCPI",
+    text:"BAC = $100,000, EV = $40,000, AC = $50,000. To still finish within the original budget, what efficiency (TCPI) is required on the remaining work?",
+    options:["A. 0.83","B. 1.2","C. 1.0","D. 0.8"],
+    answer:1,
+    explanation:"<strong>TCPI (to BAC) = (BAC - EV) / (BAC - AC).</strong> = ($100,000 - $40,000) / ($100,000 - $50,000) = $60,000 / $50,000 = 1.2. A TCPI above 1.0 means the team must work MORE efficiently than before to hit the budget, which is a warning sign."
+  },
+  {
+    id:80, domain:"Process", difficulty:"easy", principle:"EVM — SV meaning",
+    text:"A project has EV = $80,000 and PV = $100,000. What does the Schedule Variance tell you?",
+    options:["A. Ahead of schedule","B. Behind schedule","C. Over budget","D. Exactly on schedule"],
+    answer:1,
+    explanation:"<strong>SV = EV - PV</strong> = $80,000 - $100,000 = -$20,000. Negative SV means behind schedule. Note SV uses PV (the plan), while CV uses AC (the spend). EV minus the plan = schedule; EV minus the spend = cost."
+  },
+  {
+    id:81, domain:"Process", difficulty:"medium", principle:"EVM — ETC",
+    text:"EAC = $450,000 and AC = $150,000. What is the Estimate to Complete (ETC)?",
+    options:["A. $300,000","B. $600,000","C. $150,000","D. $450,000"],
+    answer:0,
+    explanation:"<strong>ETC = EAC - AC</strong> = $450,000 - $150,000 = $300,000. ETC is how much MORE you expect to spend to finish, from today forward. EAC is the total; AC is what is already spent; the difference is what is left."
+  },
+
+  // ── PEOPLE & PROCESS REINFORCEMENT ──
+  {
+    id:82, domain:"People", difficulty:"medium", principle:"Emotional intelligence",
+    text:"A PM notices a normally upbeat team member has become withdrawn and quiet over the past week. Using emotional intelligence, what should the PM do?",
+    options:["A. Ignore it, personal matters are not the PM's business","B. Privately check in with empathy to understand what is going on","C. Report the behavior to HR immediately","D. Call it out publicly during the daily standup"],
+    answer:1,
+    explanation:"<strong>Emotional intelligence = self-awareness, empathy, and relationship management.</strong> A private, empathetic check-in respects the person and often surfaces a removable blocker. Ignoring it (A) misses a morale risk; HR (C) and a public callout (D) overreact and damage trust."
+  },
+  {
+    id:83, domain:"People", difficulty:"easy", principle:"Active listening",
+    text:"In a stakeholder meeting, the PM paraphrases what was said and asks clarifying questions before responding. This communication technique is called?",
+    options:["A. Active listening","B. Forcing","C. Gold plating","D. Issuing a change request"],
+    answer:0,
+    explanation:"<strong>Active listening</strong> means fully focusing, paraphrasing to confirm understanding, and asking clarifying questions. Since roughly 90% of a PM's job is communication, this is a core people skill and prevents costly misunderstandings."
+  },
+  {
+    id:84, domain:"People", difficulty:"easy", principle:"RACI chart",
+    text:"A RACI chart is used primarily to do what?",
+    options:["A. Track the budget","B. Clarify roles using Responsible, Accountable, Consulted, Informed","C. Sequence the schedule","D. Identify project risks"],
+    answer:1,
+    explanation:"<strong>RACI = a responsibility assignment matrix.</strong> Responsible (does the work), Accountable (one owner, the buck stops here), Consulted (gives input), Informed (kept updated). Key rule: exactly ONE 'A' per activity to avoid confusion."
+  },
+  {
+    id:85, domain:"Process", difficulty:"easy", principle:"Integrated change control",
+    text:"In a predictive project, a stakeholder requests a scope change during execution. What is the correct FIRST step?",
+    options:["A. Implement it right away since the stakeholder asked","B. Document it as a change request and evaluate the impact before the CCB reviews it","C. Reject it to protect the baseline","D. Add it to the product backlog"],
+    answer:1,
+    explanation:"<strong>Every change goes through integrated change control.</strong> Document the request, assess impact on scope, schedule, and cost, then let the Change Control Board decide. Implementing without approval is gold plating; rejecting outright violates 'never say no first'; the backlog (D) is the agile answer, not predictive."
+  },
+  {
+    id:86, domain:"Process", difficulty:"medium", principle:"Procurement — SOW",
+    text:"Which procurement document describes the work to be performed by the seller in enough detail for them to price it?",
+    options:["A. Statement of Work (SOW)","B. RACI chart","C. Risk register","D. Project charter"],
+    answer:0,
+    explanation:"<strong>The Statement of Work (SOW)</strong> defines the products, services, or results the seller must deliver, in enough detail to bid and price. The charter authorizes the project internally; the SOW scopes the procurement."
+  },
+  {
+    id:87, domain:"Process", difficulty:"hard", principle:"Secondary vs residual risk",
+    text:"After implementing a risk response, a NEW risk arises specifically BECAUSE of that response. What is this called?",
+    options:["A. Residual risk","B. Secondary risk","C. A trigger","D. A workaround"],
+    answer:1,
+    explanation:"<strong>Secondary vs residual:</strong> A SECONDARY risk is created by your response (you bought insurance, now you have counterparty risk). A RESIDUAL risk is what remains AFTER the response (the leftover exposure). Caused-by-the-response = secondary."
+  },
+  {
+    id:88, domain:"Process", difficulty:"hard", principle:"Quality — Rule of seven",
+    text:"On a control chart, seven consecutive points fall on one side of the mean, even though all points are within the control limits. What does this indicate?",
+    options:["A. The process is fine, ignore it","B. A non-random pattern (rule of seven) that should be investigated","C. The project is over budget","D. A compliance violation"],
+    answer:1,
+    explanation:"<strong>Rule of seven:</strong> seven or more consecutive points on one side of the mean signal a non-random pattern, even inside the control limits. It is an assignable cause worth investigating before it becomes an out-of-control condition."
   }
 ];
 
@@ -1870,7 +2173,7 @@ let state = {
   domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
   xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
   path: {}, // day# -> {watch,learn,drill,boss,bossScore}
-  notes: '', questionNotes: {}, brushUp: [],
+  notes: '', questionNotes: {}, brushUp: [], qTimes: [],
 };
 
 // Load from localStorage
@@ -1891,6 +2194,7 @@ function loadState() {
       state.notes = parsed.notes || '';
       state.questionNotes = parsed.questionNotes || {};
       state.brushUp = parsed.brushUp || [];
+      state.qTimes = parsed.qTimes || [];
     }
   } catch(e) {}
 }
@@ -1903,7 +2207,7 @@ function saveState() {
       studyLog: state.studyLog,
       domainStats: state.domainStats,
       xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
-      notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp
+      notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes
     }));
   } catch(e) {}
 }
@@ -2041,6 +2345,53 @@ function updateDashboard() {
   }).join('');
 
   renderCoach();
+  renderReadiness();
+}
+
+// ══════════════════════════════════════
+// MY EXAM READINESS — exam-weighted, about me
+// ══════════════════════════════════════
+function renderReadiness(){
+  const el = document.getElementById('readinessCard'); if(!el) return;
+  const p = domainPct('People'), pr = domainPct('Process'), b = domainPct('Business Environment');
+  const readiness = Math.round(0.42*p + 0.50*pr + 0.08*b); // weighted exactly like the exam
+  const times = state.qTimes; const avg = times.length ? times.reduce((a,c)=>a+c,0)/times.length : 0;
+  const target = 77; // 230 min * 60 / 180 q ≈ 77s
+  const projMin = avg ? Math.round(avg*180/60) : 0;
+  const answered = Object.values(state.answers).filter(a=>!a.unsure).length;
+  const color = readiness>=70?'var(--green)':readiness>=50?'var(--yellow)':'var(--orange)';
+  let verdict, sub;
+  if(answered < 5){
+    verdict = 'Calibrating…';
+    sub = 'Answer a few questions in each domain to set your readiness score. It is weighted exactly like the real exam: People 42%, Process 50%, Business Environment 8%.';
+  } else if(readiness >= 70){
+    verdict = 'On pace to pass 🎯';
+    sub = 'You are above the target line. Hold all three domains and protect your timing.';
+  } else {
+    const low = [['People',p],['Process',pr],['Business Environment',b]].sort((a,b2)=>a[1]-b2[1])[0];
+    verdict = 'Not exam-ready yet';
+    sub = `Your score is weighted by exam impact. Biggest lever: <b style="color:var(--orange)">${low[0]}</b> at ${low[1]}%. <a style="color:var(--orange);cursor:pointer" onclick="drillDomain('${low[0]}')">Drill it now →</a>`;
+  }
+  const paceColor = avg===0?'var(--text-dim)':avg<=target?'var(--green)':'var(--red)';
+  el.innerHTML = `
+    <div class="card-title">My Exam Readiness</div>
+    <div class="ready-top">
+      <div class="ready-gauge" style="background:conic-gradient(${color} ${readiness*3.6}deg, var(--surface3) 0);border-radius:50%;">
+        <div style="position:absolute;inset:12px;background:var(--surface);border-radius:50%;"></div>
+        <div class="rg-num"><div class="v" style="color:${color}">${readiness}%</div><div class="l">Ready</div></div>
+      </div>
+      <div class="ready-verdict"><div class="rv-title">${verdict}</div><div class="rv-sub">${sub}</div></div>
+    </div>
+    <div class="pace-row">
+      <div class="pace-box"><div class="pv" style="color:${paceColor}">${avg?avg.toFixed(0)+'s':'—'}</div><div class="pl">Your avg / question</div></div>
+      <div class="pace-box"><div class="pv">77s</div><div class="pl">Exam target / q</div></div>
+      <div class="pace-box"><div class="pv" style="color:${projMin?(projMin>230?'var(--red)':'var(--green)'):'var(--text-dim)'}">${projMin?projMin+'m':'—'}</div><div class="pl">Your pace × 180q</div></div>
+    </div>
+    <div class="exam-segments">
+      <div class="seg">Q1–60</div><div class="seg-break">☕<br>break</div><div class="seg">Q61–120</div><div class="seg-break">☕<br>break</div><div class="seg">Q121–180</div>
+    </div>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:8px">Real exam: 180 questions · 230 minutes · optional breaks after Q60 and Q120. Train your pace to about 77 seconds per question.</div>
+  `;
 }
 
 // ══════════════════════════════════════
@@ -2178,6 +2529,41 @@ function renderStudyLog() {
         <div class="day-hours" style="width:80px;color:var(--text-muted);font-size:11px">${new Date(e.date).toLocaleDateString()}</div>
       </div>`).join('');
   }
+
+  // My question notes + brush-up list
+  const qnl = document.getElementById('qNotesList');
+  if (qnl) {
+    const noteIds = Object.keys(state.questionNotes);
+    let html = '';
+    if (noteIds.length) {
+      html += '<div style="font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px">My notes on questions</div>';
+      html += noteIds.map(id => {
+        const q = QUESTIONS.find(x => x.id == id);
+        if (!q) return '';
+        return `<div class="wrong-item" style="border-left-color:var(--orange)">
+          <div class="wrong-item-q" style="font-size:13px">${q.text.substring(0,90)}…</div>
+          <div style="font-size:13px;color:var(--text);margin-top:6px;white-space:pre-wrap">${(state.questionNotes[id]||'').replace(/</g,'&lt;')}</div>
+          <div class="wrong-actions"><button class="btn btn-secondary btn-sm" onclick="jumpToQuestion(${q.id})">Go to question</button></div>
+        </div>`;
+      }).join('');
+    }
+    if (state.brushUp.length) {
+      html += '<div style="font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.06em;margin:16px 0 8px">⭐ Brush-up list (' + state.brushUp.length + ')</div>';
+      html += state.brushUp.map(id => {
+        const q = QUESTIONS.find(x => x.id === id);
+        if (!q) return '';
+        return `<div class="day-row"><div class="day-topic" style="flex:1;font-size:13px">${q.text.substring(0,80)}…</div><button class="btn btn-secondary btn-sm" onclick="jumpToQuestion(${q.id})">Open</button></div>`;
+      }).join('');
+    }
+    qnl.innerHTML = html || '<div class="empty-state"><div class="icon">🗒️</div><p>No notes or brush-up items yet. In Practice, tap 📝 Note on any question, or 🤔 Not Sure to flag it here.</p></div>';
+  }
+}
+function jumpToQuestion(qId){
+  showPage('study');
+  const all = document.querySelector('#page-study .filter-btn');
+  if (all) all.click();
+  const idx = state.filteredQs.findIndex(q => q.id === qId);
+  if (idx >= 0) { state.currentQ = idx; renderQuestion(); }
 }
 
 function saveLog() {
@@ -2220,6 +2606,17 @@ function filterDomain(domain, btn) {
   }
   state.currentQ = 0;
   renderQuestion();
+}
+
+function retakeQuestions(){
+  if(!confirm('Clear your answers so you can run the questions fresh? Your XP, streak, notes, weak spots and brush-up list are KEPT — only the locked answers reset.')) return;
+  state.answers = {};
+  retrySet = new Set();
+  saveState();
+  state.currentQ = 0;
+  renderQuestion();
+  updateDashboard();
+  showToast('Answers cleared — run them fresh. 💪', 'success');
 }
 
 function renderQuestion() {
@@ -2280,6 +2677,7 @@ function renderQuestion() {
     </div>`;
 
   updateQProgress();
+  window._qStart = Date.now(); // start the per-question stopwatch
 }
 
 function markUnsure(qId){
@@ -2340,6 +2738,8 @@ function selectAnswer(qId, chosen) {
 
   const correct = chosen === q.answer;
   const isRetry = retrySet.has(qId);
+  // capture how long this question took (exam-pace tracking)
+  if (window._qStart) { const sec = Math.round((Date.now() - window._qStart)/1000); if (sec > 0 && sec < 1200) state.qTimes.push(sec); window._qStart = null; }
   state.answers[qId] = { chosen, correct };
 
   // Update domain stats (skip on retry so re-attempts don't inflate totals)
