@@ -17,6 +17,14 @@ on:
   schedule:
     - cron: "*/20 * * * *"   # every 20 minutes
   workflow_dispatch:          # lets you (or me) run it on demand from the Actions tab
+    inputs:
+      mode:
+        description: "normal = check for new jobs; test = send a test buzz to your phone"
+        type: choice
+        options:
+          - normal
+          - test
+        default: normal
 
 permissions:
   contents: read
@@ -58,7 +66,13 @@ jobs:
       - name: Run the monitor
         env:
           JOBMON_NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        run: python job-monitor/monitor.py --config job-monitor/config.yaml
+          MODE: ${{ github.event.inputs.mode || 'normal' }}
+        run: |
+          if [ "$MODE" = "test" ]; then
+            python job-monitor/monitor.py --config job-monitor/config.yaml --test
+          else
+            python job-monitor/monitor.py --config job-monitor/config.yaml
+          fi
 
       - name: Show recent log (for debugging)
         if: always()
