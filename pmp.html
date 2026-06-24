@@ -553,6 +553,24 @@
   .badge.earned { opacity:1; filter:none; border-color:rgba(255,85,0,0.4); background:linear-gradient(160deg,var(--surface2),#1a0800); }
   .badge .bi { font-size:30px; } .badge .bn { font-size:12px; font-weight:700; margin-top:8px; } .badge .bd { font-size:10px; color:var(--text-dim); margin-top:3px; }
 
+  /* Interactive "learn by doing" exercises */
+  .exercise { margin-top:18px; padding:16px 18px; border-radius:12px; background:var(--surface2); border:1px dashed rgba(255,85,0,0.45); }
+  .ex-head { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+  .ex-title { font-weight:800; font-size:13px; color:var(--orange); }
+  .ex-score { font-family:var(--font-mono); font-size:12px; color:var(--text-dim); }
+  .ex-prompt { font-size:14px; line-height:1.55; margin-bottom:12px; }
+  .ex-options { display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:8px; }
+  .ex-opt { padding:12px 10px; border-radius:8px; border:1px solid var(--border); background:var(--surface);
+    color:var(--text); cursor:pointer; font-size:13px; font-weight:600; font-family:var(--font-main); text-align:center; transition:all .15s; }
+  .ex-opt:hover { border-color:var(--orange); }
+  .ex-opt.correct { border-color:var(--green); background:rgba(34,197,94,0.14); color:#4ade80; }
+  .ex-opt.wrong { border-color:var(--red); background:rgba(239,68,68,0.14); color:#f87171; }
+  .ex-feedback { margin-top:12px; font-size:13px; line-height:1.55; padding:10px 12px; border-radius:8px; display:none; }
+  .ex-feedback.show { display:block; }
+  .ex-feedback.ok { background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.25); }
+  .ex-feedback.no { background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); }
+  .ex-next { margin-top:10px; }
+
   /* My Exam Readiness */
   .ready-top { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
   .ready-gauge { position:relative; width:130px; height:130px; flex-shrink:0; }
@@ -1126,7 +1144,7 @@
 <div class="page" id="page-learn">
   <div class="deck-intro">
     <h2>Visual <em>Learning Deck</em></h2>
-    <p>See the concept, do not just read it. Every PMP idea that trips people up, drawn as a chart, a grid, or an infographic you can actually picture on exam day. Scroll, hover, and use the interactive tools.</p>
+    <p>See it, then DO it. Every PMP idea that trips people up, drawn as a chart or grid you can picture on exam day — and the key ones now have a 🎮 click-to-learn exercise built right in (EVM, Tuckman, Conflict, Power/Interest, Engagement). Drag the sliders, click the diagrams, earn XP.</p>
   </div>
 
   <div class="lesson-nav" id="lessonNav"></div>
@@ -1188,6 +1206,7 @@
       <div class="fact"><div class="fv" style="color:#FF5500">SPI = EV ÷ PV</div><div class="fl">Below 1 = behind schedule</div></div>
     </div>
     <div class="lesson-takeaway"><b>Memory anchor:</b> Always start the formula with EV. Earned Value is the hero. Minus the other letter gives a variance, divided by the other letter gives an index. Below 1.0 or negative is always bad.</div>
+    <div class="exercise" id="ex-evm"></div>
   </div>
 
   <!-- 3. CPI / SPI QUADRANT (interactive) -->
@@ -1230,6 +1249,7 @@
       <div class="rung up"><span class="rn">5</span><div><div class="rt">Adjourning</div><div class="rd">Work is done, team disbands, lessons learned captured.</div></div></div>
     </div>
     <div class="lesson-takeaway"><b>Trigger words:</b> "confusion over roles" and "arguing about approach" = Storming. "Highly productive" = Performing. The PM's coaching style changes per stage: directing, then coaching, then supporting, then delegating.</div>
+    <div class="exercise" id="ex-tuckman"></div>
   </div>
 
   <!-- 5. CONFLICT MODES -->
@@ -1245,6 +1265,7 @@
     </div>
     <div style="margin-top:10px" class="cell lo"><h4>Compromise (the middle)</h4><p>Both sides give something up. Lose-lose-ish. Good when time is short and stakes are even, but never the best answer when Collaborate is offered.</p></div>
     <div class="lesson-takeaway"><b>Exam default:</b> When two people disagree and you can pick "facilitate a discussion to find a solution both accept," that is Collaborate. Choose it unless the question blocks it.</div>
+    <div class="exercise" id="ex-conflict"></div>
   </div>
 
   <!-- 6. POWER / INTEREST -->
@@ -1259,6 +1280,7 @@
       <div class="cell mid"><h4>Keep Informed</h4><p>Low power, high interest. Keep them in the loop. (End users, store managers.)</p></div>
     </div>
     <div class="lesson-takeaway"><b>Remember:</b> High power + high interest = Manage Closely. That CEO with high interest is not "keep satisfied," they are "manage closely."</div>
+    <div class="exercise" id="ex-power"></div>
   </div>
 
   <!-- 7. STAKEHOLDER ENGAGEMENT LADDER -->
@@ -1273,6 +1295,7 @@
       <div class="rung up"><span class="rn">5</span><div><div class="rt">Leading</div><div class="rd">Actively champions and drives the project forward.</div></div></div>
     </div>
     <div class="lesson-takeaway"><b>On the Stakeholder Engagement Assessment Matrix:</b> C = current level, D = desired level. The gap between them is exactly the engagement work you plan.</div>
+    <div class="exercise" id="ex-engage"></div>
   </div>
 
   <!-- 8. RISK MATRIX -->
@@ -2998,6 +3021,9 @@ function initLearn(){
     document.getElementById('commSlide').addEventListener('input', e=>drawCommGraph(parseInt(e.target.value)));
     document.getElementById('cpiSlide').addEventListener('input', updateQuad);
     document.getElementById('spiSlide').addEventListener('input', updateQuad);
+    // interactive learn-by-doing exercises
+    ['tuckman','conflict','power','engage'].forEach(setupExercise);
+    setupEvmExercise();
   }
 }
 function buildLessonNav(){
@@ -3075,6 +3101,114 @@ function updateQuad(){
   const budget = cpi>=1 ? '<b style="color:var(--green)">under/on budget</b>' : '<b style="color:var(--red)">over budget</b>';
   const sched = spi>=1 ? '<b style="color:var(--green)">ahead/on schedule</b>' : '<b style="color:var(--red)">behind schedule</b>';
   document.getElementById('quadVerdict').innerHTML = `CPI ${cpi.toFixed(2)} → ${budget}.<br>SPI ${spi.toFixed(2)} → ${sched}.`;
+}
+
+// ══════════════════════════════════════
+// INTERACTIVE DIAGRAM EXERCISES — learn by doing
+// ══════════════════════════════════════
+const EXERCISES = {
+  tuckman: { label:'Spot the Tuckman Stage', opts:['Forming','Storming','Norming','Performing','Adjourning'], items:[
+    {q:'A brand-new team just met. Everyone is polite and waiting for the PM to tell them what to do.', a:'Forming', e:'Polite, unsure, dependent on the PM — that is Forming.'},
+    {q:'Team members are arguing about the right approach and who owns what. Output is low.', a:'Storming', e:'Conflict over roles and approach with low output = Storming.'},
+    {q:'The team has agreed on ground rules, trust is building, and a rhythm is forming.', a:'Norming', e:'Cohesion and agreed norms = Norming.'},
+    {q:'The team is highly productive, self-organizing, and barely needs the PM.', a:'Performing', e:'High output and self-organizing = Performing.'},
+    {q:'The deliverables are accepted and the team is wrapping up and disbanding.', a:'Adjourning', e:'Work done, team disperses = Adjourning.'},
+    {q:'Two members clash over who owns a critical task and progress stalls.', a:'Storming', e:'Active conflict stalling progress = Storming.'},
+  ]},
+  conflict: { label:'Name the Conflict Mode', opts:['Collaborate','Compromise','Smooth','Force','Withdraw'], items:[
+    {q:'The PM brings both parties together to openly explore the issue and find a win-win.', a:'Collaborate', e:'Open problem-solving for a win-win = Collaborate. PMI prefers this.'},
+    {q:'Both sides give something up to reach a quick middle ground.', a:'Compromise', e:'Mutual give-and-take = Compromise (lose-lose-ish).'},
+    {q:'The PM emphasizes points of agreement and downplays the difference to keep the peace.', a:'Smooth', e:'Minimizing the difference = Smoothing/Accommodating.'},
+    {q:'The PM uses authority to impose a decision and end the dispute immediately.', a:'Force', e:'Imposing your position = Forcing (win-lose).'},
+    {q:'The PM sidesteps the conflict and postpones dealing with it.', a:'Withdraw', e:'Avoiding/retreating = Withdrawing (lose-lose).'},
+    {q:'Time is short, stakes are equal, so each side concedes a point to settle fast.', a:'Compromise', e:'Equal concessions under time pressure = Compromise.'},
+  ]},
+  power: { label:'Place the Stakeholder', opts:['Manage Closely','Keep Satisfied','Keep Informed','Monitor'], items:[
+    {q:'The sponsor has HIGH power and HIGH interest in the project.', a:'Manage Closely', e:'High power + high interest = Manage Closely.'},
+    {q:'A senior executive has HIGH power but LOW interest in the day-to-day.', a:'Keep Satisfied', e:'High power + low interest = Keep Satisfied.'},
+    {q:'End users have LOW power but HIGH interest in the outcome.', a:'Keep Informed', e:'Low power + high interest = Keep Informed.'},
+    {q:'A distant department has LOW power and LOW interest.', a:'Monitor', e:'Low power + low interest = Monitor (minimal effort).'},
+    {q:'The CEO cares deeply about the result and can make or break the project.', a:'Manage Closely', e:'High power + high interest = Manage Closely.'},
+  ]},
+  engage: { label:'Read the Engagement Level', opts:['Unaware','Resistant','Neutral','Supportive','Leading'], items:[
+    {q:'A stakeholder does not even know the project exists.', a:'Unaware', e:'No knowledge of the project = Unaware.'},
+    {q:'A stakeholder openly opposes the project and works against it.', a:'Resistant', e:'Opposes the change = Resistant.'},
+    {q:'A stakeholder knows about it but neither supports nor opposes.', a:'Neutral', e:'Aware but indifferent = Neutral.'},
+    {q:'A stakeholder backs the project and helps when asked.', a:'Supportive', e:'Supports the work = Supportive.'},
+    {q:'A stakeholder actively champions and drives the project forward.', a:'Leading', e:'Actively championing = Leading.'},
+  ]},
+};
+const exState = {};
+function setupExercise(concept){
+  if(!EXERCISES[concept] || !document.getElementById('ex-'+concept)) return;
+  exState[concept] = {idx:0, score:0, answered:false};
+  renderExercise(concept);
+}
+function renderExercise(concept){
+  const ex = EXERCISES[concept], st = exState[concept], c = document.getElementById('ex-'+concept);
+  const item = ex.items[st.idx];
+  c.innerHTML = `
+    <div class="ex-head"><span class="ex-title">🎮 ${ex.label} — click your answer</span><span class="ex-score">Score ${st.score}/${ex.items.length} · Q${st.idx+1}</span></div>
+    <div class="ex-prompt">${item.q}</div>
+    <div class="ex-options">${ex.opts.map(o=>`<button class="ex-opt" onclick="answerExercise('${concept}','${o.replace(/'/g,"\\'")}')">${o}</button>`).join('')}</div>
+    <div class="ex-feedback" id="exfb-${concept}"></div>`;
+}
+function answerExercise(concept, choice){
+  const ex = EXERCISES[concept], st = exState[concept], item = ex.items[st.idx];
+  if(st.answered) return; st.answered = true;
+  const correct = choice === item.a;
+  document.querySelectorAll('#ex-'+concept+' .ex-opt').forEach(o=>{
+    o.onclick = null;
+    if(o.textContent === item.a) o.classList.add('correct');
+    if(o.textContent === choice && !correct) o.classList.add('wrong');
+  });
+  if(correct){ st.score++; playSound('correct'); addXP(5); updateGameUI(); } else playSound('wrong');
+  const fb = document.getElementById('exfb-'+concept);
+  fb.className = 'ex-feedback show ' + (correct?'ok':'no');
+  const last = st.idx >= ex.items.length-1;
+  fb.innerHTML = `${correct?'✅ Correct.':'❌ It is <b>'+item.a+'</b>.'} ${item.e}
+    <div class="ex-next"><button class="btn btn-secondary btn-sm" onclick="nextExercise('${concept}')">${last?'↻ Run again':'Next →'}</button></div>`;
+}
+function nextExercise(concept){
+  const ex = EXERCISES[concept], st = exState[concept];
+  st.idx = (st.idx+1) % ex.items.length;
+  if(st.idx === 0) st.score = 0;
+  st.answered = false;
+  renderExercise(concept);
+}
+// EVM compute exercise
+function setupEvmExercise(){ if(document.getElementById('ex-evm')) newEvmEx(); }
+function newEvmEx(){
+  const c = document.getElementById('ex-evm'); if(!c) return;
+  c._answered = false;
+  const BAC = [100000,200000,400000,500000][Math.floor(Math.random()*4)];
+  const pct = [0.2,0.4,0.5,0.6][Math.floor(Math.random()*4)];
+  const EV = BAC*pct;
+  const AC = Math.round(EV*(0.8+Math.random()*0.5));
+  const PV = Math.round(EV*(0.8+Math.random()*0.5));
+  const over = AC > EV, behind = PV > EV;
+  const correct = (over?'Over budget':'Under budget') + ', ' + (behind?'behind schedule':'ahead of schedule');
+  c._correct = correct; c._data = {BAC,pct,EV,AC,PV};
+  const opts = ['Under budget, ahead of schedule','Under budget, behind schedule','Over budget, ahead of schedule','Over budget, behind schedule'];
+  c.innerHTML = `
+    <div class="ex-head"><span class="ex-title">🎮 EVM Drill — read the numbers</span><button class="btn btn-secondary btn-sm" onclick="newEvmEx()">↻ New</button></div>
+    <div class="ex-prompt">BAC = $${BAC.toLocaleString()} · ${pct*100}% complete (EV = $${EV.toLocaleString()}) · AC = $${AC.toLocaleString()} · PV = $${PV.toLocaleString()}.<br><br>Where does this project stand?</div>
+    <div class="ex-options" style="grid-template-columns:1fr 1fr">${opts.map(o=>`<button class="ex-opt" onclick="answerEvm(this,'${o}')">${o}</button>`).join('')}</div>
+    <div class="ex-feedback" id="exfb-evm"></div>`;
+}
+function answerEvm(btn, choice){
+  const c = document.getElementById('ex-evm'); if(!c || c._answered) return; c._answered = true;
+  const {EV,AC,PV} = c._data;
+  const correct = choice === c._correct;
+  document.querySelectorAll('#ex-evm .ex-opt').forEach(o=>{ o.onclick=null; if(o.textContent===c._correct)o.classList.add('correct'); if(o.textContent===choice&&!correct)o.classList.add('wrong'); });
+  if(correct){ playSound('correct'); addXP(5); updateGameUI(); } else playSound('wrong');
+  const CV=EV-AC, SV=EV-PV, CPI=(EV/AC).toFixed(2), SPI=(EV/PV).toFixed(2);
+  const fb = document.getElementById('exfb-evm');
+  fb.className = 'ex-feedback show ' + (correct?'ok':'no');
+  fb.innerHTML = `${correct?'✅ Correct.':'❌ It is <b>'+c._correct+'</b>.'}<br>
+    CV = EV − AC = $${EV.toLocaleString()} − $${AC.toLocaleString()} = <b>$${CV.toLocaleString()}</b> (${CV<0?'over':'under'} budget, CPI ${CPI})<br>
+    SV = EV − PV = $${EV.toLocaleString()} − $${PV.toLocaleString()} = <b>$${SV.toLocaleString()}</b> (${SV<0?'behind':'ahead'}, SPI ${SPI})
+    <div class="ex-next"><button class="btn btn-secondary btn-sm" onclick="newEvmEx()">Next drill →</button></div>`;
 }
 
 // ══════════════════════════════════════
