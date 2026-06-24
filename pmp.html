@@ -772,6 +772,22 @@
   .today-foot { margin-top:18px; padding:18px 20px; background:var(--surface); border:1px solid var(--border); border-radius:14px;
     font-size:12.5px; color:var(--text-dim); line-height:1.6; }
   .today-foot b { color:var(--text); }
+
+  /* ════ MULTI-MODAL QUESTION AIDS ════ */
+  @keyframes mmFade { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+  .mm-aids { margin-top:14px; border:1px solid rgba(255,85,0,.28); border-radius:14px; padding:16px; background:linear-gradient(135deg,#140600,var(--surface)); animation:mmFade .3s ease; }
+  .mm-key { display:flex; align-items:flex-start; gap:12px; }
+  .mm-key-ico { font-size:22px; line-height:1.2; flex:0 0 auto; }
+  .mm-key-l { font-size:10.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); margin-bottom:3px; }
+  .mm-key-t { font-size:14.5px; font-weight:700; line-height:1.35; }
+  .mm-key-hear { flex:0 0 auto; margin-left:auto; }
+  .mm-sub { font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin:14px 0 8px; }
+  .mm-formulas { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px; }
+  .mm-f { background:var(--surface2); border:1px solid var(--border); border-radius:11px; padding:11px 13px; }
+  .mm-f-name { font-size:11px; font-weight:700; color:var(--text-dim); }
+  .mm-f-expr { font-size:17px; font-weight:900; color:var(--orange); margin:5px 0; font-family:var(--font-main); letter-spacing:.3px; }
+  .mm-f-hint { font-size:11px; color:var(--text-muted); line-height:1.4; }
+  .mm-aids-cta { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -2802,6 +2818,46 @@ function aiSetupHelp(){
     <p style="font-size:12px;color:var(--text-muted)">Your key stays private on the server and is never exposed in the app. Cost is pay-as-you-go (about a penny per batch of questions).</p>`);
 }
 
+// ══════════════════════════════════════
+// MULTI-MODAL QUESTION AIDS
+// After you answer, surface the KEY rule, the exact FORMULA, and a
+// one-tap VISUAL for this topic — all on the same screen as the question.
+// ══════════════════════════════════════
+const MM_FORMULAS = [
+  {re:/\bcpi\b|cost performance/, name:'CPI · Cost Performance Index', expr:'CPI = EV ÷ AC', hint:'> 1 under budget · < 1 over budget'},
+  {re:/\bspi\b|schedule performance/, name:'SPI · Schedule Performance Index', expr:'SPI = EV ÷ PV', hint:'> 1 ahead · < 1 behind schedule'},
+  {re:/\bcv\b|cost variance/, name:'CV · Cost Variance', expr:'CV = EV − AC', hint:'negative = over budget'},
+  {re:/\bsv\b|schedule variance/, name:'SV · Schedule Variance', expr:'SV = EV − PV', hint:'negative = behind schedule'},
+  {re:/\beac\b|estimate at completion|forecast/, name:'EAC · Estimate at Completion', expr:'EAC = BAC ÷ CPI', hint:'forecast total cost at current efficiency'},
+  {re:/\betc\b|estimate to complete/, name:'ETC · Estimate to Complete', expr:'ETC = EAC − AC', hint:'money still needed to finish'},
+  {re:/\bvac\b|variance at completion/, name:'VAC · Variance at Completion', expr:'VAC = BAC − EAC', hint:'projected over/under at the end'},
+  {re:/\btcpi\b/, name:'TCPI · To-Complete Performance Index', expr:'TCPI = (BAC − EV) ÷ (BAC − AC)', hint:'efficiency needed to still hit budget'},
+  {re:/communication channel|number of (people|stakeholders).*(channel|line)/, name:'Communication Channels', expr:'n (n − 1) ÷ 2', hint:'n = number of people'},
+  {re:/\bev\b|earned value|% ?complete/, name:'EV · Earned Value', expr:'EV = % complete × BAC', hint:'value of the work actually done'},
+  {re:/expected monetary|\bemv\b/, name:'EMV · Expected Monetary Value', expr:'EMV = Probability × Impact', hint:'risk-weighted dollar value'},
+  {re:/three.?point|\bpert\b|beta distribution/, name:'PERT · Three-Point (Beta)', expr:'(O + 4M + P) ÷ 6', hint:'weighted estimate; O/M/P = optimistic/most-likely/pessimistic'},
+];
+function questionAids(q){
+  const hay = (q.text + ' ' + (q.principle||'') + ' ' + (q.explanation||'')).toLowerCase();
+  const fs = MM_FORMULAS.filter(f=>f.re.test(hay)).slice(0,3);
+  const lesson = lessonFor((q.text||'') + ' ' + (q.principle||''));
+  let html = '<div class="mm-aids">';
+  html += `<div class="mm-key"><span class="mm-key-ico">🔑</span><div><div class="mm-key-l">The key to remember</div><div class="mm-key-t">${q.principle||'Read the explanation above and write the rule in your own words.'}</div></div>
+    <button class="speak-btn mm-key-hear" onclick="speakExplanation()">🔊</button></div>`;
+  if(fs.length){
+    html += `<div class="mm-sub">🧮 The formula behind this</div><div class="mm-formulas">` +
+      fs.map(f=>`<div class="mm-f"><div class="mm-f-name">${f.name}</div><div class="mm-f-expr">${f.expr}</div><div class="mm-f-hint">${f.hint}</div></div>`).join('') +
+      `</div>`;
+  }
+  html += `<div class="mm-aids-cta">
+    <button class="btn btn-secondary btn-sm" onclick="learnTopic('${lesson}')">📊 See the visual for this topic</button>
+    ${fs.length?`<button class="btn btn-secondary btn-sm" onclick="showPage('formulas')">🧮 Open Formula Lab</button>`:''}
+    <button class="btn btn-secondary btn-sm" onclick="toggleQNote(${q.id})">📝 Capture this in a note</button>
+  </div>`;
+  html += '</div>';
+  return html;
+}
+
 function renderQuestion() {
   const qs = state.filteredQs;
   if (qs.length === 0) return;
@@ -2829,7 +2885,8 @@ function renderQuestion() {
       ${savedAnswer.unsure ? '<div style="color:var(--yellow);font-weight:700;font-size:12px;margin-bottom:8px">🤔 You flagged this to brush up — here is the answer to learn now.</div>' : ''}
       <div class="principle-tag">${q.principle}</div>
       <div>${q.explanation}</div>
-    </div>` : '';
+    </div>
+    ${questionAids(q)}` : '';
 
   const inBrush = state.brushUp.includes(q.id);
   const noteVal = state.questionNotes[q.id] || '';
