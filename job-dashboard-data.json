@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-06-28T13:41:08.104737+00:00",
+  "keywords": [
+    "marketing",
+    "communications",
+    "content",
+    "social media manager",
+    "digital strategist",
+    "brand manager",
+    "customer success",
+    "demand generation",
+    "sales operations",
+    "revenue operations"
+  ],
+  "locations": [
+    "Remote",
+    "Hybrid",
+    "Boca Raton",
+    "Delray",
+    "Boynton",
+    "Lake Worth",
+    "Pompano"
+  ],
+  "targets": [
+    {
+      "name": "modmed",
+      "found": 40,
+      "matched": 2,
+      "error": null,
+      "jobs": [
+        {
+          "title": "Vice President, Customer Success Operations & Enablement",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
+          "posted_date": "Posted 4 Days Ago"
+        },
+        {
+          "title": "Payment Operations Analyst, Customer Success",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Payment-Operations-Analyst--Customer-Success_R4276",
+          "posted_date": "Posted 12 Days Ago"
+        }
+      ]
+    },
+    {
+      "name": "ap-companies",
+      "found": 1,
+      "matched": 0,
+      "error": null,
+      "jobs": []
+    }
+  ],
+  "jobs": [
+    {
+      "title": "Vice President, Customer Success Operations & Enablement",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
+      "posted_date": "Posted 4 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Payment Operations Analyst, Customer Success",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Payment-Operations-Analyst--Customer-Success_R4276",
+      "posted_date": "Posted 12 Days Ago",
+      "source": "modmed"
+    }
+  ],
+  "total_matched": 2
+}
