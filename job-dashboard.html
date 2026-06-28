@@ -119,11 +119,10 @@
   </div>
 
   <div class="card">
-    <h2>🆕 Jobs found</h2>
-    <p class="sub">New matching jobs will show up here as they're spotted.</p>
-    <div class="empty">
-      No new jobs detected yet. The first check just learns what's already posted (so you aren't flooded).<br>
-      After that, every <b>new</b> match buzzes your phone and appears here. ✅
+    <h2>🆕 Jobs matching your search</h2>
+    <p class="sub" id="jobsSub">Loading the latest results…</p>
+    <div id="jobsList">
+      <div class="empty">Loading…</div>
     </div>
   </div>
 
@@ -157,5 +156,60 @@
   </footer>
 
 </div>
+
+<script>
+(function () {
+  var sub = document.getElementById('jobsSub');
+  var list = document.getElementById('jobsList');
+
+  function esc(s){ return (s==null?'':String(s)).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  function timeAgo(iso){
+    try{
+      var then = new Date(iso).getTime(); var mins = Math.round((Date.now()-then)/60000);
+      if (mins < 1) return 'just now';
+      if (mins < 60) return mins + ' min ago';
+      var hrs = Math.round(mins/60); if (hrs < 24) return hrs + ' hr ago';
+      return Math.round(hrs/24) + ' day(s) ago';
+    }catch(e){ return iso || ''; }
+  }
+
+  function render(data){
+    var jobs = (data && data.jobs) || [];
+    if (data && data.generated_at){
+      sub.textContent = 'Last checked ' + timeAgo(data.generated_at) +
+        ' · ' + jobs.length + ' job' + (jobs.length===1?'':'s') + ' match your search right now.';
+    }
+    if (!jobs.length){
+      list.innerHTML = '<div class="empty">No jobs match your keywords + locations at this moment.' +
+        '<br>The monitor keeps checking every 20 minutes — new matches appear here and buzz your phone. ✅</div>';
+      return;
+    }
+    var html = '';
+    jobs.forEach(function(j){
+      html += '<div class="site">' +
+        '<div class="ico">📌</div>' +
+        '<div style="flex:1">' +
+          '<b>' + esc(j.title) + '</b>' +
+          '<small>' + esc(j.location || '') + (j.source ? ' · ' + esc(j.source) : '') + '</small>' +
+          (j.url ? '<div style="margin-top:8px"><a href="' + esc(j.url) + '" target="_blank" rel="noopener" ' +
+            'style="display:inline-block;background:#0ea5a4;color:#fff;text-decoration:none;' +
+            'padding:8px 16px;border-radius:999px;font-weight:600;font-size:16px;">Open &amp; apply →</a></div>' : '') +
+        '</div></div>';
+    });
+    list.innerHTML = html;
+  }
+
+  fetch('job-dashboard-data.json?ts=' + Date.now())
+    .then(function(r){ if(!r.ok) throw new Error('no data yet'); return r.json(); })
+    .then(render)
+    .catch(function(){
+      sub.textContent = 'Getting the first results ready…';
+      list.innerHTML = '<div class="empty">The monitor is connecting. Results will appear here after the next check.' +
+        '<br>(If this is the first run, it is learning what is already posted so you are not flooded.) ✅</div>';
+    });
+})();
+</script>
 </body>
 </html>
