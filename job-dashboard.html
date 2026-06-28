@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Job Search Command Center</title>
+<style>
+  :root{
+    --bg:#0f172a; --card:#ffffff; --ink:#0f172a; --muted:#5b6472;
+    --teal:#0ea5a4; --teal-d:#0b7d7c; --coral:#ff6b5d; --amber:#f59e0b;
+    --line:#e6e9ef; --good:#16a34a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:#f4f6fb; line-height:1.5; font-size:18px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:20px 18px 60px;}
+  header.hero{
+    background:linear-gradient(135deg,#0ea5a4 0%,#1e3a8a 100%);
+    color:#fff; border-radius:22px; padding:30px 26px; margin-top:10px;
+    box-shadow:0 12px 30px rgba(15,23,42,.18);
+  }
+  header.hero h1{margin:0 0 6px; font-size:32px; line-height:1.15;}
+  header.hero p{margin:0; font-size:18px; opacity:.95;}
+  .status{
+    display:inline-flex; align-items:center; gap:10px; margin-top:18px;
+    background:rgba(255,255,255,.16); padding:10px 16px; border-radius:999px;
+    font-weight:600; font-size:17px;
+  }
+  .dot{width:12px;height:12px;border-radius:50%;background:#7CFC9A;box-shadow:0 0 0 0 rgba(124,252,154,.7);animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,252,154,.6)}70%{box-shadow:0 0 0 12px rgba(124,252,154,0)}100%{box-shadow:0 0 0 0 rgba(124,252,154,0)}}
+  .card{
+    background:var(--card); border-radius:18px; padding:22px 22px;
+    margin-top:18px; border:1px solid var(--line); box-shadow:0 4px 14px rgba(15,23,42,.05);
+  }
+  .card h2{margin:0 0 4px; font-size:23px;}
+  .sub{color:var(--muted); margin:0 0 16px; font-size:16px;}
+  .row{display:flex; flex-wrap:wrap; gap:12px;}
+  .pill{
+    background:#eefbfb; color:var(--teal-d); border:1px solid #cdeeee;
+    padding:8px 14px; border-radius:999px; font-weight:600; font-size:16px;
+  }
+  .pill.loc{background:#fff3ec; color:#b4502f; border-color:#ffd9c7;}
+  .site{
+    display:flex; align-items:center; gap:14px; padding:14px 0; border-top:1px solid var(--line);
+  }
+  .site:first-of-type{border-top:none;}
+  .site .ico{font-size:26px;}
+  .site b{font-size:19px;}
+  .site small{color:var(--muted); display:block; font-size:15px; word-break:break-all;}
+  .steps{counter-reset:step; padding:0; margin:0; list-style:none;}
+  .steps li{position:relative; padding:14px 0 14px 56px; border-top:1px solid var(--line); font-size:18px;}
+  .steps li:first-child{border-top:none;}
+  .steps li::before{
+    counter-increment:step; content:counter(step);
+    position:absolute; left:0; top:12px; width:38px; height:38px; border-radius:50%;
+    background:var(--teal); color:#fff; font-weight:700; font-size:19px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .plan{display:grid; gap:12px;}
+  .phase{display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:14px; background:#f8fafc; border:1px solid var(--line);}
+  .phase .tag{font-size:14px; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap;}
+  .tag.done{background:#dcfce7; color:#166534;}
+  .tag.next{background:#fef3c7; color:#92400e;}
+  .tag.soon{background:#e7ecf5; color:#3a4a66;}
+  .phase b{font-size:18px;}
+  .phase p{margin:4px 0 0; color:var(--muted); font-size:16px;}
+  .empty{
+    text-align:center; padding:26px 16px; color:var(--muted);
+    border:2px dashed var(--line); border-radius:14px; font-size:17px;
+  }
+  .note{background:#fffbeb; border:1px solid #fde68a; border-radius:14px; padding:16px 18px; font-size:16px; margin-top:18px;}
+  footer{text-align:center; color:var(--muted); font-size:14px; margin-top:30px;}
+  .big{font-size:20px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🎯 Your Job-Search Command Center</h1>
+    <p>A quiet helper that watches careers pages and buzzes your phone the moment a new matching job appears.</p>
+    <div class="status"><span class="dot"></span> Watching for jobs — checks every 20 minutes</div>
+  </header>
+
+  <div class="card">
+    <h2>👀 What I'm watching</h2>
+    <p class="sub">These are the careers pages checked around the clock.</p>
+    <div class="site">
+      <div class="ico">🏢</div>
+      <div><b>ModMed</b><small>modmed.wd501.myworkdayjobs.com — full careers board</small></div>
+    </div>
+    <div class="site">
+      <div class="ico">🏢</div>
+      <div><b>AP Companies</b><small>apcompanies.isolvedhire.com — jobs listing</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔍 What I'm looking for</h2>
+    <p class="sub">A job has to match a keyword <b>and</b> be in one of your areas.</p>
+    <p class="big" style="margin:0 0 8px;font-weight:600;">Keywords</p>
+    <div class="row">
+      <span class="pill">marketing</span><span class="pill">communications</span>
+      <span class="pill">content</span><span class="pill">social media manager</span>
+      <span class="pill">digital strategist</span><span class="pill">brand manager</span>
+      <span class="pill">customer success</span><span class="pill">demand generation</span>
+      <span class="pill">sales operations</span><span class="pill">revenue operations</span>
+    </div>
+    <p class="big" style="margin:18px 0 8px;font-weight:600;">Locations</p>
+    <div class="row">
+      <span class="pill loc">Remote</span><span class="pill loc">Hybrid</span>
+      <span class="pill loc">Boca Raton</span><span class="pill loc">Delray</span>
+      <span class="pill loc">Boynton</span><span class="pill loc">Lake Worth</span>
+      <span class="pill loc">Pompano</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🆕 Jobs matching your search</h2>
+    <p class="sub" id="jobsSub">Loading the latest results…</p>
+    <div id="jobsList">
+      <div class="empty">Loading…</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚙️ How it works (3 simple steps)</h2>
+    <ol class="steps">
+      <li>Every 20 minutes, it quietly checks the careers pages above.</li>
+      <li>If a <b>new</b> job matches your keywords and locations, it grabs the title and apply link.</li>
+      <li>It <b>buzzes your phone</b> right away so you can be one of the first to apply.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>🗺️ The plan</h2>
+    <p class="sub">Find the job → apply fast → and (the part that wins) follow up.</p>
+    <div class="plan">
+      <div class="phase"><span class="tag done">LIVE</span><div><b>1. Find the jobs</b><p>Watch careers pages, buzz your phone on new matches.</p></div></div>
+      <div class="phase"><span class="tag next">NEXT</span><div><b>2. Apply fast</b><p>Open the apply page with your resume + a tailored cover letter ready — you review and submit in under a minute.</p></div></div>
+      <div class="phase"><span class="tag soon">SOON</span><div><b>3. Application kit</b><p>Master resume, cover-letter template, and saved answers so each apply is quick.</p></div></div>
+      <div class="phase"><span class="tag soon">SOON</span><div><b>4. Follow-up engine ⭐</b><p>The heart of it: track every application, follow up, ask for coffee, request feedback on a "no," stay connected on LinkedIn — until you get it, or the next one.</p></div></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>📲 To turn on phone alerts:</b> install the free <b>ntfy</b> app and subscribe to your secret channel.
+    Once that's connected, this page and your phone light up together. (I'll walk you through it.)
+  </div>
+
+  <footer>
+    Your private job-search helper · not linked to your public website · updates as the plan grows.
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var sub = document.getElementById('jobsSub');
+  var list = document.getElementById('jobsList');
+
+  function esc(s){ return (s==null?'':String(s)).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  function timeAgo(iso){
+    try{
+      var then = new Date(iso).getTime(); var mins = Math.round((Date.now()-then)/60000);
+      if (mins < 1) return 'just now';
+      if (mins < 60) return mins + ' min ago';
+      var hrs = Math.round(mins/60); if (hrs < 24) return hrs + ' hr ago';
+      return Math.round(hrs/24) + ' day(s) ago';
+    }catch(e){ return iso || ''; }
+  }
+
+  function render(data){
+    var jobs = (data && data.jobs) || [];
+    if (data && data.generated_at){
+      sub.textContent = 'Last checked ' + timeAgo(data.generated_at) +
+        ' · ' + jobs.length + ' job' + (jobs.length===1?'':'s') + ' match your search right now.';
+    }
+    if (!jobs.length){
+      list.innerHTML = '<div class="empty">No jobs match your keywords + locations at this moment.' +
+        '<br>The monitor keeps checking every 20 minutes — new matches appear here and buzz your phone. ✅</div>';
+      return;
+    }
+    var html = '';
+    jobs.forEach(function(j){
+      html += '<div class="site">' +
+        '<div class="ico">📌</div>' +
+        '<div style="flex:1">' +
+          '<b>' + esc(j.title) + '</b>' +
+          '<small>' + esc(j.location || '') + (j.source ? ' · ' + esc(j.source) : '') + '</small>' +
+          (j.url ? '<div style="margin-top:8px"><a href="' + esc(j.url) + '" target="_blank" rel="noopener" ' +
+            'style="display:inline-block;background:#0ea5a4;color:#fff;text-decoration:none;' +
+            'padding:8px 16px;border-radius:999px;font-weight:600;font-size:16px;">Open &amp; apply →</a></div>' : '') +
+        '</div></div>';
+    });
+    list.innerHTML = html;
+  }
+
+  fetch('job-dashboard-data.json?ts=' + Date.now())
+    .then(function(r){ if(!r.ok) throw new Error('no data yet'); return r.json(); })
+    .then(render)
+    .catch(function(){
+      sub.textContent = 'Getting the first results ready…';
+      list.innerHTML = '<div class="empty">The monitor is connecting. Results will appear here after the next check.' +
+        '<br>(If this is the first run, it is learning what is already posted so you are not flooded.) ✅</div>';
+    });
+})();
+</script>
+</body>
+</html>

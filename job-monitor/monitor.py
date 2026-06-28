@@ -677,7 +677,8 @@ def process_target(cfg: dict, fetcher: Fetcher, target: dict,
                    test_mode: bool = False) -> dict:
     """Returns a small summary dict for the run."""
     name = target.get("name") or slugify(target["url"])
-    summary = {"name": name, "found": 0, "matched": 0, "new": 0, "error": None}
+    summary = {"name": name, "found": 0, "matched": 0, "new": 0,
+               "error": None, "matched_jobs": []}
 
     if not target.get("enabled", True):
         log.info("Skipping disabled target '%s'.", name)
@@ -720,6 +721,11 @@ def process_target(cfg: dict, fetcher: Fetcher, target: dict,
     loc = cfg.get("location_filter", "")
     matched = [j for j in jobs if matches_filters(j, kw, match_in, loc)]
     summary["matched"] = len(matched)
+    summary["matched_jobs"] = [
+        {"title": j["title"], "location": j["location"], "url": j["url"],
+         "posted_date": j["posted_date"]}
+        for j in matched
+    ]
 
     known = state["jobs"]
     new_jobs = [j for j in matched if j["job_id"] not in known]
@@ -785,6 +791,38 @@ def _print_jobs(name: str, jobs: list[dict], prefix: str = "") -> None:
         print(f"  - {j['title']}{loc}\n    {j['url']}")
     if len(jobs) > 50:
         print(f"  ... and {len(jobs) - 50} more")
+
+
+def write_dashboard(path: Path, cfg: dict, summaries: list[dict]) -> None:
+    """Write a small JSON file the dashboard web page reads to show live data:
+    which jobs currently match your filters, per target, plus status."""
+    targets = []
+    all_jobs = []
+    for s in summaries:
+        jobs = s.get("matched_jobs", [])
+        targets.append({
+            "name": s["name"],
+            "found": s.get("found", 0),
+            "matched": s.get("matched", 0),
+            "error": s.get("error"),
+            "jobs": jobs,
+        })
+        for j in jobs:
+            all_jobs.append({**j, "source": s["name"]})
+    data = {
+        "generated_at": _now(),
+        "keywords": cfg.get("keywords", []),
+        "locations": cfg.get("location_filter", []),
+        "targets": targets,
+        "jobs": all_jobs,
+        "total_matched": len(all_jobs),
+    }
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    log.info("Wrote dashboard data (%d matching jobs) to %s",
+             len(all_jobs), path)
 
 
 # --------------------------------------------------------------------------- #
@@ -855,6 +893,7 @@ def run_test(cfg: dict) -> None:
     print(f"\nTest notification sent: {'OK' if ok else 'FAILED (see log)'}")
     if not ok:
         print("Check your notify settings in config.yaml (ntfy topic or SMTP).")
+    return summaries
 
 
 def print_task_command(cfg: dict, config_path: Path) -> None:
@@ -891,6 +930,9 @@ def main(argv=None) -> int:
                         help="Print the exact schtasks command for this machine.")
     parser.add_argument("-q", "--quiet", action="store_true",
                         help="Less console output.")
+    parser.add_argument("--dashboard-json", default=None,
+                        help="Write currently-matching jobs to this JSON file "
+                             "(used to populate the dashboard web page).")
     args = parser.parse_args(argv)
 
     setup_logging(verbose=not args.quiet)
@@ -901,14 +943,18 @@ def main(argv=None) -> int:
         print_task_command(cfg, config_path)
         return 0
     if args.test:
-        run_test(cfg)
+        summaries = run_test(cfg)
+        if args.dashboard_json:
+            write_dashboard(Path(args.dashboard_json), cfg, summaries)
         return 0
     if args.loop:
         run_loop(cfg)
         return 0
 
     # Default: one-shot (for Task Scheduler)
-    run_once(cfg, test_mode=False)
+    summaries = run_once(cfg, test_mode=False)
+    if args.dashboard_json:
+        write_dashboard(Path(args.dashboard_json), cfg, summaries)
     return 0
 
 
