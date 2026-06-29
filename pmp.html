@@ -825,6 +825,63 @@
   .lq-sub { font-size:12.5px; color:var(--text-dim); margin-top:4px; }
   .lq-prog { font-size:11px; color:var(--text-muted); font-weight:600; }
   .lq-next { display:flex; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap; }
+
+  /* ════ WALK MODE — hands-free audio player ════ */
+  .walk-hero { background:linear-gradient(135deg,#FF5500,#ff8c42 55%,#b23a00); border-radius:22px; padding:26px 24px; margin-bottom:20px; color:#fff; box-shadow:0 12px 40px rgba(255,85,0,.25); }
+  .walk-hero h1 { font-size:28px; font-weight:900; margin:0 0 6px; }
+  .walk-hero p { font-size:14px; opacity:.95; margin:0; line-height:1.5; }
+  .walk-list { display:grid; gap:14px; }
+  .walk-tile { display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:18px; cursor:pointer; transition:all .18s; }
+  .walk-tile:hover { border-color:var(--orange); transform:translateY(-2px); box-shadow:0 10px 30px rgba(255,85,0,.18); }
+  .walk-tile.done { border-color:rgba(34,197,94,.5); }
+  .walk-emoji { font-size:34px; width:58px; height:58px; flex:0 0 auto; display:flex; align-items:center; justify-content:center; background:var(--surface3); border-radius:16px; }
+  .walk-tile-body { flex:1; min-width:0; }
+  .walk-tile-title { font-size:17px; font-weight:800; }
+  .walk-tile-sub { font-size:12.5px; color:var(--text-dim); margin-top:3px; line-height:1.4; }
+  .walk-tile-meta { font-size:11px; color:var(--text-muted); margin-top:6px; font-weight:700; letter-spacing:.5px; }
+  .walk-go { font-size:24px; color:var(--orange); flex:0 0 auto; }
+
+  .walk-player-top { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
+  .walk-back { background:none; border:1px solid var(--border); color:var(--text-dim); border-radius:10px; padding:8px 14px; font-weight:700; cursor:pointer; font-family:var(--font-main); }
+  .walk-count { font-size:12px; color:var(--text-muted); font-weight:700; }
+  .walk-prog { height:8px; background:var(--surface3); border-radius:99px; overflow:hidden; margin-bottom:18px; }
+  .walk-prog-fill { height:100%; background:linear-gradient(90deg,#FF5500,#ff8c42); border-radius:99px; transition:width .3s; }
+
+  .walk-seg { border-radius:22px; padding:26px 22px; margin-bottom:18px; border:2px solid; animation:mmFade .35s ease; }
+  .walk-seg.warmup   { background:linear-gradient(135deg,#2a1500,var(--surface)); border-color:#ff8c42; }
+  .walk-seg.teach    { background:linear-gradient(135deg,#0a1f2e,var(--surface)); border-color:#38bdf8; }
+  .walk-seg.quiz     { background:linear-gradient(135deg,#1a0033,var(--surface)); border-color:#a855f7; }
+  .walk-seg.teachback{ background:linear-gradient(135deg,#06210f,var(--surface)); border-color:#22c55e; }
+  .walk-seg.scenario { background:linear-gradient(135deg,#2a0a16,var(--surface)); border-color:#f43f5e; }
+  .walk-seg.cooldown,.walk-seg.intro { background:linear-gradient(135deg,#160700,var(--surface)); border-color:var(--orange); }
+  .walk-seg-emoji { font-size:44px; line-height:1; margin-bottom:10px; }
+  .walk-seg-tag { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; opacity:.85; margin-bottom:6px; }
+  .walk-seg-title { font-size:23px; font-weight:900; line-height:1.15; margin-bottom:12px; }
+  .walk-seg-body { font-size:16px; line-height:1.65; color:var(--text); }
+  .walk-seg-body b { color:#fff; }
+  .walk-seg-body ul { margin:10px 0; padding-left:4px; list-style:none; }
+  .walk-seg-body li { margin:8px 0; padding-left:24px; position:relative; }
+  .walk-seg-body li:before { content:'▸'; position:absolute; left:4px; color:var(--orange); font-weight:900; }
+  .walk-hook { margin-top:14px; background:rgba(255,85,0,.12); border:1px dashed rgba(255,85,0,.45); border-radius:12px; padding:12px 14px; font-size:14.5px; }
+
+  .walk-opts { display:grid; gap:10px; margin-top:6px; }
+  .walk-opt { text-align:left; padding:15px 16px; border:2px solid var(--border); border-radius:14px; background:var(--surface2); color:var(--text);
+    font-size:15.5px; font-weight:600; cursor:pointer; transition:all .15s; font-family:var(--font-main); display:flex; gap:12px; align-items:flex-start; }
+  .walk-opt:hover:not(:disabled){ border-color:#a855f7; }
+  .walk-opt:disabled{ cursor:default; }
+  .walk-opt .wl { font-weight:900; color:#a855f7; flex:0 0 auto; }
+  .walk-opt.right { border-color:var(--green); background:rgba(34,197,94,.18); }
+  .walk-opt.right .wl { color:var(--green); }
+  .walk-opt.wrong { border-color:var(--red); background:rgba(239,68,68,.16); }
+  .walk-opt.wrong .wl { color:var(--red); }
+  .walk-explain { margin-top:14px; padding:14px 16px; background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.35); border-radius:12px; font-size:14.5px; line-height:1.6; }
+
+  .walk-ctrls { position:sticky; bottom:84px; display:flex; gap:10px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:12px; box-shadow:0 -6px 24px rgba(0,0,0,.3); }
+  .walk-ctrls .btn { flex:1; justify-content:center; }
+  .walk-play { flex:0 0 auto !important; width:58px; height:52px; border-radius:14px; border:none; background:linear-gradient(135deg,#FF5500,#ff8c42); color:#fff; font-size:22px; cursor:pointer; }
+  .walk-auto { font-size:12px; display:flex; align-items:center; gap:6px; color:var(--text-dim); cursor:pointer; user-select:none; white-space:nowrap; }
+  .walk-auto input { width:18px; height:18px; accent-color:var(--orange); }
+  @media (max-width:600px){ .walk-ctrls { bottom:80px; } .walk-seg-title { font-size:20px; } .walk-seg-body { font-size:15.5px; } }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -848,6 +905,7 @@
   <div class="nav-brand">SWEAT DEPT <span>·</span> PMP CMD</div>
   <div class="nav-tabs">
     <button class="nav-tab active" data-page="today" onclick="showPage('today')">▶ Today</button>
+    <button class="nav-tab" data-page="walk" onclick="showPage('walk')">🎧 Walk</button>
     <button class="nav-tab" data-page="dashboard" onclick="showPage('dashboard')">War Room</button>
     <button class="nav-tab" data-page="path" onclick="showPage('path')">14-Day Path</button>
     <button class="nav-tab" data-page="learn" onclick="showPage('learn')">Learn</button>
@@ -871,6 +929,7 @@
 <!-- ══ MOBILE BOTTOM NAV ══ -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mnav-btn active" data-page="today" onclick="showPage('today')"><span>▶️</span>Today</button>
+  <button class="mnav-btn" data-page="walk" onclick="showPage('walk')"><span>🎧</span>Walk</button>
   <button class="mnav-btn" data-page="dashboard" onclick="showPage('dashboard')"><span>🏠</span>War Room</button>
   <button class="mnav-btn" data-page="path" onclick="showPage('path')"><span>🗺️</span>Path</button>
   <button class="mnav-btn" data-page="learn" onclick="showPage('learn')"><span>📊</span>Learn</button>
@@ -902,6 +961,12 @@
   <div id="runSheet"></div>
 
   <div class="today-foot" id="todayFoot"></div>
+</div>
+
+<!-- ══════════════════════════════════════════ WALK MODE — hands-free audio study ══ -->
+<div class="page" id="page-walk">
+  <div id="walkHome"></div>
+  <div id="walkPlayer" style="display:none"></div>
 </div>
 
 <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
@@ -3560,6 +3625,254 @@ function answerLessonQuiz(lsId, idx){
 }
 
 // ══════════════════════════════════════
+// 🎧 WALK MODE — hands-free, audio-first study sessions
+// Sequenced modules (warm-up → teach → quiz → teach-back → scenario →
+// cool-down) that read themselves aloud and auto-advance. Built for
+// studying on the go with the phone in your pocket.
+// ══════════════════════════════════════
+const WALKS = [
+{
+  id:'w1', emoji:'🧭', title:'Walk #1 — Foundations',
+  sub:'PMI mindset · Predictive vs Agile · OPA & EEF · Conflict', mins:'20–25 min', day:1,
+  segments:[
+    {type:'intro', emoji:'🎧', tag:'Walk #1', title:'Foundations',
+      body:`<div class="walk-seg-body">Walk and listen. Think each answer in your head <b>before</b> I give it. And when I ask you to teach something back — <b>say it out loud.</b> That is the whole trick. Tap the orange play button or flip on Auto-play and pocket your phone.</div>`,
+      say:`Welcome to Walk one, Foundations. Walk and listen. Think each answer in your head before I give it. And when I ask you to teach something back, say it out loud. That is the whole trick. Let us begin.`},
+    {type:'warmup', emoji:'🔥', tag:'Warm-up', title:'Wake the brain',
+      body:`<div class="walk-seg-body">Answer in your head:<ul><li>The three exam domains and their weights?</li><li>Is the PMP about tools, or about decisions?</li><li>How many questions, how many minutes?</li></ul></div>
+        <div class="walk-hook">👉 People <b>42%</b>, Process <b>50%</b>, Business Environment <b>8%</b> · It is about <b>decisions and mindset</b> · <b>180 questions, 230 minutes.</b></div>`,
+      say:`Warm up. Answer in your head. What are the three exam domains and their weights? Is the PMP about tools, or about decisions? How many questions, how many minutes? Here are the answers. People forty-two percent, Process fifty percent, Business Environment eight percent. It is about decisions and mindset. One hundred eighty questions, two hundred thirty minutes.`},
+    {type:'teach', emoji:'🧠', tag:'Teach', title:'The PMI Mindset',
+      body:`<div class="walk-seg-body">The exam tests what the <b>perfect servant-leader PM</b> does — not what is convenient. Burn these in:
+        <ul><li><b>Never escalate first.</b> Solve it with your team first.</li><li><b>Gather information before acting.</b> Never punish or decide blind.</li><li><b>Protect the team.</b> Never throw them under the bus.</li><li><b>Servant leadership.</b> You remove obstacles; the team are the experts.</li><li><b>Talk to people directly</b> when there is conflict.</li><li><b>Never a flat no.</b> Assess impact, run it through change control.</li></ul></div>
+        <div class="walk-hook">🎯 Hook: <b>"Good Servants Protect, Facilitate, never Escalate."</b></div>`,
+      say:`The PMI mindset. This cracks about forty percent of the exam. The exam tests what the perfect servant-leader project manager does, not what is convenient. Rule one. Never escalate first. Solve it with your team first. Rule two. Gather information before acting. Never punish or decide blind. Rule three. Protect the team. Never throw them under the bus. Rule four. Servant leadership. You remove obstacles. The team are the experts. Rule five. Talk to people directly when there is conflict. Rule six. Never a flat no. Assess the impact, and run it through change control. Memory hook. Good Servants Protect, Facilitate, never Escalate.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Your move, PM',
+      q:`A team member keeps missing deadlines. What do you do FIRST?`,
+      options:['Report them to their manager','Remove them from the project','Talk to them privately to understand what is blocking them','Document it for their performance review'],
+      answer:2, explain:`<b>C.</b> Gather info, talk directly, protect the team. A and D escalate or punish first. B reduces team capacity. All anti-mindset.`,
+      say:`Quiz. A team member keeps missing deadlines. What do you do first? A, report them to their manager. B, remove them from the project. C, talk to them privately to understand what is blocking them. D, document it for their review. Think about it. The answer is C. Gather information, talk directly, protect the team. Reporting or documenting first is escalating or punishing. Removing them reduces capacity. All anti-mindset.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Scope pressure',
+      q:`A stakeholder demands a new feature mid-project. First move?`,
+      options:['Say no, it is out of scope','Add it to keep them happy','Assess the impact and take it through integrated change control','Escalate to the sponsor'],
+      answer:2, explain:`<b>C.</b> Never flat-no, never just-say-yes (that is gold plating), never escalate first. Always: <b>assess impact → change control.</b>`,
+      say:`Quiz. A stakeholder demands a new feature mid-project. First move? A, say no, it is out of scope. B, add it to keep them happy. C, assess the impact and take it through integrated change control. D, escalate to the sponsor. The answer is C. Never a flat no. Never just say yes, that is gold plating. Never escalate first. Always assess impact, then change control.`},
+    {type:'teach', emoji:'🎚️', tag:'Teach', title:'Predictive vs Agile vs Hybrid',
+      body:`<div class="walk-seg-body">Half the exam is agile or hybrid. Know the spectrum:
+        <ul><li><b>Predictive (waterfall):</b> requirements known up front, plan it all, change is controlled and costly. Known work.</li><li><b>Agile / Adaptive:</b> requirements evolve, work in short <b>sprints</b>, deliver value early, welcome change. Unknown work.</li><li><b>Hybrid:</b> mix both on one project.</li></ul></div>
+        <div class="walk-hook">🎯 Hook: <b>Predictive = the recipe. Agile = the taste-as-you-go chef.</b></div>`,
+      say:`Predictive versus agile versus hybrid. Half the exam is agile or hybrid, so know the spectrum. Predictive, also called waterfall. Requirements are known up front, you plan the whole thing, and change is controlled and expensive. Good for known work. Agile, also called adaptive. Requirements evolve, you work in short sprints, you deliver value early, and you welcome change. Good for unknown work. Hybrid is a mix of both on one project. Hook. Predictive is the recipe. Agile is the taste-as-you-go chef.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Which approach?',
+      q:`Requirements are unclear and the customer wants to see working pieces early and often. Which approach?`,
+      options:['Predictive','Agile','Pure waterfall','Fixed-scope contract'],
+      answer:1, explain:`<b>Agile.</b> Evolving requirements plus early, frequent value = adaptive/agile.`,
+      say:`Quiz. Requirements are unclear and the customer wants to see working pieces early and often. Which approach? A, predictive. B, agile. C, pure waterfall. D, fixed-scope contract. The answer is B, agile. Evolving requirements plus early, frequent value means adaptive.`},
+    {type:'teach', emoji:'📦', tag:'Teach', title:'OPA vs EEF',
+      body:`<div class="walk-seg-body">Two inputs everyone confuses:
+        <ul><li><b>OPA — Organizational Process Assets:</b> things your <b>company made</b> that help you. Templates, lessons learned, processes, historical data.</li><li><b>EEF — Enterprise Environmental Factors:</b> conditions you <b>can't control.</b> Market, regulations, culture, weather, government rules.</li></ul></div>
+        <div class="walk-hook">🎯 Hook: <b>OPA = Our stuff. EEF = External stuff we Endure.</b></div>`,
+      say:`O P A versus E E F. Two inputs everyone confuses. O P A, organizational process assets, are things your company made that help you. Templates, lessons learned, processes, historical data. E E F, enterprise environmental factors, are conditions you cannot control. Market, regulations, company culture, weather, government rules. Hook. O P A is Our stuff. E E F is External stuff we Endure.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'OPA or EEF?',
+      q:`A new government regulation affects your project. Is that an OPA or an EEF?`,
+      options:['OPA — Organizational Process Asset','EEF — Enterprise Environmental Factor','Neither','Both'],
+      answer:1, explain:`<b>EEF.</b> It is external and out of your control — an environmental factor.`,
+      say:`Quiz. A new government regulation affects your project. Is that an O P A or an E E F? The answer is E E F. It is external and out of your control. An environmental factor.`},
+    {type:'teachback', emoji:'🗣️', tag:'Teach-back', title:'Out loud — right now',
+      body:`<div class="walk-seg-body">Say these <b>out loud</b> on your walk. No one cares. This is where it sticks:
+        <ul><li>"The PMI mindset is…" (give 3 rules)</li><li>"Predictive vs agile is…"</li><li>"OPA is ___ and EEF is ___."</li></ul>
+        Stumbled? That is your signal — swipe back and re-listen. That is the method working, not failing.</div>`,
+      say:`Teach-back. Say these out loud on your walk. No one cares. This is where it sticks. One. The PMI mindset is. Give me three rules. Two. The difference between predictive and agile is. Three. O P A is, and E E F is. If you stumbled on any of them, that is your signal. Go back and re-listen. That is the method working.`},
+    {type:'scenario', emoji:'🎭', tag:'Scenario', title:'You are the PM',
+      body:`<div class="walk-seg-body">Two senior engineers are arguing loudly in front of the team about a design choice. Work has stalled. As the servant-leader PM, what do you do?</div>
+        <div class="walk-hook">👉 <b>Collaborate.</b> Bring them together and facilitate so <b>they</b> reach a solution. Not forcing (pick a winner), not withdrawing (ignore it), not compromise (rush a split). Collaborate = win-win, the best conflict mode.</div>`,
+      say:`Scenario. You are the project manager. Two senior engineers are arguing loudly in front of the team about a design choice. Work has stalled. What do you do? The best answer is collaborate. Bring them together and facilitate so they reach a solution themselves. Not forcing, where you pick a winner. Not withdrawing, where you ignore it. Not compromise, where you rush a split. Collaborate is win-win, and it is the best conflict-resolution mode.`},
+    {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #1 complete 💪',
+      body:`<div class="walk-seg-body">You just covered exam structure, the PMI mindset, predictive vs agile, OPA vs EEF, and conflict — <b>hands-free, on a walk.</b> That is real Day-1 mastery work.<br><br>Say <b>"next"</b> to me for Walk #2, or open it from the Walk menu.</div>`,
+      say:`Walk one complete. You just covered exam structure, the PMI mindset, predictive versus agile, O P A versus E E F, and conflict resolution, hands-free on a walk. That is real day one work. When you are ready, start Walk two, Integration and Scope. Great job.`},
+  ]
+},
+{
+  id:'w2', emoji:'🧱', title:'Walk #2 — Integration & Scope',
+  sub:'Charter · Change control · Scope creep vs gold plating · WBS', mins:'18–22 min', day:2,
+  segments:[
+    {type:'intro', emoji:'🎧', tag:'Walk #2', title:'Integration & Scope',
+      body:`<div class="walk-seg-body">Day 2 on the move. Same rules: think before the reveal, teach back out loud. Let us go.</div>`,
+      say:`Welcome to Walk two, Integration and Scope. Same rules. Think before the reveal, and teach back out loud. Let us go.`},
+    {type:'warmup', emoji:'🔥', tag:'Warm-up', title:'Quick recall',
+      body:`<div class="walk-seg-body">In your head:<ul><li>What document officially authorizes the project and names the PM?</li><li>What is the difference between scope creep and gold plating?</li></ul></div>
+        <div class="walk-hook">👉 The <b>project charter</b> · Scope creep = <b>uncontrolled change</b>; gold plating = the team <b>adds extras</b> nobody asked for.</div>`,
+      say:`Warm up. In your head. What document officially authorizes the project and names the project manager? What is the difference between scope creep and gold plating? Answers. The project charter authorizes the project and names the P M. Scope creep is uncontrolled change. Gold plating is when the team adds extras nobody asked for.`},
+    {type:'teach', emoji:'📜', tag:'Teach', title:'The Charter & Integration',
+      body:`<div class="walk-seg-body"><b>Integration management</b> is the PM's job of tying everything together. It starts with the <b>project charter</b>:
+        <ul><li>Created in <b>Initiating</b>, signed by the <b>sponsor</b>.</li><li>It <b>authorizes the project</b> and <b>names the PM</b> with authority.</li><li>High-level: objectives, milestones, budget, key stakeholders.</li></ul>
+        Every approved change later flows through <b>integrated change control</b> and updates all affected plans.</div>
+        <div class="walk-hook">🎯 No charter = no project, and no authority for you. It is always step one.</div>`,
+      say:`The charter and integration. Integration management is the project manager's job of tying everything together, and it starts with the project charter. The charter is created in initiating and signed by the sponsor. It authorizes the project and names the project manager, giving you authority. It is high level. Objectives, milestones, budget, key stakeholders. Later, every approved change flows through integrated change control and updates all affected plans. Remember. No charter, no project, and no authority for you. It is always step one.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Who and when?',
+      q:`A project is just starting. Who authorizes it and gives the PM authority?`,
+      options:['The project manager writes their own authority','The sponsor, via the project charter','The team, by consensus','The change control board'],
+      answer:1, explain:`<b>B.</b> The <b>sponsor</b> signs the <b>charter</b>, which authorizes the project and empowers the PM. The CCB handles changes later, not initiation.`,
+      say:`Quiz. A project is just starting. Who authorizes it and gives the project manager authority? A, the project manager writes their own authority. B, the sponsor, via the project charter. C, the team by consensus. D, the change control board. The answer is B. The sponsor signs the charter, which authorizes the project and empowers the P M. The change control board handles changes later, not initiation.`},
+    {type:'teach', emoji:'🧩', tag:'Teach', title:'Scope: WBS, creep & gold plating',
+      body:`<div class="walk-seg-body">Scope = all the work, and <b>only</b> that work.
+        <ul><li><b>WBS</b> = breaking deliverables into smaller pieces. The smallest piece is a <b>work package.</b></li><li><b>Scope creep</b> = changes sneaking in <b>without</b> change control. Bad.</li><li><b>Gold plating</b> = the <b>team adds</b> extra features nobody asked for. Also bad.</li></ul></div>
+        <div class="walk-hook">🎯 Hook: <b>Creep comes from outside; gold plating comes from inside.</b> Both bypass change control.</div>`,
+      say:`Scope. The work breakdown structure, creep, and gold plating. Scope is all the work, and only that work. The work breakdown structure, or W B S, breaks deliverables into smaller pieces. The smallest piece is called a work package. Scope creep is when changes sneak in without change control. That is bad. Gold plating is when the team adds extra features nobody asked for. Also bad. Hook. Creep comes from outside. Gold plating comes from inside. Both bypass change control.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Spot the problem',
+      q:`A developer adds a "cool extra feature" the customer never requested. What is this?`,
+      options:['Scope creep','Gold plating','Progressive elaboration','A change request'],
+      answer:1, explain:`<b>B — gold plating.</b> The team added unrequested extras. (Scope creep is uncontrolled change from outside; both skip change control.)`,
+      say:`Quiz. A developer adds a cool extra feature the customer never requested. What is this? A, scope creep. B, gold plating. C, progressive elaboration. D, a change request. The answer is B, gold plating. The team added unrequested extras. Scope creep is uncontrolled change coming from outside. Both skip change control.`},
+    {type:'teach', emoji:'🔄', tag:'Teach', title:'Integrated Change Control',
+      body:`<div class="walk-seg-body">When any change is requested, the PMI way is always:
+        <ul><li><b>Don't say yes or no.</b> Assess the impact on scope, schedule, and cost.</li><li>Submit a <b>change request.</b></li><li>The <b>Change Control Board (CCB)</b> approves or rejects.</li><li>If approved, update <b>all</b> affected baselines and plans.</li></ul></div>
+        <div class="walk-hook">🎯 "Evaluate → change request → CCB → update the plan." Never implement a change on your own.</div>`,
+      say:`Integrated change control. When any change is requested, the PMI way is always the same. Do not say yes or no. Assess the impact on scope, schedule, and cost. Submit a change request. The change control board, or C C B, approves or rejects it. If approved, update all affected baselines and plans. The flow is. Evaluate, change request, C C B, update the plan. Never implement a change on your own.`},
+    {type:'teachback', emoji:'🗣️', tag:'Teach-back', title:'Say it out loud',
+      body:`<div class="walk-seg-body">Out loud:<ul><li>"The charter does ___ and is signed by ___."</li><li>"Scope creep is ___; gold plating is ___."</li><li>"When a change comes in, I ___ first, then ___."</li></ul></div>`,
+      say:`Teach-back. Out loud. The charter does what, and is signed by whom? Scope creep is what? Gold plating is what? And when a change comes in, what do I do first, and then what? Say all of it out loud. If you blank, go back and re-listen.`},
+    {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #2 complete 🎉',
+      body:`<div class="walk-seg-body">Charter, integration, scope, WBS, creep vs gold plating, and change control — locked. <br><br>Open the app's <b>Practice</b> tab to test these in writing, or come back for Walk #3.</div>`,
+      say:`Walk two complete. Charter, integration, scope, the work breakdown structure, creep versus gold plating, and change control, all locked in. Open the Practice tab to test these in writing, or come back for Walk three. Excellent work.`},
+  ]
+},
+];
+
+let walkS = null; // {wIdx, idx, autoplay, token}
+function renderWalk(){
+  if(walkS){ renderWalkPlayer(); }
+  else { renderWalkHome(); }
+}
+function renderWalkHome(){
+  document.getElementById('walkPlayer').style.display='none';
+  const home = document.getElementById('walkHome'); home.style.display='block';
+  home.innerHTML = `
+    <div class="walk-hero">
+      <h1>🎧 Walk Mode</h1>
+      <p>Hands-free, audio-first study. Hit play, pocket your phone, and walk — each session reads itself aloud, quizzes you, and checks you off. Turn on <b>Auto-play</b> for fully hands-free.</p>
+    </div>
+    <div class="walk-list">
+      ${WALKS.map((w,i)=>{
+        const done = !!state.runsheet['walk:'+w.id];
+        return `<div class="walk-tile ${done?'done':''}" onclick="openWalk(${i})">
+          <div class="walk-emoji">${w.emoji}</div>
+          <div class="walk-tile-body">
+            <div class="walk-tile-title">${w.title} ${done?'<span style="color:var(--green)">✓</span>':''}</div>
+            <div class="walk-tile-sub">${w.sub}</div>
+            <div class="walk-tile-meta">${w.segments.length} segments · ${w.mins} · Day ${w.day}</div>
+          </div>
+          <div class="walk-go">▶</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div style="margin-top:18px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;font-size:12.5px;color:var(--text-dim);line-height:1.6">
+      <b>Tip:</b> tap <b>▶ Play</b> on any segment to hear it, tap an answer to see green/red, then <b>Next ▶</b>. Or flip <b>Auto-play</b> on and just walk — it reads everything and advances on its own.
+    </div>`;
+}
+function openWalk(i){
+  walkS = {wIdx:i, idx:0, autoplay:false, token:0};
+  document.getElementById('walkHome').style.display='none';
+  document.getElementById('walkPlayer').style.display='block';
+  renderWalkPlayer();
+}
+function closeWalk(){ walkStopSpeak(); walkS=null; renderWalk(); }
+function walkStopSpeak(){ try{ window.speechSynthesis.cancel(); }catch(e){} }
+
+function renderWalkPlayer(){
+  const w = WALKS[walkS.wIdx]; const seg = w.segments[walkS.idx];
+  const n = w.segments.length; const pct = Math.round((walkS.idx)/(n-1)*100);
+  walkS.token++;
+  let inner = `
+    <div class="walk-player-top">
+      <button class="walk-back" onclick="closeWalk()">← Walks</button>
+      <span class="walk-count">${w.emoji} ${walkS.idx+1} / ${n}</span>
+    </div>
+    <div class="walk-prog"><div class="walk-prog-fill" style="width:${pct}%"></div></div>
+    <div class="walk-seg ${seg.type}">
+      <div class="walk-seg-emoji">${seg.emoji}</div>
+      <div class="walk-seg-tag">${seg.tag}</div>
+      <div class="walk-seg-title">${seg.title}</div>`;
+  if(seg.type==='quiz'){
+    inner += `<div class="walk-seg-body" style="margin-bottom:14px">${seg.q}</div>
+      <div class="walk-opts" id="walkOpts">
+        ${seg.options.map((o,i)=>`<button class="walk-opt" onclick="walkAnswer(${i})"><span class="wl">${'ABCD'[i]}</span><span>${o}</span></button>`).join('')}
+      </div>
+      <div id="walkExplain"></div>`;
+  } else {
+    inner += seg.body || '';
+  }
+  inner += `</div>`;
+  // controls
+  const isLast = walkS.idx === n-1;
+  inner += `
+    <div class="walk-ctrls">
+      <button class="walk-play" onclick="walkReadAloud()" title="Read aloud">🔊</button>
+      <button class="btn btn-secondary" onclick="walkPrev()" ${walkS.idx===0?'disabled':''}>◀ Back</button>
+      <button class="btn btn-primary" onclick="walkNext()">${isLast?'Finish ✓':'Next ▶'}</button>
+      <label class="walk-auto"><input type="checkbox" ${walkS.autoplay?'checked':''} onchange="toggleWalkAuto(this.checked)">Auto</label>
+    </div>`;
+  document.getElementById('walkPlayer').innerHTML = inner;
+
+  if(walkS.autoplay){
+    const myToken = walkS.token;
+    walkSpeak(seg.say || seg.title, ()=>{
+      // only auto-advance if still on the same segment, autoplay still on, and not the last
+      if(walkS && walkS.autoplay && walkS.token===myToken && walkS.idx < n-1){
+        setTimeout(()=>{ if(walkS && walkS.autoplay && walkS.token===myToken) walkNext(); }, 700);
+      }
+    });
+    if(seg.type==='quiz') revealWalkQuiz(seg.answer, -1); // show the correct answer while narrating
+  }
+}
+function walkSpeak(text, onDone){
+  try{
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 0.95; u.pitch = 1;
+    if(onDone) u.onend = onDone;
+    window.speechSynthesis.speak(u);
+  }catch(e){ if(onDone) onDone(); }
+}
+function walkReadAloud(){
+  const seg = WALKS[walkS.wIdx].segments[walkS.idx];
+  walkSpeak(seg.say || seg.title);
+}
+function toggleWalkAuto(on){
+  walkS.autoplay = on;
+  if(on) renderWalkPlayer(); else walkStopSpeak();
+}
+function revealWalkQuiz(correctIdx, chosenIdx){
+  document.querySelectorAll('#walkOpts .walk-opt').forEach((b,i)=>{
+    b.disabled = true;
+    if(i===correctIdx) b.classList.add('right');
+    else if(i===chosenIdx) b.classList.add('wrong');
+  });
+  const seg = WALKS[walkS.wIdx].segments[walkS.idx];
+  const ex = document.getElementById('walkExplain');
+  if(ex && !ex.innerHTML) ex.innerHTML = `<div class="walk-explain">${seg.explain}</div>`;
+}
+function walkAnswer(i){
+  const seg = WALKS[walkS.wIdx].segments[walkS.idx];
+  if(document.querySelector('#walkOpts .walk-opt:disabled')) return; // already answered
+  const correct = i===seg.answer;
+  revealWalkQuiz(seg.answer, i);
+  if(correct){ playSound('correct'); addXP(5); updateGameUI(); } else playSound('wrong');
+}
+function walkNext(){
+  const w = WALKS[walkS.wIdx];
+  walkStopSpeak();
+  if(walkS.idx >= w.segments.length-1){
+    state.runsheet['walk:'+w.id] = true; saveState();
+    playSound('levelup'); fireConfetti();
+    closeWalk();
+    showToast(`🎧 ${w.title} complete! +XP`, 'success');
+    return;
+  }
+  walkS.idx++; renderWalkPlayer();
+}
+function walkPrev(){ if(walkS.idx>0){ walkStopSpeak(); walkS.idx--; renderWalkPlayer(); } }
+
+// ══════════════════════════════════════
 // FLASHCARDS
 // ══════════════════════════════════════
 const FLASHCARDS = [
@@ -4408,12 +4721,14 @@ function speakFormulas() {
 // NAV
 // ══════════════════════════════════════
 function showPage(pageId) {
+  try{ if(pageId !== 'walk') window.speechSynthesis.cancel(); }catch(e){} // stop Walk audio when leaving
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
   // sync active state on BOTH desktop tabs and mobile bottom bar
   document.querySelectorAll('[data-page]').forEach(t => t.classList.toggle('active', t.dataset.page === pageId));
 
   if (pageId === 'today') renderToday();
+  if (pageId === 'walk') renderWalk();
   if (pageId === 'study') renderQuestion();
   if (pageId === 'wronglog') renderWrongLog();
   if (pageId === 'studylog') renderStudyLog();
