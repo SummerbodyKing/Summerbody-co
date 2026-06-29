@@ -87,13 +87,42 @@ targets:
     type: workday
 
   # --- AP Companies (iSolved Hire) ------------------------------------------
-  # The link you gave was a single posting. To catch NEW jobs there, we need
-  # the company's jobs LISTING page. Best guess below — run --test to confirm
-  # it parses; it may be JS-rendered and need Playwright. If it finds nothing,
-  # send me the page that lists ALL of their openings.
   - name: ap-companies
     url: "https://apcompanies.isolvedhire.com/jobs/"
     enabled: true
+
+  # --- Demand Gen / Growth lane: healthcare-SaaS + B2B-SaaS employer boards ---
+  # Added June 2026 from a sourcing sweep. These use Greenhouse/Lever JSON APIs,
+  # which are reliable for automated polling. The keyword + location filters
+  # still apply, so you only get marketing/demand-gen roles in your areas.
+  - name: tebra              # health SaaS (EHR/practice mgmt) — closest ModMed peer
+    type: greenhouse
+    token: tebra
+    url: "https://boards.greenhouse.io/tebra"
+  - name: sift-healthcare    # healthcare data SaaS
+    type: greenhouse
+    token: sifthealthcare
+    url: "https://boards.greenhouse.io/sifthealthcare"
+  - name: perfectserve       # healthcare SaaS
+    type: greenhouse
+    token: perfectserve
+    url: "https://boards.greenhouse.io/perfectserve"
+  - name: seamless-ai        # B2B SaaS
+    type: greenhouse
+    token: seamlessai
+    url: "https://boards.greenhouse.io/seamlessai"
+  - name: netdocuments       # B2B SaaS
+    type: greenhouse
+    token: netdocuments
+    url: "https://boards.greenhouse.io/netdocuments"
+  - name: knowbe4            # B2B SaaS, Clearwater FL
+    type: greenhouse
+    token: knowbe4
+    url: "https://boards.greenhouse.io/knowbe4"
+  - name: dronedeploy        # B2B SaaS (Salesforce+Marketo+LinkedIn ads toolstack)
+    type: lever
+    company: dronedeploy
+    url: "https://jobs.lever.co/dronedeploy"
 
   # --- Indeed link you sent: NOT usable -------------------------------------
   # Indeed's terms forbid automated scraping, so this monitor refuses it. To
