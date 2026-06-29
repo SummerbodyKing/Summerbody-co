@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T19:19:54.461907+00:00",
+  "generated_at": "2026-06-29T21:04:38.939544+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 18,
-      "matched": 15,
+      "found": 19,
+      "matched": 16,
       "error": null,
       "jobs": [
         {
@@ -78,6 +78,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4696219005",
           "posted_date": "2026-06-02T13:38:25-04:00"
+        },
+        {
+          "title": "Director, Analytics Engineering",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
+          "posted_date": "2026-06-29T16:05:14-04:00"
         },
         {
           "title": "Director, Customer Success Operations",
@@ -330,7 +336,7 @@
           "title": "Senior Manager, Software Engineering",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-06-12T18:30:46-04:00"
+          "posted_date": "2026-06-29T16:44:19-04:00"
         },
         {
           "title": "Senior Sales Director, Corporate",
@@ -524,6 +530,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4696219005",
       "posted_date": "2026-06-02T13:38:25-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Director, Analytics Engineering",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
+      "posted_date": "2026-06-29T16:05:14-04:00",
       "source": "tebra"
     },
     {
@@ -782,7 +795,7 @@
       "title": "Senior Manager, Software Engineering",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-06-12T18:30:46-04:00",
+      "posted_date": "2026-06-29T16:44:19-04:00",
       "source": "netdocuments"
     },
     {
@@ -940,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 65
+  "total_matched": 66
 }
