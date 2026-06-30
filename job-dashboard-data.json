@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T18:17:38.597967+00:00",
+  "generated_at": "2026-06-30T20:25:37.344544+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -372,8 +372,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 98,
-      "matched": 15,
+      "found": 99,
+      "matched": 16,
       "error": null,
       "jobs": [
         {
@@ -387,6 +387,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
           "posted_date": "2026-06-26T13:02:48-04:00"
+        },
+        {
+          "title": "CS Strategist & Program Manager (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
+          "posted_date": "2026-06-30T15:38:49-04:00"
         },
         {
           "title": "Manager, Enterprise Customer Success",
@@ -470,17 +476,10 @@
     },
     {
       "name": "dronedeploy",
-      "found": 12,
-      "matched": 1,
+      "found": 11,
+      "matched": 0,
       "error": null,
-      "jobs": [
-        {
-          "title": "Senior Demand Generation Manager (USA)",
-          "location": "Remote",
-          "url": "https://jobs.lever.co/dronedeploy/8190f579-3e7d-4f0e-9f1e-1c83a45dfb28",
-          "posted_date": "2026-04-22T21:32:25.773000+00:00"
-        }
-      ]
+      "jobs": []
     }
   ],
   "jobs": [
@@ -842,6 +841,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "CS Strategist & Program Manager (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
+      "posted_date": "2026-06-30T15:38:49-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Manager, Enterprise Customer Success",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
@@ -931,13 +937,6 @@
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
       "posted_date": "2026-06-26T13:02:50-04:00",
       "source": "knowbe4"
-    },
-    {
-      "title": "Senior Demand Generation Manager (USA)",
-      "location": "Remote",
-      "url": "https://jobs.lever.co/dronedeploy/8190f579-3e7d-4f0e-9f1e-1c83a45dfb28",
-      "posted_date": "2026-04-22T21:32:25.773000+00:00",
-      "source": "dronedeploy"
     }
   ],
   "total_matched": 65
