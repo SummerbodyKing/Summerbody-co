@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T13:29:39.709823+00:00",
+  "generated_at": "2026-06-30T16:11:11.926725+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -169,8 +169,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 15,
-      "matched": 15,
+      "found": 16,
+      "matched": 16,
       "error": null,
       "jobs": [
         {
@@ -250,6 +250,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6009029004",
           "posted_date": "2026-06-29T11:37:20-04:00"
+        },
+        {
+          "title": "Staff Software Engineer  - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6103799004",
+          "posted_date": "2026-06-30T09:31:21-04:00"
         },
         {
           "title": "Support Center Shift Supervisor - US Remote",
@@ -366,7 +372,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 97,
+      "found": 98,
       "matched": 15,
       "error": null,
       "jobs": [
@@ -703,6 +709,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Staff Software Engineer  - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6103799004",
+      "posted_date": "2026-06-30T09:31:21-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Support Center Shift Supervisor - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
@@ -927,5 +940,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 64
+  "total_matched": 65
 }
