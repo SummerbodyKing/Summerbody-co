@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T11:23:50.048435+00:00",
+  "generated_at": "2026-06-30T13:29:39.709823+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -169,8 +169,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 16,
-      "matched": 16,
+      "found": 15,
+      "matched": 15,
       "error": null,
       "jobs": [
         {
@@ -190,12 +190,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
           "posted_date": "2026-06-29T11:33:51-04:00"
-        },
-        {
-          "title": "Manager, Customer Success - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5997227004",
-          "posted_date": "2026-06-29T11:34:11-04:00"
         },
         {
           "title": "Manager of Accounting - US Remote",
@@ -372,8 +366,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 99,
-      "matched": 16,
+      "found": 97,
+      "matched": 15,
       "error": null,
       "jobs": [
         {
@@ -387,12 +381,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
           "posted_date": "2026-06-26T13:02:48-04:00"
-        },
-        {
-          "title": "Customer Implementation Specialist (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8576558002",
-          "posted_date": "2026-06-03T11:27:28-04:00"
         },
         {
           "title": "Manager, Enterprise Customer Success",
@@ -645,13 +633,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Manager, Customer Success - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5997227004",
-      "posted_date": "2026-06-29T11:34:11-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Manager of Accounting - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5835627004",
@@ -848,13 +829,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Customer Implementation Specialist (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8576558002",
-      "posted_date": "2026-06-03T11:27:28-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Manager, Enterprise Customer Success",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
@@ -953,5 +927,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 64
 }
