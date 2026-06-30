@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T22:04:22.094286+00:00",
+  "generated_at": "2026-06-30T23:40:37.583169+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -372,8 +372,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 98,
-      "matched": 15,
+      "found": 99,
+      "matched": 16,
       "error": null,
       "jobs": [
         {
@@ -387,6 +387,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
           "posted_date": "2026-06-26T13:02:48-04:00"
+        },
+        {
+          "title": "CS Strategist & Program Manager (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
+          "posted_date": "2026-06-30T18:07:45-04:00"
         },
         {
           "title": "Manager, Enterprise Customer Success",
@@ -835,6 +841,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "CS Strategist & Program Manager (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
+      "posted_date": "2026-06-30T18:07:45-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Manager, Enterprise Customer Success",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
@@ -926,5 +939,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 64
+  "total_matched": 65
 }
