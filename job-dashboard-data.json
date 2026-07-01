@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T10:45:49.382054+00:00",
+  "generated_at": "2026-07-01T13:36:28.851447+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -169,8 +169,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 16,
-      "matched": 16,
+      "found": 19,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -216,6 +216,12 @@
           "posted_date": "2026-06-29T11:32:03-04:00"
         },
         {
+          "title": "Senior Director, Segment & Solutions Marketing  - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104742004",
+          "posted_date": "2026-07-01T08:43:50-04:00"
+        },
+        {
           "title": "Senior Financial Analyst - Canada Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6020450004",
@@ -238,6 +244,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6000082004",
           "posted_date": "2026-06-29T11:36:11-04:00"
+        },
+        {
+          "title": "Senior Project Manager - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104754004",
+          "posted_date": "2026-07-01T08:44:25-04:00"
         },
         {
           "title": "Senior Software Engineer, .NET - US Remote",
@@ -268,6 +280,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
           "posted_date": "2026-05-05T13:04:27-04:00"
+        },
+        {
+          "title": "​Website Experience and CRO Manager  - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104761004",
+          "posted_date": "2026-07-01T08:45:07-04:00"
         }
       ]
     },
@@ -372,7 +390,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 100,
+      "found": 99,
       "matched": 16,
       "error": null,
       "jobs": [
@@ -666,6 +684,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Senior Director, Segment & Solutions Marketing  - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104742004",
+      "posted_date": "2026-07-01T08:43:50-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Senior Financial Analyst - Canada Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6020450004",
@@ -691,6 +716,13 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6000082004",
       "posted_date": "2026-06-29T11:36:11-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Senior Project Manager - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104754004",
+      "posted_date": "2026-07-01T08:44:25-04:00",
       "source": "perfectserve"
     },
     {
@@ -726,6 +758,13 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
       "posted_date": "2026-05-05T13:04:27-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "​Website Experience and CRO Manager  - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104761004",
+      "posted_date": "2026-07-01T08:45:07-04:00",
       "source": "perfectserve"
     },
     {
@@ -939,5 +978,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 65
+  "total_matched": 68
 }
