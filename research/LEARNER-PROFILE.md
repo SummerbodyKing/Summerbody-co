@@ -74,6 +74,11 @@ Stakeholder (4): Identify Stakeholders (Init), Plan Stakeholder Engagement (Plan
 - July 1 | Power/Interest (Mendelow): high power+high interest = Manage Closely; high power+low interest =
   Keep Satisfied; low power+high interest = Keep Informed; low power+low interest = Monitor | Stakeholder /
   Identify Stakeholders (tool: Stakeholder Analysis; output: Stakeholder Register) | taught
+- July 1 | Stakeholder SEQUENCE: when the stem says a full stakeholder list was already provided, Identify is
+  DONE; the next activity is ANALYZE (classify power/interest, engagement level) before Plan Engagement.
+  Traps: Identify (already done), Engage (Executing, too far), Monitor (M&C, too far). Signal words:
+  "list of all stakeholders" = identify complete; "planning phase" = rules out Engage/Monitor |
+  Stakeholder / Identify -> Analyze -> Plan Stakeholder Engagement | taught
 
 ## INTEGRATION DECISION (this repo vs the standalone Claude.ai files)
 The Claude.ai session built standalone HTML files (49-process reference, flashcards, voice drill,
