@@ -2472,7 +2472,7 @@ const QUESTIONS = [
 // APP STATE
 // ══════════════════════════════════════
 const SPRINT_START = new Date('2026-06-24');
-const EXAM_DATE = new Date('2026-07-08');
+const EXAM_DATE = new Date('2026-07-07');
 
 const DAYS = [
   {d:1,date:'Jun 24',topic:'Orientation + PM Fundamentals',phase:1},
@@ -3848,6 +3848,60 @@ const WALKS = [
     {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #2 complete 🎉',
       body:`<div class="walk-seg-body">Charter, integration, scope, WBS, creep vs gold plating, and change control — locked. <br><br>Open the app's <b>Practice</b> tab to test these in writing, or come back for Walk #3.</div>`,
       say:`Walk two complete. Charter, integration, scope, the work breakdown structure, creep versus gold plating, and change control, all locked in. Open the Practice tab to test these in writing, or come back for Walk three. Excellent work.`},
+  ]
+},
+{
+  id:'w3', emoji:'🤝', title:'Walk #3 — Engage Stakeholders',
+  sub:'Engagement levels · Power/Interest · Shared understanding · Resistance', mins:'20 min', day:7,
+  segments:[
+    {type:'intro', emoji:'🎧', tag:'Walk #3', title:'Engage Stakeholders',
+      body:`<div class="walk-seg-body">This is your weak spot, so we hit it head on. Engagement levels, the power grid, building shared understanding, and how to handle a resistant stakeholder. Think before each reveal, say the teach-backs out loud.</div>`,
+      say:`Welcome to Walk three, Engage Stakeholders and Build Shared Understanding. This is your weak spot from the practice test, so we hit it head on. Think before each reveal, and say the teach-backs out loud.`},
+    {type:'warmup', emoji:'🔥', tag:'Warm-up', title:'The five engagement levels',
+      body:`<div class="walk-seg-body">Every stakeholder sits at one of five levels. In order from worst to best:<ul><li>Unaware</li><li>Resistant</li><li>Neutral</li><li>Supportive</li><li>Leading</li></ul>Say them out loud once.</div>
+        <div class="walk-hook">🎯 Memory: <b>"Un-Resistant Neutrals Support Leaders."</b></div>`,
+      say:`Warm up. Every stakeholder sits at one of five engagement levels. From worst to best. Unaware, they do not know the project exists. Resistant, they oppose it. Neutral, they neither help nor hurt. Supportive, they back it. Leading, they actively champion it. Say them out loud. Unaware, Resistant, Neutral, Supportive, Leading.`},
+    {type:'teach', emoji:'📊', tag:'Teach', title:'The engagement assessment matrix',
+      body:`<div class="walk-seg-body">You map each stakeholder twice: <b>C</b> for where they are now (current), <b>D</b> for where you need them (desired). The <b>gap between C and D</b> is your work.
+        <ul><li>Big gap means you need active engagement.</li><li>No gap means keep doing what works.</li></ul>
+        You do not need everyone at Leading. You need each one at the level the project requires.</div>
+        <div class="walk-hook">🎯 The tool is the <b>Stakeholder Engagement Assessment Matrix</b>. C to D gap drives the plan.</div>`,
+      say:`The stakeholder engagement assessment matrix. You mark each stakeholder twice. C for current, where they are now. D for desired, where you need them to be. The gap between C and D is your work. A big gap means you need active engagement. No gap means keep doing what works. You do not need everyone at leading. You need each one at the level the project requires.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Read the level',
+      q:`A key stakeholder actively opposes the project and lobbies others against it. What is their engagement level?`,
+      options:['Unaware','Resistant','Neutral','Leading'],
+      answer:1, explain:`<b>Resistant.</b> They know about it and are working against it. Unaware means no knowledge. Neutral means indifferent. Leading means actively championing it, the opposite of this.`,
+      say:`Quiz. A key stakeholder actively opposes the project and lobbies others against it. What is their engagement level? Unaware, Resistant, Neutral, or Leading? The answer is Resistant. They know about it and are working against it.`},
+    {type:'teach', emoji:'🧭', tag:'Teach', title:'Power / Interest grid',
+      body:`<div class="walk-seg-body">Classify stakeholders by power and interest, then act:
+        <ul><li>High power, high interest: <b>Manage Closely</b></li><li>High power, low interest: <b>Keep Satisfied</b></li><li>Low power, high interest: <b>Keep Informed</b></li><li>Low power, low interest: <b>Monitor</b></li></ul></div>
+        <div class="walk-hook">🎯 High power is the top row. Interest decides Manage Closely versus Keep Satisfied.</div>`,
+      say:`The power interest grid. Classify each stakeholder by how much power and how much interest they have. High power and high interest, manage closely. High power but low interest, keep satisfied. Low power but high interest, keep informed. Low power and low interest, monitor with minimum effort. High power is the top row. Interest decides between manage closely and keep satisfied.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Place the executive',
+      q:`A senior executive has high power but little day-to-day interest in your project. How do you manage them?`,
+      options:['Manage Closely','Keep Satisfied','Keep Informed','Monitor'],
+      answer:1, explain:`<b>Keep Satisfied.</b> High power, low interest. You keep them satisfied so they do not use their power against you, but you do not overload them with detail they do not want.`,
+      say:`Quiz. A senior executive has high power but little day-to-day interest in your project. How do you manage them? Manage Closely, Keep Satisfied, Keep Informed, or Monitor? The answer is Keep Satisfied. High power, low interest. Keep them satisfied so they do not use their power against you, without flooding them with detail.`},
+    {type:'teach', emoji:'🧩', tag:'Teach', title:'Build shared understanding',
+      body:`<div class="walk-seg-body">Shared understanding is how you move people toward Supportive. Tools:
+        <ul><li><b>Kickoff meeting</b> and a <b>team charter</b> with ground rules.</li><li><b>Face-to-face</b> and transparent communication beats email.</li><li>Agile ceremonies: <b>daily standup, sprint review, retrospective</b>.</li><li>A clear <b>Definition of Done</b> so everyone agrees what finished means.</li><li>Prototypes and demos so people see, not just hear.</li></ul></div>
+        <div class="walk-hook">🎯 Shared understanding is built by involving people early and communicating openly, not by sending more reports.</div>`,
+      say:`Build shared understanding. This is how you move people toward supportive. Hold a kickoff meeting and create a team charter with ground rules. Use face to face and transparent communication, which beats email. Run agile ceremonies. Daily standup, sprint review, and retrospective. Agree a clear definition of done so everyone knows what finished means. Use prototypes and demos so people see the work, not just hear about it. Shared understanding is built by involving people early and communicating openly, not by sending more reports.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'The resistant stakeholder',
+      q:`A stakeholder is resistant and is slowing adoption of your project. What is the BEST first move?`,
+      options:['Escalate to their manager','Meet with them to understand their concerns','Remove them from the communication list','Proceed and work around them'],
+      answer:1, explain:`<b>Meet with them to understand their concerns.</b> The PMI mindset: engage directly, find the root cause, address it. Escalating first, cutting them out, or ignoring them all avoid the real work and usually make resistance worse.`,
+      say:`Quiz. A stakeholder is resistant and is slowing adoption of your project. What is the best first move? Escalate to their manager, meet with them to understand their concerns, remove them from the communication list, or proceed and work around them? The answer is meet with them to understand their concerns. The PMI mindset is engage directly and find the root cause. Escalating first, cutting them out, or ignoring them all avoid the real work and make resistance worse.`},
+    {type:'teachback', emoji:'🗣️', tag:'Teach-back', title:'Say it out loud',
+      body:`<div class="walk-seg-body">Out loud, right now:<ul><li>The five engagement levels in order.</li><li>The four power/interest actions.</li><li>"When a stakeholder is resistant, I ___ first."</li></ul>Stumbled? Swipe back and replay that segment.</div>`,
+      say:`Teach-back. Out loud, right now. Name the five engagement levels in order. Name the four power interest actions. And finish this sentence. When a stakeholder is resistant, I do what first? Say all of it out loud. If you stumbled, go back and replay that segment.`},
+    {type:'scenario', emoji:'🎭', tag:'Scenario', title:'You are the PM',
+      body:`<div class="walk-seg-body">A powerful department head was Supportive, but after a scope change she has gone quiet and is now Neutral, and her team is dragging. What do you do?</div>
+        <div class="walk-hook">👉 Engage her directly, face to face. Understand what the scope change cost her, and rebuild shared understanding. Do not escalate over her head, and do not just send another status report. Move her C back toward D by talking to her.</div>`,
+      say:`Scenario. A powerful department head was supportive, but after a scope change she has gone quiet and is now neutral, and her team is dragging. What do you do? Engage her directly, face to face. Understand what the scope change cost her and rebuild shared understanding. Do not escalate over her head, and do not just send another status report. Move her current level back toward the desired level by talking to her.`},
+    {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #3 complete 💪',
+      body:`<div class="walk-seg-body">Engagement levels, the power grid, shared understanding, and resistance, all covered. Now go into <b>Practice</b> and filter <b>People</b> to drill these in writing. You just turned your weakest topic into a plan.</div>`,
+      say:`Walk three complete. Engagement levels, the power interest grid, building shared understanding, and handling resistance, all covered. Now open Practice and filter to People to drill these in writing. You just turned your weakest topic into a plan. Great work.`},
   ]
 },
 ];
