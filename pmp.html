@@ -4387,11 +4387,21 @@ function renderFormulaDrill(){
         ${choices.map((c,i)=>`<button class="drill-opt" onclick="answerDrill(${i})" ${answered?'disabled':''}>${c.t}</button>`).join('')}
       </div>
       <div class="drill-fb" id="drillFb"></div>
+      <div id="drillWork" style="display:none"></div>
       <div class="drill-actions">
+        <button class="btn btn-primary btn-sm" id="drillHowBtn" onclick="drillShowWork()">💡 Show me how</button>
         <button class="btn btn-secondary btn-sm" onclick="newDrill()">${answered?'Next problem →':'↻ Skip / new numbers'}</button>
-        <span class="drill-exam">Formula questions are guaranteed exam points — aim for 90%+ here.</span>
+        <span class="drill-exam">Stuck? Tap "Show me how" to see the formula filled in with these exact numbers.</span>
       </div>
     </div>`;
+}
+// reveal the step-by-step worked solution for the current drill, using its actual numbers
+function drillShowWork(){
+  if(!curDrill) return;
+  const box = document.getElementById('drillWork');
+  box.style.display = 'block';
+  box.innerHTML = `<div class="drill-fb-in ok"><b>Step by step:</b><br>${curDrill.g.work}</div>`;
+  const b = document.getElementById('drillHowBtn'); if(b) b.style.display = 'none';
 }
 function answerDrill(i){
   if(!curDrill || curDrill.answered) return;
