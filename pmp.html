@@ -882,6 +882,39 @@
   .walk-auto { font-size:12px; display:flex; align-items:center; gap:6px; color:var(--text-dim); cursor:pointer; user-select:none; white-space:nowrap; }
   .walk-auto input { width:18px; height:18px; accent-color:var(--orange); }
   @media (max-width:600px){ .walk-ctrls { bottom:80px; } .walk-seg-title { font-size:20px; } .walk-seg-body { font-size:15.5px; } }
+
+  /* ════ PROCESS DIAGRAMS (flow deck) ════ */
+  .dg-hero { background:linear-gradient(135deg,#160700,var(--surface)); border:1px solid rgba(255,85,0,.35); border-radius:18px; padding:22px 24px; margin-bottom:16px; }
+  .dg-hero h1 { font-size:26px; font-weight:900; margin:0 0 6px; }
+  .dg-hero em { color:var(--orange); font-style:normal; }
+  .dg-hero p { color:var(--text-dim); font-size:13px; line-height:1.5; margin:0; max-width:640px; }
+  .dg-controls { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:16px; }
+  .dg-controls select { background:var(--surface2); color:var(--text); border:1px solid var(--border); border-radius:10px; padding:9px 12px; font-family:var(--font-main); font-size:13px; font-weight:600; }
+  .dg-count { font-size:12px; color:var(--text-muted); font-weight:700; margin-left:auto; }
+
+  .dg-card { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:20px; }
+  .dg-head { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+  .dg-ka { font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--orange); }
+  .dg-grp { font-size:10.5px; font-weight:700; color:var(--text-muted); background:var(--surface3); padding:3px 9px; border-radius:20px; }
+  .dg-name { font-size:21px; font-weight:900; line-height:1.15; width:100%; margin-top:4px; }
+
+  .dg-flow { display:flex; flex-direction:column; align-items:center; }
+  .dg-band { width:100%; text-align:center; }
+  .dg-band-label { font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px; }
+  .dg-chips { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+  .dg-chip { font-size:13px; font-weight:700; padding:9px 13px; border-radius:11px; background:var(--surface2); border:1.5px solid; }
+  .dg-chip.in  { border-color:#ff8c42; color:#ffd9bf; }
+  .dg-chip.out { border-color:#22c55e; color:#b8f0cf; }
+  .dg-arrow { color:var(--orange); font-size:26px; line-height:1; margin:6px 0; }
+  .dg-proc { width:100%; max-width:420px; background:linear-gradient(135deg,#FF5500,#c43f00); border-radius:16px; padding:16px; text-align:center; box-shadow:0 8px 26px rgba(255,85,0,.3); }
+  .dg-proc-fig { margin-bottom:6px; }
+  .dg-proc-name { font-size:16px; font-weight:900; color:#fff; line-height:1.2; }
+  .dg-tool { margin-top:8px; font-size:12px; color:#fff; background:rgba(0,0,0,.25); display:inline-block; padding:5px 12px; border-radius:20px; font-weight:700; }
+  .dg-tool span { opacity:.8; font-weight:600; }
+  .dg-why-btn { margin-top:16px; width:100%; }
+  .dg-why { margin-top:12px; padding:14px 16px; background:rgba(255,85,0,.1); border:1px solid rgba(255,85,0,.35); border-radius:12px; font-size:14px; line-height:1.6; color:var(--text); }
+  .dg-nav { display:flex; gap:12px; margin-top:16px; }
+  .dg-nav .btn { flex:1; justify-content:center; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -909,6 +942,7 @@
     <button class="nav-tab" data-page="dashboard" onclick="showPage('dashboard')">War Room</button>
     <button class="nav-tab" data-page="path" onclick="showPage('path')">14-Day Path</button>
     <button class="nav-tab" data-page="learn" onclick="showPage('learn')">Learn</button>
+    <button class="nav-tab" data-page="diagrams" onclick="showPage('diagrams')">Diagrams</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
     <button class="nav-tab" data-page="flashcards" onclick="showPage('flashcards')">Flashcards</button>
     <button class="nav-tab" data-page="formulas" onclick="showPage('formulas')">Formula Lab</button>
@@ -933,6 +967,7 @@
   <button class="mnav-btn" data-page="dashboard" onclick="showPage('dashboard')"><span>🏠</span>War Room</button>
   <button class="mnav-btn" data-page="path" onclick="showPage('path')"><span>🗺️</span>Path</button>
   <button class="mnav-btn" data-page="learn" onclick="showPage('learn')"><span>📊</span>Learn</button>
+  <button class="mnav-btn" data-page="diagrams" onclick="showPage('diagrams')"><span>🧩</span>Flow</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
   <button class="mnav-btn" data-page="flashcards" onclick="showPage('flashcards')"><span>🃏</span>Cards</button>
   <button class="mnav-btn" data-page="formulas" onclick="showPage('formulas')"><span>🧮</span>Formulas</button>
@@ -967,6 +1002,37 @@
 <div class="page" id="page-walk">
   <div id="walkHome"></div>
   <div id="walkPlayer" style="display:none"></div>
+</div>
+
+<!-- ══════════════════════════════════════════ PROCESS DIAGRAMS ══ -->
+<div class="page" id="page-diagrams">
+  <div class="dg-hero">
+    <h1>Process <em>Diagrams</em></h1>
+    <p>Every one of the 49 processes drawn as a flow: inputs go in the top, the PM does the work in the orange box, outputs come out the bottom. Tap "Why it matters" for the point and the trap. Randomised so you cover all 49.</p>
+  </div>
+  <div class="dg-controls">
+    <select id="dgKa" onchange="dgFilter(this.value)">
+      <option value="all">All 49 processes</option>
+      <option value="Integration">Integration (7)</option>
+      <option value="Scope">Scope (6)</option>
+      <option value="Schedule">Schedule (6)</option>
+      <option value="Cost">Cost (4)</option>
+      <option value="Quality">Quality (3)</option>
+      <option value="Resource">Resource (6)</option>
+      <option value="Communications">Communications (3)</option>
+      <option value="Risk">Risk (7)</option>
+      <option value="Procurement">Procurement (3)</option>
+      <option value="Stakeholder">Stakeholder (4)</option>
+    </select>
+    <button class="btn btn-secondary btn-sm" onclick="dgShuffle()">🔀 Shuffle</button>
+    <button class="btn btn-secondary btn-sm" onclick="dgSpeak()">🔊 Read</button>
+    <span class="dg-count" id="dgCount"></span>
+  </div>
+  <div id="dgCard"></div>
+  <div class="dg-nav">
+    <button class="btn btn-secondary" onclick="dgPrev()">← Prev</button>
+    <button class="btn btn-primary" onclick="dgNext()">Next →</button>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
@@ -3921,6 +3987,111 @@ function walkNext(){
 function walkPrev(){ if(walkS.idx>0){ walkStopSpeak(); walkS.idx--; renderWalkPlayer(); } }
 
 // ══════════════════════════════════════
+// 🧩 PROCESS DIAGRAMS — all 49 as input / process / output flows
+// ══════════════════════════════════════
+const PROC = [
+  // INTEGRATION (7)
+  {ka:"Integration",grp:"Initiating",name:"Develop Project Charter",in:["Business case","Agreements"],tool:"Expert Judgment",out:["Project Charter","Assumption Log"],why:"The charter authorizes the project and names the PM. No charter means no authority. Always step one."},
+  {ka:"Integration",grp:"Planning",name:"Develop Project Management Plan",in:["Project Charter","Other plan outputs"],tool:"Expert Judgment",out:["Project Management Plan"],why:"The master plan that integrates every subsidiary plan and baseline. Everything else plugs into it."},
+  {ka:"Integration",grp:"Executing",name:"Direct and Manage Project Work",in:["PM Plan","Approved Changes"],tool:"PMIS",out:["Deliverables","Work Performance Data","Issue Log"],why:"Where the work actually gets done and deliverables are produced."},
+  {ka:"Integration",grp:"Executing",name:"Manage Project Knowledge",in:["PM Plan","Deliverables"],tool:"Knowledge Management",out:["Lessons Learned Register"],why:"A 6th edition addition people forget. Capture and reuse knowledge so mistakes are not repeated."},
+  {ka:"Integration",grp:"Monitoring & Controlling",name:"Monitor and Control Project Work",in:["PM Plan","Work Performance Info"],tool:"Data Analysis",out:["Work Performance Reports","Change Requests"],why:"Track overall performance against the plan and raise change requests when it drifts."},
+  {ka:"Integration",grp:"Monitoring & Controlling",name:"Perform Integrated Change Control",in:["PM Plan","Change Requests"],tool:"Change Control Board",out:["Approved Change Requests"],why:"Trap: change requests are the INPUT, approved change requests are the OUTPUT. Every change flows through here."},
+  {ka:"Integration",grp:"Closing",name:"Close Project or Phase",in:["Project Charter","Accepted Deliverables"],tool:"Expert Judgment",out:["Final Product","Final Report","OPA Updates"],why:"The only process in Closing. Formal closure, final report, lessons learned archived."},
+  // SCOPE (6)
+  {ka:"Scope",grp:"Planning",name:"Plan Scope Management",in:["Project Charter","PM Plan"],tool:"Expert Judgment",out:["Scope Mgmt Plan","Requirements Mgmt Plan"],why:"Defines how scope will be defined, validated, and controlled."},
+  {ka:"Scope",grp:"Planning",name:"Collect Requirements",in:["Project Charter","Stakeholder Register"],tool:"Interviews / Workshops",out:["Requirements Docs","Traceability Matrix"],why:"Pull requirements from stakeholders. The traceability matrix links each requirement to its source."},
+  {ka:"Scope",grp:"Planning",name:"Define Scope",in:["Project Charter","Requirements Docs"],tool:"Product Analysis",out:["Project Scope Statement"],why:"The detailed description of project and product scope, including what is OUT of scope."},
+  {ka:"Scope",grp:"Planning",name:"Create WBS",in:["Scope Statement","Requirements Docs"],tool:"Decomposition",out:["Scope Baseline (WBS)"],why:"Break deliverables into work packages. The smallest piece is a work package. Output is the scope baseline."},
+  {ka:"Scope",grp:"Monitoring & Controlling",name:"Validate Scope",in:["Verified Deliverables","PM Plan"],tool:"Inspection",out:["Accepted Deliverables","Change Requests"],why:"Trap: this is customer ACCEPTANCE and it is Monitoring and Controlling, not Executing. It comes after Control Quality checks the deliverable internally."},
+  {ka:"Scope",grp:"Monitoring & Controlling",name:"Control Scope",in:["PM Plan","Work Performance Data"],tool:"Variance Analysis",out:["Work Performance Info","Change Requests"],why:"Guard against scope creep. Compare actual scope to the baseline."},
+  // SCHEDULE (6)
+  {ka:"Schedule",grp:"Planning",name:"Plan Schedule Management",in:["Project Charter","PM Plan"],tool:"Expert Judgment",out:["Schedule Mgmt Plan"],why:"Sets the rules for building and controlling the schedule."},
+  {ka:"Schedule",grp:"Planning",name:"Define Activities",in:["Schedule Mgmt Plan","Scope Baseline"],tool:"Decomposition",out:["Activity List","Milestone List"],why:"Break work packages into the specific activities you will schedule."},
+  {ka:"Schedule",grp:"Planning",name:"Sequence Activities",in:["Activity List","Milestone List"],tool:"Precedence Diagramming",out:["Schedule Network Diagram"],why:"Put activities in order and link dependencies. Output is the network diagram."},
+  {ka:"Schedule",grp:"Planning",name:"Estimate Activity Durations",in:["Activity List","Resource Requirements"],tool:"Three-Point Estimating",out:["Duration Estimates"],why:"How long each activity takes. Three-point smooths out uncertainty."},
+  {ka:"Schedule",grp:"Planning",name:"Develop Schedule",in:["Network Diagram","Duration Estimates"],tool:"Critical Path Method",out:["Schedule Baseline","Project Schedule"],why:"Critical path method builds the schedule. Output is the schedule baseline."},
+  {ka:"Schedule",grp:"Monitoring & Controlling",name:"Control Schedule",in:["PM Plan","Work Performance Data"],tool:"Variance Analysis",out:["Work Performance Info","Change Requests"],why:"Compare progress to the schedule baseline and correct drift."},
+  // COST (4)
+  {ka:"Cost",grp:"Planning",name:"Plan Cost Management",in:["Project Charter","PM Plan"],tool:"Expert Judgment",out:["Cost Mgmt Plan"],why:"Sets the rules for estimating and controlling cost."},
+  {ka:"Cost",grp:"Planning",name:"Estimate Costs",in:["Scope Baseline","Schedule Baseline"],tool:"Three-Point Estimating",out:["Cost Estimates"],why:"Estimate the cost of each activity."},
+  {ka:"Cost",grp:"Planning",name:"Determine Budget",in:["Cost Estimates","Scope Baseline"],tool:"Cost Aggregation",out:["Cost Baseline","Funding Requirements"],why:"Aggregate costs into the cost baseline, the approved spending plan over time."},
+  {ka:"Cost",grp:"Monitoring & Controlling",name:"Control Costs",in:["PM Plan","Work Performance Data"],tool:"Earned Value Analysis",out:["Work Performance Info","Change Requests"],why:"Earned value analysis tracks cost performance against the baseline."},
+  // QUALITY (3)
+  {ka:"Quality",grp:"Planning",name:"Plan Quality Management",in:["PM Plan","Requirements Docs"],tool:"Cost-Benefit Analysis",out:["Quality Mgmt Plan"],why:"Decide what quality means here and how to reach it. Prevention over inspection."},
+  {ka:"Quality",grp:"Executing",name:"Manage Quality",in:["Quality Mgmt Plan","QC Measurements"],tool:"Audits",out:["Quality Reports","Change Requests"],why:"Audit the processes to make sure they will produce quality. This is quality assurance."},
+  {ka:"Quality",grp:"Monitoring & Controlling",name:"Control Quality",in:["Deliverables","PM Plan"],tool:"Inspection",out:["Verified Deliverables","QC Measurements"],why:"Inspect the actual deliverables. Trap: Control Quality (internal, correct) comes BEFORE Validate Scope (external, accepted)."},
+  // RESOURCE (6)
+  {ka:"Resource",grp:"Planning",name:"Plan Resource Management",in:["Project Charter","PM Plan"],tool:"Org Charts",out:["Resource Mgmt Plan","Team Charter"],why:"Plan how to acquire, manage, and release people and physical resources."},
+  {ka:"Resource",grp:"Planning",name:"Estimate Activity Resources",in:["Activity List","Resource Calendars"],tool:"Bottom-Up Estimating",out:["Resource Requirements","Resource Breakdown Structure"],why:"How many people and what materials each activity needs."},
+  {ka:"Resource",grp:"Executing",name:"Acquire Resources",in:["Resource Mgmt Plan"],tool:"Negotiation",out:["Physical Assignments","Team Assignments"],why:"Get the team and physical resources onto the project."},
+  {ka:"Resource",grp:"Executing",name:"Develop Team",in:["Team Assignments"],tool:"Team Building",out:["Team Performance Assessments"],why:"Build skills and cohesion. Tuckman stages live here."},
+  {ka:"Resource",grp:"Executing",name:"Manage Team",in:["Team Performance Assessments"],tool:"Conflict Management",out:["Change Requests"],why:"Track performance and resolve conflict. Collaborate is the best conflict mode."},
+  {ka:"Resource",grp:"Monitoring & Controlling",name:"Control Resources",in:["PM Plan","Work Performance Data"],tool:"Problem Solving",out:["Work Performance Info","Change Requests"],why:"Make sure physical resources are available as planned."},
+  // COMMUNICATIONS (3)
+  {ka:"Communications",grp:"Planning",name:"Plan Communications Management",in:["PM Plan","Stakeholder Register"],tool:"Comm Requirements Analysis",out:["Communications Mgmt Plan"],why:"Decide who needs what information, when, and how."},
+  {ka:"Communications",grp:"Executing",name:"Manage Communications",in:["Comms Mgmt Plan"],tool:"Communication Methods",out:["Project Communications"],why:"Actually create and distribute the information."},
+  {ka:"Communications",grp:"Monitoring & Controlling",name:"Monitor Communications",in:["PM Plan","Work Performance Data"],tool:"Observation",out:["Work Performance Info","Change Requests"],why:"Check that communication is meeting stakeholder needs."},
+  // RISK (7)
+  {ka:"Risk",grp:"Planning",name:"Plan Risk Management",in:["Project Charter","PM Plan"],tool:"Expert Judgment",out:["Risk Mgmt Plan"],why:"Set how risk will be handled, including risk appetite and categories."},
+  {ka:"Risk",grp:"Planning",name:"Identify Risks",in:["PM Plan","Project Docs"],tool:"Brainstorming",out:["Risk Register","Risk Report"],why:"Find the risks and record them. Outputs are the risk register and risk report."},
+  {ka:"Risk",grp:"Planning",name:"Perform Qualitative Risk Analysis",in:["Risk Register"],tool:"Probability & Impact Matrix",out:["Prioritized Risk Register"],why:"Prioritize risks fast using probability and impact. Subjective and quick. Always done."},
+  {ka:"Risk",grp:"Planning",name:"Perform Quantitative Risk Analysis",in:["Risk Register","Risk Report"],tool:"Monte Carlo Simulation",out:["Updated Risk Report"],why:"Put numbers on the big risks. Monte Carlo models overall impact. Not always done."},
+  {ka:"Risk",grp:"Planning",name:"Plan Risk Responses",in:["Risk Register","Risk Report"],tool:"Response Strategies",out:["Change Requests","Updated Docs"],why:"Decide the strategy per risk: avoid, transfer, mitigate, accept; for opportunities exploit, share, enhance."},
+  {ka:"Risk",grp:"Executing",name:"Implement Risk Responses",in:["Risk Register","Risk Report"],tool:"Expert Judgment",out:["Change Requests"],why:"A 6th edition addition people forget. Actually carry out the planned responses."},
+  {ka:"Risk",grp:"Monitoring & Controlling",name:"Monitor Risks",in:["PM Plan","Work Performance Data"],tool:"Audits",out:["Work Performance Info","Change Requests"],why:"Track known risks, watch for new ones, and check that responses work."},
+  // PROCUREMENT (3)
+  {ka:"Procurement",grp:"Planning",name:"Plan Procurement Management",in:["PM Plan","Requirements Docs"],tool:"Make-or-Buy Analysis",out:["Procurement Mgmt Plan","Bid Documents"],why:"Decide what to buy versus build. Make-or-buy analysis drives it."},
+  {ka:"Procurement",grp:"Executing",name:"Conduct Procurements",in:["Bid Documents","Seller Proposals"],tool:"Proposal Evaluation",out:["Selected Sellers","Agreements"],why:"Get proposals, pick sellers, and sign agreements."},
+  {ka:"Procurement",grp:"Monitoring & Controlling",name:"Control Procurements",in:["Agreements","Work Performance Data"],tool:"Claims Administration",out:["Closed Procurements","Change Requests"],why:"Manage the contract and relationships, then close procurements."},
+  // STAKEHOLDER (4)
+  {ka:"Stakeholder",grp:"Initiating",name:"Identify Stakeholders",in:["Project Charter","Business Documents"],tool:"Stakeholder Analysis",out:["Stakeholder Register"],why:"One of only two Initiating processes. Output is the stakeholder register."},
+  {ka:"Stakeholder",grp:"Planning",name:"Plan Stakeholder Engagement",in:["Project Charter","Stakeholder Register"],tool:"Assumption Analysis",out:["Stakeholder Engagement Plan"],why:"Decide how to move each stakeholder toward support."},
+  {ka:"Stakeholder",grp:"Executing",name:"Manage Stakeholder Engagement",in:["Engagement Plan","Comms Mgmt Plan"],tool:"Communication Skills",out:["Change Requests"],why:"Actively work with stakeholders to keep them engaged."},
+  {ka:"Stakeholder",grp:"Monitoring & Controlling",name:"Monitor Stakeholder Engagement",in:["PM Plan","Work Performance Data"],tool:"Data Analysis",out:["Work Performance Info","Change Requests"],why:"Check that engagement strategies are working and adjust."},
+];
+const DG_FIG = '<svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><circle cx="13" cy="6" r="5" fill="#fff"/><line x1="13" y1="11" x2="13" y2="22" stroke="#fff" stroke-width="2.5"/><line x1="13" y1="14" x2="5" y2="19" stroke="#fff" stroke-width="2.5"/><line x1="13" y1="14" x2="21" y2="19" stroke="#fff" stroke-width="2.5"/><line x1="13" y1="22" x2="7" y2="29" stroke="#fff" stroke-width="2.5"/><line x1="13" y1="22" x2="19" y2="29" stroke="#fff" stroke-width="2.5"/></svg>';
+let dgState = { list: shuffle([...PROC]), idx:0, filter:"all", seen:new Set(), why:false };
+function dgFilter(ka){
+  dgState.filter = ka;
+  const base = ka==="all" ? [...PROC] : PROC.filter(p=>p.ka===ka);
+  dgState.list = ka==="all" ? shuffle(base) : base; // keep KA order when filtered (structure first)
+  dgState.idx=0; dgState.seen=new Set(); dgState.why=false;
+  renderDiagram();
+}
+function renderDiagram(){
+  const p = dgState.list[dgState.idx]; if(!p) return;
+  dgState.seen.add(p.name);
+  const el = document.getElementById("dgCard"); if(!el) return;
+  el.className = "dg-card";
+  el.innerHTML =
+    '<div class="dg-head"><span class="dg-ka">'+p.ka+'</span><span class="dg-grp">'+p.grp+'</span><div class="dg-name">'+p.name+'</div></div>'+
+    '<div class="dg-flow">'+
+      '<div class="dg-band"><div class="dg-band-label">Inputs</div><div class="dg-chips">'+p.in.map(x=>'<span class="dg-chip in">'+x+'</span>').join('')+'</div></div>'+
+      '<div class="dg-arrow">&#9660;</div>'+
+      '<div class="dg-proc"><div class="dg-proc-fig">'+DG_FIG+'</div><div class="dg-proc-name">'+p.name+'</div><div class="dg-tool"><span>Tool:</span> '+p.tool+'</div></div>'+
+      '<div class="dg-arrow">&#9660;</div>'+
+      '<div class="dg-band"><div class="dg-band-label">Outputs</div><div class="dg-chips">'+p.out.map(x=>'<span class="dg-chip out">'+x+'</span>').join('')+'</div></div>'+
+    '</div>'+
+    '<button class="btn btn-secondary dg-why-btn" onclick="dgToggleWhy()">'+(dgState.why?'Hide':'💡 Why it matters')+'</button>'+
+    (dgState.why?'<div class="dg-why">'+p.why+'</div>':'');
+  const total = dgState.list.length, seen = dgState.seen.size;
+  const cnt = document.getElementById("dgCount");
+  if(cnt) cnt.textContent = (dgState.idx+1)+' / '+total+' · seen '+seen+'/'+total;
+}
+function dgToggleWhy(){ dgState.why=!dgState.why; renderDiagram(); }
+function dgNext(){
+  const n = dgState.list.length;
+  for(let s=1;s<=n;s++){ const i=(dgState.idx+s)%n; if(!dgState.seen.has(dgState.list[i].name)){ dgState.idx=i; dgState.why=false; renderDiagram(); return; } }
+  if(dgState.filter==="all") dgState.list = shuffle(dgState.list);
+  dgState.seen=new Set(); dgState.idx=0; dgState.why=false; renderDiagram();
+  showToast('All '+n+' seen. Fresh pass. 🔀','success');
+}
+function dgPrev(){ dgState.idx=(dgState.idx-1+dgState.list.length)%dgState.list.length; dgState.why=false; renderDiagram(); }
+function dgShuffle(){ dgState.list=shuffle(dgState.list); dgState.idx=0; dgState.seen=new Set(); dgState.why=false; renderDiagram(); showToast('Shuffled 🔀'); }
+function dgSpeak(){ const p=dgState.list[dgState.idx]; if(!p) return; speak(p.name+'. '+p.ka+', '+p.grp+'. Inputs: '+p.in.join(', ')+'. Tool: '+p.tool+'. Outputs: '+p.out.join(', ')+'. '+p.why); }
+
+// ══════════════════════════════════════
 // FLASHCARDS
 // ══════════════════════════════════════
 const FLASHCARDS = [
@@ -4051,11 +4222,10 @@ function renderVideoGrid(){
 }
 function playVideo(i){
   const v = VIDEOS[i];
-  const frame = document.getElementById('videoFrame');
-  // YouTube search-playlist embed: loads the most relevant video for the topic
-  frame.src = `https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(v.q)}`;
-  document.querySelector('.video-stage').scrollIntoView({behavior:'smooth'});
-  showToast('Loading: ' + v.t);
+  // YouTube killed the search-embed (it showed "video unavailable"). Open the search
+  // in a new tab instead, which always works, and let the learner pick the best result.
+  window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(v.q)}`, '_blank');
+  showToast('Opening YouTube: ' + v.t);
 }
 function loadCustomVideo(){
   const raw = document.getElementById('videoUrl').value.trim();
@@ -4800,6 +4970,7 @@ function showPage(pageId) {
 
   if (pageId === 'today') renderToday();
   if (pageId === 'walk') renderWalk();
+  if (pageId === 'diagrams') renderDiagram();
   if (pageId === 'study') renderQuestion();
   if (pageId === 'wronglog') renderWrongLog();
   if (pageId === 'studylog') renderStudyLog();
