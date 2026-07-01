@@ -1734,7 +1734,7 @@
 <div class="page" id="page-videos">
   <div class="deck-intro">
     <h2>Video <em>Vault</em></h2>
-    <p>Watch the concept taught out loud. Pick a topic to load it in the player below, or paste any YouTube link to study it right here. Each card opens a focused search on the best free PMP teachers (Andrew Ramdayal, Muhammad, PMI).</p>
+    <p>Tap any card to open that topic on YouTube (the app on your phone, or a new tab on desktop) with the best free PMP teachers (Andrew Ramdayal, Muhammad, PMI). To watch inside this app, paste a specific video link below and press Load.</p>
   </div>
   <div class="video-stage"><iframe id="videoFrame" src="" title="PMP video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
   <div class="calc-row" style="margin-bottom:20px">
@@ -4211,14 +4211,14 @@ function renderVideoGrid(){
   const grid = document.getElementById('videoGrid');
   if(grid.children.length) return;
   grid.innerHTML = VIDEOS.map((v,i)=>`
-    <div class="vid-card" onclick="playVideo(${i})">
+    <a class="vid-card" href="https://www.youtube.com/results?search_query=${encodeURIComponent(v.q)}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
       <div class="vid-thumb"><div class="play">▶</div><span class="dur">${v.dur}</span></div>
       <div class="vid-meta">
         <div class="vt">${v.t}</div>
         <div class="vc">${v.c}</div>
         <span class="vid-domain" style="background:${domColor(v.d)}22;color:${domColor(v.d)}">${v.d}</span>
       </div>
-    </div>`).join('');
+    </a>`).join('');
 }
 function playVideo(i){
   const v = VIDEOS[i];
