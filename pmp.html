@@ -1158,8 +1158,9 @@
   <div id="questionArea"></div>
 
   <div class="q-nav">
-    <button class="btn btn-secondary" onclick="prevQ()">← Previous</button>
-    <span class="q-progress-text" id="qProgressText">0 correct, 0 wrong</span>
+    <button class="btn btn-secondary" onclick="prevQ()">← Prev</button>
+    <span class="q-progress-text" id="qProgressText">0 seen</span>
+    <button class="btn btn-secondary" onclick="nextUnseen()" title="Jump to a question you haven't answered">⏭ New</button>
     <button class="btn btn-primary" onclick="nextQ()">Next →</button>
   </div>
 </div>
@@ -2850,8 +2851,26 @@ function filterDomain(domain, btn) {
     document.getElementById('questionArea').innerHTML = '<div class="empty-state"><div class="icon">✅</div><p>No questions in this category yet.</p></div>';
     return;
   }
-  state.currentQ = 0;
+  // Randomize the whole stack, then resume at the first question you haven't answered.
+  // This is the fix for "stuck at Q20 of 212" — you traverse the ENTIRE deck, in random
+  // order, without restarting at the front.
+  state.filteredQs = shuffle([...state.filteredQs]);
+  const u = firstUnseenIndex();
+  state.currentQ = u >= 0 ? u : 0;
   renderQuestion();
+}
+// index of the first question in the current deck you have NOT answered yet (-1 if all done)
+function firstUnseenIndex(){
+  return state.filteredQs.findIndex(q => state.answers[q.id] === undefined);
+}
+// jump straight to the next unanswered question (skips ones you've already done)
+function nextUnseen(){
+  const n = state.filteredQs.length;
+  for(let step=1; step<=n; step++){
+    const i = (state.currentQ + step) % n;
+    if(state.answers[state.filteredQs[i].id] === undefined){ state.currentQ = i; renderQuestion(); return; }
+  }
+  showToast('🎉 You have answered every question in this deck!', 'success');
 }
 
 function retakeQuestions(){
@@ -4195,15 +4214,25 @@ function prevQ() {
 
 function nextQ() {
   if (state.currentQ < state.filteredQs.length - 1) { state.currentQ++; renderQuestion(); }
-  else showToast('You reached the end of this set!');
+  else {
+    // end of the deck: don't dead-end — send them to any remaining unanswered question
+    if (firstUnseenIndex() >= 0) { nextUnseen(); showToast('Looping to the ones you haven\'t answered yet'); }
+    else showToast('🎉 Deck complete — every question answered!', 'success');
+  }
 }
 
 function updateQProgress() {
   const real = Object.values(state.answers).filter(a => !a.unsure);
   const correct = real.filter(a => a.correct).length;
   const wrong = real.length - correct;
-  const unsure = state.brushUp.length;
-  document.getElementById('qProgressText').textContent = `${correct} correct, ${wrong} wrong, ${unsure} to brush up`;
+  // deck traversal progress: how much of THIS stack you've worked through
+  const deck = state.filteredQs;
+  const seen = deck.filter(q => state.answers[q.id] !== undefined).length;
+  const total = deck.length;
+  const remaining = total - seen;
+  const pct = total ? Math.round(seen/total*100) : 0;
+  const el = document.getElementById('qProgressText');
+  if(el) el.innerHTML = `<b>${seen}/${total}</b> seen (${pct}%) · <b style="color:var(--orange)">${remaining} left</b> · ${correct}✓ ${wrong}✗`;
 }
 
 // ══════════════════════════════════════
@@ -4883,6 +4912,10 @@ async function cloudLogout(){ await sb.auth.signOut(); sbUser=null; updateSyncUI
 // INIT
 // ══════════════════════════════════════
 loadState();
+// Shuffle the practice deck once on load and resume at the first unanswered question,
+// so you always march through the whole stack instead of restarting at Q1.
+state.filteredQs = shuffle([...QUESTIONS]);
+{ const u = firstUnseenIndex(); state.currentQ = u >= 0 ? u : 0; }
 updateDashboard();
 renderToday();
 renderQuestion();
