@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T13:36:28.851447+00:00",
+  "generated_at": "2026-07-01T16:10:29.119155+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 19,
-      "matched": 16,
+      "found": 20,
+      "matched": 17,
       "error": null,
       "jobs": [
         {
@@ -90,6 +90,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4682483005",
           "posted_date": "2026-05-14T18:37:59-04:00"
+        },
+        {
+          "title": "Director, GTM Technology",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
+          "posted_date": "2026-07-01T12:08:40-04:00"
         },
         {
           "title": "Head of Customer Success & Operations",
@@ -558,6 +564,13 @@
       "source": "tebra"
     },
     {
+      "title": "Director, GTM Technology",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
+      "posted_date": "2026-07-01T12:08:40-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Head of Customer Success & Operations",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4709495005",
@@ -978,5 +991,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 68
+  "total_matched": 69
 }
