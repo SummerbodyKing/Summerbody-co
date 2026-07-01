@@ -1734,14 +1734,14 @@
 <div class="page" id="page-videos">
   <div class="deck-intro">
     <h2>Video <em>Vault</em></h2>
-    <p>Tap any card to open that topic on YouTube (the app on your phone, or a new tab on desktop) with the best free PMP teachers (Andrew Ramdayal, Muhammad, PMI). To watch inside this app, paste a specific video link below and press Load.</p>
-  </div>
-  <div class="video-stage"><iframe id="videoFrame" src="" title="PMP video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-  <div class="calc-row" style="margin-bottom:20px">
-    <input type="text" id="videoUrl" placeholder="Paste a YouTube link or video ID to watch it here" style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none">
-    <button class="btn btn-primary" onclick="loadCustomVideo()">Load</button>
+    <p><b>Tap any card below to watch on YouTube</b> (opens the YouTube app on your phone, or a new tab on desktop) with the best free PMP teachers (Andrew Ramdayal, Muhammad, PMI). Optional: paste a specific video link to play it right inside the app.</p>
   </div>
   <div class="video-grid" id="videoGrid"></div>
+  <div class="calc-row" style="margin:22px 0 12px">
+    <input type="text" id="videoUrl" placeholder="Optional: paste a YouTube link to play it inside the app" style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none">
+    <button class="btn btn-primary" onclick="loadCustomVideo()">Load</button>
+  </div>
+  <div class="video-stage" id="videoStage" style="display:none"><iframe id="videoFrame" src="" title="PMP video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 </div>
 
 </main>
@@ -4233,7 +4233,10 @@ function loadCustomVideo(){
   let id = raw;
   const m = raw.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/);
   if(m) id = m[1];
+  const stage = document.getElementById('videoStage');
+  stage.style.display = 'block';
   document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${id}`;
+  stage.scrollIntoView({behavior:'smooth'});
   showToast('Loaded your video');
 }
 
