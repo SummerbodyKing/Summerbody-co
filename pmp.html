@@ -1137,14 +1137,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 88</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 92</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">88 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">92 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2370,6 +2370,35 @@ const QUESTIONS = [
     options:["A. The process is fine, ignore it","B. A non-random pattern (rule of seven) that should be investigated","C. The project is over budget","D. A compliance violation"],
     answer:1,
     explanation:"<strong>Rule of seven:</strong> seven or more consecutive points on one side of the mean signal a non-random pattern, even inside the control limits. It is an assignable cause worth investigating before it becomes an out-of-control condition."
+  },
+  // ── STAKEHOLDER SEQUENCE (added from wrong-answer loop, July 1) ──
+  {
+    id:89, domain:"People", difficulty:"medium", principle:"Stakeholder sequence",
+    text:"A project was approved by the PMO and is now in the planning phase. The sponsor gave the project manager a list of all project stakeholders. What is the NEXT activity?",
+    options:["A. Analyze the stakeholders","B. Monitor stakeholder engagement","C. Manage (engage) the stakeholders","D. Identify the stakeholders"],
+    answer:0,
+    explanation:"<strong>Locate yourself in the flow.</strong> The list of all stakeholders is the Stakeholder Register, the output of Identify Stakeholders, so identification is DONE. Next you ANALYZE them (power, interest, current engagement) before you can plan engagement. Traps: (D) Identify is already finished, the stem told you the list exists. (C) Manage/Engage is Executing, but you are in planning. (B) Monitor is Monitoring and Controlling, even further ahead. Signals: 'list of all stakeholders' means identify is complete; 'planning phase' rules out Engage and Monitor."
+  },
+  {
+    id:90, domain:"People", difficulty:"medium", principle:"Stakeholder sequence",
+    text:"A project manager just completed Identify Stakeholders and holds a complete Stakeholder Register. Before writing the Stakeholder Engagement Plan, what is the next step?",
+    options:["A. Start managing engagement","B. Assess each stakeholder's power, interest, and current engagement","C. Re-identify the stakeholders","D. Close the stakeholder process"],
+    answer:1,
+    explanation:"<strong>Analyze before you plan.</strong> With the register complete, you assess and classify stakeholders (power/interest grid, engagement assessment matrix) so the engagement plan is built on real analysis. (A) is Executing, too early. (C) is already done. (D) invents a process that does not exist."
+  },
+  {
+    id:91, domain:"People", difficulty:"medium", principle:"Stakeholder sequence",
+    text:"During planning, a project manager builds a power/interest grid to sort stakeholders. What activity is that, and which process consumes the result?",
+    options:["A. Monitoring, for Monitor Stakeholder Engagement","B. Analysis, for Plan Stakeholder Engagement","C. Identification, for Identify Stakeholders","D. Engagement, for Manage Stakeholder Engagement"],
+    answer:1,
+    explanation:"<strong>The power/interest grid is stakeholder analysis.</strong> Its result feeds Plan Stakeholder Engagement, where you decide how to engage each group. It is not monitoring (A) or execution (D), and while a simple grid can appear during Identify, sorting by power/interest to drive strategy is the analysis that leads into planning (B)."
+  },
+  {
+    id:92, domain:"People", difficulty:"medium", principle:"Stakeholder sequence",
+    text:"A sponsor hands the project manager a finished stakeholder list on day one of planning. A teammate says the team should start emailing everyone the status now. Why is that the wrong move?",
+    options:["A. Status reports are not allowed during planning","B. You analyze and plan engagement first; broadcasting before analysis wastes effort and can alienate high-power stakeholders","C. Only the sponsor may contact stakeholders","D. Identification is not finished yet"],
+    answer:1,
+    explanation:"<strong>Analyze and plan before you act.</strong> Different stakeholders need different messages, channels, and frequency. Blasting one status to all of them ignores their power and interest and can damage the ones who matter most. (A) is false, (C) is false, (D) contradicts the stem (the list is finished)."
   }
 ];
 
