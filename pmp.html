@@ -849,8 +849,8 @@
 
   .walk-seg { border-radius:22px; padding:26px 22px; margin-bottom:18px; border:2px solid; animation:mmFade .35s ease; }
   .walk-seg.warmup   { background:linear-gradient(135deg,#2a1500,var(--surface)); border-color:#ff8c42; }
-  .walk-seg.teach    { background:linear-gradient(135deg,#0a1f2e,var(--surface)); border-color:#38bdf8; }
-  .walk-seg.quiz     { background:linear-gradient(135deg,#1a0033,var(--surface)); border-color:#a855f7; }
+  .walk-seg.teach    { background:linear-gradient(135deg,#1c0a00,var(--surface)); border-color:var(--orange); }
+  .walk-seg.quiz     { background:linear-gradient(135deg,#241000,var(--surface)); border-color:#ff8c42; }
   .walk-seg.teachback{ background:linear-gradient(135deg,#06210f,var(--surface)); border-color:#22c55e; }
   .walk-seg.scenario { background:linear-gradient(135deg,#2a0a16,var(--surface)); border-color:#f43f5e; }
   .walk-seg.cooldown,.walk-seg.intro { background:linear-gradient(135deg,#160700,var(--surface)); border-color:var(--orange); }
@@ -867,14 +867,14 @@
   .walk-opts { display:grid; gap:10px; margin-top:6px; }
   .walk-opt { text-align:left; padding:15px 16px; border:2px solid var(--border); border-radius:14px; background:var(--surface2); color:var(--text);
     font-size:15.5px; font-weight:600; cursor:pointer; transition:all .15s; font-family:var(--font-main); display:flex; gap:12px; align-items:flex-start; }
-  .walk-opt:hover:not(:disabled){ border-color:#a855f7; }
+  .walk-opt:hover:not(:disabled){ border-color:var(--orange); }
   .walk-opt:disabled{ cursor:default; }
-  .walk-opt .wl { font-weight:900; color:#a855f7; flex:0 0 auto; }
+  .walk-opt .wl { font-weight:900; color:var(--orange); flex:0 0 auto; }
   .walk-opt.right { border-color:var(--green); background:rgba(34,197,94,.18); }
   .walk-opt.right .wl { color:var(--green); }
   .walk-opt.wrong { border-color:var(--red); background:rgba(239,68,68,.16); }
   .walk-opt.wrong .wl { color:var(--red); }
-  .walk-explain { margin-top:14px; padding:14px 16px; background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.35); border-radius:12px; font-size:14.5px; line-height:1.6; }
+  .walk-explain { margin-top:14px; padding:14px 16px; background:rgba(255,85,0,.1); border:1px solid rgba(255,85,0,.35); border-radius:12px; font-size:14.5px; line-height:1.6; }
 
   .walk-ctrls { position:sticky; bottom:84px; display:flex; gap:10px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:12px; box-shadow:0 -6px 24px rgba(0,0,0,.3); }
   .walk-ctrls .btn { flex:1; justify-content:center; }
