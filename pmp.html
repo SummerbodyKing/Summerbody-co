@@ -3977,32 +3977,45 @@ const FLASHCARDS = [
   {type:'Agile', term:'Burndown / Burnup', def:'Burndown shows work remaining trending to zero. A flat risk burndown means responses are not working.'},
   {type:'Agile', term:'Velocity', def:'Average story points a team completes per sprint. Used to forecast, never to compare teams.'},
 ];
-let fcState = { list: [...FLASHCARDS], idx: 0, flipped: false, filter: 'all' };
+let fcState = { list: shuffle([...FLASHCARDS]), idx: 0, flipped: false, filter: 'all', seen: new Set() };
 function fcFilter(type, btn){
   fcState.filter = type;
   document.querySelectorAll('#fcFilters .filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  fcState.list = type==='all' ? [...FLASHCARDS] : FLASHCARDS.filter(c=>c.type===type);
-  fcState.idx = 0; fcState.flipped = false;
+  const base = type==='all' ? [...FLASHCARDS] : FLASHCARDS.filter(c=>c.type===type);
+  fcState.list = shuffle(base);
+  fcState.idx = 0; fcState.flipped = false; fcState.seen = new Set();
   renderFlashcard();
 }
 function renderFlashcard(){
   const c = fcState.list[fcState.idx];
   if(!c) return;
+  fcState.seen.add(c.term); // mark this card as seen so we never repeat it until the deck is done
   const card = document.getElementById('flashcard');
   card.classList.remove('flipped'); fcState.flipped = false;
   document.getElementById('fcTag').textContent = c.type;
   document.getElementById('fcTerm').textContent = c.term;
   document.getElementById('fcDef').textContent = c.def;
-  document.getElementById('fcCount').textContent = `${fcState.idx+1} / ${fcState.list.length}`;
+  const total = fcState.list.length, seen = fcState.seen.size, left = total - seen;
+  document.getElementById('fcCount').textContent = left > 0 ? `seen ${seen}/${total} · ${left} left` : `all ${total} seen ✓`;
 }
 function flipCard(){
   fcState.flipped = !fcState.flipped;
   document.getElementById('flashcard').classList.toggle('flipped', fcState.flipped);
 }
-function fcNext(){ fcState.idx = (fcState.idx+1)%fcState.list.length; renderFlashcard(); }
+// advance to the next card you have NOT seen; when the whole deck is done, start a fresh shuffled pass
+function fcNext(){
+  const n = fcState.list.length;
+  for(let step=1; step<=n; step++){
+    const i = (fcState.idx + step) % n;
+    if(!fcState.seen.has(fcState.list[i].term)){ fcState.idx = i; renderFlashcard(); return; }
+  }
+  fcState.list = shuffle(fcState.list); fcState.seen = new Set(); fcState.idx = 0;
+  renderFlashcard();
+  showToast('Full deck complete. Fresh shuffled pass. 🔀', 'success');
+}
 function fcPrev(){ fcState.idx = (fcState.idx-1+fcState.list.length)%fcState.list.length; renderFlashcard(); }
-function fcShuffle(){ for(let i=fcState.list.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [fcState.list[i],fcState.list[j]]=[fcState.list[j],fcState.list[i]]; } fcState.idx=0; renderFlashcard(); showToast('Deck shuffled'); }
+function fcShuffle(){ fcState.list = shuffle(fcState.list); fcState.idx=0; fcState.seen=new Set(); renderFlashcard(); showToast('Deck shuffled'); }
 function speakCard(){ const c=fcState.list[fcState.idx]; if(c) speak(`${c.term}. ${c.def}`); }
 
 // ══════════════════════════════════════
