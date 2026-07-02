@@ -915,6 +915,14 @@
   .dg-why { margin-top:12px; padding:14px 16px; background:rgba(255,85,0,.1); border:1px solid rgba(255,85,0,.35); border-radius:12px; font-size:14px; line-height:1.6; color:var(--text); }
   .dg-nav { display:flex; gap:12px; margin-top:16px; }
   .dg-nav .btn { flex:1; justify-content:center; }
+
+  /* ════ GLOSSARY ════ */
+  .gloss-item { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin-bottom:10px; }
+  .gloss-term { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .gloss-abbr { font-size:16px; font-weight:900; color:var(--orange); }
+  .gloss-full { font-size:12.5px; color:var(--text-dim); font-weight:600; }
+  .gloss-hear { margin-left:auto; background:none; border:1px solid var(--border); border-radius:8px; padding:3px 8px; cursor:pointer; font-size:13px; }
+  .gloss-def { font-size:13.5px; line-height:1.55; color:var(--text); margin-top:6px; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -943,6 +951,7 @@
     <button class="nav-tab" data-page="path" onclick="showPage('path')">14-Day Path</button>
     <button class="nav-tab" data-page="learn" onclick="showPage('learn')">Learn</button>
     <button class="nav-tab" data-page="diagrams" onclick="showPage('diagrams')">Diagrams</button>
+    <button class="nav-tab" data-page="glossary" onclick="showPage('glossary')">Glossary</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
     <button class="nav-tab" data-page="flashcards" onclick="showPage('flashcards')">Flashcards</button>
     <button class="nav-tab" data-page="formulas" onclick="showPage('formulas')">Formula Lab</button>
@@ -968,6 +977,7 @@
   <button class="mnav-btn" data-page="path" onclick="showPage('path')"><span>🗺️</span>Path</button>
   <button class="mnav-btn" data-page="learn" onclick="showPage('learn')"><span>📊</span>Learn</button>
   <button class="mnav-btn" data-page="diagrams" onclick="showPage('diagrams')"><span>🧩</span>Flow</button>
+  <button class="mnav-btn" data-page="glossary" onclick="showPage('glossary')"><span>📖</span>Terms</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
   <button class="mnav-btn" data-page="flashcards" onclick="showPage('flashcards')"><span>🃏</span>Cards</button>
   <button class="mnav-btn" data-page="formulas" onclick="showPage('formulas')"><span>🧮</span>Formulas</button>
@@ -1033,6 +1043,19 @@
     <button class="btn btn-secondary" onclick="dgPrev()">← Prev</button>
     <button class="btn btn-primary" onclick="dgNext()">Next →</button>
   </div>
+</div>
+
+<!-- ══════════════════════════════════════════ GLOSSARY ══ -->
+<div class="page" id="page-glossary">
+  <div class="dg-hero">
+    <h1>Glossary <em>of Terms</em></h1>
+    <p>Every acronym and tool in plain English. Search or tap a letter. Learn the words and the rest gets easier.</p>
+  </div>
+  <div class="dg-controls">
+    <input type="text" id="glossSearch" placeholder="Search a term (EVM, OPA, WBS, mitigate...)" oninput="renderGlossary()" style="flex:1;min-width:200px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text);font-size:14px;outline:none">
+    <button class="btn btn-secondary btn-sm" onclick="document.getElementById('glossSearch').value='';renderGlossary()">Clear</button>
+  </div>
+  <div id="glossList"></div>
 </div>
 
 <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
@@ -4203,6 +4226,73 @@ function dgShuffle(){ dgState.list=shuffle(dgState.list); dgState.idx=0; dgState
 function dgSpeak(){ const p=dgState.list[dgState.idx]; if(!p) return; speak(p.name+'. '+p.ka+', '+p.grp+'. Inputs: '+p.in.join(', ')+'. Tool: '+p.tool+'. Outputs: '+p.out.join(', ')+'. '+p.why); }
 
 // ══════════════════════════════════════
+// 📖 GLOSSARY — every acronym and tool in plain English
+// ══════════════════════════════════════
+const GLOSSARY = [
+  {t:"EVM",f:"Earned Value Management",d:"A method that uses PV, EV, and AC together to tell you if a project is over or under budget and ahead of or behind schedule."},
+  {t:"PV",f:"Planned Value",d:"The budgeted cost of the work you planned to have done by now. PV = BAC x planned percent complete."},
+  {t:"EV",f:"Earned Value",d:"The value of the work you have actually completed. EV = BAC x actual percent complete. Always start EVM formulas with EV."},
+  {t:"AC",f:"Actual Cost",d:"The money you have actually spent on the work done so far."},
+  {t:"BAC",f:"Budget at Completion",d:"The total approved budget for the whole project."},
+  {t:"CV",f:"Cost Variance",d:"CV = EV minus AC. Negative means over budget."},
+  {t:"SV",f:"Schedule Variance",d:"SV = EV minus PV. Negative means behind schedule."},
+  {t:"CPI",f:"Cost Performance Index",d:"CPI = EV divided by AC. Below 1 means over budget, above 1 means under budget."},
+  {t:"SPI",f:"Schedule Performance Index",d:"SPI = EV divided by PV. Below 1 means behind schedule, above 1 means ahead."},
+  {t:"EAC",f:"Estimate at Completion",d:"Forecast of the total cost at the end. Typical EAC = BAC divided by CPI."},
+  {t:"ETC",f:"Estimate to Complete",d:"The money still needed to finish. ETC = EAC minus AC."},
+  {t:"VAC",f:"Variance at Completion",d:"How much over or under budget you will finish. VAC = BAC minus EAC."},
+  {t:"TCPI",f:"To-Complete Performance Index",d:"The cost efficiency you must hold on the remaining work to still hit the budget. (BAC minus EV) divided by (BAC minus AC)."},
+  {t:"EMV",f:"Expected Monetary Value",d:"Probability times impact. Used to size a risk in dollars and set contingency reserves."},
+  {t:"PERT",f:"Program Evaluation and Review Technique",d:"A three-point estimate. (Optimistic + 4 x Most likely + Pessimistic) divided by 6."},
+  {t:"WBS",f:"Work Breakdown Structure",d:"Breaking deliverables into smaller pieces. The smallest piece is a work package. Its output is the scope baseline."},
+  {t:"OPA",f:"Organizational Process Assets",d:"Things your own company made that help you: templates, processes, historical data, lessons learned. Our stuff."},
+  {t:"EEF",f:"Enterprise Environmental Factors",d:"Conditions you cannot control: market, regulations, culture, weather, government rules. External stuff you endure."},
+  {t:"ITTO",f:"Inputs, Tools and Techniques, Outputs",d:"The structure of every process: what goes in, what you do, what comes out. Understand the flow, do not memorize the tables."},
+  {t:"RACI",f:"Responsible, Accountable, Consulted, Informed",d:"A chart that clarifies roles: who does the work, who is answerable, who gives input, who is kept in the loop."},
+  {t:"CCB",f:"Change Control Board",d:"The group that approves or rejects change requests. Every change flows through integrated change control."},
+  {t:"PMIS",f:"Project Management Information System",d:"The software and tools used to plan, execute, and track the project."},
+  {t:"SOW",f:"Statement of Work",d:"A description of the products or services to be delivered, often used in procurement."},
+  {t:"RFP",f:"Request for Proposal",d:"A procurement document asking sellers to propose how they would meet a need and at what price."},
+  {t:"NPV",f:"Net Present Value",d:"The value of future cash flows in today's dollars. Higher NPV is better when picking projects."},
+  {t:"IRR",f:"Internal Rate of Return",d:"The percentage return a project is expected to earn. Higher IRR is better."},
+  {t:"ROI",f:"Return on Investment",d:"How much value you get back compared to what you put in."},
+  {t:"PMO",f:"Project Management Office",d:"A group that sets standards and supports or governs projects across the organization."},
+  {t:"DoD",f:"Definition of Done",d:"An agile checklist that says exactly what finished means for a piece of work. Builds shared understanding."},
+  {t:"MVP",f:"Minimum Viable Product",d:"The smallest version that delivers value, released early to learn and get feedback."},
+  {t:"KPI",f:"Key Performance Indicator",d:"A measure that shows whether you are hitting a goal."},
+  {t:"CR",f:"Change Request",d:"A formal ask to change scope, schedule, cost, or a plan. It is an input to integrated change control; approved change requests are the output."},
+  {t:"RAM",f:"Responsibility Assignment Matrix",d:"A grid mapping work to the people or groups responsible. RACI is one type."},
+  {t:"SPI vs CPI",f:"Schedule vs Cost index",d:"SPI is about time (uses PV). CPI is about money (uses AC). Below 1 is bad for both."},
+  {t:"Decomposition",f:"Tool",d:"Breaking a big deliverable into smaller, manageable pieces. Used in Create WBS and Define Activities."},
+  {t:"Critical Path",f:"Method",d:"The longest sequence of dependent activities. It sets the shortest possible project duration. A delay on it delays the whole project."},
+  {t:"Monte Carlo",f:"Simulation",d:"Runs thousands of what-if scenarios to model overall schedule or cost risk. Used in quantitative risk analysis."},
+  {t:"SWOT",f:"Strengths, Weaknesses, Opportunities, Threats",d:"A technique to surface risks and opportunities during Identify Risks."},
+  {t:"Mitigate",f:"Risk response",d:"Reduce the probability or the impact of a threat. One of avoid, transfer, mitigate, accept."},
+  {t:"Avoid",f:"Risk response",d:"Remove the threat entirely by changing the plan so the risk cannot happen."},
+  {t:"Transfer",f:"Risk response",d:"Shift the impact of a threat to a third party, for example insurance or a contract penalty clause."},
+  {t:"Accept",f:"Risk response",d:"Take no action and set aside a reserve. Used for low risks or when other responses cost too much."},
+  {t:"Servant Leadership",f:"Mindset",d:"Leading by removing obstacles and serving the team, not commanding it. The PMI default."},
+  {t:"Gold Plating",f:"Trap",d:"The team adds extras nobody asked for. Bad, because it bypasses change control. Comes from inside."},
+  {t:"Scope Creep",f:"Trap",d:"Uncontrolled changes sneak in without change control. Bad. Comes from outside."},
+  {t:"Charter",f:"Project Charter",d:"The document that authorizes the project and names the project manager. Signed by the sponsor in Initiating."},
+  {t:"Stakeholder Register",f:"Artifact",d:"The list of stakeholders and their interest, influence, and engagement. Output of Identify Stakeholders."},
+  {t:"Risk Register",f:"Artifact",d:"The living list of identified risks, their analysis, owners, and responses. Output of Identify Risks."},
+];
+function renderGlossary(){
+  const el = document.getElementById('glossList'); if(!el) return;
+  const q = (document.getElementById('glossSearch').value||'').toLowerCase().trim();
+  const list = GLOSSARY.filter(g => !q || g.t.toLowerCase().includes(q) || g.f.toLowerCase().includes(q) || g.d.toLowerCase().includes(q))
+    .slice().sort((a,b)=>a.t.localeCompare(b.t));
+  if(!list.length){ el.innerHTML = '<div class="dg-card" style="text-align:center;color:var(--text-dim)">No term matches that. Try EVM, OPA, risk, or a formula name.</div>'; return; }
+  el.innerHTML = list.map(g=>`
+    <div class="gloss-item">
+      <div class="gloss-term"><span class="gloss-abbr">${g.t}</span><span class="gloss-full">${g.f}</span>
+        <button class="gloss-hear" onclick="speak('${g.t.replace(/'/g,'')}. ${g.f.replace(/'/g,'')}. ${g.d.replace(/'/g,'').replace(/"/g,'')}')">🔊</button></div>
+      <div class="gloss-def">${g.d}</div>
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════
 // FLASHCARDS
 // ══════════════════════════════════════
 const FLASHCARDS = [
@@ -4443,15 +4533,41 @@ const DRILL_GENS = {
     return {family:'Interpret', choices: shuffle(opts.map(o=>({t:o, correct:o===ans}))),
       prompt:`<b>EV = ${_money(ev)}</b>, <b>AC = ${_money(ac)}</b>, <b>PV = ${_money(pv)}</b>.<br>Is the project over/under budget and ahead/behind schedule?`,
       work:`CV = EV − AC = ${_money(ev-ac)} → ${over?'over budget':'under budget'}. SV = EV − PV = ${_money(ev-pv)} → ${behind?'behind schedule':'ahead of schedule'}. Compare EV to AC for cost, EV to PV for schedule.`}; },
+  // REVERSE: solve for a different variable
+  reverseEV(){ const cpi=_ri(80,120)/100, ac=_ri(20,80)*5000; const ev=cpi*ac;
+    return {family:'Reverse: find EV', fmt:_money, correct:ev, wrongs:[ac/cpi, ac-ev, ev*1.2, ev*0.8],
+      prompt:`A project has <b>CPI = ${cpi.toFixed(2)}</b> and <b>AC = ${_money(ac)}</b>.<br>What is the <b>Earned Value (EV)</b>?`,
+      work:`CPI = EV ÷ AC, so rearrange: EV = CPI × AC = ${cpi.toFixed(2)} × ${_money(ac)} = <b>${_money(ev)}</b>. Rearranging the formula is the skill.`}; },
+  reverseAC(){ const cpi=_ri(80,120)/100, ev=_ri(20,80)*5000; const ac=ev/cpi;
+    return {family:'Reverse: find AC', fmt:_money, correct:ac, wrongs:[ev*cpi, ev-cpi*1000, ac*1.25, ac*0.75],
+      prompt:`A project has <b>CPI = ${cpi.toFixed(2)}</b> and <b>EV = ${_money(ev)}</b>.<br>What was the <b>Actual Cost (AC)</b>?`,
+      work:`CPI = EV ÷ AC, so rearrange: AC = EV ÷ CPI = ${_money(ev)} ÷ ${cpi.toFixed(2)} = <b>${_money(ac)}</b>.`}; },
+  reverseBAC(){ const cpi=_ri(80,120)/100, eac=_ri(50,120)*10000; const bac=eac*cpi;
+    return {family:'Reverse: find BAC', fmt:_money, correct:bac, wrongs:[eac/cpi, eac-cpi*10000, bac*1.2, bac*0.8],
+      prompt:`Typical EAC = BAC ÷ CPI. If <b>EAC = ${_money(eac)}</b> and <b>CPI = ${cpi.toFixed(2)}</b>, what is <b>BAC</b>?`,
+      work:`EAC = BAC ÷ CPI, so BAC = EAC × CPI = ${_money(eac)} × ${cpi.toFixed(2)} = <b>${_money(bac)}</b>.`}; },
+  // FILL IN THE BLANK: know the structure
+  fillSV(){ return {family:'Fill the blank', choices: shuffle([{t:'PV',correct:true},{t:'AC',correct:false},{t:'BAC',correct:false},{t:'CPI',correct:false}]),
+      prompt:`Complete the formula: <b>SV = EV − ____</b>`,
+      work:`SV = EV − PV. Schedule Variance compares earned value to the PLAN (PV). Cost uses AC, schedule uses PV.`}; },
+  fillCPI(){ return {family:'Fill the blank', choices: shuffle([{t:'AC',correct:true},{t:'PV',correct:false},{t:'BAC',correct:false},{t:'EV',correct:false}]),
+      prompt:`Complete the formula: <b>CPI = EV ÷ ____</b>`,
+      work:`CPI = EV ÷ AC. The cost index divides earned value by what you actually spent (AC).`}; },
+  fillCV(){ return {family:'Fill the blank', choices: shuffle([{t:'AC',correct:true},{t:'PV',correct:false},{t:'EAC',correct:false},{t:'BAC',correct:false}]),
+      prompt:`Complete the formula: <b>CV = EV − ____</b>`,
+      work:`CV = EV − AC. Cost Variance compares earned value to what you actually spent (AC).`}; },
+  fillEAC(){ return {family:'Fill the blank', choices: shuffle([{t:'CPI',correct:true},{t:'SPI',correct:false},{t:'AC',correct:false},{t:'EV',correct:false}]),
+      prompt:`Complete the typical forecast: <b>EAC = BAC ÷ ____</b>`,
+      work:`EAC = BAC ÷ CPI. If your current cost efficiency continues, divide the total budget by CPI to forecast the final cost.`}; },
 };
 function drillFamiliesFor(d){
   const map = {
-    3:['cpi','spi','cv','sv','eac','interpret'],
+    3:['cpi','spi','cv','sv','eac','interpret','reverseEV','reverseAC','fillSV','fillCPI','fillCV'],
     4:['channels','pert'],
     5:['emv','interpret'],
-    10:['cpi','spi','cv','sv','eac','etc','interpret'],
+    10:['cpi','spi','cv','sv','eac','etc','interpret','reverseEV','reverseAC','reverseBAC','fillSV','fillCPI','fillCV','fillEAC'],
   };
-  return map[d] || ['cpi','spi','cv','sv','eac','etc','channels','pert','emv','interpret'];
+  return map[d] || ['cpi','spi','cv','sv','eac','etc','channels','pert','emv','interpret','reverseEV','reverseAC','reverseBAC','fillSV','fillCPI','fillCV','fillEAC'];
 }
 let curDrill = null;
 function newDrill(){
@@ -5095,6 +5211,7 @@ function showPage(pageId) {
   if (pageId === 'today') renderToday();
   if (pageId === 'walk') renderWalk();
   if (pageId === 'diagrams') renderDiagram();
+  if (pageId === 'glossary') renderGlossary();
   if (pageId === 'study') renderQuestion();
   if (pageId === 'wronglog') renderWrongLog();
   if (pageId === 'studylog') renderStudyLog();
