@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T20:23:22.082877+00:00",
+  "generated_at": "2026-07-02T21:48:54.954713+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 21,
-      "matched": 17,
+      "found": 22,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -108,6 +108,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4709493005",
           "posted_date": "2026-06-26T18:03:55-04:00"
+        },
+        {
+          "title": "Inside Sales Representative",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
+          "posted_date": "2026-07-02T16:49:18-04:00"
         },
         {
           "title": "Lead Sales & Growth Operations Analyst",
@@ -396,7 +402,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 97,
+      "found": 98,
       "matched": 16,
       "error": null,
       "jobs": [
@@ -582,6 +588,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4709493005",
       "posted_date": "2026-06-26T18:03:55-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Inside Sales Representative",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
+      "posted_date": "2026-07-02T16:49:18-04:00",
       "source": "tebra"
     },
     {
@@ -991,5 +1004,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 69
+  "total_matched": 70
 }
