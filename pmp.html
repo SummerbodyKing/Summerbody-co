@@ -1203,14 +1203,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 92</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 100</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">92 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">100 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2465,6 +2465,63 @@ const QUESTIONS = [
     options:["A. Status reports are not allowed during planning","B. You analyze and plan engagement first; broadcasting before analysis wastes effort and can alienate high-power stakeholders","C. Only the sponsor may contact stakeholders","D. Identification is not finished yet"],
     answer:1,
     explanation:"<strong>Analyze and plan before you act.</strong> Different stakeholders need different messages, channels, and frequency. Blasting one status to all of them ignores their power and interest and can damage the ones who matter most. (A) is false, (C) is false, (D) contradicts the stem (the list is finished)."
+  },
+  // ── RISK + LEADERSHIP + PROCUREMENT (added from Mini Exam 3, July 1) ──
+  {
+    id:93, domain:"People", difficulty:"easy", principle:"Servant leadership",
+    text:"A team asks what leadership quality a project manager must have above all. Which best reflects the PMI view?",
+    options:["A. Aggressiveness","B. Servant leadership","C. Positional power","D. Strict command and control"],
+    answer:1,
+    explanation:"<strong>Servant leadership.</strong> The PMI leader removes obstacles, serves and empowers the team, and puts their needs first. Aggressiveness and command-and-control are the opposite of the mindset. Positional power is authority, not leadership."
+  },
+  {
+    id:94, domain:"People", difficulty:"medium", principle:"Leadership vs management",
+    text:"A team debates whether the PM's approach is management or leadership. The PM is inspiring and motivating the team toward a shared vision. This is:",
+    options:["A. Management","B. Leadership","C. Administration","D. Directing"],
+    answer:1,
+    explanation:"<strong>Leadership.</strong> Leadership is about people, vision, motivation, and change. Management is about tasks, systems, and control (planning, budgeting, administering). Inspiring toward a shared vision is leadership, not management."
+  },
+  {
+    id:95, domain:"Process", difficulty:"easy", principle:"Identify Risks tools",
+    text:"Checklists, brainstorming, SWOT analysis, and assumption analysis are tools used for which activity?",
+    options:["A. Risk identification","B. Risk sharing","C. Quantitative risk analysis","D. Implementing risk responses"],
+    answer:0,
+    explanation:"<strong>Identify Risks.</strong> These are data-gathering and analysis tools that surface risks. Sharing is a response strategy for opportunities. Quantitative analysis uses Monte Carlo and modeling. Implementing responses comes much later."
+  },
+  {
+    id:96, domain:"Process", difficulty:"medium", principle:"Plan Risk Management first",
+    text:"Risk management just became a top priority on a project. What should the project manager do FIRST?",
+    options:["A. Identify the risks","B. Plan Risk Management","C. Perform qualitative analysis","D. Implement risk responses"],
+    answer:1,
+    explanation:"<strong>Plan the process first.</strong> Plan Risk Management defines how risk will be handled: risk appetite, categories, roles, and methods. You plan the approach before you identify anything. Jumping straight to identifying skips the plan."
+  },
+  {
+    id:97, domain:"Process", difficulty:"medium", principle:"Risk response - mitigate",
+    text:"Installing new hardware may cause downtime for critical apps. The team schedules the work overnight and prepares a rollback plan. This risk response is:",
+    options:["A. Avoid","B. Transfer","C. Mitigate","D. Accept"],
+    answer:2,
+    explanation:"<strong>Mitigate.</strong> Mitigation reduces the probability or the impact of a threat. Overnight timing and a rollback reduce the impact of downtime. Avoid would remove the cause entirely, transfer shifts it to a third party, accept does nothing."
+  },
+  {
+    id:98, domain:"Process", difficulty:"medium", principle:"Estimating under uncertainty",
+    text:"A critical project has no historical data, which adds risk to the estimates. What should the project manager do?",
+    options:["A. Refuse to estimate until data exists","B. Use expert judgment and three-point estimates, and add reserves","C. Copy another company's numbers","D. Give one fixed number to look confident"],
+    answer:1,
+    explanation:"<strong>Expert judgment plus ranged estimates and reserves.</strong> With no history, use expert judgment and three-point (PERT) estimates to capture the range, and set aside reserves for the uncertainty. A single fixed number hides the risk; refusing or copying unrelated data is worse."
+  },
+  {
+    id:99, domain:"Process", difficulty:"medium", principle:"Procurement risk transfer",
+    text:"A bidding process includes a penalty clause requiring the selected supplier to pay if they miss the deadline. This clause primarily serves to:",
+    options:["A. Transfer schedule risk to the seller","B. Increase the project scope","C. Reduce the buyer's budget","D. Skip the change control board"],
+    answer:0,
+    explanation:"<strong>Transfer schedule risk to the seller.</strong> A penalty clause is a contractual risk transfer that gives the seller a financial incentive to deliver on time. It moves the consequence of a late delivery onto the party doing the work."
+  },
+  {
+    id:100, domain:"Process", difficulty:"easy", principle:"Prioritize risks",
+    text:"To reduce the chance of project failure, which risks should the project manager focus responses on first?",
+    options:["A. Every risk equally","B. The risks with the highest probability and impact","C. Only the risks the sponsor names","D. Only the low-cost risks"],
+    answer:1,
+    explanation:"<strong>Highest probability and impact.</strong> Qualitative analysis ranks risks so you spend limited response effort on the biggest threats first. Treating all risks equally, or only chasing cheap ones, wastes effort and leaves the dangerous ones open."
   }
 ];
 
