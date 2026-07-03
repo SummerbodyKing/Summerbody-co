@@ -1231,14 +1231,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 115</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 121</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">115 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">121 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2656,6 +2656,49 @@ const QUESTIONS = [
     options:["A. Ship it and note the defect for later","B. Investigate the root cause and feed process improvements into Manage Quality","C. Escalate to the sponsor","D. Get customer sign-off in Validate Scope"],
     answer:1,
     explanation:"<strong>Control Quality inspects, then you fix the cause.</strong> Find the root cause (a fishbone diagram helps) and improve the process through Manage Quality. Shipping a known defect (A) is wrong, escalation (C) is premature, and Validate Scope (D) is customer acceptance, which comes after quality is verified."
+  },
+  // ── MASLOW, SPRINT, RISK, WORK PACKAGE (from study gaps, July 3) ──
+  {
+    id:116, domain:"People", difficulty:"medium", principle:"Maslow - meet lower needs first",
+    text:"After a reorganization is announced, a team member is anxious about job security. Using Maslow, which need must be met before recognition or growth can motivate them?",
+    options:["A. Self-actualization","B. Safety","C. Esteem","D. Social"],
+    answer:1,
+    explanation:"<strong>Safety.</strong> Maslow's needs are met bottom to top. Job security is a safety need. Until it is addressed, higher needs like esteem (recognition) or self-actualization (growth) will not motivate. Meet the lower need first."
+  },
+  {
+    id:117, domain:"People", difficulty:"easy", principle:"Maslow - the order",
+    text:"According to Maslow's hierarchy, in what order are human needs met?",
+    options:["A. Esteem, safety, physical, social, self-actualization","B. Physiological, safety, social, esteem, self-actualization","C. Social, physical, esteem, safety, self-actualization","D. Self-actualization first, then the rest"],
+    answer:1,
+    explanation:"<strong>Physiological, safety, social, esteem, self-actualization.</strong> Bottom to top. You cannot motivate with a higher need until the ones below it are satisfied."
+  },
+  {
+    id:118, domain:"People", difficulty:"easy", principle:"What a Sprint is",
+    text:"In Scrum, what is a Sprint?",
+    options:["A. A one-time planning meeting","B. A short fixed timebox in which the team builds a usable product increment","C. The full project schedule from start to finish","D. A document listing all requirements"],
+    answer:1,
+    explanation:"<strong>A short fixed timebox (usually 1 to 4 weeks) that produces a usable increment.</strong> The team commits to backlog items at planning, builds with daily standups, then holds a review and a retrospective. It is not the whole schedule (C) or a document (D)."
+  },
+  {
+    id:119, domain:"People", difficulty:"medium", principle:"Protect the Sprint",
+    text:"Halfway through a two-week Sprint, a stakeholder requests an urgent new feature. What is the correct action?",
+    options:["A. Add it to the current Sprint right away","B. Add it to the product backlog for a future Sprint","C. Extend the Sprint to fit it","D. Cancel the Sprint"],
+    answer:1,
+    explanation:"<strong>Protect the Sprint.</strong> Committed Sprint scope is not disturbed. New work goes to the product backlog and the Product Owner prioritizes it for a future Sprint. You do not inject mid-Sprint (A), stretch the timebox (C), or cancel over one request (D)."
+  },
+  {
+    id:120, domain:"Process", difficulty:"easy", principle:"Mitigate vs the other responses",
+    text:"A team takes action to REDUCE the probability of a threat without removing it entirely. Which risk response is this?",
+    options:["A. Avoid","B. Mitigate","C. Accept","D. Transfer"],
+    answer:1,
+    explanation:"<strong>Mitigate.</strong> Reduce the probability or impact, not to zero. Avoid removes the threat completely, Accept takes no action and sets a reserve, and Transfer shifts the impact to a third party."
+  },
+  {
+    id:121, domain:"Process", difficulty:"easy", principle:"Work package is the lowest WBS level",
+    text:"What is the lowest level of the Work Breakdown Structure, small enough to estimate and assign to one owner?",
+    options:["A. An activity","B. A work package","C. A control account","D. A milestone"],
+    answer:1,
+    explanation:"<strong>A work package.</strong> It is the lowest level of the WBS. Activities come later, when you decompose work packages in Define Activities. A control account sits above work packages, and a milestone is a zero-duration checkpoint."
   }
 ];
 
