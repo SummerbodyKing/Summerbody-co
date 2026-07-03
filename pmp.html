@@ -1231,14 +1231,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 121</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 126</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">121 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">126 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2699,6 +2699,42 @@ const QUESTIONS = [
     options:["A. An activity","B. A work package","C. A control account","D. A milestone"],
     answer:1,
     explanation:"<strong>A work package.</strong> It is the lowest level of the WBS. Activities come later, when you decompose work packages in Define Activities. A control account sits above work packages, and a milestone is a zero-duration checkpoint."
+  },
+  // ── AGILE MISSES from Study Hall Mini Exam 4 (July 3) ──
+  {
+    id:122, domain:"People", difficulty:"medium", principle:"MVP and Product Owner release decision",
+    text:"After several releases, the Product Owner wants to release the product even though a few low-priority features are not done. What should the project manager support?",
+    options:["A. Delay the release until every feature is complete","B. Support the Product Owner's decision to release the valuable increment; the PO owns value and release decisions","C. Escalate the decision to the sponsor","D. Add the missing features to the current sprint and extend it"],
+    answer:1,
+    explanation:"<strong>Deliver value early.</strong> Agile ships a minimum viable product once the core value is there, and the Product Owner owns the release decision. Low-priority features stay in the backlog. Waiting for everything (A) delays value; extending the sprint (D) breaks the timebox."
+  },
+  {
+    id:123, domain:"Process", difficulty:"medium", principle:"Welcome change into the backlog",
+    text:"During the fourth iteration of an agile project, the customer requests a technical change to the deliverable. What should the team do?",
+    options:["A. Refuse; the plan is already set","B. Add it to the product backlog for the Product Owner to prioritize into a future iteration","C. Stop the current iteration and implement it now","D. Require a formal change request and change control board approval"],
+    answer:1,
+    explanation:"<strong>Agile welcomes change.</strong> The request enters the product backlog, the PO prioritizes it, and it is pulled into a later iteration. The current iteration's scope is protected. Heavy change control (D) is the predictive approach, not agile."
+  },
+  {
+    id:124, domain:"Business Environment", difficulty:"hard", principle:"Compressed timeline means MVP",
+    text:"Soon after kickoff of a 24-month project, the sponsor says the timeline must be much shorter. What is the best agile response?",
+    options:["A. Tell the sponsor it cannot be done","B. Evaluate the backlog, prioritize the essential features, and deliver an MVP within the new timeline","C. Add expensive resources to crash the schedule","D. Keep the original plan and hope it works out"],
+    answer:1,
+    explanation:"<strong>Reprioritize to the highest-value subset.</strong> Deliver an MVP within the new constraint. Refusing (A) or hoping (D) is not managing, and crashing (C) adds cost and is not the agile-first move."
+  },
+  {
+    id:125, domain:"People", difficulty:"medium", principle:"Daily Standup surfaces blockers",
+    text:"At the end of an iteration, a team member reports a task is unfinished because of an issue that appeared several days earlier but was never raised. What is the root problem and the fix?",
+    options:["A. The team member is incompetent and should be replaced","B. Blockers were not surfaced at the Daily Standup; reinforce raising impediments daily so they are removed fast","C. The iteration was simply too long","D. The Product Owner failed to prioritize the work"],
+    answer:1,
+    explanation:"<strong>Transparency at the Daily Standup.</strong> The standup exists to surface blockers early so the Scrum Master can remove them. A hidden, days-old issue is a communication failure, not a personnel one."
+  },
+  {
+    id:126, domain:"People", difficulty:"medium", principle:"Sustainable pace and velocity",
+    text:"A project manager is working with a new team on an agile project. The team keeps missing commitments and cannot keep the pace of the sprint. What should the project manager do?",
+    options:["A. Push the team to work overtime until they catch up","B. Help the team use its actual velocity to commit to less next sprint and improve in the retrospective","C. Replace the underperforming team members","D. Extend the length of every sprint"],
+    answer:1,
+    explanation:"<strong>Sustainable pace.</strong> A new team's velocity is still settling. Let them right-size their commitment based on real velocity and improve through the retrospective. Overtime (A) burns them out, and changing the timebox (D) breaks the rhythm."
   }
 ];
 
