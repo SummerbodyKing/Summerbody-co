@@ -3984,6 +3984,93 @@ const WALKS = [
       say:`Walk three complete. Engagement levels, the power interest grid, building shared understanding, and handling resistance, all covered. Now open Practice and filter to People to drill these in writing. You just turned your weakest topic into a plan. Great work.`},
   ]
 },
+{
+  id:'w4', emoji:'📈', title:'Walk #4 — Earned Value (EVM)',
+  sub:'BAC · PV · EV · AC · CV/SV · CPI/SPI · EAC', mins:'20 min', day:3,
+  segments:[
+    {type:'intro', emoji:'🎧', tag:'Walk #4', title:'Earned Value',
+      body:`<div class="walk-seg-body">EVM is guaranteed exam points and it has been tripping you, so we lock it here. Four building blocks, then variances, indexes, and a forecast. Say the formulas out loud.</div>`,
+      say:`Welcome to Walk four, Earned Value Management. E V M is guaranteed exam points, and it has been tripping you, so we lock it here. Four building blocks, then variances, indexes, and a forecast. Say the formulas out loud with me.`},
+    {type:'warmup', emoji:'🔥', tag:'Warm-up', title:'The four building blocks',
+      body:`<div class="walk-seg-body"><ul><li><b>BAC</b>: total approved budget.</li><li><b>PV</b>: value of work you PLANNED to be done.</li><li><b>EV</b>: value of work you ACTUALLY did.</li><li><b>AC</b>: money you actually spent.</li></ul></div>
+        <div class="walk-hook">🎯 Every EVM formula starts with <b>EV</b>. EV is the hero.</div>`,
+      say:`Warm up. The four building blocks. B A C is your total approved budget. P V, planned value, is the value of the work you planned to have done by now. E V, earned value, is the value of the work you actually did. A C, actual cost, is the money you actually spent. Remember this. Every E V M formula starts with E V. E V is the hero.`},
+    {type:'teach', emoji:'➖', tag:'Teach', title:'Variances: subtract',
+      body:`<div class="walk-seg-body">Variances tell you how far off you are. You <b>subtract</b>:
+        <ul><li><b>CV = EV − AC</b> (cost). Negative means over budget.</li><li><b>SV = EV − PV</b> (schedule). Negative means behind schedule.</li></ul>EV minus the SPEND is cost. EV minus the PLAN is schedule.</div>
+        <div class="walk-hook">🎯 Negative is always bad. Subtract for a variance.</div>`,
+      say:`Variances. Variances tell you how far off you are, and you subtract. C V, cost variance, equals E V minus A C. Negative means over budget. S V, schedule variance, equals E V minus P V. Negative means behind schedule. Here is the trick. E V minus the spend, A C, is cost. E V minus the plan, P V, is schedule. Negative is always bad.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Find SV',
+      q:`A project reports EV = $200,000 and PV = $250,000. What is the Schedule Variance?`,
+      options:['-$50,000','+$50,000','-$450,000','+$450,000'],
+      answer:0, explain:`<b>SV = EV − PV = 200,000 − 250,000 = -$50,000.</b> Negative, so behind schedule. Schedule variance always uses PV, the plan.`,
+      say:`Quiz. A project reports E V of 200,000 dollars and P V of 250,000 dollars. What is the schedule variance? Negative 50,000, positive 50,000, negative 450,000, or positive 450,000? The answer is negative 50,000. S V equals E V minus P V, 200,000 minus 250,000. Negative, so behind schedule.`},
+    {type:'teach', emoji:'➗', tag:'Teach', title:'Indexes: divide',
+      body:`<div class="walk-seg-body">Indexes give you a ratio. You <b>divide</b>:
+        <ul><li><b>CPI = EV ÷ AC</b> (cost). Below 1 means over budget.</li><li><b>SPI = EV ÷ PV</b> (schedule). Below 1 means behind.</li></ul>
+        Forecast: <b>EAC = BAC ÷ CPI</b>, the projected final cost if this efficiency continues.</div>
+        <div class="walk-hook">🎯 Subtract for a variance, divide for an index. Below 1.0 is bad.</div>`,
+      say:`Indexes. Indexes give you a ratio, and you divide. C P I, cost performance index, equals E V divided by A C. Below one means over budget. S P I, schedule performance index, equals E V divided by P V. Below one means behind schedule. And the forecast. E A C, estimate at completion, equals B A C divided by C P I. That is the projected final cost if the current efficiency continues. Remember. Subtract for a variance, divide for an index. Below one point zero is bad.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Read the CPI',
+      q:`A project has EV = $300,000 and AC = $400,000. What is the CPI, and what does it mean?`,
+      options:['0.75, over budget','1.33, under budget','0.75, under budget','1.33, over budget'],
+      answer:0, explain:`<b>CPI = EV ÷ AC = 300,000 ÷ 400,000 = 0.75.</b> Below 1 means over budget. You are earning only 75 cents of value for every dollar spent.`,
+      say:`Quiz. A project has E V of 300,000 and A C of 400,000. What is the C P I and what does it mean? The answer is zero point seven five, over budget. C P I equals E V divided by A C, 300,000 divided by 400,000, which is zero point seven five. Below one means over budget. You are earning only seventy five cents of value for every dollar you spend.`},
+    {type:'teachback', emoji:'🗣️', tag:'Teach-back', title:'Say the formulas out loud',
+      body:`<div class="walk-seg-body">Out loud, right now:<ul><li>"CV equals ___. SV equals ___."</li><li>"CPI equals ___. SPI equals ___."</li><li>"EAC equals ___."</li><li>"Subtract for a ___, divide for an ___."</li></ul></div>`,
+      say:`Teach-back. Say the formulas out loud right now. C V equals what. S V equals what. C P I equals what. S P I equals what. E A C equals what. And finish this. Subtract for a variance, divide for an index. Say all of it out loud. If you blanked, replay the last two segments.`},
+    {type:'scenario', emoji:'🎭', tag:'Scenario', title:'Read the project',
+      body:`<div class="walk-seg-body">EV = $400,000, AC = $500,000, PV = $450,000. Over or under budget? Ahead or behind schedule?</div>
+        <div class="walk-hook">👉 CV = 400 − 500 = -100k, over budget. SV = 400 − 450 = -50k, behind schedule. Both negative, so over budget and behind schedule.</div>`,
+      say:`Scenario. E V is 400,000. A C is 500,000. P V is 450,000. Over or under budget, ahead or behind schedule? Work it. C V equals E V minus A C, 400 minus 500, negative 100,000, over budget. S V equals E V minus P V, 400 minus 450, negative 50,000, behind schedule. Both negative. The project is over budget and behind schedule.`},
+    {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #4 complete 💪',
+      body:`<div class="walk-seg-body">You now have the building blocks, variances, indexes, and the forecast. Go to <b>Formula Lab</b> and run the drill, forward, reverse, and fill in the blank, and tap Show me how whenever you are stuck.</div>`,
+      say:`Walk four complete. You now have the building blocks, the variances, the indexes, and the forecast. Go to the Formula Lab and run the drill, forward, reverse, and fill in the blank, and tap show me how whenever you are stuck. Great work.`},
+  ]
+},
+{
+  id:'w5', emoji:'🌀', title:'Walk #5 — Agile Manifesto',
+  sub:'4 values · key principles · Scrum basics', mins:'18 min', day:8,
+  segments:[
+    {type:'intro', emoji:'🎧', tag:'Walk #5', title:'The Agile Manifesto',
+      body:`<div class="walk-seg-body">Half the exam is agile or hybrid, so this matters as much as any topic. The four values, the key principles, and the Scrum basics. Let us go.</div>`,
+      say:`Welcome to Walk five, the Agile Manifesto. Half the exam is agile or hybrid, so this matters as much as any topic. The four values, the key principles, and the Scrum basics. Let us go.`},
+    {type:'warmup', emoji:'🔥', tag:'Warm-up', title:'What is agile?',
+      body:`<div class="walk-seg-body">Agile means: requirements <b>evolve</b>, you work in short <b>iterations</b>, you deliver <b>value early and often</b>, and you <b>welcome change</b>. It is a mindset, not just a process.</div>
+        <div class="walk-hook">🎯 The opposite of predictive. Plan a little, build a little, learn, repeat.</div>`,
+      say:`Warm up. What is agile? Agile means requirements evolve, you work in short iterations, you deliver value early and often, and you welcome change. It is a mindset, not just a process. It is the opposite of predictive. Plan a little, build a little, learn, and repeat.`},
+    {type:'teach', emoji:'📜', tag:'Teach', title:'The four values',
+      body:`<div class="walk-seg-body">The Agile Manifesto values the left side more than the right:
+        <ul><li><b>Individuals and interactions</b> over processes and tools.</li><li><b>Working software</b> over comprehensive documentation.</li><li><b>Customer collaboration</b> over contract negotiation.</li><li><b>Responding to change</b> over following a plan.</li></ul>The right side still has value. The left side has more.</div>
+        <div class="walk-hook">🎯 People, working product, collaboration, change. That is the heart of agile.</div>`,
+      say:`The four values of the Agile Manifesto. It values the left side more than the right. One. Individuals and interactions over processes and tools. Two. Working software over comprehensive documentation. Three. Customer collaboration over contract negotiation. Four. Responding to change over following a plan. The right side still has value. The left side has more. People, working product, collaboration, and change. That is the heart of agile.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Which does agile value more?',
+      q:`According to the Agile Manifesto, which does the team value MORE?`,
+      options:['Comprehensive documentation','Working software','Following the original plan no matter what','Contract negotiation over collaboration'],
+      answer:1, explain:`<b>Working software.</b> The manifesto values working software over comprehensive documentation, and responding to change over following a plan. Delivering something that works beats perfect paperwork.`,
+      say:`Quiz. According to the Agile Manifesto, which does the team value more? Comprehensive documentation, working software, following the original plan no matter what, or contract negotiation over collaboration? The answer is working software. The manifesto values working software over comprehensive documentation, and responding to change over following a plan.`},
+    {type:'teach', emoji:'🔁', tag:'Teach', title:'Key principles',
+      body:`<div class="walk-seg-body">The twelve principles, boiled down:
+        <ul><li>Satisfy the customer with <b>early and continuous delivery</b> of value.</li><li><b>Welcome changing requirements</b>, even late.</li><li>Deliver <b>frequently</b>, in short cycles.</li><li><b>Face-to-face</b> conversation is best.</li><li>Build around <b>motivated, self-organizing teams</b>.</li><li>Keep a <b>sustainable pace</b>.</li><li><b>Reflect and adjust</b> regularly (the retrospective).</li></ul></div>
+        <div class="walk-hook">🎯 Deliver value early, welcome change, trust the team, and keep improving.</div>`,
+      say:`The key principles, boiled down. Satisfy the customer with early and continuous delivery of value. Welcome changing requirements, even late. Deliver frequently in short cycles. Face to face conversation is best. Build around motivated, self organizing teams. Keep a sustainable pace so people do not burn out. And reflect and adjust regularly, which is the retrospective. Deliver value early, welcome change, trust the team, and keep improving.`},
+    {type:'teach', emoji:'🏉', tag:'Teach', title:'Scrum basics',
+      body:`<div class="walk-seg-body"><b>Roles:</b> Product Owner (owns the backlog and priorities), Scrum Master (servant leader, removes blockers), Development Team (builds it).<br><b>Events:</b> Sprint, Daily Standup, Sprint Review, Retrospective.<br><b>Artifacts:</b> Product Backlog, Sprint Backlog, Increment.</div>
+        <div class="walk-hook">🎯 The Scrum Master serves, does not command. The Product Owner decides priority, not the PM.</div>`,
+      say:`Scrum basics. Three roles. The Product Owner owns the backlog and sets priorities. The Scrum Master is a servant leader who removes blockers. The Development Team builds the product. Four events. The Sprint, the Daily Standup, the Sprint Review, and the Retrospective. Three artifacts. The Product Backlog, the Sprint Backlog, and the Increment. Remember. The Scrum Master serves, it does not command. The Product Owner decides priority, not the project manager.`},
+    {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Who sets priority?',
+      q:`On a Scrum team, who is responsible for prioritizing the product backlog?`,
+      options:['The Scrum Master','The Product Owner','The Development Team','The project sponsor'],
+      answer:1, explain:`<b>The Product Owner.</b> They own the backlog and decide priority to maximize value. The Scrum Master facilitates and removes blockers, the team builds, but priority belongs to the Product Owner.`,
+      say:`Quiz. On a Scrum team, who is responsible for prioritizing the product backlog? The Scrum Master, the Product Owner, the Development Team, or the project sponsor? The answer is the Product Owner. They own the backlog and decide priority to maximize value. The Scrum Master facilitates and removes blockers, the team builds, but priority belongs to the Product Owner.`},
+    {type:'teachback', emoji:'🗣️', tag:'Teach-back', title:'Say it out loud',
+      body:`<div class="walk-seg-body">Out loud:<ul><li>The four agile values (people, working product, collaboration, change).</li><li>The three Scrum roles and what each does.</li><li>"The Scrum Master ___, the Product Owner ___."</li></ul></div>`,
+      say:`Teach-back. Out loud. Name the four agile values. People, working product, collaboration, change. Name the three Scrum roles and what each one does. And finish this. The Scrum Master serves and removes blockers, the Product Owner owns priority. Say it all out loud.`},
+    {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #5 complete 🎉',
+      body:`<div class="walk-seg-body">Four values, the key principles, and Scrum roles, events, and artifacts. Since half the exam is agile or hybrid, this was high value. Drill it in <b>Practice</b> when you are back.</div>`,
+      say:`Walk five complete. The four values, the key principles, and Scrum roles, events, and artifacts. Since half the exam is agile or hybrid, this was high value work. Drill it in Practice when you are back. Great job.`},
+  ]
+},
 ];
 
 let walkS = null; // {wIdx, idx, autoplay, token}
