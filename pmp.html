@@ -923,6 +923,11 @@
   .gloss-full { font-size:12.5px; color:var(--text-dim); font-weight:600; }
   .gloss-hear { margin-left:auto; background:none; border:1px solid var(--border); border-radius:8px; padding:3px 8px; cursor:pointer; font-size:13px; }
   .gloss-def { font-size:13.5px; line-height:1.55; color:var(--text); margin-top:6px; }
+  .gloss-chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+  .gloss-chip { background:var(--surface2); border:1px solid var(--border); color:var(--text-dim); border-radius:20px; padding:7px 13px; font-size:12px; font-weight:700; cursor:pointer; font-family:var(--font-main); }
+  .gloss-chip.on { background:var(--orange); border-color:var(--orange); color:#fff; }
+  .gloss-cat-head { font-size:13px; font-weight:900; letter-spacing:1px; text-transform:uppercase; color:var(--orange); margin:20px 0 10px; display:flex; align-items:center; gap:8px; }
+  .gloss-cat-head span { font-size:11px; color:var(--text-muted); background:var(--surface3); padding:2px 8px; border-radius:20px; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -4316,67 +4321,138 @@ function dgSpeak(){ const p=dgState.list[dgState.idx]; if(!p) return; speak(p.na
 // 📖 GLOSSARY — every acronym and tool in plain English
 // ══════════════════════════════════════
 const GLOSSARY = [
-  {t:"EVM",f:"Earned Value Management",d:"A method that uses PV, EV, and AC together to tell you if a project is over or under budget and ahead of or behind schedule."},
-  {t:"PV",f:"Planned Value",d:"The budgeted cost of the work you planned to have done by now. PV = BAC x planned percent complete."},
-  {t:"EV",f:"Earned Value",d:"The value of the work you have actually completed. EV = BAC x actual percent complete. Always start EVM formulas with EV."},
-  {t:"AC",f:"Actual Cost",d:"The money you have actually spent on the work done so far."},
-  {t:"BAC",f:"Budget at Completion",d:"The total approved budget for the whole project."},
-  {t:"CV",f:"Cost Variance",d:"CV = EV minus AC. Negative means over budget."},
-  {t:"SV",f:"Schedule Variance",d:"SV = EV minus PV. Negative means behind schedule."},
-  {t:"CPI",f:"Cost Performance Index",d:"CPI = EV divided by AC. Below 1 means over budget, above 1 means under budget."},
-  {t:"SPI",f:"Schedule Performance Index",d:"SPI = EV divided by PV. Below 1 means behind schedule, above 1 means ahead."},
-  {t:"EAC",f:"Estimate at Completion",d:"Forecast of the total cost at the end. Typical EAC = BAC divided by CPI."},
-  {t:"ETC",f:"Estimate to Complete",d:"The money still needed to finish. ETC = EAC minus AC."},
-  {t:"VAC",f:"Variance at Completion",d:"How much over or under budget you will finish. VAC = BAC minus EAC."},
-  {t:"TCPI",f:"To-Complete Performance Index",d:"The cost efficiency you must hold on the remaining work to still hit the budget. (BAC minus EV) divided by (BAC minus AC)."},
-  {t:"EMV",f:"Expected Monetary Value",d:"Probability times impact. Used to size a risk in dollars and set contingency reserves."},
-  {t:"PERT",f:"Program Evaluation and Review Technique",d:"A three-point estimate. (Optimistic + 4 x Most likely + Pessimistic) divided by 6."},
-  {t:"WBS",f:"Work Breakdown Structure",d:"Breaking deliverables into smaller pieces. The smallest piece is a work package. Its output is the scope baseline."},
-  {t:"OPA",f:"Organizational Process Assets",d:"Things your own company made that help you: templates, processes, historical data, lessons learned. Our stuff."},
-  {t:"EEF",f:"Enterprise Environmental Factors",d:"Conditions you cannot control: market, regulations, culture, weather, government rules. External stuff you endure."},
-  {t:"ITTO",f:"Inputs, Tools and Techniques, Outputs",d:"The structure of every process: what goes in, what you do, what comes out. Understand the flow, do not memorize the tables."},
-  {t:"RACI",f:"Responsible, Accountable, Consulted, Informed",d:"A chart that clarifies roles: who does the work, who is answerable, who gives input, who is kept in the loop."},
-  {t:"CCB",f:"Change Control Board",d:"The group that approves or rejects change requests. Every change flows through integrated change control."},
-  {t:"PMIS",f:"Project Management Information System",d:"The software and tools used to plan, execute, and track the project."},
-  {t:"SOW",f:"Statement of Work",d:"A description of the products or services to be delivered, often used in procurement."},
-  {t:"RFP",f:"Request for Proposal",d:"A procurement document asking sellers to propose how they would meet a need and at what price."},
-  {t:"NPV",f:"Net Present Value",d:"The value of future cash flows in today's dollars. Higher NPV is better when picking projects."},
-  {t:"IRR",f:"Internal Rate of Return",d:"The percentage return a project is expected to earn. Higher IRR is better."},
-  {t:"ROI",f:"Return on Investment",d:"How much value you get back compared to what you put in."},
-  {t:"PMO",f:"Project Management Office",d:"A group that sets standards and supports or governs projects across the organization."},
-  {t:"DoD",f:"Definition of Done",d:"An agile checklist that says exactly what finished means for a piece of work. Builds shared understanding."},
-  {t:"MVP",f:"Minimum Viable Product",d:"The smallest version that delivers value, released early to learn and get feedback."},
-  {t:"KPI",f:"Key Performance Indicator",d:"A measure that shows whether you are hitting a goal."},
-  {t:"CR",f:"Change Request",d:"A formal ask to change scope, schedule, cost, or a plan. It is an input to integrated change control; approved change requests are the output."},
-  {t:"RAM",f:"Responsibility Assignment Matrix",d:"A grid mapping work to the people or groups responsible. RACI is one type."},
-  {t:"SPI vs CPI",f:"Schedule vs Cost index",d:"SPI is about time (uses PV). CPI is about money (uses AC). Below 1 is bad for both."},
-  {t:"Decomposition",f:"Tool",d:"Breaking a big deliverable into smaller, manageable pieces. Used in Create WBS and Define Activities."},
-  {t:"Critical Path",f:"Method",d:"The longest sequence of dependent activities. It sets the shortest possible project duration. A delay on it delays the whole project."},
-  {t:"Monte Carlo",f:"Simulation",d:"Runs thousands of what-if scenarios to model overall schedule or cost risk. Used in quantitative risk analysis."},
-  {t:"SWOT",f:"Strengths, Weaknesses, Opportunities, Threats",d:"A technique to surface risks and opportunities during Identify Risks."},
-  {t:"Mitigate",f:"Risk response",d:"Reduce the probability or the impact of a threat. One of avoid, transfer, mitigate, accept."},
-  {t:"Avoid",f:"Risk response",d:"Remove the threat entirely by changing the plan so the risk cannot happen."},
-  {t:"Transfer",f:"Risk response",d:"Shift the impact of a threat to a third party, for example insurance or a contract penalty clause."},
-  {t:"Accept",f:"Risk response",d:"Take no action and set aside a reserve. Used for low risks or when other responses cost too much."},
-  {t:"Servant Leadership",f:"Mindset",d:"Leading by removing obstacles and serving the team, not commanding it. The PMI default."},
-  {t:"Gold Plating",f:"Trap",d:"The team adds extras nobody asked for. Bad, because it bypasses change control. Comes from inside."},
-  {t:"Scope Creep",f:"Trap",d:"Uncontrolled changes sneak in without change control. Bad. Comes from outside."},
-  {t:"Charter",f:"Project Charter",d:"The document that authorizes the project and names the project manager. Signed by the sponsor in Initiating."},
-  {t:"Stakeholder Register",f:"Artifact",d:"The list of stakeholders and their interest, influence, and engagement. Output of Identify Stakeholders."},
-  {t:"Risk Register",f:"Artifact",d:"The living list of identified risks, their analysis, owners, and responses. Output of Identify Risks."},
+  // FORMULAS & EVM
+  {c:"Formulas and EVM",t:"EVM",f:"Earned Value Management",d:"Uses PV, EV, and AC together to tell you if a project is over or under budget and ahead of or behind schedule."},
+  {c:"Formulas and EVM",t:"BAC",f:"Budget at Completion",d:"The total approved budget for the whole project."},
+  {c:"Formulas and EVM",t:"PV",f:"Planned Value",d:"The budgeted cost of the work you planned to have done by now. PV = BAC times planned percent complete."},
+  {c:"Formulas and EVM",t:"EV",f:"Earned Value",d:"The value of the work you actually completed. EV = BAC times actual percent complete. Every EVM formula starts with EV."},
+  {c:"Formulas and EVM",t:"AC",f:"Actual Cost",d:"The money you actually spent on the work done so far."},
+  {c:"Formulas and EVM",t:"CV",f:"Cost Variance",d:"CV = EV minus AC. Negative means over budget."},
+  {c:"Formulas and EVM",t:"SV",f:"Schedule Variance",d:"SV = EV minus PV. Negative means behind schedule."},
+  {c:"Formulas and EVM",t:"CPI",f:"Cost Performance Index",d:"CPI = EV divided by AC. Below 1 means over budget."},
+  {c:"Formulas and EVM",t:"SPI",f:"Schedule Performance Index",d:"SPI = EV divided by PV. Below 1 means behind schedule."},
+  {c:"Formulas and EVM",t:"EAC",f:"Estimate at Completion",d:"Forecast total cost at the end. Typical EAC = BAC divided by CPI."},
+  {c:"Formulas and EVM",t:"ETC",f:"Estimate to Complete",d:"The money still needed to finish. ETC = EAC minus AC."},
+  {c:"Formulas and EVM",t:"VAC",f:"Variance at Completion",d:"How much over or under budget you will finish. VAC = BAC minus EAC."},
+  {c:"Formulas and EVM",t:"TCPI",f:"To-Complete Performance Index",d:"The efficiency you must hold on remaining work to still hit budget. (BAC minus EV) over (BAC minus AC)."},
+  {c:"Formulas and EVM",t:"EMV",f:"Expected Monetary Value",d:"Probability times impact. Sizes a risk in dollars and sets contingency reserves."},
+  {c:"Formulas and EVM",t:"Communication Channels",f:"Formula",d:"n times (n minus 1) divided by 2, where n is the number of people. When a team grows, calculate both and subtract."},
+  // CHARTS & DIAGRAMS
+  {c:"Charts and Diagrams",t:"Pareto Chart",f:"Quality tool",d:"A bar chart that ranks problems by frequency, biggest first. Shows the 80/20 rule: most issues come from a few causes."},
+  {c:"Charts and Diagrams",t:"Scatter Diagram",f:"Quality tool",d:"Plots two variables as dots to see if they are related, for example hours worked versus defects found."},
+  {c:"Charts and Diagrams",t:"Flowchart",f:"Quality tool",d:"A picture of the steps in a process, showing the order and decision points. Helps find where problems happen."},
+  {c:"Charts and Diagrams",t:"Histogram",f:"Quality tool",d:"A bar chart showing how often values occur, revealing the shape and spread of data."},
+  {c:"Charts and Diagrams",t:"Control Chart",f:"Quality tool",d:"Tracks a process over time against upper and lower control limits to see if it is stable or out of control."},
+  {c:"Charts and Diagrams",t:"Run Chart",f:"Quality tool",d:"A line graph of data over time to spot trends, without control limits."},
+  {c:"Charts and Diagrams",t:"Fishbone (Ishikawa)",f:"Cause and effect diagram",d:"A diagram shaped like a fish skeleton that traces a problem back to its root causes."},
+  {c:"Charts and Diagrams",t:"Check Sheet",f:"Quality tool",d:"A simple tally sheet for counting how often something happens as it happens."},
+  {c:"Charts and Diagrams",t:"RACI",f:"Responsible, Accountable, Consulted, Informed",d:"A chart clarifying roles: who does the work, who is answerable, who advises, who is kept informed."},
+  {c:"Charts and Diagrams",t:"Network Diagram",f:"Schedule tool",d:"Shows activities and their dependencies in order. The basis for finding the critical path."},
+  {c:"Charts and Diagrams",t:"Gantt Chart",f:"Schedule tool",d:"A bar chart of the schedule showing when each activity starts and ends across time."},
+  // ESTIMATING
+  {c:"Estimating",t:"Analogous Estimating",f:"Top-down",d:"Estimate by comparing to a similar past project. Fast and cheap, but less accurate. Uses historical data."},
+  {c:"Estimating",t:"Parametric Estimating",f:"Formula-based",d:"Estimate using a rate, for example cost per square foot times the size. More accurate when the data is good."},
+  {c:"Estimating",t:"Bottom-Up Estimating",f:"Detailed",d:"Estimate each small piece of work, then add them up. Most accurate but the most time-consuming."},
+  {c:"Estimating",t:"Three-Point (PERT)",f:"Estimating",d:"Uses optimistic, most likely, and pessimistic. Beta PERT = (O + 4M + P) divided by 6. Smooths out uncertainty."},
+  // MOTIVATION & LEADERSHIP
+  {c:"Motivation and Leadership",t:"Maslow's Hierarchy",f:"Motivation theory",d:"People meet needs in order: physical, safety, social, esteem, then self-actualization. You cannot motivate with the top until the bottom is met."},
+  {c:"Motivation and Leadership",t:"Herzberg's Two-Factor",f:"Motivation theory",d:"Hygiene factors (pay, conditions) prevent unhappiness but do not motivate. Motivators (achievement, recognition, growth) do."},
+  {c:"Motivation and Leadership",t:"McGregor Theory X and Y",f:"Motivation theory",d:"Theory X assumes people dislike work and need control. Theory Y assumes people are self-motivated and seek responsibility. PMI leans Y."},
+  {c:"Motivation and Leadership",t:"McClelland's Needs",f:"Motivation theory",d:"People are driven by a mix of three needs: Achievement, Power, and Affiliation. Match work to the person's dominant need."},
+  {c:"Motivation and Leadership",t:"Vroom's Expectancy",f:"Motivation theory",d:"People are motivated when they believe effort leads to performance and performance leads to a reward they value."},
+  {c:"Motivation and Leadership",t:"Tuckman's Stages",f:"Team development",d:"Teams grow through Forming, Storming, Norming, Performing, and Adjourning."},
+  {c:"Motivation and Leadership",t:"Servant Leadership",f:"Mindset",d:"Leading by removing obstacles and serving the team, not commanding it. The PMI default."},
+  {c:"Motivation and Leadership",t:"Situational Leadership",f:"Leadership style",d:"Adjust your style (directing, coaching, supporting, delegating) to the team's skill and confidence on the task."},
+  // RISK
+  {c:"Risk",t:"Avoid",f:"Threat response",d:"Remove the threat entirely by changing the plan so the risk cannot happen."},
+  {c:"Risk",t:"Transfer",f:"Threat response",d:"Shift the impact to a third party, for example insurance or a contract penalty clause."},
+  {c:"Risk",t:"Mitigate",f:"Threat response",d:"Reduce the probability or the impact of a threat."},
+  {c:"Risk",t:"Accept",f:"Threat or opportunity response",d:"Take no active action and set aside a reserve. Used for low risks."},
+  {c:"Risk",t:"Exploit",f:"Opportunity response",d:"Take direct action to make sure a good opportunity definitely happens."},
+  {c:"Risk",t:"Share",f:"Opportunity response",d:"Partner with a third party who can best capture an opportunity, for example a joint venture."},
+  {c:"Risk",t:"Enhance",f:"Opportunity response",d:"Increase the probability or the impact of a positive opportunity."},
+  {c:"Risk",t:"Monte Carlo",f:"Simulation",d:"Runs thousands of what-if scenarios to model overall schedule or cost risk. Used in quantitative analysis."},
+  {c:"Risk",t:"SWOT",f:"Strengths, Weaknesses, Opportunities, Threats",d:"A technique to surface risks and opportunities during Identify Risks."},
+  {c:"Risk",t:"Risk Register",f:"Artifact",d:"The living list of identified risks, their analysis, owners, and responses. Output of Identify Risks."},
+  {c:"Risk",t:"Risk Appetite",f:"Concept",d:"How much uncertainty an organization is willing to take on for a reward. A threshold sets the specific limit."},
+  {c:"Risk",t:"Contingency Reserve",f:"Concept",d:"Time or money set aside for KNOWN risks. The PM controls it."},
+  {c:"Risk",t:"Management Reserve",f:"Concept",d:"Time or money for UNKNOWN risks. Requires management approval to use, and is not in the cost baseline."},
+  {c:"Risk",t:"Secondary Risk",f:"Concept",d:"A new risk created by your response to another risk."},
+  {c:"Risk",t:"Residual Risk",f:"Concept",d:"The risk that remains after you have applied your response."},
+  // AGILE
+  {c:"Agile",t:"Agile Manifesto",f:"Foundation",d:"Four values: individuals and interactions, working software, customer collaboration, and responding to change, over the items on the right."},
+  {c:"Agile",t:"Scrum",f:"Agile framework",d:"Work is done in short sprints with set roles, events, and artifacts to deliver value iteratively."},
+  {c:"Agile",t:"Product Owner",f:"Scrum role",d:"Owns the product backlog and sets priority to maximize value. Not the PM."},
+  {c:"Agile",t:"Scrum Master",f:"Scrum role",d:"A servant leader who facilitates the process and removes blockers. Does not command."},
+  {c:"Agile",t:"Sprint",f:"Scrum event",d:"A short fixed timebox (often 1 to 4 weeks) in which the team builds a usable increment."},
+  {c:"Agile",t:"Daily Standup",f:"Scrum event",d:"A short daily sync where the team shares progress, plans, and blockers."},
+  {c:"Agile",t:"Sprint Review",f:"Scrum event",d:"At the end of a sprint, the team demos the increment to stakeholders and gets feedback."},
+  {c:"Agile",t:"Retrospective",f:"Scrum event",d:"The team reflects on how it worked and picks improvements for the next sprint."},
+  {c:"Agile",t:"Product Backlog",f:"Scrum artifact",d:"The ordered list of everything that might be needed, owned by the Product Owner."},
+  {c:"Agile",t:"Kanban",f:"Agile method",d:"Visualize work on a board and limit work in progress to keep flow smooth. Pull-based, no fixed sprints."},
+  {c:"Agile",t:"Velocity",f:"Agile metric",d:"How much work (story points) a team completes per sprint, used to forecast."},
+  {c:"Agile",t:"Story Points",f:"Agile estimate",d:"A relative size for a user story based on effort and complexity, not hours."},
+  {c:"Agile",t:"MVP",f:"Minimum Viable Product",d:"The smallest version that delivers value, released early to learn and get feedback."},
+  {c:"Agile",t:"Definition of Done",f:"Agile agreement",d:"A shared checklist of what finished means for a piece of work. Builds shared understanding."},
+  {c:"Agile",t:"User Story",f:"Agile requirement",d:"A short need from the user's view: as a [user] I want [goal] so that [benefit]."},
+  // SCOPE & DOCS
+  {c:"Scope and Docs",t:"WBS",f:"Work Breakdown Structure",d:"Breaking deliverables into smaller pieces. The smallest is a work package. Output is the scope baseline."},
+  {c:"Scope and Docs",t:"Work Package",f:"WBS element",d:"The smallest piece of the WBS, small enough to estimate and assign."},
+  {c:"Scope and Docs",t:"Project Charter",f:"Document",d:"Authorizes the project and names the PM. Signed by the sponsor in Initiating."},
+  {c:"Scope and Docs",t:"Scope Creep",f:"Trap",d:"Uncontrolled changes sneak in without change control. Comes from outside."},
+  {c:"Scope and Docs",t:"Gold Plating",f:"Trap",d:"The team adds extras nobody asked for. Comes from inside. Both bypass change control."},
+  {c:"Scope and Docs",t:"Requirements Traceability Matrix",f:"Artifact",d:"A grid linking each requirement to its source and the deliverable that satisfies it."},
+  {c:"Scope and Docs",t:"Project Management Plan",f:"Document",d:"The master plan that integrates all subsidiary plans and baselines. Everything plugs into it."},
+  {c:"Scope and Docs",t:"Stakeholder Register",f:"Artifact",d:"The list of stakeholders and their interest, influence, and engagement. Output of Identify Stakeholders."},
+  // PROCUREMENT
+  {c:"Procurement",t:"Fixed Price (FP)",f:"Contract type",d:"Seller delivers for a set price. Most risk is on the seller. Best when scope is well defined."},
+  {c:"Procurement",t:"Cost Plus (CPFF/CPIF)",f:"Contract type",d:"Buyer pays the seller's costs plus a fee. Most risk is on the buyer. Used when scope is unclear."},
+  {c:"Procurement",t:"Time and Materials (T&M)",f:"Contract type",d:"Pay per hour and per material used. Flexible, good for small or urgent work with unknown scope."},
+  {c:"Procurement",t:"SOW",f:"Statement of Work",d:"A description of the products or services to be delivered, used in procurement."},
+  {c:"Procurement",t:"RFP",f:"Request for Proposal",d:"A procurement document asking sellers to propose how they would meet a need and at what price."},
+  {c:"Procurement",t:"Make-or-Buy",f:"Analysis",d:"Deciding whether to produce something in-house or purchase it. Drives Plan Procurement Management."},
+  // QUALITY
+  {c:"Quality",t:"Cost of Quality",f:"Concept",d:"The total cost of prevention and appraisal plus the cost of failures. Preventing is cheaper than fixing."},
+  {c:"Quality",t:"Quality Assurance (QA)",f:"Process",d:"Auditing the processes to make sure they will produce quality. Done in Manage Quality (Executing)."},
+  {c:"Quality",t:"Quality Control (QC)",f:"Process",d:"Inspecting the actual deliverables. Done in Control Quality (Monitoring). QC comes before Validate Scope."},
+  {c:"Quality",t:"Prevention over Inspection",f:"Principle",d:"It is cheaper to build quality in than to inspect defects out later."},
+  {c:"Quality",t:"Rule of Seven",f:"Control chart rule",d:"Seven points in a row on one side of the mean signal a non-random pattern to investigate, even within limits."},
+  {c:"Quality",t:"Grade vs Quality",f:"Distinction",d:"Grade is a category of features (basic vs deluxe). Quality is how well it meets requirements. Low grade can be fine, low quality is not."},
+  // CORE TERMS
+  {c:"Core Terms",t:"OPA",f:"Organizational Process Assets",d:"Things your company made that help you: templates, processes, historical data, lessons learned. Our stuff."},
+  {c:"Core Terms",t:"EEF",f:"Enterprise Environmental Factors",d:"Conditions you cannot control: market, regulations, culture, weather, government rules. External stuff you endure."},
+  {c:"Core Terms",t:"ITTO",f:"Inputs, Tools and Techniques, Outputs",d:"The structure of every process. Understand the flow, do not memorize the tables."},
+  {c:"Core Terms",t:"PMO",f:"Project Management Office",d:"A group that sets standards and supports or governs projects across the organization."},
+  {c:"Core Terms",t:"CCB",f:"Change Control Board",d:"The group that approves or rejects change requests. Every change flows through integrated change control."},
+  {c:"Core Terms",t:"Change Request",f:"CR",d:"A formal ask to change scope, schedule, cost, or a plan. It is an input to change control; approved changes are the output."},
+  {c:"Core Terms",t:"Decomposition",f:"Tool",d:"Breaking a big deliverable into smaller pieces. Used in Create WBS and Define Activities."},
+  {c:"Core Terms",t:"Critical Path",f:"Method",d:"The longest sequence of dependent activities. Sets the shortest possible duration. A delay on it delays the project."},
+  {c:"Core Terms",t:"Lessons Learned",f:"Register",d:"What went well and what did not, captured throughout the project so future work improves."},
+  {c:"Core Terms",t:"PMIS",f:"Project Management Information System",d:"The software and tools used to plan, execute, and track the project."},
 ];
+const GLOSS_CATS = ["Formulas and EVM","Charts and Diagrams","Estimating","Motivation and Leadership","Risk","Agile","Scope and Docs","Procurement","Quality","Core Terms"];
+let glossCat = "all";
+function glossSetCat(c){ glossCat = c; renderGlossary(); }
 function renderGlossary(){
   const el = document.getElementById('glossList'); if(!el) return;
   const q = (document.getElementById('glossSearch').value||'').toLowerCase().trim();
-  const list = GLOSSARY.filter(g => !q || g.t.toLowerCase().includes(q) || g.f.toLowerCase().includes(q) || g.d.toLowerCase().includes(q))
-    .slice().sort((a,b)=>a.t.localeCompare(b.t));
-  if(!list.length){ el.innerHTML = '<div class="dg-card" style="text-align:center;color:var(--text-dim)">No term matches that. Try EVM, OPA, risk, or a formula name.</div>'; return; }
-  el.innerHTML = list.map(g=>`
-    <div class="gloss-item">
-      <div class="gloss-term"><span class="gloss-abbr">${g.t}</span><span class="gloss-full">${g.f}</span>
-        <button class="gloss-hear" onclick="speak('${g.t.replace(/'/g,'')}. ${g.f.replace(/'/g,'')}. ${g.d.replace(/'/g,'').replace(/"/g,'')}')">🔊</button></div>
-      <div class="gloss-def">${g.d}</div>
-    </div>`).join('');
+  const chips = ['all'].concat(GLOSS_CATS).map(c=>`<button class="gloss-chip ${glossCat===c?'on':''}" onclick="glossSetCat('${c}')">${c==='all'?'All':c}</button>`).join('');
+  const match = GLOSSARY.filter(g => (glossCat==='all'||g.c===glossCat) && (!q || g.t.toLowerCase().includes(q) || g.f.toLowerCase().includes(q) || g.d.toLowerCase().includes(q)));
+  let html = `<div class="gloss-chips">${chips}</div>`;
+  if(!match.length){ el.innerHTML = html + '<div class="dg-card" style="text-align:center;color:var(--text-dim)">No term matches that. Try Pareto, analogous, Maslow, mitigate, or a formula.</div>'; return; }
+  const cats = glossCat==='all' ? GLOSS_CATS : [glossCat];
+  cats.forEach(cat=>{
+    const items = match.filter(g=>g.c===cat).sort((a,b)=>a.t.localeCompare(b.t));
+    if(!items.length) return;
+    html += `<div class="gloss-cat-head">${cat} <span>${items.length}</span></div>`;
+    html += items.map(g=>`
+      <div class="gloss-item">
+        <div class="gloss-term"><span class="gloss-abbr">${g.t}</span><span class="gloss-full">${g.f}</span>
+          <button class="gloss-hear" onclick="speak('${g.t.replace(/'/g,'')}. ${g.f.replace(/'/g,'')}. ${g.d.replace(/'/g,'').replace(/"/g,'')}')">🔊</button></div>
+        <div class="gloss-def">${g.d}</div>
+      </div>`).join('');
+  });
+  el.innerHTML = html;
 }
 
 // ══════════════════════════════════════
