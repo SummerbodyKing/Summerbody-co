@@ -1231,14 +1231,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 100</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 115</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">100 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">115 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2550,6 +2550,112 @@ const QUESTIONS = [
     options:["A. Every risk equally","B. The risks with the highest probability and impact","C. Only the risks the sponsor names","D. Only the low-cost risks"],
     answer:1,
     explanation:"<strong>Highest probability and impact.</strong> Qualitative analysis ranks risks so you spend limited response effort on the biggest threats first. Treating all risks equally, or only chasing cheap ones, wastes effort and leaves the dangerous ones open."
+  },
+  // ── PHASE 3: HARDER SITUATIONAL SET (July 3) ──
+  {
+    id:101, domain:"People", difficulty:"hard", principle:"Engage, do not defend",
+    text:"A high-influence stakeholder who was not part of planning objects to the approach during a steering committee. What should the project manager do FIRST?",
+    options:["A. Defend the approved plan and move on","B. Meet with them to understand their concerns and assess the impact","C. Escalate to the sponsor to overrule them","D. Change the plan immediately to satisfy them"],
+    answer:1,
+    explanation:"<strong>Understand before acting.</strong> Engage the stakeholder, learn the real concern, and assess impact. Defending (A) ignores them, escalating first (C) skips your own step, and caving instantly (D) bypasses change control."
+  },
+  {
+    id:102, domain:"People", difficulty:"hard", principle:"Collaborate to resolve conflict",
+    text:"Two team leads disagree on the architecture and the dispute is delaying the sprint. As a servant leader, the best action is:",
+    options:["A. Decide the architecture yourself to save time","B. Facilitate a working session so they collaborate on the decision","C. Escalate to the sponsor","D. Ask them to compromise and split the difference"],
+    answer:1,
+    explanation:"<strong>Collaborate is the best conflict mode.</strong> Bring them together to solve it (win-win). Deciding for them (A) is forcing, escalating (C) avoids your role, and a rushed compromise (D) settles for less than the best answer."
+  },
+  {
+    id:103, domain:"Process", difficulty:"hard", principle:"All change through change control",
+    text:"During execution, a customer emails a small scope addition directly to a developer, who starts building it. What should the project manager do?",
+    options:["A. Allow it since it is small","B. Stop the work, log a change request, and run it through integrated change control","C. Reject the request outright","D. Add it to the next release without documenting it"],
+    answer:1,
+    explanation:"<strong>No change skips change control, no matter how small.</strong> Stop, document a change request, assess impact, let the CCB decide. Allowing it (A) is uncontrolled change, flat rejection (C) violates never-say-no-first, and undocumented work (D) breaks traceability."
+  },
+  {
+    id:104, domain:"Process", difficulty:"hard", principle:"Plan a response to a high risk",
+    text:"Qualitative analysis flags a high-probability, high-impact risk with no easy fix. Budget exists but no work can be done in parallel. The project manager should:",
+    options:["A. Accept the risk and set a reserve","B. Develop a response (consider mitigate or transfer) and update the risk register","C. Ignore it until it occurs","D. Escalate to the PMO immediately"],
+    answer:1,
+    explanation:"<strong>A top risk needs a planned response.</strong> Choose a strategy (mitigate or transfer here) and update the register. Accepting (A) is only for low risks, ignoring (C) is negligent, and escalation (D) is for risks outside your authority, which this is not."
+  },
+  {
+    id:105, domain:"Process", difficulty:"hard", principle:"Read CPI and SPI together",
+    text:"A project reports CPI = 0.9 and SPI = 1.1. What is true?",
+    options:["A. Ahead of schedule but over budget","B. Behind schedule but under budget","C. Over budget and behind schedule","D. On budget and on schedule"],
+    answer:0,
+    explanation:"<strong>Below 1 is bad, above 1 is good.</strong> CPI 0.9 is under 1, so over budget. SPI 1.1 is over 1, so ahead of schedule. Read each index on its own: CPI for cost, SPI for schedule."
+  },
+  {
+    id:106, domain:"Process", difficulty:"hard", principle:"Match contract to scope certainty",
+    text:"Scope is uncertain and likely to change during the work. Which contract type best fits, protecting the buyer from locking a fixed price to undefined scope?",
+    options:["A. Firm Fixed Price","B. Cost Plus or Time and Materials","C. Fixed Price Incentive Fee","D. A penalty clause"],
+    answer:1,
+    explanation:"<strong>Unclear scope means cost-reimbursable.</strong> Cost Plus or T&M suit evolving scope. Fixed Price (A, C) needs a well-defined scope and shifts risk to the seller only when the work is clear. A penalty clause (D) is a term, not a contract type."
+  },
+  {
+    id:107, domain:"People", difficulty:"hard", principle:"Protect the sprint",
+    text:"Midway through a sprint, the Product Owner wants to add a new high-priority item. What is the correct agile response?",
+    options:["A. Add it to the current sprint immediately","B. Do not disturb the current sprint; place it in the product backlog for a future sprint","C. Cancel the sprint","D. Ask the Scrum Master to decide"],
+    answer:1,
+    explanation:"<strong>The sprint scope is protected once committed.</strong> New work goes to the product backlog and is pulled into a later sprint. Injecting mid-sprint (A) breaks the commitment, cancelling (C) is extreme, and the Scrum Master (D) facilitates, they do not set scope."
+  },
+  {
+    id:108, domain:"Business Environment", difficulty:"hard", principle:"Compliance is not optional",
+    text:"A new regulation will affect the project's deliverable. What should the project manager do?",
+    options:["A. Ignore it until the project ends","B. Assess impact on scope, schedule, and cost, raise a change request, and comply even if it delays delivery","C. Ask the sponsor to waive the regulation","D. Deliver on the old requirements and document the gap"],
+    answer:1,
+    explanation:"<strong>Regulations must be met.</strong> Assess the impact, raise a change request, and comply, communicating any schedule effect. Ignoring (A), waiving (C), or delivering non-compliant work (D) all expose the project to legal risk."
+  },
+  {
+    id:109, domain:"People", difficulty:"hard", principle:"Herzberg motivators",
+    text:"A strong performer seems disengaged even though pay and working conditions are good. Using Herzberg, what most likely re-motivates them?",
+    options:["A. A pay raise","B. Recognition, achievement, and growth opportunities","C. A nicer office","D. More job security"],
+    answer:1,
+    explanation:"<strong>Hygiene factors are already met.</strong> Pay, conditions, and security (A, C, D) only prevent dissatisfaction. Real motivation comes from the motivators: recognition, achievement, responsibility, and growth."
+  },
+  {
+    id:110, domain:"Process", difficulty:"hard", principle:"Fast track vs crash",
+    text:"A project is behind on the critical path. Budget exists, but adding people risks quality. To recover time WITHOUT adding resource cost, the project manager considers:",
+    options:["A. Fast tracking, running critical activities in parallel where possible","B. Crashing by adding expensive resources","C. Accepting the delay","D. Cutting scope without approval"],
+    answer:0,
+    explanation:"<strong>Fast tracking adds no cost.</strong> It overlaps activities that were sequential, at the cost of added risk and possible rework. Crashing (B) adds resources and cost. Accepting (C) settles for the delay, and cutting scope without approval (D) skips change control."
+  },
+  {
+    id:111, domain:"People", difficulty:"hard", principle:"Move current to desired engagement",
+    text:"The engagement assessment matrix shows a key stakeholder is currently Resistant, but the project needs them Supportive. What should the project manager do?",
+    options:["A. Nothing, engagement is the sponsor's job","B. Plan targeted engagement actions to close the gap from current to desired","C. Remove them from the project","D. Report them to their manager"],
+    answer:1,
+    explanation:"<strong>The gap between current and desired drives the plan.</strong> Design specific engagement actions to move them toward Supportive. It is the PM's job (A is wrong), and removing (C) or reporting (D) avoids the real work."
+  },
+  {
+    id:112, domain:"Process", difficulty:"hard", principle:"Integrated change control updates everything",
+    text:"An approved change is implemented. What must be updated?",
+    options:["A. Only the schedule","B. All affected baselines and subsidiary plans, plus the project management plan","C. Only the WBS","D. The project charter"],
+    answer:1,
+    explanation:"<strong>Changes ripple through all connected plans.</strong> Scope, schedule, and cost baselines and the affected subsidiary plans all update. Updating just one (A, C) misses the integration, and the charter (D) is rarely changed."
+  },
+  {
+    id:113, domain:"Business Environment", difficulty:"hard", principle:"Value-driven decisions",
+    text:"A project is behind schedule, but analysis shows the remaining work still delivers business value that exceeds the remaining cost. What should the project manager recommend?",
+    options:["A. Cancel it because it is late","B. Continue, because the business value outweighs the remaining cost","C. Escalate to the board for a vote","D. Cut scope first to recover the schedule"],
+    answer:1,
+    explanation:"<strong>Business value is the lens.</strong> If value still exceeds remaining cost, continue. Schedule slippage alone is not a reason to cancel (A), escalation (C) dodges the recommendation, and cutting scope (D) is premature."
+  },
+  {
+    id:114, domain:"People", difficulty:"hard", principle:"Tuckman storming",
+    text:"A newly formed team is arguing and productivity is low. Per Tuckman, what stage is this, and what should the project manager do?",
+    options:["A. Performing; step back and let them run","B. Storming; coach them through the conflict and help set norms","C. Adjourning; release the team","D. Forming; just wait it out"],
+    answer:1,
+    explanation:"<strong>Conflict early is Storming.</strong> The PM coaches through it and helps the team establish norms so it can reach Norming and Performing. It is not Performing (A), the team is not disbanding (C), and passively waiting (D) does not move them forward."
+  },
+  {
+    id:115, domain:"Process", difficulty:"hard", principle:"QC finds it, root cause fixes it",
+    text:"Inspection during Control Quality reveals a repeating defect pattern. What should the project manager do next?",
+    options:["A. Ship it and note the defect for later","B. Investigate the root cause and feed process improvements into Manage Quality","C. Escalate to the sponsor","D. Get customer sign-off in Validate Scope"],
+    answer:1,
+    explanation:"<strong>Control Quality inspects, then you fix the cause.</strong> Find the root cause (a fishbone diagram helps) and improve the process through Manage Quality. Shipping a known defect (A) is wrong, escalation (C) is premature, and Validate Scope (D) is customer acceptance, which comes after quality is verified."
   }
 ];
 
