@@ -1279,14 +1279,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 149</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 151</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">149 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">151 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2949,6 +2949,20 @@ const QUESTIONS = [
     options:["A. Ensure unanimous agreement among the stakeholders and the sponsor on the project plan, scope, and deliverables","B. Begin building the new system immediately to reduce time at risk","C. Draft a detailed risk register and move straight into execution","D. Assign the most experienced developers to the highest-risk components"],
     answer:0,
     explanation:"<strong>Before touching a live, high-risk system, lock in shared agreement on scope, plan, and deliverables.</strong> Misalignment on a production overhaul is how you cause an outage no one signed off on. A gets everyone pointed the same way first. B skips planning entirely, the opposite of the mindset. C is good practice but a register alone is not agreement, and 'straight into execution' jumps the gun. D is a staffing detail, not the foundational step. Signal: 'high-risk' plus 'initial step' means align and plan before you act."
+  },
+  {
+    id:150, domain:"People", difficulty:"medium", principle:"Engagement changes over time - monitor stakeholder attributes and re-engage, do not escalate",
+    text:"A key stakeholder was actively involved early in an agile project. After receiving a promotion, the stakeholder significantly reduced participation. Near the end, that stakeholder rejected a deliverable, causing major rework that threatens the deadline. What should the project manager have done to avoid this?",
+    options:["A. Monitor the stakeholder's attributes and make necessary adjustments to actively re-engage them","B. Update the risk management plan to document the stakeholder's promotion","C. Reach out to the sponsor to manage the stakeholder's engagement","D. Remove the disengaged stakeholder from the decision-making process"],
+    answer:0,
+    explanation:"<strong>Stakeholder engagement and influence shift over the project, so you monitor those attributes and re-engage the moment someone drifts.</strong> When participation dropped after the promotion, that was the signal to act. B is wrong because a promotion is not a project risk and does not belong in the risk register. C is escalating too early, because managing one quiet stakeholder is the project manager's own job, not the sponsor's. D is wrong because you never cut a key stakeholder out of decisions. Signal: 'was engaged, then went quiet' means monitor and re-engage, not escalate and not log a risk."
+  },
+  {
+    id:151, domain:"Process", difficulty:"hard", principle:"Unknown amount or range = variability risk = Monte Carlo, not the risk register",
+    text:"After a project is completed, a lessons-learned session notes that although all deliverables met their defined parameters, a large number of errors were found during testing. What should the project manager have done about the uncertain error count?",
+    options:["A. Conduct a Monte Carlo analysis to model the range of potential outcomes and responses","B. Set up a meeting with the testing team to learn more about the testing methods","C. Evaluate when a mitigation strategy will be implemented for future projects","D. Plan for these errors in the risk register as an event to watch for in future projects"],
+    answer:0,
+    explanation:"<strong>An uncertain amount, like an unknown number of test errors, is a variability risk, and the tool for a range of outcomes is Monte Carlo simulation.</strong> Variability risk is non-event based, so it cannot be entered as a single event with one mitigation. B is wrong because the deliverables already met spec, so testing methods are not the issue. C is wrong because variability risk has no single mitigation to schedule. D is the trap, because a range of outcomes does not belong in the risk register as an event. Signal: 'unknown number, amount, or how much' means variability risk means Monte Carlo. A specific thing that might happen means event risk means the register."
   }
 ];
 
