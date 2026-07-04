@@ -1279,14 +1279,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 137</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 141</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">137 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">141 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2863,6 +2863,35 @@ const QUESTIONS = [
     options:["A. Add an extra sprint to the timeline for possible modifications","B. Have the team build a prototype to share with stakeholders","C. Record the committee's concerns in the issue log","D. Add the committee to the communications management plan"],
     answer:1,
     explanation:"<strong>A prototype shows value.</strong> It is tangible, lets stakeholders visualize the product, and gathers early feedback so you can adjust. Adding a sprint (A) does not guarantee value, logging concerns (C) captures but does not address them, and the communications plan (D) informs but does not demonstrate value."
+  },
+  // ── PREDICTIVE MINI EXAM 6 misses (July 4) ──
+  {
+    id:138, domain:"Process", difficulty:"easy", principle:"Lessons learned exist to avoid repeating issues",
+    text:"A project manager is assigned to a project that revisits a previously completed one. Why should the PM refer to the previous project's lessons learned and historical information first?",
+    options:["A. To identify the people who worked on the previous project","B. To define the requirements and finalize the scope","C. To set the project's budget baseline","D. To understand the issues from the previous project and avoid repeating them"],
+    answer:3,
+    explanation:"<strong>Lessons learned exist so you do not repeat past mistakes.</strong> Historical information and the lessons learned register are primary inputs to planning, focused on what went wrong before and how it was resolved. They are not for staffing (A) or setting the budget (C)."
+  },
+  {
+    id:139, domain:"Process", difficulty:"hard", principle:"Missing requirements = change control",
+    text:"As a project enters user acceptance testing, end users reveal that critical business requirements were omitted from the requirements analysis. What should the project manager do to resolve this?",
+    options:["A. Interview the team that did the analysis to learn why the requirements were omitted","B. Modify the requirements management plan and tell stakeholders the schedule may slip","C. Meet with the sponsor to report the end users' concerns","D. Submit a change request so the change control board can review the missing requirements"],
+    answer:3,
+    explanation:"<strong>Missing requirements is a change.</strong> Raise a change request and let the CCB review it. Interviewing the team (A) is root-cause hunting that does not resolve it, and modifying the plan (B) or reporting to the sponsor (C) skips change control. Pattern: any change to scope or requirements goes through change control."
+  },
+  {
+    id:140, domain:"People", difficulty:"hard", principle:"Align functional managers on objectives first",
+    text:"A project manager is assigned a newly approved multi-national project whose success depends on deliverables from several departments. What is the most important thing to ensure success?",
+    options:["A. Create communication ground rules and develop the project plan with the team","B. Facilitate sessions with stakeholders to gather information and define detailed requirements","C. Meet with the functional managers of the relevant departments to ensure alignment with the project objectives","D. Develop a resource management plan for each department"],
+    answer:2,
+    explanation:"<strong>Align the departments first.</strong> With deliverables coming from many departments, getting the functional managers aligned on the project objectives prevents conflicting priorities and gets everyone rowing the same way. Requirements, planning, and resources all follow that alignment."
+  },
+  {
+    id:141, domain:"People", difficulty:"hard", principle:"Read what the question is asking",
+    text:"A diverse team is struggling to work together. How does meeting to develop mutual values and a shared vision enable better teamwork?",
+    options:["A. A formal meeting about the importance of teamwork motivates the team","B. Understanding each other's priorities creates a common language that fosters cooperation","C. Understanding each viewpoint pinpoints where training is needed","D. Developing its own understanding of the goals gives the team confidence"],
+    answer:1,
+    explanation:"<strong>Shared understanding builds a common language.</strong> Understanding each other's priorities fosters cooperation, which is what a shared vision does. The other options are true statements but do not answer HOW the meeting enables teamwork. Always read what the question is actually asking."
   }
 ];
 
