@@ -67,16 +67,16 @@ See `stakeholder-register.md`. Sponsor/Customer: Terrence Michael Scott. Chapter
 
 The PM proceeds under the Assumption Log until these are answered. **Just reply with the question numbers and your answers.**
 
-1. **Deliverable formats:** Plan of record is all three — (a) animated web carousel, (b) MP4 video, (c) reusable template. Confirm, or cut any?
-2. **The PMI shape:** Which shape do heads pop out of — the PMI logo mark itself, the brand template shapes (purple triangles / orange circles / aqua shapes), or a PMI-colored circle badge? *PM recommendation: I have the design agent mock up 2–3 variations and you pick at Milestone M3.*
-3. **Event and deadline:** Is this for a specific event with a date (which one, when does it need to publish?), or an evergreen template for recurring chapter meetings?
-4. **Speakers:** How many speakers for version 1, and do you have headshots/names/titles now? *PM recommendation: build with 4–6 placeholders, swap real speakers in later.*
-5. **Video spec:** Which platforms first — Instagram feed (1080×1350), Instagram Reels/Stories (1080×1920), LinkedIn (1080×1080 or 1920×1080)? How long should the video run?
-6. **Brand confirmation:** This uses **PMI chapter branding** (violet/aqua/tangerine), NOT the SUMMERBODY brand (orange/black) — correct?
+1. **Deliverable formats:** Plan of record is all three — (a) animated web carousel, (b) MP4 video, (c) reusable template. Confirm, or cut any? Sponsor Answer: Yes that is correct. all 3 outputs. ned all of them to be editiable. As we do not have everything at this time. need a prototype.
+2. **The PMI shape:** Which shape do heads pop out of — the PMI logo mark itself, the brand template shapes (purple triangles / orange circles / aqua shapes), or a PMI-colored circle badge? *PM recommendation: I have the design agent mock up 2–3 variations and you pick at Milestone M3.* Sponsor Answer: Yes that is correct.
+3. **Event and deadline:** Is this for a specific event with a date (which one, when does it need to publish?), or an evergreen template for recurring chapter meetings?Sponsor Answer: Yes that is correct. Thisis for a specific event adn date adn tiome that I will als update. so that too should be left blank at this time and I will fill it in later in Canva when I edit it. 
+4. **Speakers:** How many speakers for version 1, and do you have headshots/names/titles now? *PM recommendation: build with 4–6 placeholders, swap real speakers in later.* Sponsor Answer: Yes that is correct build the templte with [;laceholders. I do not know or have the information that is needed at this time. This is an agile project. 
+5. **Video spec:** Which platforms first — Instagram feed (1080×1350), Instagram Reels/Stories (1080×1920), LinkedIn (1080×1080 or 1920×1080)? How long should the video run? Sponsor Answer: Yes that is correct.
+6. **Brand confirmation:** This uses **PMI chapter branding** (violet/aqua/tangerine), NOT the SUMMERBODY brand (orange/black) — correct? Sponsor Answer: Yes that is correct. Nothing to do with SUMMEBRODY. it should be PMI adn I will give ou the Colorr codes as twhich ever color use all that has to be in a shade of the smae color but diffent. not sure how to explain it in tesxt at the moment. 
 
 ## 10. Approval
 
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
-| Sponsor | Terrence Michael Scott | *pending* | |
+| Sponsor | Terrence Michael Scott | Signed: Terrence Scott | |
 | Project Manager | Claude (AI Lead PM) | Approved to proceed to Planning upon Sponsor reply | July 4, 2026 |
