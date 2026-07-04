@@ -1279,14 +1279,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 141</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 144</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">141 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">144 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2892,6 +2892,28 @@ const QUESTIONS = [
     options:["A. A formal meeting about the importance of teamwork motivates the team","B. Understanding each other's priorities creates a common language that fosters cooperation","C. Understanding each viewpoint pinpoints where training is needed","D. Developing its own understanding of the goals gives the team confidence"],
     answer:1,
     explanation:"<strong>Shared understanding builds a common language.</strong> Understanding each other's priorities fosters cooperation, which is what a shared vision does. The other options are true statements but do not answer HOW the meeting enables teamwork. Always read what the question is actually asking."
+  },
+  // ── PREDICTIVE MINI EXAM 6, more misses (July 4) ──
+  {
+    id:142, domain:"Process", difficulty:"medium", principle:"Uncertain future factors are risks",
+    text:"During planning, a project manager reviews the charter and uncovers several factors that could impact the project in unpredictable ways. What should the project manager do?",
+    options:["A. Update the project plan with schedule and budget forecasts","B. Inform the sponsor about the possible impacts","C. Develop a risk management plan with details about the factors","D. Extend the issue log to include a what-if scenario analysis"],
+    answer:2,
+    explanation:"<strong>Uncertain future events are risks, so plan risk management.</strong> A risk management plan is built to identify and manage uncertainty. Updating the plan (A) without understanding the risks adds no value. Key distinction: the issue log (D) is for things that HAVE happened; the risk register is for things that MAY happen."
+  },
+  {
+    id:143, domain:"Process", difficulty:"medium", principle:"Communication needs change - revise the comms plan",
+    text:"A complex project with stakeholders in multiple locations is entering a high-activity phase, and the project manager must keep everyone informed with timely updates. What should the project manager do first?",
+    options:["A. Schedule training sessions on effective communication for all stakeholders","B. Determine the best technology to communicate with all stakeholders","C. Schedule regular status reports for all stakeholders","D. Revise the communications management plan to use a more frequent update schedule"],
+    answer:3,
+    explanation:"<strong>When communication needs change, update the communications management plan.</strong> Entering a high-activity phase means more frequent updates, so revise the plan first, it drives who gets what, when, and how. Training (A), technology (B), and status reports (C) are downstream of the plan."
+  },
+  {
+    id:144, domain:"Process", difficulty:"medium", principle:"Approved change - implement it",
+    text:"During planning, an alternatives analysis found a better service, and the change control board (CCB) has approved the change request for it. What should the project manager do?",
+    options:["A. Implement the change as approved","B. Modify the change to reduce the impact on schedule and budget","C. Request justification from the CCB for the change","D. Conduct a cost-benefit analysis of the alternative service"],
+    answer:0,
+    explanation:"<strong>Once the CCB approves a change, implement it.</strong> In approving it, the board already weighed all the implications. Modifying it (B), questioning the CCB (C), or re-analyzing (D) second-guesses a decision that is already made. Pattern: change goes to the CCB, and an approved change gets executed."
   }
 ];
 
@@ -3767,6 +3789,7 @@ function playSound(kind){
 function toggleMute(){
   state.muted = !state.muted;
   document.getElementById('muteBtn').textContent = state.muted ? '🔇' : '🔊';
+  if(state.muted){ try{ window.speechSynthesis.cancel(); }catch(e){} } // muting kills any voice immediately
   saveState();
   if(!state.muted) playSound('correct');
 }
@@ -4459,6 +4482,8 @@ function openWalk(i){
 }
 function closeWalk(){ walkStopSpeak(); walkS=null; renderWalk(); }
 function walkStopSpeak(){ try{ window.speechSynthesis.cancel(); }catch(e){} }
+// Stop button: kill the voice now AND turn off auto-play so it does not restart
+function walkStopVoice(){ if(walkS) walkS.autoplay=false; walkStopSpeak(); if(walkS) renderWalkPlayer(); showToast('Voice off. Read at your own pace.'); }
 
 function renderWalkPlayer(){
   const w = WALKS[walkS.wIdx]; const seg = w.segments[walkS.idx];
@@ -4488,8 +4513,9 @@ function renderWalkPlayer(){
   const isLast = walkS.idx === n-1;
   inner += `
     <div class="walk-ctrls">
-      <button class="walk-play" onclick="walkReadAloud()" title="Read aloud">🔊</button>
-      <button class="btn btn-secondary" onclick="walkPrev()" ${walkS.idx===0?'disabled':''}>◀ Back</button>
+      <button class="walk-play" onclick="walkReadAloud()" title="Read this aloud">🔊</button>
+      <button class="walk-play" style="background:var(--surface3);color:var(--text)" onclick="walkStopVoice()" title="Stop the voice">⏹</button>
+      <button class="btn btn-secondary" onclick="walkPrev()" ${walkS.idx===0?'disabled':''}>◀</button>
       <button class="btn btn-primary" onclick="walkNext()">${isLast?'Finish ✓':'Next ▶'}</button>
       <label class="walk-auto"><input type="checkbox" ${walkS.autoplay?'checked':''} onchange="toggleWalkAuto(this.checked)">Auto</label>
     </div>`;
@@ -4507,10 +4533,12 @@ function renderWalkPlayer(){
   }
 }
 function walkSpeak(text, onDone){
+  if(state.muted){ if(onDone) onDone(); return; } // muted: skip voice, still advance
   try{
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.rate = 0.95; u.pitch = 1;
+    u.rate = 0.95; u.pitch = 1.02;
+    if(typeof applyVoice==='function') applyVoice(u);
     if(onDone) u.onend = onDone;
     window.speechSynthesis.speak(u);
   }catch(e){ if(onDone) onDone(); }
@@ -5667,16 +5695,33 @@ function clearWrongLog() {
 // ══════════════════════════════════════
 // TEXT TO SPEECH
 // ══════════════════════════════════════
+// Pick the most natural-sounding English voice the device offers (still browser TTS,
+// but far better than the default robotic one when a good voice is installed).
+let _bestVoice = null;
+function pickVoice(){
+  try{
+    const vs = window.speechSynthesis.getVoices();
+    if(!vs || !vs.length) return null;
+    const prefer = [/samantha/i,/\bava\b/i,/\ballison\b/i,/siri/i,/natural/i,/enhanced/i,/premium/i,/google us english/i,/google uk english female/i,/microsoft (aria|jenny|michelle)/i,/^alex$/i,/nicky/i];
+    for(const re of prefer){ const v = vs.find(x=>re.test(x.name) && /en/i.test(x.lang)); if(v) return v; }
+    return vs.find(x=>/en[-_]us/i.test(x.lang)) || vs.find(x=>/^en/i.test(x.lang)) || vs[0];
+  }catch(e){ return null; }
+}
+try{ if(window.speechSynthesis){ _bestVoice = pickVoice(); window.speechSynthesis.onvoiceschanged = ()=>{ _bestVoice = pickVoice(); }; } }catch(e){}
+function applyVoice(u){ const v = _bestVoice || pickVoice(); if(v){ u.voice = v; u.lang = v.lang; } return u; }
+
 function speak(text) {
+  if(state.muted) return; // respect the mute toggle
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.9;
-  utterance.pitch = 1;
+  utterance.rate = 0.95;
+  utterance.pitch = 1.02;
+  applyVoice(utterance);
   window.speechSynthesis.speak(utterance);
 }
 
 function stopSpeaking() {
-  window.speechSynthesis.cancel();
+  try{ window.speechSynthesis.cancel(); }catch(e){}
 }
 
 function speakQuestion() {
