@@ -349,7 +349,7 @@
   }
 
   /* ════════════════════════════════════════════════════════
-     V2 — LEARNING DECK, GAMIFICATION, SPLASH, VISUALS
+     V2, LEARNING DECK, GAMIFICATION, SPLASH, VISUALS
      ════════════════════════════════════════════════════════ */
 
   /* Ambient background canvases */
@@ -722,7 +722,7 @@
     .rs-time { min-width: 52px; }
   }
 
-  /* ════ TODAY — HOUR-BY-HOUR RUN SHEET ════ */
+  /* ════ TODAY, HOUR-BY-HOUR RUN SHEET ════ */
   .today-hero { display:flex; justify-content:space-between; align-items:center; gap:24px;
     background: linear-gradient(135deg,#1a0800,var(--surface)); border:1px solid rgba(255,85,0,0.35);
     border-radius:20px; padding:26px 28px; margin-bottom:18px; }
@@ -826,7 +826,7 @@
   .lq-prog { font-size:11px; color:var(--text-muted); font-weight:600; }
   .lq-next { display:flex; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap; }
 
-  /* ════ WALK MODE — hands-free audio player ════ */
+  /* ════ WALK MODE, hands-free audio player ════ */
   .walk-hero { background:linear-gradient(135deg,#FF5500,#ff8c42 55%,#b23a00); border-radius:22px; padding:26px 24px; margin-bottom:20px; color:#fff; box-shadow:0 12px 40px rgba(255,85,0,.25); }
   .walk-hero h1 { font-size:28px; font-weight:900; margin:0 0 6px; }
   .walk-hero p { font-size:14px; opacity:.95; margin:0; line-height:1.5; }
@@ -1004,14 +1004,14 @@
   <button class="mnav-btn" data-page="studylog" onclick="showPage('studylog')"><span>📅</span>Journal</button>
 </div>
 
-<!-- ══════════════════════════════════════════ TODAY — HOUR-BY-HOUR RUN SHEET ══ -->
+<!-- ══════════════════════════════════════════ TODAY, HOUR-BY-HOUR RUN SHEET ══ -->
 <main>
 <div class="page active" id="page-today">
   <div class="today-hero">
     <div class="today-hero-left">
       <div class="today-kicker" id="todayKicker">YOUR PLAN FOR TODAY</div>
       <h1 id="todayTitle">Day 1</h1>
-      <p id="todaySub">Your run sheet builds itself. Do each block in order, top to bottom. Finish them all and today is done — anything after that is bonus.</p>
+      <p id="todaySub">Your run sheet builds itself. Do each block in order, top to bottom. Finish them all and today is done, anything after that is bonus.</p>
     </div>
     <div class="today-ring-wrap">
       <div class="today-ring" id="todayRing"><div class="today-ring-hole"><div class="trn" id="todayRingNum">0%</div><div class="trl">today</div></div></div>
@@ -1026,7 +1026,7 @@
   <div class="today-foot" id="todayFoot"></div>
 </div>
 
-<!-- ══════════════════════════════════════════ WALK MODE — hands-free audio study ══ -->
+<!-- ══════════════════════════════════════════ WALK MODE, hands-free audio study ══ -->
 <div class="page" id="page-walk">
   <div id="walkHome"></div>
   <div id="walkPlayer" style="display:none"></div>
@@ -1100,11 +1100,11 @@
   <div class="pat-elim">
     <div class="pat-elim-h">✂️ Cross these out fast</div>
     <ul>
-      <li>Escalate to the sponsor or PMO first — almost always wrong.</li>
-      <li>Replace the people — wrong.</li>
-      <li>Just monitor or log it without acting — wrong, that is reactive.</li>
-      <li>Skip change control — wrong.</li>
-      <li>A predictive tool inside an agile scenario — wrong.</li>
+      <li>Escalate to the sponsor or PMO first, almost always wrong.</li>
+      <li>Replace the people, wrong.</li>
+      <li>Just monitor or log it without acting, wrong, that is reactive.</li>
+      <li>Skip change control, wrong.</li>
+      <li>A predictive tool inside an agile scenario, wrong.</li>
     </ul>
   </div>
 
@@ -1133,7 +1133,7 @@
     </div>
   </div>
 
-  <!-- DO THIS NEXT — schedule + weak-area coach -->
+  <!-- DO THIS NEXT, schedule + weak-area coach -->
   <div class="coach" id="coachCard"></div>
 
   <div class="stats-grid">
@@ -1161,7 +1161,7 @@
     </div>
   </div>
 
-  <!-- MY EXAM READINESS — about me -->
+  <!-- MY EXAM READINESS, about me -->
   <div class="card" id="readinessCard" style="margin-bottom:24px;"></div>
 
   <div class="two-col">
@@ -1230,7 +1230,7 @@
       <div style="padding:16px;background:var(--surface2);border-radius:8px;">
         <div style="color:var(--orange);font-size:20px;font-weight:900;font-family:var(--font-mono);">03</div>
         <div style="font-weight:700;margin:8px 0 6px;">Choose the Best Answer</div>
-        <div style="font-size:13px;color:var(--text-dim);">Pick what completely solves the problem. If Principle #1 (gather info first) is one of 4 options — it is almost always the answer.</div>
+        <div style="font-size:13px;color:var(--text-dim);">Pick what completely solves the problem. If Principle #1 (gather info first) is one of 4 options, it is almost always the answer.</div>
       </div>
     </div>
   </div>
@@ -1279,14 +1279,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 151</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 155</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">151 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">155 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -1326,7 +1326,7 @@
       <h3 style="margin:0">📝 My Notes</h3>
       <span style="font-size:11px;color:var(--text-muted)" id="notesSaved">auto-saves as you type</span>
     </div>
-    <textarea id="notepad" class="notepad" placeholder="Drop anything here — formulas to memorize, tricky concepts, exam-day reminders, mistakes to avoid. It saves automatically and stays on this device."></textarea>
+    <textarea id="notepad" class="notepad" placeholder="Drop anything here, formulas to memorize, tricky concepts, exam-day reminders, mistakes to avoid. It saves automatically and stays on this device."></textarea>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
       <button class="btn btn-secondary btn-sm" onclick="speak(state.notes||'No notes yet')">🔊 Read my notes</button>
       <button class="btn btn-secondary btn-sm" onclick="downloadNotes()">⬇ Export notes</button>
@@ -1371,7 +1371,7 @@
     <button class="speak-btn" onclick="speakFormulas()">🔊 Read All Formulas</button>
   </div>
 
-  <!-- 🎯 FORMULA DRILL — fresh numbers every time, themed to today -->
+  <!-- 🎯 FORMULA DRILL, fresh numbers every time, themed to today -->
   <div id="formulaDrill"></div>
 
   <!-- INTERACTIVE EVM CALCULATOR -->
@@ -1380,10 +1380,10 @@
     <div class="lesson-sub">Type your numbers. Every metric solves instantly, color-coded good or bad, with a plain-English read.</div>
     <div class="evm-lab">
       <div class="evm-inputs">
-        <div class="evm-field"><label>BAC — Budget at Completion ($)</label><input type="number" id="inBAC" value="500000" oninput="calcEVM()"></div>
+        <div class="evm-field"><label>BAC, Budget at Completion ($)</label><input type="number" id="inBAC" value="500000" oninput="calcEVM()"></div>
         <div class="evm-field"><label>% Complete (0–100)</label><input type="number" id="inPct" value="40" oninput="calcEVM()"></div>
-        <div class="evm-field"><label>AC — Actual Cost ($)</label><input type="number" id="inAC" value="220000" oninput="calcEVM()"></div>
-        <div class="evm-field"><label>PV — Planned Value ($)</label><input type="number" id="inPV" value="225000" oninput="calcEVM()"></div>
+        <div class="evm-field"><label>AC, Actual Cost ($)</label><input type="number" id="inAC" value="220000" oninput="calcEVM()"></div>
+        <div class="evm-field"><label>PV, Planned Value ($)</label><input type="number" id="inPV" value="225000" oninput="calcEVM()"></div>
         <button class="speak-btn" onclick="speakEVM()" style="justify-content:center">🔊 Read Interpretation</button>
       </div>
       <div class="evm-results" id="evmResults"></div>
@@ -1392,17 +1392,17 @@
 
   <div class="formula-grid">
     <div class="formula-card">
-      <h3>EVM — Inputs</h3>
+      <h3>EVM, Inputs</h3>
       <div class="formula-row">
-        <div><div class="formula-name">PV — Planned Value</div><div class="formula-hint">Where you planned to be</div></div>
+        <div><div class="formula-name">PV, Planned Value</div><div class="formula-hint">Where you planned to be</div></div>
         <div class="formula-eq">Budget × % Scheduled</div>
       </div>
       <div class="formula-row">
-        <div><div class="formula-name">EV — Earned Value</div><div class="formula-hint">Work actually done</div></div>
+        <div><div class="formula-name">EV, Earned Value</div><div class="formula-hint">Work actually done</div></div>
         <div class="formula-eq">BAC × % Complete</div>
       </div>
       <div class="formula-row">
-        <div><div class="formula-name">AC — Actual Cost</div><div class="formula-hint">What you actually spent</div></div>
+        <div><div class="formula-name">AC, Actual Cost</div><div class="formula-hint">What you actually spent</div></div>
         <div class="formula-eq">Given</div>
       </div>
       <div class="formula-row">
@@ -1412,27 +1412,27 @@
     </div>
 
     <div class="formula-card">
-      <h3>EVM — Variances</h3>
+      <h3>EVM, Variances</h3>
       <div class="formula-row">
-        <div><div class="formula-name">CV — Cost Variance</div><div class="formula-hint">Negative = over budget</div></div>
+        <div><div class="formula-name">CV, Cost Variance</div><div class="formula-hint">Negative = over budget</div></div>
         <div class="formula-eq">EV − AC</div>
       </div>
       <div class="formula-row">
-        <div><div class="formula-name">SV — Schedule Variance</div><div class="formula-hint">Negative = behind schedule</div></div>
+        <div><div class="formula-name">SV, Schedule Variance</div><div class="formula-hint">Negative = behind schedule</div></div>
         <div class="formula-eq">EV − PV</div>
       </div>
       <div class="formula-row">
-        <div><div class="formula-name">CPI — Cost Index</div><div class="formula-hint">&lt;1 over budget. &gt;1 under budget</div></div>
+        <div><div class="formula-name">CPI, Cost Index</div><div class="formula-hint">&lt;1 over budget. &gt;1 under budget</div></div>
         <div class="formula-eq">EV ÷ AC</div>
       </div>
       <div class="formula-row">
-        <div><div class="formula-name">SPI — Schedule Index</div><div class="formula-hint">&lt;1 behind. &gt;1 ahead</div></div>
+        <div><div class="formula-name">SPI, Schedule Index</div><div class="formula-hint">&lt;1 behind. &gt;1 ahead</div></div>
         <div class="formula-eq">EV ÷ PV</div>
       </div>
     </div>
 
     <div class="formula-card">
-      <h3>EVM — Forecasts</h3>
+      <h3>EVM, Forecasts</h3>
       <div class="formula-row">
         <div><div class="formula-name">EAC (typical)</div><div class="formula-hint">Current rate continues</div></div>
         <div class="formula-eq">BAC ÷ CPI</div>
@@ -1499,7 +1499,7 @@
 <div class="page" id="page-learn">
   <div class="deck-intro">
     <h2>Visual <em>Learning Deck</em></h2>
-    <p>See it, then DO it. Every PMP idea that trips people up, drawn as a chart or grid you can picture on exam day — and the key ones now have a 🎮 click-to-learn exercise built right in (EVM, Tuckman, Conflict, Power/Interest, Engagement). Drag the sliders, click the diagrams, earn XP.</p>
+    <p>See it, then DO it. Every PMP idea that trips people up, drawn as a chart or grid you can picture on exam day, and the key ones now have a 🎮 click-to-learn exercise built right in (EVM, Tuckman, Conflict, Power/Interest, Engagement). Drag the sliders, click the diagrams, earn XP.</p>
   </div>
 
   <div class="lesson-nav" id="lessonNav"></div>
@@ -1518,9 +1518,9 @@
         <text x="110" y="124" text-anchor="middle" fill="#888" font-size="11" letter-spacing="1">QUESTIONS</text>
       </svg>
       <div>
-        <div class="legend-item"><span class="legend-dot" style="background:#FF5500"></span><div><div class="lt">Process — 50%</div><div class="ld">Technical PM work: EVM, schedule, risk, quality, procurement</div></div></div>
-        <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span><div><div class="lt">People — 42%</div><div class="ld">Lead, motivate, build teams, resolve conflict, serve</div></div></div>
-        <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span><div><div class="lt">Business Environment — 8%</div><div class="ld">Compliance, value delivery, organizational strategy</div></div></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#FF5500"></span><div><div class="lt">Process, 50%</div><div class="ld">Technical PM work: EVM, schedule, risk, quality, procurement</div></div></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span><div><div class="lt">People, 42%</div><div class="ld">Lead, motivate, build teams, resolve conflict, serve</div></div></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span><div><div class="lt">Business Environment, 8%</div><div class="ld">Compliance, value delivery, organizational strategy</div></div></div>
       </div>
     </div>
     <div class="fact-strip">
@@ -1534,7 +1534,7 @@
 
   <!-- 2. EVM S-CURVE + INTERPRETATION -->
   <div class="lesson reveal" id="ls-evm">
-    <div class="lesson-head"><div class="lesson-ico">📈</div><h3>Earned Value — The S-Curve</h3></div>
+    <div class="lesson-head"><div class="lesson-ico">📈</div><h3>Earned Value, The S-Curve</h3></div>
     <div class="lesson-sub">Three lines tell the whole story. PV is the plan, EV is what you earned, AC is what you paid. Where they sit tells you over or under, ahead or behind.</div>
     <svg viewBox="0 0 520 260" width="100%" style="max-width:560px" id="evmCurve">
       <line x1="50" y1="220" x2="500" y2="220" stroke="#2a2a2a"></line>
@@ -1594,7 +1594,7 @@
 
   <!-- 4. TUCKMAN -->
   <div class="lesson reveal" id="ls-tuckman">
-    <div class="lesson-head"><div class="lesson-ico">🪜</div><h3>Tuckman — Team Development Stages</h3></div>
+    <div class="lesson-head"><div class="lesson-ico">🪜</div><h3>Tuckman, Team Development Stages</h3></div>
     <div class="lesson-sub">Every team climbs these five steps. When a question describes confusion or conflict, find the matching rung.</div>
     <div class="ladder">
       <div class="rung"><span class="rn">1</span><div><div class="rt">Forming</div><div class="rd">Team meets. Polite, unsure, dependent on the PM for direction.</div></div></div>
@@ -1731,7 +1731,7 @@
 
   <!-- 13. CONTRACT RISK SPECTRUM -->
   <div class="lesson reveal" id="ls-contract">
-    <div class="lesson-head"><div class="lesson-ico">📄</div><h3>Contract Types — Who Holds the Risk</h3></div>
+    <div class="lesson-head"><div class="lesson-ico">📄</div><h3>Contract Types, Who Holds the Risk</h3></div>
     <div class="lesson-sub">Slide from fixed price to cost plus and the risk moves from seller to buyer.</div>
     <div class="spectrum risk"><span class="spectrum-mark" style="left:0%">🧱</span><span class="spectrum-mark" style="left:50%">⚖️</span><span class="spectrum-mark" style="left:100%">💸</span></div>
     <div class="spectrum-labels"><span><b>Fixed Price (FP)</b><br>Seller holds risk.<br>Buyer safest. Scope must be clear.</span><span style="text-align:center"><b>Time &amp; Materials</b><br>Shared. Good for staff augmentation.</span><span style="text-align:right"><b>Cost Plus (CPFF/CPIF)</b><br>Buyer holds risk.<br>Seller safest. Use when scope is fuzzy.</span></div>
@@ -1754,7 +1754,7 @@
 
   <!-- 15. 23 PRINCIPLES MINDSET -->
   <div class="lesson reveal" id="ls-mindset">
-    <div class="lesson-head"><div class="lesson-ico">🧠</div><h3>The PMI Mindset — 3-Step Method</h3></div>
+    <div class="lesson-head"><div class="lesson-ico">🧠</div><h3>The PMI Mindset, 3-Step Method</h3></div>
     <div class="lesson-sub">Muhammad's framework. This is how you solve any situational question, even ones you have never seen.</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px" class="quadwrap">
       <div class="cell hi"><h4>1 · Understand</h4><p>Strip the fluff. Restate the real problem in your own words before looking at answers.</p></div>
@@ -1826,82 +1826,82 @@
 
 <script>
 // ══════════════════════════════════════
-// QUESTION BANK — Built from uploaded docs
+// QUESTION BANK, Built from uploaded docs
 // Muhammad's 23 Principles + Study Sprint + Risk/Quality/Stakeholder sessions
 // ══════════════════════════════════════
 const QUESTIONS = [
   // ── PEOPLE DOMAIN ──────────────────────────────────────
   {
     id:1, domain:"People", difficulty:"medium",
-    principle:"P1 — Gather info first",
+    principle:"P1, Gather info first",
     text:"A team member tells the PM that another team member is not performing up to standard. The PM has not personally observed this. What should the PM do FIRST?",
     options:["A. Immediately escalate to HR","B. Investigate and gather more information before taking any action","C. Remove the underperforming team member from the project","D. Call a team meeting and address the issue publicly"],
     answer:1,
-    explanation:"<strong>Principle #1</strong> — Always take a step back and gather information before acting. Option B is the only answer that respects this. You never escalate first (A), never remove someone without facts (C), and never expose a team member publicly (D) — that creates friction."
+    explanation:"<strong>Principle #1</strong>, Always take a step back and gather information before acting. Option B is the only answer that respects this. You never escalate first (A), never remove someone without facts (C), and never expose a team member publicly (D), that creates friction."
   },
   {
     id:2, domain:"People", difficulty:"easy",
-    principle:"P3 — Servant Leadership",
+    principle:"P3, Servant Leadership",
     text:"An agile team member tells the PM they are stuck on a blocker and cannot proceed with their sprint task. As a servant leader, what should the PM do?",
     options:["A. Tell the team member to figure it out independently","B. Remove the impediment and help the team member get unblocked","C. Reassign the task to another team member","D. Escalate the blocker to the project sponsor"],
     answer:1,
-    explanation:"<strong>Principle #3 — Servant Leadership</strong>: The PM serves the team by removing impediments and enabling them to do their best work. A servant leader does not micromanage, does not pass the problem, and does not immediately escalate."
+    explanation:"<strong>Principle #3, Servant Leadership</strong>: The PM serves the team by removing impediments and enabling them to do their best work. A servant leader does not micromanage, does not pass the problem, and does not immediately escalate."
   },
   {
     id:3, domain:"People", difficulty:"medium",
-    principle:"P16 — Self-organizing teams",
+    principle:"P16, Self-organizing teams",
     text:"Two developers on an agile team disagree on how to implement a minor feature. The disagreement is not affecting sprint progress and both approaches are technically valid. What should the PM do?",
     options:["A. Let the team resolve the conflict themselves","B. Step in and make a final decision to save time","C. Remove the feature from the sprint","D. Escalate to the product owner immediately"],
     answer:0,
-    explanation:"<strong>Principle #16 — Agile teams are self-organizing.</strong> When a conflict is minor and not affecting progress, the PM does not step in. The team has the autonomy and expertise to work it out. Only step in when conflict is actively damaging progress or the project."
+    explanation:"<strong>Principle #16, Agile teams are self-organizing.</strong> When a conflict is minor and not affecting progress, the PM does not step in. The team has the autonomy and expertise to work it out. Only step in when conflict is actively damaging progress or the project."
   },
   {
     id:4, domain:"People", difficulty:"hard",
-    principle:"P16 — Self-organizing teams",
+    principle:"P16, Self-organizing teams",
     text:"Two senior developers on an agile project strongly disagree on how to build a critical feature. The disagreement has caused a slowdown and the product owner is worried it won't be completed on time. What should the PM do?",
-    options:["A. Let the team resolve it — they are self-organizing","B. Step in and facilitate a discussion to resolve the conflict and keep the sprint on track","C. Remove one developer from the project","D. Escalate to the product owner"],
+    options:["A. Let the team resolve it, they are self-organizing","B. Step in and facilitate a discussion to resolve the conflict and keep the sprint on track","C. Remove one developer from the project","D. Escalate to the product owner"],
     answer:1,
-    explanation:"<strong>Key distinction from the previous question:</strong> This conflict IS affecting project progress and creating schedule risk. When there is real risk of delay, the PM steps in. Option B is correct — facilitate, do not dictate. (C) creates team friction. (D) is premature escalation."
+    explanation:"<strong>Key distinction from the previous question:</strong> This conflict IS affecting project progress and creating schedule risk. When there is real risk of delay, the PM steps in. Option B is correct, facilitate, do not dictate. (C) creates team friction. (D) is premature escalation."
   },
   {
     id:5, domain:"People", difficulty:"easy",
-    principle:"P23 — Never reduce team capacity",
+    principle:"P23, Never reduce team capacity",
     text:"A junior developer joins the project team. The senior developer is leading a critical feature. The client wants faster delivery. What should the PM do about onboarding the junior developer?",
     options:["A. Assign the senior developer to train the junior developer while continuing the feature","B. Ask the junior developer to learn independently to avoid impacting the senior developer's workload","C. Bring in an external trainer at additional cost","D. Pause the critical feature until the junior developer is onboarded"],
     answer:1,
-    explanation:"<strong>Principle #23</strong> — Never give a team member extra tasks that reduce their capacity to focus on the primary project. Assigning training (A) pulls the senior dev away from critical work. External trainer (C) costs money unnecessarily. Pausing (D) causes delay. B is correct — the junior dev should ramp up independently."
+    explanation:"<strong>Principle #23</strong>, Never give a team member extra tasks that reduce their capacity to focus on the primary project. Assigning training (A) pulls the senior dev away from critical work. External trainer (C) costs money unnecessarily. Pausing (D) causes delay. B is correct, the junior dev should ramp up independently."
   },
   {
     id:6, domain:"People", difficulty:"medium",
-    principle:"P8 — PM makes decisions",
+    principle:"P8, PM makes decisions",
     text:"A team member is struggling with a technical issue and suggests escalating to the VP of Engineering immediately. What should the PM do?",
     options:["A. Agree and contact the VP right away","B. Work with the team to find a solution before escalating","C. Submit a change request first","D. Assign a different team member to take over"],
     answer:1,
-    explanation:"<strong>Principle #8 — The PM makes decisions.</strong> The PM does not run to senior management before trying to solve the problem. Gather the team, investigate, attempt resolution. Only escalate when you truly cannot resolve it. This is also Principle #1 in action."
+    explanation:"<strong>Principle #8, The PM makes decisions.</strong> The PM does not run to senior management before trying to solve the problem. Gather the team, investigate, attempt resolution. Only escalate when you truly cannot resolve it. This is also Principle #1 in action."
   },
   {
     id:7, domain:"People", difficulty:"medium",
-    principle:"P7 — Team are the experts",
+    principle:"P7, Team are the experts",
     text:"A PM is making a scheduling decision for the next sprint and needs to estimate task durations. What is the BEST approach?",
     options:["A. Make estimates independently based on past experience","B. Consult with the development team to estimate since they are the experts","C. Use the project plan as the sole reference","D. Ask the project sponsor to set the deadlines"],
     answer:1,
-    explanation:"<strong>Principle #7 — Your team members are the experts.</strong> Estimates should come from the people doing the work, not from the PM alone. The team has hands-on technical knowledge of what each task requires."
+    explanation:"<strong>Principle #7, Your team members are the experts.</strong> Estimates should come from the people doing the work, not from the PM alone. The team has hands-on technical knowledge of what each task requires."
   },
   {
     id:8, domain:"People", difficulty:"hard",
-    principle:"P19 — Refer to wronglog/lessons learned",
+    principle:"P19, Refer to wronglog/lessons learned",
     text:"A PM managing a CRM implementation recalls that a similar technical issue occurred on a previous project. The client is pressuring for a quick fix. What should the PM do?",
     options:["A. Instruct the team to fix the issue immediately to avoid delay","B. Refer to the Lessons Learned register from the previous project to see how the issue was resolved","C. Escalate to the sponsor for additional resources","D. Ask the client for an extension"],
     answer:1,
-    explanation:"<strong>Principle #19</strong> — When the question explicitly mentions a similar completed past project, ALWAYS refer to it. The Lessons Learned register exists exactly for this situation. Asking for an extension (D) causes delay. Escalating (C) is premature."
+    explanation:"<strong>Principle #19</strong>, When the question explicitly mentions a similar completed past project, ALWAYS refer to it. The Lessons Learned register exists exactly for this situation. Asking for an extension (D) causes delay. Escalating (C) is premature."
   },
   {
     id:9, domain:"People", difficulty:"medium",
-    principle:"P6 — Ground rules",
+    principle:"P6, Ground rules",
     text:"During a retrospective, team members reveal they cannot complete sprint tasks because of constant interruptions and requests from other teams. What should the PM do?",
     options:["A. Identify root causes of the interruptions and establish clear ground rules to minimize external disruptions","B. Bring in an external coach","C. Advise team members not to let interruptions affect their capacity","D. Break tasks into smaller pieces to work around the interruptions"],
     answer:0,
-    explanation:"<strong>Hack:</strong> When you see 'ground rules' as an answer option and the situation involves collective team behavior problems — it is almost always the answer. Ground rules address the systemic cause. Root cause analysis (also in A) is another high-value PMI approach. A combines both."
+    explanation:"<strong>Hack:</strong> When you see 'ground rules' as an answer option and the situation involves collective team behavior problems, it is almost always the answer. Ground rules address the systemic cause. Root cause analysis (also in A) is another high-value PMI approach. A combines both."
   },
   {
     id:10, domain:"People", difficulty:"medium",
@@ -1909,41 +1909,41 @@ const QUESTIONS = [
     text:"A PM is assigned a new project but the organization has no PMO and no formal policies or procedures. What should the PM do FIRST?",
     options:["A. Consult a subject matter expert to determine the best way forward","B. Discuss with the team members how to proceed","C. Select a framework (agile or predictive) and start executing","D. Guide the team to create their own governance from scratch"],
     answer:0,
-    explanation:"<strong>Tricky one:</strong> Normally we would go to the team (Principle #7). But the question says the organization has NO formal policies and NO PMO — which means the team likely has no knowledge base either. When NEITHER the PM nor team knows what to do, bring in an SME. If the question mentioned any existing PM knowledge in the org, B would be better."
+    explanation:"<strong>Tricky one:</strong> Normally we would go to the team (Principle #7). But the question says the organization has NO formal policies and NO PMO, which means the team likely has no knowledge base either. When NEITHER the PM nor team knows what to do, bring in an SME. If the question mentioned any existing PM knowledge in the org, B would be better."
   },
 
   // ── PROCESS DOMAIN ─────────────────────────────────────
   {
     id:11, domain:"Process", difficulty:"medium",
-    principle:"P2 — Never accept delay",
+    principle:"P2, Never accept delay",
     text:"A project is two weeks behind schedule due to delayed material delivery. Several tasks depend on the delayed materials. What should the PM do?",
     options:["A. Update the schedule to reflect the delay and continue","B. Ask the team to work overtime to catch up","C. Inform the client and request a deadline extension","D. Assess the critical path and reassign resources from non-critical tasks to critical ones"],
     answer:3,
-    explanation:"<strong>Principle #2 — Never settle for a delay.</strong> When the schedule is threatened, look at the critical path to understand what can be done. Reassigning from non-critical to critical activities is the scheduling compression technique that recovers without adding cost. Updating the schedule (A) accepts the delay. Overtime (B) and extension (C) are last resorts."
+    explanation:"<strong>Principle #2, Never settle for a delay.</strong> When the schedule is threatened, look at the critical path to understand what can be done. Reassigning from non-critical to critical activities is the scheduling compression technique that recovers without adding cost. Updating the schedule (A) accepts the delay. Overtime (B) and extension (C) are last resorts."
   },
   {
     id:12, domain:"Process", difficulty:"easy",
-    principle:"P6 — Change control",
+    principle:"P6, Change control",
     text:"A team member suggests adding a new feature during execution that was not in the original scope. The PM thinks it is a good idea. What should the PM do?",
     options:["A. Add it immediately since it improves the product","B. Submit a change request through the formal change control process","C. Add it to the backlog and discuss at the next sprint","D. Ask the team member to implement it quietly to avoid stakeholder concern"],
     answer:1,
-    explanation:"<strong>Principle #6 — All scope changes go through the change request process.</strong> In a predictive project, the Change Control Board must approve changes. Never add scope without approval — that is gold plating. Note: In agile, the answer would be to add it to the backlog (C) — but only if the question indicates an agile or hybrid approach."
+    explanation:"<strong>Principle #6, All scope changes go through the change request process.</strong> In a predictive project, the Change Control Board must approve changes. Never add scope without approval, that is gold plating. Note: In agile, the answer would be to add it to the backlog (C), but only if the question indicates an agile or hybrid approach."
   },
   {
     id:13, domain:"Process", difficulty:"hard",
-    principle:"P22 — Critical path",
+    principle:"P22, Critical path",
     text:"A project has a looming schedule issue. A senior manager suggests reassigning resources from another project to speed up completion. The project plan clearly outlines resource allocation, and making this change would affect later tasks. What should the PM do?",
     options:["A. Follow the manager's suggestion without questioning it","B. Refer back to the project plan, assess the impact of the proposed change before making a decision","C. Submit a change request immediately","D. Inform stakeholders the deadline cannot be met"],
     answer:1,
-    explanation:"<strong>Principle #11 + Principle #1</strong> — In a predictive project, your plan is your map. Always refer to it. Before making any resource change, assess the impact. The answer is B — investigate via the plan first. This is also Principle #1: take a step back before acting."
+    explanation:"<strong>Principle #11 + Principle #1</strong>, In a predictive project, your plan is your map. Always refer to it. Before making any resource change, assess the impact. The answer is B, investigate via the plan first. This is also Principle #1: take a step back before acting."
   },
   {
     id:14, domain:"Process", difficulty:"medium",
-    principle:"P10 — Closing phase always occurs",
+    principle:"P10, Closing phase always occurs",
     text:"Midway through a software project, the client terminates the engagement due to changing business priorities. Some deliverables are complete and the team has moved on. What should the PM do?",
-    options:["A. Move on since the client ended the project","B. Conduct a formal project closeout — document deliverables, close contracts, capture lessons learned","C. Leave documentation incomplete since the project is terminated","D. Ask the client if they want to skip the closing phase"],
+    options:["A. Move on since the client ended the project","B. Conduct a formal project closeout, document deliverables, close contracts, capture lessons learned","C. Leave documentation incomplete since the project is terminated","D. Ask the client if they want to skip the closing phase"],
     answer:1,
-    explanation:"<strong>Principle #10 — The closing phase ALWAYS occurs.</strong> Whether a project is completed or terminated, the PM must close it formally: sign off contracts, release resources, capture lessons learned, archive documents. The client does not decide whether to close — the PM is responsible for this."
+    explanation:"<strong>Principle #10, The closing phase ALWAYS occurs.</strong> Whether a project is completed or terminated, the PM must close it formally: sign off contracts, release resources, capture lessons learned, archive documents. The client does not decide whether to close, the PM is responsible for this."
   },
   {
     id:15, domain:"Process", difficulty:"hard",
@@ -1951,11 +1951,11 @@ const QUESTIONS = [
     text:"A project has a CPI of 0.85 and an SPI of 0.92. BAC is $500,000 and AC is $220,000. The project is currently 40% complete. What is the EAC using the typical formula?",
     options:["A. $588,235","B. $500,000","C. $480,000","D. $565,000"],
     answer:0,
-    explanation:"<strong>EVM Calculation:</strong> EV = BAC × % complete = $500,000 × 0.40 = $200,000. CPI = EV ÷ AC = $200,000 ÷ $220,000 ≈ 0.909 (close to given 0.85 — use given). EAC (typical) = BAC ÷ CPI = $500,000 ÷ 0.85 = $588,235. When CPI &lt; 1, the project is over budget and EAC will be HIGHER than BAC."
+    explanation:"<strong>EVM Calculation:</strong> EV = BAC × % complete = $500,000 × 0.40 = $200,000. CPI = EV ÷ AC = $200,000 ÷ $220,000 ≈ 0.909 (close to given 0.85, use given). EAC (typical) = BAC ÷ CPI = $500,000 ÷ 0.85 = $588,235. When CPI &lt; 1, the project is over budget and EAC will be HIGHER than BAC."
   },
   {
     id:16, domain:"Process", difficulty:"medium",
-    principle:"Risk Management — PIQRIIN",
+    principle:"Risk Management, PIQRIIN",
     text:"A PM is reviewing the risk register during project execution and discovers that several risks that were previously ranked low have increased in probability due to external market changes. What should the PM do?",
     options:["A. Wait until the next scheduled risk review to update the register","B. Immediately close these risks since they were already analyzed","C. Perform a risk reassessment and update the risk register with the new probability ratings","D. Escalate to the sponsor since the risk environment has changed"],
     answer:2,
@@ -1963,59 +1963,59 @@ const QUESTIONS = [
   },
   {
     id:17, domain:"Process", difficulty:"medium",
-    principle:"Risk — Reserve types",
+    principle:"Risk, Reserve types",
     text:"A project team is identifying risks when they realize there are certain unknown risks that cannot be identified or analyzed. Management wants assurance the project can handle them. What should the PM do?",
     options:["A. Calculate EMV for these unknown risks","B. Allocate a percentage of project cost as management reserve based on past project history","C. Allocate additional contingency reserve","D. Notify management that unknown risks cannot be planned for"],
     answer:1,
-    explanation:"<strong>Critical distinction:</strong> Contingency reserves cover KNOWN risks (identified, analyzed). Management reserves cover UNKNOWN risks (unknown unknowns). EMV (A) requires known probability and impact — you cannot calculate EMV for truly unknown risks. The answer is B — management reserve funded by historical reference."
+    explanation:"<strong>Critical distinction:</strong> Contingency reserves cover KNOWN risks (identified, analyzed). Management reserves cover UNKNOWN risks (unknown unknowns). EMV (A) requires known probability and impact, you cannot calculate EMV for truly unknown risks. The answer is B, management reserve funded by historical reference."
   },
   {
     id:18, domain:"Process", difficulty:"medium",
-    principle:"P11 — Refer to the plan",
+    principle:"P11, Refer to the plan",
     text:"A project is running behind schedule. A senior manager suggests reallocating resources from another ongoing project to help. The project plan clearly shows current allocations. What should the PM do FIRST?",
     options:["A. Implement the change immediately as the manager suggested","B. Refer to the project plan and assess the impact of reallocating resources before deciding","C. Reject the suggestion since the plan is locked","D. Ask the sponsor to authorize the reallocation"],
     answer:1,
-    explanation:"<strong>Principle #11 — Your plan is your map.</strong> In a predictive project, always reference the project plan before making decisions. Principle #1 also applies: take a step back, assess impact, then decide. Never blindly follow a suggestion that could affect downstream tasks without understanding the consequences."
+    explanation:"<strong>Principle #11, Your plan is your map.</strong> In a predictive project, always reference the project plan before making decisions. Principle #1 also applies: take a step back, assess impact, then decide. Never blindly follow a suggestion that could affect downstream tasks without understanding the consequences."
   },
   {
     id:19, domain:"Process", difficulty:"medium",
-    principle:"Quality — QA vs QC",
+    principle:"Quality, QA vs QC",
     text:"A quality auditor visits a project and examines whether the team is following documented coding standards and peer review procedures. What type of quality activity is this?",
     options:["A. Quality Control (QC)","B. Quality Assurance (QA)","C. Inspection","D. Testing"],
     answer:1,
-    explanation:"<strong>QA vs QC:</strong> QA focuses on PROCESS quality — are standards and procedures being followed? QC focuses on DELIVERABLE quality — does the output meet specifications? Auditing processes = QA. Inspecting deliverables, testing, acceptance = QC. Remember: QA is proactive (prevent defects), QC is reactive (find defects)."
+    explanation:"<strong>QA vs QC:</strong> QA focuses on PROCESS quality, are standards and procedures being followed? QC focuses on DELIVERABLE quality, does the output meet specifications? Auditing processes = QA. Inspecting deliverables, testing, acceptance = QC. Remember: QA is proactive (prevent defects), QC is reactive (find defects)."
   },
   {
     id:20, domain:"Process", difficulty:"easy",
-    principle:"Agile — Risk-adjusted backlog",
+    principle:"Agile, Risk-adjusted backlog",
     text:"An agile team is planning a sprint and the product owner wants to add a risk spike to investigate whether a new API integration will work before building the full feature. When should this spike be added?",
-    options:["A. At the end of the project after all features are delivered","B. During backlog refinement and prioritized at the top of the sprint","C. Only after the full feature is built and tested","D. It should not be added — spikes waste sprint capacity"],
+    options:["A. At the end of the project after all features are delivered","B. During backlog refinement and prioritized at the top of the sprint","C. Only after the full feature is built and tested","D. It should not be added, spikes waste sprint capacity"],
     answer:1,
-    explanation:"<strong>Risk-Adjusted Backlog + Risk Spikes:</strong> A spike is a short, time-boxed backlog item used to investigate or test something risky before committing to building the full feature. Spikes are added during BACKLOG REFINEMENT and prioritized high — because you want to resolve uncertainty EARLY, when change is cheapest."
+    explanation:"<strong>Risk-Adjusted Backlog + Risk Spikes:</strong> A spike is a short, time-boxed backlog item used to investigate or test something risky before committing to building the full feature. Spikes are added during BACKLOG REFINEMENT and prioritized high, because you want to resolve uncertainty EARLY, when change is cheapest."
   },
   {
     id:21, domain:"Process", difficulty:"medium",
-    principle:"Procurement — Contract types",
+    principle:"Procurement, Contract types",
     text:"A company with a low risk threshold and low profit margin on a project is considering purchasing insurance to protect against a specific risk. What type of risk response is this?",
     options:["A. Escalation","B. Transference","C. Acceptance","D. Avoidance"],
     answer:1,
-    explanation:"<strong>Risk Response — Transference:</strong> Purchasing insurance transfers the financial impact of a risk to a third party. The risk is not eliminated — it is shifted. Avoidance (D) eliminates the risk entirely. Acceptance (C) acknowledges the risk without action. Transference is always the correct answer when insurance or outsourcing is described."
+    explanation:"<strong>Risk Response, Transference:</strong> Purchasing insurance transfers the financial impact of a risk to a third party. The risk is not eliminated, it is shifted. Avoidance (D) eliminates the risk entirely. Acceptance (C) acknowledges the risk without action. Transference is always the correct answer when insurance or outsourcing is described."
   },
   {
     id:22, domain:"Process", difficulty:"hard",
-    principle:"Risk — Risk owner",
+    principle:"Risk, Risk owner",
     text:"Which of the following is the PRIMARY responsibility of a risk owner?",
     options:["A. Identify new risks and create workarounds as they occur","B. Respond to risk triggers and implement the planned risk response","C. Report to the PM that a risk has occurred and note consequences","D. Quantitatively analyze risks assigned by the project manager"],
     answer:1,
-    explanation:"<strong>Risk Owner:</strong> A risk owner's primary job is to FOLLOW THE PLAN — specifically, to monitor for the risk trigger and then execute the planned response when that trigger fires. They are not responsible for creating new workarounds (A), just reporting (C), or analyzing other risks (D). They own ONE risk and act on it."
+    explanation:"<strong>Risk Owner:</strong> A risk owner's primary job is to FOLLOW THE PLAN, specifically, to monitor for the risk trigger and then execute the planned response when that trigger fires. They are not responsible for creating new workarounds (A), just reporting (C), or analyzing other risks (D). They own ONE risk and act on it."
   },
   {
     id:23, domain:"Process", difficulty:"medium",
-    principle:"Stakeholder — 5 engagement levels",
+    principle:"Stakeholder, 5 engagement levels",
     text:"A project stakeholder is aware of the project but openly opposes it and works against its success. Which stakeholder engagement level does this represent?",
     options:["A. Unaware","B. Neutral","C. Resistant","D. Supportive"],
     answer:2,
-    explanation:"<strong>5 Stakeholder Engagement Levels (memorize these):</strong> Unaware — does not know the project exists. Resistant — opposes the project. Neutral — neither supports nor opposes. Supportive — supports the project. Leading — actively champions and promotes the project. The PM's goal is to move stakeholders toward Supportive or Leading."
+    explanation:"<strong>5 Stakeholder Engagement Levels (memorize these):</strong> Unaware, does not know the project exists. Resistant, opposes the project. Neutral, neither supports nor opposes. Supportive, supports the project. Leading, actively champions and promotes the project. The PM's goal is to move stakeholders toward Supportive or Leading."
   },
   {
     id:24, domain:"Process", difficulty:"medium",
@@ -2027,128 +2027,128 @@ const QUESTIONS = [
   },
   {
     id:25, domain:"Process", difficulty:"hard",
-    principle:"Schedule — Compression",
+    principle:"Schedule, Compression",
     text:"A project is 3 weeks behind schedule. There is budget available but no tasks that can be performed in parallel. What schedule compression technique should be used?",
-    options:["A. Fast tracking — overlap tasks","B. Crashing — add resources to critical path tasks","C. Scope reduction","D. Accept the delay and update the baseline"],
+    options:["A. Fast tracking, overlap tasks","B. Crashing, add resources to critical path tasks","C. Scope reduction","D. Accept the delay and update the baseline"],
     answer:1,
-    explanation:"<strong>Fast Tracking vs Crashing:</strong> Fast tracking = overlap tasks that were planned sequentially. Use when tasks CAN be done in parallel. Crashing = add more resources (people, money) to shorten duration. Use when you have budget but CANNOT overlap tasks. This question explicitly says tasks cannot be parallel — therefore CRASH. Always identify the constraint first."
+    explanation:"<strong>Fast Tracking vs Crashing:</strong> Fast tracking = overlap tasks that were planned sequentially. Use when tasks CAN be done in parallel. Crashing = add more resources (people, money) to shorten duration. Use when you have budget but CANNOT overlap tasks. This question explicitly says tasks cannot be parallel, therefore CRASH. Always identify the constraint first."
   },
 
   // ── BUSINESS ENVIRONMENT ──────────────────────────────
   {
     id:26, domain:"Business Environment", difficulty:"medium",
-    principle:"P4 — Value driven",
+    principle:"P4, Value driven",
     text:"A client requests a new feature that was not in the original scope. The project is already on a tight budget. What should the PM do?",
     options:["A. Tell the client the feature cannot be done","B. Discuss the feasibility with the team and explore options before making a decision","C. Add the feature immediately to satisfy the client","D. Submit a change request without analyzing impact"],
     answer:1,
-    explanation:"<strong>Principle #18 — Never immediately reject a request or opportunity. Principle #1 — Gather information first.</strong> B combines both: you take a step back, discuss with the team (experts), and explore options. Only after this analysis do you submit a change request or inform the client of constraints. Never say 'no' outright."
+    explanation:"<strong>Principle #18, Never immediately reject a request or opportunity. Principle #1, Gather information first.</strong> B combines both: you take a step back, discuss with the team (experts), and explore options. Only after this analysis do you submit a change request or inform the client of constraints. Never say 'no' outright."
   },
   {
     id:27, domain:"Business Environment", difficulty:"easy",
-    principle:"P15 — Introduce agile slowly",
+    principle:"P15, Introduce agile slowly",
     text:"A traditionally predictive organization wants to adopt agile practices. The CEO has asked the PM to implement agile. What should the PM do?",
     options:["A. Immediately implement agile across all projects","B. Introduce agile concepts gradually by starting with a pilot project","C. Overhaul all PMO processes at once","D. Wait until the team is comfortable before starting"],
     answer:1,
-    explanation:"<strong>Principle #15 — When transitioning to agile, introduce it SLOWLY through a pilot project or Inception deck.</strong> Culture change does not stick when forced all at once. A pilot lets the team experience agile without disrupting all ongoing work. Never wait (D = delay). Never overhaul all at once (C = chaos)."
+    explanation:"<strong>Principle #15, When transitioning to agile, introduce it SLOWLY through a pilot project or Inception deck.</strong> Culture change does not stick when forced all at once. A pilot lets the team experience agile without disrupting all ongoing work. Never wait (D = delay). Never overhaul all at once (C = chaos)."
   },
   {
     id:28, domain:"Business Environment", difficulty:"medium",
-    principle:"P4 — Value driven + Hybrid",
+    principle:"P4, Value driven + Hybrid",
     text:"A company is transitioning to agile but some stakeholders still prefer predictive approaches. The sponsor needs results fast or the project will be cancelled. What is the BEST approach?",
-    options:["A. Use full agile — deliver fast iterations","B. Use full predictive — follow established processes","C. Use a hybrid approach combining both predictive and agile elements","D. Pause the project until all stakeholders agree on the approach"],
+    options:["A. Use full agile, deliver fast iterations","B. Use full predictive, follow established processes","C. Use a hybrid approach combining both predictive and agile elements","D. Pause the project until all stakeholders agree on the approach"],
     answer:2,
-    explanation:"<strong>Hybrid approach:</strong> When there are elements of both predictive (resistant stakeholders, compliance requirements) and agile (need for speed, uncertainty), use HYBRID. A hybrid combines both: predictive for stability and governance, agile for fast value delivery. Pause (D) causes delay — never acceptable."
+    explanation:"<strong>Hybrid approach:</strong> When there are elements of both predictive (resistant stakeholders, compliance requirements) and agile (need for speed, uncertainty), use HYBRID. A hybrid combines both: predictive for stability and governance, agile for fast value delivery. Pause (D) causes delay, never acceptable."
   },
   {
     id:29, domain:"Business Environment", difficulty:"hard",
-    principle:"Agile — MVP + Value",
+    principle:"Agile, MVP + Value",
     text:"A client's requested 12-month project timeline must now be compressed to 4 months. What is the BEST response?",
     options:["A. Explain delivery cannot be done in 4 months","B. Evaluate the backlog, prioritize essential features, and create an MVP deliverable within the new timeline","C. Request additional budget and resources to crash the schedule","D. Assess the critical path and inform stakeholders the compressed timeline is unachievable"],
     answer:1,
-    explanation:"<strong>MVP = Minimum Viable Product.</strong> When timelines compress, the PMI answer is almost never 'reject the request' (A, D violate Principle #18). Instead, find a way to deliver VALUE within constraints. An MVP delivers the most critical features first. This shows the client progress, gets feedback, and keeps the project alive. Note that C might follow B — but B is FIRST."
+    explanation:"<strong>MVP = Minimum Viable Product.</strong> When timelines compress, the PMI answer is almost never 'reject the request' (A, D violate Principle #18). Instead, find a way to deliver VALUE within constraints. An MVP delivers the most critical features first. This shows the client progress, gets feedback, and keeps the project alive. Note that C might follow B, but B is FIRST."
   },
   {
     id:30, domain:"Business Environment", difficulty:"medium",
-    principle:"P21 — No 'only/always/never'",
+    principle:"P21, No 'only/always/never'",
     text:"A stakeholder requests a feature enhancement. The PM responds that the feature can ONLY be added if the client agrees to extend the schedule AND increase the budget. Is this the right response?",
-    options:["A. Yes — setting conditions is responsible PM behavior","B. No — the word 'only' eliminates all other possibilities and is a red flag answer","C. Yes — the PM should protect the baseline at all costs","D. It depends on the contract type"],
+    options:["A. Yes, setting conditions is responsible PM behavior","B. No, the word 'only' eliminates all other possibilities and is a red flag answer","C. Yes, the PM should protect the baseline at all costs","D. It depends on the contract type"],
     answer:1,
-    explanation:"<strong>Principle #21 — Never use 'only,' 'always,' or 'never' in your thinking.</strong> On the exam, answers containing 'only,' 'always,' or 'never' are almost always wrong because they restrict all possibilities. The correct response reviews feasibility with the team and explores options (Principle #1 + #18) — not issues an ultimatum."
+    explanation:"<strong>Principle #21, Never use 'only,' 'always,' or 'never' in your thinking.</strong> On the exam, answers containing 'only,' 'always,' or 'never' are almost always wrong because they restrict all possibilities. The correct response reviews feasibility with the team and explores options (Principle #1 + #18), not issues an ultimatum."
   },
 
   // ── EXTRA HIGH-VALUE QUESTIONS ──────────────────────────
   {
     id:31, domain:"Process", difficulty:"hard",
-    principle:"Risk — Large project complexity",
+    principle:"Risk, Large project complexity",
     text:"A $100M hybrid project has 34 team members in 4 countries, 2,256 work packages, 1,300 stakeholders, and 7 phases. At the end of planning, only 6 risks were identified. What is the problem?",
-    options:["A. The risk management plan was not followed","B. The identify risks process is incomplete — 6 risks is insufficient for a project of this scale","C. The risk register needs quantitative analysis","D. The sponsor has not approved the risk management plan"],
+    options:["A. The risk management plan was not followed","B. The identify risks process is incomplete, 6 risks is insufficient for a project of this scale","C. The risk register needs quantitative analysis","D. The sponsor has not approved the risk management plan"],
     answer:1,
-    explanation:"<strong>Project complexity drives risk volume.</strong> A project with 34 team members, 4 countries, 7 phases, and 1,300 stakeholders CANNOT have only 6 identified risks. The correct answer is B — the Identify Risks process is clearly incomplete. This signals a systemic process failure, not a documentation problem. PMI expects risk count to scale with project complexity."
+    explanation:"<strong>Project complexity drives risk volume.</strong> A project with 34 team members, 4 countries, 7 phases, and 1,300 stakeholders CANNOT have only 6 identified risks. The correct answer is B, the Identify Risks process is clearly incomplete. This signals a systemic process failure, not a documentation problem. PMI expects risk count to scale with project complexity."
   },
   {
     id:32, domain:"People", difficulty:"medium",
-    principle:"P3 — Servant leadership",
+    principle:"P3, Servant leadership",
     text:"After a successful project, the client praises the PM for delivering on time. The PM then holds a team meeting. What is the MOST important thing the PM should do during the meeting?",
     options:["A. Communicate the client's positive feedback to the project team","B. Discuss the next project's scope","C. Record the client feedback in meeting minutes","D. Analyze ways to improve future delivery timelines"],
     answer:0,
-    explanation:"<strong>Servant Leadership — recognize the team.</strong> The team BUILT the project. They are the reason it was delivered on time. A servant leader immediately shares positive recognition with the team. This boosts morale, reinforces good behavior, and acknowledges their contribution. Everything else (B, C, D) can happen — but A is FIRST and MOST important."
+    explanation:"<strong>Servant Leadership, recognize the team.</strong> The team BUILT the project. They are the reason it was delivered on time. A servant leader immediately shares positive recognition with the team. This boosts morale, reinforces good behavior, and acknowledges their contribution. Everything else (B, C, D) can happen, but A is FIRST and MOST important."
   },
   {
     id:33, domain:"Process", difficulty:"medium",
-    principle:"Agile — Definition of Done",
+    principle:"Agile, Definition of Done",
     text:"An agile team is establishing quality standards at the start of a new project. What should the PM guide the team to focus on?",
     options:["A. Identify the tools and methods for project success, ensuring testing is done early and continuously","B. Conduct user acceptance testing at the end of all sprints","C. Confirm the definition of done with the product owner when all acceptance criteria are met","D. Ensure all product documentation is complete before the first sprint begins"],
     answer:0,
-    explanation:"<strong>Agile Quality — early and continuous.</strong> At the START of an agile project, quality means: establishing how you will test, what tools you will use, and ensuring testing is built into every iteration. The Definition of Done (C) IS important — but it is established at the beginning, not confirmed when criteria are met. D is predictive thinking, not agile."
+    explanation:"<strong>Agile Quality, early and continuous.</strong> At the START of an agile project, quality means: establishing how you will test, what tools you will use, and ensuring testing is built into every iteration. The Definition of Done (C) IS important, but it is established at the beginning, not confirmed when criteria are met. D is predictive thinking, not agile."
   },
   {
     id:34, domain:"Process", difficulty:"easy",
-    principle:"Agile — Sprint rules",
+    principle:"Agile, Sprint rules",
     text:"An agile team is midway through a sprint. The client suddenly requests feedback on newly delivered features but the team has not yet heard from them. The product owner is concerned. What should the PM do?",
     options:["A. Pause the sprint and wait for client feedback","B. Escalate to the client's management","C. Complete the sprint as planned and gather client feedback during the sprint review at the end","D. Remove the features from the sprint"],
     answer:2,
-    explanation:"<strong>Sprint integrity:</strong> You do not interrupt or pause a sprint once it has started. The sprint goal is fixed. Client feedback is gathered at the END of each sprint during the Sprint Review — not mid-sprint. Pausing (A) causes delay. Escalating (B) is premature. D removes value. The sprint runs to completion."
+    explanation:"<strong>Sprint integrity:</strong> You do not interrupt or pause a sprint once it has started. The sprint goal is fixed. Client feedback is gathered at the END of each sprint during the Sprint Review, not mid-sprint. Pausing (A) causes delay. Escalating (B) is premature. D removes value. The sprint runs to completion."
   },
   {
     id:35, domain:"Process", difficulty:"hard",
-    principle:"Stakeholder — Power/Interest grid",
+    principle:"Stakeholder, Power/Interest grid",
     text:"A project has a CEO (high power, high interest) and store managers (medium influence, high interest). According to stakeholder engagement strategy, how should the PM treat the CEO?",
-    options:["A. Keep informed — they have high interest but limited ability to act","B. Manage closely — provide frequent updates and progress reports","C. Monitor — check in occasionally","D. Keep satisfied — high power but limited interest"],
+    options:["A. Keep informed, they have high interest but limited ability to act","B. Manage closely, provide frequent updates and progress reports","C. Monitor, check in occasionally","D. Keep satisfied, high power but limited interest"],
     answer:1,
     explanation:"<strong>Power vs Interest Grid:</strong> High Power + High Interest = MANAGE CLOSELY. This stakeholder can kill or champion the project and cares deeply about outcomes. They need frequent, detailed updates. Keep Satisfied = High Power, Low Interest (give them what they need, don't overwhelm). Keep Informed = Low Power, High Interest. Monitor = Low Power, Low Interest."
   },
   // Add final questions
   {
     id:36, domain:"People", difficulty:"medium",
-    principle:"P14 — SME when no one knows",
+    principle:"P14, SME when no one knows",
     text:"A PM is managing a complex manufacturing project. The team encounters a machinery problem they cannot fix. The team lacks the technical expertise. A similar problem occurred in a past project but was not well documented. What should the PM do?",
     options:["A. Investigate internally and attempt to troubleshoot to avoid delay","B. Consult a subject matter expert with the technical knowledge to resolve the issue","C. Continue with other tasks while the team solves the issue themselves","D. Escalate immediately to the project sponsor"],
     answer:1,
-    explanation:"<strong>Principle #14 — When you and your team have no clue, bring in an SME.</strong> The key conditions: (1) team lacks expertise AND (2) the past project reference is not well documented (so Lessons Learned won't help). When both conditions are true, an SME is required. If the past project had good documentation, refer to Lessons Learned first."
+    explanation:"<strong>Principle #14, When you and your team have no clue, bring in an SME.</strong> The key conditions: (1) team lacks expertise AND (2) the past project reference is not well documented (so Lessons Learned won't help). When both conditions are true, an SME is required. If the past project had good documentation, refer to Lessons Learned first."
   },
   {
     id:37, domain:"Process", difficulty:"medium",
-    principle:"Agile — Burndown chart",
+    principle:"Agile, Burndown chart",
     text:"An agile team's risk burn-down chart shows that the number of high-risk items has not decreased over three consecutive sprints despite mitigation efforts. What does this indicate?",
     options:["A. The team is identifying too many risks","B. The risk responses are not effective and should be reassessed","C. The project should be escalated to the sponsor","D. The burn-down chart is being measured incorrectly"],
     answer:1,
-    explanation:"<strong>Risk Burn-Down Chart:</strong> A healthy risk burn-down shows risks decreasing over time. If the chart is flat (not decreasing), the risk responses are NOT working. The correct action is to reassess and update the risk responses — go back to Plan Risk Responses and adjust the strategy. A flat or rising line is a red flag requiring immediate action."
+    explanation:"<strong>Risk Burn-Down Chart:</strong> A healthy risk burn-down shows risks decreasing over time. If the chart is flat (not decreasing), the risk responses are NOT working. The correct action is to reassess and update the risk responses, go back to Plan Risk Responses and adjust the strategy. A flat or rising line is a red flag requiring immediate action."
   },
   {
     id:38, domain:"Business Environment", difficulty:"easy",
-    principle:"P10 — Closing always happens",
+    principle:"P10, Closing always happens",
     text:"A project has been completed and the client has signed off. However, the PM moves immediately to the next project without formally closing the current one. What is the RISK of this approach?",
-    options:["A. No risk — if the client signed off, the project is complete","B. Lessons learned are lost, contracts may not be properly closed, and resources may not be properly released","C. The sponsor may object to the pace","D. The next project will be affected by the confusion"],
+    options:["A. No risk, if the client signed off, the project is complete","B. Lessons learned are lost, contracts may not be properly closed, and resources may not be properly released","C. The sponsor may object to the pace","D. The next project will be affected by the confusion"],
     answer:1,
-    explanation:"<strong>Principle #10 — Closing phase ALWAYS occurs.</strong> Skipping closeout means: lessons learned are never captured (wasted institutional knowledge), contracts are not formally closed (financial and legal risk), resources are not officially released (creates overlap confusion), and final payments may not trigger. Closeout is not optional — even if the client is happy."
+    explanation:"<strong>Principle #10, Closing phase ALWAYS occurs.</strong> Skipping closeout means: lessons learned are never captured (wasted institutional knowledge), contracts are not formally closed (financial and legal risk), resources are not officially released (creates overlap confusion), and final payments may not trigger. Closeout is not optional, even if the client is happy."
   },
   {
     id:39, domain:"Process", difficulty:"medium",
-    principle:"Integration — Change control",
+    principle:"Integration, Change control",
     text:"During execution, a scope change is approved by the CCB. What must the PM update as a result?",
     options:["A. Only the WBS","B. Only the schedule","C. The project management plan and all affected subsidiary plans and baselines","D. The project charter"],
     answer:2,
-    explanation:"<strong>Integrated Change Control:</strong> When a scope change is approved, it is NOT enough to update just the WBS or schedule. ALL affected baselines (scope, schedule, cost) and the project management plan must be updated. This is integrated change control — changes ripple through all connected plans. The charter (D) is rarely updated."
+    explanation:"<strong>Integrated Change Control:</strong> When a scope change is approved, it is NOT enough to update just the WBS or schedule. ALL affected baselines (scope, schedule, cost) and the project management plan must be updated. This is integrated change control, changes ripple through all connected plans. The charter (D) is rarely updated."
   },
   {
     id:40, domain:"People", difficulty:"easy",
@@ -2156,15 +2156,15 @@ const QUESTIONS = [
     text:"Two team members have a conflict over technical priorities. The PM facilitates a discussion where both parties openly explore the disagreement and find a mutually acceptable solution. What conflict resolution technique is this?",
     options:["A. Smoothing / Accommodating","B. Forcing","C. Collaborating / Problem Solving","D. Compromising"],
     answer:2,
-    explanation:"<strong>5 Conflict Resolution Modes:</strong> Collaborating/Problem Solving = explore the disagreement openly, find a win-win — PMI's PREFERRED approach. Compromising = both give something up. Smoothing = acknowledge the conflict exists but minimize it. Forcing = impose your position. Withdrawing = avoid the conflict entirely. When in doubt on the exam — Collaborate first."
+    explanation:"<strong>5 Conflict Resolution Modes:</strong> Collaborating/Problem Solving = explore the disagreement openly, find a win-win, PMI's PREFERRED approach. Compromising = both give something up. Smoothing = acknowledge the conflict exists but minimize it. Forcing = impose your position. Withdrawing = avoid the conflict entirely. When in doubt on the exam, Collaborate first."
   },
   {
     id:41, domain:"Process", difficulty:"medium",
-    principle:"Agile — Product Owner",
+    principle:"Agile, Product Owner",
     text:"In a Scrum project, who is responsible for prioritizing the product backlog?",
     options:["A. The Scrum Master","B. The Development Team","C. The Project Sponsor","D. The Product Owner"],
     answer:3,
-    explanation:"<strong>Scrum Roles:</strong> Product Owner — owns and prioritizes the backlog, represents the client, defines acceptance criteria. Scrum Master — servant leader, removes impediments, facilitates ceremonies. Development Team — self-organizing, does the actual work, estimates tasks. The Product Owner is the ONLY one with authority to prioritize the backlog."
+    explanation:"<strong>Scrum Roles:</strong> Product Owner, owns and prioritizes the backlog, represents the client, defines acceptance criteria. Scrum Master, servant leader, removes impediments, facilitates ceremonies. Development Team, self-organizing, does the actual work, estimates tasks. The Product Owner is the ONLY one with authority to prioritize the backlog."
   },
   {
     id:42, domain:"Process", difficulty:"hard",
@@ -2176,7 +2176,7 @@ const QUESTIONS = [
   },
   {
     id:43, domain:"People", difficulty:"medium",
-    principle:"P12 — Predictive vs Agile keywords",
+    principle:"P12, Predictive vs Agile keywords",
     text:"A PM reads: 'The team must update the Change Control Board before implementing any changes.' This language indicates what type of project?",
     options:["A. Agile","B. Hybrid","C. Predictive / Waterfall","D. Scrum"],
     answer:2,
@@ -2184,7 +2184,7 @@ const QUESTIONS = [
   },
   {
     id:44, domain:"Process", difficulty:"medium",
-    principle:"Risk — Risk register vs report",
+    principle:"Risk, Risk register vs report",
     text:"Which document provides a SUMMARY view of the overall project risk profile, while the other provides DETAILED information on each individual risk?",
     options:["A. Risk register provides summary; risk report provides detail","B. Risk report provides summary; risk register provides detail","C. Both serve the same purpose","D. The risk management plan provides both"],
     answer:1,
@@ -2196,7 +2196,7 @@ const QUESTIONS = [
     text:"A project manager is unsure about the total cost of a construction project. Which contract type is MOST appropriate to protect the seller from cost overruns?",
     options:["A. Fixed Price (FP / Lump Sum)","B. Time and Materials (T&M)","C. Cost Plus Fixed Fee (CPFF)","D. Fixed Price Incentive Fee (FPIF)"],
     answer:2,
-    explanation:"<strong>Contract Types — Risk allocation:</strong> Fixed Price = buyer has LOW risk; seller absorbs cost overruns. Cost Reimbursable (Cost Plus) = seller has LOW risk; buyer pays all costs plus fee. T&M = hybrid, commonly used for staff augmentation. When the SELLER wants to minimize risk and costs are uncertain, Cost Plus (C) protects them. When scope is well defined, Fixed Price benefits the buyer."
+    explanation:"<strong>Contract Types, Risk allocation:</strong> Fixed Price = buyer has LOW risk; seller absorbs cost overruns. Cost Reimbursable (Cost Plus) = seller has LOW risk; buyer pays all costs plus fee. T&M = hybrid, commonly used for staff augmentation. When the SELLER wants to minimize risk and costs are uncertain, Cost Plus (C) protects them. When scope is well defined, Fixed Price benefits the buyer."
   },
   {
     id:46, domain:"People", difficulty:"hard",
@@ -2204,7 +2204,7 @@ const QUESTIONS = [
     text:"A newly formed project team is experiencing confusion over roles, arguing about the best approach, and struggling to produce any output. Which stage of team development does this represent?",
     options:["A. Norming","B. Storming","C. Performing","D. Forming"],
     answer:1,
-    explanation:"<strong>Tuckman's 5 Stages:</strong> Forming — team comes together, polite, unclear. Storming — conflict, arguments over approach, roles unclear (this question). Norming — team builds cohesion, agrees on rules. Performing — team is productive and high-functioning. Adjourning — project ends, team disperses. The confusion + conflict described = Storming."
+    explanation:"<strong>Tuckman's 5 Stages:</strong> Forming, team comes together, polite, unclear. Storming, conflict, arguments over approach, roles unclear (this question). Norming, team builds cohesion, agrees on rules. Performing, team is productive and high-functioning. Adjourning, project ends, team disperses. The confusion + conflict described = Storming."
   },
   {
     id:47, domain:"Business Environment", difficulty:"medium",
@@ -2212,11 +2212,11 @@ const QUESTIONS = [
     text:"A PM is asked to evaluate whether a project should continue. The project is behind schedule, but an analysis shows the remaining work will still deliver significant business value that exceeds the remaining cost. What should the PM recommend?",
     options:["A. Cancel the project since it is behind schedule","B. Continue the project because the business value outweighs the remaining cost","C. Escalate immediately to the board","D. Reduce scope to recover the schedule first"],
     answer:1,
-    explanation:"<strong>Principle #4 — Choose the most value-driven answer.</strong> In Business Environment questions, business value is the primary lens. A project that is behind schedule but still delivers value exceeding its cost should continue. Schedule variance alone is not sufficient reason to cancel if the value case is strong. Scope reduction (D) might be considered but the question asks what to RECOMMEND about continuation."
+    explanation:"<strong>Principle #4, Choose the most value-driven answer.</strong> In Business Environment questions, business value is the primary lens. A project that is behind schedule but still delivers value exceeding its cost should continue. Schedule variance alone is not sufficient reason to cancel if the value case is strong. Scope reduction (D) might be considered but the question asks what to RECOMMEND about continuation."
   },
   {
     id:48, domain:"Process", difficulty:"medium",
-    principle:"Quality — Prevention vs Appraisal",
+    principle:"Quality, Prevention vs Appraisal",
     text:"A software team spends time reviewing requirements documents and creating detailed test plans before writing any code. This is an example of what type of quality cost?",
     options:["A. External Failure","B. Internal Failure","C. Appraisal","D. Prevention"],
     answer:3,
@@ -2232,21 +2232,21 @@ const QUESTIONS = [
   },
   {
     id:50, domain:"Process", difficulty:"hard",
-    principle:"Integration — Lessons learned",
+    principle:"Integration, Lessons learned",
     text:"A PM is closing a project that ran 6 months over schedule due to scope creep and poor stakeholder communication. What is the MOST important output of the closing process that will benefit future projects?",
     options:["A. Final project report","B. Formal acceptance from the client","C. Lessons learned register","D. Final budget reconciliation"],
     answer:2,
-    explanation:"<strong>Lessons Learned Register — the crown jewel of project closeout.</strong> This document captures what went wrong (scope creep, communication failures), what went right, and what should be done differently. It becomes an Organizational Process Asset (OPA) that directly improves future projects. While client acceptance (B) is required to CLOSE, lessons learned is the most VALUABLE output for the organization going forward."
+    explanation:"<strong>Lessons Learned Register, the crown jewel of project closeout.</strong> This document captures what went wrong (scope creep, communication failures), what went right, and what should be done differently. It becomes an Organizational Process Asset (OPA) that directly improves future projects. While client acceptance (B) is required to CLOSE, lessons learned is the most VALUABLE output for the organization going forward."
   },
 
-  // ══════════ EXPANSION PACK — built from PMBOK 7 + ECO ══════════
+  // ══════════ EXPANSION PACK, built from PMBOK 7 + ECO ══════════
   // ── BUSINESS ENVIRONMENT (weak-area focus) ──
   {
-    id:51, domain:"Business Environment", difficulty:"medium", principle:"Compliance — plan it in",
+    id:51, domain:"Business Environment", difficulty:"medium", principle:"Compliance, plan it in",
     text:"A PM is starting a project in a heavily regulated industry. What should the PM do FIRST regarding compliance?",
     options:["A. Begin execution and handle compliance issues as they come up","B. Identify all applicable compliance requirements and build them into the plan","C. Delegate compliance entirely to the legal department","D. Assume standard company policy already covers it"],
     answer:1,
-    explanation:"<strong>Business Environment — Compliance is proactive.</strong> You identify every applicable legal, regulatory, and policy requirement up front and bake it into the plan. Reacting later (A), fully delegating (C), or assuming coverage (D) all create compliance risk. Compliance is planned, not improvised."
+    explanation:"<strong>Business Environment, Compliance is proactive.</strong> You identify every applicable legal, regulatory, and policy requirement up front and bake it into the plan. Reacting later (A), fully delegating (C), or assuming coverage (D) all create compliance risk. Compliance is planned, not improvised."
   },
   {
     id:52, domain:"Business Environment", difficulty:"hard", principle:"Compliance is non-negotiable",
@@ -2256,21 +2256,21 @@ const QUESTIONS = [
     explanation:"<strong>Compliance always wins.</strong> Regulatory and safety requirements are non-negotiable. The PM complies and transparently communicates the impact. You never skip (A), ship a known gap (B), or waive a legal requirement (D). Protecting compliance protects the organization."
   },
   {
-    id:53, domain:"Business Environment", difficulty:"medium", principle:"Business case — NPV",
+    id:53, domain:"Business Environment", difficulty:"medium", principle:"Business case, NPV",
     text:"A PM must select one of two projects. Project A has an NPV of $50,000; Project B has an NPV of $80,000. Which should be selected?",
     options:["A. Project A","B. Project B","C. Cannot decide without the IRR","D. The one that costs less"],
     answer:1,
     explanation:"<strong>NPV rule: higher is better.</strong> Net Present Value already accounts for the time value of money, so the higher NPV ($80,000, Project B) is the more valuable choice. With NPV you do not need IRR or cost to decide. Always pick the higher NPV."
   },
   {
-    id:54, domain:"Business Environment", difficulty:"medium", principle:"Business case — IRR",
+    id:54, domain:"Business Environment", difficulty:"medium", principle:"Business case, IRR",
     text:"Project X has an IRR of 18% and Project Y has an IRR of 12%. Which is the more financially attractive investment?",
     options:["A. Project X","B. Project Y","C. They are equal","D. Cannot tell without payback period"],
     answer:0,
     explanation:"<strong>IRR rule: higher is better.</strong> The Internal Rate of Return is the project's effective annual return. 18% beats 12%, so Project X is more attractive. Remember the pattern: for NPV, IRR, and benefit-cost ratio, HIGHER is better; for payback period, SHORTER is better."
   },
   {
-    id:55, domain:"Business Environment", difficulty:"easy", principle:"Business case — Payback",
+    id:55, domain:"Business Environment", difficulty:"easy", principle:"Business case, Payback",
     text:"Project A recovers its investment in 18 months; Project B in 30 months. Based on payback period alone, which is preferred?",
     options:["A. Project A","B. Project B","C. Neither, payback is irrelevant","D. The one with the larger budget"],
     answer:0,
@@ -2291,14 +2291,14 @@ const QUESTIONS = [
     explanation:"<strong>Value governs continuation.</strong> When the business case collapses, the PM surfaces it to the sponsor with updated data for a continue/kill call. Sunk effort (A) is irrelevant. Hiding scope cuts (C) or finishing blindly (D) wastes money. Projects exist to deliver value, not just to finish."
   },
   {
-    id:58, domain:"Business Environment", difficulty:"medium", principle:"External change — assess impact",
+    id:58, domain:"Business Environment", difficulty:"medium", principle:"External change, assess impact",
     text:"A new government regulation is announced mid-project that changes some product requirements. What should the PM do FIRST?",
     options:["A. Ignore it until the project ends","B. Assess the impact on scope, schedule, and cost, then raise a change request","C. Immediately halt the entire project","D. Tell the team to quietly comply"],
     answer:1,
     explanation:"<strong>External changes get assessed, not ignored.</strong> A regulatory shift is an external business-environment change: evaluate its impact on the baselines, then route it through change control. Ignoring (A) risks non-compliance, halting (C) is an overreaction, and quiet compliance (D) skips governance."
   },
   {
-    id:59, domain:"Business Environment", difficulty:"medium", principle:"Org change — ADKAR",
+    id:59, domain:"Business Environment", difficulty:"medium", principle:"Org change, ADKAR",
     text:"A new system rollout has low adoption because staff do not understand WHY the change is happening. In the ADKAR model, which element is missing?",
     options:["A. Awareness","B. Ability","C. Reinforcement","D. Desire"],
     answer:0,
@@ -2349,63 +2349,63 @@ const QUESTIONS = [
 
   // ── AGILE / SCRUM ──
   {
-    id:66, domain:"Process", difficulty:"easy", principle:"Agile — Scrum Master",
+    id:66, domain:"Process", difficulty:"easy", principle:"Agile, Scrum Master",
     text:"In a Scrum team, who facilitates the events and removes impediments but has NO authority over how the team does its work?",
     options:["A. The Product Owner","B. The Scrum Master","C. The Project Sponsor","D. The Functional Manager"],
     answer:1,
     explanation:"<strong>Scrum Master = servant leader.</strong> They coach, facilitate ceremonies, and clear impediments, but they do not assign work or command the team. The Product Owner owns the backlog; the developers own how the work gets done."
   },
   {
-    id:67, domain:"Process", difficulty:"medium", principle:"Agile — Velocity misuse",
+    id:67, domain:"Process", difficulty:"medium", principle:"Agile, Velocity misuse",
     text:"A manager wants to compare two Scrum teams by their velocity to see which is more productive. Is this appropriate?",
     options:["A. Yes, the team with higher velocity is better","B. No, velocity is team-specific and is used for that team's own forecasting, not cross-team comparison","C. Yes, as long as both estimate in hours","D. No, because velocity is not a real metric"],
     answer:1,
     explanation:"<strong>Never compare teams by velocity.</strong> Story points are relative and calibrated within a single team, so velocity only forecasts that team's future. Comparing teams punishes honest estimation and is an anti-pattern."
   },
   {
-    id:68, domain:"Process", difficulty:"easy", principle:"Agile — Story points",
+    id:68, domain:"Process", difficulty:"easy", principle:"Agile, Story points",
     text:"Story points estimate a backlog item based on what?",
     options:["A. Exact hours of effort","B. Relative size, complexity, and uncertainty","C. The project manager's gut feel","D. Calendar days"],
     answer:1,
     explanation:"<strong>Story points are relative.</strong> They capture size, complexity, and uncertainty compared to other items, not precise hours. This lets teams estimate quickly and consistently without false precision."
   },
   {
-    id:69, domain:"Process", difficulty:"medium", principle:"Agile — Sprint Review",
+    id:69, domain:"Process", difficulty:"medium", principle:"Agile, Sprint Review",
     text:"At the end of a sprint, the team demonstrates the product increment to stakeholders and gathers feedback. Which event is this?",
     options:["A. Sprint Retrospective","B. Daily Scrum","C. Sprint Review","D. Backlog Refinement"],
     answer:2,
     explanation:"<strong>Review vs Retrospective:</strong> The Sprint Review inspects the PRODUCT with stakeholders and adapts the backlog. The Retrospective inspects the TEAM'S PROCESS and improves how they work. Demo + stakeholder feedback = Sprint Review."
   },
   {
-    id:70, domain:"Process", difficulty:"easy", principle:"Agile — Daily Scrum",
+    id:70, domain:"Process", difficulty:"easy", principle:"Agile, Daily Scrum",
     text:"What is the primary purpose of the daily standup (Daily Scrum)?",
     options:["A. A status report to the project manager","B. For the team to synchronize and surface impediments for the day","C. To re-plan the entire sprint","D. To demo the product to the client"],
     answer:1,
     explanation:"<strong>The standup is for the team, by the team.</strong> It is a short synchronization to align on the day's plan and raise blockers, not a status meeting for a manager. Keep it timeboxed (about 15 minutes)."
   },
   {
-    id:71, domain:"Process", difficulty:"easy", principle:"Agile — Information radiator",
+    id:71, domain:"Process", difficulty:"easy", principle:"Agile, Information radiator",
     text:"A large, highly visible chart on the wall that shows sprint progress to anyone passing by is called a what?",
     options:["A. Status report","B. Information radiator","C. Risk register","D. Gantt chart"],
     answer:1,
     explanation:"<strong>Information radiator = big visible chart.</strong> Burndown/burnup charts, task boards, and Kanban boards radiate information transparently so anyone can see status at a glance, supporting agile's value of transparency."
   },
   {
-    id:72, domain:"Process", difficulty:"medium", principle:"Agile — Backlog refinement",
+    id:72, domain:"Process", difficulty:"medium", principle:"Agile, Backlog refinement",
     text:"The ongoing activity of adding detail, estimates, and order to product backlog items is known as?",
     options:["A. Sprint planning","B. Backlog refinement (grooming)","C. The retrospective","D. Release planning"],
     answer:1,
     explanation:"<strong>Backlog refinement</strong> keeps the top of the backlog ready: items are clarified, estimated, split, and re-ordered so each sprint can start cleanly. It is continuous, not a one-time event."
   },
   {
-    id:73, domain:"Process", difficulty:"medium", principle:"Agile — Prioritization",
+    id:73, domain:"Process", difficulty:"medium", principle:"Agile, Prioritization",
     text:"A Product Owner needs to decide which features are essential versus optional for the next release. Which technique helps prioritize?",
     options:["A. Monte Carlo simulation","B. MoSCoW (Must have, Should have, Could have, Will not have)","C. Critical path method","D. Earned value management"],
     answer:1,
     explanation:"<strong>MoSCoW</strong> sorts requirements into Must, Should, Could, and Will-not-have-now, making release scope decisions explicit. Monte Carlo and critical path are schedule/risk tools, and EVM is a performance tool, not prioritization."
   },
   {
-    id:74, domain:"Process", difficulty:"easy", principle:"Agile — Increment",
+    id:74, domain:"Process", difficulty:"easy", principle:"Agile, Increment",
     text:"At the end of each sprint, an agile team should produce what?",
     options:["A. A complete project plan","B. A potentially shippable product increment","C. A signed contract","D. A change request"],
     answer:1,
@@ -2421,42 +2421,42 @@ const QUESTIONS = [
 
   // ── EVM CALCULATION DRILLS ──
   {
-    id:76, domain:"Process", difficulty:"medium", principle:"EVM — Cost Variance",
+    id:76, domain:"Process", difficulty:"medium", principle:"EVM, Cost Variance",
     text:"BAC = $200,000. The project is 50% complete and AC = $120,000. What is the Cost Variance (CV)?",
     options:["A. -$20,000","B. +$20,000","C. -$120,000","D. $80,000"],
     answer:0,
     explanation:"<strong>EV first.</strong> EV = BAC x % complete = $200,000 x 0.50 = $100,000. CV = EV - AC = $100,000 - $120,000 = -$20,000. Negative CV means over budget. Always compute EV before any variance or index."
   },
   {
-    id:77, domain:"Process", difficulty:"hard", principle:"EVM — EAC atypical",
+    id:77, domain:"Process", difficulty:"hard", principle:"EVM, EAC atypical",
     text:"BAC = $400,000, EV = $100,000, AC = $150,000. The overrun was a one-time (atypical) event. What is the EAC?",
     options:["A. $450,000","B. $400,000","C. $600,000","D. $300,000"],
     answer:0,
     explanation:"<strong>Atypical EAC = AC + (BAC - EV).</strong> = $150,000 + ($400,000 - $100,000) = $150,000 + $300,000 = $450,000. Use this when the variance will NOT continue. Use EAC = BAC / CPI when the current rate WILL continue (typical)."
   },
   {
-    id:78, domain:"Process", difficulty:"medium", principle:"EVM — VAC",
+    id:78, domain:"Process", difficulty:"medium", principle:"EVM, VAC",
     text:"BAC = $500,000 and EAC = $590,000. What is the Variance at Completion (VAC)?",
     options:["A. -$90,000 (will finish over budget)","B. +$90,000 (will finish under budget)","C. -$590,000","D. $1,090,000"],
     answer:0,
     explanation:"<strong>VAC = BAC - EAC.</strong> = $500,000 - $590,000 = -$90,000. Negative VAC means you are forecast to finish OVER budget by $90,000. VAC is the budget version of looking ahead to the finish line."
   },
   {
-    id:79, domain:"Process", difficulty:"hard", principle:"EVM — TCPI",
+    id:79, domain:"Process", difficulty:"hard", principle:"EVM, TCPI",
     text:"BAC = $100,000, EV = $40,000, AC = $50,000. To still finish within the original budget, what efficiency (TCPI) is required on the remaining work?",
     options:["A. 0.83","B. 1.2","C. 1.0","D. 0.8"],
     answer:1,
     explanation:"<strong>TCPI (to BAC) = (BAC - EV) / (BAC - AC).</strong> = ($100,000 - $40,000) / ($100,000 - $50,000) = $60,000 / $50,000 = 1.2. A TCPI above 1.0 means the team must work MORE efficiently than before to hit the budget, which is a warning sign."
   },
   {
-    id:80, domain:"Process", difficulty:"easy", principle:"EVM — SV meaning",
+    id:80, domain:"Process", difficulty:"easy", principle:"EVM, SV meaning",
     text:"A project has EV = $80,000 and PV = $100,000. What does the Schedule Variance tell you?",
     options:["A. Ahead of schedule","B. Behind schedule","C. Over budget","D. Exactly on schedule"],
     answer:1,
     explanation:"<strong>SV = EV - PV</strong> = $80,000 - $100,000 = -$20,000. Negative SV means behind schedule. Note SV uses PV (the plan), while CV uses AC (the spend). EV minus the plan = schedule; EV minus the spend = cost."
   },
   {
-    id:81, domain:"Process", difficulty:"medium", principle:"EVM — ETC",
+    id:81, domain:"Process", difficulty:"medium", principle:"EVM, ETC",
     text:"EAC = $450,000 and AC = $150,000. What is the Estimate to Complete (ETC)?",
     options:["A. $300,000","B. $600,000","C. $150,000","D. $450,000"],
     answer:0,
@@ -2493,7 +2493,7 @@ const QUESTIONS = [
     explanation:"<strong>Every change goes through integrated change control.</strong> Document the request, assess impact on scope, schedule, and cost, then let the Change Control Board decide. Implementing without approval is gold plating; rejecting outright violates 'never say no first'; the backlog (D) is the agile answer, not predictive."
   },
   {
-    id:86, domain:"Process", difficulty:"medium", principle:"Procurement — SOW",
+    id:86, domain:"Process", difficulty:"medium", principle:"Procurement, SOW",
     text:"Which procurement document describes the work to be performed by the seller in enough detail for them to price it?",
     options:["A. Statement of Work (SOW)","B. RACI chart","C. Risk register","D. Project charter"],
     answer:0,
@@ -2507,7 +2507,7 @@ const QUESTIONS = [
     explanation:"<strong>Secondary vs residual:</strong> A SECONDARY risk is created by your response (you bought insurance, now you have counterparty risk). A RESIDUAL risk is what remains AFTER the response (the leftover exposure). Caused-by-the-response = secondary."
   },
   {
-    id:88, domain:"Process", difficulty:"hard", principle:"Quality — Rule of seven",
+    id:88, domain:"Process", difficulty:"hard", principle:"Quality, Rule of seven",
     text:"On a control chart, seven consecutive points fall on one side of the mean, even though all points are within the control limits. What does this indicate?",
     options:["A. The process is fine, ignore it","B. A non-random pattern (rule of seven) that should be investigated","C. The project is over budget","D. A compliance violation"],
     answer:1,
@@ -2963,6 +2963,34 @@ const QUESTIONS = [
     options:["A. Conduct a Monte Carlo analysis to model the range of potential outcomes and responses","B. Set up a meeting with the testing team to learn more about the testing methods","C. Evaluate when a mitigation strategy will be implemented for future projects","D. Plan for these errors in the risk register as an event to watch for in future projects"],
     answer:0,
     explanation:"<strong>An uncertain amount, like an unknown number of test errors, is a variability risk, and the tool for a range of outcomes is Monte Carlo simulation.</strong> Variability risk is non-event based, so it cannot be entered as a single event with one mitigation. B is wrong because the deliverables already met spec, so testing methods are not the issue. C is wrong because variability risk has no single mitigation to schedule. D is the trap, because a range of outcomes does not belong in the risk register as an event. Signal: 'unknown number, amount, or how much' means variability risk means Monte Carlo. A specific thing that might happen means event risk means the register."
+  },
+  {
+    id:152, domain:"People", difficulty:"hard", principle:"When a stakeholder interferes with the team, the scrum master removes the impediment",
+    text:"During a daily standup, a stakeholder unexpectedly joins and criticizes the performance of one team member. Afterward the team member is distracted and their productivity drops. What should the team member do in this scenario?",
+    options:["A. Meet with the scrum master to discuss what happened and how it affected productivity","B. Schedule a meeting with the stakeholder to discuss their actions during the standup","C. Email the stakeholder asking that future communications go through the project manager","D. Meet with the project manager and sponsor to request reassignment to a different project"],
+    answer:0,
+    explanation:"<strong>The scrum master removes impediments, and a stakeholder interfering with the team is an impediment.</strong> The team member should not try to resolve a live conflict directly with the stakeholder, because the question already tells you there is friction that needs a third party. That kills B and C. D runs from the problem instead of fixing it and does not address the root cause. The scrum master talks to the stakeholder, protects the team, and teaches the right channel for raising concerns. Signal: 'outsider disrupts the team' points to the scrum master shielding the team, not the team member self-negotiating."
+  },
+  {
+    id:153, domain:"Process", difficulty:"medium", principle:"Project vision is the most stable agile parameter - change it and everything changes",
+    text:"Which agile project parameter is least likely to change during project execution?",
+    options:["A. The project vision","B. The definition of done","C. The product owner","D. The product backlog"],
+    answer:0,
+    explanation:"<strong>The project vision is the why of the project, so it is the most stable anchor and rarely changes.</strong> Change the vision and you change the purpose, which can end the project. Everything else flexes around it: the definition of done can be refined (B), the product owner can be replaced (C), and the product backlog is expected to change constantly through refinement (D). Signal: 'least likely to change' in agile points to vision, because it is the foundation the rest is built on."
+  },
+  {
+    id:154, domain:"Process", difficulty:"medium", principle:"Shared purpose confusion is solved by the project vision, not the backlog or manifesto",
+    text:"An agile team struggles to finish a checklist because members hold different interpretations of what the project is meant to achieve. How can the project manager help them gain a common understanding of the project's overall purpose?",
+    options:["A. Review the project vision with the team","B. Review the full list of user stories","C. Review the Agile Manifesto","D. Conduct the first sprint retrospective"],
+    answer:0,
+    explanation:"<strong>The project vision describes the overall purpose and the meaning behind the work, so it is what aligns a team that disagrees on the goal.</strong> User stories (B) describe individual features, not the shared why. The Agile Manifesto (C) is a set of general values, not this project's purpose. A retrospective (D) inspects how the team worked, not what the project is for. Signal: 'common understanding of overall purpose' points straight to the project vision."
+  },
+  {
+    id:155, domain:"Process", difficulty:"hard", principle:"In scaled agile a PM can cover some RTE duties: manage risk, escalate impediments, coach on continual improvement",
+    text:"In a scaled agile framework, which responsibility of a release train engineer (RTE) can also reasonably be performed by a project manager?",
+    options:["A. Escalating impediments that the teams cannot resolve on their own","B. Coaching the teams on global technical excellence","C. Coaching the teams on team-level continual improvement","D. Owning the technical architecture of the release train"],
+    answer:0,
+    explanation:"<strong>A project manager can cover RTE duties that are coordination and facilitation, such as escalating impediments, managing risk, and coaching on program-level continual improvement.</strong> Escalating impediments is exactly that kind of facilitation work, so A fits. Coaching on technical excellence (B) and owning the architecture (D) are technical, not PM roles. Team-level continual-improvement coaching (C) sits with the scrum master, not the PM. Signal: PM overlaps with the RTE on coordination and impediment removal, not on technical or team-coaching duties."
   }
 ];
 
@@ -2978,15 +3006,15 @@ const DAYS = [
   {d:3,date:'Jun 26',topic:'Schedule + Cost Management',phase:1},
   {d:4,date:'Jun 27',topic:'Quality + Resource + Communications',phase:1},
   {d:5,date:'Jun 28',topic:'Risk + Procurement + Stakeholders',phase:1},
-  {d:6,date:'Jun 29',topic:'People Domain I — Teams + Leadership',phase:2},
-  {d:7,date:'Jun 30',topic:'People Domain II — Conflict + Stakeholders',phase:2},
-  {d:8,date:'Jul 1', topic:'Agile Core — Scrum + Manifesto',phase:2},
+  {d:6,date:'Jun 29',topic:'People Domain I, Teams + Leadership',phase:2},
+  {d:7,date:'Jun 30',topic:'People Domain II, Conflict + Stakeholders',phase:2},
+  {d:8,date:'Jul 1', topic:'Agile Core, Scrum + Manifesto',phase:2},
   {d:9,date:'Jul 2', topic:'Kanban, XP + Hybrid Approaches',phase:2},
-  {d:10,date:'Jul 3',topic:'Calculations Day — EVM + Forecasting',phase:2},
+  {d:10,date:'Jul 3',topic:'Calculations Day, EVM + Forecasting',phase:2},
   {d:11,date:'Jul 4',topic:'Full Mock Exam #1 + Deep Review',phase:3},
   {d:12,date:'Jul 5',topic:'Weak-Area Reinforcement',phase:3},
   {d:13,date:'Jul 6',topic:'Full Mock Exam #2 + Strategy Polish',phase:3},
-  {d:14,date:'Jul 7',topic:'TAPER DAY — Prime, Don\'t Cram',phase:3},
+  {d:14,date:'Jul 7',topic:'TAPER DAY, Prime, Don\'t Cram',phase:3},
 ];
 
 let state = {
@@ -3189,7 +3217,7 @@ function updateDashboard() {
 }
 
 // ══════════════════════════════════════
-// MY EXAM READINESS — exam-weighted, about me
+// MY EXAM READINESS, exam-weighted, about me
 // ══════════════════════════════════════
 function renderReadiness(){
   const el = document.getElementById('readinessCard'); if(!el) return;
@@ -3235,7 +3263,7 @@ function renderReadiness(){
 }
 
 // ══════════════════════════════════════
-// DO THIS NEXT — schedule + weak-area coach
+// DO THIS NEXT, schedule + weak-area coach
 // ══════════════════════════════════════
 let retrySet = new Set();
 // map a question's principle/domain text to the best Learn lesson
@@ -3289,16 +3317,16 @@ function renderCoach(){
     const lid = weak==='People'?'ls-tuckman':weak==='Process'?'ls-evm':'ls-mindset';
     headline = `Your weak spot right now is <span class="hot">${weak}</span>${weakPct<=100?` at ${Math.round(weakPct)}%`:''}. Attack it from two angles.`;
     steps = [
-      ['1', `<a onclick="learnTopic('${lid}')">See it</a> — open the ${weak} visual lesson`],
-      ['2', `<a onclick="drillDomain('${weak}')">Drill it</a> — practice ${weak} questions only`],
-      ['3', `<a onclick="showPage('wronglog')">Fix it</a> — retry every ${weak} question you missed`],
+      ['1', `<a onclick="learnTopic('${lid}')">See it</a>, open the ${weak} visual lesson`],
+      ['2', `<a onclick="drillDomain('${weak}')">Drill it</a>, practice ${weak} questions only`],
+      ['3', `<a onclick="showPage('wronglog')">Fix it</a>, retry every ${weak} question you missed`],
     ];
   } else {
     headline = `Strong start. Keep the streak rolling and widen your coverage.`;
     steps = [
-      ['1', `<a onclick="drillDomain('all')">Mixed drill</a> — random questions across all domains`],
-      ['2', `<a onclick="showPage('flashcards')">Flashcards</a> — lock in the 23 principles and key terms`],
-      ['3', `<a onclick="showPage('formulas')">Formula Lab</a> — run 3 EVM scenarios out loud`],
+      ['1', `<a onclick="drillDomain('all')">Mixed drill</a>, random questions across all domains`],
+      ['2', `<a onclick="showPage('flashcards')">Flashcards</a>, lock in the 23 principles and key terms`],
+      ['3', `<a onclick="showPage('formulas')">Formula Lab</a>, run 3 EVM scenarios out loud`],
     ];
   }
 
@@ -3416,7 +3444,7 @@ function saveLog() {
   saveState();
   renderStudyLog();
   updateDashboard();
-  showToast(`Logged ${hrs}h — ${topic || 'session'}`, 'success');
+  showToast(`Logged ${hrs}h, ${topic || 'session'}`, 'success');
 }
 
 // ══════════════════════════════════════
@@ -3445,7 +3473,7 @@ function filterDomain(domain, btn) {
     return;
   }
   // Randomize the whole stack, then resume at the first question you haven't answered.
-  // This is the fix for "stuck at Q20 of 212" — you traverse the ENTIRE deck, in random
+  // This is the fix for "stuck at Q20 of 212", you traverse the ENTIRE deck, in random
   // order, without restarting at the front.
   state.filteredQs = shuffle([...state.filteredQs]);
   const u = firstUnseenIndex();
@@ -3467,18 +3495,18 @@ function nextUnseen(){
 }
 
 function retakeQuestions(){
-  if(!confirm('Clear your answers so you can run the questions fresh? Your XP, streak, notes, weak spots and brush-up list are KEPT — only the locked answers reset.')) return;
+  if(!confirm('Clear your answers so you can run the questions fresh? Your XP, streak, notes, weak spots and brush-up list are KEPT, only the locked answers reset.')) return;
   state.answers = {};
   retrySet = new Set();
   saveState();
   state.currentQ = 0;
   renderQuestion();
   updateDashboard();
-  showToast('Answers cleared — run them fresh. 💪', 'success');
+  showToast('Answers cleared, run them fresh. 💪', 'success');
 }
 
 // ══════════════════════════════════════
-// AI COACH — generate fresh questions on weak spots
+// AI COACH, generate fresh questions on weak spots
 // ══════════════════════════════════════
 function aiModal(html){
   document.getElementById('aiModalBox').innerHTML = '<button class="modal-close" onclick="document.getElementById(\'aiModal\').classList.remove(\'show\')">✕</button>' + html;
@@ -3540,7 +3568,7 @@ function aiSetupHelp(){
 // ══════════════════════════════════════
 // MULTI-MODAL QUESTION AIDS
 // After you answer, surface the KEY rule, the exact FORMULA, and a
-// one-tap VISUAL for this topic — all on the same screen as the question.
+// one-tap VISUAL for this topic, all on the same screen as the question.
 // ══════════════════════════════════════
 const MM_FORMULAS = [
   {re:/\bcpi\b|cost performance/, name:'CPI · Cost Performance Index', expr:'CPI = EV ÷ AC', hint:'> 1 under budget · < 1 over budget'},
@@ -3600,7 +3628,7 @@ function renderQuestion() {
 
   const explanationHtml = savedAnswer !== undefined ? `
     <div class="explanation show">
-      ${savedAnswer.unsure ? '<div style="color:var(--yellow);font-weight:700;font-size:12px;margin-bottom:8px">🤔 You flagged this to brush up — here is the answer to learn now.</div>' : ''}
+      ${savedAnswer.unsure ? '<div style="color:var(--yellow);font-weight:700;font-size:12px;margin-bottom:8px">🤔 You flagged this to brush up, here is the answer to learn now.</div>' : ''}
       <div class="principle-tag">${q.principle}</div>
       <div>${q.explanation}</div>
     </div>
@@ -3667,7 +3695,7 @@ function saveQNote(qId, val){
   window._qnoteTimer = setTimeout(saveState, 400);
 }
 function downloadNotes(){
-  let txt = 'SWEAT DEPT · PMP COMMAND CENTER — MY NOTES\n' + '='.repeat(44) + '\n\n';
+  let txt = 'SWEAT DEPT · PMP COMMAND CENTER, MY NOTES\n' + '='.repeat(44) + '\n\n';
   txt += (state.notes || '(no general notes)') + '\n\n';
   const qn = Object.entries(state.questionNotes);
   if (qn.length) {
@@ -3679,7 +3707,7 @@ function downloadNotes(){
   }
   if (state.brushUp.length) {
     txt += '\n\nBRUSH-UP LIST (flagged to review)\n' + '-'.repeat(28) + '\n';
-    state.brushUp.forEach(id => { const q = QUESTIONS.find(x=>x.id===id); if(q) txt += `\n• [${q.domain}] ${q.principle} — ${q.text}`; });
+    state.brushUp.forEach(id => { const q = QUESTIONS.find(x=>x.id===id); if(q) txt += `\n• [${q.domain}] ${q.principle}, ${q.text}`; });
   }
   const blob = new Blob([txt], {type:'text/plain'});
   const a = document.createElement('a');
@@ -3710,7 +3738,7 @@ function selectAnswer(qId, chosen) {
   if (isRetry) {
     retrySet.delete(qId);
     if (correct) {
-      // weakness cleared — remove from the wrong log and reward the comeback
+      // weakness cleared, remove from the wrong log and reward the comeback
       state.wrongLog = state.wrongLog.filter(w => w.qId !== qId);
       addXP(15);
       playSound('levelup'); fireConfetti();
@@ -3718,7 +3746,7 @@ function selectAnswer(qId, chosen) {
       updateGameUI(); checkBadges(); saveState(); renderQuestion(); updateDashboard();
       return;
     }
-    // still wrong — it stays in the log, no new entry
+    // still wrong, it stays in the log, no new entry
   } else if (!correct) {
     // Log wrong answers
     const existing = state.wrongLog.findIndex(w => w.qId === qId);
@@ -3759,7 +3787,7 @@ function selectAnswer(qId, chosen) {
 }
 
 // ══════════════════════════════════════
-// GAMIFICATION — XP, STREAK, BADGES
+// GAMIFICATION, XP, STREAK, BADGES
 // ══════════════════════════════════════
 function addXP(amount) {
   state.xp += amount;
@@ -3813,7 +3841,7 @@ function checkBadges() {
 }
 
 // ══════════════════════════════════════
-// WEB AUDIO — sound effects (no files)
+// WEB AUDIO, sound effects (no files)
 // ══════════════════════════════════════
 let audioCtx = null;
 function ac(){ if(!audioCtx){ try{ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } return audioCtx; }
@@ -3938,7 +3966,7 @@ function startDay(){
 }
 
 // ══════════════════════════════════════
-// LEARN DECK — interactive visuals
+// LEARN DECK, interactive visuals
 // ══════════════════════════════════════
 let learnInit = false;
 function initLearn(){
@@ -4042,11 +4070,11 @@ function updateQuad(){
 }
 
 // ══════════════════════════════════════
-// INTERACTIVE DIAGRAM EXERCISES — learn by doing
+// INTERACTIVE DIAGRAM EXERCISES, learn by doing
 // ══════════════════════════════════════
 const EXERCISES = {
   tuckman: { label:'Spot the Tuckman Stage', opts:['Forming','Storming','Norming','Performing','Adjourning'], items:[
-    {q:'A brand-new team just met. Everyone is polite and waiting for the PM to tell them what to do.', a:'Forming', e:'Polite, unsure, dependent on the PM — that is Forming.'},
+    {q:'A brand-new team just met. Everyone is polite and waiting for the PM to tell them what to do.', a:'Forming', e:'Polite, unsure, dependent on the PM, that is Forming.'},
     {q:'Team members are arguing about the right approach and who owns what. Output is low.', a:'Storming', e:'Conflict over roles and approach with low output = Storming.'},
     {q:'The team has agreed on ground rules, trust is building, and a rhythm is forming.', a:'Norming', e:'Cohesion and agreed norms = Norming.'},
     {q:'The team is highly productive, self-organizing, and barely needs the PM.', a:'Performing', e:'High output and self-organizing = Performing.'},
@@ -4086,7 +4114,7 @@ function renderExercise(concept){
   const ex = EXERCISES[concept], st = exState[concept], c = document.getElementById('ex-'+concept);
   const item = ex.items[st.idx];
   c.innerHTML = `
-    <div class="ex-head"><span class="ex-title">🎮 ${ex.label} — click your answer</span><span class="ex-score">Score ${st.score}/${ex.items.length} · Q${st.idx+1}</span></div>
+    <div class="ex-head"><span class="ex-title">🎮 ${ex.label}, click your answer</span><span class="ex-score">Score ${st.score}/${ex.items.length} · Q${st.idx+1}</span></div>
     <div class="ex-prompt">${item.q}</div>
     <div class="ex-options">${ex.opts.map(o=>`<button class="ex-opt" onclick="answerExercise('${concept}','${o.replace(/'/g,"\\'")}')">${o}</button>`).join('')}</div>
     <div class="ex-feedback" id="exfb-${concept}"></div>`;
@@ -4129,7 +4157,7 @@ function newEvmEx(){
   c._correct = correct; c._data = {BAC,pct,EV,AC,PV};
   const opts = ['Under budget, ahead of schedule','Under budget, behind schedule','Over budget, ahead of schedule','Over budget, behind schedule'];
   c.innerHTML = `
-    <div class="ex-head"><span class="ex-title">🎮 EVM Drill — read the numbers</span><button class="btn btn-secondary btn-sm" onclick="newEvmEx()">↻ New</button></div>
+    <div class="ex-head"><span class="ex-title">🎮 EVM Drill, read the numbers</span><button class="btn btn-secondary btn-sm" onclick="newEvmEx()">↻ New</button></div>
     <div class="ex-prompt">BAC = $${BAC.toLocaleString()} · ${pct*100}% complete (EV = $${EV.toLocaleString()}) · AC = $${AC.toLocaleString()} · PV = $${PV.toLocaleString()}.<br><br>Where does this project stand?</div>
     <div class="ex-options" style="grid-template-columns:1fr 1fr">${opts.map(o=>`<button class="ex-opt" onclick="answerEvm(this,'${o}')">${o}</button>`).join('')}</div>
     <div class="ex-feedback" id="exfb-evm"></div>`;
@@ -4150,7 +4178,7 @@ function answerEvm(btn, choice){
 }
 
 // ══════════════════════════════════════
-// 🎯 LESSON "CHECK YOURSELF" — every visual lesson gets fresh questions
+// 🎯 LESSON "CHECK YOURSELF", every visual lesson gets fresh questions
 // Pulls real exam questions mapped to each lesson's topic, randomised so
 // they change each time, and records results into your readiness score.
 // ══════════════════════════════════════
@@ -4180,7 +4208,7 @@ function lessonQuizIntro(lsId){
   const tag = st ? `<span class="lq-prog">${st.right}/${st.done} right this session</span>` : '';
   box.innerHTML = `<div class="lq-intro">
       <div><div class="lq-h">🎯 Check yourself</div>
-        <div class="lq-sub">${n} exam question${n>1?'s':''} on this topic — randomised, so they change each time. ${tag}</div></div>
+        <div class="lq-sub">${n} exam question${n>1?'s':''} on this topic, randomised, so they change each time. ${tag}</div></div>
       <button class="btn btn-primary btn-sm" onclick="startLessonQuiz('${lsId}')">${st?'Keep going →':'Quiz me →'}</button>
     </div>`;
 }
@@ -4238,25 +4266,25 @@ function answerLessonQuiz(lsId, idx){
 }
 
 // ══════════════════════════════════════
-// 🎧 WALK MODE — hands-free, audio-first study sessions
+// 🎧 WALK MODE, hands-free, audio-first study sessions
 // Sequenced modules (warm-up → teach → quiz → teach-back → scenario →
 // cool-down) that read themselves aloud and auto-advance. Built for
 // studying on the go with the phone in your pocket.
 // ══════════════════════════════════════
 const WALKS = [
 {
-  id:'w1', emoji:'🧭', title:'Walk #1 — Foundations',
+  id:'w1', emoji:'🧭', title:'Walk #1, Foundations',
   sub:'PMI mindset · Predictive vs Agile · OPA & EEF · Conflict', mins:'20–25 min', day:1,
   segments:[
     {type:'intro', emoji:'🎧', tag:'Walk #1', title:'Foundations',
-      body:`<div class="walk-seg-body">Walk and listen. Think each answer in your head <b>before</b> I give it. And when I ask you to teach something back — <b>say it out loud.</b> That is the whole trick. Tap the orange play button or flip on Auto-play and pocket your phone.</div>`,
+      body:`<div class="walk-seg-body">Walk and listen. Think each answer in your head <b>before</b> I give it. And when I ask you to teach something back, <b>say it out loud.</b> That is the whole trick. Tap the orange play button or flip on Auto-play and pocket your phone.</div>`,
       say:`Welcome to Walk one, Foundations. Walk and listen. Think each answer in your head before I give it. And when I ask you to teach something back, say it out loud. That is the whole trick. Let us begin.`},
     {type:'warmup', emoji:'🔥', tag:'Warm-up', title:'Wake the brain',
       body:`<div class="walk-seg-body">Answer in your head:<ul><li>The three exam domains and their weights?</li><li>Is the PMP about tools, or about decisions?</li><li>How many questions, how many minutes?</li></ul></div>
         <div class="walk-hook">👉 People <b>42%</b>, Process <b>50%</b>, Business Environment <b>8%</b> · It is about <b>decisions and mindset</b> · <b>180 questions, 230 minutes.</b></div>`,
       say:`Warm up. Answer in your head. What are the three exam domains and their weights? Is the PMP about tools, or about decisions? How many questions, how many minutes? Here are the answers. People forty-two percent, Process fifty percent, Business Environment eight percent. It is about decisions and mindset. One hundred eighty questions, two hundred thirty minutes.`},
     {type:'teach', emoji:'🧠', tag:'Teach', title:'The PMI Mindset',
-      body:`<div class="walk-seg-body">The exam tests what the <b>perfect servant-leader PM</b> does — not what is convenient. Burn these in:
+      body:`<div class="walk-seg-body">The exam tests what the <b>perfect servant-leader PM</b> does, not what is convenient. Burn these in:
         <ul><li><b>Never escalate first.</b> Solve it with your team first.</li><li><b>Gather information before acting.</b> Never punish or decide blind.</li><li><b>Protect the team.</b> Never throw them under the bus.</li><li><b>Servant leadership.</b> You remove obstacles; the team are the experts.</li><li><b>Talk to people directly</b> when there is conflict.</li><li><b>Never a flat no.</b> Assess impact, run it through change control.</li></ul></div>
         <div class="walk-hook">🎯 Hook: <b>"Good Servants Protect, Facilitate, never Escalate."</b></div>`,
       say:`The PMI mindset. This cracks about forty percent of the exam. The exam tests what the perfect servant-leader project manager does, not what is convenient. Rule one. Never escalate first. Solve it with your team first. Rule two. Gather information before acting. Never punish or decide blind. Rule three. Protect the team. Never throw them under the bus. Rule four. Servant leadership. You remove obstacles. The team are the experts. Rule five. Talk to people directly when there is conflict. Rule six. Never a flat no. Assess the impact, and run it through change control. Memory hook. Good Servants Protect, Facilitate, never Escalate.`},
@@ -4282,30 +4310,30 @@ const WALKS = [
       say:`Quiz. Requirements are unclear and the customer wants to see working pieces early and often. Which approach? A, predictive. B, agile. C, pure waterfall. D, fixed-scope contract. The answer is B, agile. Evolving requirements plus early, frequent value means adaptive.`},
     {type:'teach', emoji:'📦', tag:'Teach', title:'OPA vs EEF',
       body:`<div class="walk-seg-body">Two inputs everyone confuses:
-        <ul><li><b>OPA — Organizational Process Assets:</b> things your <b>company made</b> that help you. Templates, lessons learned, processes, historical data.</li><li><b>EEF — Enterprise Environmental Factors:</b> conditions you <b>can't control.</b> Market, regulations, culture, weather, government rules.</li></ul></div>
+        <ul><li><b>OPA, Organizational Process Assets:</b> things your <b>company made</b> that help you. Templates, lessons learned, processes, historical data.</li><li><b>EEF, Enterprise Environmental Factors:</b> conditions you <b>can't control.</b> Market, regulations, culture, weather, government rules.</li></ul></div>
         <div class="walk-hook">🎯 Hook: <b>OPA = Our stuff. EEF = External stuff we Endure.</b></div>`,
       say:`O P A versus E E F. Two inputs everyone confuses. O P A, organizational process assets, are things your company made that help you. Templates, lessons learned, processes, historical data. E E F, enterprise environmental factors, are conditions you cannot control. Market, regulations, company culture, weather, government rules. Hook. O P A is Our stuff. E E F is External stuff we Endure.`},
     {type:'quiz', emoji:'✍️', tag:'Quiz', title:'OPA or EEF?',
       q:`A new government regulation affects your project. Is that an OPA or an EEF?`,
-      options:['OPA — Organizational Process Asset','EEF — Enterprise Environmental Factor','Neither','Both'],
-      answer:1, explain:`<b>EEF.</b> It is external and out of your control — an environmental factor.`,
+      options:['OPA, Organizational Process Asset','EEF, Enterprise Environmental Factor','Neither','Both'],
+      answer:1, explain:`<b>EEF.</b> It is external and out of your control, an environmental factor.`,
       say:`Quiz. A new government regulation affects your project. Is that an O P A or an E E F? The answer is E E F. It is external and out of your control. An environmental factor.`},
-    {type:'teachback', emoji:'🗣️', tag:'Teach-back', title:'Out loud — right now',
+    {type:'teachback', emoji:'🗣️', tag:'Teach-back', title:'Out loud, right now',
       body:`<div class="walk-seg-body">Say these <b>out loud</b> on your walk. No one cares. This is where it sticks:
         <ul><li>"The PMI mindset is…" (give 3 rules)</li><li>"Predictive vs agile is…"</li><li>"OPA is ___ and EEF is ___."</li></ul>
-        Stumbled? That is your signal — swipe back and re-listen. That is the method working, not failing.</div>`,
+        Stumbled? That is your signal, swipe back and re-listen. That is the method working, not failing.</div>`,
       say:`Teach-back. Say these out loud on your walk. No one cares. This is where it sticks. One. The PMI mindset is. Give me three rules. Two. The difference between predictive and agile is. Three. O P A is, and E E F is. If you stumbled on any of them, that is your signal. Go back and re-listen. That is the method working.`},
     {type:'scenario', emoji:'🎭', tag:'Scenario', title:'You are the PM',
       body:`<div class="walk-seg-body">Two senior engineers are arguing loudly in front of the team about a design choice. Work has stalled. As the servant-leader PM, what do you do?</div>
         <div class="walk-hook">👉 <b>Collaborate.</b> Bring them together and facilitate so <b>they</b> reach a solution. Not forcing (pick a winner), not withdrawing (ignore it), not compromise (rush a split). Collaborate = win-win, the best conflict mode.</div>`,
       say:`Scenario. You are the project manager. Two senior engineers are arguing loudly in front of the team about a design choice. Work has stalled. What do you do? The best answer is collaborate. Bring them together and facilitate so they reach a solution themselves. Not forcing, where you pick a winner. Not withdrawing, where you ignore it. Not compromise, where you rush a split. Collaborate is win-win, and it is the best conflict-resolution mode.`},
     {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #1 complete 💪',
-      body:`<div class="walk-seg-body">You just covered exam structure, the PMI mindset, predictive vs agile, OPA vs EEF, and conflict — <b>hands-free, on a walk.</b> That is real Day-1 mastery work.<br><br>Say <b>"next"</b> to me for Walk #2, or open it from the Walk menu.</div>`,
+      body:`<div class="walk-seg-body">You just covered exam structure, the PMI mindset, predictive vs agile, OPA vs EEF, and conflict, <b>hands-free, on a walk.</b> That is real Day-1 mastery work.<br><br>Say <b>"next"</b> to me for Walk #2, or open it from the Walk menu.</div>`,
       say:`Walk one complete. You just covered exam structure, the PMI mindset, predictive versus agile, O P A versus E E F, and conflict resolution, hands-free on a walk. That is real day one work. When you are ready, start Walk two, Integration and Scope. Great job.`},
   ]
 },
 {
-  id:'w2', emoji:'🧱', title:'Walk #2 — Integration & Scope',
+  id:'w2', emoji:'🧱', title:'Walk #2, Integration & Scope',
   sub:'Charter · Change control · Scope creep vs gold plating · WBS', mins:'18–22 min', day:2,
   segments:[
     {type:'intro', emoji:'🎧', tag:'Walk #2', title:'Integration & Scope',
@@ -4334,7 +4362,7 @@ const WALKS = [
     {type:'quiz', emoji:'✍️', tag:'Quiz', title:'Spot the problem',
       q:`A developer adds a "cool extra feature" the customer never requested. What is this?`,
       options:['Scope creep','Gold plating','Progressive elaboration','A change request'],
-      answer:1, explain:`<b>B — gold plating.</b> The team added unrequested extras. (Scope creep is uncontrolled change from outside; both skip change control.)`,
+      answer:1, explain:`<b>B, gold plating.</b> The team added unrequested extras. (Scope creep is uncontrolled change from outside; both skip change control.)`,
       say:`Quiz. A developer adds a cool extra feature the customer never requested. What is this? A, scope creep. B, gold plating. C, progressive elaboration. D, a change request. The answer is B, gold plating. The team added unrequested extras. Scope creep is uncontrolled change coming from outside. Both skip change control.`},
     {type:'teach', emoji:'🔄', tag:'Teach', title:'Integrated Change Control',
       body:`<div class="walk-seg-body">When any change is requested, the PMI way is always:
@@ -4345,12 +4373,12 @@ const WALKS = [
       body:`<div class="walk-seg-body">Out loud:<ul><li>"The charter does ___ and is signed by ___."</li><li>"Scope creep is ___; gold plating is ___."</li><li>"When a change comes in, I ___ first, then ___."</li></ul></div>`,
       say:`Teach-back. Out loud. The charter does what, and is signed by whom? Scope creep is what? Gold plating is what? And when a change comes in, what do I do first, and then what? Say all of it out loud. If you blank, go back and re-listen.`},
     {type:'cooldown', emoji:'🏁', tag:'Done', title:'Walk #2 complete 🎉',
-      body:`<div class="walk-seg-body">Charter, integration, scope, WBS, creep vs gold plating, and change control — locked. <br><br>Open the app's <b>Practice</b> tab to test these in writing, or come back for Walk #3.</div>`,
+      body:`<div class="walk-seg-body">Charter, integration, scope, WBS, creep vs gold plating, and change control, locked. <br><br>Open the app's <b>Practice</b> tab to test these in writing, or come back for Walk #3.</div>`,
       say:`Walk two complete. Charter, integration, scope, the work breakdown structure, creep versus gold plating, and change control, all locked in. Open the Practice tab to test these in writing, or come back for Walk three. Excellent work.`},
   ]
 },
 {
-  id:'w3', emoji:'🤝', title:'Walk #3 — Engage Stakeholders',
+  id:'w3', emoji:'🤝', title:'Walk #3, Engage Stakeholders',
   sub:'Engagement levels · Power/Interest · Shared understanding · Resistance', mins:'20 min', day:7,
   segments:[
     {type:'intro', emoji:'🎧', tag:'Walk #3', title:'Engage Stakeholders',
@@ -4404,7 +4432,7 @@ const WALKS = [
   ]
 },
 {
-  id:'w4', emoji:'📈', title:'Walk #4 — Earned Value (EVM)',
+  id:'w4', emoji:'📈', title:'Walk #4, Earned Value (EVM)',
   sub:'BAC · PV · EV · AC · CV/SV · CPI/SPI · EAC', mins:'20 min', day:3,
   segments:[
     {type:'intro', emoji:'🎧', tag:'Walk #4', title:'Earned Value',
@@ -4448,7 +4476,7 @@ const WALKS = [
   ]
 },
 {
-  id:'w5', emoji:'🌀', title:'Walk #5 — Agile Manifesto',
+  id:'w5', emoji:'🌀', title:'Walk #5, Agile Manifesto',
   sub:'4 values · key principles · Scrum basics', mins:'18 min', day:8,
   segments:[
     {type:'intro', emoji:'🎧', tag:'Walk #5', title:'The Agile Manifesto',
@@ -4503,7 +4531,7 @@ function renderWalkHome(){
   home.innerHTML = `
     <div class="walk-hero">
       <h1>🎧 Walk Mode</h1>
-      <p>Hands-free, audio-first study. Hit play, pocket your phone, and walk — each session reads itself aloud, quizzes you, and checks you off. Turn on <b>Auto-play</b> for fully hands-free.</p>
+      <p>Hands-free, audio-first study. Hit play, pocket your phone, and walk, each session reads itself aloud, quizzes you, and checks you off. Turn on <b>Auto-play</b> for fully hands-free.</p>
     </div>
     <div class="walk-list">
       ${WALKS.map((w,i)=>{
@@ -4520,7 +4548,7 @@ function renderWalkHome(){
       }).join('')}
     </div>
     <div style="margin-top:18px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;font-size:12.5px;color:var(--text-dim);line-height:1.6">
-      <b>Tip:</b> tap <b>▶ Play</b> on any segment to hear it, tap an answer to see green/red, then <b>Next ▶</b>. Or flip <b>Auto-play</b> on and just walk — it reads everything and advances on its own.
+      <b>Tip:</b> tap <b>▶ Play</b> on any segment to hear it, tap an answer to see green/red, then <b>Next ▶</b>. Or flip <b>Auto-play</b> on and just walk, it reads everything and advances on its own.
     </div>`;
 }
 function openWalk(i){
@@ -4632,7 +4660,7 @@ function walkNext(){
 function walkPrev(){ if(walkS.idx>0){ walkStopSpeak(); walkS.idx--; renderWalkPlayer(); } }
 
 // ══════════════════════════════════════
-// 🧩 PROCESS DIAGRAMS — all 49 as input / process / output flows
+// 🧩 PROCESS DIAGRAMS, all 49 as input / process / output flows
 // ══════════════════════════════════════
 const PROC = [
   // INTEGRATION (7)
@@ -4750,7 +4778,7 @@ function speakPatterns(){
 }
 
 // ══════════════════════════════════════
-// 📖 GLOSSARY — every acronym and tool in plain English
+// 📖 GLOSSARY, every acronym and tool in plain English
 // ══════════════════════════════════════
 const GLOSSARY = [
   // FORMULAS & EVM
@@ -4892,26 +4920,26 @@ function renderGlossary(){
 // ══════════════════════════════════════
 const FLASHCARDS = [
   // 23 Principles
-  {type:'Principle', term:'P1 — Gather Information First', def:'Before acting, take a step back and investigate. Never escalate, reject, or punish before you understand the facts.'},
-  {type:'Principle', term:'P2 — Never Accept a Delay', def:'A schedule slip is a problem to solve, not a fact to accept. Check the critical path and compress before asking for an extension.'},
-  {type:'Principle', term:'P3 — Servant Leadership', def:'Serve the team. Remove impediments, shield them from noise, and let them do their best work. Do not micromanage.'},
-  {type:'Principle', term:'P4 — Be Value Driven', def:'Choose the option that delivers the most business value. Value beats process for its own sake.'},
-  {type:'Principle', term:'P5 — Lead With Empathy', def:'Understand people before judging them. Address the person, not just the task.'},
-  {type:'Principle', term:'P6 — Set Ground Rules', def:'When team behavior is the problem, establish or revisit ground rules. Then address root causes.'},
-  {type:'Principle', term:'P7 — The Team Are the Experts', def:'Estimates and technical decisions come from the people doing the work, not from the PM alone.'},
-  {type:'Principle', term:'P8 — The PM Makes Decisions', def:'Try to solve it yourself with the team before running to senior management. You own the call.'},
-  {type:'Principle', term:'P9 — Be Proactive', def:'Anticipate problems and act early. Risk management is proactive, workarounds are last resort.'},
-  {type:'Principle', term:'P10 — Closing Always Happens', def:'Whether a project finishes or is terminated, you always close it formally: contracts, resources, lessons learned.'},
-  {type:'Principle', term:'P11 — Refer to the Plan', def:'In a predictive project, the plan is your map. Assess impact against it before changing anything.'},
-  {type:'Principle', term:'P12 — Read the Environment', def:'Recognize predictive vs agile from keywords, then apply the matching framework.'},
-  {type:'Principle', term:'P14 — Use an SME When Stuck', def:'When neither you nor the team has the knowledge and there is no documented past project, bring in a subject matter expert.'},
-  {type:'Principle', term:'P15 — Introduce Agile Slowly', def:'Transition to agile through a pilot project, not a big-bang overhaul. Culture change must be gradual.'},
-  {type:'Principle', term:'P16 — Teams Self-Organize', def:'Let the team resolve minor conflicts themselves. Only step in when progress or the project is at real risk.'},
-  {type:'Principle', term:'P18 — Never Reject Outright', def:'Do not say no to a request immediately. Explore options and feasibility with the team first.'},
-  {type:'Principle', term:'P19 — Use Lessons Learned', def:'When a question mentions a similar past project, refer to the lessons learned register before anything else.'},
-  {type:'Principle', term:'P21 — No Only / Always / Never', def:'Answers containing absolute words (only, always, never) are almost always wrong. They restrict possibilities.'},
-  {type:'Principle', term:'P22 — Watch the Critical Path', def:'Schedule decisions revolve around the critical path. Reassign from non-critical to critical to recover.'},
-  {type:'Principle', term:'P23 — Protect Team Capacity', def:'Do not pile extra tasks on a person doing critical work. Never reduce the capacity that drives the project.'},
+  {type:'Principle', term:'P1, Gather Information First', def:'Before acting, take a step back and investigate. Never escalate, reject, or punish before you understand the facts.'},
+  {type:'Principle', term:'P2, Never Accept a Delay', def:'A schedule slip is a problem to solve, not a fact to accept. Check the critical path and compress before asking for an extension.'},
+  {type:'Principle', term:'P3, Servant Leadership', def:'Serve the team. Remove impediments, shield them from noise, and let them do their best work. Do not micromanage.'},
+  {type:'Principle', term:'P4, Be Value Driven', def:'Choose the option that delivers the most business value. Value beats process for its own sake.'},
+  {type:'Principle', term:'P5, Lead With Empathy', def:'Understand people before judging them. Address the person, not just the task.'},
+  {type:'Principle', term:'P6, Set Ground Rules', def:'When team behavior is the problem, establish or revisit ground rules. Then address root causes.'},
+  {type:'Principle', term:'P7, The Team Are the Experts', def:'Estimates and technical decisions come from the people doing the work, not from the PM alone.'},
+  {type:'Principle', term:'P8, The PM Makes Decisions', def:'Try to solve it yourself with the team before running to senior management. You own the call.'},
+  {type:'Principle', term:'P9, Be Proactive', def:'Anticipate problems and act early. Risk management is proactive, workarounds are last resort.'},
+  {type:'Principle', term:'P10, Closing Always Happens', def:'Whether a project finishes or is terminated, you always close it formally: contracts, resources, lessons learned.'},
+  {type:'Principle', term:'P11, Refer to the Plan', def:'In a predictive project, the plan is your map. Assess impact against it before changing anything.'},
+  {type:'Principle', term:'P12, Read the Environment', def:'Recognize predictive vs agile from keywords, then apply the matching framework.'},
+  {type:'Principle', term:'P14, Use an SME When Stuck', def:'When neither you nor the team has the knowledge and there is no documented past project, bring in a subject matter expert.'},
+  {type:'Principle', term:'P15, Introduce Agile Slowly', def:'Transition to agile through a pilot project, not a big-bang overhaul. Culture change must be gradual.'},
+  {type:'Principle', term:'P16, Teams Self-Organize', def:'Let the team resolve minor conflicts themselves. Only step in when progress or the project is at real risk.'},
+  {type:'Principle', term:'P18, Never Reject Outright', def:'Do not say no to a request immediately. Explore options and feasibility with the team first.'},
+  {type:'Principle', term:'P19, Use Lessons Learned', def:'When a question mentions a similar past project, refer to the lessons learned register before anything else.'},
+  {type:'Principle', term:'P21, No Only / Always / Never', def:'Answers containing absolute words (only, always, never) are almost always wrong. They restrict possibilities.'},
+  {type:'Principle', term:'P22, Watch the Critical Path', def:'Schedule decisions revolve around the critical path. Reassign from non-critical to critical to recover.'},
+  {type:'Principle', term:'P23, Protect Team Capacity', def:'Do not pile extra tasks on a person doing critical work. Never reduce the capacity that drives the project.'},
   // Key terms
   {type:'Term', term:'QA vs QC', def:'Quality Assurance audits the PROCESS (proactive, prevent defects). Quality Control inspects the DELIVERABLE (reactive, find defects).'},
   {type:'Term', term:'Contingency vs Management Reserve', def:'Contingency = known risks, PM controls it. Management reserve = unknown unknowns, management controls it (needs a change request).'},
@@ -4990,8 +5018,8 @@ function speakCard(){ const c=fcState.list[fcState.idx]; if(c) speak(`${c.term}.
 // ══════════════════════════════════════
 const VIDEOS = [
   {t:'How to Pass the PMP on Your First Try', c:'Andrew Ramdayal', d:'People', q:'Andrew Ramdayal how to pass the PMP exam first try', dur:'video'},
-  {t:'PMP Exam Cram — Full Course', c:'Andrew Ramdayal (TIA)', d:'Process', q:'Andrew Ramdayal PMP exam cram full course', dur:'course'},
-  {t:'The PMP Mindset — Crash Course', c:'Muhammad (PMP Coach)', d:'People', q:'PMP mindset crash course Muhammad three step method', dur:'video'},
+  {t:'PMP Exam Cram, Full Course', c:'Andrew Ramdayal (TIA)', d:'Process', q:'Andrew Ramdayal PMP exam cram full course', dur:'course'},
+  {t:'The PMP Mindset, Crash Course', c:'Muhammad (PMP Coach)', d:'People', q:'PMP mindset crash course Muhammad three step method', dur:'video'},
   {t:'Earned Value Management Explained', c:'PMP Prep', d:'Process', q:'earned value management EVM PMP explained CPI SPI EAC', dur:'topic'},
   {t:'Agile & Scrum for the PMP', c:'PMP Prep', d:'Process', q:'agile scrum for PMP exam explained Andrew Ramdayal', dur:'topic'},
   {t:'Risk Management Deep Dive', c:'PMP Prep', d:'Process', q:'PMP risk management responses register reserves explained', dur:'topic'},
@@ -5059,11 +5087,11 @@ function calcEVM(){
     {k:'SV (Schedule Variance)', v:f(SV), good:SV>=0, i:SV>=0?'On/ahead of schedule':'Behind schedule'},
     {k:'CPI', v:CPI.toFixed(3), good:CPI>=1, i:CPI>=1?`$1 spent = $${CPI.toFixed(2)} earned`:`$1 spent = only $${CPI.toFixed(2)} earned`},
     {k:'SPI', v:SPI.toFixed(3), good:SPI>=1, i:SPI>=1?'Ahead of plan':'Behind plan'},
-    {k:'EAC (typical)', v:f(EAC), good:EAC<=BAC, i:'BAC ÷ CPI — forecast total cost'},
-    {k:'EAC (atypical)', v:f(EACa), good:EACa<=BAC, i:'AC + (BAC − EV) — one-off variance'},
+    {k:'EAC (typical)', v:f(EAC), good:EAC<=BAC, i:'BAC ÷ CPI, forecast total cost'},
+    {k:'EAC (atypical)', v:f(EACa), good:EACa<=BAC, i:'AC + (BAC − EV), one-off variance'},
     {k:'ETC', v:f(ETC), good:null, i:'Cost still to go (EAC − AC)'},
     {k:'VAC', v:f(VAC), good:VAC>=0, i:VAC>=0?'Will finish under budget':'Will finish over budget'},
-    {k:'TCPI', v:TCPI.toFixed(3), good:TCPI<=1, i:TCPI<=1?'Achievable efficiency':'Hard — must beat current pace'},
+    {k:'TCPI', v:TCPI.toFixed(3), good:TCPI<=1, i:TCPI<=1?'Achievable efficiency':'Hard, must beat current pace'},
   ];
   document.getElementById('evmResults').innerHTML = cells.map(c=>{
     const cls = c.good===null?'':c.good?'good':'bad';
@@ -5074,7 +5102,7 @@ function calcEVM(){
 }
 
 // ══════════════════════════════════════
-// 🎯 FORMULA DRILL — fresh numbers every time, themed to today's path topic
+// 🎯 FORMULA DRILL, fresh numbers every time, themed to today's path topic
 // Real generators (not a fixed list): every problem is newly randomised, the
 // answer is checked, the worked solution is shown, and accuracy is tracked
 // against the exam bar. This is the "content that changes" pattern.
@@ -5240,7 +5268,7 @@ function answerDrill(i){
   });
   playSound(correct?'correct':'wrong');
   document.getElementById('drillFb').innerHTML =
-    `<div class="drill-fb-in ${correct?'ok':'no'}"><b>${correct?'✅ Correct':'❌ Not quite'}</b> — ${g.work}</div>`;
+    `<div class="drill-fb-in ${correct?'ok':'no'}"><b>${correct?'✅ Correct':'❌ Not quite'}</b>, ${g.work}</div>`;
   // refresh the stat chips without wiping the feedback
   const acc = st.seen ? Math.round(st.right/st.seen*100) : 0;
   const chips = document.querySelectorAll('#formulaDrill .ds .dsv');
@@ -5262,9 +5290,9 @@ function prevQ() {
 function nextQ() {
   if (state.currentQ < state.filteredQs.length - 1) { state.currentQ++; renderQuestion(); }
   else {
-    // end of the deck: don't dead-end — send them to any remaining unanswered question
+    // end of the deck: don't dead-end, send them to any remaining unanswered question
     if (firstUnseenIndex() >= 0) { nextUnseen(); showToast('Looping to the ones you haven\'t answered yet'); }
-    else showToast('🎉 Deck complete — every question answered!', 'success');
+    else showToast('🎉 Deck complete, every question answered!', 'success');
   }
 }
 
@@ -5301,7 +5329,7 @@ function renderWrongLog() {
 
   // Weak-area summary bar
   const summary = Object.entries(byDomain).sort((a,b)=>b[1].length-a[1].length)
-    .map(([d,items])=>`<button class="btn btn-secondary btn-sm" onclick="drillDomain('${d}')">${d}: ${items.length} ✕ — drill</button>`).join(' ');
+    .map(([d,items])=>`<button class="btn btn-secondary btn-sm" onclick="drillDomain('${d}')">${d}: ${items.length} ✕, drill</button>`).join(' ');
 
   el.innerHTML = `
     <div class="coach" style="margin-bottom:20px">
@@ -5312,7 +5340,7 @@ function renderWrongLog() {
     ${Object.entries(byDomain).map(([domain, items]) => `
     <div style="margin-bottom:24px;">
       <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin-bottom:12px;">
-        ${domain} — ${items.length} to fix
+        ${domain}, ${items.length} to fix
       </div>
       ${items.map(w => `
         <div class="wrong-item">
@@ -5343,7 +5371,7 @@ function retryWrong(qId){
   state.filteredQs = QUESTIONS.filter(q => q.id === qId);
   state.currentQ = 0;
   renderQuestion();
-  showToast('Retry mode — get it right to clear this weak spot (+15 XP)');
+  showToast('Retry mode, get it right to clear this weak spot (+15 XP)');
 }
 function loadTopicVideo(topic){
   showPage('videos');
@@ -5377,7 +5405,7 @@ function daySteps(d){ const s=state.path[d]||{}; return ['watch','learn','drill'
 function dayDone(d){ return daySteps(d)===4; }
 
 // ══════════════════════════════════════
-// TODAY — HOUR-BY-HOUR RUN SHEET (the Day Engine)
+// TODAY, HOUR-BY-HOUR RUN SHEET (the Day Engine)
 // Builds an 8-hour, timeboxed, self-rolling plan from each day's DAY_PLAN.
 // Every block launches a REAL activity already in the app and checks itself off.
 // ══════════════════════════════════════
@@ -5390,10 +5418,10 @@ function fmtClock(mins){
 // A block: {id, dur, brk?, phase, tag, ico, title, desc, action, stepKey?, cta}
 function buildRunSheet(d){
   const plan = DAY_PLAN[d]; const info = DAYS[d-1];
-  const lessonName = (info.topic||'').replace(/—.*/,'').trim();
+  const lessonName = (info.topic||'').replace(/[,—].*/,'').trim();
   let blocks = [];
   const warm = {id:'warmup', dur:20, phase:'Warm-Up', tag:'Wake the brain', ico:'🔥',
-    title:'Warm-up — yesterday\'s misses + 5 flashcards',
+    title:'Warm-up, yesterday\'s misses + 5 flashcards',
     desc: d>1 ? 'Re-attempt the questions you got wrong, then flip 5 cards. Recall before new learning locks it in.' : 'Flip 5 flashcards to meet the 23 principles. This is your first contact with the material.',
     cta:'Start warm-up', action:`runStart(${d},'warmup','flashcards')`};
 
@@ -5402,20 +5430,20 @@ function buildRunSheet(d){
     blocks = [
       warm,
       {id:'review-blueprint', dur:25, phase:'Prime', tag:'Frame the exam', ico:'🧭', stepKey:'learn',
-        title:'See it — re-read the exam blueprint & 3-step method', desc:'Reset the lens before a full mock: People 42% · Process 50% · Biz 8%.',
+        title:'See it, re-read the exam blueprint & 3-step method', desc:'Reset the lens before a full mock: People 42% · Process 50% · Biz 8%.',
         cta:'Open blueprint', action:`runStart(${d},'review-blueprint','pathLearn')`},
       {id:'mock', dur:120, phase:'The Mock', tag:'Boss Raid', ico:'🎯', stepKey:'boss',
-        title:'FULL MOCK EXAM — timed, no notes', desc:'Sit it like the real thing. Target 70%+. This is the single most important block of the day.',
+        title:'FULL MOCK EXAM, timed, no notes', desc:'Sit it like the real thing. Target 70%+. This is the single most important block of the day.',
         cta:'▶ Start the mock', action:`runStart(${d},'mock','boss')`},
-      {id:'break1', dur:15, brk:true, phase:'The Mock', tag:'Break', ico:'☕', title:'Step away — 15 min', desc:'Walk, water, breathe. Do not review yet.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
+      {id:'break1', dur:15, brk:true, phase:'The Mock', tag:'Break', ico:'☕', title:'Step away, 15 min', desc:'Walk, water, breathe. Do not review yet.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
       {id:'deep-review', dur:90, phase:'Deep Review', tag:'Where the points are', ico:'⚠️', stepKey:'drill',
-        title:'Deep review — every miss, one by one', desc:'For each wrong answer: read the explanation out loud, watch the topic video, write the rule in your Journal.',
+        title:'Deep review, every miss, one by one', desc:'For each wrong answer: read the explanation out loud, watch the topic video, write the rule in your Journal.',
         cta:'Open Wrong Log', action:`runStart(${d},'deep-review','wronglog')`},
       {id:'ai-gap', dur:40, phase:'Deep Review', tag:'Close the gap', ico:'🤖',
-        title:'AI Coach — fresh questions on your weakest domain', desc:'Generate brand-new questions targeting exactly what you missed, and drill them.',
+        title:'AI Coach, fresh questions on your weakest domain', desc:'Generate brand-new questions targeting exactly what you missed, and drill them.',
         cta:'Generate questions', action:`runStart(${d},'ai-gap','coach')`},
       {id:'journal', dur:20, phase:'Lock It In', tag:'Make it stick', ico:'📝',
-        title:'Journal — today\'s 3 biggest lessons', desc:'Write the three rules you will never miss again. Closing the day is how it sticks.',
+        title:'Journal, today\'s 3 biggest lessons', desc:'Write the three rules you will never miss again. Closing the day is how it sticks.',
         cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
     ];
   } else if(plan.boss==='weak'){
@@ -5423,53 +5451,53 @@ function buildRunSheet(d){
     blocks = [
       warm,
       {id:'watch', dur:35, phase:'Re-teach', tag:'Hear it again', ico:'▶️', stepKey:'watch',
-        title:'Watch it — your hardest topics, taught out loud', desc:'A focused video on the areas you keep missing.', cta:'Play video', action:`runStart(${d},'watch','watch')`},
+        title:'Watch it, your hardest topics, taught out loud', desc:'A focused video on the areas you keep missing.', cta:'Play video', action:`runStart(${d},'watch','watch')`},
       {id:'fix', dur:75, phase:'Re-teach', tag:'Fix the leaks', ico:'⚠️', stepKey:'drill',
         title:'Re-attempt every wrong answer', desc:'Work through the full Wrong Log until each one feels easy. Re-do, don\'t just re-read.', cta:'Open Wrong Log', action:`runStart(${d},'fix','wronglog')`},
-      {id:'break1', dur:10, brk:true, phase:'Re-teach', tag:'Break', ico:'☕', title:'Reset — 10 min', desc:'Short break.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
+      {id:'break1', dur:10, brk:true, phase:'Re-teach', tag:'Break', ico:'☕', title:'Reset, 10 min', desc:'Short break.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
       {id:'ai-gap', dur:50, phase:'Reinforce', tag:'New reps', ico:'🤖',
-        title:'AI Coach — new questions on your weak spot', desc:'Generate and drill fresh questions on your lowest domain.', cta:'Generate questions', action:`runStart(${d},'ai-gap','coach')`},
+        title:'AI Coach, new questions on your weak spot', desc:'Generate and drill fresh questions on your lowest domain.', cta:'Generate questions', action:`runStart(${d},'ai-gap','coach')`},
       {id:'cards', dur:40, phase:'Reinforce', tag:'Memory', ico:'🃏',
-        title:'Flashcards — principles & formulas', desc:'Run the full deck. Anything you blank on goes back into the warm-up.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
+        title:'Flashcards, principles & formulas', desc:'Run the full deck. Anything you blank on goes back into the warm-up.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
       {id:'boss', dur:50, phase:'Prove It', tag:'Beat the Boss', ico:'🎯', stepKey:'boss',
-        title:'Beat the Boss — clear the day', desc:'A mix from everything you missed. 70%+ locks the day green.', cta:'▶ Start the Boss', action:`runStart(${d},'boss','boss')`},
+        title:'Beat the Boss, clear the day', desc:'A mix from everything you missed. 70%+ locks the day green.', cta:'▶ Start the Boss', action:`runStart(${d},'boss','boss')`},
       {id:'journal', dur:20, phase:'Lock It In', tag:'Make it stick', ico:'📝',
-        title:'Journal — what finally clicked', desc:'Write what you understand now that you didn\'t this morning.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
+        title:'Journal, what finally clicked', desc:'Write what you understand now that you didn\'t this morning.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
     ];
   } else if(d===14){
-    // TAPER DAY — light, confidence
+    // TAPER DAY, light, confidence
     blocks = [
-      {id:'cards', dur:30, phase:'Taper', tag:'Light touch', ico:'🃏', title:'Flashcards — a calm full pass', desc:'Flip through everything once. Recognise, don\'t cram.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
-      {id:'watch', dur:25, phase:'Taper', tag:'Exam day', ico:'▶️', stepKey:'watch', title:'Watch it — exam-day, what to expect', desc:'Logistics, pacing, the 3-step method one last time.', cta:'Play video', action:`runStart(${d},'watch','watch')`},
-      {id:'learn', dur:25, phase:'Taper', tag:'Mindset', ico:'📊', stepKey:'learn', title:'See it — mindset & blueprint refresh', desc:'A gentle re-read. You already know this.', cta:'Open lesson', action:`runStart(${d},'learn','pathLearn')`},
-      {id:'boss', dur:30, phase:'Taper', tag:'Confidence', ico:'🎯', stepKey:'boss', title:'Beat the Boss — a light confidence set', desc:'A short, winnable set. End on a high.', cta:'▶ Start', action:`runStart(${d},'boss','boss')`},
-      {id:'drill', dur:1, phase:'Taper', tag:'Done', ico:'✅', stepKey:'drill', title:'Mark today complete — then REST', desc:'Sleep is your last study tool. Stop here. You are ready.', cta:'Mark complete', action:`runStart(${d},'drill','done')`},
-      {id:'journal', dur:15, phase:'Taper', tag:'Tomorrow', ico:'📝', title:'Journal — your exam-day plan', desc:'Write when you wake, what you eat, when you arrive. Remove every decision from exam morning.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
+      {id:'cards', dur:30, phase:'Taper', tag:'Light touch', ico:'🃏', title:'Flashcards, a calm full pass', desc:'Flip through everything once. Recognise, don\'t cram.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
+      {id:'watch', dur:25, phase:'Taper', tag:'Exam day', ico:'▶️', stepKey:'watch', title:'Watch it, exam-day, what to expect', desc:'Logistics, pacing, the 3-step method one last time.', cta:'Play video', action:`runStart(${d},'watch','watch')`},
+      {id:'learn', dur:25, phase:'Taper', tag:'Mindset', ico:'📊', stepKey:'learn', title:'See it, mindset & blueprint refresh', desc:'A gentle re-read. You already know this.', cta:'Open lesson', action:`runStart(${d},'learn','pathLearn')`},
+      {id:'boss', dur:30, phase:'Taper', tag:'Confidence', ico:'🎯', stepKey:'boss', title:'Beat the Boss, a light confidence set', desc:'A short, winnable set. End on a high.', cta:'▶ Start', action:`runStart(${d},'boss','boss')`},
+      {id:'drill', dur:1, phase:'Taper', tag:'Done', ico:'✅', stepKey:'drill', title:'Mark today complete, then REST', desc:'Sleep is your last study tool. Stop here. You are ready.', cta:'Mark complete', action:`runStart(${d},'drill','done')`},
+      {id:'journal', dur:15, phase:'Taper', tag:'Tomorrow', ico:'📝', title:'Journal, your exam-day plan', desc:'Write when you wake, what you eat, when you arrive. Remove every decision from exam morning.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
     ];
   } else {
-    // STANDARD LEARNING DAY — Watch → See → Drill → Cards → Formulas → Boss → Fix → Journal
+    // STANDARD LEARNING DAY, Watch → See → Drill → Cards → Formulas → Boss → Fix → Journal
     const isCalc = (plan.lessons||[]).includes('ls-evm');
     blocks = [
       warm,
       {id:'watch', dur:40, phase:'Learn It', tag:'Hear it', ico:'▶️', stepKey:'watch',
-        title:`Watch it — ${lessonName}`, desc:'A short video that teaches today\'s topic out loud. Watch first; it frames everything else.', cta:'▶ Play today\'s video', action:`runStart(${d},'watch','watch')`},
+        title:`Watch it, ${lessonName}`, desc:'A short video that teaches today\'s topic out loud. Watch first; it frames everything else.', cta:'▶ Play today\'s video', action:`runStart(${d},'watch','watch')`},
       {id:'learn', dur:50, phase:'Learn It', tag:'See it + do it', ico:'📊', stepKey:'learn',
-        title:'See it — visual lessons (drag, click, earn XP)', desc:'Open today\'s diagrams and play the click-to-learn exercises. You don\'t just read it — you do it.', cta:'Open visual lessons', action:`runStart(${d},'learn','pathLearn')`},
-      {id:'break1', dur:10, brk:true, phase:'Learn It', tag:'Break', ico:'☕', title:'Stand up — 10 min', desc:'Reset your focus.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
+        title:'See it, visual lessons (drag, click, earn XP)', desc:'Open today\'s diagrams and play the click-to-learn exercises. You don\'t just read it, you do it.', cta:'Open visual lessons', action:`runStart(${d},'learn','pathLearn')`},
+      {id:'break1', dur:10, brk:true, phase:'Learn It', tag:'Break', ico:'☕', title:'Stand up, 10 min', desc:'Reset your focus.', cta:'I\'m back', action:`runStart(${d},'break1','rest')`},
       {id:'drill', dur:60, phase:'Practice It', tag:'Reps', ico:'✍️', stepKey:'drill',
-        title:`Drill it — ${plan.drill==='all'?'mixed':plan.drill} practice questions`, desc:'Work a focused set. Hit the 🔊 to hear each one. Wrong answers auto-file into your Weak Spots.', cta:'Start drilling', action:`runStart(${d},'drill','drill')`},
-      {id:'lunch', dur:45, brk:true, phase:'Practice It', tag:'Lunch', ico:'🍽️', title:'Lunch — 45 min', desc:'Real break. Step fully away from the screen.', cta:'I\'m back', action:`runStart(${d},'lunch','rest')`},
+        title:`Drill it, ${plan.drill==='all'?'mixed':plan.drill} practice questions`, desc:'Work a focused set. Hit the 🔊 to hear each one. Wrong answers auto-file into your Weak Spots.', cta:'Start drilling', action:`runStart(${d},'drill','drill')`},
+      {id:'lunch', dur:45, brk:true, phase:'Practice It', tag:'Lunch', ico:'🍽️', title:'Lunch, 45 min', desc:'Real break. Step fully away from the screen.', cta:'I\'m back', action:`runStart(${d},'lunch','rest')`},
       {id:'cards', dur:40, phase:'Lock It In', tag:'Memory', ico:'🃏',
-        title:'Flashcards — today\'s principles & terms', desc:'Flip the deck for today\'s topic. Say the answer out loud before you flip.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
+        title:'Flashcards, today\'s principles & terms', desc:'Flip the deck for today\'s topic. Say the answer out loud before you flip.', cta:'Open Flashcards', action:`runStart(${d},'cards','flashcards')`},
       {id:'formulas', dur:isCalc?50:30, phase:'Lock It In', tag:isCalc?'Calculations':'Numbers', ico:'🧮',
-        title:isCalc?'Formula Lab — run 5 EVM scenarios out loud':'Formula Lab — 3 quick reps', desc:'Plug numbers into CPI, SPI, EAC. Watching the formula react is how it stops being memorisation.', cta:'Open Formula Lab', action:`runStart(${d},'formulas','formulas')`},
-      {id:'break2', dur:10, brk:true, phase:'Lock It In', tag:'Break', ico:'☕', title:'Last reset — 10 min', desc:'Almost there.', cta:'I\'m back', action:`runStart(${d},'break2','rest')`},
+        title:isCalc?'Formula Lab, run 5 EVM scenarios out loud':'Formula Lab, 3 quick reps', desc:'Plug numbers into CPI, SPI, EAC. Watching the formula react is how it stops being memorisation.', cta:'Open Formula Lab', action:`runStart(${d},'formulas','formulas')`},
+      {id:'break2', dur:10, brk:true, phase:'Lock It In', tag:'Break', ico:'☕', title:'Last reset, 10 min', desc:'Almost there.', cta:'I\'m back', action:`runStart(${d},'break2','rest')`},
       {id:'boss', dur:50, phase:'Prove It', tag:'Beat the Boss', ico:'🎯', stepKey:'boss',
-        title:'Beat the Boss — clear the day', desc:'A short quiz on today\'s topic. 70%+ locks the day in green and keeps your chain alive.', cta:'▶ Start the Boss', action:`runStart(${d},'boss','boss')`},
+        title:'Beat the Boss, clear the day', desc:'A short quiz on today\'s topic. 70%+ locks the day in green and keeps your chain alive.', cta:'▶ Start the Boss', action:`runStart(${d},'boss','boss')`},
       {id:'fix', dur:35, phase:'Prove It', tag:'Plug leaks', ico:'⚠️',
         title:'Fix your misses', desc:'Re-attempt anything you missed today. Read each explanation out loud.', cta:'Open Wrong Log', action:`runStart(${d},'fix','wronglog')`},
       {id:'journal', dur:20, phase:'Lock It In', tag:'Make it stick', ico:'📝',
-        title:'Journal — today\'s 3 takeaways', desc:'Write the three things you never want to miss again. Closing the loop is how it sticks overnight.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
+        title:'Journal, today\'s 3 takeaways', desc:'Write the three things you never want to miss again. Closing the loop is how it sticks overnight.', cta:'Open Journal', action:`runStart(${d},'journal','studylog')`},
     ];
   }
   // assign clock times sequentially
@@ -5495,7 +5523,7 @@ function toggleBlock(d,id){
 // launch the real activity behind a block, mark it complete, and roll on
 function runStart(d, id, kind){
   const b = buildRunSheet(d).find(x=>x.id===id);
-  // The Boss only checks off when the learner actually passes (70%+) — finishBoss handles that.
+  // The Boss only checks off when the learner actually passes (70%+), finishBoss handles that.
   // Every other block checks off the moment you start it.
   if(b && kind!=='boss') markBlockDone(d,b);
   switch(kind){
@@ -5509,7 +5537,7 @@ function runStart(d, id, kind){
     case 'wronglog':  showPage('wronglog'); break;
     case 'studylog':  showPage('studylog'); break;
     case 'coach':     showPage('dashboard'); setTimeout(()=>{ const c=document.getElementById('coachCard'); if(c) c.scrollIntoView({behavior:'smooth'}); },200); break;
-    case 'rest':      renderToday(); showToast('Break logged — back to it 💪','success'); break;
+    case 'rest':      renderToday(); showToast('Break logged, back to it 💪','success'); break;
     case 'done':      renderToday(); break;
     default: renderToday();
   }
@@ -5537,7 +5565,7 @@ function renderToday(){
     nb.className = 'now-banner alldone';
     nb.innerHTML = `<div><div class="nb-l" style="color:var(--green)">✅ Today is done</div>
       <div class="nb-t">Every block cleared. That\'s a full study day in the bank.</div>
-      <div class="nb-d">Anything you do now is bonus — pre-learn tomorrow, or rest. Come back tomorrow and the next run sheet builds itself.</div></div>
+      <div class="nb-d">Anything you do now is bonus, pre-learn tomorrow, or rest. Come back tomorrow and the next run sheet builds itself.</div></div>
       <button class="btn btn-secondary" onclick="showPage('path')">See the 14-day chain →</button>`;
   } else {
     nb.className = 'now-banner';
@@ -5574,8 +5602,8 @@ function renderToday(){
   // footer
   const totalMin = study.reduce((s,b)=>s+b.dur,0);
   document.getElementById('todayFoot').innerHTML = `<b>How this works:</b> every block opens a real part of the app and checks itself off when you start it.
-    Work top to bottom — the orange block is where you are now. Today is <b>${study.length} study blocks (~${(totalMin/60).toFixed(1)}h of focused work)</b>, and it
-    rebuilds itself tomorrow for Day ${Math.min(d+1,14)}. Miss a day? The plan still points you at the next thing — it never leaves you guessing.
+    Work top to bottom, the orange block is where you are now. Today is <b>${study.length} study blocks (~${(totalMin/60).toFixed(1)}h of focused work)</b>, and it
+    rebuilds itself tomorrow for Day ${Math.min(d+1,14)}. Miss a day? The plan still points you at the next thing, it never leaves you guessing.
     <br><br><b>Exam:</b> ${info.date==='Jul 7'?'tomorrow':'Jul 8, 2026'} · Mocks land on Day 11 &amp; Day 13 automatically.`;
 }
 
@@ -5591,7 +5619,7 @@ function renderPath(){
     const steps = daySteps(d.d);
     const cls = dayDone(d.d) ? 'done' : d.d===today ? 'today' : '';
     const dotInner = dayDone(d.d) ? '✓' : d.d;
-    const cta = dayDone(d.d) ? 'Cleared — review anytime' : d.d===today ? `▶ Continue today's level (${steps}/4)` : steps>0 ? `Resume (${steps}/4)` : 'Open level';
+    const cta = dayDone(d.d) ? 'Cleared, review anytime' : d.d===today ? `▶ Continue today's level (${steps}/4)` : steps>0 ? `Resume (${steps}/4)` : 'Open level';
     const pips = ['watch','learn','drill','boss'].map(k=>`<div class="path-step-dot ${(state.path[d.d]||{})[k]?'on':''}"></div>`).join('');
     return `<div class="path-node ${cls}">
       <div class="path-rail"><div class="path-dot">${dotInner}</div>${i<DAYS.length-1?'<div class="path-line"></div>':''}</div>
@@ -5614,7 +5642,7 @@ function openDay(d){
     {k:'watch', ico:'▶️', t:'Watch it', d:'A short video that teaches today\'s topic out loud', fn:`pathWatch(${d})`},
     {k:'learn', ico:'📊', t:'See it', d: plan.lessons.length? 'Open the visual diagrams for this topic' : 'Skim the mindset and blueprint', fn:`pathLearn(${d})`},
     {k:'drill', ico:'✍️', t:'Drill it', d:'Warm up on practice questions for this topic', fn:`pathDrill(${d})`},
-    {k:'boss', ico:'🎯', t: isMock?'Boss Raid (Mock Exam)':'Beat the Boss', d: isMock?'A bigger timed mix — pass to clear the day':'A short quiz on today\'s topic. 70%+ clears the day', fn:`startBoss(${d})`},
+    {k:'boss', ico:'🎯', t: isMock?'Boss Raid (Mock Exam)':'Beat the Boss', d: isMock?'A bigger timed mix, pass to clear the day':'A short quiz on today\'s topic. 70%+ clears the day', fn:`startBoss(${d})`},
   ];
   document.getElementById('dayModalBox').innerHTML = `
     <button class="modal-close" onclick="closeDay()">✕</button>
@@ -5718,7 +5746,7 @@ function finishBoss(){
     <button class="modal-close" onclick="closeBoss()">✕</button>
     <div class="boss-result ${pass?'pass':'fail'}">
       <div class="bigscore">${pct}%</div>
-      <div style="font-size:18px;font-weight:800;margin-top:6px">${pass?'BOSS DEFEATED 🏆':'So close — run it back'}</div>
+      <div style="font-size:18px;font-weight:800;margin-top:6px">${pass?'BOSS DEFEATED 🏆':'So close, run it back'}</div>
       <div style="color:var(--text-dim);font-size:13px;margin-top:8px">${boss.right} of ${boss.qs.length} correct. ${pass?'Day step cleared, +30 XP.':'Hit 70% to clear the boss. Review your misses, then retry.'}</div>
       <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
         ${pass?'':`<button class="btn btn-primary" onclick="startBoss(${boss.day})">↻ Retry Boss</button>`}
@@ -5847,7 +5875,7 @@ function showToast(msg, type = '') {
 }
 
 // ══════════════════════════════════════
-// CLOUD SYNC — Supabase (cross-device)
+// CLOUD SYNC, Supabase (cross-device)
 // ══════════════════════════════════════
 const SB_URL = 'https://fyhxtghbuayikllxmzyi.supabase.co';
 const SB_KEY = 'sb_publishable_mxoxdYsVmTL_O9KQYV6zDQ_hFqT3Elm';
@@ -5932,7 +5960,7 @@ function openSync(){
   } else if(sbUser){
     box.innerHTML = `<button class="modal-close" onclick="document.getElementById('syncModal').classList.remove('show')">✕</button>
       <h2 style="font-size:20px;font-weight:800;margin-bottom:6px">☁️ Synced</h2>
-      <p style="color:var(--text-dim);font-size:14px">Signed in as <b style="color:var(--text)">${sbUser.email||'your account'}</b>. Your XP, streaks, notes, weak spots and path follow you on any device — just sign in with the same email.</p>
+      <p style="color:var(--text-dim);font-size:14px">Signed in as <b style="color:var(--text)">${sbUser.email||'your account'}</b>. Your XP, streaks, notes, weak spots and path follow you on any device, just sign in with the same email.</p>
       <div id="syncStatus" style="font-size:12px;color:var(--green);margin-top:10px">Auto-syncing on every change.</div>
       <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
         <button class="btn btn-primary" onclick="cloudPush();showToast('Pushed to cloud ☁️','success')">⬆ Sync now</button>
@@ -5960,7 +5988,7 @@ async function cloudSignUp(){
   syncMsg('Creating account…', true);
   const { data, error } = await sb.auth.signUp({ email, password: pass });
   if(error){ syncMsg(error.message); return; }
-  if(data.session){ sbUser=data.session.user; await cloudPush(); updateSyncUI(); openSync(); showToast('Account created — you are synced ☁️','success'); }
+  if(data.session){ sbUser=data.session.user; await cloudPush(); updateSyncUI(); openSync(); showToast('Account created, you are synced ☁️','success'); }
   else { syncMsg('Account created. If email confirmation is on, confirm via email then Sign in.', true); }
 }
 async function cloudSignIn(){
