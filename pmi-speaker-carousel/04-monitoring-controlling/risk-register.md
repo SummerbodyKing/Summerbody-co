@@ -1,6 +1,6 @@
 # Risk Register — PMISF-SPKR-2026
 
-**Version:** 0.1 — July 4, 2026 (living document; reviewed at every stage gate per the Risk Management Plan)
+**Version:** 1.1 — July 4, 2026, updated at M2 risk review after charter sign-off (living document; reviewed at every stage gate per the Risk Management Plan)
 Scoring: Probability × Impact, each 1–5. Score ≥ 12 = active mitigation required.
 
 | ID | Risk | Category | P | I | Score | Response | Owner | Status |
@@ -13,6 +13,13 @@ Scoring: Probability × Impact, each 1–5. Score ≥ 12 = active mitigation req
 | R-6 | Sponsor unavailable at a decision gate, stalling the schedule | Communication | 3 | 2 | 6 | **Accept/Mitigate:** PM proceeds on documented assumptions (Assumption Log) and flags decisions as reversible until confirmed | Lead PM | Open |
 | R-7 | Chapter-side rejection (Ryan) after Sponsor acceptance | Stakeholder | 2 | 3 | 6 | **Mitigate:** follow established brand rules Ryan already approved on the 5K project (logo top-left, real photos) | Lead PM | Open |
 | R-8 | Scope creep — new formats/platforms requested mid-build | Scope | 3 | 2 | 6 | **Mitigate:** template is data-driven and resolution-independent where possible; changes go through Change Log | Lead PM | Open |
+| R-9 | Canva editability mismatch — Sponsor plans to edit event date/time in Canva (D-2), but coded/video outputs are not natively Canva-editable | Scope/Technical | 4 | 3 | 12 | **Mitigate:** static exports delivered as high-res PNGs with date/time zones left blank for Canva overlay; confirm workflow with Sponsor at M3 using one sample export | Lead PM | Open — added at M2 review |
+| R-10 | Final color codes pending — Sponsor will supply exact monochromatic codes later (D-4); building on wrong ramp causes rework | Scope | 3 | 2 | 6 | **Mitigate:** all colors implemented as swappable design tokens; ramps generated from PMI base colors as defaults | Design Agent | Open — added at M2 review |
+
+## M2 risk review notes (July 4, 2026)
+- R-1 downgraded in practice: Sponsor approved the mockup-gate mitigation, so exposure is contained at M3.
+- R-6 partially realized and handled: interactive Q&A tooling failed; written Q&A via the charter worked — this is now the standard decision channel.
+- R-2 and R-4 under active investigation by the Research Agent (brief lands in `02-planning/research-brief.md`).
 
 ## Risk review schedule
-- Stage-gate reviews at M2 (planning baseline), M3 (design), M4 (build), M5 (delivery), M6 (closing — final risk closeout in lessons learned).
+- Stage-gate reviews at M2 ✅ (this update), M3 (design), M4 (build), M5 (delivery), M6 (closing — final risk closeout in lessons learned).

@@ -22,7 +22,9 @@ A coded, animated **rotating speaker carousel** for PMI South Florida event prom
 
 ## Current status
 
-**Stage: INITIATING** — Charter drafted, awaiting Sponsor review and answers to open questions (see `01-initiating/project-charter.md`, Section 9).
+**Stage: PLANNING** — Charter APPROVED by Sponsor July 4, 2026 (Initiating closed ✅). PM Plan, WBS, and Definition of Done baselined; Research Agent investigating font licensing, pop-out techniques, video pipeline, and color ramps. Next gate: M3 design mockups for Sponsor selection.
+
+**Sponsor's open items (not blocking):** event date/time, final color codes, real speaker names/headshots — all designed as swap-in placeholders.
 
 ## The 10 Knowledge Areas — where each lives in this project
 

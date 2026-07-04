@@ -2,7 +2,7 @@
 
 **Project Code:** PMISF-SPKR-2026
 **Date:** July 4, 2026
-**Version:** 0.1 — DRAFT, pending Sponsor sign-off
+**Version:** 1.0 — APPROVED by Sponsor July 4, 2026 (commit f1fd754). Initiating stage CLOSED.
 **Sponsor:** Terrence Michael Scott (King SUMMERBODY)
 **Project Manager:** Claude (AI Lead PM)
 
@@ -78,5 +78,5 @@ The PM proceeds under the Assumption Log until these are answered. **Just reply 
 
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
-| Sponsor | Terrence Michael Scott | Signed: Terrence Scott | |
+| Sponsor | Terrence Michael Scott | Signed: Terrence Scott | July 4, 2026 |
 | Project Manager | Claude (AI Lead PM) | Approved to proceed to Planning upon Sponsor reply | July 4, 2026 |
