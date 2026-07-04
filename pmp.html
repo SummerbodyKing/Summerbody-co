@@ -1231,14 +1231,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 129</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 134</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">129 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">134 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2757,6 +2757,42 @@ const QUESTIONS = [
     options:["A. Determine a summary budget","B. Manage quality","C. Ensure preventive actions are completed","D. Create the final report and record the impacts of transitioning and tailoring for future reference"],
     answer:3,
     explanation:"<strong>Closure produces the final report.</strong> Integration closure records how the project was transitioned and tailored so future teams learn from it. Quality (B) and preventive actions (C) happen earlier, before you decide the project is ready to close, and a summary budget (A) does not help the transition."
+  },
+  // ── HYBRID MINI EXAM 5 misses (July 4) ──
+  {
+    id:130, domain:"People", difficulty:"hard", principle:"Remove the impediment, protect the team",
+    text:"Midway through a project, the project manager learns the planning software is failing to record updates. What should the project manager do?",
+    options:["A. Assign a team member to manually update the plan from now on","B. Inform the PMO and wait for them to resolve it","C. Get the plan updated and keep the team focused on the deliverables, removing the impediment","D. Log it and start a project to implement a new planning application"],
+    answer:2,
+    explanation:"<strong>Servant leader removes the blocker fast.</strong> Get the plan updated and keep the team focused on delivering. Pulling a member onto plan updates (A) steals their time, waiting on the PMO (B) stalls the work, and a new application (D) is a separate project, overkill for a glitch."
+  },
+  {
+    id:131, domain:"Business Environment", difficulty:"hard", principle:"Kill a fundamentally broken project",
+    text:"A project manager joins a troubled multi-year project. It was stopped for years, is now restarted, has consumed 70% of its budget with CPI 0.42 and SPI 0.2, and major new scope changes are coming. What is the best course of action?",
+    options:["A. Change the earned value tracking technique","B. Change the contract to fit the new scope","C. Negotiate and minimize the scope changes with stakeholders","D. Close the project and request a new, re-chartered project from the sponsor"],
+    answer:3,
+    explanation:"<strong>Stop and re-charter.</strong> CPI 0.42 and SPI 0.2 are catastrophic, and with major scope change on a troubled history, the value-driven call is to close and start fresh rather than pour more money in. Changing the tracking method (A) fixes nothing; B and C patch a project that is fundamentally broken."
+  },
+  {
+    id:132, domain:"Process", difficulty:"medium", principle:"Baseline change means change control first",
+    text:"During execution, a change to the baseline requirements is needed. What is necessary?",
+    options:["A. Invoke the project's change management procedure","B. Re-estimate the impact on cost and schedule","C. Validate the change among stakeholders","D. Perform a root cause analysis"],
+    answer:0,
+    explanation:"<strong>Change control first.</strong> Any change to a baseline goes through the change management procedure. Re-estimating (B) and validating (C) are steps within that procedure, not the first action, and a root cause analysis (D) is for problems, not a requested change."
+  },
+  {
+    id:133, domain:"People", difficulty:"medium", principle:"Stakeholder engagement essentials",
+    text:"On a short 12-month project with a small stakeholder group, which is most important for effective stakeholder engagement?",
+    options:["A. Create more hierarchical structures among stakeholders","B. Build and maintain a stakeholder map and actively engage key stakeholders to build their commitment","C. Revisit all stakeholder assumptions annually","D. Limit contact to formal written status reports"],
+    answer:1,
+    explanation:"<strong>Know them, then engage them.</strong> A maintained stakeholder map tells you who matters, and actively engaging the key stakeholders builds their commitment. Adding hierarchy (A) or annual reviews (C) on a one-year project is over-processing, and status-only contact (D) is not engagement."
+  },
+  {
+    id:134, domain:"People", difficulty:"easy", principle:"Decision styles by speed",
+    text:"When there is very little time to make a decision, which decision-making style is the quickest?",
+    options:["A. Consultative style","B. Consensus style","C. Command style, where the leader decides alone","D. Delphi technique"],
+    answer:2,
+    explanation:"<strong>Command style is fastest.</strong> The leader decides unilaterally. Majority vote is also quick. Consultative (leader decides after seeking advice) and consensus (guiding the group to agreement) take longer because they gather more input."
   }
 ];
 
