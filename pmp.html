@@ -1231,14 +1231,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 134</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 137</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">134 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">137 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2793,6 +2793,28 @@ const QUESTIONS = [
     options:["A. Consultative style","B. Consensus style","C. Command style, where the leader decides alone","D. Delphi technique"],
     answer:2,
     explanation:"<strong>Command style is fastest.</strong> The leader decides unilaterally. Majority vote is also quick. Consultative (leader decides after seeking advice) and consensus (guiding the group to agreement) take longer because they gather more input."
+  },
+  // ── HYBRID MINI EXAM 5, more misses (July 4) ──
+  {
+    id:135, domain:"Process", difficulty:"medium", principle:"A fix that changes budget goes to the CCB",
+    text:"A construction team finds components failing tests, identifies the root cause, and proposes a solution. The deadline is tight and the fix requires a budget increase. What should the project manager do?",
+    options:["A. Invite suppliers to bid on a lower-cost solution","B. Submit a change request to the change control board (CCB)","C. Ask the sponsor directly for more funding","D. Update the risk management plan to include the solution"],
+    answer:1,
+    explanation:"<strong>Any change to budget or scope goes through change control.</strong> Submit a change request to the CCB so the fix is evaluated and approved before it is implemented. Asking the sponsor for money (C) skips formal change control, and updating the risk plan (D) does not get the change approved."
+  },
+  {
+    id:136, domain:"People", difficulty:"medium", principle:"Communication issues - use the engagement plan",
+    text:"A project is delayed because cultural differences are causing misunderstandings among stakeholders. What should the project manager do?",
+    options:["A. Review the stakeholder register to find replacements for the stakeholders involved","B. Review the stakeholder engagement plan to determine strategies to improve communication","C. Submit a change request to replace the stakeholders","D. Monitor the communication to spot misunderstandings"],
+    answer:1,
+    explanation:"<strong>Go to the engagement plan and be proactive.</strong> The root cause is communication, so review the stakeholder engagement plan for strategies to improve it. Replacing stakeholders (A, C) is disruptive and unnecessary, and monitoring (D) is reactive, it watches the problem instead of fixing it."
+  },
+  {
+    id:137, domain:"People", difficulty:"medium", principle:"Demonstrate value with a prototype",
+    text:"An approval committee worries a three-year project's deliverable may not meet industry needs or deliver the expected value. How can the project manager best demonstrate the deliverable's value to stakeholders?",
+    options:["A. Add an extra sprint to the timeline for possible modifications","B. Have the team build a prototype to share with stakeholders","C. Record the committee's concerns in the issue log","D. Add the committee to the communications management plan"],
+    answer:1,
+    explanation:"<strong>A prototype shows value.</strong> It is tangible, lets stakeholders visualize the product, and gathers early feedback so you can adjust. Adding a sprint (A) does not guarantee value, logging concerns (C) captures but does not address them, and the communications plan (D) informs but does not demonstrate value."
   }
 ];
 
