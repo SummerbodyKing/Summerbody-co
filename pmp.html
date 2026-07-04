@@ -928,6 +928,17 @@
   .gloss-chip.on { background:var(--orange); border-color:var(--orange); color:#fff; }
   .gloss-cat-head { font-size:13px; font-weight:900; letter-spacing:1px; text-transform:uppercase; color:var(--orange); margin:20px 0 10px; display:flex; align-items:center; gap:8px; }
   .gloss-cat-head span { font-size:11px; color:var(--text-muted); background:var(--surface3); padding:2px 8px; border-radius:20px; }
+
+  /* ════ EXAM PATTERNS ════ */
+  .pat-card { display:flex; gap:16px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--orange); border-radius:14px; padding:18px; margin-bottom:12px; }
+  .pat-n { flex:0 0 auto; width:38px; height:38px; border-radius:50%; background:var(--orange); color:#fff; font-weight:900; font-size:18px; display:flex; align-items:center; justify-content:center; }
+  .pat-t { font-size:16px; font-weight:800; margin-bottom:5px; }
+  .pat-d { font-size:14px; line-height:1.55; color:var(--text-dim); }
+  .pat-d b { color:var(--text); }
+  .pat-elim { background:linear-gradient(135deg,#1a0000,var(--surface)); border:1px solid rgba(239,68,68,.35); border-radius:14px; padding:18px; margin-top:16px; }
+  .pat-elim-h { font-size:14px; font-weight:800; color:var(--red); margin-bottom:8px; }
+  .pat-elim ul { margin:0; padding-left:20px; }
+  .pat-elim li { font-size:13.5px; line-height:1.7; color:var(--text-dim); }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -957,6 +968,7 @@
     <button class="nav-tab" data-page="learn" onclick="showPage('learn')">Learn</button>
     <button class="nav-tab" data-page="diagrams" onclick="showPage('diagrams')">Diagrams</button>
     <button class="nav-tab" data-page="glossary" onclick="showPage('glossary')">Glossary</button>
+    <button class="nav-tab" data-page="patterns" onclick="showPage('patterns')">🎯 Patterns</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
     <button class="nav-tab" data-page="flashcards" onclick="showPage('flashcards')">Flashcards</button>
     <button class="nav-tab" data-page="formulas" onclick="showPage('formulas')">Formula Lab</button>
@@ -983,6 +995,7 @@
   <button class="mnav-btn" data-page="learn" onclick="showPage('learn')"><span>📊</span>Learn</button>
   <button class="mnav-btn" data-page="diagrams" onclick="showPage('diagrams')"><span>🧩</span>Flow</button>
   <button class="mnav-btn" data-page="glossary" onclick="showPage('glossary')"><span>📖</span>Terms</button>
+  <button class="mnav-btn" data-page="patterns" onclick="showPage('patterns')"><span>🎯</span>Keys</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
   <button class="mnav-btn" data-page="flashcards" onclick="showPage('flashcards')"><span>🃏</span>Cards</button>
   <button class="mnav-btn" data-page="formulas" onclick="showPage('formulas')"><span>🧮</span>Formulas</button>
@@ -1061,6 +1074,41 @@
     <button class="btn btn-secondary btn-sm" onclick="document.getElementById('glossSearch').value='';renderGlossary()">Clear</button>
   </div>
   <div id="glossList"></div>
+</div>
+
+<!-- ══════════════════════════════════════════ EXAM PATTERNS ══ -->
+<div class="page" id="page-patterns">
+  <div class="dg-hero">
+    <h1>Exam-Day <em>Patterns</em></h1>
+    <p>The six patterns that answer most questions, built from every question you missed. Read every question for what already happened, then match it to one of these. Tap Read aloud for the walk.</p>
+    <button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="speakPatterns()">🔊 Read aloud</button>
+    <button class="btn btn-secondary btn-sm" style="margin-top:12px" onclick="stopSpeaking()">⏹ Stop</button>
+  </div>
+
+  <div class="pat-card"><div class="pat-n">1</div><div><div class="pat-t">Change control, first</div><div class="pat-d">Any change to scope, budget, schedule, or a baseline goes through a <b>change request to the change control board</b>. Even a great technical fix that costs money is a change. Re-estimating and validating are steps <b>inside</b> change control, not the first move.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">2</div><div><div class="pat-t">Stakeholder or communication problem</div><div class="pat-d">Go to the <b>stakeholder engagement plan</b> and engage <b>proactively</b>. Do not replace people. Do not just monitor or document, that is reactive. Improve the communication.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">3</div><div><div class="pat-t">Servant leadership</div><div class="pat-d"><b>Remove the impediment and protect the team's focus.</b> Do not pull a member off their work, do not turn a glitch into a new project, do not escalate first.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">4</div><div><div class="pat-t">Agile scenario</div><div class="pat-d"><b>Empower the self-organizing team, support the Product Owner, deliver value with an MVP or prototype, hold a sustainable pace.</b> Never jam work into a running sprint, never use a predictive tool (SPI, fast track, CCB) in an agile question.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">5</div><div><div class="pat-t">Value-driven decision</div><div class="pat-d"><b>Continue if the value beats the remaining cost. Kill and re-charter if it is fundamentally broken</b> (catastrophic CPI and SPI, major scope change, troubled history).</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">6</div><div><div class="pat-t">Prove value or get buy-in</div><div class="pat-d"><b>Build a prototype or MVP.</b> Something tangible beats documentation. It lets stakeholders see it and give early feedback.</div></div></div>
+
+  <div class="pat-elim">
+    <div class="pat-elim-h">✂️ Cross these out fast</div>
+    <ul>
+      <li>Escalate to the sponsor or PMO first — almost always wrong.</li>
+      <li>Replace the people — wrong.</li>
+      <li>Just monitor or log it without acting — wrong, that is reactive.</li>
+      <li>Skip change control — wrong.</li>
+      <li>A predictive tool inside an agile scenario — wrong.</li>
+    </ul>
+  </div>
+
+  <div class="today-foot" style="margin-top:16px"><b>The mindset underneath it all:</b> gather information first, never escalate or punish or reject first, serve the team, talk to people directly, and choose the most value-driven answer. <b>Exam:</b> July 7, leave at 10, start at 1. It is attempt one of three in your year. Read the stem for what already happened, then pick the servant-leader's next move.</div>
 </div>
 
 <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
@@ -4581,6 +4629,19 @@ function dgNext(){
 function dgPrev(){ dgState.idx=(dgState.idx-1+dgState.list.length)%dgState.list.length; dgState.why=false; renderDiagram(); }
 function dgShuffle(){ dgState.list=shuffle(dgState.list); dgState.idx=0; dgState.seen=new Set(); dgState.why=false; renderDiagram(); showToast('Shuffled 🔀'); }
 function dgSpeak(){ const p=dgState.list[dgState.idx]; if(!p) return; speak(p.name+'. '+p.ka+', '+p.grp+'. Inputs: '+p.in.join(', ')+'. Tool: '+p.tool+'. Outputs: '+p.out.join(', ')+'. '+p.why); }
+
+// read the exam-day pattern sheet aloud for the walk
+function speakPatterns(){
+  speak("Your six exam patterns. "+
+    "One. Change control first. Any change to scope, budget, schedule, or a baseline goes through a change request to the change control board. "+
+    "Two. A stakeholder or communication problem. Go to the stakeholder engagement plan and engage proactively. Do not replace people, do not just monitor. "+
+    "Three. Servant leadership. Remove the impediment and protect the team's focus. Do not escalate first. "+
+    "Four. Agile. Empower the self-organizing team, support the Product Owner, deliver value with an M V P or prototype, hold a sustainable pace. Never use a predictive tool in an agile question. "+
+    "Five. Value-driven decision. Continue if value beats remaining cost. Kill and re-charter if it is fundamentally broken. "+
+    "Six. To prove value or get buy-in, build a prototype. Tangible beats documentation. "+
+    "Cross these out fast. Escalating to the sponsor first, replacing people, only monitoring, skipping change control, or a predictive tool in an agile question. "+
+    "The mindset. Gather information first, never escalate or punish first, serve the team, talk to people directly, choose the most value-driven answer.");
+}
 
 // ══════════════════════════════════════
 // 📖 GLOSSARY — every acronym and tool in plain English
