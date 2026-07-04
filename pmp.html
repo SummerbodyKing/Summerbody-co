@@ -1279,14 +1279,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 144</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 149</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">144 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">149 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2914,6 +2914,41 @@ const QUESTIONS = [
     options:["A. Implement the change as approved","B. Modify the change to reduce the impact on schedule and budget","C. Request justification from the CCB for the change","D. Conduct a cost-benefit analysis of the alternative service"],
     answer:0,
     explanation:"<strong>Once the CCB approves a change, implement it.</strong> In approving it, the board already weighed all the implications. Modifying it (B), questioning the CCB (C), or re-analyzing (D) second-guesses a decision that is already made. Pattern: change goes to the CCB, and an approved change gets executed."
+  },
+  {
+    id:145, domain:"Process", difficulty:"hard", principle:"Sponsor after you exhaust your own options - revise the plan, do not just report",
+    text:"A software development team is significantly behind schedule. The team has been unwilling and unsuccessful at recovering the timeline despite the project manager's efforts. What should the project manager do first?",
+    options:["A. Meet with the project sponsor to discuss the situation and develop a revised project plan","B. Escalate the issue to the team's functional manager for disciplinary action","C. Require the team to work mandatory overtime until the schedule recovers","D. Request a formal extension of the project deadline from the customer"],
+    answer:0,
+    explanation:"<strong>You have already exhausted your own options, so bring the sponsor in to replan, not to tattle.</strong> The sponsor owns the funding and the mandate, so a revised plan (more budget, reduced scope, new date) needs them in the room. The functional manager (B) owns the people day to day but disciplinary action does not recover a schedule and is not your first move. Overtime (C) is forcing, and a burned-out team goes slower. Asking the customer for an extension (D) commits to a change before you have a plan behind it. Distinction to lock in: the functional manager is who you WORK WITH on the people; the sponsor is who you go to LAST when the fix needs money or mandate."
+  },
+  {
+    id:146, domain:"Process", difficulty:"hard", principle:"A story too big for a sprint means the story was never broken down properly",
+    text:"During a sprint, the team discovers that the user story 'Customer can pay using a credit card' cannot be completed because it is too large and involves foreign cards, fraud checks, and refunds. What should the project manager or team investigate first?",
+    options:["A. Whether a detailed, appropriately sized user story was presented to the team before the sprint","B. Whether the product owner approved the sprint scope","C. Whether the team needs more iterative backlog refinement sessions going forward","D. Whether the sprint length should be extended to fit the work"],
+    answer:0,
+    explanation:"<strong>A story that cannot fit in a sprint was not decomposed properly before it was pulled in.</strong> The root cause is upstream: the story should have been split into small, testable pieces (INVEST) during refinement before the team committed to it. C is the right general habit but the question asks what went wrong HERE, and the miss already happened. B does not fix an oversized story. D is wrong because you never stretch a fixed-length timebox to fit the work; you shrink the work to fit the timebox. Signal: 'too large to complete in the sprint' points to bad story sizing, not a bad sprint."
+  },
+  {
+    id:147, domain:"Business Environment", difficulty:"medium", principle:"The sponsor signs off because the sponsor owns the funding and the mandate",
+    text:"A large project spanning four countries is nearing completion. Why should the project sponsor be the one to sign off on the acceptance of the final deliverables?",
+    options:["A. Because the sponsor procures the funding and commits the resources, giving them the authority to accept the outcome","B. Because the sponsor wrote the detailed requirements for each deliverable","C. Because the sponsor manages the day-to-day work of the delivery teams","D. Because the sponsor is the only person who understands the technical details"],
+    answer:0,
+    explanation:"<strong>The sponsor holds the money and the mandate, so the sponsor holds the authority to formally accept.</strong> Acceptance is an authority act, not a technical one. B is wrong because requirements come from stakeholders and the business analyst, not the sponsor. C is the project manager's job, not the sponsor's. D is wrong because sign-off is about authority to accept business value, not technical depth. Keep the roles straight: sponsor funds and empowers, PM runs the work, stakeholders define the need."
+  },
+  {
+    id:148, domain:"Process", difficulty:"medium", principle:"For a realistic estimate, ask the people who do the work",
+    text:"A hospital CEO wants to reduce the time patients spend using the MRI units by 30%. To build a realistic estimate of how much reduction is achievable, whom should the project manager consult first?",
+    options:["A. The hospital radiology team that operates the MRI units daily","B. The project team assigned to the improvement initiative","C. The CEO who set the 30% target","D. The MRI equipment manufacturer's sales representative"],
+    answer:0,
+    explanation:"<strong>The most realistic estimate comes from the subject matter experts who actually perform the work.</strong> The radiology team knows the real scan times, patient prep, and constraints, so their bottom-up input is the trustworthy estimate. The project team (B) manages and coordinates but does not run the scanners. The CEO (C) set the goal, and goals are not estimates. A sales rep (D) is selling, not estimating your reality. Pattern: 'realistic estimate' points to the hands-on doers, the SMEs, not to leadership or vendors."
+  },
+  {
+    id:149, domain:"Process", difficulty:"hard", principle:"High-risk overhaul: get alignment on plan, scope and deliverables before you build",
+    text:"A project manager is about to begin a high-risk overhaul of a live production system. What is the most important initial step?",
+    options:["A. Ensure unanimous agreement among the stakeholders and the sponsor on the project plan, scope, and deliverables","B. Begin building the new system immediately to reduce time at risk","C. Draft a detailed risk register and move straight into execution","D. Assign the most experienced developers to the highest-risk components"],
+    answer:0,
+    explanation:"<strong>Before touching a live, high-risk system, lock in shared agreement on scope, plan, and deliverables.</strong> Misalignment on a production overhaul is how you cause an outage no one signed off on. A gets everyone pointed the same way first. B skips planning entirely, the opposite of the mindset. C is good practice but a register alone is not agreement, and 'straight into execution' jumps the gun. D is a staffing detail, not the foundational step. Signal: 'high-risk' plus 'initial step' means align and plan before you act."
   }
 ];
 
