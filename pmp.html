@@ -1231,14 +1231,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 126</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 129</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">126 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">129 questions. Nothing resets on its own — your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2735,6 +2735,28 @@ const QUESTIONS = [
     options:["A. Push the team to work overtime until they catch up","B. Help the team use its actual velocity to commit to less next sprint and improve in the retrospective","C. Replace the underperforming team members","D. Extend the length of every sprint"],
     answer:1,
     explanation:"<strong>Sustainable pace.</strong> A new team's velocity is still settling. Let them right-size their commitment based on real velocity and improve through the retrospective. Overtime (A) burns them out, and changing the timebox (D) breaks the rhythm."
+  },
+  // ── CLOSURE AND TRANSITIONS from Study Hall (July 3) ──
+  {
+    id:127, domain:"Process", difficulty:"hard", principle:"Update only the baseline the change affects",
+    text:"An approved change adds an incentive to a lump-sum (fixed price) contract if the contractor maintains the current baseline schedule. Which should be updated?",
+    options:["A. Scope baseline","B. Project management plan","C. Cost baseline","D. Schedule baseline"],
+    answer:2,
+    explanation:"<strong>The incentive is a payment, so it affects cost.</strong> Update the cost baseline to reflect the incentive. Scope and schedule are unchanged (A, D), and nothing in the change drives a broader plan update (B). Update only the baseline the change actually touches."
+  },
+  {
+    id:128, domain:"Process", difficulty:"hard", principle:"Close contracts before releasing the team",
+    text:"A project met its strategic goal and received formal, documented acceptance from the client and sponsor. A vendor contributed to the work. What should the project manager do NEXT?",
+    options:["A. Review all contracts with the team and suppliers to confirm obligations are met, then close the procurements","B. Immediately disband the team and return resources","C. Begin the next project","D. Skip lessons learned to save time"],
+    answer:0,
+    explanation:"<strong>Close the contracts first.</strong> With acceptance in hand and a vendor involved, verify every party met its contractual obligations and close the procurements. You release the team and archive records after the contracts are closed, not before."
+  },
+  {
+    id:129, domain:"Process", difficulty:"hard", principle:"Closure records tailoring and transition",
+    text:"A design project is ready to be transferred to production. As part of phase closure, which activity is required?",
+    options:["A. Determine a summary budget","B. Manage quality","C. Ensure preventive actions are completed","D. Create the final report and record the impacts of transitioning and tailoring for future reference"],
+    answer:3,
+    explanation:"<strong>Closure produces the final report.</strong> Integration closure records how the project was transitioned and tailored so future teams learn from it. Quality (B) and preventive actions (C) happen earlier, before you decide the project is ready to close, and a summary budget (A) does not help the transition."
   }
 ];
 
