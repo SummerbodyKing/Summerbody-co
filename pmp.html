@@ -4755,19 +4755,17 @@ function driveLesson(expl){
   let s=m?m[1]:(expl||'').replace(/<[^>]+>/g,'');
   return s.replace(/\s+/g,' ').trim();
 }
-// Each line is spoken on its own, then we hold a beat of silence (pause, in ms)
-// so you have time to think. No answer letters, ever. Story first.
+// Three beats per question. Read the scenario, hold a pause to think. Read the
+// options, hold a pause. Then ONE flowing story: what you do and why, and why not
+// the others, spoken continuously with no stop-start. No filler phrases.
 function driveLinesFor(q, n, total){
   const move=(q.options[q.answer]||'').replace(/^[A-D]\.\s*/,'').trim();
-  const lesson=driveLesson(q.explanation);
+  const opts=q.options.join('. ');
+  const why=(q.explanation||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
   const lines=[];
-  if(n===1) lines.push({t:"Welcome to Drive Mode. I am going to walk you through your weak points like short stories. Just listen and picture each one. You do not need to look at your phone.", pause:1400});
-  lines.push({t:"Picture this.", pause:700});
-  lines.push({t:q.text, pause:1800});
-  lines.push({t:"So, what do you do? Take a second.", pause:3200});
-  lines.push({t:"Here is the move. "+move+".", pause:1500});
-  lines.push({t:"And here is why it works. "+lesson, pause:1600});
-  lines.push({t:"The picture to hold onto. "+q.principle+".", pause:2400});
+  lines.push({t:q.text, pause:2400});
+  lines.push({t:"Your options. "+opts+".", pause:2000});
+  lines.push({t:"Here is what you do. "+move+". "+why, pause:2600});
   return lines;
 }
 function driveLoadCurrent(){
@@ -4783,7 +4781,7 @@ function renderDrive(){
   el.innerHTML=`
     <div class="dg-hero">
       <h1>🚗 <em>Drive</em> Mode</h1>
-      <p>Hands-free audio of your weak points, told as short stories. Picture the scene, take a beat to think, then hear the move and the one thing to hold onto. No answer letters, slow pace, auto-advances. Press play, connect Bluetooth, and drive. Eyes on the road.</p>
+      <p>Hands-free audio of your weak points. It reads the question, pauses so you can think, reads the options, pauses, then tells you what you do and why in one flowing story. Auto-advances. Press play, connect Bluetooth, and drive. Eyes on the road.</p>
     </div>
     ${supported?'':'<div style="background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;color:var(--text)">Your browser does not support voice playback. Open the app in Chrome or Safari.</div>'}
     <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px">
@@ -4809,11 +4807,12 @@ function driveRenderCard(){
   const card=document.getElementById('driveCard');
   if(cnt) cnt.textContent = driveState.list.length ? `Weak point ${driveState.idx+1} of ${driveState.list.length}` : '';
   if(card && q){
-    const correct=(q.options[q.answer]||'').replace(/^[A-D]\.\s*/,'');
+    const why=(q.explanation||'').replace(/<[^>]+>/g,'');
+    const opts=q.options.map((o,i)=>`<div style="padding:4px 0;${i===q.answer?'color:var(--orange);font-weight:700':'color:var(--text-dim)'}">${o}${i===q.answer?'  ✓':''}</div>`).join('');
     card.innerHTML=`<div style="color:var(--text-dim);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">${q.domain}</div>
-      <div style="margin-bottom:12px">${q.text}</div>
-      <div style="background:var(--surface2);border-radius:10px;padding:10px 12px;margin-bottom:8px"><strong style="color:var(--orange)">The move:</strong> ${correct}</div>
-      <div style="font-size:14px;color:var(--text-dim)"><strong>Hold onto this:</strong> ${q.principle}</div>`;
+      <div style="margin-bottom:10px">${q.text}</div>
+      <div style="margin-bottom:10px">${opts}</div>
+      <div style="background:var(--surface2);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.5">${why}</div>`;
   }
 }
 function driveRenderControls(){
@@ -4841,7 +4840,7 @@ function driveSpeakLine(){
   try{
     window.speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(text);
-    u.rate=0.8; u.pitch=1.0; if(typeof applyVoice==='function') applyVoice(u);
+    u.rate=0.85; u.pitch=1.0; if(typeof applyVoice==='function') applyVoice(u);
     u.onend=()=>{ if(driveState.playing && driveState.token===myToken){ driveState.li++; setTimeout(driveSpeakLine, pause); } };
     window.speechSynthesis.speak(u);
   }catch(e){ driveState.li++; setTimeout(driveSpeakLine, pause); }
