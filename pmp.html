@@ -4748,18 +4748,26 @@ function buildDriveList(){
   if(!list.length) list = QUESTIONS.slice(-30);
   return list;
 }
+// Pull the core one-line lesson: the bolded first sentence of the explanation
+// (it never references answer letters, so it reads clean out loud).
+function driveLesson(expl){
+  const m=(expl||'').match(/<strong>([\s\S]*?)<\/strong>/);
+  let s=m?m[1]:(expl||'').replace(/<[^>]+>/g,'');
+  return s.replace(/\s+/g,' ').trim();
+}
+// Each line is spoken on its own, then we hold a beat of silence (pause, in ms)
+// so you have time to think. No answer letters, ever. Story first.
 function driveLinesFor(q, n, total){
-  const L=['A','B','C','D'];
-  const correct=(q.options[q.answer]||'').replace(/^[A-D]\.\s*/,'');
-  const why=(q.explanation||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+  const move=(q.options[q.answer]||'').replace(/^[A-D]\.\s*/,'').trim();
+  const lesson=driveLesson(q.explanation);
   const lines=[];
-  if(n===1) lines.push("This is Drive Mode. I will read your weak points one at a time, hands free. Keep your eyes on the road. Here we go.");
-  lines.push(`Weak point ${n} of ${total}. ${q.domain} domain.`);
-  lines.push(`Here is the scenario. ${q.text}`);
-  lines.push("Think about what you would do.");
-  lines.push(`The answer is ${L[q.answer]}. ${correct}.`);
-  lines.push(`Here is why. ${why}`);
-  lines.push(`Lock it in. ${q.principle}.`);
+  if(n===1) lines.push({t:"Welcome to Drive Mode. I am going to walk you through your weak points like short stories. Just listen and picture each one. You do not need to look at your phone.", pause:1400});
+  lines.push({t:"Picture this.", pause:700});
+  lines.push({t:q.text, pause:1800});
+  lines.push({t:"So, what do you do? Take a second.", pause:3200});
+  lines.push({t:"Here is the move. "+move+".", pause:1500});
+  lines.push({t:"And here is why it works. "+lesson, pause:1600});
+  lines.push({t:"The picture to hold onto. "+q.principle+".", pause:2400});
   return lines;
 }
 function driveLoadCurrent(){
@@ -4775,7 +4783,7 @@ function renderDrive(){
   el.innerHTML=`
     <div class="dg-hero">
       <h1>🚗 <em>Drive</em> Mode</h1>
-      <p>Hands-free audio of your weak points. It reads the scenario, the answer, and the coaching, then auto-advances to the next one. Press play, connect Bluetooth, and drive. Eyes on the road.</p>
+      <p>Hands-free audio of your weak points, told as short stories. Picture the scene, take a beat to think, then hear the move and the one thing to hold onto. No answer letters, slow pace, auto-advances. Press play, connect Bluetooth, and drive. Eyes on the road.</p>
     </div>
     ${supported?'':'<div style="background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;color:var(--text)">Your browser does not support voice playback. Open the app in Chrome or Safari.</div>'}
     <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px">
@@ -4801,11 +4809,11 @@ function driveRenderCard(){
   const card=document.getElementById('driveCard');
   if(cnt) cnt.textContent = driveState.list.length ? `Weak point ${driveState.idx+1} of ${driveState.list.length}` : '';
   if(card && q){
-    const L=['A','B','C','D'];
     const correct=(q.options[q.answer]||'').replace(/^[A-D]\.\s*/,'');
     card.innerHTML=`<div style="color:var(--text-dim);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">${q.domain}</div>
       <div style="margin-bottom:12px">${q.text}</div>
-      <div style="background:var(--surface2);border-radius:10px;padding:10px 12px"><strong style="color:var(--orange)">Answer ${L[q.answer]}:</strong> ${correct}</div>`;
+      <div style="background:var(--surface2);border-radius:10px;padding:10px 12px;margin-bottom:8px"><strong style="color:var(--orange)">The move:</strong> ${correct}</div>
+      <div style="font-size:14px;color:var(--text-dim)"><strong>Hold onto this:</strong> ${q.principle}</div>`;
   }
 }
 function driveRenderControls(){
@@ -4826,15 +4834,17 @@ function driveSpeakLine(){
     }
     return;
   }
-  const text=driveState.lines[driveState.li];
+  const line=driveState.lines[driveState.li];
+  const text=(line&&line.t)||'';
+  const pause=(line&&line.pause)||700;
   const myToken=driveState.token;
   try{
     window.speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(text);
-    u.rate=0.95; u.pitch=1.02; if(typeof applyVoice==='function') applyVoice(u);
-    u.onend=()=>{ if(driveState.playing && driveState.token===myToken){ driveState.li++; setTimeout(driveSpeakLine,220); } };
+    u.rate=0.8; u.pitch=1.0; if(typeof applyVoice==='function') applyVoice(u);
+    u.onend=()=>{ if(driveState.playing && driveState.token===myToken){ driveState.li++; setTimeout(driveSpeakLine, pause); } };
     window.speechSynthesis.speak(u);
-  }catch(e){ driveState.li++; setTimeout(driveSpeakLine,220); }
+  }catch(e){ driveState.li++; setTimeout(driveSpeakLine, pause); }
 }
 function drivePlay(){
   if(!driveState.list.length){ driveState.list=buildDriveList(); driveState.idx=0; driveLoadCurrent(); }
