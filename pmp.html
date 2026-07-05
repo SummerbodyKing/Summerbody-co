@@ -1286,14 +1286,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 164</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 168</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">164 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">168 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3061,6 +3061,34 @@ const QUESTIONS = [
     options:["A. Update the stakeholder management plan","B. Review the stakeholder register","C. Meet with the project sponsor to learn if new roles have been created","D. Submit a change request to the change control board"],
     answer:0,
     explanation:"<strong>New stakeholders change how you engage, so you update the stakeholder engagement (management) plan, not just record names.</strong> Reviewing the register (B) only adds names without adjusting the engagement approach. There is no change to project requirements, so no change request is needed, which kills D. Going to the sponsor about new roles (C) is not the direct action. Signal: 'new stakeholders identified' means update the stakeholder management plan so their engagement is planned."
+  },
+  {
+    id:165, domain:"Process", difficulty:"hard", principle:"Critical path is the longest chain of dependent tasks - independent paths are compared, not chained",
+    text:"A project network has two separate paths with no dependencies between them. Path A is tasks 1-2-3-4, each lasting 5 days. Path B is tasks 5-6-7, lasting 3, 7, and 2 days. What is the critical path?",
+    options:["A. Path A, tasks 1-2-3-4","B. Path B, tasks 5-6-7","C. All tasks combined, 1-2-3-4-5-6-7","D. Tasks 1-2-6-7"],
+    answer:0,
+    explanation:"<strong>The critical path is the longest path of dependent tasks, and independent paths are compared, never chained together.</strong> Path A runs 4 tasks at 5 days each, so 20 days. Path B runs 3 plus 7 plus 2, so 12 days. The longer one, 20 days, is the critical path, which is Path A. Chaining both paths (C) is wrong because there is no dependency linking them, so you do not add them. A random mix like 1-2-6-7 (D) crosses two unconnected paths, which is not a real sequence. Signal: 'longest path' plus 'no dependency between paths' means add each path on its own and take the bigger number."
+  },
+  {
+    id:166, domain:"Process", difficulty:"medium", principle:"Product will not meet scope: it is a change, so run integrated change control first",
+    text:"During a status review meeting, it is determined that the product will not meet the project scope requirements in a particular scenario. What should the project manager do?",
+    options:["A. Initiate the integrated change control process","B. Perform risk analysis and update the project scope directly","C. Review the baselines to determine the critical path","D. Inform the customer and negotiate an extended deadline"],
+    answer:0,
+    explanation:"<strong>A gap between the product and the scope is a change, and every change runs through integrated change control first.</strong> You do not touch the scope baseline directly (B), because changing a baseline without change control is exactly what the process exists to prevent. Reviewing baselines for the critical path (C) does not address the scope gap. Informing the customer and renegotiating (D) comes only after change control is initiated and a decision is made. Signal: 'will not meet scope' means a change is needed, and a change means integrated change control before anything else. This is your Pattern 1."
+  },
+  {
+    id:167, domain:"Process", difficulty:"medium", principle:"Worried about unforeseen events: identify and evaluate risks, build a risk action plan",
+    text:"A project manager is assigned to a project that has finished planning. The sponsor is confident the plan has enough budget and time, but the project manager believes unforeseen events could still affect success. What should the project manager do?",
+    options:["A. Identify and evaluate potential risks and develop a risk action plan","B. Meet with the sponsor to request additional funding to mitigate potential risks","C. Discuss the risk potential with the functional manager and identify resources","D. Document potential constraints and limitations in the risk management plan"],
+    answer:0,
+    explanation:"<strong>When you sense uncertainty, be proactive: identify and evaluate the risks, then plan responses to avoid, mitigate, transfer, or accept them.</strong> Requesting funding (B) is premature before you even know what the risks are. Going to the functional manager for resources (C) is also premature and off target. Documenting constraints in the risk management plan (D) is premature too, and nothing says that plan is inadequate. Signal: 'unforeseen events could affect success' means run the risk process, starting with identifying risks, not spending money or grabbing resources first."
+  },
+  {
+    id:168, domain:"Process", difficulty:"hard", principle:"Risk process order: identify risks FIRST, then quantify, then respond, then audit",
+    text:"A new project will develop several financial products across countries with different regulations. After researching the rules, the project manager is concerned some products do not protect consumers enough. What should the project manager do first?",
+    options:["A. Identify the high-level project risks","B. Quantify the project risks in the risk register","C. Develop a risk response strategy","D. Perform scheduled risk audits"],
+    answer:0,
+    explanation:"<strong>Risk management runs in a fixed order, and identifying risks always comes first.</strong> You cannot quantify (B), respond to (C), or audit (D) a risk you have not identified yet. The order is: identify risks, then analyze and quantify them, then plan responses, then implement and monitor with audits. The project manager has spotted a concern, so the first formal step is to identify the high-level risks. Signal: 'do first' plus a newly spotted concern means Identify Risks, the front of the risk process."
   }
 ];
 
@@ -4739,7 +4767,8 @@ let driveState = { list:[], idx:0, playing:false, token:0, lines:[], li:0 };
 function driveWeakIds(){
   const ids = new Set();
   (state.wrongLog||[]).forEach(w=>{ if(w && w.qId!=null) ids.add(w.qId); });
-  for(let i=130;i<=164;i++) ids.add(i);
+  // every reinforcement question built from your mini-exam misses (id 130 and up)
+  QUESTIONS.forEach(q=>{ if(q.id>=130) ids.add(q.id); });
   return ids;
 }
 function buildDriveList(){
