@@ -963,6 +963,7 @@
   <div class="nav-tabs">
     <button class="nav-tab active" data-page="today" onclick="showPage('today')">▶ Today</button>
     <button class="nav-tab" data-page="walk" onclick="showPage('walk')">🎧 Walk</button>
+    <button class="nav-tab" data-page="drive" onclick="showPage('drive')">🚗 Drive</button>
     <button class="nav-tab" data-page="dashboard" onclick="showPage('dashboard')">War Room</button>
     <button class="nav-tab" data-page="path" onclick="showPage('path')">14-Day Path</button>
     <button class="nav-tab" data-page="learn" onclick="showPage('learn')">Learn</button>
@@ -990,6 +991,7 @@
 <div class="mobile-nav" id="mobileNav">
   <button class="mnav-btn active" data-page="today" onclick="showPage('today')"><span>▶️</span>Today</button>
   <button class="mnav-btn" data-page="walk" onclick="showPage('walk')"><span>🎧</span>Walk</button>
+  <button class="mnav-btn" data-page="drive" onclick="showPage('drive')"><span>🚗</span>Drive</button>
   <button class="mnav-btn" data-page="dashboard" onclick="showPage('dashboard')"><span>🏠</span>War Room</button>
   <button class="mnav-btn" data-page="path" onclick="showPage('path')"><span>🗺️</span>Path</button>
   <button class="mnav-btn" data-page="learn" onclick="showPage('learn')"><span>📊</span>Learn</button>
@@ -1030,6 +1032,11 @@
 <div class="page" id="page-walk">
   <div id="walkHome"></div>
   <div id="walkPlayer" style="display:none"></div>
+</div>
+
+<!-- ══════════════════════════════════════════ DRIVE MODE (hands-free audio) ══ -->
+<div class="page" id="page-drive">
+  <div id="driveMount"></div>
 </div>
 
 <!-- ══════════════════════════════════════════ PROCESS DIAGRAMS ══ -->
@@ -1279,14 +1286,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 156</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 164</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">156 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">164 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2998,6 +3005,62 @@ const QUESTIONS = [
     options:["A. Build cooperation and trust, then let the team decide and evolve their own roles and responsibilities","B. Provide clear goals, direction, and priorities so the team knows exactly what to do","C. Assign each team member a fixed role based on their job title","D. Reduce face time and regular check-ins so the team is not micromanaged"],
     answer:0,
     explanation:"<strong>Agile teams are self-organizing, so a new team needs trust and room to shape its own roles, not top-down direction.</strong> The project manager's job here is to build cooperation and trust and let individuals get comfortable taking ownership. B is the trap, because handing a self-organizing team its direction and priorities is command-and-control, the opposite of servant leadership. C is worse, because fixed role assignment blocks self-organization. D confuses less micromanagement with less contact, but on a virtual team you need MORE face time and check-ins to build trust, not less. Signal: 'newly formed' plus 'agile' means establish trust and let the team self-organize."
+  },
+  {
+    id:157, domain:"Process", difficulty:"hard", principle:"An unexpected problem is an issue: log it and communicate before acting",
+    text:"During project initiation, the project manager learns that a key stakeholder will leave the project for a month to consult on another strategic project. What should the project manager do first?",
+    options:["A. Update the issue log and notify the other stakeholders","B. Ask the functional manager to provide a replacement while the stakeholder is unavailable","C. Interview the stakeholder to gather relevant information and expert judgment","D. Update the risk management plan to include the impact of the stakeholder's absence"],
+    answer:0,
+    explanation:"<strong>An unexpected event that needs attention is an issue, so you first capture it in the issue log and communicate it, before taking any other action.</strong> The absence has already happened, so it is an issue, not a risk. That kills D. Asking for a replacement (B) is acting before you have logged and communicated. Interviewing for expert judgment (C) does not address the gap and jumps ahead. Signal: 'learns that something has happened' plus 'do first' means log the issue and notify stakeholders, then decide."
+  },
+  {
+    id:158, domain:"People", difficulty:"medium", principle:"New resources join the team: build their skills so the team stays effective",
+    text:"A project is in the execution phase when the project manager must add new resources to the existing team. What should the project manager do to ensure the team works effectively and meets requirements on time?",
+    options:["A. Integrate skills development activities so the new resources are equipped for their roles","B. Create accessible library services for the team","C. Conduct a brainstorming session with the team","D. Monitor project team cohesiveness"],
+    answer:0,
+    explanation:"<strong>When new people join mid-project, developing their skills is what keeps the team effective and on schedule.</strong> A capable, trained team meets requirements. B does not touch skills or effectiveness. C is not directly about getting the new resources up to speed. D (monitoring cohesiveness) is passive observation, not the proactive step of building capability. Signal: 'new resources added' plus 'work effectively' points to Develop Team, meaning training and skills development."
+  },
+  {
+    id:159, domain:"People", difficulty:"medium", principle:"First time leading a multicultural team: get cultural sensitivity training first",
+    text:"A project manager is assigned to a new multinational project and will work with team members from different countries for the first time. What should the project manager do to prepare?",
+    options:["A. Attend cultural sensitivity training to understand and respect cultural differences","B. Brush up on language skills if necessary to facilitate communication","C. Conduct team-building exercises to foster collaboration and trust","D. Develop an awareness of local customs, understanding that culture is learned"],
+    answer:0,
+    explanation:"<strong>Before leading a multicultural team for the first time, build the foundation with cultural sensitivity training.</strong> It is the structured, comprehensive way to understand and respect differences. Language skills (B) are narrow, because communication is more than language. Team-building (C) comes after you understand the cultural context, not before. Awareness of local customs (D) is a piece of the picture but not the complete, structured preparation. Signal: 'first time' plus 'different countries' points to cultural sensitivity training as the groundwork."
+  },
+  {
+    id:160, domain:"Business Environment", difficulty:"hard", principle:"Evaluate and rank multiple weighted criteria: use multicriteria decision analysis",
+    text:"The owner of a consulting company initiates a project to expand its services. The executive team wants to evaluate and rank criteria such as uncertainty and valuation for the new services. Which technique should the project manager use?",
+    options:["A. Multicriteria decision analysis","B. Forecasting","C. A cause-and-effect diagram","D. A risk assessment matrix"],
+    answer:0,
+    explanation:"<strong>When you must weigh and rank several criteria at once, the tool is multicriteria decision analysis (a decision matrix that scores options against weighted criteria).</strong> Forecasting (B) projects cost or schedule, not multi-criteria ranking. A cause-and-effect diagram (C) is for root-cause analysis. A risk assessment matrix (D) only handles identified risks, not broad criteria like valuation. Signal: 'evaluate and rank multiple criteria' points straight to multicriteria decision analysis."
+  },
+  {
+    id:161, domain:"People", difficulty:"medium", principle:"Team feels unheard: demonstrate support by standing up for their goals and beliefs",
+    text:"Team members express frustration because their functional manager does not listen to their opinions, and they seem reluctant to commit to the rest of the project. What should the project manager do?",
+    options:["A. Demonstrate support for the team by discussing their goals and beliefs","B. Break the remaining work into smaller tasks and divide them among the team","C. Ask the team to prioritize the remaining tasks in the project","D. Discuss the team's concerns with the functional manager"],
+    answer:0,
+    explanation:"<strong>A servant leader protects and advocates for the team, so showing support by engaging with their goals and beliefs is what restores motivation.</strong> The root problem is that the team feels unheard, so B and C (reshuffling tasks) do not touch the real issue. D (going to the functional manager) may not fix the team's motivation and is not the direct supportive act. Signal: 'team feels their opinions are ignored' means demonstrate support and advocate for them, not rearrange the work."
+  },
+  {
+    id:162, domain:"People", difficulty:"medium", principle:"Team arguing over task order: compromise/reconcile to find a workable middle ground",
+    text:"A project is in the release planning stage and some team members argue about which tasks to complete first, leaving the development team frustrated and losing interest. What should the project manager do?",
+    options:["A. Apply a compromise/reconcile conflict resolution method","B. Apply a force/direct conflict resolution method","C. Apply a withdraw/avoid conflict resolution method","D. Apply a smooth/accommodate conflict resolution method"],
+    answer:0,
+    explanation:"<strong>Here the best fit is compromise/reconcile: work with the team to find a solution that meets everyone's needs, reprioritizing or delegating tasks so the team can move forward.</strong> Force/direct (B) imposes authority and escalates the conflict. Withdraw/avoid (C) ignores it and lets it fester. Smooth/accommodate (D) gives in to one side and breeds resentment. Signal: a dispute over task order that needs a workable middle ground points to compromise/reconcile."
+  },
+  {
+    id:163, domain:"Process", difficulty:"hard", principle:"To ensure success, define and align the performance indicators with the deliverable first",
+    text:"An organization is redesigning and relaunching a key product. The stakeholders are all company executives who want to ensure the launch is a success. What should the project manager do to ensure project success?",
+    options:["A. Work to identify and align performance indicators with the deliverable","B. Implement a detailed communication management plan to keep stakeholders informed","C. Communicate the critical nature of the project to the team and escalate issues to the sponsor","D. Ensure all stakeholders attend the daily standups so they can adjust the project as needed"],
+    answer:0,
+    explanation:"<strong>You cannot measure success without defining the performance indicators up front and aligning them to the deliverable.</strong> Metrics agreed early are how you prove the launch succeeded. A communication plan (B) is not the issue and the executives already receive updates. Escalating to the sponsor (C) is premature and not the point. Having every stakeholder join daily standups (D) is impractical and not how executives engage. Signal: 'ensure success' means set and align the success metrics (KPIs) with the deliverable first."
+  },
+  {
+    id:164, domain:"People", difficulty:"hard", principle:"New stakeholders identified: update the stakeholder management plan, not just the register",
+    text:"Midway through a project, the project manager identifies new stakeholders, each playing a different project role. What should the project manager do first?",
+    options:["A. Update the stakeholder management plan","B. Review the stakeholder register","C. Meet with the project sponsor to learn if new roles have been created","D. Submit a change request to the change control board"],
+    answer:0,
+    explanation:"<strong>New stakeholders change how you engage, so you update the stakeholder engagement (management) plan, not just record names.</strong> Reviewing the register (B) only adds names without adjusting the engagement approach. There is no change to project requirements, so no change request is needed, which kills D. Going to the sponsor about new roles (C) is not the direct action. Signal: 'new stakeholders identified' means update the stakeholder management plan so their engagement is planned."
   }
 ];
 
@@ -4667,6 +4730,145 @@ function walkNext(){
 function walkPrev(){ if(walkS.idx>0){ walkStopSpeak(); walkS.idx--; renderWalkPlayer(); } }
 
 // ══════════════════════════════════════
+// DRIVE MODE — hands-free audio of your weak points (scenario, answer, coaching)
+// ══════════════════════════════════════
+let driveState = { list:[], idx:0, playing:false, token:0, lines:[], li:0 };
+
+// Which questions are "your weak points": every in-app miss PLUS the reinforcement
+// questions I built from your Study Hall mini-exam misses (ids 130-164).
+function driveWeakIds(){
+  const ids = new Set();
+  (state.wrongLog||[]).forEach(w=>{ if(w && w.qId!=null) ids.add(w.qId); });
+  for(let i=130;i<=164;i++) ids.add(i);
+  return ids;
+}
+function buildDriveList(){
+  const want = driveWeakIds();
+  let list = QUESTIONS.filter(q=>want.has(q.id));
+  if(!list.length) list = QUESTIONS.slice(-30);
+  return list;
+}
+function driveLinesFor(q, n, total){
+  const L=['A','B','C','D'];
+  const correct=(q.options[q.answer]||'').replace(/^[A-D]\.\s*/,'');
+  const why=(q.explanation||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+  const lines=[];
+  if(n===1) lines.push("This is Drive Mode. I will read your weak points one at a time, hands free. Keep your eyes on the road. Here we go.");
+  lines.push(`Weak point ${n} of ${total}. ${q.domain} domain.`);
+  lines.push(`Here is the scenario. ${q.text}`);
+  lines.push("Think about what you would do.");
+  lines.push(`The answer is ${L[q.answer]}. ${correct}.`);
+  lines.push(`Here is why. ${why}`);
+  lines.push(`Lock it in. ${q.principle}.`);
+  return lines;
+}
+function driveLoadCurrent(){
+  const q=driveState.list[driveState.idx];
+  driveState.lines = q ? driveLinesFor(q, driveState.idx+1, driveState.list.length) : [];
+  driveState.li = 0;
+  driveRenderCard();
+}
+function renderDrive(){
+  if(!driveState.list.length){ driveState.list=buildDriveList(); driveState.idx=0; driveLoadCurrent(); }
+  const supported = ('speechSynthesis' in window);
+  const el=document.getElementById('driveMount');
+  el.innerHTML=`
+    <div class="dg-hero">
+      <h1>🚗 <em>Drive</em> Mode</h1>
+      <p>Hands-free audio of your weak points. It reads the scenario, the answer, and the coaching, then auto-advances to the next one. Press play, connect Bluetooth, and drive. Eyes on the road.</p>
+    </div>
+    ${supported?'':'<div style="background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;color:var(--text)">Your browser does not support voice playback. Open the app in Chrome or Safari.</div>'}
+    <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span id="driveCount" style="font-size:13px;color:var(--text-dim);font-weight:700"></span>
+        <span id="driveState" style="font-size:13px;color:var(--orange);font-weight:800"></span>
+      </div>
+      <div id="driveCard" style="font-size:16px;line-height:1.5;color:var(--text);min-height:120px"></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-secondary" onclick="drivePrev()" title="Previous">⏮ Prev</button>
+      <button id="drivePlayBtn" class="btn btn-primary" style="min-width:150px;font-size:17px;padding:14px 22px" onclick="driveToggle()">▶ Play</button>
+      <button class="btn btn-secondary" onclick="driveNext()" title="Next">Next ⏭</button>
+      <button class="btn btn-secondary" onclick="driveRestart()" title="Start over">↺ Restart</button>
+    </div>
+    <div style="margin-top:12px;font-size:12px;color:var(--text-muted)">Playing ${driveState.list.length} weak-point questions, pulled from your recent mini-exam misses. Take a new mini exam and send the misses, and they get added here.</div>`;
+  driveRenderCard();
+  driveRenderControls();
+}
+function driveRenderCard(){
+  const q=driveState.list[driveState.idx];
+  const cnt=document.getElementById('driveCount');
+  const card=document.getElementById('driveCard');
+  if(cnt) cnt.textContent = driveState.list.length ? `Weak point ${driveState.idx+1} of ${driveState.list.length}` : '';
+  if(card && q){
+    const L=['A','B','C','D'];
+    const correct=(q.options[q.answer]||'').replace(/^[A-D]\.\s*/,'');
+    card.innerHTML=`<div style="color:var(--text-dim);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">${q.domain}</div>
+      <div style="margin-bottom:12px">${q.text}</div>
+      <div style="background:var(--surface2);border-radius:10px;padding:10px 12px"><strong style="color:var(--orange)">Answer ${L[q.answer]}:</strong> ${correct}</div>`;
+  }
+}
+function driveRenderControls(){
+  const btn=document.getElementById('drivePlayBtn');
+  const st=document.getElementById('driveState');
+  if(btn) btn.innerHTML = driveState.playing ? '⏸ Pause' : '▶ Play';
+  if(st) st.textContent = driveState.playing ? '● Playing' : '';
+}
+function driveSpeakLine(){
+  if(!driveState.playing) return;
+  if(driveState.li >= driveState.lines.length){
+    if(driveState.idx < driveState.list.length-1){
+      driveState.idx++; driveLoadCurrent(); driveSpeakLine();
+    } else {
+      driveState.playing=false; driveRenderControls();
+      try{ window.speechSynthesis.cancel(); }catch(e){}
+      const st=document.getElementById('driveState'); if(st) st.textContent='✓ Done. Restart to run them again.';
+    }
+    return;
+  }
+  const text=driveState.lines[driveState.li];
+  const myToken=driveState.token;
+  try{
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.rate=0.95; u.pitch=1.02; if(typeof applyVoice==='function') applyVoice(u);
+    u.onend=()=>{ if(driveState.playing && driveState.token===myToken){ driveState.li++; setTimeout(driveSpeakLine,220); } };
+    window.speechSynthesis.speak(u);
+  }catch(e){ driveState.li++; setTimeout(driveSpeakLine,220); }
+}
+function drivePlay(){
+  if(!driveState.list.length){ driveState.list=buildDriveList(); driveState.idx=0; driveLoadCurrent(); }
+  if(!driveState.lines.length) driveLoadCurrent();
+  driveState.playing=true; driveState.token++;
+  driveRenderControls();
+  driveSpeakLine();
+}
+function drivePause(){
+  driveState.playing=false; driveState.token++;
+  try{ window.speechSynthesis.cancel(); }catch(e){}
+  driveRenderControls();
+}
+function driveToggle(){ driveState.playing ? drivePause() : drivePlay(); }
+function driveStop(){ if(driveState.playing || (typeof speechSynthesis!=='undefined')){ driveState.playing=false; driveState.token++; try{ window.speechSynthesis.cancel(); }catch(e){} } }
+function driveNext(){
+  if(driveState.idx < driveState.list.length-1){
+    driveState.token++; driveState.idx++; driveLoadCurrent();
+    if(driveState.playing){ driveState.token++; driveSpeakLine(); }
+  }
+}
+function drivePrev(){
+  if(driveState.idx>0){
+    driveState.token++; driveState.idx--; driveLoadCurrent();
+    if(driveState.playing){ driveState.token++; driveSpeakLine(); }
+  }
+}
+function driveRestart(){
+  driveState.token++; driveState.idx=0; driveLoadCurrent();
+  const st=document.getElementById('driveState'); if(st) st.textContent='';
+  if(driveState.playing){ driveState.token++; driveSpeakLine(); }
+}
+
+// ══════════════════════════════════════
 // 🧩 PROCESS DIAGRAMS, all 49 as input / process / output flows
 // ══════════════════════════════════════
 const PROC = [
@@ -5849,7 +6051,8 @@ function speakFormulas() {
 // NAV
 // ══════════════════════════════════════
 function showPage(pageId) {
-  try{ if(pageId !== 'walk') window.speechSynthesis.cancel(); }catch(e){} // stop Walk audio when leaving
+  try{ if(pageId !== 'walk' && pageId !== 'drive') window.speechSynthesis.cancel(); }catch(e){} // stop Walk/Drive audio when leaving
+  if(pageId !== 'drive' && typeof driveStop === 'function') driveStop();
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
   // sync active state on BOTH desktop tabs and mobile bottom bar
@@ -5857,6 +6060,7 @@ function showPage(pageId) {
 
   if (pageId === 'today') renderToday();
   if (pageId === 'walk') renderWalk();
+  if (pageId === 'drive') renderDrive();
   if (pageId === 'diagrams') renderDiagram();
   if (pageId === 'glossary') renderGlossary();
   if (pageId === 'study') renderQuestion();
