@@ -1279,14 +1279,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 155</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 156</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">155 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">156 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -2991,6 +2991,13 @@ const QUESTIONS = [
     options:["A. Escalating impediments that the teams cannot resolve on their own","B. Coaching the teams on global technical excellence","C. Coaching the teams on team-level continual improvement","D. Owning the technical architecture of the release train"],
     answer:0,
     explanation:"<strong>A project manager can cover RTE duties that are coordination and facilitation, such as escalating impediments, managing risk, and coaching on program-level continual improvement.</strong> Escalating impediments is exactly that kind of facilitation work, so A fits. Coaching on technical excellence (B) and owning the architecture (D) are technical, not PM roles. Team-level continual-improvement coaching (C) sits with the scrum master, not the PM. Signal: PM overlaps with the RTE on coordination and impediment removal, not on technical or team-coaching duties."
+  },
+  {
+    id:156, domain:"People", difficulty:"hard", principle:"A new agile team needs trust and self-organization, not top-down direction",
+    text:"An agile project manager is leading a newly formed virtual team. What is the best way to help the team and organization succeed?",
+    options:["A. Build cooperation and trust, then let the team decide and evolve their own roles and responsibilities","B. Provide clear goals, direction, and priorities so the team knows exactly what to do","C. Assign each team member a fixed role based on their job title","D. Reduce face time and regular check-ins so the team is not micromanaged"],
+    answer:0,
+    explanation:"<strong>Agile teams are self-organizing, so a new team needs trust and room to shape its own roles, not top-down direction.</strong> The project manager's job here is to build cooperation and trust and let individuals get comfortable taking ownership. B is the trap, because handing a self-organizing team its direction and priorities is command-and-control, the opposite of servant leadership. C is worse, because fixed role assignment blocks self-organization. D confuses less micromanagement with less contact, but on a virtual team you need MORE face time and check-ins to build trust, not less. Signal: 'newly formed' plus 'agile' means establish trust and let the team self-organize."
   }
 ];
 
