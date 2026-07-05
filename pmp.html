@@ -970,6 +970,7 @@
     <button class="nav-tab" data-page="diagrams" onclick="showPage('diagrams')">Diagrams</button>
     <button class="nav-tab" data-page="glossary" onclick="showPage('glossary')">Glossary</button>
     <button class="nav-tab" data-page="patterns" onclick="showPage('patterns')">🎯 Patterns</button>
+    <button class="nav-tab" data-page="order" onclick="showPage('order')">🧭 Order</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
     <button class="nav-tab" data-page="flashcards" onclick="showPage('flashcards')">Flashcards</button>
     <button class="nav-tab" data-page="formulas" onclick="showPage('formulas')">Formula Lab</button>
@@ -998,6 +999,7 @@
   <button class="mnav-btn" data-page="diagrams" onclick="showPage('diagrams')"><span>🧩</span>Flow</button>
   <button class="mnav-btn" data-page="glossary" onclick="showPage('glossary')"><span>📖</span>Terms</button>
   <button class="mnav-btn" data-page="patterns" onclick="showPage('patterns')"><span>🎯</span>Keys</button>
+  <button class="mnav-btn" data-page="order" onclick="showPage('order')"><span>🧭</span>Order</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
   <button class="mnav-btn" data-page="flashcards" onclick="showPage('flashcards')"><span>🃏</span>Cards</button>
   <button class="mnav-btn" data-page="formulas" onclick="showPage('formulas')"><span>🧮</span>Formulas</button>
@@ -1116,6 +1118,49 @@
   </div>
 
   <div class="today-foot" style="margin-top:16px"><b>The mindset underneath it all:</b> gather information first, never escalate or punish or reject first, serve the team, talk to people directly, and choose the most value-driven answer. <b>Exam:</b> July 7, leave at 10, start at 1. It is attempt one of three in your year. Read the stem for what already happened, then pick the servant-leader's next move.</div>
+</div>
+
+<!-- ══════════════════════════════════════════ ORDER & ELIMINATION ══ -->
+<div class="page" id="page-order">
+  <div class="dg-hero">
+    <h1>Order <em>&amp; Elimination</em></h1>
+    <p>When a question asks "what do you do next" or "what stage are we in," it is testing whether you know the ORDER. Learn these flows, then run the 4-step drill to cross off wrong answers fast. Tap Read aloud for the drive.</p>
+    <button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="speakOrder()">🔊 Read aloud</button>
+    <button class="btn btn-secondary btn-sm" style="margin-top:12px" onclick="stopSpeaking()">⏹ Stop</button>
+  </div>
+
+  <div class="pat-elim" style="border-color:var(--orange)">
+    <div class="pat-elim-h">🧠 The 4-step elimination drill (run this on every situational question)</div>
+    <ul>
+      <li><b>1. What already happened?</b> Read the stem for the fact. Something is late, a stakeholder is upset, a change appeared, a risk showed up. Name it.</li>
+      <li><b>2. What stage are we in?</b> Initiating, Planning, Executing, or Monitoring and Controlling. The right answer lives in the current stage, not two stages ahead.</li>
+      <li><b>3. Cross off the 3 usual traps.</b> Escalate first. Replace or punish people. Only monitor or document without acting. These are almost always wrong.</li>
+      <li><b>4. Of what is left, pick the most value-driven, servant-leader move.</b> Gather info, talk to people, follow the process order. That is your answer.</li>
+    </ul>
+  </div>
+
+  <div class="pat-card"><div class="pat-n">A</div><div><div class="pat-t">The master order: the 5 process groups</div><div class="pat-d"><b>Initiating → Planning → Executing → Monitoring &amp; Controlling → Closing.</b> This is what "what stage are we in" means. Initiating has only 2 (Develop Charter, Identify Stakeholders). Closing has only 1 (Close Project or Phase). You plan before you execute, and you monitor while you execute.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">R</div><div><div class="pat-t">Risk order (the one they test the most)</div><div class="pat-d"><b>Identify → Analyze (qualitative, then quantitative) → Plan Responses → Implement Responses → Monitor.</b> You cannot analyze, respond to, or audit a risk you have not identified. "Do first" plus a new concern = <b>Identify Risks</b>. A response strategy or a risk audit is always later.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">C</div><div><div class="pat-t">Change control flow (how it ties to the CCB)</div><div class="pat-d">A change shows up → <b>submit a change request</b> → <b>Perform Integrated Change Control</b> (the CCB reviews and approves or rejects) → if approved, <b>update the baselines and plans</b> → then implement. Re-estimating, impact analysis, and telling the customer all happen <b>inside</b> this flow, never before the change request. A scope gap, a great new idea that costs money, a schedule slip: all go here first.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">S</div><div><div class="pat-t">Stakeholder order</div><div class="pat-d"><b>Identify → Analyze (power/interest) → Plan Engagement → Manage Engagement → Monitor.</b> If the stem says the full stakeholder list already exists, Identify is done, so the next move is Analyze, then Plan. New stakeholders appear = update the stakeholder engagement (management) plan.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">Q</div><div><div class="pat-t">Quality before acceptance</div><div class="pat-d"><b>Control Quality (internal check, is it correct) comes BEFORE Validate Scope (customer accepts it).</b> You never hand the customer something you have not quality-checked. Control Quality is about correctness, Validate Scope is about acceptance.</div></div></div>
+
+  <div class="pat-elim">
+    <div class="pat-elim-h">🔗 Mental hooks (make the link, then it is automatic)</div>
+    <ul>
+      <li><b>Sponsor = the Bank.</b> Money and mandate. You go to them LAST, and only when the fix needs budget, a new deadline, or authority. If the other options are not clearly wrong, run your mind through them first, then the sponsor.</li>
+      <li><b>Functional Manager = owns the People.</b> You WORK WITH them on who is assigned and their skills. Not a hammer to punish the team.</li>
+      <li><b>Issue = already happened. Risk = might happen.</b> Happened → log it in the issue log and communicate. Might happen → run the risk order.</li>
+      <li><b>Sprint is a sealed box.</b> Never jam new work into a running sprint. It waits for the backlog.</li>
+      <li><b>Escalate only when it is above your pay grade:</b> a strategic or portfolio conflict, or something outside your control. Otherwise, do not escalate first.</li>
+    </ul>
+  </div>
+
+  <div class="today-foot" style="margin-top:16px"><b>How to use this under time pressure:</b> you have about 77 seconds per question on the real exam. Do not overthink. Name what happened, name the stage, cross off the 3 traps, then pick the value-driven move. If two answers survive, choose the one that gathers information or talks to people over the one that acts blindly. Trust the order.</div>
 </div>
 
 <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
@@ -1286,14 +1331,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 168</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 172</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">168 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">172 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3089,6 +3134,34 @@ const QUESTIONS = [
     options:["A. Identify the high-level project risks","B. Quantify the project risks in the risk register","C. Develop a risk response strategy","D. Perform scheduled risk audits"],
     answer:0,
     explanation:"<strong>Risk management runs in a fixed order, and identifying risks always comes first.</strong> You cannot quantify (B), respond to (C), or audit (D) a risk you have not identified yet. The order is: identify risks, then analyze and quantify them, then plan responses, then implement and monitor with audits. The project manager has spotted a concern, so the first formal step is to identify the high-level risks. Signal: 'do first' plus a newly spotted concern means Identify Risks, the front of the risk process."
+  },
+  {
+    id:169, domain:"Business Environment", difficulty:"hard", principle:"A strategic/portfolio-level conflict beyond the PM's control DOES get escalated to the right level",
+    text:"A local government provides subsidies for healthcare activities. An organization starts a project to use that subsidy to provide health testing for at-risk populations. After the project starts, the government announces the testing service might not qualify for the subsidy. What should the project manager do?",
+    options:["A. Escalate the risk to a higher level of management","B. Meet with the project sponsor to redefine the project benefits","C. Inform the stakeholders of the need to develop a contingency plan","D. Submit a change request to the change control board"],
+    answer:0,
+    explanation:"<strong>When a risk sits at the strategic or portfolio level and is outside the project manager's control, escalating it to the proper level of management is correct.</strong> This is the exception to your 'do not escalate first' rule: the subsidy decision is a government call that conflicts with the strategic goal, so it belongs above the project. Redefining benefits (B) is premature because the benefits have not changed. A contingency plan (C) is premature because nothing yet says the subsidy is lost. A change request (D) has nothing to substantiate it yet. Signal: a risk driven by outside forces that threatens the strategic reason for the project gets escalated to the level that owns that strategy."
+  },
+  {
+    id:170, domain:"Business Environment", difficulty:"medium", principle:"Fixed-price contract hits a scope-affecting problem: be transparent and request a change order",
+    text:"A project manager has a firm-fixed-price contract to build a mobile app with a well-defined, client-approved scope. Midway, the team hits unexpected technical challenges that need more time and resources. What is the most suitable action?",
+    options:["A. Notify the client and request a change order to increase the budget and extend the schedule","B. Proceed as planned and try to resolve the challenges within the existing budget and schedule","C. Terminate the contract and return the advance payment immediately","D. Resolve the challenges with existing resources, even if it means sacrificing quality"],
+    answer:0,
+    explanation:"<strong>Be transparent with the client and formalize the impact through a change order, which is how contract changes get authorized.</strong> Hiding it and absorbing it (B) risks going over budget and behind schedule with no cover. Terminating (C) is a last resort that burns the relationship. Sacrificing quality (D) delivers a bad product and damages trust. Signal: a contract plus a scope-affecting surprise means communicate early and request a formal change order, do not silently absorb it or cut corners."
+  },
+  {
+    id:171, domain:"Process", difficulty:"medium", principle:"Frequent changes AND defined regulatory stages = Hybrid (blend agile and predictive)",
+    text:"A team is choosing a methodology. Their work has frequent requirement changes, incremental and iterative delivery, and a strong customer focus, but it also needs defined stages with specific documents to meet industry regulatory standards. Which approach fits?",
+    options:["A. Hybrid","B. Agile","C. Predictive","D. Waterfall"],
+    answer:0,
+    explanation:"<strong>When you need both the agile benefits (change-friendly, iterative, customer-focused) and the predictive benefits (defined stages, formal documents for regulation), you blend them into a hybrid.</strong> Pure agile (B) is wrong because agile alone does not give you the defined regulatory stages and documents. Predictive (C) and its waterfall form (D) are wrong because they assume clear, stable scope and cannot absorb frequent changes. Signal: a mix of 'frequent changes' AND 'defined stages plus regulatory documents' points to Hybrid."
+  },
+  {
+    id:172, domain:"Process", difficulty:"medium", principle:"Standups, bi-weekly reviews, retrospectives, lightweight docs = Agile",
+    text:"A team holds regular review and retrospective meetings every two weeks, runs daily status meetings, and uses whiteboards as the main tool to document decisions and action points. Which methodology has the team adopted?",
+    options:["A. Agile","B. Traditional","C. Waterfall","D. Iterative"],
+    answer:0,
+    explanation:"<strong>Daily standups, two-week reviews, retrospectives, and lightweight whiteboard documentation are the signature ceremonies of agile.</strong> Traditional (B) and waterfall (C) rely on heavy documentation and do not run daily standups or whiteboard-first tracking. Plain iterative (D) repeats build cycles but does not carry the standups, retrospectives, and lightweight docs together. Signal: standups plus retrospectives plus lightweight docs is agile, full stop."
   }
 ];
 
@@ -5022,6 +5095,21 @@ function speakPatterns(){
     "Six. To prove value or get buy-in, build a prototype. Tangible beats documentation. "+
     "Cross these out fast. Escalating to the sponsor first, replacing people, only monitoring, skipping change control, or a predictive tool in an agile question. "+
     "The mindset. Gather information first, never escalate or punish first, serve the team, talk to people directly, choose the most value-driven answer.");
+}
+function speakOrder(){
+  speak("Order and elimination. First, the four step drill you run on every situational question. "+
+    "Step one. What already happened? Read the stem for the fact. "+
+    "Step two. What stage are we in? Initiating, planning, executing, or monitoring and controlling. "+
+    "Step three. Cross off the three usual traps. Escalate first. Replace or punish people. Only monitor without acting. "+
+    "Step four. Of what is left, pick the most value driven, servant leader move. "+
+    "Now the orders you must know. "+
+    "The master order. Initiating, planning, executing, monitoring and controlling, closing. You plan before you execute. "+
+    "The risk order. Identify, then analyze, then plan responses, then implement, then monitor. You cannot respond to a risk you have not identified. "+
+    "The change control flow. A change shows up, you submit a change request, the change control board reviews it, if approved you update the baselines, then you implement. Nothing happens before the change request. "+
+    "The stakeholder order. Identify, analyze, plan engagement, manage, monitor. "+
+    "Quality before acceptance. Control quality checks it is correct, then validate scope is the customer accepting it. "+
+    "Now the mental hooks. Sponsor is the bank, money and mandate, you go to them last. Functional manager owns the people, you work with them. An issue already happened, log it. A risk might happen, run the risk order. A sprint is a sealed box, never jam new work in. Escalate only when it is above your control. "+
+    "Under time pressure, about seventy seconds per question, name what happened, name the stage, cross off the three traps, pick the value driven move. Trust the order.");
 }
 
 // ══════════════════════════════════════
