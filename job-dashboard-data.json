@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T20:33:45.243169+00:00",
+  "generated_at": "2026-07-06T22:03:02.616710+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 22,
-      "matched": 18,
+      "found": 23,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -60,6 +60,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4631714005",
           "posted_date": "2026-04-17T13:59:38-04:00"
+        },
+        {
+          "title": "Account Executive, Practice Solutions",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4707748005",
+          "posted_date": "2026-07-06T17:14:51-04:00"
         },
         {
           "title": "AI Automation Engineer",
@@ -181,8 +187,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 20,
-      "matched": 20,
+      "found": 19,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -220,12 +226,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
           "posted_date": "2026-06-29T11:35:10-04:00"
-        },
-        {
-          "title": "Sales Operations Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5810794004",
-          "posted_date": "2026-06-29T11:32:03-04:00"
         },
         {
           "title": "Senior Director, Segment & Solutions Marketing  - US Remote",
@@ -494,10 +494,17 @@
     },
     {
       "name": "dronedeploy",
-      "found": 10,
-      "matched": 0,
+      "found": 11,
+      "matched": 1,
       "error": null,
-      "jobs": []
+      "jobs": [
+        {
+          "title": "Senior Marketing Operations Manager (USA)",
+          "location": "Remote",
+          "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
+          "posted_date": "2026-06-30T23:34:49.211000+00:00"
+        }
+      ]
     }
   ],
   "jobs": [
@@ -520,6 +527,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4631714005",
       "posted_date": "2026-04-17T13:59:38-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Account Executive, Practice Solutions",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4707748005",
+      "posted_date": "2026-07-06T17:14:51-04:00",
       "source": "tebra"
     },
     {
@@ -688,13 +702,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
       "posted_date": "2026-06-29T11:35:10-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Sales Operations Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5810794004",
-      "posted_date": "2026-06-29T11:32:03-04:00",
       "source": "perfectserve"
     },
     {
@@ -976,7 +983,14 @@
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
       "posted_date": "2026-06-26T13:02:50-04:00",
       "source": "knowbe4"
+    },
+    {
+      "title": "Senior Marketing Operations Manager (USA)",
+      "location": "Remote",
+      "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
+      "posted_date": "2026-06-30T23:34:49.211000+00:00",
+      "source": "dronedeploy"
     }
   ],
-  "total_matched": 68
+  "total_matched": 69
 }
