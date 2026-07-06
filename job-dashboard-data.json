@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T16:25:32.344115+00:00",
+  "generated_at": "2026-07-06T18:30:44.576711+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -181,8 +181,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 19,
-      "matched": 19,
+      "found": 20,
+      "matched": 20,
       "error": null,
       "jobs": [
         {
@@ -288,6 +288,12 @@
           "posted_date": "2026-06-29T11:36:59-04:00"
         },
         {
+          "title": "Tier 1 Support Specialist - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
+          "posted_date": "2026-07-06T12:41:16-04:00"
+        },
+        {
           "title": "Vice President, Commercial Strategy - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
@@ -390,8 +396,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 94,
-      "matched": 16,
+      "found": 93,
+      "matched": 15,
       "error": null,
       "jobs": [
         {
@@ -435,12 +441,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
           "posted_date": "2026-05-20T14:43:13-04:00"
-        },
-        {
-          "title": "Snr. Communications Manager (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8571798002",
-          "posted_date": "2026-05-29T15:42:53-04:00"
         },
         {
           "title": "Snr. Employee Relations Partner (Remote)",
@@ -494,7 +494,7 @@
     },
     {
       "name": "dronedeploy",
-      "found": 11,
+      "found": 10,
       "matched": 0,
       "error": null,
       "jobs": []
@@ -768,6 +768,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Tier 1 Support Specialist - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
+      "posted_date": "2026-07-06T12:41:16-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Vice President, Commercial Strategy - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
@@ -912,13 +919,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
       "posted_date": "2026-05-20T14:43:13-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Snr. Communications Manager (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8571798002",
-      "posted_date": "2026-05-29T15:42:53-04:00",
       "source": "knowbe4"
     },
     {
