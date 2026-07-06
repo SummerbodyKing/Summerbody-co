@@ -8,6 +8,12 @@
 # Added Tue May 26, 2026 — CanvasRebel feature live, brand short URLs needed.
 
 [[redirects]]
+  from = "/card"
+  to = "https://kingsummerbody-tbs.netlify.app/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/canvasrebel"
   to = "https://kingsummerbody-1.optins.com/the-no-math-meal-blueprint?utm_source=canvasrebel&utm_medium=feature&utm_campaign=story2026"
   status = 301
