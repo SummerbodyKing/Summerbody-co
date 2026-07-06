@@ -1383,14 +1383,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 191</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 196</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">191 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">196 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3347,6 +3347,41 @@ const QUESTIONS = [
     options:["A. Document the proposed change and assess its impact on time, cost, and resources","B. Complete testing while the project manager meets with the stakeholder to review the change","C. Stop the testing and schedule a meeting to review the change with the resources","D. Postpone the change and let the team finish testing and implementation"],
     answer:0,
     explanation:"<strong>Any proposed change gets documented and impact-assessed before you decide anything, even a change that sounds beneficial.</strong> Only after the impact is known can you sensibly choose to stop testing, keep testing, or postpone. B, C, and D all jump to a decision before the assessment. Signal: 'stakeholder proposes a change' means document it and assess the impact on time, cost, and resources first, then decide. Change control before action."
+  },
+  {
+    id:192, domain:"Process", difficulty:"hard", principle:"Errors from an outdated document: run a formal change control process to correct it",
+    text:"While validating deliverables, a project manager realizes a team member used an older version of the scope definition document, causing substantial errors. What should the project manager do?",
+    options:["A. Perform a change control process to document, assess, and correct the issue","B. Share the updated scope definition document with the team","C. Discuss the latest deliverables during the next meeting","D. Update the project document register"],
+    answer:0,
+    explanation:"<strong>Substantial errors from a wrong document version are corrected through a formal change control process that documents, assesses impact, and drives the fix.</strong> Sharing the right document (B) and updating the document register (D) are single steps that happen inside change control, not the whole answer. Discussing it at a meeting (C) is not sufficient for substantial errors. Signal: 'substantial errors' plus 'manage this situation' means run change control, do not just patch one piece."
+  },
+  {
+    id:193, domain:"People", difficulty:"medium", principle:"A transformation touching many people: the critical success factor is change management and adoption",
+    text:"A project is part of a transformation impacting most of a company's 10,000 employees, replacing a 20-year-old communication tool with a new cloud platform to improve collaboration. What is the most critical success factor?",
+    options:["A. High quality, with zero critical defects at go-live","B. A polished user interface built by talented designers","C. Strong change management planning and execution to drive adoption","D. A change control process with fast approvals"],
+    answer:2,
+    explanation:"<strong>When a project changes how thousands of people work, success is adoption, and adoption comes from strong change management.</strong> No matter how high the quality (A) or how beautiful the interface (B), the project fails if people reject the new way of working. Fast change approvals (D) are internal mechanics, not the success factor. Signal: 'impacts most of the employees' means the human side, change management and adoption, is what makes or breaks it."
+  },
+  {
+    id:194, domain:"Process", difficulty:"medium", principle:"Agile's most compelling strength: handling unforeseen change and shifting expectations",
+    text:"A project manager is considering agile delivery in an organization that already has a strong PMO and a well-defined change control process. What is the most compelling argument for adopting agile?",
+    options:["A. Agile improves quality through incremental delivery and efficient defect repair","B. Agile is well-suited for handling unforeseen changes and shifting business expectations","C. Agile teams streamline the approval process for planned changes","D. Agile uses a backlog to prioritize work items"],
+    answer:1,
+    explanation:"<strong>Agile's signature strength is adapting to unforeseen change and shifting business needs, which is the compelling argument here.</strong> The organization already has quality assurance and change control, so improving quality (A) and streamlining approvals (C) are less compelling because those are covered. The backlog (D) is a mechanic, not an argument for adoption. Signal: 'why adopt agile' plus an org that already handles quality and change control points to agile's adaptability to the unforeseen."
+  },
+  {
+    id:195, domain:"Business Environment", difficulty:"hard", principle:"Kotter after urgency and coalition: develop and communicate the change vision",
+    text:"A project manager using Kotter's change model has already created a sense of urgency and formed a guiding coalition. Following Kotter, what should the project manager do next?",
+    options:["A. Develop the change vision and strategy, then communicate it","B. Ensure frequent deliveries in short intervals","C. Ensure business people and developers work together daily","D. Declare victory and stop reinforcing the change"],
+    answer:0,
+    explanation:"<strong>Kotter's order is: create urgency, form a coalition, develop the vision and strategy, communicate the vision, empower action, create short-term wins, build on the change, and make it stick.</strong> After urgency and the coalition, the next step is developing and communicating the vision. Frequent short deliveries (B) and business-and-developers-together (C) are agile principles, not Kotter steps. Declaring victory early (D) is the classic Kotter mistake. Signal: this is an Order and Theory question, know the Kotter sequence and take the next step."
+  },
+  {
+    id:196, domain:"Process", difficulty:"medium", principle:"Planning communications: define key messages and use multiple channels",
+    text:"A project manager leading a large organization-wide transformation is building the communications management plan. What should the project manager focus on?",
+    options:["A. Base the plan on the organization's objectives and values","B. Choose the single best communication channel and use only that","C. Focus on collecting feedback, which the plan already covers","D. Define the key messages and use multiple communication channels"],
+    answer:3,
+    explanation:"<strong>Good communications planning centers on clear key messages delivered through multiple channels so everyone is reached.</strong> Objectives and values (A) may change after a transformation, so you do not anchor the plan to them. Narrowing to a single best channel (B) is the opposite of good practice; use all appropriate channels. Feedback collection (C) is already handled and is not the focus here. Signal: 'planning communications' for a big audience means define the message and spread it across many channels, never just one."
   }
 ];
 
