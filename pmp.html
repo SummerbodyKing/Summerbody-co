@@ -1383,14 +1383,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 204</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 206</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">204 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">206 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3438,6 +3438,20 @@ const QUESTIONS = [
     options:["A. Recommend the new stakeholder meet with the product owner to align expectations","B. Clarify the new stakeholder's expectations and update the engagement plan","C. Meet the new stakeholder, learn their expectations, and update all the other stakeholders on proposed revisions","D. Ensure the new stakeholder attends all future sprint meetings and update the plan with their revisions"],
     answer:1,
     explanation:"<strong>A smooth handover needs you to understand the new stakeholder's expectations and reflect them in the stakeholder engagement plan, which defines how they will be involved.</strong> Sending them to the product owner (A) is useful later, but first understand them directly. Broadcasting revisions to all other stakeholders (C) is premature before you have integrated the new person's needs. Committing them to every sprint and rewriting the plan on first input (D) overreacts. Signal: a new stakeholder plus a handover means learn their expectations and update the engagement plan, then coordinate the rest."
+  },
+  {
+    id:205, domain:"Process", difficulty:"hard", principle:"A feature-value tradeoff is the Product Owner's call, they own the product",
+    text:"During a standup, a team member suggests modifying some features to capture a new opportunity, but another member raises a user-experience concern about the change. How should the project manager address this?",
+    options:["A. Meet with the product owner to discuss both the opportunity and the concern","B. Have the team vote on whether to include the modification","C. Note the opportunity in the backlog and table the discussion to the next meeting","D. Meet with all stakeholders and the team to discuss how to proceed"],
+    answer:0,
+    explanation:"<strong>The Product Owner is ultimately responsible for the product and its value, so a feature change weighed against a user-experience cost is the PO's decision.</strong> Voting (B) is not how product value is decided. Just backlogging and tabling it (C) delays a value decision the PO should weigh, and the PO is the one who prioritizes the backlog anyway. A big stakeholder-and-team meeting (D) is too broad for a product tradeoff. Signal: a feature or value tradeoff in agile goes to the Product Owner, who owns the product."
+  },
+  {
+    id:206, domain:"Process", difficulty:"hard", principle:"Retrospectives are the engine of continuous improvement (inspect and adapt); cutting them loses that",
+    text:"A sponsor believes retrospectives are a waste of time and budget and directs the project manager to significantly reduce or eliminate them on future projects. What is the most likely outcome?",
+    options:["A. Team processes will improve because time and budget are saved","B. Stakeholder observations about performance will drive the improvements instead","C. The team loses its regular way to inspect and adapt, so chances to improve future work are missed","D. The time management plan will not be updated properly"],
+    answer:2,
+    explanation:"<strong>Retrospectives are how an agile team inspects and adapts, the built-in engine of continuous improvement.</strong> Remove them and the team loses its structured moment to learn and get better, so improvement opportunities are missed. A is backwards, saving time does not improve process. B is wrong because retrospectives are internal team reflection, not stakeholder observation. D is a separate, unrelated issue. Signal: retrospective equals continuous improvement, so eliminating it equals lost improvement."
   }
 ];
 
