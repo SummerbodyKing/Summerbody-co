@@ -3976,20 +3976,52 @@ let currentFilter = 'all';
 // Same concept, different question. Rewords the stem, shuffles and re-letters the
 // options (so the answer moves and you cannot memorize a position), and gives a
 // clean, letter-free explanation. This forces you to re-read and re-think.
-const _remixOpeners = ['Scenario. ','On your project. ','Consider this. ','Picture this. ','Here is the situation. ','Exam scenario. ','Think it through. '];
+const _remixOpeners = ['Scenario. ','On your project. ','Consider this. ','Picture this. ','Here is the situation. ','Exam scenario. ','Think it through. ',''];
 function _stripLetter(o){ return String(o).replace(/^[A-D][\.\)]\s*/,'').trim(); }
+function _pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+// Meaning-preserving rewrites so a variant reads like a genuinely different question
+const _remixSwaps = [
+  [/What should the project manager do\?/gi, ['What is the most appropriate action for the project manager?','What is the best course of action?','How should the project manager proceed?']],
+  [/What should the project manager do first\?/gi, ['What should the project manager do as the first step?','What is the first thing the project manager should do?']],
+  [/What should the project manager do next\?/gi, ['What is the best next step for the project manager?','What should the project manager do now?']],
+  [/\bthe project manager\b/g, ['the PM','the project lead']],
+  [/\bThe project manager\b/g, ['The PM','The project lead']],
+  [/\bA project manager\b/g, ['A PM']],
+  [/\bis behind schedule\b/gi, ['has fallen behind schedule','is running late against the plan']],
+  [/\bunexpectedly\b/gi, ['without warning','out of the blue']],
+  [/\ba key stakeholder\b/gi, ['an important stakeholder','a critical stakeholder']],
+  [/\bWhich of the following\b/gi, ['Which']],
+  [/\bteam members\b/g, ['the team']],
+  [/\bshould the project manager\b/gi, ['should the PM']],
+  [/\bsignificantly behind schedule\b/gi, ['well behind schedule','badly behind its timeline']],
+  [/\bbehind schedule\b/gi, ['behind on the schedule','running late on the schedule']],
+  [/\bover budget\b/gi, ['above the approved budget']],
+  [/\bthe customer\b/g, ['the client']],
+  [/\bThe customer\b/g, ['The client']],
+  [/\bidentifies\b/g, ['notices','discovers']],
+  [/\brealizes\b/g, ['recognizes','notices']],
+  [/\bA stakeholder\b/g, ['One stakeholder']],
+  [/\bAs the work is being executed\b/gi, ['During execution']],
+  [/\bhas been unwilling and unsuccessful\b/gi, ['has been both unwilling and unable']],
+  [/\bDuring a status review meeting\b/gi, ['In a status review']],
+  [/\bmidway through\b/gi, ['halfway through']],
+  [/\bnearing completion\b/gi, ['close to finishing']]
+];
+function _reword(s){
+  let out=String(s);
+  for(const [re,opts] of _remixSwaps){ if(Math.random()<0.75) out=out.replace(re, ()=>_pick(opts)); }
+  return out;
+}
 function variantize(q){
   try{
     const order = q.options.map((_,i)=>i);
     for(let i=order.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=order[i]; order[i]=order[j]; order[j]=t; }
-    const newOptions = order.map(oi=>_stripLetter(q.options[oi]));
+    const newOptions = order.map(oi=>_reword(_stripLetter(q.options[oi])));
     const newAnswer = order.indexOf(q.answer);
-    let t = q.text;
-    if(Math.random()<0.6) t = t.replace(/\bthe project manager\b/g,'the PM').replace(/\bThe project manager\b/g,'The PM').replace(/\bA project manager\b/g,'A PM');
-    const stem = _remixOpeners[Math.floor(Math.random()*_remixOpeners.length)] + t;
+    const stem = _pick(_remixOpeners) + _reword(q.text);
     const mm=(q.explanation||'').match(/<strong>([\s\S]*?)<\/strong>/);
     const core = mm?mm[1]:(q.explanation||'').replace(/<[^>]+>/g,'');
-    const expl = `<strong>${core}</strong> <em>The correct answer: ${_stripLetter(q.options[q.answer])}.</em>`;
+    const expl = `<strong>${core}</strong> <em>The correct answer: ${newOptions[newAnswer]}.</em>`;
     return Object.assign({}, q, {text:stem, options:newOptions, answer:newAnswer, explanation:expl, _variant:true});
   }catch(e){ return q; }
 }
@@ -4220,6 +4252,8 @@ function renderQuestion() {
     </div>`;
 
   updateQProgress();
+  const rb=document.getElementById('remixBtn');
+  if(rb){ rb.textContent = state.remix?'🎲 Remix ON':'🎲 Remix'; rb.classList.toggle('btn-primary', !!state.remix); rb.classList.toggle('btn-secondary', !state.remix); }
   window._qStart = Date.now(); // start the per-question stopwatch
 }
 
@@ -5295,7 +5329,7 @@ function driveLinesFor(q, n, total){
   const lines=[];
   lines.push({t:q.text, pause:2400});
   lines.push({t:"Your options. "+opts+".", pause:2000});
-  lines.push({t:"Here is what you do. "+move+". "+why, pause:2600});
+  lines.push({t:"Here is what you do. "+move+". "+why, pause:2600, reveal:true});
   return lines;
 }
 function driveLoadCurrent(){
@@ -5345,13 +5379,37 @@ function driveRenderCard(){
   const card=document.getElementById('driveCard');
   if(cnt) cnt.textContent = driveState.list.length ? `Weak point ${driveState.idx+1} of ${driveState.list.length}` : '';
   if(card && q){
-    const why=(q.explanation||'').replace(/<[^>]+>/g,'');
-    const opts=q.options.map((o,i)=>`<div style="padding:4px 0;${i===q.answer?'color:var(--orange);font-weight:700':'color:var(--text-dim)'}">${o}${i===q.answer?'  ✓':''}</div>`).join('');
+    driveState._picked=null; driveState._revealed=false;
+    // Options are clickable and the answer is HIDDEN until you tap or the audio reveals it.
+    const opts=q.options.map((o,i)=>`<button class="drive-opt" data-i="${i}" onclick="drivePickOption(${i})" style="display:block;width:100%;text-align:left;padding:11px 13px;margin:6px 0;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);font-size:15px;line-height:1.4;cursor:pointer"><b>${['A','B','C','D'][i]}.</b> ${o}</button>`).join('');
     card.innerHTML=`<div style="color:var(--text-dim);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">${q.domain}</div>
-      <div style="margin-bottom:10px">${q.text}</div>
-      <div style="margin-bottom:10px">${opts}</div>
-      <div style="background:var(--surface2);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.5">${why}</div>`;
+      <div style="margin-bottom:12px;font-size:16px;line-height:1.5">${q.text}</div>
+      <div id="driveOpts">${opts}</div>
+      <div id="driveExplain" style="margin-top:12px"></div>`;
   }
+}
+// Highlight the correct option and show the explanation. Called when the audio reveals
+// the answer, or when you tap an option.
+function driveReveal(picked){
+  const q=driveState._cur || driveState.list[driveState.idx];
+  if(!q) return;
+  const wrap=document.getElementById('driveOpts');
+  if(wrap){ wrap.querySelectorAll('.drive-opt').forEach(b=>{ const i=+b.dataset.i;
+    if(i===q.answer){ b.style.borderColor='#16a34a'; b.style.background='rgba(34,197,94,.16)'; b.style.fontWeight='700'; }
+    else if(picked!=null && i===picked){ b.style.borderColor='#dc2626'; b.style.background='rgba(239,68,68,.16)'; }
+  }); }
+  const ex=document.getElementById('driveExplain');
+  if(ex && !ex.innerHTML){ const why=(q.explanation||'').replace(/<[^>]+>/g,'');
+    const tag = picked==null ? '' : (picked===q.answer?'✅ Correct. ':'❌ Not quite. ');
+    ex.innerHTML=`<div style="background:var(--surface2);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.5">${tag}${why}</div>`; }
+  driveState._revealed=true;
+}
+function drivePickOption(i){
+  if(driveState._picked!=null) return; // already answered this one
+  driveState._picked=i;
+  const q=driveState._cur || driveState.list[driveState.idx];
+  driveReveal(i);
+  try{ playSound(q && i===q.answer ? 'correct' : 'wrong'); }catch(e){}
 }
 function driveRenderControls(){
   const btn=document.getElementById('drivePlayBtn');
@@ -5375,6 +5433,7 @@ function driveSpeakLine(){
   const text=(line&&line.t)||'';
   const pause=(line&&line.pause)||700;
   const myToken=driveState.token;
+  if(line && line.reveal && !driveState._revealed) driveReveal(driveState._picked); // highlight the answer exactly when it is spoken
   try{
     window.speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(text);
