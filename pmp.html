@@ -971,6 +971,7 @@
     <button class="nav-tab" data-page="glossary" onclick="showPage('glossary')">Glossary</button>
     <button class="nav-tab" data-page="patterns" onclick="showPage('patterns')">🎯 Patterns</button>
     <button class="nav-tab" data-page="order" onclick="showPage('order')">🧭 Order</button>
+    <button class="nav-tab" data-page="theory" onclick="showPage('theory')">🧠 Theory</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
     <button class="nav-tab" data-page="flashcards" onclick="showPage('flashcards')">Flashcards</button>
     <button class="nav-tab" data-page="formulas" onclick="showPage('formulas')">Formula Lab</button>
@@ -1000,6 +1001,7 @@
   <button class="mnav-btn" data-page="glossary" onclick="showPage('glossary')"><span>📖</span>Terms</button>
   <button class="mnav-btn" data-page="patterns" onclick="showPage('patterns')"><span>🎯</span>Keys</button>
   <button class="mnav-btn" data-page="order" onclick="showPage('order')"><span>🧭</span>Order</button>
+  <button class="mnav-btn" data-page="theory" onclick="showPage('theory')"><span>🧠</span>Theory</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
   <button class="mnav-btn" data-page="flashcards" onclick="showPage('flashcards')"><span>🃏</span>Cards</button>
   <button class="mnav-btn" data-page="formulas" onclick="showPage('formulas')"><span>🧮</span>Formulas</button>
@@ -1161,6 +1163,56 @@
   </div>
 
   <div class="today-foot" style="margin-top:16px"><b>How to use this under time pressure:</b> you have about 77 seconds per question on the real exam. Do not overthink. Name what happened, name the stage, cross off the 3 traps, then pick the value-driven move. If two answers survive, choose the one that gathers information or talks to people over the one that acts blindly. Trust the order.</div>
+</div>
+
+<!-- ══════════════════════════════════════════ THEORY & EVM ══ -->
+<div class="page" id="page-theory">
+  <div class="dg-hero">
+    <h1>Theory <em>&amp; EVM</em></h1>
+    <p>The named theories and the earned-value math the exam leans on. Learn the trigger word for each theory, and the plain-English meaning of every EVM number. Tap Read aloud for the drive.</p>
+    <button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="speakTheory()">🔊 Read aloud</button>
+    <button class="btn btn-secondary btn-sm" style="margin-top:12px" onclick="stopSpeaking()">⏹ Stop</button>
+  </div>
+
+  <div class="pat-card"><div class="pat-n">🧗</div><div><div class="pat-t">Maslow's Hierarchy of Needs</div><div class="pat-d">People climb a ladder: <b>Physiological → Safety → Belonging → Esteem → Self-actualization.</b> You cannot motivate someone with esteem or growth if a lower need (job security, fair pay, belonging) is not met first. Trigger: a team member is worried about a lower need, fix that before the higher one.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">🔧</div><div><div class="pat-t">Herzberg's Two-Factor Theory</div><div class="pat-d"><b>Hygiene factors</b> (salary, job security, working conditions, company policy) do not motivate, but their absence causes dissatisfaction. <b>Motivators</b> (achievement, recognition, growth, responsibility) are what actually drive people. Trigger: fixing pay only stops complaints, it does not motivate. To motivate, give recognition and growth.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">🅧🅨</div><div><div class="pat-t">McGregor's Theory X and Theory Y</div><div class="pat-d"><b>Theory X:</b> the manager assumes people are lazy and need to be controlled and watched. <b>Theory Y:</b> the manager assumes people are self-motivated and seek responsibility. PMI wants Theory Y, the empowering, servant-leader default. Trigger: a micromanaging boss is Theory X, the answer usually moves toward Theory Y.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">🇿</div><div><div class="pat-t">Ouchi's Theory Z</div><div class="pat-d">Long-term employment, loyalty, and involving workers boosts productivity and morale. Think of it as Theory Y taken further into a stable, family-like culture. Trigger: emphasis on lifetime loyalty and consensus.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">🧩</div><div><div class="pat-t">Tuckman's Team Stages</div><div class="pat-d"><b>Forming → Storming → Norming → Performing → Adjourning.</b> New teams politely form, then clash (storming), then settle into norms, then perform at their peak, then disband. Trigger: a team is fighting = storming, and your job is to coach them through it, not punish them.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">🔥</div><div><div class="pat-t">Change models (Kotter and ADKAR)</div><div class="pat-d"><b>Kotter's 8 steps</b> start with creating urgency and building a guiding coalition. <b>ADKAR</b> is Awareness, Desire, Knowledge, Ability, Reinforcement. Both say the same thing: get buy-in and awareness BEFORE you push the change. Trigger: rolling out a big change means build awareness and urgency first.</div></div></div>
+
+  <div class="pat-elim">
+    <div class="pat-elim-h">🧮 EVM, the whole gamut in plain English</div>
+    <ul>
+      <li><b>PV (Planned Value):</b> the budgeted cost of the work you PLANNED to be done by now.</li>
+      <li><b>EV (Earned Value):</b> the budgeted cost of the work you ACTUALLY finished. EV = BAC × percent complete.</li>
+      <li><b>AC (Actual Cost):</b> what you actually SPENT to do that work.</li>
+      <li><b>BAC (Budget at Completion):</b> the total approved budget for the whole project.</li>
+      <li><b>CV = EV − AC.</b> Cost Variance. Negative = over budget.</li>
+      <li><b>SV = EV − PV.</b> Schedule Variance. Negative = behind schedule.</li>
+      <li><b>CPI = EV ÷ AC.</b> Cost efficiency. Below 1.0 = over budget (getting less than a dollar per dollar spent).</li>
+      <li><b>SPI = EV ÷ PV.</b> Schedule efficiency. Below 1.0 = behind schedule.</li>
+      <li><b>EAC = BAC ÷ CPI.</b> The new forecast total if the current cost trend continues.</li>
+      <li><b>ETC = EAC − AC.</b> What is left to spend from here.</li>
+      <li><b>VAC = BAC − EAC.</b> The projected budget surplus or shortfall.</li>
+    </ul>
+  </div>
+
+  <div class="pat-elim" style="border-color:var(--orange)">
+    <div class="pat-elim-h">⚡ The only EVM trick you need under pressure</div>
+    <ul>
+      <li><b>Variance (CV, SV): subtract. Index (CPI, SPI): divide.</b> EV is always first in every formula.</li>
+      <li><b>Negative variance = bad. Index below 1.0 = bad.</b> Both mean over budget or behind schedule.</li>
+      <li><b>C is for Cost (uses AC). S is for Schedule (uses PV).</b> That tells you the second letter of each formula.</li>
+    </ul>
+  </div>
+
+  <div class="today-foot" style="margin-top:16px">Practice the numbers live in the <a onclick="showPage('formulas')">Formula Lab</a>. Read the trigger words here until each theory name jumps out at you from a question stem.</div>
 </div>
 
 <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
@@ -1331,14 +1383,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 176</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 186</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">176 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">186 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3190,6 +3242,76 @@ const QUESTIONS = [
     options:["A. Update the project risk register","B. Consult with their functional manager","C. Assess the risk in a workshop","D. Accept the risk and move on"],
     answer:0,
     explanation:"<strong>The moment you identify a risk, you record it in the risk register, because the register is the direct output of the Identify Risks process.</strong> Consulting the functional manager (B) or running a workshop (C) is analysis that comes after the risk is recorded. Accepting it and moving on (D) skips the process entirely and could hurt budget and schedule. Signal: 'identifies a risk' plus 'do first' means log it in the risk register, then analyze. Order first, always."
+  },
+  {
+    id:177, domain:"Process", difficulty:"medium", principle:"CPI below 1.0 means over budget (EV divided by AC)",
+    text:"A project has earned value (EV) of 800, actual cost (AC) of 1000, and planned value (PV) of 900. What does the cost performance index tell you?",
+    options:["A. The project is under budget and ahead of schedule","B. The project is over budget, earning about 80 cents of value per dollar spent","C. The project is exactly on budget","D. The project is on budget but behind schedule"],
+    answer:1,
+    explanation:"<strong>CPI = EV divided by AC = 800 over 1000 = 0.80, and below 1.0 means over budget.</strong> You are getting 80 cents of work for every dollar spent. A is wrong because a CPI under 1 is not under budget. C is wrong because 0.80 is not 1.0. D mixes up cost with schedule; CPI only speaks to cost. Trick: index means divide, and below 1.0 is bad. C is for Cost and uses AC."
+  },
+  {
+    id:178, domain:"Process", difficulty:"medium", principle:"Negative schedule variance means behind schedule (EV minus PV)",
+    text:"On a project, earned value (EV) is 800 and planned value (PV) is 900. What is the schedule variance and what does it mean?",
+    options:["A. Plus 100, ahead of schedule","B. Zero, on schedule","C. Minus 100, behind schedule","D. Minus 100, over budget"],
+    answer:2,
+    explanation:"<strong>SV = EV minus PV = 800 minus 900 = minus 100, and a negative schedule variance means behind schedule.</strong> You have earned less value than you planned to by now. A and B misread the sign. D is wrong because schedule variance is about time, not budget; that would be cost variance. Trick: variance means subtract, EV first, negative is bad. S is for Schedule and uses PV."
+  },
+  {
+    id:179, domain:"Process", difficulty:"hard", principle:"EAC = BAC divided by CPI forecasts the new total when the trend continues",
+    text:"A project has a budget at completion (BAC) of 10,000 and a cost performance index (CPI) of 0.80. If the current cost trend continues, what is the estimate at completion (EAC)?",
+    options:["A. 8,000","B. 10,000","C. 12,500","D. 2,500"],
+    answer:2,
+    explanation:"<strong>EAC = BAC divided by CPI = 10,000 divided by 0.80 = 12,500.</strong> Because you are spending inefficiently (CPI under 1), the project will finish costing more than the original budget, so 12,500 beats the 10,000 plan. A just repeats a wrong product, B is the original budget (ignores the overrun), and D is the estimate to complete minus a step, not EAC. Trick: a CPI under 1 always pushes EAC above BAC."
+  },
+  {
+    id:180, domain:"People", difficulty:"medium", principle:"Maslow: satisfy the lower need before you can motivate with a higher one",
+    text:"During a round of company layoffs, a key team member is visibly anxious about losing their job and their output drops. Using Maslow's hierarchy, what should the project manager address first?",
+    options:["A. Offer them a stretch assignment to grow their skills","B. Publicly recognize their past achievements","C. Reassure them about their job security and safety on the project","D. Encourage them toward self-actualization and purpose"],
+    answer:2,
+    explanation:"<strong>Maslow says you cannot motivate a higher need while a lower one is threatened, and job security is a lower safety need.</strong> The person is stuck at the safety level, so address that first. A stretch assignment (A) and self-actualization (D) are top-of-ladder needs they cannot focus on right now. Recognition (B) is an esteem need, still above where they are stuck. Signal: fear about a basic need (job, pay, safety) means fix that rung before anything higher."
+  },
+  {
+    id:181, domain:"People", difficulty:"medium", principle:"Herzberg: pay is a hygiene factor, motivation comes from recognition and growth",
+    text:"A project manager gave the team a pay raise, but motivation and engagement have not improved. Using Herzberg's theory, why?",
+    options:["A. Salary is a hygiene factor, so it removes dissatisfaction but does not motivate","B. The raise was too small to matter","C. Money is the strongest motivator, so something else must be wrong","D. The team needs a second raise to feel valued"],
+    answer:0,
+    explanation:"<strong>Herzberg splits hygiene factors (salary, security, conditions) from motivators (achievement, recognition, growth).</strong> Pay is hygiene, so it stops complaints but does not create motivation. That is why the raise did nothing for engagement. B and D keep chasing money, which Herzberg says will not motivate. C is the opposite of the theory. Signal: a raise that did not motivate points straight to Herzberg, give recognition and growth to actually motivate."
+  },
+  {
+    id:182, domain:"People", difficulty:"easy", principle:"McGregor: a controlling, distrustful manager is Theory X; PMI wants Theory Y",
+    text:"A manager believes employees dislike work, must be closely watched, and cannot be trusted with responsibility. Which management style is this, and which does PMI favor?",
+    options:["A. Theory Y, and PMI favors Theory X","B. Theory X, and PMI favors Theory Y","C. Theory Z, and PMI favors Theory X","D. Theory Y, and PMI favors Theory Y"],
+    answer:1,
+    explanation:"<strong>Assuming people are lazy and need control is Theory X, and PMI favors the empowering Theory Y.</strong> Theory Y assumes people are self-motivated and seek responsibility, which fits servant leadership. The other options mislabel the style or claim PMI wants the micromanaging approach, which it never does. Signal: a distrustful, watch-everyone manager is Theory X, and the right answer moves toward Theory Y."
+  },
+  {
+    id:183, domain:"People", difficulty:"medium", principle:"Tuckman: a team openly clashing over approach is in the Storming stage",
+    text:"A newly assembled team is arguing over roles, priorities, and the right approach, and tension is high. Which Tuckman stage is this, and what should the project manager do?",
+    options:["A. Forming, so wait for the team to settle on its own","B. Performing, so step back completely","C. Storming, so coach the team through the conflict toward norms","D. Adjourning, so begin closing the team out"],
+    answer:2,
+    explanation:"<strong>Open conflict over roles and approach is the Storming stage, and the project manager coaches the team through it.</strong> Forming (A) is the early polite stage, not open conflict. Performing (B) is the high-output stage, the opposite of this. Adjourning (D) is disbanding. Signal: a team fighting is storming, and you guide them to norming, you do not punish or abandon them."
+  },
+  {
+    id:184, domain:"Business Environment", difficulty:"medium", principle:"Rolling out a change: build awareness, urgency, and buy-in first (Kotter/ADKAR)",
+    text:"An organization is rolling out a major new project management system to all teams. Using change management principles, what should the project manager do first?",
+    options:["A. Mandate immediate use and monitor compliance","B. Build awareness and a sense of urgency, and secure buy-in before the rollout","C. Wait until the system is fully built before telling anyone","D. Roll it out to everyone at once to move fast"],
+    answer:1,
+    explanation:"<strong>Both Kotter's 8 steps and ADKAR start the same way: create awareness and urgency and get people on board before you push the change.</strong> Mandating use (A) and a big-bang rollout (D) skip buy-in and breed resistance. Hiding it until it is done (C) kills awareness and desire. Signal: any major change rollout means prepare people first, awareness and urgency before action."
+  },
+  {
+    id:185, domain:"Process", difficulty:"medium", principle:"Read the signs: negative CV = over budget, negative SV = behind schedule",
+    text:"A status report shows cost variance (CV) of minus 500 and schedule variance (SV) of plus 200. How is the project performing?",
+    options:["A. Over budget but ahead of schedule","B. Under budget but behind schedule","C. Over budget and behind schedule","D. On budget and on schedule"],
+    answer:0,
+    explanation:"<strong>Negative CV means over budget, and positive SV means ahead of schedule.</strong> CV of minus 500 is spending more than the work earned (over budget). SV of plus 200 is earning more value than planned (ahead of schedule). The other options misread one or both signs. Trick: negative is bad, positive is good; CV is cost, SV is schedule. You can be great on one and poor on the other."
+  },
+  {
+    id:186, domain:"Process", difficulty:"medium", principle:"Run the Order tool: identify before analyze, plan before implement",
+    text:"A project manager has just identified and recorded a new risk in the risk register. Following the risk process order, what comes next?",
+    options:["A. Implement the risk response","B. Perform qualitative risk analysis to prioritize it","C. Close the risk out","D. Audit the risk response for effectiveness"],
+    answer:1,
+    explanation:"<strong>The risk order is identify, then analyze (qualitative, then quantitative), then plan responses, then implement, then monitor.</strong> Right after identifying and recording, you analyze to prioritize, which is qualitative risk analysis. You cannot implement (A) or audit (D) a response you have not planned yet, and you do not close a risk you just found (C). Signal: this is an Order-tab question, find where you are in the sequence and take the very next step, never skip ahead."
   }
 ];
 
@@ -3248,6 +3370,7 @@ function loadState() {
       state.bestStreak = parsed.bestStreak || 0;
       state.badges = parsed.badges || {};
       state.muted = parsed.muted || false;
+      state.voiceName = parsed.voiceName || '';
       state.path = parsed.path || {};
       state.runsheet = parsed.runsheet || {};
       state.drillStats = parsed.drillStats || state.drillStats;
@@ -3268,7 +3391,7 @@ function stateSnapshot() {
     wrongLog: state.wrongLog,
     studyLog: state.studyLog,
     domainStats: state.domainStats,
-    xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, path: state.path,
+    xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, voiceName: state.voiceName, path: state.path,
     runsheet: state.runsheet, drillStats: state.drillStats,
     notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
     aiQuestions: state.aiQuestions
@@ -4926,8 +5049,13 @@ function renderDrive(){
       <button id="drivePlayBtn" class="btn btn-primary" style="min-width:150px;font-size:17px;padding:14px 22px" onclick="driveToggle()">▶ Play</button>
       <button class="btn btn-secondary" onclick="driveNext()" title="Next">Next ⏭</button>
       <button class="btn btn-secondary" onclick="driveRestart()" title="Start over">↺ Restart</button>
+      <button class="btn btn-secondary" onclick="driveFreshSet()" title="Shuffle a new order">🔀 Fresh set</button>
     </div>
-    <div style="margin-top:12px;font-size:12px;color:var(--text-muted)">Playing ${driveState.list.length} weak-point questions, pulled from your recent mini-exam misses. Take a new mini exam and send the misses, and they get added here.</div>`;
+    <div style="margin-top:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--text-dim);font-weight:700">🔊 Voice:</span>
+      ${voicePickerHTML()}
+    </div>
+    <div style="margin-top:12px;font-size:12px;color:var(--text-muted)">Playing ${driveState.list.length} weak-point questions, pulled from your recent mini-exam misses. Hit Fresh set to reshuffle the order. If the voice sounds robotic, pick a different one above (Samantha or a Premium voice is best).</div>`;
   driveRenderCard();
   driveRenderControls();
 }
@@ -5005,6 +5133,17 @@ function driveRestart(){
   driveState.token++; driveState.idx=0; driveLoadCurrent();
   const st=document.getElementById('driveState'); if(st) st.textContent='';
   if(driveState.playing){ driveState.token++; driveSpeakLine(); }
+}
+// Reshuffle the weak-point order so each drive feels new (and you cannot memorize positions).
+function driveFreshSet(){
+  const was=driveState.playing;
+  driveState.token++; driveState.playing=false;
+  try{ window.speechSynthesis.cancel(); }catch(e){}
+  driveState.list = shuffle(buildDriveList());
+  driveState.idx=0; driveLoadCurrent();
+  const st=document.getElementById('driveState'); if(st) st.textContent='🔀 New order ready.';
+  showToast('🔀 Fresh set shuffled', 'success');
+  if(was){ driveState.playing=true; driveState.token++; driveRenderControls(); driveSpeakLine(); }
 }
 
 // ══════════════════════════════════════
@@ -5138,6 +5277,20 @@ function speakOrder(){
     "Quality before acceptance. Control quality checks it is correct, then validate scope is the customer accepting it. "+
     "Now the mental hooks. Sponsor is the bank, money and mandate, you go to them last. Functional manager owns the people, you work with them. An issue already happened, log it. A risk might happen, run the risk order. A sprint is a sealed box, never jam new work in. Escalate only when it is above your control. "+
     "Under time pressure, about seventy seconds per question, name what happened, name the stage, cross off the three traps, pick the value driven move. Trust the order.");
+}
+function speakTheory(){
+  speak("Theories and earned value. "+
+    "Maslow's hierarchy. People climb a ladder. Physiological, safety, belonging, esteem, self actualization. You cannot motivate a higher need if a lower one is unmet. "+
+    "Herzberg. Hygiene factors like salary and job security do not motivate, but their absence causes dissatisfaction. Motivators are achievement, recognition, and growth. "+
+    "McGregor. Theory X assumes people are lazy and need control. Theory Y assumes people are self motivated. P M I wants Theory Y. "+
+    "Ouchi's Theory Z. Long term loyalty and involving workers. "+
+    "Tuckman's team stages. Forming, storming, norming, performing, adjourning. A team fighting is storming. Coach them through it. "+
+    "Change models. Kotter and A D K A R both say build awareness and urgency before you push a change. "+
+    "Now earned value. Planned value is the budgeted cost of planned work. Earned value is the budgeted cost of finished work. Actual cost is what you spent. "+
+    "Cost variance is earned value minus actual cost. Schedule variance is earned value minus planned value. Negative is bad. "+
+    "Cost performance index is earned value divided by actual cost. Schedule performance index is earned value divided by planned value. Below one is bad. "+
+    "Estimate at completion is budget at completion divided by the cost performance index. "+
+    "The trick. Variance you subtract. Index you divide. Earned value is always first. C is for cost and uses actual cost. S is for schedule and uses planned value.");
 }
 
 // ══════════════════════════════════════
@@ -6138,17 +6291,38 @@ function clearWrongLog() {
 // Pick the most natural-sounding English voice the device offers (still browser TTS,
 // but far better than the default robotic one when a good voice is installed).
 let _bestVoice = null;
+// Only English voices, and only US/natural ones. Never fall back to a foreign voice
+// (that was the "robot" problem). If the user picked one, honor it.
+function englishVoices(){
+  try{
+    const vs = window.speechSynthesis.getVoices() || [];
+    return vs.filter(v=>/^en([-_]|$)/i.test(v.lang));
+  }catch(e){ return []; }
+}
 function pickVoice(){
   try{
-    const vs = window.speechSynthesis.getVoices();
-    if(!vs || !vs.length) return null;
-    const prefer = [/samantha/i,/\bava\b/i,/\ballison\b/i,/siri/i,/natural/i,/enhanced/i,/premium/i,/google us english/i,/google uk english female/i,/microsoft (aria|jenny|michelle)/i,/^alex$/i,/nicky/i];
-    for(const re of prefer){ const v = vs.find(x=>re.test(x.name) && /en/i.test(x.lang)); if(v) return v; }
-    return vs.find(x=>/en[-_]us/i.test(x.lang)) || vs.find(x=>/^en/i.test(x.lang)) || vs[0];
+    const en = englishVoices();
+    if(!en.length) return null; // let the browser use its own default rather than a foreign voice
+    // 1) the user's saved choice wins
+    if(state && state.voiceName){ const chosen = en.find(v=>v.name===state.voiceName); if(chosen) return chosen; }
+    // 2) best natural US voices first
+    const prefer = [/samantha/i,/\bava\b/i,/\bzoe\b/i,/\ballison\b/i,/\bnicky\b/i,/\bnoelle\b/i,/siri/i,/natural/i,/enhanced/i,/premium/i,/google us english/i,/microsoft (aria|jenny|michelle|guy|eric)/i,/^alex$/i];
+    for(const re of prefer){ const v = en.find(x=>re.test(x.name)); if(v) return v; }
+    // 3) any US English, then any English
+    return en.find(x=>/en[-_]us/i.test(x.lang)) || en[0];
   }catch(e){ return null; }
 }
 try{ if(window.speechSynthesis){ _bestVoice = pickVoice(); window.speechSynthesis.onvoiceschanged = ()=>{ _bestVoice = pickVoice(); }; } }catch(e){}
-function applyVoice(u){ const v = _bestVoice || pickVoice(); if(v){ u.voice = v; u.lang = v.lang; } return u; }
+function applyVoice(u){ const v = (state && state.voiceName ? pickVoice() : (_bestVoice || pickVoice())); if(v){ u.voice = v; u.lang = v.lang; } else { u.lang = 'en-US'; } return u; }
+// Let the user choose a voice on their own device (voices differ per phone/browser).
+function setVoiceChoice(name){ state.voiceName = name || ''; _bestVoice = pickVoice(); saveState(); try{ speak("This is the voice you picked. Tap play to study."); }catch(e){} }
+function voicePickerHTML(){
+  const en = englishVoices();
+  if(!en.length) return '<span style="font-size:12px;color:var(--text-muted)">No device voices detected yet. Tap play once, then reopen this.</span>';
+  const cur = (state&&state.voiceName)||'';
+  const opts = en.map(v=>`<option value="${v.name.replace(/"/g,'')}" ${v.name===cur?'selected':''}>${v.name}${/en[-_]us/i.test(v.lang)?' (US)':/en[-_]gb/i.test(v.lang)?' (UK)':''}</option>`).join('');
+  return `<select onchange="setVoiceChoice(this.value)" style="padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:14px;max-width:100%"><option value="">Auto (best US voice)</option>${opts}</select>`;
+}
 
 function speak(text) {
   if(state.muted) return; // respect the mute toggle
