@@ -1383,14 +1383,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 196</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 201</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">196 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">201 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3382,6 +3382,41 @@ const QUESTIONS = [
     options:["A. Base the plan on the organization's objectives and values","B. Choose the single best communication channel and use only that","C. Focus on collecting feedback, which the plan already covers","D. Define the key messages and use multiple communication channels"],
     answer:3,
     explanation:"<strong>Good communications planning centers on clear key messages delivered through multiple channels so everyone is reached.</strong> Objectives and values (A) may change after a transformation, so you do not anchor the plan to them. Narrowing to a single best channel (B) is the opposite of good practice; use all appropriate channels. Feedback collection (C) is already handled and is not the focus here. Signal: 'planning communications' for a big audience means define the message and spread it across many channels, never just one."
+  },
+  {
+    id:197, domain:"People", difficulty:"medium", principle:"Stakeholder and team disagree: meet each side to understand their concerns first",
+    text:"On a technology project in implementation, a key stakeholder wants changes, but the stakeholder and the team disagree about whether the changes are needed and how to implement them. What should the project manager do?",
+    options:["A. Meet with the stakeholder and the team members separately to understand their concerns","B. Conduct a risk assessment to determine the impact of the changes","C. Present the pros and cons of the changes to the stakeholder and the team","D. Make the changes without consulting the stakeholder or team"],
+    answer:0,
+    explanation:"<strong>When two sides disagree, first go to each side and understand their concerns before you analyze or decide.</strong> A risk assessment (B) and a pros-and-cons presentation (C) both come after you understand what each side actually wants and why. Making changes with no consultation (D) is never right. Signal: 'stakeholder and team disagree' means gather each perspective at the source first, then work toward a solution that fits everyone."
+  },
+  {
+    id:198, domain:"Process", difficulty:"hard", principle:"Stakeholder clearly states a new communication need: update the communications management plan",
+    text:"A project in execution is on track and within budget. A key stakeholder asks to stop receiving weekly status reports and instead be notified only when an issue needs their attention. What should the project manager do?",
+    options:["A. Meet with the stakeholder to discuss what information should be communicated","B. Revise the communications management plan to reflect the stakeholder's request","C. Review the stakeholder engagement plan to check their involvement","D. Ask the other stakeholders if they would also like fewer notifications"],
+    answer:1,
+    explanation:"<strong>The stakeholder already stated exactly what they want, so you update the communications management plan to match, which is where communication frequency and method live.</strong> Meeting to discuss (A) is redundant because they already told you clearly. Reviewing the engagement plan (C) is wrong because their involvement is not changing, only the communication method. Asking other stakeholders (D) is wrong because communication preferences are set per person, not by group vote. Signal: a clear, specific communication request means update the comms plan, do not hold another meeting to ask what they already told you."
+  },
+  {
+    id:199, domain:"People", difficulty:"medium", principle:"An individual stakeholder's engagement level lives in the stakeholder engagement assessment matrix",
+    text:"During a steering committee meeting, the project manager reports that a formerly supportive key team member has become resistant and negative about changes. Where should this information be captured?",
+    options:["A. The RACI (responsible, accountable, consult, inform) matrix","B. The risk register and issue log","C. The stakeholder engagement assessment matrix","D. The work performance reports"],
+    answer:2,
+    explanation:"<strong>A stakeholder's attitude, moving from supportive to resistant, is tracked in the stakeholder engagement assessment matrix, which maps current versus desired engagement (unaware, resistant, neutral, supportive, leading).</strong> A RACI (A) only defines roles, not attitudes. The risk register and issue log (B) capture risks and issues, not a person's engagement level. Work performance reports (D) are about the work, not individual sentiment. Signal: 'became resistant or negative' means record the change in the stakeholder engagement assessment matrix."
+  },
+  {
+    id:200, domain:"People", difficulty:"medium", principle:"Power/Interest grid: low power and low interest means monitor with minimal effort",
+    text:"After stakeholder analysis, three stakeholders plot as low power and low interest on the power/interest grid. What is the correct action for them?",
+    options:["A. Keep them satisfied by addressing their concerns and questions","B. Keep them informed and updated on the project","C. Keep them satisfied and also actively engage and consult them","D. Monitor them with minimal management effort"],
+    answer:3,
+    explanation:"<strong>On the power/interest (Mendelow) grid, low power and low interest is the Monitor quadrant, which needs minimal management effort.</strong> Keep Satisfied (A) is high power and low interest. Keep Informed (B) is low power and high interest, which is the trap you want to avoid confusing with low/low. Manage Closely, actively engage (C) is high power and high interest. Signal: memorize the grid. High power plus high interest is manage closely, high power plus low interest is keep satisfied, low power plus high interest is keep informed, low power plus low interest is monitor with minimal effort."
+  },
+  {
+    id:201, domain:"Process", difficulty:"medium", principle:"Prove the project is on track: compare past forecasts against current actual performance",
+    text:"A sponsor is anxious about the value returned from the investment and wants the original dates met. What should the project manager do to convince the sponsor the project is on track?",
+    options:["A. Emphasize the value delivered at the phase gate","B. Present past forecasts compared with current actual performance","C. Increase the number of project status reports","D. Invite the sponsor to daily project meetings"],
+    answer:1,
+    explanation:"<strong>Comparing past forecasts to current actual performance shows whether the project is tracking to plan and likely to deliver the intended value.</strong> That data-based comparison directly answers the sponsor's concern. Phase-gate value (A) may be too infrequent to reassure them now. More status reports (C) and daily meetings (D) are impractical and do not directly address whether the project will hit its dates and value. Signal: 'convince the sponsor it is on track' means show the numbers, forecast versus actual, not add meetings or reports."
   }
 ];
 
