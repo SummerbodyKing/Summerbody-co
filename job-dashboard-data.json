@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T12:54:31.867715+00:00",
+  "generated_at": "2026-07-06T16:25:32.344115+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -310,8 +310,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 25,
-      "matched": 14,
+      "found": 23,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -357,12 +357,6 @@
           "posted_date": "2026-06-18T16:23:09-04:00"
         },
         {
-          "title": "Senior Manager, Product Design",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5213797008",
-          "posted_date": "2026-05-07T18:11:02-04:00"
-        },
-        {
           "title": "Senior Manager, Software Engineering",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
@@ -391,18 +385,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
           "posted_date": "2026-06-20T15:52:50-04:00"
-        },
-        {
-          "title": "Staff FinOps Engineer",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5229750008",
-          "posted_date": "2026-06-01T19:44:36-04:00"
         }
       ]
     },
     {
       "name": "knowbe4",
-      "found": 95,
+      "found": 94,
       "matched": 16,
       "error": null,
       "jobs": [
@@ -843,13 +831,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Manager, Product Design",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5213797008",
-      "posted_date": "2026-05-07T18:11:02-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Senior Manager, Software Engineering",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
@@ -882,13 +863,6 @@
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
       "posted_date": "2026-06-20T15:52:50-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Staff FinOps Engineer",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5229750008",
-      "posted_date": "2026-06-01T19:44:36-04:00",
       "source": "netdocuments"
     },
     {
@@ -1004,5 +978,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 70
+  "total_matched": 68
 }
