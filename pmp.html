@@ -1387,6 +1387,7 @@
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
+      <button class="btn btn-secondary btn-sm" id="remixBtn" onclick="toggleRemix()">🎲 Remix</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
@@ -3545,7 +3546,7 @@ let state = {
   wrongLog: [],
   studyLog: [],
   domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
-  xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, dayStarted: false,
+  xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, voiceName: '', remix: true, variants: {}, dayStarted: false,
   path: {}, // day# -> {watch,learn,drill,boss,bossScore}
   runsheet: {}, // "day:blockId" -> true  (hour-by-hour Today engine)
   drillStats: {seen:0, right:0, streak:0, best:0}, // Formula Drill (fresh-numbers reps)
@@ -3567,6 +3568,7 @@ function loadState() {
       state.badges = parsed.badges || {};
       state.muted = parsed.muted || false;
       state.voiceName = parsed.voiceName || '';
+      state.remix = parsed.remix !== undefined ? parsed.remix : true;
       state.path = parsed.path || {};
       state.runsheet = parsed.runsheet || {};
       state.drillStats = parsed.drillStats || state.drillStats;
@@ -3587,7 +3589,7 @@ function stateSnapshot() {
     wrongLog: state.wrongLog,
     studyLog: state.studyLog,
     domainStats: state.domainStats,
-    xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, voiceName: state.voiceName, path: state.path,
+    xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, voiceName: state.voiceName, remix: state.remix, path: state.path,
     runsheet: state.runsheet, drillStats: state.drillStats,
     notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
     aiQuestions: state.aiQuestions
@@ -3970,6 +3972,43 @@ function saveLog() {
 // ══════════════════════════════════════
 let currentFilter = 'all';
 
+// ── Question REMIX ──────────────────────────────────────────────────────────
+// Same concept, different question. Rewords the stem, shuffles and re-letters the
+// options (so the answer moves and you cannot memorize a position), and gives a
+// clean, letter-free explanation. This forces you to re-read and re-think.
+const _remixOpeners = ['Scenario. ','On your project. ','Consider this. ','Picture this. ','Here is the situation. ','Exam scenario. ','Think it through. '];
+function _stripLetter(o){ return String(o).replace(/^[A-D][\.\)]\s*/,'').trim(); }
+function variantize(q){
+  try{
+    const order = q.options.map((_,i)=>i);
+    for(let i=order.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=order[i]; order[i]=order[j]; order[j]=t; }
+    const newOptions = order.map(oi=>_stripLetter(q.options[oi]));
+    const newAnswer = order.indexOf(q.answer);
+    let t = q.text;
+    if(Math.random()<0.6) t = t.replace(/\bthe project manager\b/g,'the PM').replace(/\bThe project manager\b/g,'The PM').replace(/\bA project manager\b/g,'A PM');
+    const stem = _remixOpeners[Math.floor(Math.random()*_remixOpeners.length)] + t;
+    const mm=(q.explanation||'').match(/<strong>([\s\S]*?)<\/strong>/);
+    const core = mm?mm[1]:(q.explanation||'').replace(/<[^>]+>/g,'');
+    const expl = `<strong>${core}</strong> <em>The correct answer: ${_stripLetter(q.options[q.answer])}.</em>`;
+    return Object.assign({}, q, {text:stem, options:newOptions, answer:newAnswer, explanation:expl, _variant:true});
+  }catch(e){ return q; }
+}
+function applyRemix(list){
+  if(!state.remix) return list;
+  state.variants = {};
+  return list.map(q=>{ const v=variantize(q); state.variants[q.id]=v; return v; });
+}
+function toggleRemix(){
+  state.remix = !state.remix;
+  state.variants = {};
+  saveState();
+  const b=document.getElementById('remixBtn');
+  if(b){ b.textContent = state.remix?'🎲 Remix ON':'🎲 Remix'; b.classList.toggle('btn-primary', state.remix); b.classList.toggle('btn-secondary', !state.remix); }
+  showToast(state.remix?'🎲 Remix ON: same concepts, reworded and shuffled. Hit Retake to redo the deck fresh.':'Remix off: original questions and full explanations.', 'success');
+  const active = document.querySelector('#page-study .filter-btn.active') || document.querySelector('#page-study .filter-btn');
+  if(active) filterDomain(currentFilter||'all', active);
+}
+
 function filterDomain(domain, btn) {
   currentFilter = domain;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -3993,7 +4032,7 @@ function filterDomain(domain, btn) {
   // Randomize the whole stack, then resume at the first question you haven't answered.
   // This is the fix for "stuck at Q20 of 212", you traverse the ENTIRE deck, in random
   // order, without restarting at the front.
-  state.filteredQs = shuffle([...state.filteredQs]);
+  state.filteredQs = shuffle(applyRemix([...state.filteredQs]));
   const u = firstUnseenIndex();
   state.currentQ = u >= 0 ? u : 0;
   renderQuestion();
@@ -4237,7 +4276,8 @@ function downloadNotes(){
 
 function selectAnswer(qId, chosen) {
   if (state.answers[qId] !== undefined) return; // already answered
-  const q = QUESTIONS.find(q => q.id === qId);
+  // In Remix mode grade against the shuffled variant (its answer index and option text differ)
+  const q = (state.remix && state.variants && state.variants[qId]) ? state.variants[qId] : QUESTIONS.find(q => q.id === qId);
   if (!q) return;
 
   const correct = chosen === q.answer;
@@ -5259,7 +5299,10 @@ function driveLinesFor(q, n, total){
   return lines;
 }
 function driveLoadCurrent(){
-  const q=driveState.list[driveState.idx];
+  let q=driveState.list[driveState.idx];
+  // Remix mode rewords the stem and shuffles the options so each drive feels new
+  if(q && state.remix && typeof variantize==='function') q = variantize(q);
+  driveState._cur = q;
   driveState.lines = q ? driveLinesFor(q, driveState.idx+1, driveState.list.length) : [];
   driveState.li = 0;
   driveRenderCard();
@@ -5297,7 +5340,7 @@ function renderDrive(){
   driveRenderControls();
 }
 function driveRenderCard(){
-  const q=driveState.list[driveState.idx];
+  const q=driveState._cur || driveState.list[driveState.idx];
   const cnt=document.getElementById('driveCount');
   const card=document.getElementById('driveCard');
   if(cnt) cnt.textContent = driveState.list.length ? `Weak point ${driveState.idx+1} of ${driveState.list.length}` : '';
