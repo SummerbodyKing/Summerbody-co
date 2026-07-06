@@ -1383,14 +1383,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 206</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 214</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">206 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">214 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3452,6 +3452,62 @@ const QUESTIONS = [
     options:["A. Team processes will improve because time and budget are saved","B. Stakeholder observations about performance will drive the improvements instead","C. The team loses its regular way to inspect and adapt, so chances to improve future work are missed","D. The time management plan will not be updated properly"],
     answer:2,
     explanation:"<strong>Retrospectives are how an agile team inspects and adapts, the built-in engine of continuous improvement.</strong> Remove them and the team loses its structured moment to learn and get better, so improvement opportunities are missed. A is backwards, saving time does not improve process. B is wrong because retrospectives are internal team reflection, not stakeholder observation. D is a separate, unrelated issue. Signal: retrospective equals continuous improvement, so eliminating it equals lost improvement."
+  },
+  {
+    id:207, domain:"Business Environment", difficulty:"hard", principle:"Benefits are realized when value is confirmed against the benefits management plan, not just when the deliverable is accepted",
+    text:"A deliverable has been completed and passed its acceptance criteria. What confirms that the project's benefits have been achieved?",
+    options:["A. The deliverable is approved and the expected value has been confirmed against the benefits management plan","B. The deliverable met all the specifications in the scope statement","C. The project finished on time and within budget","D. The stakeholders raised no complaints about the deliverable"],
+    answer:0,
+    explanation:"<strong>Acceptance means the deliverable is correct; benefits realization means it actually delivered the intended value, measured against the benefits management plan.</strong> Meeting specs (B) and finishing on time and budget (C) prove you built the thing right, not that it created value. No complaints (D) is not a measure of value. Signal: 'benefits achieved' points to value confirmed against the benefits management plan, not acceptance of the deliverable."
+  },
+  {
+    id:208, domain:"Business Environment", difficulty:"medium", principle:"Track value at each phase against the benefits management plan",
+    text:"A lengthy upgrade project is delivered in a series of phased outputs. What should the project manager do to ensure the intended value is delivered at each phase?",
+    options:["A. Review the actual costs to ensure the project stays on budget","B. Validate scope to ensure the quality of outputs is met","C. Track progress toward each benefit using the benefits management plan","D. Survey end users about their experience and analyze the results"],
+    answer:2,
+    explanation:"<strong>Value delivered at each phase is measured against the benefits management plan, which defines the benefits, their metrics, and their timing.</strong> Reviewing costs (A) tracks budget, not value. Validating scope (B) is about acceptance and correctness, not value. Surveying users (D) is one input, not the measure of benefits. Signal: 'ensure value is delivered' points to tracking benefits against the benefits management plan."
+  },
+  {
+    id:209, domain:"Business Environment", difficulty:"medium", principle:"Impact on the organization is tracked in the benefits management plan",
+    text:"A project is nearing completion and a stakeholder wants to understand how the project's outcomes will impact the organization. What should the project manager review with the stakeholder?",
+    options:["A. The benefits management plan","B. The project charter","C. The assumption log","D. The work breakdown structure"],
+    answer:0,
+    explanation:"<strong>Outcomes and their impact on the organization are benefits, which live in the benefits management plan.</strong> The charter (B) authorizes the project and names the sponsor. The assumption log (C) tracks assumptions and constraints. The WBS (D) decomposes the scope of work. Signal: 'how outcomes impact the organization' means the benefits management plan, the home of value and benefits."
+  },
+  {
+    id:210, domain:"Business Environment", difficulty:"hard", principle:"Business case justifies WHY to start; benefits management plan defines HOW and WHEN benefits are measured",
+    text:"Which statement correctly distinguishes the business case from the benefits management plan?",
+    options:["A. They are the same document with two different names","B. The business case justifies why the project is worth doing, while the benefits management plan defines how and when benefits will be measured and sustained","C. The business case measures benefits after delivery, while the benefits management plan justifies starting the project","D. Both documents are created only at project closure"],
+    answer:1,
+    explanation:"<strong>The business case is the justification to initiate (the why, built on a cost-benefit analysis), and the benefits management plan describes how and when the benefits will be realized, measured, and sustained.</strong> They are two different documents (so A is wrong), their roles are not swapped (so C is wrong), and both are created early, not at closure (so D is wrong). Signal: business case equals why start, benefits management plan equals how and when value is measured."
+  },
+  {
+    id:211, domain:"Process", difficulty:"medium", principle:"Risk order: after Identify comes Qualitative analysis to prioritize",
+    text:"A project team has just identified and recorded its project risks. Following the risk management process, what is the next step?",
+    options:["A. Perform qualitative risk analysis to prioritize the risks","B. Implement the risk responses","C. Perform a risk audit","D. Close the low-priority risks"],
+    answer:0,
+    explanation:"<strong>The risk order is Plan Risk Management, Identify Risks, Perform Qualitative Analysis, Perform Quantitative Analysis, Plan Responses, Implement Responses, Monitor Risks.</strong> Right after identifying, you prioritize through qualitative analysis. You cannot implement (B) or audit (C) a response that has not been planned yet, and you do not close risks you just found (D). Signal: after Identify, always Analyze next. This is an Order-tab question."
+  },
+  {
+    id:212, domain:"Process", difficulty:"hard", principle:"A NEW risk created BY a response is a secondary risk",
+    text:"After a project manager implements a risk response, the response itself creates a brand-new risk that did not exist before. What is this new risk called?",
+    options:["A. A residual risk","B. A trigger","C. A risk appetite","D. A secondary risk"],
+    answer:3,
+    explanation:"<strong>A secondary risk is a NEW risk that is created BY implementing a risk response.</strong> A residual risk (A) is the leftover risk that REMAINS after a response. A trigger (B) is a warning sign that a risk is about to occur. Risk appetite (C) is how much risk the organization is willing to accept. Signal: response CREATES a new risk equals secondary; response LEAVES some risk behind equals residual."
+  },
+  {
+    id:213, domain:"Process", difficulty:"hard", principle:"The leftover risk that REMAINS after a response is a residual risk",
+    text:"After a risk response has been implemented, a small amount of the original risk still remains. What is this leftover risk called?",
+    options:["A. A secondary risk","B. A residual risk","C. A workaround","D. A fallback plan"],
+    answer:1,
+    explanation:"<strong>A residual risk is the portion of the original risk that REMAINS after the response is applied.</strong> A secondary risk (A) is a new risk CREATED by the response. A workaround (C) is an unplanned reaction to a risk that occurred with no plan. A fallback plan (D) is the backup used if the primary response fails. Signal: what is LEFT after the response equals residual; what is NEW from the response equals secondary."
+  },
+  {
+    id:214, domain:"Process", difficulty:"medium", principle:"Risk management is ongoing: reassess and update the risk register regularly",
+    text:"An agile team created a risk register early using stakeholder interviews and the project charter. How should the project manager manage risks for the rest of the project?",
+    options:["A. Assess risks only once at the start, since they were already identified","B. Eliminate all project risks using iterative delivery","C. Update the risk register and reassess risks with the team on a regular basis","D. Add risks only as an agenda item in the daily standups"],
+    answer:2,
+    explanation:"<strong>Risk management is continuous, so you reassess risks and update the risk register regularly, for example each iteration or at retrospectives.</strong> Assessing once (A) ignores new and changing risks. You can never eliminate all risk (B). Daily standups (D) are for impediments, not the primary risk cadence. Signal: 'for the rest of the project' means monitor and reassess risks continuously, not once."
   }
 ];
 
