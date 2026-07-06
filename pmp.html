@@ -1383,14 +1383,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 201</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 204</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">201 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">204 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3417,6 +3417,27 @@ const QUESTIONS = [
     options:["A. Emphasize the value delivered at the phase gate","B. Present past forecasts compared with current actual performance","C. Increase the number of project status reports","D. Invite the sponsor to daily project meetings"],
     answer:1,
     explanation:"<strong>Comparing past forecasts to current actual performance shows whether the project is tracking to plan and likely to deliver the intended value.</strong> That data-based comparison directly answers the sponsor's concern. Phase-gate value (A) may be too infrequent to reassure them now. More status reports (C) and daily meetings (D) are impractical and do not directly address whether the project will hit its dates and value. Signal: 'convince the sponsor it is on track' means show the numbers, forecast versus actual, not add meetings or reports."
+  },
+  {
+    id:202, domain:"Process", difficulty:"hard", principle:"A review IS a knowledge-transfer activity, so it is not an obstacle to it",
+    text:"A project manager's team has identified a lack of proper knowledge transfer expectations. Which of these does NOT apply as an obstacle to knowledge transfer?",
+    options:["A. A systematic review of the completed project","B. Personally handled failures and mistakes that were not shared","C. Insufficient individual motivation to document lessons learned","D. Sparse leadership involvement to promote knowledge transfer"],
+    answer:0,
+    explanation:"<strong>Read carefully: this asks which is NOT an obstacle. A systematic review is itself a knowledge-transfer exercise, so it helps, it does not block.</strong> The real obstacles are people hoarding their failures instead of sharing them (B), low motivation to document lessons learned (C), and weak leadership support for knowledge sharing (D). Signal: watch for 'NOT' or 'except' in the stem, then find the option that actually supports the goal rather than blocking it. Any review is knowledge transfer."
+  },
+  {
+    id:203, domain:"People", difficulty:"medium", principle:"New members cannot follow how seniors worked: facilitate peer mentoring to transfer tacit knowledge",
+    text:"In an agile environment, some new team members are struggling to understand how more senior members achieved certain results on the project. What should the project manager do?",
+    options:["A. Arrange a review meeting with stakeholders","B. Ensure the team members focus on their own tasks","C. Assess the need for knowledge transfer","D. Encourage and facilitate peer mentoring"],
+    answer:3,
+    explanation:"<strong>Peer mentoring is the practical, direct way for new members to learn the tacit know-how that senior members carry.</strong> It also builds collaboration and team cohesion. A stakeholder review meeting (A) and telling people to focus on their tasks (B) do not address the knowledge gap. Assessing the need (C) is analysis, but the need is already clear, so act on it. Signal: 'new members cannot understand how seniors did it' means pair them up, facilitate peer mentoring, do not just study the problem."
+  },
+  {
+    id:204, domain:"People", difficulty:"hard", principle:"New stakeholder joins during handover: clarify their expectations and update the engagement plan first",
+    text:"On an agile project running three more years, a stakeholder is being replaced by someone more familiar with the technology, and the current project manager is also handing the project to a new project manager. What step should the current project manager take next?",
+    options:["A. Recommend the new stakeholder meet with the product owner to align expectations","B. Clarify the new stakeholder's expectations and update the engagement plan","C. Meet the new stakeholder, learn their expectations, and update all the other stakeholders on proposed revisions","D. Ensure the new stakeholder attends all future sprint meetings and update the plan with their revisions"],
+    answer:1,
+    explanation:"<strong>A smooth handover needs you to understand the new stakeholder's expectations and reflect them in the stakeholder engagement plan, which defines how they will be involved.</strong> Sending them to the product owner (A) is useful later, but first understand them directly. Broadcasting revisions to all other stakeholders (C) is premature before you have integrated the new person's needs. Committing them to every sprint and rewriting the plan on first input (D) overreacts. Signal: a new stakeholder plus a handover means learn their expectations and update the engagement plan, then coordinate the rest."
   }
 ];
 
