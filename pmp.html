@@ -1383,14 +1383,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 186</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 191</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">186 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">191 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3312,6 +3312,41 @@ const QUESTIONS = [
     options:["A. Implement the risk response","B. Perform qualitative risk analysis to prioritize it","C. Close the risk out","D. Audit the risk response for effectiveness"],
     answer:1,
     explanation:"<strong>The risk order is identify, then analyze (qualitative, then quantitative), then plan responses, then implement, then monitor.</strong> Right after identifying and recording, you analyze to prioritize, which is qualitative risk analysis. You cannot implement (A) or audit (D) a response you have not planned yet, and you do not close a risk you just found (C). Signal: this is an Order-tab question, find where you are in the sequence and take the very next step, never skip ahead."
+  },
+  {
+    id:187, domain:"Process", difficulty:"hard", principle:"High-risk, must-succeed transformation: deliver the highest business value early with an iterative rollout",
+    text:"A product company is transforming how it develops and releases products. Executives call it high-risk and say it must succeed. What should the project manager do?",
+    options:["A. Adopt an iterative rollout that delivers the highest business value earlier","B. Develop a communications management plan to inform employees about the new model","C. Develop a detailed sprint plan with clear deliverables","D. Develop a business case with assumptions for the new model"],
+    answer:0,
+    explanation:"<strong>On a high-risk, must-succeed initiative, you reduce risk by delivering the highest business value early through an iterative rollout.</strong> Early value proves the approach and de-risks it. A communications plan (B) and a sprint plan (C) only make sense after the rollout approach is chosen. A business case (D) justifies starting the project, but this one has already started. Signal: 'high-risk, must succeed' plus 'deliver value' points to an iterative, value-first rollout."
+  },
+  {
+    id:188, domain:"Process", difficulty:"medium", principle:"Customer cannot describe what they want: build an MVP to rapidly test and learn",
+    text:"A team is starting work with a customer who was difficult before because they could not describe exactly what they wanted. What approach removes this impediment?",
+    options:["A. Work with the product owner to define the minimum viable product","B. Develop and monitor a plan with due dates to reduce delivery time","C. Follow a predictive approach to get formal acceptance of each deliverable","D. Reinforce the team's negotiation and soft skills through training"],
+    answer:0,
+    explanation:"<strong>When the customer cannot articulate requirements, an MVP lets them see something real and react, which rapidly tests what they actually want.</strong> A due-date plan (B) and formal predictive acceptance (C) both assume clear requirements you do not have yet. Soft-skills training (D) does not solve unclear requirements. Signal: 'customer cannot describe what they want' means build an MVP to learn, do not lock into a predictive plan."
+  },
+  {
+    id:189, domain:"Process", difficulty:"medium", principle:"Resource-constrained delivery: find the MVP and the critical path, do not just hire or force overtime",
+    text:"During product development, two functional departments say they are short on resources and cannot build and deliver all the products on time. What should the project manager do?",
+    options:["A. Analyze the critical path to deliver the minimum viable product","B. Ask the functional manager to hire additional resources","C. Request that team members work extra hours to meet commercial needs","D. Escalate to the sponsor and request confirmation of the project scope"],
+    answer:0,
+    explanation:"<strong>When resources are tight, you protect delivery by focusing on the minimum viable product and the critical path to an acceptable outcome.</strong> Hiring more people (B) is slow and not the first move. Forcing overtime (C) burns out the team. Escalating to the sponsor (D) skips the work you can do yourself; the PM should already have confirmed scope and resources. Signal: 'short on resources, cannot deliver everything' means scope down to the MVP and drive the critical path."
+  },
+  {
+    id:190, domain:"Process", difficulty:"medium", principle:"A formal change request: prepare a change impact assessment before you act (Pattern 1)",
+    text:"The sponsor calls a crisis meeting because the client submitted a formal request to drastically compress the schedule to meet a legal deadline. What should the project manager do to prepare for the meeting?",
+    options:["A. Prepare a change impact assessment report for review","B. Initiate procedures to fast-track the project","C. Analyze tools to crash the project activities","D. Implement the required changes to the project schedule"],
+    answer:0,
+    explanation:"<strong>A formal change needs a change impact assessment first, so everyone sees the effect on scope, schedule, budget, resources, and risk before deciding.</strong> Fast-tracking (B) and crashing (C) are compression techniques you consider AFTER the assessment and the meeting. Implementing the change (D) before analysis or approval skips change control entirely. Signal: a formal change request plus 'prepare for the meeting' means bring the impact assessment, not a decision. This is your change-control pattern."
+  },
+  {
+    id:191, domain:"Process", difficulty:"medium", principle:"Beneficial change mid-testing: document it and assess impact before deciding",
+    text:"A project manager is redesigning a store's point-of-sale system. The team is testing new functionality when a stakeholder proposes a change that could add real benefit and customer satisfaction but needs more resources. What should the project manager do?",
+    options:["A. Document the proposed change and assess its impact on time, cost, and resources","B. Complete testing while the project manager meets with the stakeholder to review the change","C. Stop the testing and schedule a meeting to review the change with the resources","D. Postpone the change and let the team finish testing and implementation"],
+    answer:0,
+    explanation:"<strong>Any proposed change gets documented and impact-assessed before you decide anything, even a change that sounds beneficial.</strong> Only after the impact is known can you sensibly choose to stop testing, keep testing, or postpone. B, C, and D all jump to a decision before the assessment. Signal: 'stakeholder proposes a change' means document it and assess the impact on time, cost, and resources first, then decide. Change control before action."
   }
 ];
 
