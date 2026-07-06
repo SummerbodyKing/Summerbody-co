@@ -1331,14 +1331,14 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 172</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 176</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">172 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">176 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3162,6 +3162,34 @@ const QUESTIONS = [
     options:["A. Agile","B. Traditional","C. Waterfall","D. Iterative"],
     answer:0,
     explanation:"<strong>Daily standups, two-week reviews, retrospectives, and lightweight whiteboard documentation are the signature ceremonies of agile.</strong> Traditional (B) and waterfall (C) rely on heavy documentation and do not run daily standups or whiteboard-first tracking. Plain iterative (D) repeats build cycles but does not carry the standups, retrospectives, and lightweight docs together. Signal: standups plus retrospectives plus lightweight docs is agile, full stop."
+  },
+  {
+    id:173, domain:"Process", difficulty:"hard", principle:"Resource lost mid-project: assess and document the needed skills first, before hunting a replacement",
+    text:"A project is halfway through its timeline when an external resource becomes unavailable for the rest of the project, putting on-time and on-budget completion at risk. What should the project manager do as the initial step?",
+    options:["A. Update the resource management plan and record the needed skills in the issues log","B. Engage stakeholders to find a qualified replacement for the external resource","C. Initiate training for an internal resource on the required skills and assign the remaining tasks","D. Revise the schedule and budget estimates and submit a change request"],
+    answer:0,
+    explanation:"<strong>Assess the impact first: document the specific skills the lost resource covered so any next decision is informed.</strong> Update the resource management plan and log the gap as an issue. Searching for a replacement (B) or training someone (C) is premature until you know exactly what skills you need. Revising estimates and a change request (D) is a later step, not the initial one. Signal: 'initial step' after losing a resource means document the needed skills first, then decide how to fill the gap."
+  },
+  {
+    id:174, domain:"People", difficulty:"medium", principle:"A proven, comfortable hybrid team: support their decisions, do not take control or over-train",
+    text:"A project follows waterfall but delivers increments to the customer in an agile manner. The team is comfortable with this hybrid approach and has made good decisions on previous projects. How should the project manager proceed?",
+    options:["A. Support the team's choices and project decisions","B. Take control of the decision-making process","C. Provide the team with a detailed process for making decisions","D. Train the project team on decision-making techniques"],
+    answer:0,
+    explanation:"<strong>A team that has proven it can decide well should be supported and empowered, not overridden.</strong> Taking control (B) is top-down and stifles a capable team. A rigid detailed process (C) blocks them from adapting. Training (D) is unnecessary because they have already shown they decide well. Signal: 'team is comfortable and has succeeded before' means support and empower, not seize control or over-train."
+  },
+  {
+    id:175, domain:"Process", difficulty:"hard", principle:"Impediment log order: Record, Prioritize, Publish, Address, Communicate",
+    text:"A project manager on a Scrum team must monitor the impediments log and facilitate resolving impediments. What is the correct order of the five steps to manage the impediments log?",
+    options:["A. Record, prioritize, publish, address, communicate","B. Prioritize, record, publish, communicate, address","C. Record, publish, communicate, prioritize, address","D. Prioritize, record, publish, address, communicate"],
+    answer:0,
+    explanation:"<strong>The impediment log runs in a fixed order: Record it (at the standup), Prioritize by importance, Publish it so everyone can see, Address the highest priority, then Communicate that it is resolved and update the log.</strong> You record before you can prioritize, and you resolve before you communicate the resolution. The other orders scramble those dependencies. Signal: like every order question, find the step that must physically come first (you cannot prioritize what you have not recorded) and build from there. This is exactly what the Order tab drills."
+  },
+  {
+    id:176, domain:"Process", difficulty:"medium", principle:"Identify a risk: record it in the risk register first (that is the output of Identify Risks)",
+    text:"A project manager on a new environmental project reviews a vendor's proposal and spots a technical risk that will hit the company's operational cost. What should the project manager do first?",
+    options:["A. Update the project risk register","B. Consult with their functional manager","C. Assess the risk in a workshop","D. Accept the risk and move on"],
+    answer:0,
+    explanation:"<strong>The moment you identify a risk, you record it in the risk register, because the register is the direct output of the Identify Risks process.</strong> Consulting the functional manager (B) or running a workshop (C) is analysis that comes after the risk is recorded. Accepting it and moving on (D) skips the process entirely and could hurt budget and schedule. Signal: 'identifies a risk' plus 'do first' means log it in the risk register, then analyze. Order first, always."
   }
 ];
 
