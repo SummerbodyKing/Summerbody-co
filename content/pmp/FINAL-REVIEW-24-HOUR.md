@@ -192,6 +192,56 @@ On Hybrid questions, your brain reached for "Agile good" answers (servant leader
 3. If the question TELLS you the PM's orientation, situation, or context — match the answer to THAT specific context, not to generic "good PM" instincts.
 4. If the question is about a MUST-HAVE for ALL PMs — pick the universal answer (honesty, transparency, ethics).
 
+### FINAL 5 HYBRID MNEMONICS (added from last Mini Exam 3 batch)
+
+#### 16. "MANAGER CONTROLS PROCESSES. LEADER INSPIRES PEOPLE."
+Manager = authority, control, efficiency, effectiveness, planning, organizing, controlling resources, focus on objectives.
+Leader = inspire, motivate, set vision, align people, drive momentum.
+
+**Trap you fell for:** Picking "leader" (B) when the question described control/efficiency/authority. Those are MANAGER traits, not leader traits.
+
+**Source:** Mini Exam 3 Q5 (manager vs leader assessment). PMI solution confirmed.
+
+#### 17. "NO HISTORICAL DATA? BUILD THE RISK PLAN YOURSELF."
+When historical data is unavailable, the PM must PROACTIVELY develop the risk management plan from scratch AND inform stakeholders. Just telling the sponsor and continuing isn't enough.
+
+**Trap you fell for:** Picking "inform sponsor and continue" (C) with HIGH confidence. PMI wants proactive planning, not reactive informing.
+
+**Source:** Mini Exam 3 Q1 (critical project, no historical data). PMI solution confirmed.
+
+#### 18. "PLAN PREVENTS. AUDIT DETECTS. UPDATE FIXES."
+When something goes wrong (like using an old template that fails audit), the PREVENTIVE root cause fix is having a proper Risk Management PLAN that includes monitoring/updating built in.
+- Internal audit BEFORE external audit → detection, not prevention
+- Updating the template after the fact → reactive fix, not prevention
+- Blaming the org for providing the template → not owning it
+
+**Source:** Mini Exam 3 Q4 (old risk register template, external audit NC). PMI solution confirmed.
+
+#### 19. "INSURANCE = TRANSFER. NOT JUST RECORDING."
+Risk Response Strategies — memorize all four for the exam:
+- **AVOID** = don't do the project OR eliminate the risk source
+- **TRANSFER** = shift to third party (INSURANCE, performance bonds, warranties, contracts) — has a premium cost
+- **MITIGATE** = reduce probability OR reduce impact (proactive planning)
+- **ACCEPT** = passive (do nothing) or active (contingency reserves)
+
+When facing a significant financial penalty risk with a medium threshold, insurance = TRANSFER is the strategy.
+
+**Trap you fell for:** Picking "record it in risk register and review it" (D). That's not a strategy. That's a book-keeping action. Register it AND choose a response strategy (in this case: transfer via insurance).
+
+**Source:** Mini Exam 3 Q3 (bidding penalty clause, medium risk threshold). PMI solution confirmed.
+
+#### 20. "DELPHI = IDENTIFY (REMOTE). MONTE CARLO/DECISION TREE = QUANTITATIVE ANALYSIS. AFFINITY = QUALITATIVE ORGANIZE."
+Four risk techniques you keep confusing. Trigger words:
+
+- **DELPHI TECHNIQUE** → anonymous polling, iterative consensus, GREAT for distributed/remote teams that can't meet in person. This is a RISK IDENTIFICATION tool.
+- **MONTE CARLO ANALYSIS** → quantitative simulation, cost/schedule iterations, uses probability distributions. RISK ANALYSIS.
+- **DECISION TREE ANALYSIS** → quantitative, probability of occurrence. RISK ANALYSIS.
+- **AFFINITY DIAGRAM** → qualitative, organizes ideas by categories/similarities. RISK ANALYSIS.
+
+**Trap you fell for:** Picking Monte Carlo (D) for a "team in 6 countries need to identify risks" question. Monte Carlo is ANALYSIS not IDENTIFICATION. Delphi is the correct identification method for distributed teams.
+
+**Source:** Mini Exam 3 Q2 (team in 6 countries, best risk identification method). PMI solution confirmed.
+
 ---
 
 ## SECTION 3 — YOUR THREE CHRONIC CATEGORY WEAK SPOTS
