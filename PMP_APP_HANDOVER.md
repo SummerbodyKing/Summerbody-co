@@ -9,8 +9,8 @@
 
 ## 1. Product context
 
-- **What it is:** A single-page PMP (Project Management Professional) exam-prep web app for one primary learner doing a **14-day intensive sprint** toward a scheduled exam date.
-- **Current exam date in code:** `EXAM_DATE = 2026-07-08` (see `pmp.html`). Day numbering is derived from a sprint start; `getCurrentDay()` returns 1–14.
+- **What it is:** A single-page PMP (Project Management Professional) exam-prep web app for one primary learner doing a **13-day intensive sprint** toward a scheduled exam date.
+- **Current exam date in code:** `EXAM_DATE = 2026-07-07` (see `pmp.html`). Day numbering is derived from a sprint start; `getCurrentDay()` returns 1–13.
 - **Learner profile:** Highly motivated but non-technical. Needs to be *led*, not handed options. Gets overwhelmed by walls of text and by having to make decisions. Wants the app to be the coach: fill the day with the right work, enforce the schedule, and tell them where they stand.
 - **Tone/standards the learner expects:** "Lead PM" rigor — anticipate what they don't know to ask; always orient them; always compare their numbers to what the exam requires.
 
@@ -32,14 +32,14 @@
 |---|---|
 | **Main app** | `pmp.html` — one self-contained file (~4,000+ lines): HTML + CSS in `<style>` + vanilla JS in `<script>`. No build step, no framework, no bundler. |
 | **Entry/redirects** | `index.html`, `_redirects`, `netlify.toml`. The app is served at `/pmp`. |
-| **State** | `localStorage` key `pmp_state_v2`. The `state` object holds answers, wrongLog, studyLog, domainStats, xp, badges, streak, path (14-day step completion), runsheet (Today blocks), drillStats, notes, questionNotes, brushUp, qTimes, aiQuestions. `loadState()` / `saveState()` / `stateSnapshot()`. |
+| **State** | `localStorage` key `pmp_state_v2`. The `state` object holds answers, wrongLog, studyLog, domainStats, xp, badges, streak, path (13-day step completion), runsheet (Today blocks), drillStats, notes, questionNotes, brushUp, qTimes, aiQuestions. `loadState()` / `saveState()` / `stateSnapshot()`. |
 | **Cloud sync** | Supabase (`SB_URL` fyhxtghbuayikllxmzyi). Optional account → cross-device sync of the same snapshot into a `progress` table. `initCloud()`, `cloudPush()`, `cloudPull()`. |
 | **AI Coach** | `netlify/functions/ai-coach.js` — serverless function calling the Anthropic Messages API to generate fresh exam-style questions. Requires env var `ANTHROPIC_API_KEY` (already set on the Netlify site as a secret). Model defaults to `claude-sonnet-4-6`. Front-end entry: `aiGenerate()` in `pmp.html`. |
 | **Hosting/CI** | Netlify. Production site `summerbodyco` → `terrencemichaelscott.me`. Every push to the feature branch builds a Deploy Preview; work is reviewed via PR before merge to `main`/production. |
 
 ### Key data structures & functions to know (in `pmp.html`)
 - `QUESTIONS` — array of ~88 question objects: `{id, domain, difficulty, principle, text, options[4], answer (0-based), explanation}`.
-- `DAYS` — the 14-day schedule (date, topic, phase).
+- `DAYS` — the 13-day schedule (date, topic, phase).
 - `DAY_PLAN` — per day: `{lessons:[ls-*], drill, video, boss}` (boss is an array of question ids, or `'mock'` / `'weak'`).
 - `FLASHCARDS` — principle/term/formula cards.
 - `EXERCISES` + `injectLessonQuizzes()` — interactive learn-by-doing drills and the per-lesson "Check yourself" quizzes.
@@ -78,10 +78,10 @@
 These are the real gaps, including direct learner complaints. **Verify each in the live app, then close it.**
 
 ### A. Content depth & freshness (highest priority)
-- **Question bank is too small (~88) for 8h/day × 14 days.** Heavy repetition kills trust ("I've done this 100 times"). Target: **600–1,000+ questions**, balanced to exam weights (≈42/50/8), tagged by ECO task and PMBOK principle/performance domain, predictive vs agile, and difficulty.
+- **Question bank is too small (~88) for 8h/day × 13 days.** Heavy repetition kills trust ("I've done this 100 times"). Target: **600–1,000+ questions**, balanced to exam weights (≈42/50/8), tagged by ECO task and PMBOK principle/performance domain, predictive vs agile, and difficulty.
 - **Content not explicitly sourced/verified from PMI.** Build questions, lessons, and flashcards from the **ECO tasks**, **PMBOK 7 principles & performance domains**, and reputable sources. The learner can provide source text (e.g., PMBOK 7 audio/transcript) — design an ingestion path for learner-provided material.
 - **Lessons are static.** Each `ls-*` lesson needs: a clear **objective**, a "do it" interactive, a **changing** check-yourself set, and a short "you've mastered this when…" exit check. Mindset lesson is the catch-all bucket (28 mapped questions) — redistribute via better `lessonFor` mapping.
-- **No real full mock exam.** The "mock" boss is only ~10 questions. Build a true **180-question / 230-minute timed simulator** with section breaks, per-domain scoring, pace analytics, and a review mode. Schedule it on Day 11 & Day 13.
+- **No real full mock exam.** The "mock" boss is only ~10 questions. Build a true **180-question / 230-minute timed simulator** with section breaks, per-domain scoring, pace analytics, and a review mode. Schedule it on Day 10 & Day 12.
 
 ### B. The daily engine (8-hour guarantee)
 - **Time blocks feel arbitrary / not a believable 8 hours.** Re-derive durations from real content volume so finishing a block ≈ real mastery work, not filler. Make blocks **content-exhausting** (e.g., "drill until you've seen N fresh questions at ≥80%") rather than purely clock-based.
@@ -119,7 +119,7 @@ Tackle in priority order. Each must ship behind the existing PR workflow (push �
 
 ### WS2 — True mock exam simulator
 - [ ] 180 Q / 230 min timed mode, two breaks, per-domain + overall scoring, pace report, full review mode, history saved and trended.
-- [ ] Wired into Day 11 & 13 run sheets and the Path.
+- [ ] Wired into Day 10 & 12 run sheets and the Path.
 - **Done when:** the learner can sit a realistic exam and get an exam-style readout.
 
 ### WS3 — Daily engine v2 (8-hour, adherence, spaced repetition)
