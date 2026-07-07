@@ -122,6 +122,76 @@ Sponsor asks about WORK → WBS (Work Breakdown Structure)
 
 **Source:** Mini Exam 1 Q6 (sponsor wants resource estimates → RBS). PMI solution confirmed.
 
+### HYBRID-SPECIFIC MNEMONICS (added after Mini Exam 3 review)
+
+These come from Mini Exam 3 (Hybrid) — where you missed 4 of 5 with HIGH confidence. Your brain reached for "generic good PM" answers. PMI wanted specific ones.
+
+#### 11. "MATCH BEHAVIOR TO ORIENTATION"
+When the question TELLS you the PM's orientation, the leadership behavior must match that orientation.
+- **DIRECTIVE PM** → clear, concise, task-focused communication
+- **AFFILIATION PM** → build rapport, relationships
+- **ACHIEVEMENT PM** → awards, recognition
+- **POWER PM** → influence, control
+
+**Trap you fell for:** Picking "build rapport" (A) when the question said the PM was DIRECTIVE. Rapport is affiliation, not directive.
+
+**Source:** Mini Exam 2 Q5 (directive PM, virtual team). PMI solution confirmed.
+
+#### 12. "UNEXPECTED LOSS = NOTIFY + INVESTIGATE + RISK REGISTER"
+When a project asset is lost, missing, damaged, or something goes wrong:
+1. Notify BOTH customer AND management
+2. Launch investigation
+3. Update RISK REGISTER (this is a risk event)
+4. Take action based on outcome
+
+Not just fix it. Not just insurance claim. Not just update the asset register.
+
+**Source:** Mini Exam 3 Q6 (lost asset in offshore data center). PMI solution confirmed.
+
+#### 13. "MAPPING IS PREP. WORKSHOPS BUILD."
+When PMI asks about:
+- BUILDING shared understanding + relationships → **Interactive workshops**
+- IDENTIFYING who stakeholders are → Stakeholder mapping (this is PREP work)
+- SUMMARIZING project updates → Formal presentations (one-way, limited)
+- REVIEWING at their pace → Documentation (passive)
+
+Only workshops BUILD. Mapping just identifies.
+
+**Trap you fell for:** Picking "stakeholder mapping" (B) when the ask was to BUILD relationships and shared understanding.
+
+**Source:** Mini Exam 3 Q7 (complex initiative, diverse stakeholders). PMI solution confirmed.
+
+#### 14. "ISSUES NOW. RISKS FUTURE. LESSONS AFTER."
+The three "log/register/knowledge" documents for tracking things:
+- **Issue Log** = problems, gaps, conflicts, inconsistencies happening NOW
+- **Risk Register** = uncertainty about the FUTURE (things that MIGHT happen)
+- **Lessons Learned** = knowledge for FUTURE PROJECTS (post-project reflection)
+
+**Trap you fell for:** Picking "Lessons Learned" (C) when the ask was about tracking CURRENT problems throughout the project life cycle. Lessons Learned is for after, not during.
+
+**Source:** Mini Exam 3 Q8 (problems, gaps, inconsistencies during life cycle). PMI solution confirmed.
+
+#### 15. "UNIVERSAL PM QUALITY = HONESTY. SERVANT LEADERSHIP = AGILE-ONLY."
+When PMI asks "what quality MUST a PM have?" — the universal answer is **HONESTY**.
+
+Servant leadership is Agile-specific — it's what an Agile PM/Scrum Master does. It's NOT what every PM must have.
+
+Aggressive and Powerful are wrong energies for any PM.
+
+**Trap you fell for:** Picking "Servant Leader" (D) because it sounds progressive. PMI's official answer for "universal PM quality" is honesty — because PMs must be transparent about project realities.
+
+**Source:** Mini Exam 3 Q9 (what leadership quality MUST a PM have). PMI solution confirmed.
+
+### THE META-PATTERN ON HYBRID QUESTIONS
+
+On Hybrid questions, your brain reached for "Agile good" answers (servant leader, rapport, mapping). PMI wants you to answer the SPECIFIC question asked, not the "best PM instinct" generic answer.
+
+**Exam day rule for Hybrid questions:**
+1. Read the question TWICE.
+2. Ask: "Is PMI asking for a UNIVERSAL answer, or a SITUATIONAL one?"
+3. If the question TELLS you the PM's orientation, situation, or context — match the answer to THAT specific context, not to generic "good PM" instincts.
+4. If the question is about a MUST-HAVE for ALL PMs — pick the universal answer (honesty, transparency, ethics).
+
 ---
 
 ## SECTION 3 — YOUR THREE CHRONIC CATEGORY WEAK SPOTS
