@@ -130,12 +130,53 @@ These come from your PMI Study Hall benchmarks (6/29 → today):
 
 ### A. Assess and Manage Risks (42% — chronic low)
 
+**Confirmed via Mini Exam 2 — 4 of your 5 wrong answers were risk questions. HIGH confidence on THREE of them. This is your #1 weak zone. Learn this section cold.**
+
 **What to remember on exam day:**
 - Uncertainty about the future = RISK. Always update the Risk Register.
 - "PM doubts," "might," "could," "concerned" → all risk language → Risk Register.
 - In Agile: high-risk stories in EARLY sprints.
 - Risk responses: AVOID / TRANSFER / MITIGATE / ACCEPT.
 - Reserves: **Contingency Reserve** = known unknowns (in cost baseline). **Management Reserve** = unknown unknowns (NOT in cost baseline).
+
+#### THE 4 RISK MANAGEMENT PROCESSES — IN ORDER (from Mini Exam 2 Q4)
+
+**"PIQQ"** — memorize this order.
+
+1. **P — Plan Risk Management** = create the risk management plan (methodology, roles, categories)
+2. **I — Identify Risks** = list them out
+3. **Q — Qualitative Risk Analysis** = **PRIORITIZE by probability and impact** (subjective, fast)
+4. **Q — Quantitative Risk Analysis** = **NUMBERS on the top-priority risks** (Monte Carlo, EMV, expensive)
+
+**Trap you fell for:** picking "Plan Risk Management" when the question asked about PRIORITIZING. Plan Risk Management is the METHODOLOGY doc, not the prioritization act. Qualitative Risk Analysis is prioritization.
+
+**Mnemonic:** **"Qualitative = PRIORITIZE. Quantitative = QUANTIFY."**
+
+#### AFTER QUALITATIVE RISK ANALYSIS — 4 DOCS UPDATE (from Mini Exam 2 Q3)
+
+**"RRAI"** — Risk Register, Risk Report, Assumption Log, Issue Log.
+
+1. **Risk Register** = individual risks + their new priority
+2. **Risk Report** = overall project risk exposure
+3. **Assumption Log** = assumptions validated or invalidated during analysis
+4. **Issue Log** = risks that became actual issues
+
+**Trap you fell for:** picking "Risk Register + Risk Report" only. INCOMPLETE. You also need Assumption Log and Issue Log.
+
+**Mnemonic:** **"After Qualitative → RRAI updates."**
+
+#### EXTERNAL VOLATILITY = RISK REGISTER (from Mini Exam 2 Q5)
+
+When the question mentions:
+- Financial market changes
+- Exchange rate fluctuations
+- Regulatory shifts
+- Supplier volatility
+- Political/economic conditions
+
+The document you refer to is the **RISK REGISTER**. Not stakeholder register. Not marketplace conditions. Not lessons learned.
+
+**Mnemonic:** **"External volatility affecting the project = update the Risk Register."**
 
 ### B. Build and Lead a Team (71% → 56% — dropped)
 
@@ -145,6 +186,24 @@ These come from your PMI Study Hall benchmarks (6/29 → today):
 - Team meetings serve a purpose. Do not accommodate individual exceptions early.
 - When ONE team member breaks a norm → address the WHOLE team.
 - Team charter defines HOW the team works together.
+
+#### MOTIVATION THEORIES CHEAT SHEET (from Mini Exam 2 Q2)
+
+You keep confusing these. Memorize the trigger word for each.
+
+| Theory | Trigger Words | The Idea |
+|---|---|---|
+| **Maslow's Hierarchy of Needs** | "basic needs," "safety," "belonging," "self-actualization" | Needs in a pyramid — lower needs must be met first |
+| **Expectancy Theory (Vroom)** | "reward," "compensation," "if they perform they'll get X" | Motivated when confident + valuing reward + trusting you'll pay |
+| **McClelland's Achievement Theory** | "need for achievement/power/affiliation" | People motivated by one of three drives |
+| **Herzberg's Two-Factor** | "hygiene factors," "job satisfaction vs dissatisfaction" | Salary avoids dissatisfaction; growth motivates |
+| **McGregor's Theory X / Y** | "people are lazy" (X) vs "self-motivated" (Y) | Manager's assumption about workers |
+| **Theory Z (Ouchi)** | "loyalty," "long-term employment," "Japanese-style" | Team-based, consensus-driven |
+| **Fiedler's Contingency Theory** | "leadership style depends on situation" | No one right style — depends on context |
+
+**The Mini Exam 2 Q2 trap:** Reward for on-time delivery = **Expectancy Theory** (you offer, they perform, you compensate). NOT Maslow (that's basic needs). NOT Contingency (that's leadership style).
+
+**Mnemonic:** **"REWARD offered for PERFORMANCE = Expectancy. Basic NEEDS = Maslow."**
 
 ### C. Address and Remove Impediments (100% → 56% — biggest drop)
 
