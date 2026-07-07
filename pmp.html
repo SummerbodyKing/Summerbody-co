@@ -986,6 +986,7 @@
     <div class="day-badge" id="dayBadge">DAY 1 of 13</div>
     <div class="timer-display" id="navTimer">00:00:00</div>
     <button class="nav-icon-btn" id="syncBtn" onclick="openSync()" title="Sync across devices">☁️</button>
+    <button class="nav-icon-btn" id="rateBtn" onclick="cycleRate()" title="Voice speed, tap to change" style="width:auto;padding:0 10px;font-size:13px;font-weight:700">🐢 0.8x</button>
     <button class="nav-icon-btn" id="muteBtn" onclick="toggleMute()" title="Toggle sound">🔊</button>
   </div>
 </nav>
@@ -3919,7 +3920,7 @@ let state = {
   wrongLog: [],
   studyLog: [],
   domainStats: {People:{correct:0,total:0}, Process:{correct:0,total:0}, 'Business Environment':{correct:0,total:0}},
-  xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, voiceName: '', remix: true, variants: {}, dayStarted: false,
+  xp: 0, streak: 0, bestStreak: 0, badges: {}, muted: false, voiceName: '', rate: 0.8, remix: true, variants: {}, dayStarted: false,
   path: {}, // day# -> {watch,learn,drill,boss,bossScore}
   runsheet: {}, // "day:blockId" -> true  (hour-by-hour Today engine)
   drillStats: {seen:0, right:0, streak:0, best:0}, // Formula Drill (fresh-numbers reps)
@@ -3941,6 +3942,7 @@ function loadState() {
       state.badges = parsed.badges || {};
       state.muted = parsed.muted || false;
       state.voiceName = parsed.voiceName || '';
+      state.rate = parsed.rate || 0.8;
       state.remix = parsed.remix !== undefined ? parsed.remix : true;
       state.path = parsed.path || {};
       state.runsheet = parsed.runsheet || {};
@@ -3962,7 +3964,7 @@ function stateSnapshot() {
     wrongLog: state.wrongLog,
     studyLog: state.studyLog,
     domainStats: state.domainStats,
-    xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, voiceName: state.voiceName, remix: state.remix, path: state.path,
+    xp: state.xp, bestStreak: state.bestStreak, badges: state.badges, muted: state.muted, voiceName: state.voiceName, rate: state.rate, remix: state.remix, path: state.path,
     runsheet: state.runsheet, drillStats: state.drillStats,
     notes: state.notes, questionNotes: state.questionNotes, brushUp: state.brushUp, qTimes: state.qTimes,
     aiQuestions: state.aiQuestions
@@ -7069,7 +7071,19 @@ function pickVoice(){
   }catch(e){ return null; }
 }
 try{ if(window.speechSynthesis){ _bestVoice = pickVoice(); window.speechSynthesis.onvoiceschanged = ()=>{ _bestVoice = pickVoice(); }; } }catch(e){}
-function applyVoice(u){ const v = (state && state.voiceName ? pickVoice() : (_bestVoice || pickVoice())); if(v){ u.voice = v; u.lang = v.lang; } else { u.lang = 'en-US'; } return u; }
+function applyVoice(u){ const v = (state && state.voiceName ? pickVoice() : (_bestVoice || pickVoice())); if(v){ u.voice = v; u.lang = v.lang; } else { u.lang = 'en-US'; } u.rate = (state && state.rate) ? state.rate : 0.8; return u; }
+// Speed control shared by every screen. Cycles slowest to fastest and back.
+const RATE_STEPS = [0.6, 0.7, 0.8, 0.9, 1.0, 1.15, 1.3];
+function rateLabel(r){ return (r % 1 === 0 ? r.toFixed(1) : r) + 'x'; }
+function cycleRate(){
+  const cur = (state && state.rate) ? state.rate : 0.8;
+  let i = RATE_STEPS.indexOf(cur); if(i < 0) i = 2;
+  state.rate = RATE_STEPS[(i + 1) % RATE_STEPS.length];
+  saveState();
+  updateRateBtn();
+  try{ window.speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance('Speed ' + rateLabel(state.rate)); applyVoice(u); if(!state.muted) window.speechSynthesis.speak(u); }catch(e){}
+}
+function updateRateBtn(){ const b = document.getElementById('rateBtn'); if(b) b.textContent = '🐢 ' + rateLabel((state && state.rate) ? state.rate : 0.8); }
 // Let the user choose a voice on their own device (voices differ per phone/browser).
 function setVoiceChoice(name){ state.voiceName = name || ''; _bestVoice = pickVoice(); saveState(); try{ speak("This is the voice you picked. Tap play to study."); }catch(e){} }
 function voicePickerHTML(){
@@ -7313,6 +7327,7 @@ setupSplash();
 updateGameUI();
 initCloud();
 document.getElementById('muteBtn').textContent = state.muted ? '🔇' : '🔊';
+updateRateBtn();
 
 // Keyboard shortcuts
 document.addEventListener('keydown', e => {
