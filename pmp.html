@@ -972,6 +972,7 @@
     <button class="nav-tab" data-page="patterns" onclick="showPage('patterns')">🎯 Patterns</button>
     <button class="nav-tab" data-page="order" onclick="showPage('order')">🧭 Order</button>
     <button class="nav-tab" data-page="theory" onclick="showPage('theory')">🧠 Theory</button>
+    <button class="nav-tab" data-page="cheat" onclick="showPage('cheat')">📋 Cheat</button>
     <button class="nav-tab" data-page="study" onclick="showPage('study')">Practice</button>
     <button class="nav-tab" data-page="flashcards" onclick="showPage('flashcards')">Flashcards</button>
     <button class="nav-tab" data-page="formulas" onclick="showPage('formulas')">Formula Lab</button>
@@ -1002,6 +1003,7 @@
   <button class="mnav-btn" data-page="patterns" onclick="showPage('patterns')"><span>🎯</span>Keys</button>
   <button class="mnav-btn" data-page="order" onclick="showPage('order')"><span>🧭</span>Order</button>
   <button class="mnav-btn" data-page="theory" onclick="showPage('theory')"><span>🧠</span>Theory</button>
+  <button class="mnav-btn" data-page="cheat" onclick="showPage('cheat')"><span>📋</span>Cheat</button>
   <button class="mnav-btn" data-page="study" onclick="showPage('study')"><span>✍️</span>Practice</button>
   <button class="mnav-btn" data-page="flashcards" onclick="showPage('flashcards')"><span>🃏</span>Cards</button>
   <button class="mnav-btn" data-page="formulas" onclick="showPage('formulas')"><span>🧮</span>Formulas</button>
@@ -1213,6 +1215,69 @@
   </div>
 
   <div class="today-foot" style="margin-top:16px">Practice the numbers live in the <a onclick="showPage('formulas')">Formula Lab</a>. Read the trigger words here until each theory name jumps out at you from a question stem.</div>
+</div>
+
+<!-- ══════════════════════════════════════════ CHEAT SHEET (exam-day) ══ -->
+<div class="page" id="page-cheat">
+  <div class="dg-hero">
+    <h1>Exam-Day <em>Cheat Sheet</em></h1>
+    <p>20 mnemonics plus the risk, motivation, and decision-tree deep dives. Every one traces to a question you worked. Tap Read aloud and play it on the walk or the drive.</p>
+    <button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="speakCheat()">🔊 Read aloud</button>
+    <button class="btn btn-secondary btn-sm" style="margin-top:12px" onclick="stopSpeaking()">⏹ Stop</button>
+  </div>
+
+  <div class="pat-elim" style="border-color:var(--orange)">
+    <div class="pat-elim-h">🧠 The 20 mnemonics</div>
+    <ul>
+      <li><b>1. Assess impact first.</b> A change goes through a change request, and a change request always carries impact data. Do the impact assessment before you act.</li>
+      <li><b>2. Register lists, plan processes, matrix measures.</b> Stakeholder register is the list. Engagement plan is the approach. Assessment matrix is current versus desired engagement.</li>
+      <li><b>3. Audience changes means comms plan updates.</b> When WHO you communicate with changes, update the communications management plan.</li>
+      <li><b>4. Complaints or declined meetings means comms plan.</b> Communication problems are fixed in the communications management plan.</li>
+      <li><b>5. Risk first, motivate the marathon.</b> In agile, high-risk stories go in the EARLY sprints. Motivation is an ongoing benefits system, not an end-of-project party.</li>
+      <li><b>6. Cannot control it, adjust MY plan.</b> External delays mean adjust your own timeline, do not push others and do not skip required work.</li>
+      <li><b>7. PMO across, sponsor one project, PM executes.</b> PMO spans all projects. Sponsor champions and funds ONE. PM executes. Customer uses the output.</li>
+      <li><b>8. Comply and explain, one on one, committee later.</b> Compliance resistance means a direct one-on-one first, never exclude or jump to a committee.</li>
+      <li><b>9. Purpose before people, purpose before analysis.</b> Vision first, then stakeholders, then resources, then detailed analysis. Never skip ahead.</li>
+      <li><b>10. Tailor before build, use what exists first.</b> Adapt existing organizational assets before creating from scratch.</li>
+      <li><b>11. Match behavior to orientation.</b> Directive boss means clear task direction. Achievement means recognition. Affiliation means rapport. Power means influence.</li>
+      <li><b>12. Unexpected loss means notify, investigate, log it.</b> Notify both the customer and management, investigate, and update the register or issue log.</li>
+      <li><b>13. Mapping is prep, workshops build.</b> Stakeholder mapping is who they are. Interactive workshops build the relationships.</li>
+      <li><b>14. Issues now, risks future, lessons after.</b> Issue log is current problems. Risk register is future uncertainty. Lessons learned is post-project.</li>
+      <li><b>15. Universal PM quality is honesty.</b> Servant leadership is agile-specific. Honesty and integrity are universal.</li>
+      <li><b>16. Manager controls processes, leader inspires people.</b> Manager is control and efficiency. Leader is vision and motivation.</li>
+      <li><b>17. No historical data, build the risk plan yourself.</b> Develop it from scratch and inform stakeholders. Do not just tell the sponsor and continue.</li>
+      <li><b>18. Plan prevents, audit detects, update fixes.</b> A root-cause fix is a proper risk management plan with monitoring built in.</li>
+      <li><b>19. Insurance equals transfer.</b> The four responses are Avoid, Transfer, Mitigate, Accept. Insurance is a classic transfer.</li>
+      <li><b>20. Delphi identifies, Monte Carlo and decision tree quantify, affinity organizes.</b> Only Delphi is for identification. Monte Carlo and decision tree are quantitative analysis. Affinity grouping is qualitative.</li>
+    </ul>
+  </div>
+
+  <div class="pat-card"><div class="pat-n">R</div><div><div class="pat-t">Risk deep dive</div><div class="pat-d"><b>Order (PIQQ, then respond):</b> Plan Risk Management, Identify, Qualitative (PRIORITIZE by probability and impact), Quantitative (put NUMBERS on the top ones), Plan Responses, Implement, Monitor. <b>Qualitative = prioritize. Quantitative = quantify.</b><br><b>Four responses:</b> Avoid (remove the source), Transfer (shift to a third party, like insurance), Mitigate (reduce probability or impact), Accept (do nothing, or hold a contingency reserve).<br><b>Reserves:</b> Contingency reserve = known unknowns, inside the cost baseline. Management reserve = unknown unknowns, outside the baseline.<br><b>External volatility</b> (markets, rates, regulations, suppliers, politics) goes in the risk register.</div></div></div>
+
+  <div class="pat-card"><div class="pat-n">M</div><div><div class="pat-t">Motivation theories</div><div class="pat-d"><b>Maslow:</b> physiological, safety, belonging, esteem, self-actualization. <b>Herzberg:</b> hygiene factors avoid dissatisfaction, motivators create satisfaction. <b>McGregor:</b> X assumes lazy, Y assumes self-motivated. <b>McClelland:</b> achievement, power, affiliation. <b>Vroom Expectancy:</b> effort leads to reward you value. <b>Ouchi Z:</b> loyalty and long-term employment.<br><b>Trap:</b> "reward for performance" is Expectancy, not Maslow. Basic needs is Maslow, not Expectancy.</div></div></div>
+
+  <div class="pat-elim">
+    <div class="pat-elim-h">🌗 Hybrid meta-rule</div>
+    <ul>
+      <li>Read hybrid questions twice: is PMI asking UNIVERSAL or SITUATIONAL?</li>
+      <li>Question says the PM is directive means pick directive behavior.</li>
+      <li>Question asks what all PMs must have means pick universal (honesty).</li>
+      <li>Question asks about BUILDING relationships means workshops. About IDENTIFYING stakeholders means mapping.</li>
+    </ul>
+  </div>
+
+  <div class="pat-elim">
+    <div class="pat-elim-h">✂️ When you do not know: the decision tree</div>
+    <ul>
+      <li>Cross off the extremes: "immediately halt," "ignore," "never permitted" are almost always wrong.</li>
+      <li>Of the two left, pick the more PM-like move: process over skipping, the right stakeholder over going over their head, fewer assumptions over more.</li>
+      <li>Keyword traps: FIRST means the earliest step. BEST means solves the root cause. MOST APPROPRIATE means follows the PMI framework.</li>
+      <li>Agile keywords: iteration, sprint, user story, product owner. Predictive keywords: baseline, phase, CCB, change request.</li>
+      <li>Between two good answers, pick the one involving the sponsor or the team, not HR, legal, or documents. PMI rewards human connection.</li>
+    </ul>
+  </div>
+
+  <div class="today-foot" style="margin-top:16px"><b>Exam-day protocol:</b> eat protein and carbs, one coffee, water, box-breathe 4-4-4-4 for three minutes, leave early. Use both 10-minute breaks. Slow down on the first five questions, aim for about 75 seconds each, flag anything over two minutes and move. Your data says you answer RIGHT faster than you answer wrong, so trust your first instinct and do not overthink. You have the mnemonics. Trust them.</div>
 </div>
 
 <!-- ══════════════════════════════════════════ DASHBOARD ══ -->
@@ -5630,6 +5695,33 @@ function speakTheory(){
     "Cost performance index is earned value divided by actual cost. Schedule performance index is earned value divided by planned value. Below one is bad. "+
     "Estimate at completion is budget at completion divided by the cost performance index. "+
     "The trick. Variance you subtract. Index you divide. Earned value is always first. C is for cost and uses actual cost. S is for schedule and uses planned value.");
+}
+function speakCheat(){
+  speak("Exam day cheat sheet. The mnemonics. "+
+    "One. Assess impact first. A change goes through a change request, so assess the impact before you act. "+
+    "Two. Register lists, plan processes, matrix measures. "+
+    "Three. When your audience changes, update the communications management plan. "+
+    "Four. Communication complaints are fixed in the communications management plan. "+
+    "Five. Risk first, motivate the marathon. High risk stories go in early sprints, and motivation is ongoing, not an end party. "+
+    "Six. If you cannot control it, adjust your own plan, do not push others. "+
+    "Seven. P M O spans all projects, the sponsor champions one, the P M executes, the customer uses the output. "+
+    "Eight. Compliance resistance means a one on one first, a committee later. "+
+    "Nine. Purpose before people, purpose before analysis. Vision first. "+
+    "Ten. Tailor before build, use what already exists first. "+
+    "Eleven. Match your behavior to the person's orientation. "+
+    "Twelve. An unexpected loss means notify, investigate, and log it. "+
+    "Thirteen. Mapping is prep, workshops build the relationships. "+
+    "Fourteen. Issues now, risks future, lessons after. "+
+    "Fifteen. The universal P M quality is honesty. "+
+    "Sixteen. Managers control processes, leaders inspire people. "+
+    "Seventeen. No historical data means build the risk plan yourself. "+
+    "Eighteen. Plan prevents, audit detects, update fixes. "+
+    "Nineteen. Insurance is transfer. The four responses are avoid, transfer, mitigate, accept. "+
+    "Twenty. Delphi identifies, Monte Carlo and decision tree quantify, affinity organizes. "+
+    "The risk order. Plan, identify, qualitative to prioritize, quantitative to quantify, plan responses, implement, monitor. "+
+    "Reserves. Contingency reserve is known unknowns, inside the baseline. Management reserve is unknown unknowns, outside the baseline. "+
+    "When you do not know. Cross off the extremes, halt, ignore, never. Pick the more P M like move. First means earliest, best means root cause, most appropriate means the framework. Between two good answers, pick the sponsor or the team, not H R or documents. "+
+    "Exam day. Eat, one coffee, water, box breathe, leave early. Use both breaks. Slow down on the first five, about seventy five seconds each, flag anything over two minutes and move. You answer right faster than you answer wrong, so trust your first instinct. You have the mnemonics. Trust them.");
 }
 
 // ══════════════════════════════════════
