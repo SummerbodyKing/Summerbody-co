@@ -1457,7 +1457,7 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 253</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 255</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
@@ -1465,7 +1465,7 @@
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">253 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">255 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3864,6 +3864,24 @@ const QUESTIONS = [
     options:["A. Fixed Price (Lump Sum)","B. Fixed Price Incentive Fee (FPIF)","C. Cost Plus Fixed Fee (CPFF)","D. Time and Materials (T&M)"],
     answer:2,
     explanation:"<strong>A seller who wants to minimize its own risk prefers Cost Plus, because the buyer reimburses all costs plus a fee.</strong> Fixed Price (A, B) forces the seller to absorb overruns. T&M (D) shares the risk. Signal: protect the seller equals Cost Plus, protect the buyer equals Fixed Price. Fixed protects the buyer, Cost Plus covers the seller."
+  },
+
+  // ══════════════════════════════════════
+  // AGILE QUALITY DRILLS (built-in and continuous, at the start)
+  // ══════════════════════════════════════
+  {
+    id:254, domain:"Process", difficulty:"medium", principle:"Agile quality is built in from the start: pick tools and test continuously",
+    text:"At the kickoff of a new agile project, the team is setting up its quality approach. What should the project manager guide them to focus on?",
+    options:["A. Decide the testing tools and methods and build testing into every iteration","B. Run user acceptance testing only after the final sprint","C. Confirm the definition of done with the product owner once acceptance criteria are met","D. Finish all product documentation before the first sprint starts"],
+    answer:0,
+    explanation:"<strong>Establishing quality at the start means choosing your test tools and methods and baking testing into every iteration, so quality is built in and continuous.</strong> Testing after the last sprint (B) is big-bang and not agile. Confirming the definition of done (C) is a later checkpoint, not start-of-project setup. Complete docs first (D) is predictive thinking. Signal: at the START plus quality equals built-in continuous testing. Built in, not bolted on."
+  },
+  {
+    id:255, domain:"Process", difficulty:"medium", principle:"Read the timing word: START sets up the approach, END inspects",
+    text:"An agile team wants to raise product quality across the project. Which practice best reflects the agile view of quality?",
+    options:["A. Inspect quality with one large test phase at the end","B. Integrate and test continuously throughout every iteration","C. Assign quality entirely to a separate QA department at handover","D. Write the full test documentation before any coding begins"],
+    answer:1,
+    explanation:"<strong>Agile builds quality in through continuous integration and testing in every iteration, catching defects early.</strong> One large test phase at the end (A) or a separate QA gate at handover (C) is inspect-at-the-end, the predictive model. Full test docs before coding (D) is big upfront work. Signal: agile quality is continuous and built in, not a final inspection. Test early, test always."
   }
 ];
 
