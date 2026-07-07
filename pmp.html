@@ -4387,11 +4387,43 @@ const _remixSwaps = [
   [/\bhas been unwilling and unsuccessful\b/gi, ['has been both unwilling and unable']],
   [/\bDuring a status review meeting\b/gi, ['In a status review']],
   [/\bmidway through\b/gi, ['halfway through']],
-  [/\bnearing completion\b/gi, ['close to finishing']]
+  [/\bnearing completion\b/gi, ['close to finishing']],
+  [/\bproject manager\b/g, ['PM','project lead']],
+  [/\bProject manager\b/g, ['PM','Project lead']],
+  [/\bteam member\b/g, ['teammate','member of the team']],
+  [/\bA team member\b/g, ['One teammate','A member of the team']],
+  [/\bagile team\b/gi, ['agile squad','scrum team']],
+  [/\bagile project\b/gi, ['agile initiative','iterative project']],
+  [/\bpredictive project\b/gi, ['waterfall project','plan-driven project']],
+  [/\bsprint\b/gi, ['iteration']],
+  [/\bstakeholders?\b/gi, ['stakeholders']],
+  [/\bsponsor\b/g, ['project sponsor']],
+  [/\bWhat should\b/g, ['What is the best way that','What action means']],
+  [/\bWhich document\b/gi, ['Which project document','What document']],
+  [/\bWhich contract type\b/gi, ['What kind of contract','Which type of contract']],
+  [/\bMOST appropriate\b/g, ['the best fit','most suitable']],
+  [/\bbest\b/gi, ['strongest','most effective']],
+  [/\brequests?\b/gi, ['asks for']],
+  [/\bwants to\b/gi, ['would like to','intends to']],
+  [/\bnotices\b/gi, ['spots','observes']],
+  [/\bdiscovers\b/gi, ['finds','uncovers']],
+  [/\bbegins\b/gi, ['starts','kicks off']],
+  [/\bin execution\b/gi, ['during execution','while executing']],
+  [/\bin planning\b/gi, ['during planning','while planning']],
+  [/\bin the planning stage\b/gi, ['during the planning phase']],
+  [/\bnew team members\b/gi, ['newly added members','fresh team members']],
+  [/\btight deadline\b/gi, ['aggressive deadline','hard deadline']],
+  [/\btight deadlines\b/gi, ['aggressive deadlines','hard deadlines']],
+  [/\bcomplex project\b/gi, ['complicated project','high-complexity project']],
+  [/\bhigh-value\b/gi, ['high-priority','high-worth']],
+  [/\bproduct owner\b/gi, ['PO','product owner']],
+  [/\bmust\b/g, ['needs to','has to']],
+  [/\bshould\b/g, ['ought to','needs to']],
+  [/\bhow should\b/gi, ['in what way should','how is it best that']]
 ];
 function _reword(s){
   let out=String(s);
-  for(const [re,opts] of _remixSwaps){ if(Math.random()<0.75) out=out.replace(re, ()=>_pick(opts)); }
+  for(const [re,opts] of _remixSwaps){ if(Math.random()<0.9) out=out.replace(re, ()=>_pick(opts)); }
   return out;
 }
 function variantize(q){
@@ -6019,36 +6051,18 @@ function speakTheory(){
     "The trick. Variance you subtract. Index you divide. Earned value is always first. C is for cost and uses actual cost. S is for schedule and uses planned value.");
 }
 function speakCheat(){
-  speak("Exam day cheat sheet. The twenty mnemonics. "+
-    "One. P O C before C C R. Proof of concept before change request. Build the evidence, present it to the sponsor, then raise the change request. "+
-    "Two. Register lists, plan processes, matrix measures. "+
-    "Three. When your audience changes, update the communications management plan. "+
-    "Four. Communication complaints are fixed in the communications management plan. "+
-    "Five. Risk first, motivate the marathon. High risk stories go in early sprints, and motivation is ongoing, not an end party. "+
-    "Six. If you cannot control it, adjust your own plan, do not push others. "+
-    "Seven. P M O spans all projects, the sponsor champions one, the P M executes, the customer uses the output. "+
-    "Eight. Compliance resistance means a one on one first, a committee later. "+
-    "Nine. Purpose before people, purpose before analysis. Vision first. "+
-    "Ten. Tailor before build, use what already exists first. "+
-    "Eleven. Match your behavior to the person's orientation. "+
-    "Twelve. An unexpected loss means notify, investigate, and log it. "+
-    "Thirteen. Mapping is prep, workshops build the relationships. "+
-    "Fourteen. Issues now, risks future, lessons after. "+
-    "Fifteen. The universal P M quality is honesty. "+
-    "Sixteen. Managers control processes, leaders inspire people. "+
-    "Seventeen. No historical data means build the risk plan yourself. "+
-    "Eighteen. Plan prevents, audit detects, update fixes. "+
-    "Nineteen. Insurance is transfer. The four responses are avoid, transfer, mitigate, accept. "+
-    "Twenty. Delphi identifies, Monte Carlo and decision tree quantify, affinity organizes. "+
-    "Risk deep dive. The order is P I Q Q. Plan risk management, identify, qualitative to prioritize, quantitative to quantify. Then plan responses, implement, monitor. "+
-    "After qualitative, four documents update. R R A I. Risk register, risk report, assumption log, issue log. Your trap is picking only two. Remember all four. "+
-    "External volatility, markets, rates, regulations, suppliers, and politics, goes in the risk register. "+
-    "Techniques. Delphi is anonymous and iterative, and it identifies risks, great for remote teams. Monte Carlo and decision tree are quantitative analysis. Affinity is qualitative organizing. Only Delphi identifies. "+
-    "Reserves. Contingency reserve is known unknowns, inside the baseline. Management reserve is unknown unknowns, outside the baseline. "+
-    "Motivation theories. Reward for performance is Vroom expectancy. Basic needs is Maslow. Hygiene versus satisfaction is Herzberg. Lazy versus self motivated is McGregor X and Y. Achievement, power, affiliation is McClelland. Loyalty and long term is Ouchi Z. Style depends on the situation is Fiedler contingency. "+
-    "When you do not know. Cross off the extremes, halt, ignore, never. Pick the more P M like move. First means earliest, best means root cause, most appropriate means the framework. Between two good answers, pick the sponsor or the team, not H R or documents. "+
-    "The overthinking rule. Your own data says you answer right in about forty seconds and wrong in about fifty two seconds. When you know it, you are fast. Overthinking pushes you to the wrong answer. Trust your first instinct on locked patterns. "+
-    "Exam day. Eat protein and carbs, one coffee, water, box breathe four four four four for three minutes, leave early. Use both ten minute breaks. Slow down on the first five, about seventy five seconds each, flag anything over two minutes and move. You have the mnemonics. Trust them.");
+  // Read EVERY word on the cheat screen, top to bottom, exactly as shown.
+  const el = document.getElementById('page-cheat');
+  if(!el){ return; }
+  const parts = [];
+  el.querySelectorAll('h1, h2, h3, p, li, .pat-t, .pat-d, .pat-elim-h, .today-foot').forEach(n=>{
+    // skip anything inside a button (Read aloud, Stop, See the visual)
+    if(n.closest('button')) return;
+    let t = (n.innerText || n.textContent || '').replace(/\s+/g,' ').trim();
+    if(t){ parts.push(t); }
+  });
+  const full = parts.join('. ');
+  speak(full);
 }
 
 // ══════════════════════════════════════
