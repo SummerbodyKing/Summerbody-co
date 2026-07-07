@@ -951,7 +951,7 @@
 <div id="splash">
   <div class="splash-brand">SWEAT DEPT · MENTAL FITNESS DIVISION</div>
   <div class="splash-logo">PMP <em>COMMAND CENTER</em></div>
-  <div class="splash-day" id="splashDay">DAY 1 OF 14 · 14 DAYS TO EXAM</div>
+  <div class="splash-day" id="splashDay">DAY 1 OF 13 · 13 DAYS TO EXAM</div>
   <div class="splash-topic" id="splashTopic">Today: Orientation + PM Fundamentals</div>
   <div class="splash-quote" id="splashQuote">"Gather the information first. Never escalate first, never reject, never delay. Solve the problem in front of you."</div>
   <button class="splash-start" onclick="startDay()">▶ START DAY</button>
@@ -983,7 +983,7 @@
   <div class="nav-right">
     <div class="streak-chip" id="streakChip" title="Current correct-answer streak"><span class="streak-flame">🔥</span> <span id="streakNum">0</span></div>
     <div class="xp-chip" id="xpChip" title="Experience points">⚡ <span id="xpNum">0</span></div>
-    <div class="day-badge" id="dayBadge">DAY 1 of 14</div>
+    <div class="day-badge" id="dayBadge">DAY 1 of 13</div>
     <div class="timer-display" id="navTimer">00:00:00</div>
     <button class="nav-icon-btn" id="syncBtn" onclick="openSync()" title="Sync across devices">☁️</button>
     <button class="nav-icon-btn" id="muteBtn" onclick="toggleMute()" title="Toggle sound">🔊</button>
@@ -1318,7 +1318,7 @@
     <div class="stat-card orange">
       <div class="stat-label">Total Study Hours</div>
       <div class="stat-value orange" id="statHours">0.0</div>
-      <div class="stat-sub">of 112 hrs target</div>
+      <div class="stat-sub">of 104 hrs target</div>
     </div>
     <div class="stat-card green">
       <div class="stat-label">Questions Answered</div>
@@ -1425,7 +1425,7 @@
 <!-- ══════════════════════════════════════════ 14-DAY PATH ══ -->
 <div class="page" id="page-path">
   <div class="deck-intro">
-    <h2>Your 14-Day <em>Path</em></h2>
+    <h2>Your 13-Day <em>Path</em></h2>
     <p>One level per day, built from your sprint schedule. Each level is 4 steps: Watch it, See it, Drill it, then beat the Boss. Clear all 4 and the day locks in green. Keep the chain alive.</p>
   </div>
   <div class="path-progress-bar"><div class="path-progress-fill" id="pathFill"></div><span id="pathPct">0% of the path complete</span></div>
@@ -2354,7 +2354,7 @@ const QUESTIONS = [
     explanation:"<strong>EVM Analysis:</strong> CV = EV − AC = $350K − $400K = −$50K (NEGATIVE = over budget). SV = EV − PV = $350K − $420K = −$70K (NEGATIVE = behind schedule). CPI = 350/400 = 0.875 (below 1 = over budget). SPI = 350/420 = 0.833 (below 1 = behind schedule). Both are bad. The project is over budget AND behind schedule."
   },
   {
-    id:43, domain:"People", difficulty:"medium",
+    id:43, domain:"Process", difficulty:"medium",
     principle:"P12, Predictive vs Agile keywords",
     text:"A PM reads: 'The team must update the Change Control Board before implementing any changes.' This language indicates what type of project?",
     options:["A. Agile","B. Hybrid","C. Predictive / Waterfall","D. Scrum"],
@@ -3854,9 +3854,9 @@ const DAYS = [
   {d:10,date:'Jul 3',topic:'Calculations Day, EVM + Forecasting',phase:2},
   {d:11,date:'Jul 4',topic:'Full Mock Exam #1 + Deep Review',phase:3},
   {d:12,date:'Jul 5',topic:'Weak-Area Reinforcement',phase:3},
-  {d:13,date:'Jul 6',topic:'Full Mock Exam #2 + Strategy Polish',phase:3},
-  {d:14,date:'Jul 7',topic:'TAPER DAY, Prime, Don\'t Cram',phase:3},
+  {d:13,date:'Jul 6',topic:'Full Mock Exam #2 + Strategy Polish, then Taper',phase:3},
 ];
+// The sprint is 13 study days (Jun 24 to Jul 6). Jul 7 is EXAM DAY, not a study day.
 
 let state = {
   timerRunning: false,
@@ -3983,7 +3983,14 @@ function updateTimerDisplays() {
 function getCurrentDay() {
   const today = new Date();
   const diff = Math.floor((today - SPRINT_START) / (1000*60*60*24)) + 1;
-  return Math.min(Math.max(diff, 1), 14);
+  return Math.min(Math.max(diff, 1), 13);
+}
+// True on exam day (Jul 7) or later. The 13-day sprint is done, it is game time.
+function isExamDay() {
+  const today = new Date();
+  const t = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const e = new Date(EXAM_DATE.getFullYear(), EXAM_DATE.getMonth(), EXAM_DATE.getDate());
+  return t >= e;
 }
 
 function getDaysLeft() {
@@ -3996,10 +4003,10 @@ function updateDashboard() {
   const day = getCurrentDay();
   const daysLeft = getDaysLeft();
   document.getElementById('daysLeft').textContent = daysLeft;
-  document.getElementById('dayBadge').textContent = `DAY ${day} of 14`;
+  document.getElementById('dayBadge').textContent = isExamDay() ? 'EXAM DAY' : `DAY ${day} of 13`;
 
   // Progress
-  const pct = Math.round((day/14)*100);
+  const pct = isExamDay() ? 100 : Math.round((day/13)*100);
   document.getElementById('progressPct').textContent = pct + '%';
   document.getElementById('progressFill').style.width = pct + '%';
 
@@ -4176,7 +4183,7 @@ function renderCoach(){
   const dStatus = dayDone(day) ? '<b style="color:var(--green)">cleared ✓</b>' : `${daySteps(day)}/4 steps done`;
   el.innerHTML = `
     <div class="coach-label">⚡ Do This Next</div>
-    <div class="coach-today">Today is <b>Day ${day} of 14</b> · ${getDaysLeft()} days to exam · Focus: <b>${d.topic}</b> · ${dStatus}</div>
+    <div class="coach-today">${isExamDay() ? '<b>EXAM DAY.</b> The 13-day sprint is done. Leave at 10, exam at 1. Trust the mnemonics.' : `Today is <b>Day ${day} of 13</b> · ${getDaysLeft()} days to exam · Focus: <b>${d.topic}</b> · ${dStatus}`}</div>
     <div class="coach-headline">${headline}</div>
     <div class="coach-actions" style="margin-bottom:6px"><button class="btn btn-primary" onclick="showPage('path');setTimeout(()=>openDay(${day}),250)">▶ Open Today's Level (Day ${day})</button></div>
     ${steps.map(s=>`<div class="coach-step"><span class="cs-n">${s[0]}</span><span>${s[1]}</span></div>`).join('')}
@@ -4738,7 +4745,7 @@ const BADGES = [
   {id:'all50', icon:'🎓', name:'Full Sweep', desc:'Answer all 50', test:()=>Object.keys(state.answers).length>=50},
   {id:'boss1', icon:'🎯', name:'Boss Slayer', desc:'Clear 1 day', test:()=>DAYS.some(d=>dayDone(d.d))},
   {id:'half14', icon:'🗺️', name:'Halfway There', desc:'Clear 7 days', test:()=>DAYS.filter(d=>dayDone(d.d)).length>=7},
-  {id:'sprint', icon:'🏁', name:'Sprint Complete', desc:'Clear all 14 days', test:()=>DAYS.every(d=>dayDone(d.d))},
+  {id:'sprint', icon:'🏁', name:'Sprint Complete', desc:'Clear all 13 days', test:()=>DAYS.every(d=>dayDone(d.d))},
   {id:'xp500', icon:'👑', name:'King Summerbody', desc:'Earn 500 XP', test:()=>state.xp>=500},
 ];
 function domainPct(d){ const s=state.domainStats[d]; return s&&s.total>0?Math.round(s.correct/s.total*100):0; }
@@ -4866,8 +4873,13 @@ const QUOTES = [
 function setupSplash(){
   const day = getCurrentDay();
   const d = DAYS[day-1] || DAYS[0];
-  document.getElementById('splashDay').textContent = `DAY ${day} OF 14 · ${getDaysLeft()} DAYS TO EXAM`;
-  document.getElementById('splashTopic').textContent = 'Today: ' + d.topic;
+  if(isExamDay()){
+    document.getElementById('splashDay').textContent = 'EXAM DAY · GAME TIME';
+    document.getElementById('splashTopic').textContent = 'You prepared 13 days. Trust the mnemonics. Go pass.';
+  } else {
+    document.getElementById('splashDay').textContent = `DAY ${day} OF 13 · ${getDaysLeft()} DAYS TO EXAM`;
+    document.getElementById('splashTopic').textContent = 'Today: ' + d.topic;
+  }
   document.getElementById('splashQuote').textContent = QUOTES[day % QUOTES.length];
 }
 function startDay(){
@@ -6776,7 +6788,7 @@ function renderToday(){
     nb.innerHTML = `<div><div class="nb-l" style="color:var(--green)">✅ Today is done</div>
       <div class="nb-t">Every block cleared. That\'s a full study day in the bank.</div>
       <div class="nb-d">Anything you do now is bonus, pre-learn tomorrow, or rest. Come back tomorrow and the next run sheet builds itself.</div></div>
-      <button class="btn btn-secondary" onclick="showPage('path')">See the 14-day chain →</button>`;
+      <button class="btn btn-secondary" onclick="showPage('path')">See the 13-day chain →</button>`;
   } else {
     nb.className = 'now-banner';
     nb.innerHTML = `<div><div class="nb-l">▶ Do this now · ${fmtClock(current.start)}</div>
@@ -6821,9 +6833,9 @@ function renderPath(){
   const today = getCurrentDay();
   const done = DAYS.filter(d=>dayDone(d.d)).length;
   const totalSteps = DAYS.reduce((s,d)=>s+daySteps(d.d),0);
-  const pct = Math.round(totalSteps/(14*4)*100);
+  const pct = Math.round(totalSteps/(DAYS.length*4)*100);
   document.getElementById('pathFill').style.width = pct+'%';
-  document.getElementById('pathPct').textContent = `${pct}% of the path complete · ${done}/14 days cleared`;
+  document.getElementById('pathPct').textContent = `${pct}% of the path complete · ${done}/${DAYS.length} days cleared`;
 
   document.getElementById('pathJourney').innerHTML = '<div class="path-journey">' + DAYS.map((d,i)=>{
     const steps = daySteps(d.d);
