@@ -1457,7 +1457,7 @@
   <div class="study-header">
     <h2>Practice Questions</h2>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 249</span>
+      <span style="font-size:13px;color:var(--text-dim)" id="qCounter">Question 1 of 253</span>
       <button class="speak-btn" onclick="speakQuestion()">🔊 Read</button>
       <button class="btn btn-secondary btn-sm" onclick="stopSpeaking()">⏹ Stop</button>
       <button class="btn btn-secondary btn-sm" onclick="retakeQuestions()">🔄 Retake</button>
@@ -1465,7 +1465,7 @@
       <button class="btn btn-primary btn-sm" onclick="aiGenerate()">🧠 AI: new questions on my weak spot</button>
     </div>
   </div>
-  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">249 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
+  <div style="font-size:12px;color:var(--text-muted);margin:-12px 0 16px">253 questions. Nothing resets on its own, your answers, notes and progress are saved. Hit Retake to clear answers and run them fresh.</div>
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterDomain('all',this)">All Domains</button>
@@ -3832,6 +3832,38 @@ const QUESTIONS = [
     options:["A. Honesty","B. Aggressiveness","C. Powerful","D. Servant leader"],
     answer:0,
     explanation:"<strong>Honesty is the universal quality every project manager must have.</strong> Servant leadership (D) is Agile-specific, not universal, and aggressiveness (B) and power (C) are not required qualities. Mini Exam 3 Q9. King picked D with high confidence, reaching for an Agile answer to a universal question. Signal: universal PM quality equals honesty."
+  },
+
+  // ══════════════════════════════════════
+  // CONTRACT TYPE DRILLS (who carries the risk)
+  // ══════════════════════════════════════
+  {
+    id:250, domain:"Process", difficulty:"medium", principle:"Fixed Price protects the buyer; the seller carries the overrun risk",
+    text:"The scope of a warehouse build is fully defined and standard. The buyer wants to be protected if costs run over. Which contract type is MOST appropriate?",
+    options:["A. Cost Plus Fixed Fee (CPFF)","B. Time and Materials (T&M)","C. Fixed Price (Lump Sum)","D. Cost Plus Incentive Fee (CPIF)"],
+    answer:2,
+    explanation:"<strong>Well-defined scope plus protect the buyer equals Fixed Price. The price is locked, so the seller eats any overrun.</strong> Cost Plus (A, D) puts the overrun risk on the buyer, the opposite of what is asked. T&M (B) shares risk and fits small or unclear work. Signal: clear scope and protect the buyer equals Fixed Price. Fixed protects the buyer, Cost Plus covers the seller."
+  },
+  {
+    id:251, domain:"Process", difficulty:"medium", principle:"Cost Plus puts the cost-overrun risk on the buyer",
+    text:"On a research and development project, the final scope and total cost cannot be estimated up front. Under a Cost Plus Fixed Fee contract, who carries the risk of cost overruns?",
+    options:["A. The seller, because they must deliver at a set price","B. The buyer, because they reimburse all costs plus a fee","C. Neither party, the risk is split evenly","D. A third-party insurer named in the contract"],
+    answer:1,
+    explanation:"<strong>Under Cost Plus, the buyer reimburses every cost the seller incurs plus a fee, so the buyer carries the overrun risk and the seller is protected.</strong> The seller bearing risk (A) describes Fixed Price. It is not an even split (C) or an insurer (D). Signal: uncertain scope equals Cost Plus, and Cost Plus means the buyer pays the overruns."
+  },
+  {
+    id:252, domain:"Process", difficulty:"medium", principle:"Time and Materials fits small or unclear work you must start fast",
+    text:"A project manager needs to bring in two extra developers for a short, loosely defined task and wants to start immediately without pricing the whole job. Which contract type fits best?",
+    options:["A. Fixed Price (Lump Sum)","B. Time and Materials (T&M)","C. Cost Plus Award Fee (CPAF)","D. Fixed Price Incentive Fee (FPIF)"],
+    answer:1,
+    explanation:"<strong>Time and Materials is the hybrid used for small, short, or loosely defined work and staff augmentation, because you pay for hours and materials without pricing the full scope.</strong> Fixed Price (A, D) needs a defined scope. Cost Plus (C) suits large uncertain projects, not a quick two-person add. Signal: staff augmentation or start now with unclear scope equals T&M."
+  },
+  {
+    id:253, domain:"Process", difficulty:"medium", principle:"The question tells you who to protect: seller equals Cost Plus, buyer equals Fixed Price",
+    text:"A seller is bidding on a project where costs are uncertain and wants to minimize its own financial risk. Which contract type should the seller prefer?",
+    options:["A. Fixed Price (Lump Sum)","B. Fixed Price Incentive Fee (FPIF)","C. Cost Plus Fixed Fee (CPFF)","D. Time and Materials (T&M)"],
+    answer:2,
+    explanation:"<strong>A seller who wants to minimize its own risk prefers Cost Plus, because the buyer reimburses all costs plus a fee.</strong> Fixed Price (A, B) forces the seller to absorb overruns. T&M (D) shares the risk. Signal: protect the seller equals Cost Plus, protect the buyer equals Fixed Price. Fixed protects the buyer, Cost Plus covers the seller."
   }
 ];
 
