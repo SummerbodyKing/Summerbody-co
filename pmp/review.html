@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>KING SUMMERBODY — PMP Final Review (Listen)</title>
+<meta name="theme-color" content="#F15002">
+<style>
+  :root {
+    --orange: #F15002;
+    --black: #000000;
+    --white: #FFFFFF;
+    --smoke: #F5F5F5;
+    --gray: #999999;
+    --dark: #111111;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0 0 200px 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  .header {
+    background: var(--black);
+    border-bottom: 4px solid var(--orange);
+    padding: 20px 16px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .header h1 span { color: var(--orange); }
+  .header .sub {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
+
+  .section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: var(--dark);
+    border-left: 6px solid var(--orange);
+    border-radius: 4px;
+  }
+  .section.active {
+    background: rgba(241, 80, 2, 0.2);
+    border-left: 6px solid var(--white);
+    box-shadow: 0 0 0 2px var(--orange);
+  }
+  .section h2 {
+    font-size: 22px;
+    color: var(--orange);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .section h3 {
+    font-size: 18px;
+    color: var(--white);
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .section p {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+  .section p.tag {
+    font-size: 12px;
+    color: var(--orange);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .section .mnemonic {
+    background: rgba(241, 80, 2, 0.15);
+    border: 1px dashed var(--orange);
+    padding: 14px 16px;
+    margin: 12px 0;
+    border-radius: 4px;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 19px;
+  }
+  .section ul { margin-left: 20px; margin-bottom: 12px; }
+  .section li { margin-bottom: 6px; }
+
+  .player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    border-top: 4px solid var(--orange);
+    padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px)) 20px;
+    z-index: 100;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+  }
+  .player .now-playing {
+    font-size: 13px;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .player .now-playing strong { color: var(--orange); font-weight: 700; }
+  .player-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    background: var(--dark);
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+    min-width: 90px;
+  }
+  .btn:active { transform: scale(0.95); }
+  .btn.primary {
+    background: var(--orange);
+    color: var(--white);
+    border-color: var(--orange);
+    font-size: 18px;
+    padding: 16px 32px;
+    min-width: 140px;
+  }
+  .btn.small {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-width: 60px;
+  }
+  .speed-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .speed-btn {
+    background: transparent;
+    color: var(--gray);
+    border: 1px solid var(--gray);
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .speed-btn.active {
+    background: var(--orange);
+    color: var(--white);
+    border-color: var(--orange);
+  }
+
+  .jump-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 16px;
+    background: var(--dark);
+    margin: 20px 0 30px 0;
+    border-radius: 4px;
+  }
+  .jump-nav .jump-btn {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--orange);
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .jump-nav .jump-btn:active {
+    background: var(--orange);
+  }
+
+  .voice-picker {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 16px;
+  }
+  .voice-picker label {
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .voice-picker select {
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--orange);
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    max-width: 300px;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>PMP FINAL REVIEW <span>· LISTEN</span></h1>
+  <div class="sub">King Summerbody · Exam Day</div>
+</div>
+
+<div class="content">
+
+  <div class="jump-nav">
+    <button class="jump-btn" onclick="jumpTo(0)">▶ Play All</button>
+    <button class="jump-btn" onclick="jumpTo('s-mnemonics')">Mnemonics</button>
+    <button class="jump-btn" onclick="jumpTo('s-risk')">Risk</button>
+    <button class="jump-btn" onclick="jumpTo('s-motivation')">Motivation</button>
+    <button class="jump-btn" onclick="jumpTo('s-hybrid')">Hybrid</button>
+    <button class="jump-btn" onclick="jumpTo('s-decision')">Decision Tree</button>
+    <button class="jump-btn" onclick="jumpTo('s-exam')">Exam Day</button>
+  </div>
+
+  <div class="voice-picker">
+    <label for="voiceSelect">Voice (pick the best one for your ears):</label>
+    <select id="voiceSelect" onchange="onVoiceChange()"></select>
+  </div>
+
+  <div class="section" id="s-intro" data-title="Intro">
+    <h2>King. This Is Your Sheet.</h2>
+    <p>Read to you. Not by you. So you can drive, walk, shower, and lock this in.</p>
+    <p>You have twenty mnemonics. Every single one is sourced to a real question you saw in your practice exams. When PMI asks a similar question tomorrow, you will recognize it.</p>
+    <p>Trust the pattern. Do not second guess. Fast when you know it, slow when you don't.</p>
+    <p>Let's go.</p>
+  </div>
+
+  <div class="section" id="s-mnemonics" data-title="The 20 Mnemonics">
+    <h2>The Twenty Mnemonics</h2>
+
+    <p class="tag">Mnemonic 1</p>
+    <div class="mnemonic">POC before CCR. Proof of Concept before Change Request.</div>
+    <p>Before submitting a formal change request, assess impact first. The change request always carries data with it.</p>
+
+    <p class="tag">Mnemonic 2</p>
+    <div class="mnemonic">Register lists. Plan processes. Matrix measures.</div>
+    <p>Stakeholder Register is the list of who is involved. Stakeholder Engagement Plan is the process for managing expectations. Stakeholder Assessment Matrix is the tool for measuring current versus desired engagement.</p>
+
+    <p class="tag">Mnemonic 3</p>
+    <div class="mnemonic">Audience changes equal Comms Plan updates.</div>
+    <p>When the who you are communicating with changes, update the Communications Management Plan.</p>
+
+    <p class="tag">Mnemonic 4</p>
+    <div class="mnemonic">Complaints or declined meetings equal Comms Plan.</div>
+    <p>When stakeholders are unhappy or skipping meetings, the root cause is usually a missing or weak Communications Management Plan.</p>
+
+    <p class="tag">Mnemonic 5</p>
+    <div class="mnemonic">Risk first. Motivate the marathon.</div>
+    <p>In agile, high risk stories go in early sprints, not saved for later. Motivation is ongoing through a benefits system, not a party at Go-Live.</p>
+
+    <p class="tag">Mnemonic 6</p>
+    <div class="mnemonic">Can't control it? Adjust my plan.</div>
+    <p>When someone else causes a delay, you do not ask them to move faster. You adjust your own timeline. Do not bypass required work. You have missed this three times. Do not miss it tomorrow.</p>
+
+    <p class="tag">Mnemonic 7</p>
+    <div class="mnemonic">PMO across. Sponsor one project. PM executes.</div>
+    <p>The PMO is enterprise wide and the integral stakeholder across all projects. The Sponsor champions and funds one specific project. The PM executes. The Customer uses the output.</p>
+
+    <p class="tag">Mnemonic 8</p>
+    <div class="mnemonic">Comply and explain. One on one. Steering committee later.</div>
+    <p>When a stakeholder resists a compliance requirement, the first move is a direct one on one conversation with them to explain the need. Never exclude, never sneak, never jump to a steering committee first.</p>
+
+    <p class="tag">Mnemonic 9</p>
+    <div class="mnemonic">Purpose before people. Purpose before analysis.</div>
+    <p>The first step on any new project is to define vision and purpose. Then identify stakeholders. Then resources. Then detailed analysis. Never skip ahead to schedule, impact analysis, or benchmarking.</p>
+
+    <p class="tag">Mnemonic 10</p>
+    <div class="mnemonic">Tailor before build. Use what exists first.</div>
+    <p>When starting a new project in an organization with existing assets, adapt and tailor what exists first. Don't jump to procurement or building from scratch.</p>
+
+    <p class="tag">Mnemonic 11</p>
+    <div class="mnemonic">Match behavior to orientation.</div>
+    <p>A Directive PM uses clear task focused communication. An Affiliation PM builds rapport. An Achievement PM uses awards. A Power PM uses influence. If the question tells you the PM's orientation, match your answer to that orientation.</p>
+
+    <p class="tag">Mnemonic 12</p>
+    <div class="mnemonic">Unexpected loss equals Notify plus Investigate plus Risk Register.</div>
+    <p>When something goes wrong, an asset is lost, or damage occurs, notify both customer and management, launch an investigation, update the risk register, then take action based on the outcome.</p>
+
+    <p class="tag">Mnemonic 13</p>
+    <div class="mnemonic">Mapping is prep. Workshops build.</div>
+    <p>Stakeholder mapping identifies who they are. Interactive workshops actually build relationships and shared understanding. If PMI asks about building, pick workshops, not mapping.</p>
+
+    <p class="tag">Mnemonic 14</p>
+    <div class="mnemonic">Issues now. Risks future. Lessons after.</div>
+    <p>Issue log is for problems happening now. Risk register is for uncertainty about the future. Lessons learned is for future projects, after this one is done.</p>
+
+    <p class="tag">Mnemonic 15</p>
+    <div class="mnemonic">Universal PM quality equals honesty. Servant leadership equals agile only.</div>
+    <p>When PMI asks what quality a PM must have, the universal answer is honesty. Servant leadership is agile specific, not universal.</p>
+
+    <p class="tag">Mnemonic 16</p>
+    <div class="mnemonic">Manager controls processes. Leader inspires people.</div>
+    <p>Manager focuses on control, efficiency, authority, and objectives. Leader focuses on vision, inspiration, alignment, and motivation.</p>
+
+    <p class="tag">Mnemonic 17</p>
+    <div class="mnemonic">No historical data? Build the risk plan yourself.</div>
+    <p>When historical data is unavailable, develop the risk management plan from scratch and inform stakeholders. Just telling the sponsor and continuing is not enough.</p>
+
+    <p class="tag">Mnemonic 18</p>
+    <div class="mnemonic">Plan prevents. Audit detects. Update fixes.</div>
+    <p>When something goes wrong, the preventive root cause fix is a proper Risk Management Plan with monitoring built in. Not internal audits. Not template updates. Not blame.</p>
+
+    <p class="tag">Mnemonic 19</p>
+    <div class="mnemonic">Insurance equals Transfer. Not just recording.</div>
+    <p>The four risk responses are Avoid, Transfer, Mitigate, and Accept. Insurance is a classic transfer strategy. Just recording a risk in the register is bookkeeping, not a strategy.</p>
+
+    <p class="tag">Mnemonic 20</p>
+    <div class="mnemonic">Delphi identifies remotely. Monte Carlo and Decision Tree are quantitative analysis. Affinity is qualitative organizing.</div>
+    <p>Delphi technique uses anonymous polling. It is great for distributed and remote teams. It is a risk identification tool. Monte Carlo simulates cost and schedule. Decision Tree calculates probability. Affinity Diagram organizes ideas by category. Only Delphi is for identification. The others are for analysis.</p>
+  </div>
+
+  <div class="section" id="s-risk" data-title="Risk Deep Dive">
+    <h2>Risk Deep Dive</h2>
+    <p>Risk is your number one weak zone. Learn this section cold.</p>
+
+    <h3>The Risk Process Order. Memorize as PIQQ.</h3>
+    <p>First: Plan Risk Management. Create the methodology document.</p>
+    <p>Second: Identify Risks. List them out.</p>
+    <p>Third: Qualitative Risk Analysis. Prioritize by probability and impact. This is subjective and fast.</p>
+    <p>Fourth: Quantitative Risk Analysis. Assign numbers to the top priority risks. This is Monte Carlo and Expected Monetary Value. It is expensive.</p>
+    <p>Qualitative equals prioritize. Quantitative equals quantify.</p>
+
+    <h3>After Qualitative Risk Analysis, Four Documents Update. Remember RRAI.</h3>
+    <p>Risk Register. Individual risks with their new priority.</p>
+    <p>Risk Report. Overall project risk exposure.</p>
+    <p>Assumption Log. Assumptions validated or invalidated during analysis.</p>
+    <p>Issue Log. Risks that have become actual issues.</p>
+    <p>You keep picking only Risk Register and Risk Report. Remember. Four documents. R R A I.</p>
+
+    <h3>External Volatility Equals Risk Register.</h3>
+    <p>When the question mentions financial market changes, exchange rates, regulatory shifts, supplier volatility, or political and economic conditions — the document you refer to is always the Risk Register.</p>
+
+    <h3>The Four Risk Response Strategies.</h3>
+    <p>Avoid. Don't do the project or eliminate the risk source.</p>
+    <p>Transfer. Shift to a third party. Insurance, bonds, warranties, contracts. There is a premium cost.</p>
+    <p>Mitigate. Reduce probability or reduce impact.</p>
+    <p>Accept. Passive means do nothing. Active means contingency reserves.</p>
+
+    <h3>Reserves.</h3>
+    <p>Contingency Reserve is for known unknowns. It is in the cost baseline.</p>
+    <p>Management Reserve is for unknown unknowns. It is not in the cost baseline.</p>
+  </div>
+
+  <div class="section" id="s-motivation" data-title="Motivation Theories">
+    <h2>Motivation Theories</h2>
+    <p>You keep confusing these. Learn the trigger word for each.</p>
+
+    <h3>Maslow's Hierarchy of Needs.</h3>
+    <p>Trigger words: basic needs, safety, belonging, esteem, self actualization. Lower needs must be met first.</p>
+
+    <h3>Expectancy Theory. From Vroom.</h3>
+    <p>Trigger words: reward, compensation, if they perform they'll get X. Motivated when confident, valuing the reward, and trusting you will pay.</p>
+
+    <h3>McClelland's Achievement Theory.</h3>
+    <p>Trigger words: need for achievement, need for power, need for affiliation. People are motivated by one of three drives.</p>
+
+    <h3>Herzberg's Two Factor.</h3>
+    <p>Trigger words: hygiene factors, job satisfaction versus dissatisfaction. Salary avoids dissatisfaction. Growth motivates.</p>
+
+    <h3>McGregor Theory X and Y.</h3>
+    <p>Theory X assumes people are lazy. Theory Y assumes people are self motivated.</p>
+
+    <h3>Theory Z from Ouchi.</h3>
+    <p>Trigger words: loyalty, long term employment, Japanese style. Team based and consensus driven.</p>
+
+    <h3>Fiedler's Contingency Theory.</h3>
+    <p>Trigger words: leadership style depends on situation. No one right style. It depends on context.</p>
+
+    <p>Common trap. Reward for performance equals Expectancy, not Maslow. Basic needs equals Maslow, not Expectancy.</p>
+  </div>
+
+  <div class="section" id="s-hybrid" data-title="Hybrid Meta Rule">
+    <h2>Hybrid Meta Rule</h2>
+    <p>On hybrid questions, your brain reaches for generic good PM answers. PMI wants the specific answer to the specific question.</p>
+    <p>Read every hybrid question twice.</p>
+    <p>Ask yourself: is PMI asking for a universal answer, or a situational answer?</p>
+    <p>If the question tells you the PM's orientation, situation, or context — match your answer to that specific context.</p>
+    <p>If the question asks about a must have for all PMs — pick the universal answer. Honesty, transparency, ethics.</p>
+    <p>Do not pick servant leader for a universal question. Do not pick build rapport for a directive PM. Do not pick stakeholder mapping when the ask is to build relationships.</p>
+  </div>
+
+  <div class="section" id="s-decision" data-title="Decision Tree">
+    <h2>When You Don't Know. The Decision Tree.</h2>
+
+    <h3>Step One. Eliminate the two extreme answers.</h3>
+    <p>Immediately halt is usually wrong. It is an overreaction.</p>
+    <p>Ignore it is usually wrong. It is irresponsible.</p>
+    <p>Never permitted is usually wrong. It is too rigid.</p>
+
+    <h3>Step Two. Of the two remaining, pick the more PM like.</h3>
+    <p>The one that follows process beats the one that skips it.</p>
+    <p>The one that involves the right stakeholder beats the one that goes over their head.</p>
+    <p>The one with fewer assumptions beats the one requiring you to invent context.</p>
+
+    <h3>Step Three. Check for keyword traps.</h3>
+    <p>First means the earliest legitimate step, not the most action heavy sounding.</p>
+    <p>Best means the one that solves the root cause, not the symptom.</p>
+    <p>Most appropriate means the one that follows PMI's ethical and process framework.</p>
+
+    <h3>Step Four. Agile versus Predictive.</h3>
+    <p>If the question mentions iteration, sprint, user story, product owner — it is Agile.</p>
+    <p>If it mentions baseline, phase, CCB, change request — it is Predictive.</p>
+
+    <h3>Step Five. When two answers seem equally good.</h3>
+    <p>Pick the one that involves the Sponsor or the Team. Not the one that goes to HR or Legal or documents it. PMI rewards human connection over paperwork.</p>
+  </div>
+
+  <div class="section" id="s-exam" data-title="Exam Day">
+    <h2>Exam Day Protocol</h2>
+
+    <h3>Morning Of.</h3>
+    <p>Wake up early. Do not rush.</p>
+    <p>Eat something with protein and carbs. Not heavy. Not skipping.</p>
+    <p>Drink water. One cup of coffee. Two max.</p>
+    <p>Listen to this sheet one more time.</p>
+    <p>Do three minutes of box breathing. In four. Hold four. Out four. Hold four.</p>
+    <p>Leave early.</p>
+
+    <h3>During the Exam.</h3>
+    <p>Use both ten minute breaks. Even if you feel fine.</p>
+    <p>Slow down on the first five questions. Set your rhythm.</p>
+    <p>Target seventy two seconds per question.</p>
+    <p>If a question takes over two minutes, flag it and move.</p>
+
+    <h3>Mental Resets During the Exam.</h3>
+    <p>Close your eyes for five seconds.</p>
+    <p>Breathe in four. Hold four. Out four. Hold four. Two rounds.</p>
+    <p>Say to yourself silently. I have the mnemonics. I trust them.</p>
+    <p>Open your eyes. Read the question fresh.</p>
+
+    <h3>The Overthinking Kills Rule.</h3>
+    <p>Your own data shows this. When you know it, you answer in thirty eight seconds. When you are wrong, you spend fifty two seconds or more.</p>
+    <p>Fast when you know it. Slow when you don't. Not the other way around.</p>
+
+    <h3>Final Words.</h3>
+    <p>You built the funnel. You built the emails. You built a whole PMP study app.</p>
+    <p>Tomorrow you take the exam that turns PMP candidate into P M P.</p>
+    <p>You are ready.</p>
+    <p>Better and Beyond.</p>
+    <p>Go get it.</p>
+  </div>
+
+</div>
+
+<div class="player">
+  <div class="now-playing" id="nowPlaying">Ready. Tap Play.</div>
+
+  <div class="player-row">
+    <button class="btn" onclick="prevSection()" title="Previous">◀◀</button>
+    <button class="btn primary" id="playBtn" onclick="togglePlay()">▶ PLAY</button>
+    <button class="btn" onclick="nextSection()" title="Next">▶▶</button>
+  </div>
+
+  <div class="speed-row">
+    <span>Speed:</span>
+    <button class="speed-btn" data-rate="0.9" onclick="setRate(0.9)">0.9x</button>
+    <button class="speed-btn active" data-rate="1.0" onclick="setRate(1.0)">1x</button>
+    <button class="speed-btn" data-rate="1.15" onclick="setRate(1.15)">1.15x</button>
+    <button class="speed-btn" data-rate="1.3" onclick="setRate(1.3)">1.3x</button>
+    <button class="speed-btn" data-rate="1.5" onclick="setRate(1.5)">1.5x</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const synth = window.speechSynthesis;
+  if (!synth) {
+    document.getElementById('nowPlaying').textContent = 'Speech not supported on this device. Try Chrome or Safari.';
+    return;
+  }
+
+  let voices = [];
+  let selectedVoice = null;
+  let rate = 1.0;
+  let sections = [];
+  let sectionIndex = 0;
+  let chunkIndex = 0;
+  let chunks = [];
+  let playing = false;
+
+  function collectSections() {
+    sections = Array.from(document.querySelectorAll('.section'));
+  }
+
+  function buildChunksForSection(sectionEl) {
+    const out = [];
+    sectionEl.querySelectorAll('h2, h3, p, .mnemonic, li').forEach(el => {
+      const txt = el.textContent.trim();
+      if (txt) {
+        // Break by sentences for smoother TTS
+        const parts = txt.split(/(?<=[\.\?!])\s+/);
+        parts.forEach(p => { if (p.trim()) out.push(p.trim()); });
+      }
+    });
+    return out;
+  }
+
+  function highlightSection(idx) {
+    sections.forEach((s, i) => s.classList.toggle('active', i === idx));
+    if (sections[idx]) {
+      const rect = sections[idx].getBoundingClientRect();
+      if (rect.top < 100 || rect.top > window.innerHeight - 200) {
+        sections[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  function updateNowPlaying() {
+    const el = document.getElementById('nowPlaying');
+    if (playing && sections[sectionIndex]) {
+      const title = sections[sectionIndex].dataset.title || 'Section ' + (sectionIndex + 1);
+      el.innerHTML = 'Now playing: <strong>' + title + '</strong> · ' + (chunkIndex + 1) + '/' + chunks.length;
+    } else if (sections[sectionIndex]) {
+      const title = sections[sectionIndex].dataset.title || 'Section ' + (sectionIndex + 1);
+      el.innerHTML = 'Paused at: <strong>' + title + '</strong>';
+    } else {
+      el.textContent = 'Ready. Tap Play.';
+    }
+  }
+
+  function speakChunk() {
+    if (!playing) return;
+    if (chunkIndex >= chunks.length) {
+      chunkIndex = 0;
+      sectionIndex++;
+      if (sectionIndex >= sections.length) {
+        playing = false;
+        document.getElementById('playBtn').textContent = '▶ PLAY';
+        updateNowPlaying();
+        return;
+      }
+      chunks = buildChunksForSection(sections[sectionIndex]);
+      highlightSection(sectionIndex);
+    }
+    const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
+    if (selectedVoice) utterance.voice = selectedVoice;
+    utterance.rate = rate;
+    utterance.pitch = 1;
+    utterance.onend = () => {
+      chunkIndex++;
+      updateNowPlaying();
+      setTimeout(speakChunk, 40);
+    };
+    utterance.onerror = (e) => {
+      // Skip on error and continue
+      chunkIndex++;
+      setTimeout(speakChunk, 40);
+    };
+    synth.speak(utterance);
+    updateNowPlaying();
+  }
+
+  window.togglePlay = function() {
+    if (playing) {
+      synth.cancel();
+      playing = false;
+      document.getElementById('playBtn').textContent = '▶ PLAY';
+      updateNowPlaying();
+    } else {
+      if (chunks.length === 0 || chunkIndex >= chunks.length) {
+        chunks = buildChunksForSection(sections[sectionIndex]);
+        chunkIndex = 0;
+      }
+      highlightSection(sectionIndex);
+      playing = true;
+      document.getElementById('playBtn').textContent = '⏸ PAUSE';
+      speakChunk();
+    }
+  };
+
+  window.prevSection = function() {
+    synth.cancel();
+    sectionIndex = Math.max(0, sectionIndex - 1);
+    chunkIndex = 0;
+    chunks = buildChunksForSection(sections[sectionIndex]);
+    highlightSection(sectionIndex);
+    if (playing) speakChunk(); else updateNowPlaying();
+  };
+
+  window.nextSection = function() {
+    synth.cancel();
+    sectionIndex = Math.min(sections.length - 1, sectionIndex + 1);
+    chunkIndex = 0;
+    chunks = buildChunksForSection(sections[sectionIndex]);
+    highlightSection(sectionIndex);
+    if (playing) speakChunk(); else updateNowPlaying();
+  };
+
+  window.jumpTo = function(target) {
+    synth.cancel();
+    if (target === 0) {
+      sectionIndex = 0;
+    } else {
+      const el = document.getElementById(target);
+      if (el) sectionIndex = sections.indexOf(el);
+    }
+    chunkIndex = 0;
+    chunks = buildChunksForSection(sections[sectionIndex]);
+    highlightSection(sectionIndex);
+    if (!playing) {
+      playing = true;
+      document.getElementById('playBtn').textContent = '⏸ PAUSE';
+    }
+    speakChunk();
+  };
+
+  window.setRate = function(r) {
+    rate = r;
+    document.querySelectorAll('.speed-btn').forEach(b => {
+      b.classList.toggle('active', parseFloat(b.dataset.rate) === r);
+    });
+    if (playing) {
+      synth.cancel();
+      setTimeout(speakChunk, 100);
+    }
+  };
+
+  window.onVoiceChange = function() {
+    const sel = document.getElementById('voiceSelect');
+    const idx = parseInt(sel.value);
+    selectedVoice = voices[idx];
+    if (playing) {
+      synth.cancel();
+      setTimeout(speakChunk, 100);
+    }
+  };
+
+  function loadVoices() {
+    voices = synth.getVoices();
+    const sel = document.getElementById('voiceSelect');
+    sel.innerHTML = '';
+
+    // Prioritize high-quality English voices
+    const preferred = voices
+      .map((v, i) => ({ voice: v, index: i }))
+      .filter(x => x.voice.lang && x.voice.lang.toLowerCase().startsWith('en'))
+      .sort((a, b) => {
+        const aScore = /premium|enhanced|neural|natural|siri|google/i.test(a.voice.name) ? 2 : 1;
+        const bScore = /premium|enhanced|neural|natural|siri|google/i.test(b.voice.name) ? 2 : 1;
+        if (aScore !== bScore) return bScore - aScore;
+        return a.voice.name.localeCompare(b.voice.name);
+      });
+
+    preferred.forEach(x => {
+      const opt = document.createElement('option');
+      opt.value = x.index;
+      opt.textContent = x.voice.name + ' (' + x.voice.lang + ')';
+      sel.appendChild(opt);
+    });
+
+    if (preferred.length > 0) {
+      selectedVoice = preferred[0].voice;
+      sel.value = preferred[0].index;
+    }
+  }
+
+  if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = loadVoices;
+  }
+  collectSections();
+  loadVoices();
+  setTimeout(loadVoices, 500);
+  updateNowPlaying();
+
+  // Prevent screen from dimming while playing (best effort)
+  let wakeLock = null;
+  async function requestWakeLock() {
+    try {
+      if ('wakeLock' in navigator) {
+        wakeLock = await navigator.wakeLock.request('screen');
+      }
+    } catch (e) { /* ignore */ }
+  }
+  document.getElementById('playBtn').addEventListener('click', () => {
+    if (!wakeLock) requestWakeLock();
+  });
+
+})();
+</script>
+
+</body>
+</html>
