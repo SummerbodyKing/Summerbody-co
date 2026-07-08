@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T19:47:39.737672+00:00",
+  "generated_at": "2026-07-08T21:15:16.257564+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -181,10 +181,16 @@
     },
     {
       "name": "perfectserve",
-      "found": 16,
-      "matched": 16,
+      "found": 17,
+      "matched": 17,
       "error": null,
       "jobs": [
+        {
+          "title": "Director of Product Management  - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
+          "posted_date": "2026-07-08T16:38:26-04:00"
+        },
         {
           "title": "Implementation Consultant I - US Remote",
           "location": "Remote",
@@ -638,6 +644,13 @@
       "source": "sift-healthcare"
     },
     {
+      "title": "Director of Product Management  - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
+      "posted_date": "2026-07-08T16:38:26-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Implementation Consultant I - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016375004",
@@ -953,5 +966,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 67
 }
