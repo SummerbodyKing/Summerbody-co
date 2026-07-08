@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T17:56:30.812416+00:00",
+  "generated_at": "2026-07-08T19:47:39.737672+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -181,16 +181,10 @@
     },
     {
       "name": "perfectserve",
-      "found": 17,
-      "matched": 17,
+      "found": 16,
+      "matched": 16,
       "error": null,
       "jobs": [
-        {
-          "title": "Director of Software Engineering - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013927004",
-          "posted_date": "2026-06-29T11:32:36-04:00"
-        },
         {
           "title": "Implementation Consultant I - US Remote",
           "location": "Remote",
@@ -372,8 +366,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 93,
-      "matched": 16,
+      "found": 94,
+      "matched": 17,
       "error": null,
       "jobs": [
         {
@@ -419,6 +413,12 @@
           "posted_date": "2026-05-20T14:43:13-04:00"
         },
         {
+          "title": "Snr. Director of HR (Americas) (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8624704002",
+          "posted_date": "2026-07-08T15:21:25-04:00"
+        },
+        {
           "title": "Snr. Employee Relations Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
@@ -458,7 +458,7 @@
           "title": "Video Production Specialist (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8623952002",
-          "posted_date": "2026-07-08T07:11:56-04:00"
+          "posted_date": "2026-07-08T14:14:53-04:00"
         },
         {
           "title": "VP Talent Management (Remote)",
@@ -636,13 +636,6 @@
       "url": "https://job-boards.greenhouse.io/sifthealthcare/jobs/5187449008",
       "posted_date": "2026-04-13T18:34:44-04:00",
       "source": "sift-healthcare"
-    },
-    {
-      "title": "Director of Software Engineering - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013927004",
-      "posted_date": "2026-06-29T11:32:36-04:00",
-      "source": "perfectserve"
     },
     {
       "title": "Implementation Consultant I - US Remote",
@@ -883,6 +876,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Director of HR (Americas) (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8624704002",
+      "posted_date": "2026-07-08T15:21:25-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Snr. Employee Relations Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
@@ -928,7 +928,7 @@
       "title": "Video Production Specialist (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8623952002",
-      "posted_date": "2026-07-08T07:11:56-04:00",
+      "posted_date": "2026-07-08T14:14:53-04:00",
       "source": "knowbe4"
     },
     {
