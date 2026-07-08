@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T22:27:52.473891+00:00",
+  "generated_at": "2026-07-08T23:44:02.884071+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 19,
+      "found": 22,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -126,12 +126,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
           "posted_date": "2026-04-13T14:11:55-04:00"
-        },
-        {
-          "title": "Security Architect",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4653174005",
-          "posted_date": "2026-07-08T12:39:23-04:00"
         },
         {
           "title": "Senior AI Automation Engineer",
@@ -306,67 +300,67 @@
           "title": "Global Public Relations Director",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5238030008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Legal Consultant - Legal Tech Project Manager",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5254142008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Legal Innovation Partner",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Manager of Legal Engineering",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258248008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Manager, Software Engineering",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Senior Delivery Manager",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Senior Manager, Software Engineering",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Senior Sales Director, Corporate",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Senior Software Test Engineer",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5205675008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Staff Cloud Engineer - Infrastructure",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
           "title": "Staff Data Architect",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
-          "posted_date": "2026-07-08T18:27:07-04:00"
+          "posted_date": "2026-07-08T18:30:32-04:00"
         }
       ]
     },
@@ -595,13 +589,6 @@
       "source": "tebra"
     },
     {
-      "title": "Security Architect",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4653174005",
-      "posted_date": "2026-07-08T12:39:23-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Senior AI Automation Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4700274005",
@@ -766,77 +753,77 @@
       "title": "Global Public Relations Director",
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5238030008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Legal Consultant - Legal Tech Project Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5254142008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Legal Innovation Partner",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Manager of Legal Engineering",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258248008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Manager, Software Engineering",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Senior Delivery Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Senior Manager, Software Engineering",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Senior Sales Director, Corporate",
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Senior Software Test Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5205675008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Staff Cloud Engineer - Infrastructure",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Staff Data Architect",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
-      "posted_date": "2026-07-08T18:27:07-04:00",
+      "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
     },
     {
@@ -966,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 67
+  "total_matched": 66
 }
