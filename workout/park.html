@@ -663,53 +663,53 @@
   // =========================================================
   const WORKOUT = [
     // ============ WARM-UP (5 min) ============
-    { p: 'Warm-Up', n: 'Jump Rope Bounce', h: 'Light two-foot bounces. Get the blood moving. Feel your feet.', d: 40, rest: false },
+    { p: 'Warm-Up', n: 'Jump Rope Bounce', h: 'Light two-foot bounces. Get the blood moving. Feel your feet.', d: 40, rest: false, camera: 'Cameras rolling. Phone wide angle. Video camera close. Get every angle of this comeback.' },
     { p: 'Warm-Up', n: 'Arm Circles', h: 'Big controlled circles. 20 seconds forward, 20 seconds back.', d: 40, rest: false },
     { p: 'Warm-Up', n: 'Hip Circles', h: 'Hands on hips. Slow, deliberate rotations. Both directions.', d: 30, rest: false },
     { p: 'Warm-Up', n: 'High Knees', h: 'Drive the knees up to belt height. Fast feet.', d: 30, rest: false },
-    { p: 'Warm-Up', n: 'Cube Step-Ups', h: 'Alternating feet on the workout cube. Full extension at the top.', d: 40, rest: false },
+    { p: 'Warm-Up', n: 'Cube Step-Ups', h: 'Alternating feet on the workout cube. Full extension at the top.', d: 40, rest: false, camera: 'Side angle for the cube. Get the height. Get the drive.' },
     { p: 'Warm-Up', n: 'Reverse Lunge with Reach', h: 'Step back, both arms overhead. Alternate legs.', d: 40, rest: false },
     { p: 'Warm-Up', n: 'Push-Up to Down Dog', h: 'One push-up, drive hips back into downward dog. Repeat.', d: 40, rest: false },
     { p: 'Warm-Up', n: 'Cat-Cow on Mat', h: 'On the stretch mat. Round and arch. Wake up the spine.', d: 30, rest: false },
 
     // ============ CIRCUIT 1 (5 min) ============
-    { p: 'Circuit 1', n: 'Push-Ups on Bars', h: 'Push-up bars. Full range. Chest low. Squeeze the top. Show the SUMMERBODY chest.', d: 45, rest: false },
-    { p: 'Circuit 1', n: 'Transition', h: 'Grab the twenty pound dumbbell. Set up on the mat.', d: 15, rest: true },
+    { p: 'Circuit 1', n: 'Push-Ups on Bars', h: 'Push-up bars. Full range. Chest low. Squeeze the top.', d: 45, rest: false, camera: 'Video camera low in front. Get the chest, get the SUMMERBODY logo driving to the ground.' },
+    { p: 'Circuit 1', n: 'Transition', h: 'Grab the twenty pound dumbbell. Set up on the mat.', d: 15, rest: true, camera: 'Move the camera. Set it for goblet squats. Front angle, chest height.' },
     { p: 'Circuit 1', n: 'Goblet Squats', h: 'Twenty pound dumbbell at chest. Elbows in. Squat deep. Drive up hard.', d: 45, rest: false },
-    { p: 'Circuit 1', n: 'Transition', h: 'Battle rope time. Get set up.', d: 15, rest: true },
-    { p: 'Circuit 1', n: 'Battle Rope Waves', h: 'Alternating waves. Explosive. Full arm range. Show them what half the man moves like.', d: 45, rest: false },
+    { p: 'Circuit 1', n: 'Transition', h: 'Battle rope time. Get set up.', d: 15, rest: true, camera: 'Video camera to a 45 degree side angle for the ropes. Get the full wave motion.' },
+    { p: 'Circuit 1', n: 'Battle Rope Waves', h: 'Alternating waves. Explosive. Full arm range.', d: 45, rest: false, camera: 'Give them the money shot. This is the wave. Show them what half the man moves like.' },
     { p: 'Circuit 1', n: 'Transition', h: 'Grab the jump rope.', d: 15, rest: true },
     { p: 'Circuit 1', n: 'Jump Rope Speed', h: 'Steady rhythm. Alternate feet if you can. Keep it moving.', d: 45, rest: false },
-    { p: 'Circuit 1', n: 'Rest & Reset', h: 'Water. Wipe. Breathe. Get ready for round two.', d: 30, rest: true },
+    { p: 'Circuit 1', n: 'Rest & Reset', h: 'Water. Wipe. Breathe. Get ready for round two.', d: 30, rest: true, camera: 'Water break shot. Let the camera roll. Drink. Wipe. Do not act. Just be. This is the best B-roll on the internet.' },
 
     // ============ CIRCUIT 2 (5 min) ============
     { p: 'Circuit 2', n: 'Push-Ups on Bars', h: 'Round two. Slow the negative. Own every rep.', d: 45, rest: false },
-    { p: 'Circuit 2', n: 'Transition', h: 'Dumbbell in hand for rows.', d: 15, rest: true },
+    { p: 'Circuit 2', n: 'Transition', h: 'Dumbbell in hand for rows.', d: 15, rest: true, camera: 'Reset the camera. Get the side angle so they see the pull.' },
     { p: 'Circuit 2', n: 'Bent-Over Rows', h: 'Twenty pounds. Twenty seconds each side. Elbow tight to ribs. Squeeze the back.', d: 45, rest: false },
-    { p: 'Circuit 2', n: 'Transition', h: 'Grab the orange band.', d: 15, rest: true },
+    { p: 'Circuit 2', n: 'Transition', h: 'Grab the orange band.', d: 15, rest: true, camera: 'Match the band color to your brand. Frame the orange. Frame the logo.' },
     { p: 'Circuit 2', n: 'Band Pull-Aparts', h: 'Arms straight out. Pull the band to your chest. Shoulder blades together. Rear delts on fire.', d: 45, rest: false },
-    { p: 'Circuit 2', n: 'Transition', h: 'Battle rope, both hands.', d: 15, rest: true },
+    { p: 'Circuit 2', n: 'Transition', h: 'Battle rope, both hands.', d: 15, rest: true, camera: 'Low front angle for the slams. Power shot incoming.' },
     { p: 'Circuit 2', n: 'Battle Rope Slams', h: 'Both arms up. Slam down together. Full body power. Every rep.', d: 45, rest: false },
-    { p: 'Circuit 2', n: 'Rest & Reset', h: 'Water. Wipe. Thirty seconds. Then we finish.', d: 30, rest: true },
+    { p: 'Circuit 2', n: 'Rest & Reset', h: 'Water. Wipe. Thirty seconds.', d: 30, rest: true, camera: 'Sweat close-up. Get the forearm. Get the drops. Let the light catch it. This is the shot.' },
 
     // ============ AMRAP (5 min) ============
-    { p: 'AMRAP', n: 'Finisher: Push-Ups + Swings + Skips', h: 'As many rounds as possible. Ten push-ups. Fifteen dumbbell swings. Thirty jump rope skips. Repeat. Go.', d: 300, rest: false },
+    { p: 'AMRAP', n: 'Finisher: Push-Ups + Swings + Skips', h: 'As many rounds as possible. Ten push-ups. Fifteen dumbbell swings. Thirty jump rope skips. Repeat. Go.', d: 300, rest: false, camera: 'Wide angle for the whole finisher. Let it roll. Every round is content.' },
 
     // ============ CORE (5 min) ============
-    { p: 'Core', n: 'Plank Hold', h: 'On the mat. Straight line from head to heels. Squeeze everything.', d: 45, rest: false },
+    { p: 'Core', n: 'Plank Hold', h: 'On the mat. Straight line from head to heels. Squeeze everything.', d: 45, rest: false, camera: 'Prop the phone HIGH on the workout cube. Top-down shot for the core. Get the whole line of the body.' },
     { p: 'Core', n: 'Bicycle Crunches', h: 'Slow and controlled. Elbow to opposite knee. Twist through the core.', d: 45, rest: false },
     { p: 'Core', n: 'Russian Twists with Weight', h: 'Twenty pound dumbbell. Feet up if you can. Rotate side to side.', d: 45, rest: false },
     { p: 'Core', n: 'Hollow Hold', h: 'Low back pressed into the mat. Arms extended overhead. Legs off the ground. Breathe.', d: 30, rest: false },
     { p: 'Core', n: 'Side Plank Right', h: 'Elbow under shoulder. Hips up. Long line.', d: 30, rest: false },
-    { p: 'Core', n: 'Side Plank Left', h: 'Switch sides. Same form. Own it.', d: 30, rest: false },
+    { p: 'Core', n: 'Side Plank Left', h: 'Switch sides. Same form. Own it.', d: 30, rest: false, camera: 'Bring the camera back down to your level for the cool down. Slow. Peaceful.' },
 
     // ============ COOL DOWN + CHIRP WHEEL (5 min) ============
-    { p: 'Cool Down', n: 'Chirp Wheel — Upper Back', h: 'Place the chirp wheel under your upper back. Roll slowly. Let it find the tight spots. Breathe.', d: 60, rest: false },
+    { p: 'Cool Down', n: 'Chirp Wheel — Upper Back', h: 'Place the chirp wheel under your upper back. Roll slowly. Let it find the tight spots. Breathe.', d: 60, rest: false, camera: 'Low angle chirp wheel B-roll. Slow motion if your camera has it. This sells recovery.' },
     { p: 'Cool Down', n: 'Chirp Wheel — Mid Back', h: 'Move the wheel down between the shoulder blades. Small, slow rolls. Melt into it.', d: 60, rest: false },
     { p: 'Cool Down', n: 'Pigeon Stretch Right', h: 'Right shin across. Left leg extended back. Fold forward. Breathe into the hip.', d: 40, rest: false },
     { p: 'Cool Down', n: 'Pigeon Stretch Left', h: 'Switch sides. Same depth. Same breath.', d: 40, rest: false },
-    { p: 'Cool Down', n: 'Forward Fold', h: 'Stand up. Fold at the hips. Let the head hang. Release the back.', d: 30, rest: false },
-    { p: 'Cool Down', n: "Child's Pose", h: 'Knees wide. Arms forward. Forehead down. Breathe deep. You showed up. That is the whole game.', d: 40, rest: false },
+    { p: 'Cool Down', n: 'Forward Fold', h: 'Stand up. Fold at the hips. Let the head hang. Release the back.', d: 30, rest: false, camera: 'Camera on the ground. Wide. Get the whole park behind you.' },
+    { p: 'Cool Down', n: "Child's Pose", h: 'Knees wide. Arms forward. Forehead down. Breathe deep.', d: 40, rest: false, camera: 'Final resting frame. Hold this shot. This is the closer for the whole edit. When it ends, stand up. Face the camera. Deliver the line. Half the man I used to be. Better and beyond. Team SWEAT DEPARTMENT. Cut. You are done.' },
   ];
 
   const TOTAL_DUR = WORKOUT.reduce((a, e) => a + e.d, 0);
@@ -890,12 +890,17 @@
     let msg = item.n + '. ';
     if (item.h && item.h.length < 140) msg += item.h + ' ';
     if (item.rest || /rest|transition/i.test(item.n)) {
+      // Rest/transition: mention duration + include camera cue if present
       msg += fmtTime(item.d) + '.';
+      if (item.camera) msg += ' Camera cue. ' + item.camera;
     } else if (item.d >= 60) {
-      msg += 'Five minutes. Go.';
-      if (item.d < 300) msg = item.n + '. Go.';
+      msg += 'Go.';
+      // For longer work sets, put camera cue at start
+      if (item.camera) msg += ' Quick shot cue. ' + item.camera;
     } else {
       msg += item.d + ' seconds. Go.';
+      // For short work sets, camera cue at start
+      if (item.camera) msg += ' Shot cue. ' + item.camera;
     }
     speak(msg);
   }
