@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T09:42:24.343835+00:00",
+  "generated_at": "2026-07-08T11:50:34.833219+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -390,8 +390,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 95,
-      "matched": 15,
+      "found": 96,
+      "matched": 16,
       "error": null,
       "jobs": [
         {
@@ -471,6 +471,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609991002",
           "posted_date": "2026-06-26T13:02:46-04:00"
+        },
+        {
+          "title": "Video Production Specialist (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8623952002",
+          "posted_date": "2026-07-08T07:11:56-04:00"
         },
         {
           "title": "VP Talent Management (Remote)",
@@ -958,6 +964,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Video Production Specialist (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8623952002",
+      "posted_date": "2026-07-08T07:11:56-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "VP Talent Management (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
@@ -979,5 +992,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 68
+  "total_matched": 69
 }
