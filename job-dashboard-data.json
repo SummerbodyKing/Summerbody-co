@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T11:50:34.833219+00:00",
+  "generated_at": "2026-07-08T14:28:56.819741+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 1,
       "error": null,
       "jobs": [
         {
@@ -33,12 +33,6 @@
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
           "posted_date": "Posted 14 Days Ago"
-        },
-        {
-          "title": "Payment Operations Analyst, Customer Success",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Payment-Operations-Analyst--Customer-Success_R4276",
-          "posted_date": "Posted 22 Days Ago"
         }
       ]
     },
@@ -187,8 +181,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 19,
-      "matched": 19,
+      "found": 17,
+      "matched": 17,
       "error": null,
       "jobs": [
         {
@@ -228,12 +222,6 @@
           "posted_date": "2026-06-29T11:35:10-04:00"
         },
         {
-          "title": "Senior Director, Segment & Solutions Marketing  - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104742004",
-          "posted_date": "2026-07-01T08:43:50-04:00"
-        },
-        {
           "title": "Senior Financial Analyst - Canada Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6020450004",
@@ -256,12 +244,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6000082004",
           "posted_date": "2026-06-29T11:36:11-04:00"
-        },
-        {
-          "title": "Senior Project Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104754004",
-          "posted_date": "2026-07-01T08:44:25-04:00"
         },
         {
           "title": "Senior Software Engineer, .NET - US Remote",
@@ -390,7 +372,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 96,
+      "found": 95,
       "matched": 16,
       "error": null,
       "jobs": [
@@ -513,13 +495,6 @@
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
       "posted_date": "Posted 14 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Payment Operations Analyst, Customer Success",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Payment-Operations-Analyst--Customer-Success_R4276",
-      "posted_date": "Posted 22 Days Ago",
       "source": "modmed"
     },
     {
@@ -705,13 +680,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Senior Director, Segment & Solutions Marketing  - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104742004",
-      "posted_date": "2026-07-01T08:43:50-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Senior Financial Analyst - Canada Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6020450004",
@@ -737,13 +705,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6000082004",
       "posted_date": "2026-06-29T11:36:11-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Senior Project Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104754004",
-      "posted_date": "2026-07-01T08:44:25-04:00",
       "source": "perfectserve"
     },
     {
@@ -992,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 69
+  "total_matched": 66
 }
