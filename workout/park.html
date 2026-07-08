@@ -2,401 +2,870 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>SUMMERBODY Park Workout Coach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>SWEAT DEPARTMENT — Park Workout</title>
 <meta name="theme-color" content="#F15002">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --orange: #F15002;
+    --orange-bright: #FF6E01;
+    --orange-glow: rgba(241, 80, 2, 0.5);
     --black: #000000;
+    --dark: #0A0A0A;
+    --darker: #050505;
+    --card: #111111;
     --white: #FFFFFF;
-    --smoke: #F5F5F5;
-    --dark: #111111;
-    --gray: #888;
+    --gray: rgba(255, 255, 255, 0.55);
+    --dim: rgba(255, 255, 255, 0.15);
+    --rest: #22C55E;
+    --rest-dim: rgba(34, 197, 94, 0.15);
+    --heading-font: 'Anton', 'Bebas Neue', 'Impact', sans-serif;
+    --body-font: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; }
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
     background: var(--black);
     color: var(--white);
-    min-height: 100vh;
-    overflow: hidden;
+    font-family: var(--body-font);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    text-align: center;
+    background: radial-gradient(ellipse at center, #1a0a05 0%, #000 70%);
   }
 
-  .top-bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gray);
-    padding-bottom: 8px;
-    border-bottom: 3px solid var(--orange);
-  }
-  .top-bar .brand { color: var(--orange); font-weight: 800; letter-spacing: 3px; }
-  .phase-label { color: var(--white); font-weight: 700; }
+  /* ============ SCREEN CONTAINERS ============ */
 
-  .exercise-card {
+  .screen {
+    position: fixed;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    padding-top: var(--safe-top);
+    padding-bottom: var(--safe-bottom);
+  }
+  .screen.active { display: flex; }
+
+  /* ============ WELCOME SCREEN ============ */
+
+  #welcome {
+    padding: 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .welcome-hero {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
-    padding: 20px 0;
-  }
-  .exercise-tag {
-    font-size: 14px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--orange);
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .exercise-name {
-    font-size: 44px;
-    line-height: 1.05;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: var(--white);
-    padding: 0 10px;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    max-width: 100%;
-  }
-  .exercise-hint {
-    font-size: 16px;
-    color: var(--gray);
-    font-weight: 500;
-    padding: 0 20px;
-    line-height: 1.3;
-    margin-bottom: 24px;
     max-width: 500px;
   }
 
-  .timer-ring {
+  .brand-mark {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 2px solid var(--orange);
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 800;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    box-shadow: 0 0 20px var(--orange-glow);
+  }
+
+  .welcome-title {
+    font-family: var(--heading-font);
+    font-size: clamp(64px, 18vw, 130px);
+    line-height: 0.9;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 40px var(--orange-glow);
+  }
+  .welcome-title .accent {
+    color: var(--orange);
+    display: block;
+  }
+
+  .welcome-sub {
+    font-family: var(--body-font);
+    font-size: 15px;
+    color: var(--gray);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 400px;
+  }
+  .stat {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid rgba(241, 80, 2, 0.25);
+    border-radius: 8px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .stat .n {
+    font-family: var(--heading-font);
+    font-size: 30px;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .stat .l {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+
+  .voice-config {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  .voice-config-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .voice-config-label::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--orange);
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  select.voice-select {
+    width: 100%;
+    background: var(--darker);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 10px 12px;
+    font-size: 13px;
+    font-family: var(--body-font);
+    font-weight: 600;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path fill='%23F15002' d='M6 8L1 3h10z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+  }
+  select.voice-select:focus {
+    outline: none;
+    border-color: var(--orange);
+  }
+  .test-voice {
+    background: transparent;
+    color: var(--gray);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 12px;
+    margin-top: 8px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .start-btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 22px 28px;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-bright) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--heading-font);
+    font-size: 34px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 40px var(--orange-glow), 0 0 60px rgba(241, 80, 2, 0.3);
+    transition: transform 0.15s ease;
+  }
+  .start-btn:active {
+    transform: scale(0.97);
+  }
+
+  .welcome-footer {
+    font-family: var(--body-font);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 16px;
+  }
+  .welcome-footer .highlight { color: var(--orange); }
+
+  /* ============ WORKOUT SCREEN ============ */
+
+  #workout {
+    padding: 12px 20px calc(20px + var(--safe-bottom)) 20px;
+    justify-content: space-between;
+  }
+
+  .workout-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 2px solid rgba(241, 80, 2, 0.3);
+  }
+  .topbar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .topbar-item .l {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .topbar-item .v {
+    font-family: var(--body-font);
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .topbar-item.center { text-align: center; }
+  .topbar-item.right { text-align: right; }
+  .topbar-item .v.orange { color: var(--orange); }
+
+  .exercise-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 0;
     position: relative;
-    width: 240px;
-    height: 240px;
+  }
+
+  .exercise-phase-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(241, 80, 2, 0.15);
+    border: 1px solid var(--orange);
+    border-radius: 20px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--orange);
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .exercise-phase-badge.rest {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: var(--rest);
+    color: var(--rest);
+  }
+
+  .exercise-name {
+    font-family: var(--heading-font);
+    font-size: clamp(38px, 9vw, 72px);
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    max-width: 100%;
+    margin-bottom: 12px;
+    text-shadow: 0 0 30px rgba(241, 80, 2, 0.4);
+  }
+  .exercise-name.rest {
+    color: var(--rest);
+    text-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+  }
+
+  .exercise-hint {
+    font-family: var(--body-font);
+    font-size: clamp(13px, 3.4vw, 17px);
+    line-height: 1.35;
+    color: var(--gray);
+    font-weight: 500;
+    padding: 0 10px;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+
+  .timer-wrap {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 8px 0 12px;
   }
-  .timer-ring svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .timer-wrap svg {
+    width: min(280px, 62vw);
+    height: min(280px, 62vw);
     transform: rotate(-90deg);
+    filter: drop-shadow(0 0 20px var(--orange-glow));
   }
-  .timer-ring circle.bg {
-    stroke: rgba(255, 255, 255, 0.1);
+  .timer-wrap svg.rest {
+    filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.5));
+  }
+  .timer-wrap svg circle.bg {
+    stroke: rgba(255, 255, 255, 0.08);
     fill: none;
-    stroke-width: 12;
+    stroke-width: 8;
   }
-  .timer-ring circle.fg {
+  .timer-wrap svg circle.fg {
     stroke: var(--orange);
     fill: none;
-    stroke-width: 12;
+    stroke-width: 8;
     stroke-linecap: round;
-    transition: stroke-dashoffset 0.3s linear;
+    transition: stroke-dashoffset 0.9s linear;
   }
-  .timer-number {
-    font-size: 100px;
-    font-weight: 900;
+  .timer-wrap svg.rest circle.fg {
+    stroke: var(--rest);
+  }
+  .timer-num {
+    position: absolute;
+    font-family: var(--heading-font);
+    font-size: clamp(72px, 20vw, 140px);
     color: var(--white);
     line-height: 1;
     font-variant-numeric: tabular-nums;
+    letter-spacing: -2px;
   }
-  .timer-number.warning { color: var(--orange); animation: pulse 0.5s infinite alternate; }
-  @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.12); } }
+  .timer-num.warning {
+    color: var(--orange);
+    animation: pulse-timer 0.9s ease-in-out infinite;
+  }
+  @keyframes pulse-timer {
+    0%, 100% { transform: scale(1); text-shadow: 0 0 20px var(--orange-glow); }
+    50% { transform: scale(1.12); text-shadow: 0 0 50px var(--orange); }
+  }
 
-  .next-up {
-    padding: 12px 16px;
-    background: var(--dark);
-    border: 1px solid var(--orange);
+  .next-up-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
-    margin-top: 20px;
+    width: 100%;
     max-width: 500px;
-    width: 90%;
+    margin-top: 12px;
   }
-  .next-up .label {
-    font-size: 11px;
-    letter-spacing: 3px;
+  .next-up-card .l {
+    font-size: 9px;
+    letter-spacing: 2px;
     color: var(--gray);
     text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .next-up .name {
-    font-size: 18px;
     font-weight: 700;
+  }
+  .next-up-card .n {
+    font-size: 13px;
+    font-weight: 800;
     color: var(--white);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    text-align: right;
+    max-width: 65%;
   }
 
   .progress-bar {
     width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    margin-top: 16px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    margin-top: 12px;
     overflow: hidden;
   }
   .progress-bar .fill {
     height: 100%;
-    background: var(--orange);
-    transition: width 0.3s;
+    background: linear-gradient(90deg, var(--orange), var(--orange-bright));
+    transition: width 0.9s;
+    box-shadow: 0 0 10px var(--orange);
   }
 
-  .controls {
-    width: 100%;
+  .controls-bar {
     display: flex;
-    gap: 12px;
-    justify-content: center;
+    gap: 10px;
     align-items: center;
+    justify-content: center;
     padding-top: 16px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
   }
-  .btn {
-    background: var(--dark);
+
+  .ctrl {
+    flex: 0 0 auto;
+    background: var(--card);
     color: var(--white);
-    border: 2px solid var(--white);
-    padding: 14px 20px;
-    font-size: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 12px;
+    font-size: 20px;
     font-weight: 800;
+    border-radius: 8px;
+    font-family: inherit;
+    cursor: pointer;
+    min-width: 60px;
+    transition: transform 0.1s;
+  }
+  .ctrl:active { transform: scale(0.94); }
+
+  .ctrl.play {
+    flex: 1;
+    background: linear-gradient(135deg, var(--orange), var(--orange-bright));
+    color: var(--white);
+    border-color: var(--orange);
+    font-family: var(--heading-font);
+    font-size: 22px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    padding: 16px 20px;
+    box-shadow: 0 6px 20px var(--orange-glow);
+  }
+  .ctrl.play.paused {
+    background: linear-gradient(135deg, #444, #222);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: none;
+  }
+
+  .ctrl.mute {
+    background: var(--card);
+    color: var(--white);
+    padding: 14px;
+  }
+  .ctrl.mute.off { opacity: 0.4; }
+
+  /* ============ DONE SCREEN ============ */
+
+  #done {
+    padding: 40px 24px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #done .celebrate {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes bounce {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-10px) scale(1.05); }
+  }
+  #done h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(60px, 14vw, 100px);
+    color: var(--orange);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 0 0 40px var(--orange-glow);
+  }
+  #done .subtitle {
+    font-family: var(--body-font);
+    font-size: 16px;
+    color: var(--gray);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  #done .quote {
+    font-family: var(--heading-font);
+    font-size: clamp(24px, 6vw, 34px);
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 480px;
     letter-spacing: 1px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+  #done .quote span { color: var(--orange); }
+  #done .again-btn {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--orange);
+    padding: 16px 28px;
+    font-family: var(--heading-font);
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     border-radius: 8px;
     cursor: pointer;
     font-family: inherit;
-    min-width: 90px;
-  }
-  .btn:active { transform: scale(0.95); }
-  .btn.primary {
-    background: var(--orange);
-    color: var(--white);
-    border-color: var(--orange);
-    font-size: 20px;
-    padding: 18px 32px;
-    min-width: 160px;
-  }
-  .btn.voice {
-    padding: 10px;
-    min-width: 60px;
-    font-size: 20px;
-    background: var(--dark);
-    border-color: var(--gray);
-  }
-  .btn.voice.on {
-    background: var(--orange);
-    border-color: var(--orange);
-  }
-
-  .completion {
-    padding: 40px 20px;
-    text-align: center;
-    display: none;
-  }
-  .completion.show { display: block; }
-  .completion h1 {
-    font-size: 48px;
-    color: var(--orange);
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  .completion p { font-size: 18px; color: var(--white); margin-bottom: 20px; }
-
-  @media (max-height: 700px) {
-    .timer-ring { width: 180px; height: 180px; }
-    .timer-number { font-size: 76px; }
-    .exercise-name { font-size: 34px; }
-  }
-  @media (min-width: 700px) {
-    .exercise-name { font-size: 56px; }
-    .timer-ring { width: 280px; height: 280px; }
-    .timer-number { font-size: 116px; }
   }
 </style>
 </head>
 <body>
 
-<div class="top-bar">
-  <div class="brand">SWEAT DEPT</div>
-  <div class="phase-label" id="phaseLabel">Ready</div>
-  <div id="timeElapsed">0:00 / 35:00</div>
-</div>
+<!-- ============ WELCOME SCREEN ============ -->
+<div class="screen active" id="welcome">
+  <div class="welcome-hero">
+    <div class="brand-mark">Sweat Department</div>
+    <div class="welcome-title">
+      Park<br>
+      <span class="accent">Workout</span>
+    </div>
+    <div class="welcome-sub">King Summerbody · 35 Minutes</div>
 
-<div class="exercise-card" id="card">
-  <div class="exercise-tag" id="tag">WELCOME</div>
-  <div class="exercise-name" id="name">TAP PLAY TO START</div>
-  <div class="exercise-hint" id="hint">Prop the phone up. Speakers on. Let's go.</div>
+    <div class="stats-row">
+      <div class="stat"><div class="n">6</div><div class="l">Phases</div></div>
+      <div class="stat"><div class="n">35</div><div class="l">Min</div></div>
+      <div class="stat"><div class="n">8</div><div class="l">Gear</div></div>
+    </div>
 
-  <div class="timer-ring">
-    <svg viewBox="0 0 240 240">
-      <circle class="bg" cx="120" cy="120" r="108"></circle>
-      <circle class="fg" cx="120" cy="120" r="108" stroke-dasharray="678.58" stroke-dashoffset="0" id="ring"></circle>
-    </svg>
-    <div class="timer-number" id="timerNum">--</div>
+    <div class="voice-config">
+      <div class="voice-config-label">Voice Coach</div>
+      <select id="voiceSelect" class="voice-select"></select>
+      <button class="test-voice" onclick="testVoice()">▶ Test Voice</button>
+    </div>
+
+    <button class="start-btn" onclick="startWorkout()">▶ Start</button>
   </div>
 
-  <div class="next-up" id="nextUp" style="display:none;">
-    <div class="label">Up Next</div>
-    <div class="name" id="nextName">—</div>
+  <div class="welcome-footer">
+    Half the man I used to be. <span class="highlight">Better &amp; Beyond.</span>
   </div>
-
-  <div class="progress-bar"><div class="fill" id="progressFill" style="width:0%;"></div></div>
 </div>
 
-<div class="controls">
-  <button class="btn" onclick="skipBack()">◀◀</button>
-  <button class="btn primary" id="playBtn" onclick="togglePlay()">▶ START</button>
-  <button class="btn" onclick="skipForward()">▶▶</button>
-  <button class="btn voice on" id="voiceBtn" onclick="toggleVoice()" title="Voice">🔊</button>
+<!-- ============ WORKOUT SCREEN ============ -->
+<div class="screen" id="workout">
+  <div class="workout-topbar">
+    <div class="topbar-item">
+      <div class="l">Phase</div>
+      <div class="v" id="topPhase">—</div>
+    </div>
+    <div class="topbar-item center">
+      <div class="l">Elapsed</div>
+      <div class="v" id="topElapsed">0:00</div>
+    </div>
+    <div class="topbar-item right">
+      <div class="l">Step</div>
+      <div class="v orange" id="topStep">— / —</div>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <div class="exercise-phase-badge" id="phaseBadge">Warm-Up</div>
+    <div class="exercise-name" id="exerciseName">—</div>
+    <div class="exercise-hint" id="exerciseHint">—</div>
+
+    <div class="timer-wrap">
+      <svg viewBox="0 0 300 300" id="timerSvg">
+        <circle class="bg" cx="150" cy="150" r="140"></circle>
+        <circle class="fg" cx="150" cy="150" r="140" stroke-dasharray="879.65" stroke-dashoffset="0" id="ring"></circle>
+      </svg>
+      <div class="timer-num" id="timerNum">--</div>
+    </div>
+
+    <div class="next-up-card">
+      <div class="l">Up Next</div>
+      <div class="n" id="nextName">—</div>
+    </div>
+
+    <div class="progress-bar">
+      <div class="fill" id="progressFill" style="width:0%;"></div>
+    </div>
+  </div>
+
+  <div class="controls-bar">
+    <button class="ctrl" onclick="skipBack()" title="Back">◀◀</button>
+    <button class="ctrl play" id="playBtn" onclick="togglePlay()">Pause</button>
+    <button class="ctrl" onclick="skipForward()" title="Forward">▶▶</button>
+    <button class="ctrl mute" id="muteBtn" onclick="toggleVoice()">🔊</button>
+  </div>
+</div>
+
+<!-- ============ DONE SCREEN ============ -->
+<div class="screen" id="done">
+  <div class="celebrate">🔥</div>
+  <h1>Done</h1>
+  <div class="subtitle">You Showed Up. That's The Whole Game.</div>
+  <div class="quote">
+    <span>Half</span> the man you used to be.<br>
+    <span>Better</span> &amp; Beyond.<br>
+    <span>KING</span> SUMMERBODY.
+  </div>
+  <button class="again-btn" onclick="location.reload()">▶ Again</button>
 </div>
 
 <script>
 (function(){
-  // === WORKOUT PROGRAM ===
-  // Each entry: {name, hint, duration (sec), phase, restAfter (sec, optional)}
-  const workout = [
-    // WARM-UP (5 min)
-    { phase: 'Warm-Up', name: 'Jump Rope', hint: 'Light bounce. Get the blood moving.', dur: 45 },
-    { phase: 'Warm-Up', name: 'Arm Circles', hint: 'Big circles. Forward 15 sec, backward 15 sec.', dur: 30 },
-    { phase: 'Warm-Up', name: 'Hip Circles', hint: 'Hands on hips. Slow controlled circles both ways.', dur: 30 },
-    { phase: 'Warm-Up', name: 'High Knees', hint: 'Drive knees up. Stay light on feet.', dur: 30 },
-    { phase: 'Warm-Up', name: 'Bodyweight Squats', hint: 'Slow and controlled. Chest up.', dur: 30 },
-    { phase: 'Warm-Up', name: 'Reverse Lunge with Reach', hint: 'Step back, reach both arms overhead.', dur: 45 },
-    { phase: 'Warm-Up', name: 'Push-Up to Downward Dog', hint: 'One push-up, drive hips back into down dog.', dur: 40 },
-    { phase: 'Warm-Up', name: 'Cat-Cow', hint: 'On the mat. Round and arch. Wake up the spine.', dur: 30 },
+  // =========================================================
+  // THE WORKOUT — 35 MIN, ALL EQUIPMENT INCLUDED
+  // =========================================================
+  const WORKOUT = [
+    // ============ WARM-UP (5 min) ============
+    { p: 'Warm-Up', n: 'Jump Rope Bounce', h: 'Light two-foot bounces. Get the blood moving. Feel your feet.', d: 40, rest: false },
+    { p: 'Warm-Up', n: 'Arm Circles', h: 'Big controlled circles. 20 seconds forward, 20 seconds back.', d: 40, rest: false },
+    { p: 'Warm-Up', n: 'Hip Circles', h: 'Hands on hips. Slow, deliberate rotations. Both directions.', d: 30, rest: false },
+    { p: 'Warm-Up', n: 'High Knees', h: 'Drive the knees up to belt height. Fast feet.', d: 30, rest: false },
+    { p: 'Warm-Up', n: 'Cube Step-Ups', h: 'Alternating feet on the workout cube. Full extension at the top.', d: 40, rest: false },
+    { p: 'Warm-Up', n: 'Reverse Lunge with Reach', h: 'Step back, both arms overhead. Alternate legs.', d: 40, rest: false },
+    { p: 'Warm-Up', n: 'Push-Up to Down Dog', h: 'One push-up, drive hips back into downward dog. Repeat.', d: 40, rest: false },
+    { p: 'Warm-Up', n: 'Cat-Cow on Mat', h: 'On the stretch mat. Round and arch. Wake up the spine.', d: 30, rest: false },
 
-    // MAIN CIRCUIT — 3 rounds, 45s work / 15s transition
-    { phase: 'Circuit 1', name: 'Push-Ups on Bars', hint: 'Full range. Chest low. Squeeze the top.', dur: 45 },
-    { phase: 'Circuit 1', name: 'Transition', hint: 'Grab the dumbbells.', dur: 15 },
-    { phase: 'Circuit 1', name: 'Dumbbell Goblet Squats', hint: '20 lb weight. Elbows in, chest tall.', dur: 45 },
-    { phase: 'Circuit 1', name: 'Transition', hint: 'Grab the battle rope.', dur: 15 },
-    { phase: 'Circuit 1', name: 'Battle Rope Waves', hint: 'Alternating waves. Explosive. Full arms.', dur: 45 },
-    { phase: 'Circuit 1', name: 'Transition', hint: 'Grab the jump rope.', dur: 15 },
-    { phase: 'Circuit 1', name: 'Jump Rope', hint: 'Steady rhythm. Alternate feet if you can.', dur: 45 },
-    { phase: 'Circuit 1', name: 'Rest', hint: 'Water. Wipe. Breathe. 30 seconds.', dur: 30 },
+    // ============ CIRCUIT 1 (5 min) ============
+    { p: 'Circuit 1', n: 'Push-Ups on Bars', h: 'Push-up bars. Full range. Chest low. Squeeze the top. Show the SUMMERBODY chest.', d: 45, rest: false },
+    { p: 'Circuit 1', n: 'Transition', h: 'Grab the twenty pound dumbbell. Set up on the mat.', d: 15, rest: true },
+    { p: 'Circuit 1', n: 'Goblet Squats', h: 'Twenty pound dumbbell at chest. Elbows in. Squat deep. Drive up hard.', d: 45, rest: false },
+    { p: 'Circuit 1', n: 'Transition', h: 'Battle rope time. Get set up.', d: 15, rest: true },
+    { p: 'Circuit 1', n: 'Battle Rope Waves', h: 'Alternating waves. Explosive. Full arm range. Show them what half the man moves like.', d: 45, rest: false },
+    { p: 'Circuit 1', n: 'Transition', h: 'Grab the jump rope.', d: 15, rest: true },
+    { p: 'Circuit 1', n: 'Jump Rope Speed', h: 'Steady rhythm. Alternate feet if you can. Keep it moving.', d: 45, rest: false },
+    { p: 'Circuit 1', n: 'Rest & Reset', h: 'Water. Wipe. Breathe. Get ready for round two.', d: 30, rest: true },
 
-    { phase: 'Circuit 2', name: 'Push-Ups on Bars', hint: 'Round 2. Slow the negative.', dur: 45 },
-    { phase: 'Circuit 2', name: 'Transition', hint: 'Dumbbells.', dur: 15 },
-    { phase: 'Circuit 2', name: 'Dumbbell Rows', hint: 'One at a time. 20 seconds each side. Squeeze the back.', dur: 45 },
-    { phase: 'Circuit 2', name: 'Transition', hint: 'Grab the orange band.', dur: 15 },
-    { phase: 'Circuit 2', name: 'Band Pull-Aparts', hint: 'Arms straight, pull the band to your chest. Shoulder blades together.', dur: 45 },
-    { phase: 'Circuit 2', name: 'Transition', hint: 'Battle rope.', dur: 15 },
-    { phase: 'Circuit 2', name: 'Battle Rope Slams', hint: 'Both arms up, slam down together. Powerful.', dur: 45 },
-    { phase: 'Circuit 2', name: 'Rest', hint: 'Water. Wipe. 30 seconds.', dur: 30 },
+    // ============ CIRCUIT 2 (5 min) ============
+    { p: 'Circuit 2', n: 'Push-Ups on Bars', h: 'Round two. Slow the negative. Own every rep.', d: 45, rest: false },
+    { p: 'Circuit 2', n: 'Transition', h: 'Dumbbell in hand for rows.', d: 15, rest: true },
+    { p: 'Circuit 2', n: 'Bent-Over Rows', h: 'Twenty pounds. Twenty seconds each side. Elbow tight to ribs. Squeeze the back.', d: 45, rest: false },
+    { p: 'Circuit 2', n: 'Transition', h: 'Grab the orange band.', d: 15, rest: true },
+    { p: 'Circuit 2', n: 'Band Pull-Aparts', h: 'Arms straight out. Pull the band to your chest. Shoulder blades together. Rear delts on fire.', d: 45, rest: false },
+    { p: 'Circuit 2', n: 'Transition', h: 'Battle rope, both hands.', d: 15, rest: true },
+    { p: 'Circuit 2', n: 'Battle Rope Slams', h: 'Both arms up. Slam down together. Full body power. Every rep.', d: 45, rest: false },
+    { p: 'Circuit 2', n: 'Rest & Reset', h: 'Water. Wipe. Thirty seconds. Then we finish.', d: 30, rest: true },
 
-    // AMRAP FINISHER (5 min)
-    { phase: 'AMRAP 5 min', name: 'AMRAP: Push-Ups, Swings, Skips', hint: '10 push-ups. 15 dumbbell swings. 30 jump rope skips. As many rounds as possible in 5 min. Go.', dur: 300 },
+    // ============ AMRAP (5 min) ============
+    { p: 'AMRAP', n: 'Finisher: Push-Ups + Swings + Skips', h: 'As many rounds as possible. Ten push-ups. Fifteen dumbbell swings. Thirty jump rope skips. Repeat. Go.', d: 300, rest: false },
 
-    // CORE (5 min)
-    { phase: 'Core', name: 'Plank', hint: 'Straight line. Squeeze everything.', dur: 45 },
-    { phase: 'Core', name: 'Bicycle Crunches', hint: 'Slow and controlled. Elbow to opposite knee.', dur: 45 },
-    { phase: 'Core', name: 'Russian Twists with Dumbbell', hint: 'Feet up if you can. Rotate through the core.', dur: 45 },
-    { phase: 'Core', name: 'Hollow Hold', hint: 'Low back pressed into the mat. Arms and legs off the ground.', dur: 30 },
-    { phase: 'Core', name: 'Side Plank Right', hint: 'Elbow under shoulder. Hips up. Breathe.', dur: 30 },
-    { phase: 'Core', name: 'Side Plank Left', hint: 'Switch sides. Same form.', dur: 30 },
+    // ============ CORE (5 min) ============
+    { p: 'Core', n: 'Plank Hold', h: 'On the mat. Straight line from head to heels. Squeeze everything.', d: 45, rest: false },
+    { p: 'Core', n: 'Bicycle Crunches', h: 'Slow and controlled. Elbow to opposite knee. Twist through the core.', d: 45, rest: false },
+    { p: 'Core', n: 'Russian Twists with Weight', h: 'Twenty pound dumbbell. Feet up if you can. Rotate side to side.', d: 45, rest: false },
+    { p: 'Core', n: 'Hollow Hold', h: 'Low back pressed into the mat. Arms extended overhead. Legs off the ground. Breathe.', d: 30, rest: false },
+    { p: 'Core', n: 'Side Plank Right', h: 'Elbow under shoulder. Hips up. Long line.', d: 30, rest: false },
+    { p: 'Core', n: 'Side Plank Left', h: 'Switch sides. Same form. Own it.', d: 30, rest: false },
 
-    // COOL DOWN + CHIRP WHEEL (5 min)
-    { phase: 'Cool Down', name: 'Chirp Wheel — Upper Back', hint: 'Roll the upper back. Let the wheel find the tight spots.', dur: 60 },
-    { phase: 'Cool Down', name: 'Chirp Wheel — Mid Back', hint: 'Move the wheel down. Slow rolls. Breathe.', dur: 60 },
-    { phase: 'Cool Down', name: 'Pigeon Stretch Right', hint: 'Front shin across, back leg extended. Fold forward.', dur: 45 },
-    { phase: 'Cool Down', name: 'Pigeon Stretch Left', hint: 'Switch sides.', dur: 45 },
-    { phase: 'Cool Down', name: 'Forward Fold', hint: 'Stand up. Fold forward. Let the head hang.', dur: 30 },
-    { phase: 'Cool Down', name: "Child's Pose", hint: 'Knees wide, arms forward, forehead down. Breathe deep. Done.', dur: 40 },
+    // ============ COOL DOWN + CHIRP WHEEL (5 min) ============
+    { p: 'Cool Down', n: 'Chirp Wheel — Upper Back', h: 'Place the chirp wheel under your upper back. Roll slowly. Let it find the tight spots. Breathe.', d: 60, rest: false },
+    { p: 'Cool Down', n: 'Chirp Wheel — Mid Back', h: 'Move the wheel down between the shoulder blades. Small, slow rolls. Melt into it.', d: 60, rest: false },
+    { p: 'Cool Down', n: 'Pigeon Stretch Right', h: 'Right shin across. Left leg extended back. Fold forward. Breathe into the hip.', d: 40, rest: false },
+    { p: 'Cool Down', n: 'Pigeon Stretch Left', h: 'Switch sides. Same depth. Same breath.', d: 40, rest: false },
+    { p: 'Cool Down', n: 'Forward Fold', h: 'Stand up. Fold at the hips. Let the head hang. Release the back.', d: 30, rest: false },
+    { p: 'Cool Down', n: "Child's Pose", h: 'Knees wide. Arms forward. Forehead down. Breathe deep. You showed up. That is the whole game.', d: 40, rest: false },
   ];
 
-  // === STATE ===
+  const TOTAL_DUR = WORKOUT.reduce((a, e) => a + e.d, 0);
+
+  // =========================================================
+  // STATE
+  // =========================================================
   let idx = -1;
   let timeLeft = 0;
   let intervalId = null;
   let playing = false;
   let voiceOn = true;
-  let totalDur = workout.reduce((a, e) => a + e.dur, 0);
   let elapsed = 0;
   const synth = window.speechSynthesis;
-  let preferredVoice = null;
+  let voices = [];
+  let selectedVoice = null;
+  let wakeLock = null;
 
-  function pickVoice() {
-    if (!synth) return;
-    const voices = synth.getVoices();
-    // Prefer Enhanced/Google/Siri English voices
-    const en = voices.filter(v => v.lang && v.lang.startsWith('en'));
-    en.sort((a, b) => {
-      const aq = /premium|enhanced|neural|natural|siri|google/i.test(a.name) ? 1 : 0;
-      const bq = /premium|enhanced|neural|natural|siri|google/i.test(b.name) ? 1 : 0;
-      return bq - aq;
-    });
-    if (en.length) preferredVoice = en[0];
+  // =========================================================
+  // VOICE PICKER
+  // =========================================================
+  function scoreVoice(v) {
+    const n = v.name.toLowerCase();
+    let s = 0;
+    if (!v.lang || !v.lang.toLowerCase().startsWith('en')) return -1;
+    // Premium/Enhanced/Neural voices get priority
+    if (/premium|enhanced|neural/i.test(v.name)) s += 100;
+    // Google/Siri specifically named voices
+    if (/google/i.test(v.name)) s += 60;
+    if (/siri/i.test(v.name)) s += 80;
+    // Common quality voices
+    if (/samantha|ava|nicky|allison|susan|karen|moira|tessa|serena|aaron|nicky|zoe|joelle|isha|nathan|rishi|ryan/i.test(v.name)) s += 40;
+    // US English preferred
+    if (v.lang === 'en-US') s += 20;
+    else if (v.lang === 'en-GB') s += 15;
+    else if (v.lang.startsWith('en')) s += 5;
+    return s;
   }
+
+  function loadVoices() {
+    if (!synth) return;
+    voices = synth.getVoices() || [];
+    const scored = voices
+      .map((v, i) => ({ v, i, s: scoreVoice(v) }))
+      .filter(x => x.s >= 0)
+      .sort((a, b) => b.s - a.s);
+
+    const sel = document.getElementById('voiceSelect');
+    sel.innerHTML = '';
+    scored.forEach(x => {
+      const opt = document.createElement('option');
+      opt.value = x.i;
+      const badge = x.s >= 100 ? ' ⭐' : (x.s >= 60 ? ' ✓' : '');
+      opt.textContent = x.v.name + ' (' + x.v.lang + ')' + badge;
+      sel.appendChild(opt);
+    });
+
+    if (scored.length > 0) {
+      selectedVoice = scored[0].v;
+      sel.value = scored[0].i;
+    }
+
+    sel.onchange = () => {
+      const i = parseInt(sel.value);
+      selectedVoice = voices[i];
+    };
+  }
+
+  if (synth) {
+    if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = loadVoices;
+    loadVoices();
+    setTimeout(loadVoices, 300);
+    setTimeout(loadVoices, 1000);
+  }
+
+  window.testVoice = function() {
+    speak('Alright King. Voice check. Half the man you used to be. Let\'s work.');
+  };
 
   function speak(text) {
     if (!voiceOn || !synth) return;
-    // Cancel any pending utterance so we don't queue up
     synth.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    if (preferredVoice) u.voice = preferredVoice;
-    u.rate = 1.0;
+    if (selectedVoice) u.voice = selectedVoice;
+    u.rate = 1.02;
     u.pitch = 1.0;
     u.volume = 1.0;
     synth.speak(u);
   }
 
-  function updateDisplay() {
-    const item = workout[idx];
-    if (!item) return;
-    document.getElementById('tag').textContent = item.phase.toUpperCase();
-    document.getElementById('name').textContent = item.name;
-    document.getElementById('hint').textContent = item.hint;
-    document.getElementById('phaseLabel').textContent = item.phase;
+  // =========================================================
+  // WAKE LOCK
+  // =========================================================
+  async function requestWakeLock() {
+    try {
+      if ('wakeLock' in navigator) {
+        wakeLock = await navigator.wakeLock.request('screen');
+      }
+    } catch (e) {}
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && !wakeLock) requestWakeLock();
+  });
 
-    // next up
-    const next = workout[idx + 1];
-    if (next) {
-      document.getElementById('nextUp').style.display = 'block';
-      document.getElementById('nextName').textContent = next.name;
+  // =========================================================
+  // WORKOUT ENGINE
+  // =========================================================
+  function pad(n) { return n.toString().padStart(2, '0'); }
+  function fmtTime(s) { return Math.floor(s/60) + ':' + pad(s%60); }
+
+  function updateExercise() {
+    const item = WORKOUT[idx];
+    if (!item) return;
+
+    const badge = document.getElementById('phaseBadge');
+    const name = document.getElementById('exerciseName');
+    const svg = document.getElementById('timerSvg');
+
+    document.getElementById('topPhase').textContent = item.p;
+    document.getElementById('topStep').textContent = (idx + 1) + ' / ' + WORKOUT.length;
+
+    badge.textContent = item.p;
+    name.textContent = item.n;
+    document.getElementById('exerciseHint').textContent = item.h;
+
+    // Rest state styling
+    if (item.rest || /rest|transition/i.test(item.n)) {
+      badge.classList.add('rest');
+      name.classList.add('rest');
+      svg.classList.add('rest');
     } else {
-      document.getElementById('nextUp').style.display = 'none';
+      badge.classList.remove('rest');
+      name.classList.remove('rest');
+      svg.classList.remove('rest');
     }
+
+    // Up Next
+    const next = WORKOUT[idx + 1];
+    document.getElementById('nextName').textContent = next ? next.n : '— DONE —';
   }
 
   function updateTimer() {
     const num = document.getElementById('timerNum');
     num.textContent = timeLeft;
-    if (timeLeft <= 3 && timeLeft > 0) {
-      num.classList.add('warning');
-    } else {
-      num.classList.remove('warning');
-    }
-    // ring progress
-    const item = workout[idx];
+    if (timeLeft <= 3 && timeLeft > 0) num.classList.add('warning');
+    else num.classList.remove('warning');
+
+    const item = WORKOUT[idx];
     if (item) {
-      const pct = 1 - (timeLeft / item.dur);
-      const circumference = 2 * Math.PI * 108;
-      document.getElementById('ring').setAttribute('stroke-dashoffset', circumference * pct);
+      const pct = 1 - (timeLeft / item.d);
+      const circ = 2 * Math.PI * 140;
+      document.getElementById('ring').setAttribute('stroke-dashoffset', circ * pct);
     }
-    // total progress
-    const totalPct = Math.min(100, (elapsed / totalDur) * 100);
-    document.getElementById('progressFill').style.width = totalPct + '%';
-    // elapsed label
-    const elMin = Math.floor(elapsed / 60);
-    const elSec = elapsed % 60;
-    const totMin = Math.floor(totalDur / 60);
-    const pad = n => n.toString().padStart(2, '0');
-    document.getElementById('timeElapsed').textContent = elMin + ':' + pad(elSec) + ' / ' + totMin + ':00';
+
+    document.getElementById('topElapsed').textContent = fmtTime(elapsed);
+    document.getElementById('progressFill').style.width = Math.min(100, (elapsed / TOTAL_DUR) * 100) + '%';
   }
 
   function tick() {
@@ -404,10 +873,12 @@
     elapsed++;
     updateTimer();
 
-    // Voice countdown at 3-2-1
-    if (voiceOn && timeLeft === 3) speak('three');
-    if (voiceOn && timeLeft === 2) speak('two');
-    if (voiceOn && timeLeft === 1) speak('one');
+    if (voiceOn) {
+      if (timeLeft === 10) speak('Ten seconds. Stay locked in.');
+      else if (timeLeft === 3) speak('three');
+      else if (timeLeft === 2) speak('two');
+      else if (timeLeft === 1) speak('one');
+    }
 
     if (timeLeft <= 0) {
       clearInterval(intervalId);
@@ -415,66 +886,70 @@
     }
   }
 
-  function startCurrent() {
-    if (idx < 0 || idx >= workout.length) return;
-    const item = workout[idx];
-    timeLeft = item.dur;
-    updateDisplay();
-    updateTimer();
-    // Announce the exercise
-    let announcement = item.name;
-    if (item.hint && item.hint.length < 80) {
-      announcement += '. ' + item.hint;
-    }
-    if (item.dur >= 60) {
-      announcement += '. ' + Math.floor(item.dur / 60) + ' minute' + (item.dur >= 120 ? 's' : '') + '.';
+  function announce(item) {
+    let msg = item.n + '. ';
+    if (item.h && item.h.length < 140) msg += item.h + ' ';
+    if (item.rest || /rest|transition/i.test(item.n)) {
+      msg += fmtTime(item.d) + '.';
+    } else if (item.d >= 60) {
+      msg += 'Five minutes. Go.';
+      if (item.d < 300) msg = item.n + '. Go.';
     } else {
-      announcement += '. ' + item.dur + ' seconds.';
+      msg += item.d + ' seconds. Go.';
     }
-    speak(announcement);
-    if (playing) {
-      intervalId = setInterval(tick, 1000);
-    }
+    speak(msg);
+  }
+
+  function startCurrent() {
+    if (idx < 0 || idx >= WORKOUT.length) return;
+    const item = WORKOUT[idx];
+    timeLeft = item.d;
+    updateExercise();
+    updateTimer();
+    announce(item);
+    if (playing) intervalId = setInterval(tick, 1000);
   }
 
   function goNext() {
     idx++;
-    if (idx >= workout.length) {
-      finishWorkout();
-      return;
-    }
+    if (idx >= WORKOUT.length) return finishWorkout();
     startCurrent();
   }
 
   function finishWorkout() {
     playing = false;
     clearInterval(intervalId);
-    document.getElementById('playBtn').textContent = '▶ AGAIN';
-    document.getElementById('tag').textContent = 'COMPLETE';
-    document.getElementById('name').textContent = 'DONE, KING!';
-    document.getElementById('hint').textContent = '1/2 the man you used to be. Better & Beyond.';
-    document.getElementById('timerNum').textContent = '✓';
-    document.getElementById('nextUp').style.display = 'none';
-    speak('Done. Better and beyond, King. Half the man you used to be.');
+    synth.cancel();
+    document.getElementById('workout').classList.remove('active');
+    document.getElementById('done').classList.add('active');
+    speak('Done, King. Half the man you used to be. Better and beyond. That is the whole game.');
   }
 
+  window.startWorkout = function() {
+    document.getElementById('welcome').classList.remove('active');
+    document.getElementById('workout').classList.add('active');
+    idx = 0;
+    playing = true;
+    document.getElementById('playBtn').textContent = 'Pause';
+    document.getElementById('playBtn').classList.remove('paused');
+    requestWakeLock();
+    // Give a warm intro
+    speak('Let\'s go, King. Sweat Department park workout. Thirty five minutes. Every piece of gear you brought. Better and beyond starts now.');
+    setTimeout(startCurrent, 2500);
+  };
+
   window.togglePlay = function() {
-    if (idx < 0) {
-      idx = 0;
-      playing = true;
-      document.getElementById('playBtn').textContent = '⏸ PAUSE';
-      startCurrent();
-      requestWakeLock();
-      return;
-    }
+    const btn = document.getElementById('playBtn');
     if (playing) {
       playing = false;
       clearInterval(intervalId);
-      document.getElementById('playBtn').textContent = '▶ RESUME';
       synth.cancel();
+      btn.textContent = 'Resume';
+      btn.classList.add('paused');
     } else {
       playing = true;
-      document.getElementById('playBtn').textContent = '⏸ PAUSE';
+      btn.textContent = 'Pause';
+      btn.classList.remove('paused');
       intervalId = setInterval(tick, 1000);
       requestWakeLock();
     }
@@ -489,48 +964,23 @@
   window.skipBack = function() {
     clearInterval(intervalId);
     synth.cancel();
-    idx = Math.max(0, idx - 1);
-    // Subtract time
-    elapsed = Math.max(0, elapsed - workout[idx].dur);
+    if (idx > 0) {
+      elapsed = Math.max(0, elapsed - (WORKOUT[idx].d - timeLeft));
+      idx--;
+      elapsed = Math.max(0, elapsed - WORKOUT[idx].d);
+    }
     startCurrent();
   };
 
   window.toggleVoice = function() {
     voiceOn = !voiceOn;
-    const btn = document.getElementById('voiceBtn');
-    btn.classList.toggle('on', voiceOn);
+    const btn = document.getElementById('muteBtn');
     btn.textContent = voiceOn ? '🔊' : '🔇';
+    btn.classList.toggle('off', !voiceOn);
     if (!voiceOn) synth.cancel();
   };
 
-  // Wake lock so screen doesn't dim
-  let wakeLock = null;
-  async function requestWakeLock() {
-    try {
-      if ('wakeLock' in navigator) {
-        wakeLock = await navigator.wakeLock.request('screen');
-      }
-    } catch (e) {}
-  }
-
-  // Voice loading
-  if (synth) {
-    if (synth.onvoiceschanged !== undefined) {
-      synth.onvoiceschanged = pickVoice;
-    }
-    pickVoice();
-    setTimeout(pickVoice, 500);
-  }
-
-  // Handle screen tap for resume-wake
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && !wakeLock) {
-      requestWakeLock();
-    }
-  });
-
 })();
 </script>
-
 </body>
 </html>
