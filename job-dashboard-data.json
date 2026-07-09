@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T20:51:20.644613+00:00",
+  "generated_at": "2026-07-09T22:27:51.876174+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 19,
+      "found": 22,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -84,12 +84,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
           "posted_date": "2026-07-07T13:08:13-04:00"
-        },
-        {
-          "title": "Director, Customer Success Operations",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4682483005",
-          "posted_date": "2026-05-14T18:37:59-04:00"
         },
         {
           "title": "Director, GTM Technology",
@@ -310,8 +304,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 22,
-      "matched": 11,
+      "found": 21,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -360,12 +354,6 @@
           "title": "Senior Sales Director, Corporate",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-          "posted_date": "2026-07-08T18:30:32-04:00"
-        },
-        {
-          "title": "Senior Software Test Engineer",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5205675008",
           "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
@@ -561,13 +549,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
       "posted_date": "2026-07-07T13:08:13-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Director, Customer Success Operations",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4682483005",
-      "posted_date": "2026-05-14T18:37:59-04:00",
       "source": "tebra"
     },
     {
@@ -851,13 +832,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Software Test Engineer",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5205675008",
-      "posted_date": "2026-07-08T18:30:32-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Staff Cloud Engineer - Infrastructure",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
@@ -1005,5 +979,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 70
+  "total_matched": 68
 }
