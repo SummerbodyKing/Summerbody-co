@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T16:47:04.846960+00:00",
+  "generated_at": "2026-07-09T18:52:56.339010+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -101,7 +101,7 @@
           "title": "Head of AI Engineering & Enablement",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
-          "posted_date": "2026-07-08T22:42:24-04:00"
+          "posted_date": "2026-07-09T13:17:06-04:00"
         },
         {
           "title": "Head of Customer Success & Operations",
@@ -181,8 +181,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 17,
-      "matched": 17,
+      "found": 19,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -216,10 +216,22 @@
           "posted_date": "2026-06-29T11:34:28-04:00"
         },
         {
+          "title": "Practice Consultant I - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111942004",
+          "posted_date": "2026-07-09T12:48:27-04:00"
+        },
+        {
           "title": "Project Manager - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
           "posted_date": "2026-06-29T11:35:10-04:00"
+        },
+        {
+          "title": "QA Engineer - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111930004",
+          "posted_date": "2026-07-09T12:51:23-04:00"
         },
         {
           "title": "Senior Financial Analyst - Canada Remote",
@@ -563,7 +575,7 @@
       "title": "Head of AI Engineering & Enablement",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
-      "posted_date": "2026-07-08T22:42:24-04:00",
+      "posted_date": "2026-07-09T13:17:06-04:00",
       "source": "tebra"
     },
     {
@@ -679,10 +691,24 @@
       "source": "perfectserve"
     },
     {
+      "title": "Practice Consultant I - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111942004",
+      "posted_date": "2026-07-09T12:48:27-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Project Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
       "posted_date": "2026-06-29T11:35:10-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "QA Engineer - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111930004",
+      "posted_date": "2026-07-09T12:51:23-04:00",
       "source": "perfectserve"
     },
     {
@@ -966,5 +992,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 67
+  "total_matched": 69
 }
