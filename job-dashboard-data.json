@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T23:44:02.884071+00:00",
+  "generated_at": "2026-07-09T03:52:13.836759+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 22,
-      "matched": 18,
+      "found": 23,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -96,6 +96,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
           "posted_date": "2026-07-07T11:18:42-04:00"
+        },
+        {
+          "title": "Head of AI Engineering & Enablement",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
+          "posted_date": "2026-07-08T22:42:24-04:00"
         },
         {
           "title": "Head of Customer Success & Operations",
@@ -476,7 +482,7 @@
     },
     {
       "name": "dronedeploy",
-      "found": 10,
+      "found": 11,
       "matched": 1,
       "error": null,
       "jobs": [
@@ -551,6 +557,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
       "posted_date": "2026-07-07T11:18:42-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Head of AI Engineering & Enablement",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
+      "posted_date": "2026-07-08T22:42:24-04:00",
       "source": "tebra"
     },
     {
@@ -953,5 +966,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 67
 }
