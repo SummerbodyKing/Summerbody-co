@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T18:52:56.339010+00:00",
+  "generated_at": "2026-07-09T20:51:20.644613+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -384,8 +384,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 92,
-      "matched": 17,
+      "found": 93,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -429,6 +429,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
           "posted_date": "2026-05-20T14:43:13-04:00"
+        },
+        {
+          "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
+          "posted_date": "2026-07-09T15:47:50-04:00"
         },
         {
           "title": "Snr. Director of HR (Americas) (Remote)",
@@ -915,6 +921,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
+      "posted_date": "2026-07-09T15:47:50-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Snr. Director of HR (Americas) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8624704002",
@@ -992,5 +1005,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 69
+  "total_matched": 70
 }
