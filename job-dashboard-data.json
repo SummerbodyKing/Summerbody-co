@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T13:22:09.137035+00:00",
+  "generated_at": "2026-07-10T16:05:06.426020+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -372,7 +372,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 98,
+      "found": 99,
       "matched": 18,
       "error": null,
       "jobs": [
@@ -488,7 +488,7 @@
     },
     {
       "name": "dronedeploy",
-      "found": 10,
+      "found": 11,
       "matched": 1,
       "error": null,
       "jobs": [
