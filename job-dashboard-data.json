@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T12:06:13.273779+00:00",
+  "generated_at": "2026-07-12T13:59:59.077591+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -38,9 +38,9 @@
     },
     {
       "name": "ap-companies",
-      "found": 1,
+      "found": 0,
       "matched": 0,
-      "error": null,
+      "error": "robots",
       "jobs": []
     },
     {
