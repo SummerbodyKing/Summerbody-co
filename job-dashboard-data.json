@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T19:54:41.805814+00:00",
+  "generated_at": "2026-07-13T21:03:22.805035+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 22,
-      "matched": 18,
+      "found": 21,
+      "matched": 17,
       "error": null,
       "jobs": [
         {
@@ -114,12 +114,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
           "posted_date": "2026-07-02T16:49:18-04:00"
-        },
-        {
-          "title": "Lead Sales & Growth Operations Analyst",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
-          "posted_date": "2026-04-13T14:11:58-04:00"
         },
         {
           "title": "Sales Development Representative",
@@ -575,13 +569,6 @@
       "source": "tebra"
     },
     {
-      "title": "Lead Sales & Growth Operations Analyst",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
-      "posted_date": "2026-04-13T14:11:58-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Sales Development Representative",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
@@ -953,5 +940,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 65
 }
