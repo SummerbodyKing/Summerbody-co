@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T18:14:17.989025+00:00",
+  "generated_at": "2026-07-13T19:54:41.805814+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -175,8 +175,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 18,
-      "matched": 18,
+      "found": 17,
+      "matched": 17,
       "error": null,
       "jobs": [
         {
@@ -232,12 +232,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6012313004",
           "posted_date": "2026-06-29T11:35:39-04:00"
-        },
-        {
-          "title": "Senior Full Stack Engineer – EHR Integrations - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5844598004",
-          "posted_date": "2026-06-29T11:32:59-04:00"
         },
         {
           "title": "Senior Go To Market Systems Engineer - Remote - US & Canada",
@@ -366,7 +360,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 95,
+      "found": 94,
       "matched": 18,
       "error": null,
       "jobs": [
@@ -700,13 +694,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Senior Full Stack Engineer – EHR Integrations - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5844598004",
-      "posted_date": "2026-06-29T11:32:59-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Senior Go To Market Systems Engineer - Remote - US & Canada",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6000082004",
@@ -966,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 67
+  "total_matched": 66
 }
