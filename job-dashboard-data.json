@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T11:19:59.286610+00:00",
+  "generated_at": "2026-07-13T13:33:24.969600+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -372,8 +372,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 98,
-      "matched": 19,
+      "found": 95,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -387,12 +387,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
           "posted_date": "2026-06-26T13:02:48-04:00"
-        },
-        {
-          "title": "CSM Strategist & Program Manager (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
-          "posted_date": "2026-07-02T07:09:58-04:00"
         },
         {
           "title": "Executive Assistant to CFO (Remote)",
@@ -866,13 +860,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "CSM Strategist & Program Manager (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
-      "posted_date": "2026-07-02T07:09:58-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Executive Assistant to CFO (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
@@ -992,5 +979,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 69
+  "total_matched": 68
 }
