@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T13:33:24.969600+00:00",
+  "generated_at": "2026-07-13T16:12:41.836893+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -175,8 +175,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 19,
-      "matched": 19,
+      "found": 18,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -208,12 +208,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5977945004",
           "posted_date": "2026-06-29T11:34:28-04:00"
-        },
-        {
-          "title": "Practice Consultant I - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111942004",
-          "posted_date": "2026-07-09T12:48:27-04:00"
         },
         {
           "title": "Project Manager - US Remote",
@@ -304,7 +298,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 20,
+      "found": 18,
       "matched": 10,
       "error": null,
       "jobs": [
@@ -678,13 +672,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Practice Consultant I - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111942004",
-      "posted_date": "2026-07-09T12:48:27-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Project Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
@@ -979,5 +966,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 68
+  "total_matched": 67
 }
