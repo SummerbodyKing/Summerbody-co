@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T18:46:22.527638+00:00",
+  "generated_at": "2026-07-14T20:17:49.744007+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -292,8 +292,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 19,
-      "matched": 11,
+      "found": 20,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -321,10 +321,16 @@
           "posted_date": "2026-07-08T18:30:32-04:00"
         },
         {
-          "title": "Manager, Software Engineering",
+          "title": "Manager, Software Engineering - AI Assistant",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
+          "posted_date": "2026-07-14T15:17:54-04:00"
+        },
+        {
+          "title": "Manager, Software Engineering - Next-Gen",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
-          "posted_date": "2026-07-08T18:30:32-04:00"
+          "posted_date": "2026-07-14T15:15:15-04:00"
         },
         {
           "title": "Senior Delivery Manager",
@@ -477,9 +483,15 @@
     {
       "name": "dronedeploy",
       "found": 11,
-      "matched": 1,
+      "matched": 2,
       "error": null,
       "jobs": [
+        {
+          "title": "Senior Manager of Business Systems (USA)",
+          "location": "Remote",
+          "url": "https://jobs.lever.co/dronedeploy/f622e8b1-6c03-4e51-b4fb-577f03ea989c",
+          "posted_date": "2026-07-09T23:09:01.208000+00:00"
+        },
         {
           "title": "Senior Marketing Operations Manager (USA)",
           "location": "Remote",
@@ -778,10 +790,17 @@
       "source": "netdocuments"
     },
     {
-      "title": "Manager, Software Engineering",
+      "title": "Manager, Software Engineering - AI Assistant",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
+      "posted_date": "2026-07-14T15:17:54-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Manager, Software Engineering - Next-Gen",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
-      "posted_date": "2026-07-08T18:30:32-04:00",
+      "posted_date": "2026-07-14T15:15:15-04:00",
       "source": "netdocuments"
     },
     {
@@ -946,6 +965,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Senior Manager of Business Systems (USA)",
+      "location": "Remote",
+      "url": "https://jobs.lever.co/dronedeploy/f622e8b1-6c03-4e51-b4fb-577f03ea989c",
+      "posted_date": "2026-07-09T23:09:01.208000+00:00",
+      "source": "dronedeploy"
+    },
+    {
       "title": "Senior Marketing Operations Manager (USA)",
       "location": "Remote",
       "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
@@ -953,5 +979,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 68
 }
