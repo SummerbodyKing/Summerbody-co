@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T17:20:48.589501+00:00",
+  "generated_at": "2026-07-14T18:46:22.527638+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 21,
-      "matched": 17,
+      "found": 23,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -54,6 +54,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4631714005",
           "posted_date": "2026-04-17T13:59:38-04:00"
+        },
+        {
+          "title": "Account Executive, Growth",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+          "posted_date": "2026-07-14T13:35:26-04:00"
         },
         {
           "title": "Account Executive, Practice Solutions",
@@ -132,6 +138,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4703699005",
           "posted_date": "2026-06-23T22:15:53-04:00"
+        },
+        {
+          "title": "Senior Product Manager",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
+          "posted_date": "2026-07-14T13:26:19-04:00"
         },
         {
           "title": "Senior Software Engineer",
@@ -324,7 +336,7 @@
           "title": "Senior Manager, Software Engineering",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-07-08T18:30:32-04:00"
+          "posted_date": "2026-07-14T14:24:55-04:00"
         },
         {
           "title": "Senior Sales Director, Corporate",
@@ -493,6 +505,13 @@
       "source": "tebra"
     },
     {
+      "title": "Account Executive, Growth",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+      "posted_date": "2026-07-14T13:35:26-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Account Executive, Practice Solutions",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4707748005",
@@ -581,6 +600,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4703699005",
       "posted_date": "2026-06-23T22:15:53-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Senior Product Manager",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
+      "posted_date": "2026-07-14T13:26:19-04:00",
       "source": "tebra"
     },
     {
@@ -769,7 +795,7 @@
       "title": "Senior Manager, Software Engineering",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-07-08T18:30:32-04:00",
+      "posted_date": "2026-07-14T14:24:55-04:00",
       "source": "netdocuments"
     },
     {
@@ -927,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 64
+  "total_matched": 66
 }
