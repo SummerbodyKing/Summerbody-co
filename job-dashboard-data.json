@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T21:27:13.357849+00:00",
+  "generated_at": "2026-07-14T22:38:50.345775+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -292,8 +292,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 20,
-      "matched": 12,
+      "found": 22,
+      "matched": 14,
       "error": null,
       "jobs": [
         {
@@ -333,6 +333,12 @@
           "posted_date": "2026-07-14T15:15:15-04:00"
         },
         {
+          "title": "Manager, Software Engineering - Platform",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
+          "posted_date": "2026-07-14T18:21:17-04:00"
+        },
+        {
           "title": "Senior Delivery Manager",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
@@ -349,6 +355,12 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
           "posted_date": "2026-07-08T18:30:32-04:00"
+        },
+        {
+          "title": "Senior Software Engineer - Next-Gen",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
+          "posted_date": "2026-07-14T18:02:41-04:00"
         },
         {
           "title": "Software Test Engineer",
@@ -804,6 +816,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Manager, Software Engineering - Platform",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
+      "posted_date": "2026-07-14T18:21:17-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Senior Delivery Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
@@ -822,6 +841,13 @@
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
       "posted_date": "2026-07-08T18:30:32-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Senior Software Engineer - Next-Gen",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
+      "posted_date": "2026-07-14T18:02:41-04:00",
       "source": "netdocuments"
     },
     {
@@ -979,5 +1005,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 68
+  "total_matched": 70
 }
