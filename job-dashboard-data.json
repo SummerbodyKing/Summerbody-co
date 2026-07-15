@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T11:00:41.679310+00:00",
+  "generated_at": "2026-07-15T12:23:26.754325+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -167,7 +167,7 @@
     },
     {
       "name": "sift-healthcare",
-      "found": 2,
+      "found": 3,
       "matched": 1,
       "error": null,
       "jobs": [
@@ -384,7 +384,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 90,
+      "found": 91,
       "matched": 17,
       "error": null,
       "jobs": [
