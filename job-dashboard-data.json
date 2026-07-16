@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T15:07:43.452073+00:00",
+  "generated_at": "2026-07-16T16:45:56.564356+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 19,
+      "found": 26,
+      "matched": 22,
       "error": null,
       "jobs": [
         {
@@ -128,6 +128,12 @@
           "posted_date": "2026-07-02T16:49:18-04:00"
         },
         {
+          "title": "Principal Engineer",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4713726005",
+          "posted_date": "2026-07-16T11:48:45-04:00"
+        },
+        {
           "title": "Sales Development Representative",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
@@ -162,6 +168,18 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4679086005",
           "posted_date": "2026-04-15T16:31:14-04:00"
+        },
+        {
+          "title": "Sr. Manager, Software Engineering",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4713705005",
+          "posted_date": "2026-07-16T11:48:33-04:00"
+        },
+        {
+          "title": "Sr. Product Manager",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4713723005",
+          "posted_date": "2026-07-16T11:48:39-04:00"
         },
         {
           "title": "Staff Software Engineer, AI Engineering",
@@ -613,6 +631,13 @@
       "source": "tebra"
     },
     {
+      "title": "Principal Engineer",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4713726005",
+      "posted_date": "2026-07-16T11:48:45-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Sales Development Representative",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
@@ -652,6 +677,20 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4679086005",
       "posted_date": "2026-04-15T16:31:14-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Sr. Manager, Software Engineering",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4713705005",
+      "posted_date": "2026-07-16T11:48:33-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Sr. Product Manager",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4713723005",
+      "posted_date": "2026-07-16T11:48:39-04:00",
       "source": "tebra"
     },
     {
@@ -1005,5 +1044,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 70
+  "total_matched": 73
 }
