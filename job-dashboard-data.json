@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T12:54:48.734553+00:00",
+  "generated_at": "2026-07-16T15:07:43.452073+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 1,
+      "matched": 2,
       "error": null,
       "jobs": [
+        {
+          "title": "Senior Marketing Events Specialist",
+          "location": "Boca Raton, FL",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Vice President, Customer Success Operations & Enablement",
           "location": "Remote - USA",
@@ -508,6 +514,13 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Senior Marketing Events Specialist",
+      "location": "Boca Raton, FL",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
     {
       "title": "Vice President, Customer Success Operations & Enablement",
       "location": "Remote - USA",
@@ -992,5 +1005,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 69
+  "total_matched": 70
 }
