@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T14:07:56.431445+00:00",
+  "generated_at": "2026-07-17T15:48:52.749889+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -396,7 +396,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 91,
+      "found": 90,
       "matched": 18,
       "error": null,
       "jobs": [
@@ -417,6 +417,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
           "posted_date": "2026-07-15T12:34:34-04:00"
+        },
+        {
+          "title": "Global Treasury Director (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
+          "posted_date": "2026-07-17T10:08:16-04:00"
         },
         {
           "title": "Manager, Enterprise Customer Success",
@@ -500,12 +506,6 @@
           "title": "VP Talent Management (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
-        },
-        {
-          "title": "VP Tax & Treasury (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
           "posted_date": "2026-07-15T12:34:34-04:00"
         }
       ]
@@ -925,6 +925,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Global Treasury Director (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
+      "posted_date": "2026-07-17T10:08:16-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Manager, Enterprise Customer Success",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
@@ -1019,13 +1026,6 @@
       "title": "VP Talent Management (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "VP Tax & Treasury (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
       "posted_date": "2026-07-15T12:34:34-04:00",
       "source": "knowbe4"
     },
