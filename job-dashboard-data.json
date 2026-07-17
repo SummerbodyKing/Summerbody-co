@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T19:45:34.441544+00:00",
+  "generated_at": "2026-07-17T21:02:05.552772+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -396,8 +396,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 90,
-      "matched": 18,
+      "found": 89,
+      "matched": 17,
       "error": null,
       "jobs": [
         {
@@ -488,12 +488,6 @@
           "title": "Technical Solution Architect - Business Applications (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8545503002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
-        },
-        {
-          "title": "Treasurer (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609991002",
           "posted_date": "2026-07-15T12:34:34-04:00"
         },
         {
@@ -1009,13 +1003,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Treasurer (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609991002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "VP Financial Planning & Analysis (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
@@ -1044,5 +1031,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 73
+  "total_matched": 72
 }
