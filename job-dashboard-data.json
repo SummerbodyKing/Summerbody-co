@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T18:57:04.582074+00:00",
+  "generated_at": "2026-07-20T20:26:45.725922+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -298,16 +298,10 @@
     },
     {
       "name": "netdocuments",
-      "found": 22,
-      "matched": 14,
+      "found": 21,
+      "matched": 13,
       "error": null,
       "jobs": [
-        {
-          "title": "Global Public Relations Director",
-          "location": "Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5238030008",
-          "posted_date": "2026-07-08T18:30:32-04:00"
-        },
         {
           "title": "Legal Consultant - Legal Tech Project Manager",
           "location": "Lehi, Utah, United States; Remote - US",
@@ -390,7 +384,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 84,
+      "found": 83,
       "matched": 17,
       "error": null,
       "jobs": [
@@ -787,13 +781,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Global Public Relations Director",
-      "location": "Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5238030008",
-      "posted_date": "2026-07-08T18:30:32-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Legal Consultant - Legal Tech Project Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5254142008",
@@ -1018,5 +1005,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 71
+  "total_matched": 70
 }
