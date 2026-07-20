@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T12:54:51.966776+00:00",
+  "generated_at": "2026-07-20T15:15:02.997568+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -205,8 +205,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 14,
-      "matched": 14,
+      "found": 13,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -226,12 +226,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
           "posted_date": "2026-07-08T11:52:20-04:00"
-        },
-        {
-          "title": "Manager of Accounting - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5835627004",
-          "posted_date": "2026-06-29T11:31:35-04:00"
         },
         {
           "title": "Project Manager - US Remote",
@@ -723,13 +717,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Manager of Accounting - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5835627004",
-      "posted_date": "2026-06-29T11:31:35-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Project Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
@@ -1031,5 +1018,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 72
+  "total_matched": 71
 }
