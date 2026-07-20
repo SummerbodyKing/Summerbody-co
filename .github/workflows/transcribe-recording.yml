@@ -1,6 +1,9 @@
 name: Transcribe Recording
 
 on:
+  push:
+    branches: [claude/audio-recording-transcript-nnywrl]
+    paths: ['.github/workflows/transcribe-recording.yml']
   workflow_dispatch:
     inputs:
       drive_file_id:
@@ -27,7 +30,7 @@ jobs:
 
       - name: Download recording from Google Drive
         run: |
-          gdown "https://drive.google.com/uc?id=${{ inputs.drive_file_id }}" -O Recording.m4a
+          gdown "https://drive.google.com/uc?id=${{ inputs.drive_file_id || '1Akfqk6LcLg1bRQ1cTRgYxR-7OUO1LXNh' }}" -O Recording.m4a
           ls -la Recording.m4a
 
       - name: Transcribe
