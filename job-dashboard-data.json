@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T18:18:56.847870+00:00",
+  "generated_at": "2026-07-21T19:57:47.414800+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -292,8 +292,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 22,
-      "matched": 14,
+      "found": 21,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -339,10 +339,10 @@
           "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
-          "title": "Senior Manager, Software Engineering",
+          "title": "Senior Manager, Software Engineering - AI",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-07-21T14:16:34-04:00"
+          "posted_date": "2026-07-21T15:32:17-04:00"
         },
         {
           "title": "Senior Sales Director, Corporate",
@@ -355,12 +355,6 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
           "posted_date": "2026-07-21T14:16:34-04:00"
-        },
-        {
-          "title": "Social Manager",
-          "location": "Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
-          "posted_date": "2026-07-21T14:17:56-04:00"
         },
         {
           "title": "Software Test Engineer",
@@ -817,10 +811,10 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Manager, Software Engineering",
+      "title": "Senior Manager, Software Engineering - AI",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-07-21T14:16:34-04:00",
+      "posted_date": "2026-07-21T15:32:17-04:00",
       "source": "netdocuments"
     },
     {
@@ -835,13 +829,6 @@
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
       "posted_date": "2026-07-21T14:16:34-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Social Manager",
-      "location": "Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
-      "posted_date": "2026-07-21T14:17:56-04:00",
       "source": "netdocuments"
     },
     {
@@ -992,5 +979,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 69
+  "total_matched": 68
 }
