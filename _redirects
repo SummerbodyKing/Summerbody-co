@@ -5,3 +5,7 @@
 /purium       https://ishoppurium.com/homepage?giftcard=summerbody  301!
 /guide        https://shop.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint  301!
 
+# PMP Command Center study tool (served at /pmp and /study)
+/pmp          /pmp.html  200
+/study        /pmp.html  200
+
