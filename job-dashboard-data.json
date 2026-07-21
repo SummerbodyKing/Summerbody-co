@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T23:05:01.333094+00:00",
+  "generated_at": "2026-07-21T00:15:21.697256+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -298,8 +298,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 21,
-      "matched": 13,
+      "found": 22,
+      "matched": 14,
       "error": null,
       "jobs": [
         {
@@ -361,6 +361,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
           "posted_date": "2026-07-14T18:02:41-04:00"
+        },
+        {
+          "title": "Social Manager",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
+          "posted_date": "2026-07-20T19:05:08-04:00"
         },
         {
           "title": "Software Test Engineer",
@@ -851,6 +857,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Social Manager",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
+      "posted_date": "2026-07-20T19:05:08-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Software Test Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5205675008",
@@ -1005,5 +1018,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 70
+  "total_matched": 71
 }
