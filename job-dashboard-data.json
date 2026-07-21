@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T13:04:13.520510+00:00",
+  "generated_at": "2026-07-21T15:19:29.364459+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -205,8 +205,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 13,
-      "matched": 13,
+      "found": 12,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -226,12 +226,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
           "posted_date": "2026-07-08T11:52:20-04:00"
-        },
-        {
-          "title": "Project Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
-          "posted_date": "2026-06-29T11:35:10-04:00"
         },
         {
           "title": "QA Engineer - US Remote",
@@ -258,16 +252,16 @@
           "posted_date": "2026-06-29T11:36:31-04:00"
         },
         {
+          "title": "Shift Operations Coordinator - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
+          "posted_date": "2026-07-21T10:01:59-04:00"
+        },
+        {
           "title": "Software Engineer - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6009029004",
           "posted_date": "2026-06-29T11:37:20-04:00"
-        },
-        {
-          "title": "Support Operations Coordinator - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
-          "posted_date": "2026-07-14T16:58:15-04:00"
         },
         {
           "title": "Tier 1 Support Specialist - US Remote",
@@ -390,16 +384,10 @@
     },
     {
       "name": "knowbe4",
-      "found": 81,
-      "matched": 17,
+      "found": 79,
+      "matched": 16,
       "error": null,
       "jobs": [
-        {
-          "title": "Channel Marketing Manager (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/4368827002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
-        },
         {
           "title": "Commercial Finance Lead (Remote)",
           "location": "Remote",
@@ -717,13 +705,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Project Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
-      "posted_date": "2026-06-29T11:35:10-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "QA Engineer - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111930004",
@@ -752,17 +733,17 @@
       "source": "perfectserve"
     },
     {
+      "title": "Shift Operations Coordinator - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
+      "posted_date": "2026-07-21T10:01:59-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Software Engineer - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6009029004",
       "posted_date": "2026-06-29T11:37:20-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Support Operations Coordinator - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
-      "posted_date": "2026-07-14T16:58:15-04:00",
       "source": "perfectserve"
     },
     {
@@ -883,13 +864,6 @@
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
       "posted_date": "2026-07-08T18:30:32-04:00",
       "source": "netdocuments"
-    },
-    {
-      "title": "Channel Marketing Manager (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/4368827002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
-      "source": "knowbe4"
     },
     {
       "title": "Commercial Finance Lead (Remote)",
@@ -1018,5 +992,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 71
+  "total_matched": 69
 }
