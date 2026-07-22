@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T10:06:26.181478+00:00",
+  "generated_at": "2026-07-22T12:08:54.582577+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,23 +24,10 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 40,
-      "matched": 2,
-      "error": null,
-      "jobs": [
-        {
-          "title": "Senior Marketing Events Specialist",
-          "location": "Boca Raton, FL",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted 6 Days Ago"
-        },
-        {
-          "title": "Vice President, Customer Success Operations & Enablement",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
-          "posted_date": "Posted 28 Days Ago"
-        }
-      ]
+      "found": 0,
+      "matched": 0,
+      "error": "robots",
+      "jobs": []
     },
     {
       "name": "ap-companies",
@@ -502,20 +489,6 @@
     }
   ],
   "jobs": [
-    {
-      "title": "Senior Marketing Events Specialist",
-      "location": "Boca Raton, FL",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted 6 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Vice President, Customer Success Operations & Enablement",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
-      "posted_date": "Posted 28 Days Ago",
-      "source": "modmed"
-    },
     {
       "title": "Account Executive, Customer Growth",
       "location": "United States - Remote",
@@ -979,5 +952,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 68
+  "total_matched": 66
 }
