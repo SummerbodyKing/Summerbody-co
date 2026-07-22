@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'Carlito'; src:url('assets/Carlito-400.ttf'); font-weight:400; }
+  @font-face { font-family:'Carlito'; src:url('assets/Carlito-700.ttf'); font-weight:700; }
+  :root{
+    --v50:#EFEDF3; --v300:#B465FF; --v500:#4F17A8; --v600:#371075; --v800:#200F3B; --v950:#100522;
+    --a50:#EEFAFA; --a300:#05BFE0; --a500:#00799E; --a800:#023041;
+    --t300:#FF610F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Aptos','Carlito','Segoe UI',system-ui,Arial,sans-serif;}
+  .slide{width:1080px;height:1080px;position:relative;overflow:hidden;}
+  /* framed poster: inset rounded double keyline */
+  .frame{position:absolute;inset:22px;border:4px solid;border-radius:28px;pointer-events:none;}
+  .frame::after{content:'';position:absolute;inset:8px;border:2px solid;border-radius:20px;opacity:.55;}
+  .grain{position:absolute;inset:0;opacity:.06;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");}
+  .tag{position:absolute;bottom:52px;right:56px;font-weight:700;font-size:30px;letter-spacing:.14em;}
+  .eyebrow{font-weight:700;letter-spacing:.16em;font-size:30px;text-transform:uppercase;}
+  h1{font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;line-height:.96;}
+  .underline{height:12px;width:260px;margin-top:26px;border-radius:6px;}
+  .content{position:absolute;inset:0;padding:96px 92px;display:flex;flex-direction:column;}
+  svg.doodle{position:absolute;}
+
+  /* S1 — VIOLET FIELD hook */
+  .s1{background:var(--v500);color:var(--v50);}
+  .s1 .frame{border-color:var(--v50);} .s1 .frame::after{border-color:var(--v50);}
+  .s1 h1{font-size:150px;margin-top:44px;}
+  .s1 .pop{color:var(--a300);}
+  .s1 .sub{margin-top:40px;font-size:40px;line-height:1.3;font-weight:400;max-width:760px;}
+  .s1 .badge{position:absolute;top:74px;right:84px;width:170px;}
+  .s1 .swipe{position:absolute;bottom:52px;left:92px;font-weight:700;font-size:30px;letter-spacing:.14em;color:var(--a300);}
+
+  /* S2 — PAPER pain */
+  .s2{background:var(--v50);color:var(--v950);}
+  .s2 .frame{border-color:var(--v950);} .s2 .frame::after{border-color:var(--v500);}
+  .s2 h1{font-size:128px;margin-top:40px;}
+  .s2 h1 .l2{color:var(--v500);}
+  .s2 .sub{margin-top:44px;font-size:42px;line-height:1.35;font-weight:400;max-width:820px;}
+  .s2 .sub b{font-weight:700;color:var(--v500);}
+
+  /* S3 — AQUA-INK field solution */
+  .s3{background:var(--v600);color:var(--a50);}
+  .s3 .frame{border-color:var(--a50);} .s3 .frame::after{border-color:var(--a300);}
+  .s3 h1{font-size:110px;margin-top:36px;}
+  .s3 .pop{color:var(--a300);}
+  .s3 .sub{margin-top:30px;font-size:38px;font-weight:400;max-width:800px;line-height:1.3;}
+  .s3 .sub b{font-weight:700;}
+  .stairs{position:absolute;left:92px;right:92px;bottom:150px;height:330px;}
+  .stepcard{position:absolute;width:270px;padding:26px 24px 22px;border:4px solid var(--v950);border-radius:18px;
+    background:var(--v50);color:var(--v950);font-weight:700;text-transform:uppercase;font-size:34px;letter-spacing:.02em;}
+  .stepcard .num{display:inline-block;width:52px;height:52px;border-radius:50%;background:var(--a300);color:var(--v950);
+    text-align:center;line-height:52px;font-size:30px;margin-bottom:12px;}
+
+  /* S4 — PAPER event card */
+  .s4{background:var(--v50);color:var(--v950);}
+  .s4 .frame{border-color:var(--v950);} .s4 .frame::after{border-color:var(--v500);}
+  .s4 h1{font-size:132px;margin-top:40px;}
+  .s4 h1 .l2{color:var(--v500);}
+  .pills{display:flex;gap:36px;margin-top:70px;}
+  .pill{flex:1;border:4px solid var(--v950);border-radius:22px;background:#fff0;padding:34px 20px;text-align:center;}
+  .pill .big{font-weight:700;font-size:56px;line-height:1;}
+  .pill .cap{font-weight:700;font-size:24px;letter-spacing:.16em;margin-top:14px;text-transform:uppercase;}
+  .pill.hl{background:var(--v500);color:var(--v50);border-color:var(--v500);}
+  .s4 .foot{margin-top:64px;font-size:36px;font-weight:400;}
+  .s4 .foot b{font-weight:700;}
+
+  /* S5 — INK field CTA */
+  .s5{background:var(--v950);color:var(--v50);}
+  .s5 .frame{border-color:var(--v50);} .s5 .frame::after{border-color:var(--v300);}
+  .s5 h1{font-size:170px;margin-top:60px;}
+  .s5 .pop{color:var(--v300);}
+  .s5 .cta{display:inline-block;margin-top:70px;background:var(--t300);color:#FEF7F3;font-weight:700;
+    font-size:52px;padding:34px 60px;border-radius:20px;letter-spacing:.02em;}
+  .s5 .motto{margin-top:66px;font-size:38px;font-weight:400;color:var(--a300);font-style:italic;}
+  .logochip{position:absolute;bottom:120px;left:92px;right:92px;background:var(--v50);border-radius:24px;
+    padding:30px 40px;display:flex;align-items:center;justify-content:center;gap:70px;}
+  .logochip img{height:110px;width:auto;}
+  .logochip img.wide{height:88px;}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 : HOOK / PROBLEM -->
+<div class="slide s1">
+  <div class="content">
+    <div class="eyebrow" style="max-width:640px;">PMI South Florida</div>
+    <h1>100s of<br>applications.<br><span class="pop">Zero replies.</span></h1>
+    <div class="underline" style="background:var(--a300);"></div>
+    <div class="sub">Sound familiar? You are not the problem. The way hiring works has changed.</div>
+  </div>
+  <img class="badge" src="assets/logo_40yr_trim.png" alt="">
+  <svg class="doodle" style="left:640px;top:760px;width:360px;height:250px;" viewBox="0 0 360 250" fill="none" stroke="#EFEDF3" stroke-width="5" stroke-linecap="round">
+    <path d="M20 40 q60 -30 110 10 t120 0" stroke-dasharray="2 14"/>
+    <path d="M250 50 l60 60 m0 -60 l-60 60" opacity=".7"/>
+    <path d="M60 140 l40 -18 l-6 24 l38 -14" opacity=".8"/>
+    <path d="M180 150 c-20 40 40 40 20 80" opacity=".6"/>
+    <path d="M280 160 l14 30 l-30 -8 l24 26" stroke="#05BFE0"/>
+  </svg>
+  <div class="swipe">SWIPE →</div>
+  <div class="tag">01 / 05</div>
+  <div class="frame"></div><div class="grain"></div>
+</div>
+
+<!-- SLIDE 2 : PAIN DEEPENED -->
+<div class="slide s2">
+  <div class="content">
+    <div class="eyebrow" style="color:var(--v500);">The Problem</div>
+    <h1>The market<br>changed.<br><span class="l2">Nobody told you.</span></h1>
+    <div class="underline" style="background:var(--v500);"></div>
+    <div class="sub"><b>AI screens your resume before a human ever sees your name.</b> Cold applications get filtered. Generic resumes get ghosted. Effort alone is not the strategy anymore.</div>
+  </div>
+  <svg class="doodle" style="left:815px;top:445px;width:225px;height:225px;" viewBox="0 0 300 300" fill="none" stroke="#100522" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="40" y="20" width="120" height="150" rx="10"/>
+    <path d="M60 50 h80 M60 80 h80 M60 110 h50"/>
+    <path d="M100 180 v40" stroke-dasharray="3 12"/>
+    <path d="M50 230 h100 l-20 50 h-60 z" stroke="#4F17A8"/>
+    <path d="M215 60 a35 35 0 1 1 -1 0 M215 95 v40 m-18 0 h36" stroke="#4F17A8"/>
+    <path d="M250 210 l30 -14 l-8 26 l30 -10" stroke="#05BFE0"/>
+  </svg>
+  <div class="tag" style="color:var(--v500);">02 / 05</div>
+  <div class="frame"></div><div class="grain"></div>
+</div>
+
+<!-- SLIDE 3 : WHAT WE'RE DOING -->
+<div class="slide s3">
+  <div class="content">
+    <div class="eyebrow" style="color:var(--a300);">What we're doing about it</div>
+    <h1>We're bringing in<br><span class="pop">the expert.</span></h1>
+    <div class="sub">A live session with career coach &amp; resume pro <b>Scott Singer, CPRW, CPCC</b> — the job search tactics that are working right now.</div>
+  </div>
+  <div class="stairs">
+    <div class="stepcard" style="left:0;bottom:0;"><span class="num">1</span><br>Position yourself</div>
+    <div class="stepcard" style="left:305px;bottom:95px;"><span class="num">2</span><br>Stand out</div>
+    <div class="stepcard" style="left:610px;bottom:190px;"><span class="num">3</span><br>Get hired</div>
+  </div>
+  <svg class="doodle" style="right:60px;bottom:190px;width:120px;height:260px;" viewBox="0 0 120 260" fill="none" stroke="#05BFE0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 250 V40 M28 80 L60 30 L92 80"/>
+  </svg>
+  <div class="tag" style="color:var(--a300);">03 / 05</div>
+  <div class="frame"></div><div class="grain"></div>
+</div>
+
+<!-- SLIDE 4 : THE EVENT -->
+<div class="slide s4">
+  <div class="content">
+    <div class="eyebrow" style="color:var(--v500);">Mark your calendar</div>
+    <h1>Free lunch<br><span class="l2">&amp; learn.</span></h1>
+    <div class="pills">
+      <div class="pill"><div class="big">WED</div><div class="cap">July 29</div></div>
+      <div class="pill hl"><div class="big">NOON</div><div class="cap">Lunch hour</div></div>
+      <div class="pill"><div class="big">FREE</div><div class="cap">All welcome</div></div>
+    </div>
+    <div class="foot"><b>Members &amp; non-members.</b> Bring your lunch, bring your questions — leave with a job-search playbook.</div>
+  </div>
+  <div class="tag" style="color:var(--v500);">04 / 05</div>
+  <div class="frame"></div><div class="grain"></div>
+</div>
+
+<!-- SLIDE 5 : INVITE / CTA -->
+<div class="slide s5">
+  <div class="content" style="align-items:center;text-align:center;">
+    <div class="eyebrow" style="color:var(--v300);">You're invited</div>
+    <h1>Save<br><span class="pop">your seat.</span></h1>
+    <div><span class="cta">REGISTER — LINK IN POST</span></div>
+    <div class="motto">"Together WE Achieve More."</div>
+  </div>
+  <div class="logochip">
+    <img class="wide" src="assets/logo_pmisf_trim.png" alt="PMI South Florida">
+    <img src="assets/logo_40yr_trim.png" alt="Celebrating 40 Years 2026">
+  </div>
+  <div class="tag" style="color:var(--v300);">05 / 05</div>
+  <div class="frame"></div><div class="grain"></div>
+</div>
+
+</body>
+</html>
