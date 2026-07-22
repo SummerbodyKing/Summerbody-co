@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T16:07:01.986679+00:00",
+  "generated_at": "2026-07-22T17:45:07.943310+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 28,
-      "matched": 22,
+      "found": 27,
+      "matched": 21,
       "error": null,
       "jobs": [
         {
@@ -132,12 +132,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4713726005",
           "posted_date": "2026-07-16T11:48:45-04:00"
-        },
-        {
-          "title": "Sales Development Representative",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
-          "posted_date": "2026-04-13T14:11:55-04:00"
         },
         {
           "title": "Senior AI Automation Engineer",
@@ -620,13 +614,6 @@
       "source": "tebra"
     },
     {
-      "title": "Sales Development Representative",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
-      "posted_date": "2026-04-13T14:11:55-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Senior AI Automation Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4700274005",
@@ -1005,5 +992,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 70
+  "total_matched": 69
 }
