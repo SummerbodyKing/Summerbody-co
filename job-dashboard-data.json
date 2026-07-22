@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T12:08:54.582577+00:00",
+  "generated_at": "2026-07-22T14:30:26.053341+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,10 +24,23 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 0,
-      "matched": 0,
-      "error": "robots",
-      "jobs": []
+      "found": 40,
+      "matched": 2,
+      "error": null,
+      "jobs": [
+        {
+          "title": "Senior Marketing Events Specialist",
+          "location": "Boca Raton, FL",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
+          "posted_date": "Posted 6 Days Ago"
+        },
+        {
+          "title": "Vice President, Customer Success Operations & Enablement",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
+          "posted_date": "Posted 28 Days Ago"
+        }
+      ]
     },
     {
       "name": "ap-companies",
@@ -365,8 +378,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 78,
-      "matched": 16,
+      "found": 77,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -412,6 +425,12 @@
           "posted_date": "2026-07-15T12:34:34-04:00"
         },
         {
+          "title": "Renewal Specialist (Tech Touch) (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644850002",
+          "posted_date": "2026-07-22T10:02:35-04:00"
+        },
+        {
           "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
@@ -448,6 +467,12 @@
           "posted_date": "2026-07-15T12:34:34-04:00"
         },
         {
+          "title": "Staff Engineer (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
+          "posted_date": "2026-07-22T10:25:45-04:00"
+        },
+        {
           "title": "Technical Solution Architect - Business Applications (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8545503002",
@@ -457,7 +482,7 @@
           "title": "VP Financial Planning & Analysis (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
-          "posted_date": "2026-07-16T13:21:35-04:00"
+          "posted_date": "2026-07-22T10:25:29-04:00"
         },
         {
           "title": "VP Talent Management (Remote)",
@@ -489,6 +514,20 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Senior Marketing Events Specialist",
+      "location": "Boca Raton, FL",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
+      "posted_date": "Posted 6 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Vice President, Customer Success Operations & Enablement",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
+      "posted_date": "Posted 28 Days Ago",
+      "source": "modmed"
+    },
     {
       "title": "Account Executive, Customer Growth",
       "location": "United States - Remote",
@@ -875,6 +914,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Renewal Specialist (Tech Touch) (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644850002",
+      "posted_date": "2026-07-22T10:02:35-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
@@ -917,6 +963,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Staff Engineer (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
+      "posted_date": "2026-07-22T10:25:45-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Technical Solution Architect - Business Applications (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8545503002",
@@ -927,7 +980,7 @@
       "title": "VP Financial Planning & Analysis (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
-      "posted_date": "2026-07-16T13:21:35-04:00",
+      "posted_date": "2026-07-22T10:25:29-04:00",
       "source": "knowbe4"
     },
     {
@@ -952,5 +1005,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 70
 }
