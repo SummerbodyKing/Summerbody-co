@@ -1,0 +1,10 @@
+# Runtime state and logs - machine-specific, don't commit.
+data/*.json
+logs/*.log
+.venv/
+__pycache__/
+*.pyc
+
+# Keep the empty folders tracked.
+!data/.gitkeep
+!logs/.gitkeep
