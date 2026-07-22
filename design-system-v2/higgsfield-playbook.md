@@ -28,22 +28,33 @@ That's all Claude needs. It will:
 
 ## 2. Model settings (don't improvise these)
 
-**Primary: `recraft_v4_1`** — the only strong-typography model with native 4:5
-AND an enforced hex palette, which is exactly what a two-ink system needs.
+Before generating, Claude must call `list_workspaces` and, if no workspace has
+`is_selected: true`, call `select_workspace` — an unselected workspace makes
+every generation fail with a generic error.
+
+**Primary: `nano_banana_pro`** — native 4:5, strong text rendering, and covered
+by Higgsfield's standard plans (2 credits/slide at 1k as of 07_2026; preflight
+with `get_cost: true` to confirm).
 
 | Setting | Value |
 |---|---|
-| `model` | `recraft_v4_1` |
+| `model` | `nano_banana_pro` |
 | `aspect_ratio` | `4:5` |
-| `model_type` | `standard` (use `vector` if a page is pure type and standard output looks mushy) |
-| `colors` | `["#C14E2B", "#2A241D", "#EFE5CF", "#A8401F", "#4A4238"]` |
-| `background_color` | `#EFE5CF` for cream pages, `#C14E2B` for flood pages (03 & 07) |
-| `resolution` | `1k` for drafts, then `upscale_image` the approved finals to 2K |
+| `resolution` | `1k` for drafts; regenerate approved finals at `2k` (or `upscale_image`) |
+| `count` | `1` — generate and review one page at a time |
 
-**Fallback: `openai_hazel`** — best-in-class text rendering. Use it for any page
-that Recraft keeps misspelling after 2 retries. It has no 4:5, so generate at
-`2:3` and ask for "safe margins; composition must survive a slight crop to 4:5",
-then crop/outpaint to 1080×1350.
+Nano Banana Pro has no palette parameter, so the ink hex codes ride inside the
+prompt (the style block in §3 already includes them).
+
+**If the plan includes Recraft: `recraft_v4_1`** is worth switching to — it's
+the only strong-typography model with an *enforced* hex palette
+(`colors: ["#C14E2B", "#2A241D", "#EFE5CF", "#A8401F", "#4A4238"]`,
+`background_color` `#EFE5CF` cream / `#C14E2B` floods) plus native 4:5.
+
+**Fallback for stubborn text: `gpt_image_2` or `openai_hazel`** — best-in-class
+text rendering for any page that keeps misspelling after 2 retries. Neither has
+4:5, so generate at `2:3` / `3:4` with "safe margins; composition must survive a
+slight crop to 4:5", then crop/outpaint to 1080×1350.
 
 ---
 
