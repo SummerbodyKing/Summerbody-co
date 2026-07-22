@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T20:43:39.816151+00:00",
+  "generated_at": "2026-07-22T22:09:27.130199+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 3,
       "error": null,
       "jobs": [
+        {
+          "title": "Revenue Operations Analyst, Marketing",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -485,6 +491,13 @@
   ],
   "jobs": [
     {
+      "title": "Revenue Operations Analyst, Marketing",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
+    {
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
@@ -940,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 65
+  "total_matched": 66
 }
