@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup C — Arch Portal (PMI Tangerine)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     MOCKUP C — "Arch Portal"  |  PMI TANGERINE monochromatic ramp
+     Ramp (research brief §4): 100 #FFC9AD / 300 #FF9862 /
+     500 #FF610F / 700 #B83F00 / 900 #712700  + white only.
+     Pop-out: Technique A — the rounded-top arch is a ::before
+     layer BEHIND the bust; bust is TALLER than the arch so the
+     head rises past the arch crown (~15%); .pop overflow:hidden.
+     ============================================================ */
+  :root {
+    --c100: #FFC9AD;
+    --c300: #FF9862;
+    --c500: #FF610F;
+    --c700: #B83F00;
+    --c900: #712700;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    background: #3a3a3e;                 /* neutral preview background */
+    height: 100vh; overflow: hidden;
+    display: grid; place-items: center;
+  }
+
+  /* --- fixed 1080x1350 canvas, scaled to fit viewport by JS --- */
+  .card {
+    width: 1080px; height: 1350px; flex: none;
+    transform-origin: center center;
+    position: relative;
+    background: linear-gradient(180deg, #fff 0%, #fff 55%, var(--c100) 165%);
+    color: var(--c900);
+    display: flex; flex-direction: column; align-items: center;
+    padding: 40px 70px 56px;
+    overflow: hidden;
+  }
+
+  /* --- header: logo placeholder (top-left) + SPEAKER label --- */
+  .logo-box {
+    position: absolute; top: 44px; left: 48px; z-index: 3;
+    width: 190px; height: 74px;
+    background: var(--c500); border-radius: 10px;
+    display: grid; place-items: center;
+    color: #fff; font-weight: 700; font-size: 22px; letter-spacing: 1px;
+  }
+  .speaker-label {
+    position: absolute; top: 56px; right: 48px; z-index: 3;
+    border: 3px solid var(--c500); border-radius: 999px;
+    padding: 12px 30px;
+    font-weight: 700; font-size: 26px; letter-spacing: 7px;
+    color: var(--c700); background: #fff;
+  }
+
+  /* --- pop-out stack (Technique A) --- */
+  .pop {
+    position: relative; z-index: 1;
+    width: 680px; height: 700px;         /* taller than the 600px arch = headroom */
+    margin-top: 128px;
+    overflow: hidden;                    /* clips any spill at the stack bounds */
+    flex: none;
+  }
+  .pop::after {                          /* offset echo arch (depth), furthest back */
+    content: "";
+    position: absolute;
+    bottom: 0; left: 50%; translate: calc(-50% + 30px) 0;
+    width: 560px; height: 600px;
+    border-radius: 280px 280px 0 0;
+    background: var(--c100);
+    z-index: 0;
+  }
+  .pop::before {                         /* the arch portal, layer BEHIND bust */
+    content: "";
+    position: absolute;
+    bottom: 0; left: 50%; translate: -50% 0;
+    width: 560px; height: 600px;         /* arch crown at y=100 in .pop */
+    border-radius: 280px 280px 0 0;      /* rounded top, flat bottom */
+    background: var(--c500);
+    z-index: 1;
+  }
+  .bust {                                /* placeholder headshot, layer IN FRONT */
+    position: absolute;
+    bottom: 0;                           /* arch base is full width: flat crop OK */
+    left: 50%; translate: -50% 0;
+    width: 510px; height: auto;          /* ~698px tall -> head top ~y9, breaks
+                                            arch crown (y100) by ~91px ≈ 15% */
+    z-index: 2;
+    filter: drop-shadow(0 14px 22px rgba(113, 39, 0, 0.35));
+  }
+
+  /* --- typography hierarchy --- */
+  .name  { margin-top: 24px; font-size: 96px; font-weight: 900; line-height: 1.02;
+           letter-spacing: -2px; text-align: center; color: var(--c900); z-index: 1; }
+  .topic { margin-top: 18px; font-size: 44px; font-weight: 700; color: var(--c700);
+           text-align: center; z-index: 1; }
+  .role  { margin-top: 14px; font-size: 30px; font-weight: 400; color: var(--c900);
+           text-align: center; z-index: 1; }
+  .role .org { font-weight: 700; }
+
+  /* --- reserved zone: event name/date/time filled later in Canva --- */
+  .event-zone {
+    margin-top: auto; z-index: 1;
+    width: 880px; height: 118px;
+    border: 3px dashed var(--c700); border-radius: 14px;
+    background: #fff;
+    display: grid; place-items: center;
+    color: var(--c700); font-size: 28px; font-weight: 400; letter-spacing: 3px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-box">PMI SF LOGO</div>
+    <div class="speaker-label">SPEAKER</div>
+
+    <!-- Pop-out stack: arch (::before, behind) + oversized bust (front) -->
+    <div class="pop">
+      <!-- Placeholder bust SVG — replaced with a background-removed PNG in production -->
+      <svg class="bust" viewBox="0 0 460 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder speaker headshot">
+        <!-- torso / shoulders -->
+        <path d="M78 630 L78 560 Q78 448 172 410 Q230 388 288 410 Q382 448 382 560 L382 630 Q382 630 350 630 L110 630 Q78 630 78 630 Z"
+              fill="var(--c100)" stroke="var(--c700)" stroke-width="4"/>
+        <!-- neck -->
+        <rect x="196" y="228" width="68" height="150" rx="20" fill="var(--c100)" stroke="var(--c700)" stroke-width="4"/>
+        <!-- ears -->
+        <ellipse cx="122" cy="152" rx="15" ry="26" fill="var(--c100)" stroke="var(--c700)" stroke-width="4"/>
+        <ellipse cx="338" cy="152" rx="15" ry="26" fill="var(--c100)" stroke="var(--c700)" stroke-width="4"/>
+        <!-- head (top at y≈7 so it clears the arch crown) -->
+        <ellipse cx="230" cy="135" rx="106" ry="128" fill="var(--c100)" stroke="var(--c700)" stroke-width="4"/>
+        <!-- hair suggestion -->
+        <path d="M128 108 Q140 22 230 16 Q320 22 332 108 Q318 62 230 56 Q142 62 128 108 Z" fill="var(--c900)"/>
+        <!-- facial features suggestion -->
+        <circle cx="192" cy="140" r="8" fill="var(--c900)"/>
+        <circle cx="268" cy="140" r="8" fill="var(--c900)"/>
+        <path d="M182 118 Q192 110 204 116" fill="none" stroke="var(--c900)" stroke-width="4" stroke-linecap="round"/>
+        <path d="M256 116 Q268 110 278 118" fill="none" stroke="var(--c900)" stroke-width="4" stroke-linecap="round"/>
+        <path d="M230 150 Q224 172 232 176" fill="none" stroke="var(--c900)" stroke-width="4" stroke-linecap="round"/>
+        <path d="M198 200 Q230 218 262 200" fill="none" stroke="var(--c900)" stroke-width="5" stroke-linecap="round"/>
+        <!-- placeholder marker -->
+        <text x="230" y="555" text-anchor="middle" font-family="Inter, system-ui, sans-serif"
+              font-size="21" font-weight="700" letter-spacing="2.5" fill="var(--c900)">PLACEHOLDER PHOTO</text>
+      </svg>
+    </div>
+
+    <div class="name">Jane Placeholder</div>
+    <div class="topic">Leading Hybrid Teams in 2026</div>
+    <div class="role">PMP, Program Director&nbsp;&nbsp;·&nbsp;&nbsp;<span class="org">Placeholder Corp</span></div>
+
+    <div class="event-zone">EVENT DATE + TIME (edited in Canva)</div>
+  </div>
+
+  <script>
+    // Scale the fixed 1080x1350 card to fit any viewport (preview only)
+    const card = document.querySelector('.card');
+    function fit() {
+      const s = Math.min((innerWidth - 32) / 1080, (innerHeight - 32) / 1350, 1);
+      card.style.transform = 'scale(' + s + ')';
+    }
+    addEventListener('resize', fit);
+    fit();
+  </script>
+</body>
+</html>
