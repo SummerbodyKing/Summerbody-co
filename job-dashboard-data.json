@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T17:51:30.314119+00:00",
+  "generated_at": "2026-07-23T19:27:05.619609+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -181,8 +181,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 12,
+      "found": 11,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -244,12 +244,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
           "posted_date": "2026-07-06T12:41:16-04:00"
-        },
-        {
-          "title": "Vice President, Commercial Strategy - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
-          "posted_date": "2026-05-05T13:04:27-04:00"
         },
         {
           "title": "​Website Experience and CRO Manager  - US Remote",
@@ -708,13 +702,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Vice President, Commercial Strategy - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
-      "posted_date": "2026-05-05T13:04:27-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "​Website Experience and CRO Manager  - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104761004",
@@ -953,5 +940,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 65
 }
