@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T22:09:14.754731+00:00",
+  "generated_at": "2026-07-23T23:16:07.419163+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,10 +57,16 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 17,
+      "found": 24,
+      "matched": 18,
       "error": null,
       "jobs": [
+        {
+          "title": "Account Executive, Billing Company",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4711474005",
+          "posted_date": "2026-07-23T19:03:08-04:00"
+        },
         {
           "title": "Account Executive, Customer Growth",
           "location": "United States - Remote",
@@ -506,6 +512,13 @@
       "source": "modmed"
     },
     {
+      "title": "Account Executive, Billing Company",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4711474005",
+      "posted_date": "2026-07-23T19:03:08-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Account Executive, Customer Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4631714005",
@@ -940,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 65
+  "total_matched": 66
 }
