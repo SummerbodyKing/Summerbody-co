@@ -1,0 +1,75 @@
+/* Brand design tokens v1.0 — generated from brand/design.md. Edit design.md first, then mirror here. */
+:root {
+  /* Primary — Violet (Accent 1) */
+  --violet: #461da3;
+  --violet-100: #d4c6f5;
+  --violet-300: #a98eec;
+  --violet-500: #8158e3;
+  --violet-700: #36177b;
+  --violet-900: #270f53;
+
+  /* Secondary — Aqua (Accents 2-3) */
+  --teal: #44789b;
+  --teal-100: #c9effe;
+  --teal-300: #9addfe;
+  --teal-500: #79cdfd;
+  --teal-700: #345b74;
+  --teal-900: #233e4f;
+  --cyan: #6cbede; /* dark text only */
+  --cyan-100: #d5f6fe;
+  --cyan-300: #b0ebfc;
+  --cyan-500: #92e2fa;
+  --cyan-700: #508ea6;
+  --cyan-900: #37606f;
+
+  /* Accent — Tangerine (Accents 4-5) */
+  --orange-burnt: #b83713;
+  --orange: #e0611f; /* CTA/highlight; white text at large sizes only */
+  --orange-100: #f6decf;
+  --orange-300: #efbf9f;
+  --orange-500: #e89f71;
+  --orange-700: #b0470a;
+  --orange-900: #753205;
+
+  /* Accent — Saddle (Accent 6, dark text only) */
+  --tan: #b29478;
+  --tan-100: #efe9e3;
+  --tan-300: #e0d4c8;
+  --tan-500: #d0beac;
+  --tan-700: #906e4e;
+  --tan-900: #614a36;
+
+  /* Neutrals */
+  --cream: #f6f4ef;
+  --cream-100: #e4ddce;
+  --cream-300: #c8bb9e;
+  --cream-500: #998355;
+  --cream-700: #4e442e;
+  --ink: #242016;
+  --gray: #7f7f7f;
+  --gray-100: #e5e5e5;
+  --gray-300: #cbcbcb;
+  --gray-500: #b1b1b1;
+  --gray-700: #606060;
+  --gray-900: #424242;
+
+  /* Semantic */
+  --bg-light: var(--cream);
+  --bg-dark: var(--violet-900);
+  --text-on-light: var(--ink);
+  --text-on-dark: var(--cream);
+  --eyebrow: var(--violet);
+  --cta: var(--orange);
+
+  /* Typography */
+  --font-heading: "Aptos", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Aptos", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --weight-heading: 700;
+  --weight-body: 400;
+
+  /* Layout */
+  --space-unit: 8px;
+  --safe-margin: 80px;
+  --radius-card: 16px;
+  --radius-button: 999px;
+}
