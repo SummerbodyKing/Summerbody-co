@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T15:00:30.363087+00:00",
+  "generated_at": "2026-07-24T16:53:02.949521+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 3,
+      "matched": 4,
       "error": null,
       "jobs": [
+        {
+          "title": "Senior Manager, Customer Success",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Revenue Operations Analyst, Marketing",
           "location": "Remote - USA",
@@ -362,49 +368,49 @@
           "title": "Commercial Finance Lead (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
+          "posted_date": "2026-07-24T12:34:47-04:00"
         },
         {
           "title": "Customer Success Manager (Enterprise) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
-          "posted_date": "2026-07-23T10:06:20-04:00"
+          "posted_date": "2026-07-24T12:36:42-04:00"
         },
         {
           "title": "Executive Assistant to CFO (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
+          "posted_date": "2026-07-24T12:39:02-04:00"
         },
         {
           "title": "Global Treasury Director (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
-          "posted_date": "2026-07-17T10:08:16-04:00"
+          "posted_date": "2026-07-24T12:41:22-04:00"
         },
         {
           "title": "Manager, Enterprise Customer Success",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
+          "posted_date": "2026-07-24T12:42:08-04:00"
         },
         {
           "title": "Organic Search Manager (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
+          "posted_date": "2026-07-24T12:45:03-04:00"
         },
         {
           "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
+          "posted_date": "2026-07-24T12:45:28-04:00"
         },
         {
           "title": "QA Engineer (MIS) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
-          "posted_date": "2026-07-15T12:34:34-04:00"
+          "posted_date": "2026-07-24T12:48:46-04:00"
         },
         {
           "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
@@ -490,6 +496,13 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Senior Manager, Customer Success",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
     {
       "title": "Revenue Operations Analyst, Marketing",
       "location": "Remote - USA",
@@ -816,56 +829,56 @@
       "title": "Commercial Finance Lead (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
+      "posted_date": "2026-07-24T12:34:47-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Customer Success Manager (Enterprise) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
-      "posted_date": "2026-07-23T10:06:20-04:00",
+      "posted_date": "2026-07-24T12:36:42-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Executive Assistant to CFO (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
+      "posted_date": "2026-07-24T12:39:02-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Global Treasury Director (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
-      "posted_date": "2026-07-17T10:08:16-04:00",
+      "posted_date": "2026-07-24T12:41:22-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Manager, Enterprise Customer Success",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
+      "posted_date": "2026-07-24T12:42:08-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Organic Search Manager (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
+      "posted_date": "2026-07-24T12:45:03-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
+      "posted_date": "2026-07-24T12:45:28-04:00",
       "source": "knowbe4"
     },
     {
       "title": "QA Engineer (MIS) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
-      "posted_date": "2026-07-15T12:34:34-04:00",
+      "posted_date": "2026-07-24T12:48:46-04:00",
       "source": "knowbe4"
     },
     {
@@ -953,5 +966,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 67
 }
