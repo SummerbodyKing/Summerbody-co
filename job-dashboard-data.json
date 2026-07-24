@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T18:22:53.048549+00:00",
+  "generated_at": "2026-07-24T20:01:14.042145+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -274,8 +274,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 21,
-      "matched": 13,
+      "found": 20,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -288,12 +288,6 @@
           "title": "Legal Innovation Partner",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
-          "posted_date": "2026-07-21T14:16:34-04:00"
-        },
-        {
-          "title": "Manager of Legal Engineering",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258248008",
           "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
@@ -749,13 +743,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Manager of Legal Engineering",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258248008",
-      "posted_date": "2026-07-21T14:16:34-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Manager, Software Engineering - AI Assistant",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
@@ -966,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 67
+  "total_matched": 66
 }
