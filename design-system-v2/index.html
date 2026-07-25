@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RISO PRESS — Design System v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--stock-cream);
+    color: var(--ink-black);
+    font-family: var(--font-type);
+    line-height: 1.6;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+
+  /* ---------- page chrome ---------- */
+  header.hero { border-bottom: 3px solid var(--ink-black); padding-bottom: 2.5rem; }
+  header.hero .serial-top { display: flex; justify-content: space-between; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2rem; color: var(--ink-black-soft); }
+  header.hero h1 { font-family: var(--font-press); font-weight: 700; text-transform: uppercase; font-size: clamp(3.4rem, 11vw, 8rem); line-height: 0.95; }
+  header.hero h1 em { font-style: normal; color: var(--ink-orange); }
+  header.hero .rule { width: 96px; height: 10px; background: var(--ink-orange); margin: 1.4rem 0; }
+  header.hero p { max-width: 58ch; font-size: 0.95rem; }
+
+  section { margin-top: 5rem; }
+  h2.sec { font-family: var(--font-press); font-weight: 700; text-transform: uppercase; font-size: 2.1rem; }
+  h2.sec small { font-family: var(--font-type); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--ink-orange); display: block; margin-bottom: 0.25rem; }
+  .sec-rule { width: 96px; height: 8px; background: var(--ink-orange); margin: 0.9rem 0 2rem; }
+
+  /* ---------- inks ---------- */
+  .inks { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1rem; }
+  .inkcard { border: 2px solid var(--ink-black); }
+  .inkcard .fill { height: 100px; border-bottom: 2px solid var(--ink-black); }
+  .inkcard .meta { padding: 0.6rem 0.8rem; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .inkcard .meta b { display: block; font-weight: 700; }
+  .inkcard .meta span { color: var(--ink-black-soft); }
+
+  /* ---------- specimens ---------- */
+  .spec { padding: 1.8rem 0; border-bottom: 1px dashed var(--ink-black-soft); }
+  .spec .tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-orange); font-weight: 700; display: block; margin-bottom: 0.9rem; }
+
+  /* ---------- slide mockups ---------- */
+  .pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2rem; }
+  .page.mock {
+    aspect-ratio: 4 / 5;
+    border: 2px solid var(--ink-black);
+    display: flex;
+    flex-direction: column;
+    padding: 8% 8% 7%;
+  }
+  .mock .headline { font-size: clamp(1.6rem, 4.2vw, 2.5rem); }
+  .mock .kicker-rule { width: 64px; height: 7px; }
+  .mock .list-strike, .mock .list-check { font-size: 0.85rem; gap: 1.1em; margin-top: 2rem; }
+  .mock .footer-line { font-size: 0.7rem; margin-top: auto; }
+  .mock .pagefoot { display: flex; justify-content: space-between; align-items: center; margin-top: 1.4rem; }
+  .mock .counter { font-size: 0.72rem; }
+  .mock .arrow-mark { font-size: 0.85rem; }
+  .mock .step-number { font-size: clamp(3.4rem, 9vw, 5.4rem); }
+  .mock .type-lines { font-size: 0.8rem; text-transform: uppercase; display: grid; gap: 1.2em; margin-top: 2rem; }
+
+  /* cover mock */
+  .mock.cover { padding: 0; }
+  .cover .split { display: flex; flex: 1; min-height: 0; }
+  .cover .panel { flex: 1; background: var(--ink-orange); position: relative; display: flex; align-items: flex-start; padding: 10% 4% 0 7%; }
+  .cover .panel .cover-word { font-size: clamp(4rem, 12vw, 7rem); position: relative; z-index: 1; margin-right: -14%; }
+  .cover .rail { width: 21%; display: flex; justify-content: center; padding-top: 6%; }
+  .cover .below { padding: 5% 8% 6%; display: flex; flex-direction: column; gap: 0.9rem; }
+  .cover .below .row { display: flex; gap: 1rem; align-items: baseline; }
+  .cover .shopname { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-orange-heavy); white-space: nowrap; }
+  .cover .hook { font-size: 0.78rem; }
+  .cover .coverfoot { display: flex; justify-content: space-between; align-items: center; }
+  .cover .serial { font-size: 0.62rem; }
+
+  /* ---------- texture demos ---------- */
+  .textures { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .tex { border: 2px solid var(--ink-black); padding: 1.6rem 1.4rem; min-height: 170px; position: relative; overflow: hidden; }
+  .tex h3 { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-orange); margin-bottom: 1rem; font-weight: 700; }
+  .tex.flooded { background: var(--ink-orange); color: var(--stock-cream); }
+  .tex.flooded h3 { color: var(--stock-cream); }
+
+  /* ---------- narrative map ---------- */
+  .narrative { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+  .beat { aspect-ratio: 4/5; border: 2px solid var(--ink-black); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; font-size: 0.6rem; text-transform: uppercase; text-align: center; padding: 4px; }
+  .beat b { font-family: var(--font-press); font-size: 0.9rem; }
+  .beat.flood { background: var(--ink-orange); color: var(--stock-cream); border-color: var(--ink-orange-heavy); }
+  @media (max-width: 700px) { .narrative { grid-template-columns: repeat(4, 1fr); } }
+
+  footer.end { margin-top: 6rem; border-top: 3px solid var(--ink-black); padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-black-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="serial-top"><span>Design System No. 02</span><span>07_22_26</span></div>
+    <h1>Riso<br><em>Press.</em></h1>
+    <div class="rule"></div>
+    <p>Two inks. One stock. A vintage print-shop carousel system: over-inked wood-type
+    headlines, typewriter body copy, job serials, page counters, and hand-struck marks.
+    Full spec in <a href="design.md" style="color:var(--ink-orange)">design.md</a>.
+    (v1 "Scrapbook Editorial" is set aside in <code>../design-system/</code>.)</p>
+  </header>
+
+  <section>
+    <h2 class="sec"><small>Section 01</small>Two Inks. One Stock.</h2>
+    <div class="sec-rule"></div>
+    <div class="inks">
+      <div class="inkcard"><div class="fill" style="background:#efe5cf"></div><div class="meta"><b>Stock Cream</b><span>#EFE5CF · the paper</span></div></div>
+      <div class="inkcard"><div class="fill" style="background:#e3d5b6"></div><div class="meta"><b>Stock Aged</b><span>#E3D5B6 · edges only</span></div></div>
+      <div class="inkcard"><div class="fill" style="background:#c14e2b"></div><div class="meta"><b>Ink Orange</b><span>#C14E2B · drum 1</span></div></div>
+      <div class="inkcard"><div class="fill" style="background:#a8401f"></div><div class="meta"><b>Orange Heavy</b><span>#A8401F · double pass</span></div></div>
+      <div class="inkcard"><div class="fill" style="background:#2a241d"></div><div class="meta"><b>Ink Black</b><span>#2A241D · drum 2</span></div></div>
+      <div class="inkcard"><div class="fill" style="background:#4a4238"></div><div class="meta"><b>Black Soft</b><span>#4A4238 · under-inked</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec"><small>Section 02</small>Wood Type + Typewriter</h2>
+    <div class="sec-rule"></div>
+    <div class="spec">
+      <span class="tag">Press — Oswald 700 · caps · leading 1.0 · a period ends every line</span>
+      <div class="press" style="font-size:clamp(2.4rem,7vw,4.6rem)">Claude forgets<br>everything.</div>
+      <div class="kicker-rule"></div>
+    </div>
+    <div class="spec">
+      <span class="tag">Cover word — Anton · one word · fills the panel</span>
+      <div class="cover-word eroded" style="color:var(--ink-orange); font-size:clamp(4rem,14vw,9rem)">Soul</div>
+    </div>
+    <div class="spec">
+      <span class="tag">Type — Courier Prime · the workhorse · leading 1.6</span>
+      <p class="type" style="max-width:44ch">Claude forgets who it is mid-session. This 3-sentence file fixes it.</p>
+    </div>
+    <div class="spec">
+      <span class="tag">Serial &amp; counter — mono caps · zero-padded</span>
+      <span class="serial">CCC NO. 03 / 05_27_26</span> &nbsp;&nbsp;·&nbsp;&nbsp; <span class="counter">02 / 08</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec"><small>Section 03</small>Page Templates</h2>
+    <div class="sec-rule"></div>
+    <div class="pages">
+
+      <!-- 01 Cover -->
+      <div class="page mock cover">
+        <div class="split">
+          <div class="panel"><div class="cover-word eroded">Soul</div></div>
+          <div class="rail"><div class="ticker-rail">SOUL. JOB. KEYS. SOUL. JOB. KEYS. SOUL.</div></div>
+        </div>
+        <div class="below">
+          <div class="row">
+            <span class="shopname">Claude Code Club</span>
+            <span class="type hook">Claude forgets who it is mid-session. This 3-sentence file fixes it.</span>
+          </div>
+          <div class="coverfoot">
+            <span class="serial">CCC NO. 03 / 05_27_26</span>
+            <span class="arrow-mark" style="font-size:0.8rem"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 Problem -->
+      <div class="page mock">
+        <div class="press headline">Claude forgets everything.</div>
+        <div class="kicker-rule"></div>
+        <ul class="list-strike">
+          <li>Your tone.</li>
+          <li>Your style.</li>
+          <li>Your rules.</li>
+        </ul>
+        <div class="footer-line">Every new session.<br>Start from scratch.</div>
+        <div class="pagefoot"><span class="counter">02 / 08</span><span class="arrow-mark"></span></div>
+      </div>
+
+      <!-- 03 Flood promise -->
+      <div class="page mock page--flood" style="text-align:center; align-items:center;">
+        <div class="press headline" style="margin-top:14%">With a soul file. It just works.</div>
+        <div class="kicker-rule kicker-rule--center"></div>
+        <div class="footer-line">Write it once.<br>Use it forever.</div>
+        <div class="pagefoot" style="width:100%"><span class="counter">03 / 08</span><span class="arrow-mark"></span></div>
+      </div>
+
+      <!-- 06 Step -->
+      <div class="page mock">
+        <div class="press step-number">Step 3.</div>
+        <div class="kicker-rule"></div>
+        <div class="type type-lines">
+          <span>Copy 2 examples of your writing.</span>
+          <span>Paste them into the chat.</span>
+          <span>Claude does the rest.</span>
+        </div>
+        <div class="pagefoot" style="margin-top:auto"><span class="counter">06 / 08</span><span class="arrow-mark"></span></div>
+      </div>
+
+      <!-- 07 Flood payoff -->
+      <div class="page mock page--flood" style="text-align:center; align-items:center;">
+        <div class="press headline" style="margin-top:8%">Now Claude sounds like you.</div>
+        <div class="kicker-rule kicker-rule--center"></div>
+        <ul class="list-check" style="text-align:left">
+          <li>No rewriting.</li>
+          <li>No re-prompting.</li>
+          <li>Every session.</li>
+        </ul>
+        <div class="pagefoot" style="width:100%; margin-top:auto"><span class="counter">07 / 08</span><span class="arrow-mark"></span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec"><small>Section 04</small>Texture Recipes</h2>
+    <div class="sec-rule"></div>
+    <div class="textures">
+      <div class="tex page"><h3>Paper grain — every page</h3><p class="type" style="font-size:0.85rem">Monochrome noise, 5–8% opacity, multiply.</p></div>
+      <div class="tex"><h3>Ink erosion — display only</h3><div class="press eroded" style="font-size:2.6rem">Eroded.</div></div>
+      <div class="tex"><h3>Misprint offset — max 1 per job</h3><div class="press misprint" style="font-size:2.6rem" data-text="Offset.">Offset.</div></div>
+      <div class="tex flooded page--flood"><h3>Orange flood — narrative turns</h3><p class="type" style="font-size:0.85rem">Everything on a flood is cream. No black on orange.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec"><small>Section 05</small>The 8-Page Narrative</h2>
+    <div class="sec-rule"></div>
+    <div class="narrative">
+      <div class="beat"><b>01</b>Hook</div>
+      <div class="beat"><b>02</b>Problem ✗</div>
+      <div class="beat flood"><b>03</b>Promise</div>
+      <div class="beat"><b>04</b>Step 1</div>
+      <div class="beat"><b>05</b>Step 2</div>
+      <div class="beat"><b>06</b>Step 3</div>
+      <div class="beat flood"><b>07</b>Payoff ✓</div>
+      <div class="beat"><b>08</b>CTA</div>
+    </div>
+    <p class="type" style="font-size:0.85rem; margin-top:1.2rem; max-width:60ch">Cream–cream–ORANGE–cream–cream–cream–ORANGE–cream. The floods land on the emotional beats: the promise and the payoff.</p>
+  </section>
+
+  <footer class="end">
+    <span>Riso Press · Design System v2</span>
+    <span>tokens.css · design.md</span>
+  </footer>
+
+</div>
+</body>
+</html>
