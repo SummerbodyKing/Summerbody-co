@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T03:32:44.462240+00:00",
+  "generated_at": "2026-07-26T06:23:43.107898+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 4,
+      "matched": 3,
       "error": null,
       "jobs": [
         {
@@ -45,12 +45,6 @@
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
           "posted_date": "Posted 9 Days Ago"
-        },
-        {
-          "title": "Vice President, Customer Success Operations & Enablement",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
-          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -512,13 +506,6 @@
       "source": "modmed"
     },
     {
-      "title": "Vice President, Customer Success Operations & Enablement",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
-      "posted_date": "Posted 30+ Days Ago",
-      "source": "modmed"
-    },
-    {
       "title": "Account Executive, Billing Company",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4711474005",
@@ -953,5 +940,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 65
 }
