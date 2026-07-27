@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T21:20:34.959823+00:00",
+  "generated_at": "2026-07-27T22:40:13.887112+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,8 +57,8 @@
     },
     {
       "name": "tebra",
-      "found": 24,
-      "matched": 18,
+      "found": 25,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -96,6 +96,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4696219005",
           "posted_date": "2026-06-02T13:38:25-04:00"
+        },
+        {
+          "title": "Data Engineer",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
+          "posted_date": "2026-07-27T17:21:39-04:00"
         },
         {
           "title": "Director, Analytics Engineering",
@@ -548,6 +554,13 @@
       "source": "tebra"
     },
     {
+      "title": "Data Engineer",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
+      "posted_date": "2026-07-27T17:21:39-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Director, Analytics Engineering",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
@@ -940,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 65
+  "total_matched": 66
 }
