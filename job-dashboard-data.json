@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T04:09:30.270466+00:00",
+  "generated_at": "2026-07-27T07:57:32.299299+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,26 +25,32 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 3,
+      "matched": 4,
       "error": null,
       "jobs": [
         {
           "title": "Senior Manager, Customer Success",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-          "posted_date": "Posted 2 Days Ago"
+          "posted_date": "Posted 3 Days Ago"
         },
         {
           "title": "Revenue Operations Analyst, Marketing",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
-          "posted_date": "Posted 4 Days Ago"
+          "posted_date": "Posted 5 Days Ago"
         },
         {
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted 10 Days Ago"
+          "posted_date": "Posted 11 Days Ago"
+        },
+        {
+          "title": "Vice President, Customer Success Operations & Enablement",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
+          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -488,21 +494,28 @@
       "title": "Senior Manager, Customer Success",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-      "posted_date": "Posted 2 Days Ago",
+      "posted_date": "Posted 3 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Revenue Operations Analyst, Marketing",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
-      "posted_date": "Posted 4 Days Ago",
+      "posted_date": "Posted 5 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted 10 Days Ago",
+      "posted_date": "Posted 11 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Vice President, Customer Success Operations & Enablement",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
+      "posted_date": "Posted 30+ Days Ago",
       "source": "modmed"
     },
     {
@@ -940,5 +953,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 65
+  "total_matched": 66
 }
