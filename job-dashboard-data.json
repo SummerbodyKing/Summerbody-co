@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T20:20:21.890679+00:00",
+  "generated_at": "2026-07-28T21:36:20.301301+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -63,7 +63,7 @@
     },
     {
       "name": "tebra",
-      "found": 26,
+      "found": 25,
       "matched": 20,
       "error": null,
       "jobs": [
@@ -286,8 +286,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
-      "matched": 11,
+      "found": 17,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -348,12 +348,6 @@
           "title": "Staff Cloud Engineer - Infrastructure",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
-          "posted_date": "2026-07-21T14:16:34-04:00"
-        },
-        {
-          "title": "Staff Data Architect",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
           "posted_date": "2026-07-21T14:16:34-04:00"
         }
       ]
@@ -801,13 +795,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Staff Data Architect",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
-      "posted_date": "2026-07-21T14:16:34-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Customer Success Manager (Enterprise) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
@@ -927,5 +914,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 64
+  "total_matched": 63
 }
