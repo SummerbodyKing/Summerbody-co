@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T17:11:26.620038+00:00",
+  "generated_at": "2026-07-28T18:51:21.836901+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 3,
+      "matched": 4,
       "error": null,
       "jobs": [
+        {
+          "title": "Senior Director, Customer Success Enablement & Strategy",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Senior Manager, Customer Success",
           "location": "Remote - USA",
@@ -274,8 +280,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 19,
-      "matched": 12,
+      "found": 18,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -306,12 +312,6 @@
           "title": "Manager, Software Engineering - Platform",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
-          "posted_date": "2026-07-21T14:16:34-04:00"
-        },
-        {
-          "title": "Senior Delivery Manager",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
           "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
@@ -354,7 +354,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 82,
+      "found": 83,
       "matched": 15,
       "error": null,
       "jobs": [
@@ -472,6 +472,13 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Senior Director, Customer Success Enablement & Strategy",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
     {
       "title": "Senior Manager, Customer Success",
       "location": "Remote - USA",
@@ -742,13 +749,6 @@
       "title": "Manager, Software Engineering - Platform",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
-      "posted_date": "2026-07-21T14:16:34-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Senior Delivery Manager",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
       "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
