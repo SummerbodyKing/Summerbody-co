@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T13:18:09.758450+00:00",
+  "generated_at": "2026-07-28T15:39:58.306222+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -360,16 +360,10 @@
     },
     {
       "name": "knowbe4",
-      "found": 84,
-      "matched": 18,
+      "found": 82,
+      "matched": 15,
       "error": null,
       "jobs": [
-        {
-          "title": "Commercial Finance Lead (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
-          "posted_date": "2026-07-24T12:34:47-04:00"
-        },
         {
           "title": "Customer Success Manager (Enterprise) (Remote)",
           "location": "Remote",
@@ -419,12 +413,6 @@
           "posted_date": "2026-07-24T12:54:52-04:00"
         },
         {
-          "title": "Snr. Director of HR (Americas) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8624704002",
-          "posted_date": "2026-07-24T12:58:51-04:00"
-        },
-        {
           "title": "Snr. Employee Relations Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
@@ -435,12 +423,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
           "posted_date": "2026-07-24T12:59:51-04:00"
-        },
-        {
-          "title": "Software Engineering Manager (US - Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8592913002",
-          "posted_date": "2026-07-24T13:01:52-04:00"
         },
         {
           "title": "Solution Architect (Remote)",
@@ -826,13 +808,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Commercial Finance Lead (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
-      "posted_date": "2026-07-24T12:34:47-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Customer Success Manager (Enterprise) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
@@ -889,13 +864,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Snr. Director of HR (Americas) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8624704002",
-      "posted_date": "2026-07-24T12:58:51-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Snr. Employee Relations Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
@@ -907,13 +875,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
       "posted_date": "2026-07-24T12:59:51-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Software Engineering Manager (US - Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8592913002",
-      "posted_date": "2026-07-24T13:01:52-04:00",
       "source": "knowbe4"
     },
     {
@@ -966,5 +927,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 67
+  "total_matched": 64
 }
