@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T18:21:21.681538+00:00",
+  "generated_at": "2026-07-30T20:05:23.178059+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -63,8 +63,8 @@
     },
     {
       "name": "tebra",
-      "found": 25,
-      "matched": 20,
+      "found": 26,
+      "matched": 21,
       "error": null,
       "jobs": [
         {
@@ -146,6 +146,12 @@
           "posted_date": "2026-07-02T16:49:18-04:00"
         },
         {
+          "title": "Lead Sales & Growth Operations Analyst",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
+          "posted_date": "2026-07-30T15:18:56-04:00"
+        },
+        {
           "title": "Senior AI Automation Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4700274005",
@@ -205,8 +211,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 11,
+      "found": 12,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -226,6 +232,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
           "posted_date": "2026-07-08T11:52:20-04:00"
+        },
+        {
+          "title": "Practice Consultant I - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
+          "posted_date": "2026-07-30T14:52:14-04:00"
         },
         {
           "title": "QA Engineer - US Remote",
@@ -360,8 +372,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 83,
-      "matched": 15,
+      "found": 82,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -425,22 +437,10 @@
           "posted_date": "2026-07-24T12:59:51-04:00"
         },
         {
-          "title": "Solution Architect (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8402270002",
-          "posted_date": "2026-07-24T13:02:28-04:00"
-        },
-        {
           "title": "Staff Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
           "posted_date": "2026-07-24T13:02:53-04:00"
-        },
-        {
-          "title": "Technical Solution Architect - Business Applications (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8545503002",
-          "posted_date": "2026-07-24T13:04:33-04:00"
         },
         {
           "title": "VP Financial Planning & Analysis (Remote)",
@@ -598,6 +598,13 @@
       "source": "tebra"
     },
     {
+      "title": "Lead Sales & Growth Operations Analyst",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
+      "posted_date": "2026-07-30T15:18:56-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Senior AI Automation Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4700274005",
@@ -672,6 +679,13 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
       "posted_date": "2026-07-08T11:52:20-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Practice Consultant I - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
+      "posted_date": "2026-07-30T14:52:14-04:00",
       "source": "perfectserve"
     },
     {
@@ -878,24 +892,10 @@
       "source": "knowbe4"
     },
     {
-      "title": "Solution Architect (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8402270002",
-      "posted_date": "2026-07-24T13:02:28-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Staff Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
       "posted_date": "2026-07-24T13:02:53-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Technical Solution Architect - Business Applications (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8545503002",
-      "posted_date": "2026-07-24T13:04:33-04:00",
       "source": "knowbe4"
     },
     {
