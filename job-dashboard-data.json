@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T15:15:56.449132+00:00",
+  "generated_at": "2026-07-30T16:54:10.316493+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -286,8 +286,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 16,
-      "matched": 10,
+      "found": 17,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -333,6 +333,12 @@
           "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
+          "title": "Senior Social Manager",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
+          "posted_date": "2026-07-30T12:24:48-04:00"
+        },
+        {
           "title": "Senior Software Engineer - Next-Gen",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
@@ -354,7 +360,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 82,
+      "found": 83,
       "matched": 15,
       "error": null,
       "jobs": [
@@ -774,6 +780,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Senior Social Manager",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
+      "posted_date": "2026-07-30T12:24:48-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Senior Software Engineer - Next-Gen",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
@@ -914,5 +927,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 63
+  "total_matched": 64
 }
