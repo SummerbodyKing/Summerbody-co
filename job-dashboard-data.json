@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T20:07:31.311806+00:00",
+  "generated_at": "2026-07-31T21:32:23.695277+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -29,6 +29,12 @@
       "error": null,
       "jobs": [
         {
+          "title": "Senior Manager, Customer Success",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+          "posted_date": "Posted Today"
+        },
+        {
           "title": "Customer Success Specialist",
           "location": "Remote - Florida",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R4791",
@@ -39,12 +45,6 @@
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
           "posted_date": "Posted 3 Days Ago"
-        },
-        {
-          "title": "Senior Manager, Customer Success",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-          "posted_date": "Posted 7 Days Ago"
         },
         {
           "title": "Revenue Operations Analyst, Marketing",
@@ -69,8 +69,8 @@
     },
     {
       "name": "tebra",
-      "found": 25,
-      "matched": 21,
+      "found": 24,
+      "matched": 20,
       "error": null,
       "jobs": [
         {
@@ -102,12 +102,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4687903005",
           "posted_date": "2026-05-19T16:12:56-04:00"
-        },
-        {
-          "title": "Corporate Counsel",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4696219005",
-          "posted_date": "2026-06-02T13:38:25-04:00"
         },
         {
           "title": "Data Engineer",
@@ -316,16 +310,10 @@
     },
     {
       "name": "netdocuments",
-      "found": 16,
-      "matched": 10,
+      "found": 15,
+      "matched": 9,
       "error": null,
       "jobs": [
-        {
-          "title": "Legal Consultant - Legal Tech Project Manager",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5254142008",
-          "posted_date": "2026-07-21T14:16:34-04:00"
-        },
         {
           "title": "Legal Innovation Partner",
           "location": "Lehi, Utah, United States; Remote - US",
@@ -354,7 +342,7 @@
           "title": "Senior Manager, Software Engineering - AI",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-07-21T15:32:17-04:00"
+          "posted_date": "2026-07-31T16:37:38-04:00"
         },
         {
           "title": "Senior Sales Director, Corporate",
@@ -491,6 +479,13 @@
   ],
   "jobs": [
     {
+      "title": "Senior Manager, Customer Success",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
+    {
       "title": "Customer Success Specialist",
       "location": "Remote - Florida",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R4791",
@@ -502,13 +497,6 @@
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
       "posted_date": "Posted 3 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Manager, Customer Success",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-      "posted_date": "Posted 7 Days Ago",
       "source": "modmed"
     },
     {
@@ -558,13 +546,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4687903005",
       "posted_date": "2026-05-19T16:12:56-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Corporate Counsel",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4696219005",
-      "posted_date": "2026-06-02T13:38:25-04:00",
       "source": "tebra"
     },
     {
@@ -778,13 +759,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Legal Consultant - Legal Tech Project Manager",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5254142008",
-      "posted_date": "2026-07-21T14:16:34-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Legal Innovation Partner",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
@@ -816,7 +790,7 @@
       "title": "Senior Manager, Software Engineering - AI",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-07-21T15:32:17-04:00",
+      "posted_date": "2026-07-31T16:37:38-04:00",
       "source": "netdocuments"
     },
     {
@@ -953,5 +927,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 66
+  "total_matched": 64
 }
