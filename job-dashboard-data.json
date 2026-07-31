@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T14:16:01.012019+00:00",
+  "generated_at": "2026-07-31T18:23:34.147078+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,20 +25,38 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 5,
       "error": null,
       "jobs": [
         {
-          "title": "Vice President, Customer Success Operations & Enablement",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
-          "posted_date": "Posted 10 Days Ago"
+          "title": "Customer Success Specialist",
+          "location": "Remote - Florida",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R4791",
+          "posted_date": "Posted Today"
         },
         {
-          "title": "Payment Operations Analyst, Customer Success",
+          "title": "Senior Director, Customer Success Enablement & Strategy",
           "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Payment-Operations-Analyst--Customer-Success_R4276",
-          "posted_date": "Posted 18 Days Ago"
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
+          "posted_date": "Posted 3 Days Ago"
+        },
+        {
+          "title": "Senior Manager, Customer Success",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+          "posted_date": "Posted 7 Days Ago"
+        },
+        {
+          "title": "Revenue Operations Analyst, Marketing",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
+          "posted_date": "Posted 9 Days Ago"
+        },
+        {
+          "title": "Senior Marketing Events Specialist",
+          "location": "Boca Raton, FL",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
+          "posted_date": "Posted 15 Days Ago"
         }
       ]
     },
@@ -51,10 +69,16 @@
     },
     {
       "name": "tebra",
-      "found": 22,
-      "matched": 18,
+      "found": 25,
+      "matched": 21,
       "error": null,
       "jobs": [
+        {
+          "title": "Account Executive, Billing Company",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4711474005",
+          "posted_date": "2026-07-23T19:03:08-04:00"
+        },
         {
           "title": "Account Executive, Customer Growth",
           "location": "United States - Remote",
@@ -62,10 +86,16 @@
           "posted_date": "2026-04-17T13:59:38-04:00"
         },
         {
-          "title": "AI Automation Engineer",
+          "title": "Account Executive, Growth",
           "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4694698005",
-          "posted_date": "2026-05-28T17:36:30-04:00"
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+          "posted_date": "2026-07-14T13:35:26-04:00"
+        },
+        {
+          "title": "Account Executive, Practice Solutions",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4707748005",
+          "posted_date": "2026-07-13T14:07:11-04:00"
         },
         {
           "title": "Channel Manager",
@@ -80,34 +110,40 @@
           "posted_date": "2026-06-02T13:38:25-04:00"
         },
         {
+          "title": "Data Engineer",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
+          "posted_date": "2026-07-27T17:21:39-04:00"
+        },
+        {
           "title": "Director, Analytics Engineering",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
-          "posted_date": "2026-06-29T16:05:14-04:00"
+          "posted_date": "2026-07-07T13:08:13-04:00"
         },
         {
-          "title": "Director, Customer Success Operations",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4682483005",
-          "posted_date": "2026-05-14T18:37:59-04:00"
-        },
-        {
-          "title": "Director, GTM Technology",
+          "title": "Director, GTM Operations",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
-          "posted_date": "2026-07-01T12:08:40-04:00"
+          "posted_date": "2026-07-28T15:13:23-04:00"
+        },
+        {
+          "title": "Head of AI Engineering & Enablement",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
+          "posted_date": "2026-07-15T19:21:44-04:00"
         },
         {
           "title": "Head of Customer Success & Operations",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4709495005",
-          "posted_date": "2026-06-26T17:56:47-04:00"
+          "posted_date": "2026-07-15T12:54:13-04:00"
         },
         {
           "title": "Head of Growth",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4709493005",
-          "posted_date": "2026-06-26T18:03:55-04:00"
+          "posted_date": "2026-07-15T12:54:09-04:00"
         },
         {
           "title": "Inside Sales Representative",
@@ -119,19 +155,7 @@
           "title": "Lead Sales & Growth Operations Analyst",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
-          "posted_date": "2026-04-13T14:11:58-04:00"
-        },
-        {
-          "title": "Sales Development Representative",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
-          "posted_date": "2026-04-13T14:11:55-04:00"
-        },
-        {
-          "title": "Security Architect",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4653174005",
-          "posted_date": "2026-04-13T14:11:57-04:00"
+          "posted_date": "2026-07-30T15:18:56-04:00"
         },
         {
           "title": "Senior AI Automation Engineer",
@@ -146,10 +170,22 @@
           "posted_date": "2026-06-23T22:15:53-04:00"
         },
         {
+          "title": "Senior Product Manager",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
+          "posted_date": "2026-07-14T13:26:19-04:00"
+        },
+        {
           "title": "Senior Software Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4670199005",
           "posted_date": "2026-04-14T12:43:46-04:00"
+        },
+        {
+          "title": "Software Engineer 1",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4714981005",
+          "posted_date": "2026-07-28T15:54:10-04:00"
         },
         {
           "title": "Software Engineer III",
@@ -167,7 +203,7 @@
     },
     {
       "name": "sift-healthcare",
-      "found": 2,
+      "found": 3,
       "matched": 1,
       "error": null,
       "jobs": [
@@ -181,15 +217,27 @@
     },
     {
       "name": "perfectserve",
-      "found": 19,
-      "matched": 19,
+      "found": 14,
+      "matched": 14,
       "error": null,
       "jobs": [
         {
-          "title": "Director of Software Engineering - US Remote",
+          "title": "Director of Product Management  - US Remote",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013927004",
-          "posted_date": "2026-06-29T11:32:36-04:00"
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
+          "posted_date": "2026-07-08T16:38:26-04:00"
+        },
+        {
+          "title": "Forward Deployment Engineer, AI - Canada Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131764004",
+          "posted_date": "2026-07-31T10:10:17-04:00"
+        },
+        {
+          "title": "Forward Deployment Engineer, AI - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6130290004",
+          "posted_date": "2026-07-31T10:10:01-04:00"
         },
         {
           "title": "Implementation Consultant I - US Remote",
@@ -201,37 +249,19 @@
           "title": "Lifecycle Manager - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
-          "posted_date": "2026-06-29T11:33:51-04:00"
+          "posted_date": "2026-07-08T11:52:20-04:00"
         },
         {
-          "title": "Manager of Accounting - US Remote",
+          "title": "Practice Consultant I - US Remote",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5835627004",
-          "posted_date": "2026-06-29T11:31:35-04:00"
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
+          "posted_date": "2026-07-30T14:52:14-04:00"
         },
         {
-          "title": "Manager, Project Management Office  - US Remote",
+          "title": "QA Engineer - US Remote",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5977945004",
-          "posted_date": "2026-06-29T11:34:28-04:00"
-        },
-        {
-          "title": "Project Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
-          "posted_date": "2026-06-29T11:35:10-04:00"
-        },
-        {
-          "title": "Sales Operations Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5810794004",
-          "posted_date": "2026-06-29T11:32:03-04:00"
-        },
-        {
-          "title": "Senior Director, Segment & Solutions Marketing  - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104742004",
-          "posted_date": "2026-07-01T08:43:50-04:00"
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111930004",
+          "posted_date": "2026-07-09T12:51:23-04:00"
         },
         {
           "title": "Senior Financial Analyst - Canada Remote",
@@ -246,28 +276,16 @@
           "posted_date": "2026-06-29T11:35:39-04:00"
         },
         {
-          "title": "Senior Full Stack Engineer – EHR Integrations - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5844598004",
-          "posted_date": "2026-06-29T11:32:59-04:00"
-        },
-        {
-          "title": "Senior Go To Market Systems Engineer - Remote - US & Canada",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6000082004",
-          "posted_date": "2026-06-29T11:36:11-04:00"
-        },
-        {
-          "title": "Senior Project Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104754004",
-          "posted_date": "2026-07-01T08:44:25-04:00"
-        },
-        {
           "title": "Senior Software Engineer, .NET - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5826519004",
           "posted_date": "2026-06-29T11:36:31-04:00"
+        },
+        {
+          "title": "Shift Operations Coordinator - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
+          "posted_date": "2026-07-21T10:01:59-04:00"
         },
         {
           "title": "Software Engineer - US Remote",
@@ -276,22 +294,10 @@
           "posted_date": "2026-06-29T11:37:20-04:00"
         },
         {
-          "title": "Staff Software Engineer  - US Remote",
+          "title": "Tier 1 Support Specialist - US Remote",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6103799004",
-          "posted_date": "2026-06-30T09:31:21-04:00"
-        },
-        {
-          "title": "Support Center Shift Supervisor - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
-          "posted_date": "2026-06-29T11:36:59-04:00"
-        },
-        {
-          "title": "Vice President, Commercial Strategy - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
-          "posted_date": "2026-05-05T13:04:27-04:00"
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
+          "posted_date": "2026-07-06T12:41:16-04:00"
         },
         {
           "title": "​Website Experience and CRO Manager  - US Remote",
@@ -310,222 +316,221 @@
     },
     {
       "name": "netdocuments",
-      "found": 25,
-      "matched": 14,
+      "found": 16,
+      "matched": 10,
       "error": null,
       "jobs": [
-        {
-          "title": "Global Public Relations Director",
-          "location": "Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5238030008",
-          "posted_date": "2026-06-01T15:42:58-04:00"
-        },
         {
           "title": "Legal Consultant - Legal Tech Project Manager",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5254142008",
-          "posted_date": "2026-06-16T10:44:39-04:00"
+          "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
           "title": "Legal Innovation Partner",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
-          "posted_date": "2026-06-14T09:44:26-04:00"
+          "posted_date": "2026-07-31T11:26:13-04:00"
         },
         {
-          "title": "Manager of Legal Engineering",
+          "title": "Manager, Software Engineering - AI Assistant",
           "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258248008",
-          "posted_date": "2026-06-12T19:07:04-04:00"
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
+          "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
-          "title": "Manager, Software Engineering",
+          "title": "Manager, Software Engineering - Next-Gen",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
-          "posted_date": "2026-06-04T20:13:02-04:00"
+          "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
-          "title": "Principal Software Engineer - AI",
+          "title": "Manager, Software Engineering - Platform",
           "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196933008",
-          "posted_date": "2026-04-28T17:05:13-04:00"
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
+          "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
-          "title": "Senior Delivery Manager",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
-          "posted_date": "2026-06-18T16:23:09-04:00"
-        },
-        {
-          "title": "Senior Manager, Product Design",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5213797008",
-          "posted_date": "2026-05-07T18:11:02-04:00"
-        },
-        {
-          "title": "Senior Manager, Software Engineering",
+          "title": "Senior Manager, Software Engineering - AI",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-06-29T16:44:19-04:00"
+          "posted_date": "2026-07-21T15:32:17-04:00"
         },
         {
           "title": "Senior Sales Director, Corporate",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-          "posted_date": "2026-05-26T18:14:19-04:00"
+          "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
-          "title": "Senior Software Test Engineer",
+          "title": "Senior Social Manager",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
+          "posted_date": "2026-07-30T12:24:48-04:00"
+        },
+        {
+          "title": "Senior Software Engineer - Next-Gen",
           "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5205675008",
-          "posted_date": "2026-05-14T13:50:34-04:00"
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
+          "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
           "title": "Staff Cloud Engineer - Infrastructure",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
-          "posted_date": "2026-05-14T13:49:52-04:00"
-        },
-        {
-          "title": "Staff Data Architect",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
-          "posted_date": "2026-06-20T15:52:50-04:00"
-        },
-        {
-          "title": "Staff FinOps Engineer",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5229750008",
-          "posted_date": "2026-06-01T19:44:36-04:00"
+          "posted_date": "2026-07-21T14:16:34-04:00"
         }
       ]
     },
     {
       "name": "knowbe4",
-      "found": 96,
-      "matched": 16,
+      "found": 80,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
-          "title": "Channel Marketing Manager (Remote)",
+          "title": "Customer Success Manager (Enterprise) (Remote)",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/4368827002",
-          "posted_date": "2026-05-20T14:43:13-04:00"
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
+          "posted_date": "2026-07-24T12:36:42-04:00"
         },
         {
-          "title": "Commercial Finance Lead (Remote)",
+          "title": "Executive Assistant to CFO (Remote)",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
-          "posted_date": "2026-06-26T13:02:48-04:00"
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
+          "posted_date": "2026-07-24T12:39:02-04:00"
         },
         {
-          "title": "CSM Strategist & Program Manager (Remote)",
+          "title": "Global Treasury Director (Remote)",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
-          "posted_date": "2026-07-02T07:09:58-04:00"
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
+          "posted_date": "2026-07-24T12:41:22-04:00"
         },
         {
           "title": "Manager, Enterprise Customer Success",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
-          "posted_date": "2026-06-12T11:08:46-04:00"
+          "posted_date": "2026-07-24T12:42:08-04:00"
         },
         {
           "title": "Organic Search Manager (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-          "posted_date": "2026-05-20T14:43:13-04:00"
+          "posted_date": "2026-07-24T12:45:03-04:00"
         },
         {
           "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
-          "posted_date": "2026-06-25T11:22:26-04:00"
+          "posted_date": "2026-07-24T12:45:28-04:00"
         },
         {
           "title": "QA Engineer (MIS) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
-          "posted_date": "2026-05-20T14:43:13-04:00"
+          "posted_date": "2026-07-24T12:48:46-04:00"
         },
         {
-          "title": "Snr. Communications Manager (Remote)",
+          "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8571798002",
-          "posted_date": "2026-05-29T15:42:53-04:00"
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
+          "posted_date": "2026-07-24T12:54:52-04:00"
         },
         {
           "title": "Snr. Employee Relations Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-          "posted_date": "2026-06-26T15:28:16-04:00"
+          "posted_date": "2026-07-24T12:59:32-04:00"
         },
         {
           "title": "Snr. Manager, Demand Generation (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-          "posted_date": "2026-05-20T14:43:13-04:00"
+          "posted_date": "2026-07-24T12:59:51-04:00"
         },
         {
-          "title": "Software Engineering Manager (US - Remote)",
+          "title": "Staff Engineer (Remote)",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8592913002",
-          "posted_date": "2026-06-16T07:38:12-04:00"
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
+          "posted_date": "2026-07-24T13:02:53-04:00"
         },
         {
-          "title": "Solution Architect (Remote)",
+          "title": "VP Financial Planning & Analysis (Remote)",
           "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8402270002",
-          "posted_date": "2026-05-20T14:43:13-04:00"
-        },
-        {
-          "title": "Technical Solution Architect - Business Applications (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8545503002",
-          "posted_date": "2026-05-20T14:43:13-04:00"
-        },
-        {
-          "title": "Treasurer (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609991002",
-          "posted_date": "2026-06-26T13:02:46-04:00"
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
+          "posted_date": "2026-07-24T13:05:54-04:00"
         },
         {
           "title": "VP Talent Management (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
-          "posted_date": "2026-05-20T14:43:13-04:00"
-        },
-        {
-          "title": "VP Tax & Treasury (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
-          "posted_date": "2026-06-26T13:02:50-04:00"
+          "posted_date": "2026-07-15T12:34:34-04:00"
         }
       ]
     },
     {
       "name": "dronedeploy",
       "found": 11,
-      "matched": 0,
+      "matched": 2,
       "error": null,
-      "jobs": []
+      "jobs": [
+        {
+          "title": "Senior Manager of Business Systems (USA)",
+          "location": "Remote",
+          "url": "https://jobs.lever.co/dronedeploy/f622e8b1-6c03-4e51-b4fb-577f03ea989c",
+          "posted_date": "2026-07-09T23:09:01.208000+00:00"
+        },
+        {
+          "title": "Senior Marketing Operations Manager (USA)",
+          "location": "Remote",
+          "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
+          "posted_date": "2026-06-30T23:34:49.211000+00:00"
+        }
+      ]
     }
   ],
   "jobs": [
     {
-      "title": "Vice President, Customer Success Operations & Enablement",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Vice-President--Customer-Success-Operations---Enablement_R4667",
-      "posted_date": "Posted 10 Days Ago",
+      "title": "Customer Success Specialist",
+      "location": "Remote - Florida",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R4791",
+      "posted_date": "Posted Today",
       "source": "modmed"
     },
     {
-      "title": "Payment Operations Analyst, Customer Success",
+      "title": "Senior Director, Customer Success Enablement & Strategy",
       "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Payment-Operations-Analyst--Customer-Success_R4276",
-      "posted_date": "Posted 18 Days Ago",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
+      "posted_date": "Posted 3 Days Ago",
       "source": "modmed"
+    },
+    {
+      "title": "Senior Manager, Customer Success",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+      "posted_date": "Posted 7 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Revenue Operations Analyst, Marketing",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
+      "posted_date": "Posted 9 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Senior Marketing Events Specialist",
+      "location": "Boca Raton, FL",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
+      "posted_date": "Posted 15 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Account Executive, Billing Company",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4711474005",
+      "posted_date": "2026-07-23T19:03:08-04:00",
+      "source": "tebra"
     },
     {
       "title": "Account Executive, Customer Growth",
@@ -535,10 +540,17 @@
       "source": "tebra"
     },
     {
-      "title": "AI Automation Engineer",
+      "title": "Account Executive, Growth",
       "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4694698005",
-      "posted_date": "2026-05-28T17:36:30-04:00",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+      "posted_date": "2026-07-14T13:35:26-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Account Executive, Practice Solutions",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4707748005",
+      "posted_date": "2026-07-13T14:07:11-04:00",
       "source": "tebra"
     },
     {
@@ -556,38 +568,45 @@
       "source": "tebra"
     },
     {
+      "title": "Data Engineer",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
+      "posted_date": "2026-07-27T17:21:39-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Director, Analytics Engineering",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
-      "posted_date": "2026-06-29T16:05:14-04:00",
+      "posted_date": "2026-07-07T13:08:13-04:00",
       "source": "tebra"
     },
     {
-      "title": "Director, Customer Success Operations",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4682483005",
-      "posted_date": "2026-05-14T18:37:59-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Director, GTM Technology",
+      "title": "Director, GTM Operations",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
-      "posted_date": "2026-07-01T12:08:40-04:00",
+      "posted_date": "2026-07-28T15:13:23-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Head of AI Engineering & Enablement",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
+      "posted_date": "2026-07-15T19:21:44-04:00",
       "source": "tebra"
     },
     {
       "title": "Head of Customer Success & Operations",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4709495005",
-      "posted_date": "2026-06-26T17:56:47-04:00",
+      "posted_date": "2026-07-15T12:54:13-04:00",
       "source": "tebra"
     },
     {
       "title": "Head of Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4709493005",
-      "posted_date": "2026-06-26T18:03:55-04:00",
+      "posted_date": "2026-07-15T12:54:09-04:00",
       "source": "tebra"
     },
     {
@@ -601,21 +620,7 @@
       "title": "Lead Sales & Growth Operations Analyst",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
-      "posted_date": "2026-04-13T14:11:58-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Sales Development Representative",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4672623005",
-      "posted_date": "2026-04-13T14:11:55-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Security Architect",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4653174005",
-      "posted_date": "2026-04-13T14:11:57-04:00",
+      "posted_date": "2026-07-30T15:18:56-04:00",
       "source": "tebra"
     },
     {
@@ -633,10 +638,24 @@
       "source": "tebra"
     },
     {
+      "title": "Senior Product Manager",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
+      "posted_date": "2026-07-14T13:26:19-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Senior Software Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4670199005",
       "posted_date": "2026-04-14T12:43:46-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Software Engineer 1",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4714981005",
+      "posted_date": "2026-07-28T15:54:10-04:00",
       "source": "tebra"
     },
     {
@@ -661,10 +680,24 @@
       "source": "sift-healthcare"
     },
     {
-      "title": "Director of Software Engineering - US Remote",
+      "title": "Director of Product Management  - US Remote",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013927004",
-      "posted_date": "2026-06-29T11:32:36-04:00",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
+      "posted_date": "2026-07-08T16:38:26-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Forward Deployment Engineer, AI - Canada Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131764004",
+      "posted_date": "2026-07-31T10:10:17-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Forward Deployment Engineer, AI - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6130290004",
+      "posted_date": "2026-07-31T10:10:01-04:00",
       "source": "perfectserve"
     },
     {
@@ -678,42 +711,21 @@
       "title": "Lifecycle Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
-      "posted_date": "2026-06-29T11:33:51-04:00",
+      "posted_date": "2026-07-08T11:52:20-04:00",
       "source": "perfectserve"
     },
     {
-      "title": "Manager of Accounting - US Remote",
+      "title": "Practice Consultant I - US Remote",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5835627004",
-      "posted_date": "2026-06-29T11:31:35-04:00",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
+      "posted_date": "2026-07-30T14:52:14-04:00",
       "source": "perfectserve"
     },
     {
-      "title": "Manager, Project Management Office  - US Remote",
+      "title": "QA Engineer - US Remote",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5977945004",
-      "posted_date": "2026-06-29T11:34:28-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Project Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
-      "posted_date": "2026-06-29T11:35:10-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Sales Operations Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5810794004",
-      "posted_date": "2026-06-29T11:32:03-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Senior Director, Segment & Solutions Marketing  - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104742004",
-      "posted_date": "2026-07-01T08:43:50-04:00",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111930004",
+      "posted_date": "2026-07-09T12:51:23-04:00",
       "source": "perfectserve"
     },
     {
@@ -731,31 +743,17 @@
       "source": "perfectserve"
     },
     {
-      "title": "Senior Full Stack Engineer – EHR Integrations - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5844598004",
-      "posted_date": "2026-06-29T11:32:59-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Senior Go To Market Systems Engineer - Remote - US & Canada",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6000082004",
-      "posted_date": "2026-06-29T11:36:11-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Senior Project Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104754004",
-      "posted_date": "2026-07-01T08:44:25-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Senior Software Engineer, .NET - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5826519004",
       "posted_date": "2026-06-29T11:36:31-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Shift Operations Coordinator - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
+      "posted_date": "2026-07-21T10:01:59-04:00",
       "source": "perfectserve"
     },
     {
@@ -766,24 +764,10 @@
       "source": "perfectserve"
     },
     {
-      "title": "Staff Software Engineer  - US Remote",
+      "title": "Tier 1 Support Specialist - US Remote",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6103799004",
-      "posted_date": "2026-06-30T09:31:21-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Support Center Shift Supervisor - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
-      "posted_date": "2026-06-29T11:36:59-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Vice President, Commercial Strategy - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5987443004",
-      "posted_date": "2026-05-05T13:04:27-04:00",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
+      "posted_date": "2026-07-06T12:41:16-04:00",
       "source": "perfectserve"
     },
     {
@@ -794,215 +778,180 @@
       "source": "perfectserve"
     },
     {
-      "title": "Global Public Relations Director",
-      "location": "Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5238030008",
-      "posted_date": "2026-06-01T15:42:58-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Legal Consultant - Legal Tech Project Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5254142008",
-      "posted_date": "2026-06-16T10:44:39-04:00",
+      "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Legal Innovation Partner",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
-      "posted_date": "2026-06-14T09:44:26-04:00",
+      "posted_date": "2026-07-31T11:26:13-04:00",
       "source": "netdocuments"
     },
     {
-      "title": "Manager of Legal Engineering",
+      "title": "Manager, Software Engineering - AI Assistant",
       "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258248008",
-      "posted_date": "2026-06-12T19:07:04-04:00",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
+      "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
     {
-      "title": "Manager, Software Engineering",
+      "title": "Manager, Software Engineering - Next-Gen",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
-      "posted_date": "2026-06-04T20:13:02-04:00",
+      "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
     {
-      "title": "Principal Software Engineer - AI",
+      "title": "Manager, Software Engineering - Platform",
       "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196933008",
-      "posted_date": "2026-04-28T17:05:13-04:00",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
+      "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
     {
-      "title": "Senior Delivery Manager",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5263608008",
-      "posted_date": "2026-06-18T16:23:09-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Senior Manager, Product Design",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5213797008",
-      "posted_date": "2026-05-07T18:11:02-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Senior Manager, Software Engineering",
+      "title": "Senior Manager, Software Engineering - AI",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-06-29T16:44:19-04:00",
+      "posted_date": "2026-07-21T15:32:17-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Senior Sales Director, Corporate",
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-      "posted_date": "2026-05-26T18:14:19-04:00",
+      "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
     {
-      "title": "Senior Software Test Engineer",
+      "title": "Senior Social Manager",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
+      "posted_date": "2026-07-30T12:24:48-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Senior Software Engineer - Next-Gen",
       "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5205675008",
-      "posted_date": "2026-05-14T13:50:34-04:00",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
+      "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Staff Cloud Engineer - Infrastructure",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
-      "posted_date": "2026-05-14T13:49:52-04:00",
+      "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
     {
-      "title": "Staff Data Architect",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5196962008",
-      "posted_date": "2026-06-20T15:52:50-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Staff FinOps Engineer",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5229750008",
-      "posted_date": "2026-06-01T19:44:36-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Channel Marketing Manager (Remote)",
+      "title": "Customer Success Manager (Enterprise) (Remote)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/4368827002",
-      "posted_date": "2026-05-20T14:43:13-04:00",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
+      "posted_date": "2026-07-24T12:36:42-04:00",
       "source": "knowbe4"
     },
     {
-      "title": "Commercial Finance Lead (Remote)",
+      "title": "Executive Assistant to CFO (Remote)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609992002",
-      "posted_date": "2026-06-26T13:02:48-04:00",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
+      "posted_date": "2026-07-24T12:39:02-04:00",
       "source": "knowbe4"
     },
     {
-      "title": "CSM Strategist & Program Manager (Remote)",
+      "title": "Global Treasury Director (Remote)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8614550002",
-      "posted_date": "2026-07-02T07:09:58-04:00",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
+      "posted_date": "2026-07-24T12:41:22-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Manager, Enterprise Customer Success",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
-      "posted_date": "2026-06-12T11:08:46-04:00",
+      "posted_date": "2026-07-24T12:42:08-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Organic Search Manager (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-      "posted_date": "2026-05-20T14:43:13-04:00",
+      "posted_date": "2026-07-24T12:45:03-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
-      "posted_date": "2026-06-25T11:22:26-04:00",
+      "posted_date": "2026-07-24T12:45:28-04:00",
       "source": "knowbe4"
     },
     {
       "title": "QA Engineer (MIS) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
-      "posted_date": "2026-05-20T14:43:13-04:00",
+      "posted_date": "2026-07-24T12:48:46-04:00",
       "source": "knowbe4"
     },
     {
-      "title": "Snr. Communications Manager (Remote)",
+      "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8571798002",
-      "posted_date": "2026-05-29T15:42:53-04:00",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
+      "posted_date": "2026-07-24T12:54:52-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Employee Relations Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-      "posted_date": "2026-06-26T15:28:16-04:00",
+      "posted_date": "2026-07-24T12:59:32-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Manager, Demand Generation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-      "posted_date": "2026-05-20T14:43:13-04:00",
+      "posted_date": "2026-07-24T12:59:51-04:00",
       "source": "knowbe4"
     },
     {
-      "title": "Software Engineering Manager (US - Remote)",
+      "title": "Staff Engineer (Remote)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8592913002",
-      "posted_date": "2026-06-16T07:38:12-04:00",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
+      "posted_date": "2026-07-24T13:02:53-04:00",
       "source": "knowbe4"
     },
     {
-      "title": "Solution Architect (Remote)",
+      "title": "VP Financial Planning & Analysis (Remote)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8402270002",
-      "posted_date": "2026-05-20T14:43:13-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Technical Solution Architect - Business Applications (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8545503002",
-      "posted_date": "2026-05-20T14:43:13-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Treasurer (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609991002",
-      "posted_date": "2026-06-26T13:02:46-04:00",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
+      "posted_date": "2026-07-24T13:05:54-04:00",
       "source": "knowbe4"
     },
     {
       "title": "VP Talent Management (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
-      "posted_date": "2026-05-20T14:43:13-04:00",
+      "posted_date": "2026-07-15T12:34:34-04:00",
       "source": "knowbe4"
     },
     {
-      "title": "VP Tax & Treasury (Remote)",
+      "title": "Senior Manager of Business Systems (USA)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8609986002",
-      "posted_date": "2026-06-26T13:02:50-04:00",
-      "source": "knowbe4"
+      "url": "https://jobs.lever.co/dronedeploy/f622e8b1-6c03-4e51-b4fb-577f03ea989c",
+      "posted_date": "2026-07-09T23:09:01.208000+00:00",
+      "source": "dronedeploy"
+    },
+    {
+      "title": "Senior Marketing Operations Manager (USA)",
+      "location": "Remote",
+      "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
+      "posted_date": "2026-06-30T23:34:49.211000+00:00",
+      "source": "dronedeploy"
     }
   ],
-  "total_matched": 70
+  "total_matched": 66
 }
