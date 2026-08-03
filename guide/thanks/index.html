@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — Your Guide Is Ready | King SUMMERBODY</title>
+  <meta name="description" content="Thank you for buying Break The Cycle. Your PDF is ready to download.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-orange: #F15002;
+      --black:         #000000;
+      --white:         #FFFFFF;
+      --cream:         #F0EFED;
+      --headline-font: 'Anton', 'Bebas Neue', 'Impact', sans-serif;
+      --body-font: 'Montserrat', system-ui, sans-serif;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--body-font);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--black);
+      background: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    h1, h2 { font-family: var(--headline-font); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; font-weight: 400; }
+
+    .thanks-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 56px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .thanks-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(241, 80, 2, 0.25) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brand-orange);
+      margin-bottom: 12px;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+    }
+    .thanks-hero h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+    }
+    .thanks-hero h1 .orange { color: var(--brand-orange); }
+    .thanks-hero .subhead {
+      font-family: var(--headline-font);
+      font-style: italic;
+      font-size: clamp(18px, 2vw, 24px);
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 16px;
+      color: rgba(255,255,255,0.9);
+      position: relative;
+      z-index: 2;
+    }
+
+    .download-section {
+      flex: 1;
+      padding: 56px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .download-card {
+      max-width: 640px;
+      width: 100%;
+      background: var(--white);
+      border: 2px solid var(--brand-orange);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+    .download-card h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+    .download-card p { color: #444; font-size: 16px; margin-bottom: 24px; }
+
+    .btn {
+      display: inline-block;
+      padding: 20px 40px;
+      border-radius: var(--radius);
+      font-family: var(--body-font);
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: 2px solid transparent;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+    }
+    .btn-primary {
+      background: var(--brand-orange);
+      color: var(--white);
+      border-color: var(--brand-orange);
+      box-shadow: 0 4px 16px rgba(241, 80, 2, 0.3);
+    }
+    .btn-primary:hover {
+      background: var(--white);
+      color: var(--brand-orange);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(241, 80, 2, 0.5);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--black);
+      border-color: var(--black);
+      margin-top: 12px;
+    }
+    .btn-ghost:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+    .bookmark-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #666;
+      letter-spacing: 0.5px;
+    }
+
+    .next-step {
+      background: var(--white);
+      padding: 48px 24px;
+      text-align: center;
+      border-top: 1px solid #e6e3df;
+    }
+    .next-step .container { max-width: 640px; margin: 0 auto; }
+    .next-step h2 { font-size: clamp(26px, 3.5vw, 36px); margin-bottom: 16px; }
+    .next-step p { color: #333; margin-bottom: 24px; }
+
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 40px 24px 24px;
+      text-align: center;
+    }
+    footer .logo { font-family: var(--headline-font); font-size: 20px; letter-spacing: 1.5px; display: inline-block; margin-bottom: 10px; }
+    footer .logo .orange { color: var(--brand-orange); }
+    .footer-mantra { font-family: var(--headline-font); font-size: 18px; color: var(--brand-orange); text-transform: uppercase; margin-bottom: 4px; }
+    footer p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 4px; }
+
+    @media (max-width: 640px) {
+      .download-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="thanks-hero">
+    <span class="eyebrow">Payment Confirmed</span>
+    <h1>Thank You, <span class="orange">KING.</span></h1>
+    <div class="subhead">You just made the next right choice.</div>
+  </section>
+
+  <section class="download-section">
+    <div class="download-card">
+      <h2>Your Guide Is Ready.</h2>
+      <p>Click below to download <strong>Break The Cycle</strong> — yours to keep forever.</p>
+      <a href="/guide/break-the-cycle.pdf" class="btn btn-primary" download>&darr; Download Your PDF</a>
+      <a href="mailto:contact@sweatdepartment.com?subject=Break%20The%20Cycle%20download%20trouble" class="btn btn-ghost">Download not working? Email me</a>
+      <div class="bookmark-note">Bookmark this page — you can come back anytime.</div>
+    </div>
+  </section>
+
+  <section class="next-step">
+    <div class="container">
+      <span class="eyebrow" style="color: var(--brand-orange);">What's Next</span>
+      <h2>Read It Today. Not Someday.</h2>
+      <p>The guide is 6 pages. Read it before you sleep tonight. Then pick <em>one thing</em> to start tomorrow. That's how the cycle breaks.</p>
+      <a href="https://www.sweatdepartment.com" class="btn btn-ghost" style="width: auto; padding: 16px 32px;">Back to sweatdepartment.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://www.sweatdepartment.com" class="logo">THE SWEAT <span class="orange">DEPARTMENT</span></a>
+    <div class="footer-mantra">Better &amp; Beyond.</div>
+    <p>sweatdepartment.com &middot; @KingSummerbody</p>
+    <p>&copy; 2026 The Sweat Department LLC &middot; Hollywood, FL</p>
+  </footer>
+
+</body>
+</html>

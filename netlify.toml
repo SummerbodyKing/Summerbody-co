@@ -43,11 +43,8 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/guide"
-  to = "https://shop.sweatdepartment.com/products/5-pillar-quick-start-guide-your-body-transformation-blueprint"
-  status = 301
-  force = true
+# /guide is now a real page at guide/index.html (Break The Cycle, $2.97 via Stripe).
+# The old Shopify redirect was removed on Aug 3, 2026 when Shopify shop was retired.
 
 # Defense-in-depth redirects so any hit to /products/*, /cart, /checkout, or /collections/*
 # on the apex domain auto-forwards to the Shopify shop subdomain.
