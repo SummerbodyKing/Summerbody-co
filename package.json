@@ -1,9 +1,10 @@
 {
   "name": "sweatdepartment-functions",
   "version": "1.0.0",
-  "description": "Netlify Functions for SUMMERBODY quiz email pipeline",
+  "description": "Netlify Functions for SUMMERBODY quiz email pipeline + Stripe purchase webhook",
   "private": true,
   "dependencies": {
-    "resend": "^4.8.0"
+    "resend": "^4.8.0",
+    "stripe": "^17.4.0"
   }
 }
