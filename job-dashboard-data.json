@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T16:30:35.954818+00:00",
+  "generated_at": "2026-08-03T18:25:15.309549+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -69,8 +69,8 @@
     },
     {
       "name": "tebra",
-      "found": 24,
-      "matched": 20,
+      "found": 23,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -90,12 +90,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
           "posted_date": "2026-07-14T13:35:26-04:00"
-        },
-        {
-          "title": "Account Executive, Practice Solutions",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4707748005",
-          "posted_date": "2026-07-13T14:07:11-04:00"
         },
         {
           "title": "Channel Manager",
@@ -541,13 +535,6 @@
       "source": "tebra"
     },
     {
-      "title": "Account Executive, Practice Solutions",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4707748005",
-      "posted_date": "2026-07-13T14:07:11-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Channel Manager",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4687903005",
@@ -940,5 +927,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 65
+  "total_matched": 64
 }
