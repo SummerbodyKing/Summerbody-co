@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:48:46.980678+00:00",
+  "generated_at": "2026-08-03T13:44:17.895710+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -310,8 +310,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 15,
-      "matched": 9,
+      "found": 16,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -361,6 +361,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
           "posted_date": "2026-07-21T14:16:34-04:00"
+        },
+        {
+          "title": "Sr Legal Consultant - Legal Tech Project Manager",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5376937008",
+          "posted_date": "2026-08-03T09:43:32-04:00"
         },
         {
           "title": "Staff Cloud Engineer - Infrastructure",
@@ -815,6 +821,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Sr Legal Consultant - Legal Tech Project Manager",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5376937008",
+      "posted_date": "2026-08-03T09:43:32-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Staff Cloud Engineer - Infrastructure",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
@@ -927,5 +940,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 64
+  "total_matched": 65
 }
