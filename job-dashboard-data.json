@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:48:37.306380+00:00",
+  "generated_at": "2026-08-04T03:15:55.332406+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -372,8 +372,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 79,
-      "matched": 13,
+      "found": 80,
+      "matched": 14,
       "error": null,
       "jobs": [
         {
@@ -417,6 +417,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8500816002",
           "posted_date": "2026-08-03T12:02:11-04:00"
+        },
+        {
+          "title": "Sales Engineer (LATAM) (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
+          "posted_date": "2026-08-03T20:49:42-04:00"
         },
         {
           "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
@@ -871,6 +877,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Sales Engineer (LATAM) (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
+      "posted_date": "2026-08-03T20:49:42-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
@@ -927,5 +940,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 64
+  "total_matched": 65
 }
