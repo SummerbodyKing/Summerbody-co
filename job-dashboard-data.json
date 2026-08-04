@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T19:50:59.853326+00:00",
+  "generated_at": "2026-08-04T21:17:42.911733+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -205,8 +205,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 14,
-      "matched": 14,
+      "found": 13,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -286,12 +286,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
           "posted_date": "2026-07-06T12:41:16-04:00"
-        },
-        {
-          "title": "​Website Experience and CRO Manager  - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104761004",
-          "posted_date": "2026-07-01T08:45:07-04:00"
         }
       ]
     },
@@ -751,13 +745,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "​Website Experience and CRO Manager  - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6104761004",
-      "posted_date": "2026-07-01T08:45:07-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Legal Innovation Partner",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
@@ -940,5 +927,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 65
+  "total_matched": 64
 }
