@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T15:49:45.832746+00:00",
+  "generated_at": "2026-08-05T17:46:40.710032+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -69,8 +69,8 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 19,
+      "found": 22,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -90,12 +90,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
           "posted_date": "2026-07-14T13:35:26-04:00"
-        },
-        {
-          "title": "Channel Manager",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4687903005",
-          "posted_date": "2026-08-04T18:53:24-04:00"
         },
         {
           "title": "Data Engineer",
@@ -366,7 +360,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 77,
+      "found": 78,
       "matched": 13,
       "error": null,
       "jobs": [
@@ -526,13 +520,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
       "posted_date": "2026-07-14T13:35:26-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Channel Manager",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4687903005",
-      "posted_date": "2026-08-04T18:53:24-04:00",
       "source": "tebra"
     },
     {
@@ -914,5 +901,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 63
+  "total_matched": 62
 }
