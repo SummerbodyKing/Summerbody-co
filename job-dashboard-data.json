@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T12:27:55.534295+00:00",
+  "generated_at": "2026-08-06T14:59:16.108243+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -205,8 +205,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 13,
-      "matched": 13,
+      "found": 12,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -274,12 +274,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
           "posted_date": "2026-07-21T10:01:59-04:00"
-        },
-        {
-          "title": "Software Engineer - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6009029004",
-          "posted_date": "2026-06-29T11:37:20-04:00"
         },
         {
           "title": "Tier 1 Support Specialist - US Remote",
@@ -366,7 +360,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 77,
+      "found": 78,
       "matched": 13,
       "error": null,
       "jobs": [
@@ -725,13 +719,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Software Engineer - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6009029004",
-      "posted_date": "2026-06-29T11:37:20-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Tier 1 Support Specialist - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
@@ -914,5 +901,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 63
+  "total_matched": 62
 }
