@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T19:25:12.248574+00:00",
+  "generated_at": "2026-08-07T20:20:34.470289+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -440,16 +440,10 @@
     },
     {
       "name": "dronedeploy",
-      "found": 11,
-      "matched": 2,
+      "found": 10,
+      "matched": 1,
       "error": null,
       "jobs": [
-        {
-          "title": "Senior Manager of Business Systems (USA)",
-          "location": "Remote",
-          "url": "https://jobs.lever.co/dronedeploy/f622e8b1-6c03-4e51-b4fb-577f03ea989c",
-          "posted_date": "2026-07-09T23:09:01.208000+00:00"
-        },
         {
           "title": "Senior Marketing Operations Manager (USA)",
           "location": "Remote",
@@ -874,13 +868,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Senior Manager of Business Systems (USA)",
-      "location": "Remote",
-      "url": "https://jobs.lever.co/dronedeploy/f622e8b1-6c03-4e51-b4fb-577f03ea989c",
-      "posted_date": "2026-07-09T23:09:01.208000+00:00",
-      "source": "dronedeploy"
-    },
-    {
       "title": "Senior Marketing Operations Manager (USA)",
       "location": "Remote",
       "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
@@ -888,5 +875,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 60
 }
