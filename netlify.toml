@@ -1,0 +1,7 @@
+# SWEAT DEPT — static site + serverless AI Coach function
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
