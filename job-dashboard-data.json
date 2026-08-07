@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T14:59:16.108243+00:00",
+  "generated_at": "2026-08-07T00:30:23.696007+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 5,
+      "matched": 4,
       "error": null,
       "jobs": [
         {
@@ -45,12 +45,6 @@
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
           "posted_date": "Posted 9 Days Ago"
-        },
-        {
-          "title": "Revenue Operations Analyst, Marketing",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
-          "posted_date": "Posted 15 Days Ago"
         },
         {
           "title": "Senior Marketing Events Specialist",
@@ -360,7 +354,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 78,
+      "found": 79,
       "matched": 13,
       "error": null,
       "jobs": [
@@ -410,7 +404,7 @@
           "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
-          "posted_date": "2026-07-24T12:54:52-04:00"
+          "posted_date": "2026-08-06T11:14:23-04:00"
         },
         {
           "title": "Snr. Employee Relations Partner (Remote)",
@@ -485,13 +479,6 @@
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
       "posted_date": "Posted 9 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Revenue Operations Analyst, Marketing",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Revenue-Operations-Analyst--Marketing_R3690",
-      "posted_date": "Posted 15 Days Ago",
       "source": "modmed"
     },
     {
@@ -848,7 +835,7 @@
       "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
-      "posted_date": "2026-07-24T12:54:52-04:00",
+      "posted_date": "2026-08-06T11:14:23-04:00",
       "source": "knowbe4"
     },
     {
@@ -901,5 +888,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 62
+  "total_matched": 61
 }
