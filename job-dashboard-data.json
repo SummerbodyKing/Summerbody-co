@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T21:21:40.231533+00:00",
+  "generated_at": "2026-08-07T22:17:22.885391+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -286,8 +286,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 16,
-      "matched": 10,
+      "found": 17,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -319,6 +319,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
           "posted_date": "2026-07-31T16:37:38-04:00"
+        },
+        {
+          "title": "Senior Product Manager - AI",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383595008",
+          "posted_date": "2026-08-07T17:39:10-04:00"
         },
         {
           "title": "Senior Sales Director, Corporate",
@@ -742,6 +748,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Senior Product Manager - AI",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383595008",
+      "posted_date": "2026-08-07T17:39:10-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Senior Sales Director, Corporate",
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
@@ -875,5 +888,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 60
+  "total_matched": 61
 }
