@@ -1,0 +1,45 @@
+name: Transcribe Recording
+
+on:
+  push:
+    branches: [claude/audio-recording-transcript-nnywrl]
+    paths: ['.github/workflows/transcribe-recording.yml']
+  workflow_dispatch:
+    inputs:
+      drive_file_id:
+        description: Google Drive file id of the audio to transcribe
+        required: false
+        default: 1Akfqk6LcLg1bRQ1cTRgYxR-7OUO1LXNh
+
+permissions:
+  contents: write
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet gdown faster-whisper
+
+      - name: Download recording from Google Drive
+        run: |
+          gdown "https://drive.google.com/uc?id=${{ inputs.drive_file_id || '1Akfqk6LcLg1bRQ1cTRgYxR-7OUO1LXNh' }}" -O Recording.m4a
+          ls -la Recording.m4a
+
+      - name: Transcribe
+        run: python .github/scripts/transcribe.py Recording.m4a
+
+      - name: Commit transcript
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add transcript/
+          git commit -m "Add transcript of Recording.m4a [skip ci]"
+          git push
