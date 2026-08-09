@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marilyn Call Prep, Listen and Drive</title>
+<style>
+  :root{ --orange:#FF5500; --ink:#080808; --cream:#FDF6EC; }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  html,body{ background:var(--ink); color:var(--cream); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.5; }
+  body{ padding:22px 18px 60px; max-width:720px; margin:0 auto; }
+  h1{ font-size:26px; font-weight:900; letter-spacing:.5px; color:var(--orange); margin-bottom:4px; text-transform:uppercase; }
+  .sub{ color:#bbb; font-size:14px; margin-bottom:18px; }
+  .controls{ position:sticky; top:0; background:var(--ink); padding:10px 0 14px; z-index:5; }
+  .play{ display:block; width:100%; background:var(--orange); color:#000; border:none; border-radius:16px; padding:22px; font-size:24px; font-weight:900; letter-spacing:.5px; cursor:pointer; }
+  .play:active{ transform:scale(.99); }
+  .row{ display:flex; gap:10px; margin-top:10px; }
+  .row button{ flex:1; background:#1a1a1a; color:var(--cream); border:2px solid #333; border-radius:12px; padding:14px; font-size:15px; font-weight:700; cursor:pointer; }
+  .row button.on{ border-color:var(--orange); color:var(--orange); }
+  .status{ text-align:center; color:var(--orange); font-size:13px; font-weight:700; margin-top:10px; min-height:16px; }
+  .block{ background:#141414; border-left:4px solid var(--orange); border-radius:10px; padding:14px 16px; margin:14px 0; }
+  .block.playing{ background:#241300; border-left-color:#fff; }
+  .block h2{ font-size:15px; color:var(--orange); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .block p{ font-size:16px; margin:6px 0; }
+  .pitch{ font-style:italic; }
+  .foot{ text-align:center; color:#888; font-size:13px; margin-top:24px; }
+</style>
+</head>
+<body>
+  <h1>Marilyn Call Prep</h1>
+  <div class="sub">1:30 today. Tap play, put the phone down, drive. It reads everything.</div>
+
+  <div class="controls">
+    <button class="play" id="playBtn" onclick="togglePlay()">▶ PLAY, HANDS-FREE</button>
+    <div class="row">
+      <button id="s080" onclick="setRate(0.8)">🐢 Slower</button>
+      <button id="s090" class="on" onclick="setRate(0.9)">Normal</button>
+      <button id="s100" onclick="setRate(1.0)">Faster</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div id="deck"></div>
+
+  <div class="foot">Better and Beyond. Together WE Achieve More.</div>
+
+<script>
+  var RATE = 0.9;
+  var BLOCKS = [
+    { h:"Mindset", p:["This is not a begging call. You are a certified P M P with twenty years of enterprise experience, asking a peer for guidance and doors. Confident and hungry, not desperate. Keep your money situation out of it."] },
+    { h:"Your 30 second pitch", cls:"pitch", p:["I'm Terrence Scott, and I've spent more than twenty years in project and operations work, including with companies like Google, Apple, Samsung, and Embraer. I just earned my P M P, and I'm known for taking messy, scattered projects and turning them into clear plans people actually follow. Most recently I ran my own business and led a hundred plus member organization, so I've been the project manager, the strategist, and the closer all at once. Now I want to bring that into a role where I can go deep. I'm certified, I'm ready, and I'm available immediately."] },
+    { h:"How to run the call", p:[
+      "One. Thank her and give a quick update. The P M P is done, and you're activating it now.",
+      "Two. Give your pitch, the one you just heard.",
+      "Three. Ask for guidance. With my background, what roles and industries should I target in South Florida? What is the market like right now? Who should I be talking to? Is there a project or short contract where I could prove myself? Would you be comfortable referring me?",
+      "Four. Then listen. Take notes. Write down every name she gives you.",
+      "Five. Close. What is the best next step, and how can I be useful to you?"
+    ] },
+    { h:"What to remember", p:[
+      "Name the big companies, not the years. Google, Apple, Samsung, Embraer. Never the dates.",
+      "One clean ask beats ten scattered ones.",
+      "Do not reveal your money situation. You are hungry and available, not desperate."
+    ] },
+    { h:"Before she picks up", p:["Find out where she works now, and confirm the spelling of her name."] },
+    { h:"Last word", p:["You're ready. This is a warm room. She already believes in you. Go be clear and confident."] }
+  ];
+
+  // build the visible deck (voice reads exactly what is on screen)
+  var deck = document.getElementById('deck');
+  BLOCKS.forEach(function(b, i){
+    var d = document.createElement('div');
+    d.className = 'block'; d.id = 'b'+i;
+    var html = '<h2>'+b.h+'</h2>';
+    b.p.forEach(function(t){ html += '<p'+(b.cls?(' class="'+b.cls+'"'):'')+'>'+t+'</p>'; });
+    d.innerHTML = html;
+    deck.appendChild(d);
+  });
+
+  // flatten into a speaking queue: [{blockIndex, text}, ...]
+  var QUEUE = [];
+  BLOCKS.forEach(function(b, i){
+    QUEUE.push({ bi:i, t:b.h+"." });
+    b.p.forEach(function(t){ QUEUE.push({ bi:i, t:t }); });
+  });
+
+  var playing = false, qi = 0;
+
+  function setRate(r){
+    RATE = r;
+    ['s080','s090','s100'].forEach(function(id){ document.getElementById(id).classList.remove('on'); });
+    document.getElementById(r===0.8?'s080':r===1.0?'s100':'s090').classList.add('on');
+  }
+
+  function pickVoice(){
+    var vs = window.speechSynthesis.getVoices() || [];
+    var pref = vs.filter(function(v){ return /en[-_]us/i.test(v.lang); });
+    var natural = pref.filter(function(v){ return /natural|enhanced|siri|google|samantha|aaron|zoe/i.test(v.name); });
+    return natural[0] || pref[0] || vs.filter(function(v){return /^en/i.test(v.lang);})[0] || null;
+  }
+
+  function highlight(bi){
+    for(var i=0;i<BLOCKS.length;i++){ document.getElementById('b'+i).classList.toggle('playing', i===bi); }
+    if(bi>=0){ var el=document.getElementById('b'+bi); if(el) el.scrollIntoView({behavior:'smooth', block:'center'}); }
+  }
+
+  function speakNext(){
+    if(!playing) return;
+    if(qi >= QUEUE.length){ done(); return; }
+    var item = QUEUE[qi];
+    highlight(item.bi);
+    try{
+      var u = new SpeechSynthesisUtterance(item.t);
+      u.rate = RATE; u.pitch = 1.0;
+      var v = pickVoice(); if(v){ u.voice = v; u.lang = v.lang; } else { u.lang='en-US'; }
+      u.onend = function(){ if(playing){ qi++; setTimeout(speakNext, 350); } };
+      u.onerror = function(){ if(playing){ qi++; setTimeout(speakNext, 350); } };
+      window.speechSynthesis.speak(u);
+    }catch(e){ qi++; setTimeout(speakNext, 350); }
+  }
+
+  function togglePlay(){
+    if(playing){ stop(); return; }
+    playing = true; qi = 0;
+    document.getElementById('playBtn').textContent = '⏸ STOP';
+    document.getElementById('status').textContent = '● Playing, eyes on the road';
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    speakNext();
+  }
+  function stop(){
+    playing = false;
+    try{ window.speechSynthesis.cancel(); }catch(e){}
+    document.getElementById('playBtn').textContent = '▶ PLAY, HANDS-FREE';
+    document.getElementById('status').textContent = '';
+    highlight(-1);
+  }
+  function done(){
+    playing = false;
+    document.getElementById('playBtn').textContent = '▶ PLAY AGAIN';
+    document.getElementById('status').textContent = '✓ Done. You got this.';
+    highlight(-1);
+  }
+  // warm up voices list on some browsers
+  if(window.speechSynthesis){ window.speechSynthesis.onvoiceschanged = function(){ pickVoice(); }; }
+</script>
+</body>
+</html>
