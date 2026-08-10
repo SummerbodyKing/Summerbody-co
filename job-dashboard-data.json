@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:21:12.333610+00:00",
+  "generated_at": "2026-08-10T14:41:54.341143+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -199,8 +199,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 12,
+      "found": 10,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -262,18 +262,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5826519004",
           "posted_date": "2026-06-29T11:36:31-04:00"
-        },
-        {
-          "title": "Shift Operations Coordinator - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
-          "posted_date": "2026-07-21T10:01:59-04:00"
-        },
-        {
-          "title": "Tier 1 Support Specialist - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
-          "posted_date": "2026-07-06T12:41:16-04:00"
         }
       ]
     },
@@ -360,7 +348,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 80,
+      "found": 81,
       "matched": 13,
       "error": null,
       "jobs": [
@@ -699,20 +687,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Shift Operations Coordinator - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5889595004",
-      "posted_date": "2026-07-21T10:01:59-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Tier 1 Support Specialist - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6109745004",
-      "posted_date": "2026-07-06T12:41:16-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Legal Innovation Partner",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5257519008",
@@ -888,5 +862,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 59
 }
