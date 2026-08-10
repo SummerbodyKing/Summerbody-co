@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T22:18:48.704253+00:00",
+  "generated_at": "2026-08-10T23:02:09.877804+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -80,6 +80,12 @@
           "posted_date": "2026-07-14T13:35:26-04:00"
         },
         {
+          "title": "Account Executive, Patient Experience",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
+          "posted_date": "2026-08-10T18:59:47-04:00"
+        },
+        {
           "title": "Data Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -114,12 +120,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4709493005",
           "posted_date": "2026-07-15T12:54:09-04:00"
-        },
-        {
-          "title": "Inside Sales Representative",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
-          "posted_date": "2026-07-02T16:49:18-04:00"
         },
         {
           "title": "Lead Sales & Growth Operations Analyst",
@@ -479,6 +479,13 @@
       "source": "tebra"
     },
     {
+      "title": "Account Executive, Patient Experience",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
+      "posted_date": "2026-08-10T18:59:47-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -518,13 +525,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4709493005",
       "posted_date": "2026-07-15T12:54:09-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Inside Sales Representative",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
-      "posted_date": "2026-07-02T16:49:18-04:00",
       "source": "tebra"
     },
     {
