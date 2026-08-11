@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T20:22:09.944373+00:00",
+  "generated_at": "2026-08-11T21:27:59.135377+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -207,13 +207,13 @@
           "title": "Forward Deployment Engineer, AI - Canada Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131764004",
-          "posted_date": "2026-07-31T10:10:17-04:00"
+          "posted_date": "2026-08-11T17:19:49-04:00"
         },
         {
           "title": "Forward Deployment Engineer, AI - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6130290004",
-          "posted_date": "2026-07-31T10:10:01-04:00"
+          "posted_date": "2026-08-11T17:20:01-04:00"
         },
         {
           "title": "Implementation Consultant I - US Remote",
@@ -268,8 +268,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
-      "matched": 11,
+      "found": 16,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -282,12 +282,6 @@
           "title": "Manager, Software Engineering - AI Assistant",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
-          "posted_date": "2026-07-21T14:16:34-04:00"
-        },
-        {
-          "title": "Manager, Software Engineering - Next-Gen",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
           "posted_date": "2026-07-21T14:16:34-04:00"
         },
         {
@@ -614,14 +608,14 @@
       "title": "Forward Deployment Engineer, AI - Canada Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131764004",
-      "posted_date": "2026-07-31T10:10:17-04:00",
+      "posted_date": "2026-08-11T17:19:49-04:00",
       "source": "perfectserve"
     },
     {
       "title": "Forward Deployment Engineer, AI - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6130290004",
-      "posted_date": "2026-07-31T10:10:01-04:00",
+      "posted_date": "2026-08-11T17:20:01-04:00",
       "source": "perfectserve"
     },
     {
@@ -684,13 +678,6 @@
       "title": "Manager, Software Engineering - AI Assistant",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
-      "posted_date": "2026-07-21T14:16:34-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Manager, Software Engineering - Next-Gen",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5248889008",
       "posted_date": "2026-07-21T14:16:34-04:00",
       "source": "netdocuments"
     },
@@ -849,5 +836,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 57
 }
