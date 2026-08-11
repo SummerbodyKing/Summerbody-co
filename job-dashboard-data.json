@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T19:29:58.314472+00:00",
+  "generated_at": "2026-08-11T20:22:09.944373+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -342,8 +342,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 78,
-      "matched": 12,
+      "found": 79,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -417,6 +417,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
           "posted_date": "2026-08-10T14:06:07-04:00"
+        },
+        {
+          "title": "Workday Analyst (PATT) (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
+          "posted_date": "2026-08-11T16:06:44-04:00"
         }
       ]
     },
@@ -829,6 +835,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Workday Analyst (PATT) (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
+      "posted_date": "2026-08-11T16:06:44-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Senior Marketing Operations Manager (USA)",
       "location": "Remote",
       "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
@@ -836,5 +849,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 57
+  "total_matched": 58
 }
