@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T20:21:45.080137+00:00",
+  "generated_at": "2026-08-12T21:26:51.571293+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -268,8 +268,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 16,
-      "matched": 10,
+      "found": 15,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -325,12 +325,6 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5376937008",
           "posted_date": "2026-08-03T09:43:32-04:00"
-        },
-        {
-          "title": "Staff Cloud Engineer - Infrastructure",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
-          "posted_date": "2026-07-21T14:16:34-04:00"
         }
       ]
     },
@@ -737,13 +731,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Staff Cloud Engineer - Infrastructure",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5193096008",
-      "posted_date": "2026-07-21T14:16:34-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Customer Success Manager (Enterprise) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
@@ -849,5 +836,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 57
 }
