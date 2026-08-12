@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T21:26:51.571293+00:00",
+  "generated_at": "2026-08-12T22:23:13.081380+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,8 +57,8 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 19,
+      "found": 24,
+      "matched": 20,
       "error": null,
       "jobs": [
         {
@@ -80,12 +80,6 @@
           "posted_date": "2026-07-14T13:35:26-04:00"
         },
         {
-          "title": "Account Executive, Patient Experience",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
-          "posted_date": "2026-08-10T18:59:47-04:00"
-        },
-        {
           "title": "Data Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -102,6 +96,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
           "posted_date": "2026-07-28T15:13:23-04:00"
+        },
+        {
+          "title": "Director, Sales Enablement",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4720327005",
+          "posted_date": "2026-08-12T17:42:02-04:00"
         },
         {
           "title": "Head of AI Engineering & Enablement",
@@ -174,6 +174,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4666555005",
           "posted_date": "2026-06-09T13:57:00-04:00"
+        },
+        {
+          "title": "Vice President, Technology Operations",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4715321005",
+          "posted_date": "2026-08-12T17:42:10-04:00"
         }
       ]
     },
@@ -479,13 +485,6 @@
       "source": "tebra"
     },
     {
-      "title": "Account Executive, Patient Experience",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
-      "posted_date": "2026-08-10T18:59:47-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -504,6 +503,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
       "posted_date": "2026-07-28T15:13:23-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Director, Sales Enablement",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4720327005",
+      "posted_date": "2026-08-12T17:42:02-04:00",
       "source": "tebra"
     },
     {
@@ -588,6 +594,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4666555005",
       "posted_date": "2026-06-09T13:57:00-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Vice President, Technology Operations",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4715321005",
+      "posted_date": "2026-08-12T17:42:10-04:00",
       "source": "tebra"
     },
     {
@@ -836,5 +849,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 57
+  "total_matched": 58
 }
