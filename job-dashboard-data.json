@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T12:03:44.868873+00:00",
+  "generated_at": "2026-08-13T13:53:07.318502+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -337,7 +337,7 @@
     {
       "name": "knowbe4",
       "found": 78,
-      "matched": 14,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -357,12 +357,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8696836002",
           "posted_date": "2026-08-12T14:35:48-04:00"
-        },
-        {
-          "title": "Manager, Enterprise Customer Success",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
-          "posted_date": "2026-08-10T14:06:07-04:00"
         },
         {
           "title": "Organic Search Manager (Remote)",
@@ -765,13 +759,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Manager, Enterprise Customer Success",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8589581002",
-      "posted_date": "2026-08-10T14:06:07-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Organic Search Manager (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
@@ -849,5 +836,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 57
 }
