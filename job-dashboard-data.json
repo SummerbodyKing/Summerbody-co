@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T20:13:30.498571+00:00",
+  "generated_at": "2026-08-14T20:50:20.837434+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,8 +57,8 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 19,
+      "found": 24,
+      "matched": 20,
       "error": null,
       "jobs": [
         {
@@ -78,6 +78,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
           "posted_date": "2026-07-14T13:35:26-04:00"
+        },
+        {
+          "title": "Account Executive, Patient Experience",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
+          "posted_date": "2026-08-14T16:42:35-04:00"
         },
         {
           "title": "Data Engineer",
@@ -473,6 +479,13 @@
       "source": "tebra"
     },
     {
+      "title": "Account Executive, Patient Experience",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
+      "posted_date": "2026-08-14T16:42:35-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -823,5 +836,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 56
+  "total_matched": 57
 }
