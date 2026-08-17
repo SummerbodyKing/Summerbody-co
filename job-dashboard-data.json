@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T14:59:25.590004+00:00",
+  "generated_at": "2026-08-17T15:34:30.155800+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -336,8 +336,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 78,
-      "matched": 13,
+      "found": 77,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -404,12 +404,6 @@
           "title": "VP Financial Planning & Analysis (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
-          "posted_date": "2026-08-10T14:06:07-04:00"
-        },
-        {
-          "title": "VP Talent Management (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
           "posted_date": "2026-08-10T14:06:07-04:00"
         },
         {
@@ -815,13 +809,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "VP Talent Management (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8548656002",
-      "posted_date": "2026-08-10T14:06:07-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Workday Analyst (PATT) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
@@ -836,5 +823,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 57
+  "total_matched": 56
 }
