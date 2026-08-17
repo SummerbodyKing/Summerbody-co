@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T21:44:38.330051+00:00",
+  "generated_at": "2026-08-17T22:29:57.271981+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,8 +57,8 @@
     },
     {
       "name": "tebra",
-      "found": 24,
-      "matched": 20,
+      "found": 25,
+      "matched": 21,
       "error": null,
       "jobs": [
         {
@@ -84,6 +84,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
           "posted_date": "2026-08-14T16:42:35-04:00"
+        },
+        {
+          "title": "Customer Success Manager, Strategic",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4722131005",
+          "posted_date": "2026-08-17T17:48:41-04:00"
         },
         {
           "title": "Data Engineer",
@@ -480,6 +486,13 @@
       "source": "tebra"
     },
     {
+      "title": "Customer Success Manager, Strategic",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4722131005",
+      "posted_date": "2026-08-17T17:48:41-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -823,5 +836,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 56
+  "total_matched": 57
 }
