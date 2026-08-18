@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T16:53:33.775413+00:00",
+  "generated_at": "2026-08-18T17:32:33.486813+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -205,10 +205,16 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 12,
+      "matched": 11,
       "error": null,
       "jobs": [
+        {
+          "title": "Customer & Field Marketing Manager  - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
+          "posted_date": "2026-08-18T13:00:08-04:00"
+        },
         {
           "title": "Director of Product Management  - US Remote",
           "location": "Remote",
@@ -612,6 +618,13 @@
       "source": "sift-healthcare"
     },
     {
+      "title": "Customer & Field Marketing Manager  - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
+      "posted_date": "2026-08-18T13:00:08-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Director of Product Management  - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
@@ -836,5 +849,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 57
+  "total_matched": 58
 }
