@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T19:44:55.924929+00:00",
+  "generated_at": "2026-08-18T20:30:15.959974+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,8 +57,8 @@
     },
     {
       "name": "tebra",
-      "found": 25,
-      "matched": 21,
+      "found": 26,
+      "matched": 22,
       "error": null,
       "jobs": [
         {
@@ -146,6 +146,12 @@
           "posted_date": "2026-06-03T14:33:43-04:00"
         },
         {
+          "title": "Senior Digital Marketing Manager",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4722381005",
+          "posted_date": "2026-08-18T16:26:27-04:00"
+        },
+        {
           "title": "Senior Outbound Program Manager",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4703699005",
@@ -205,8 +211,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 11,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -238,12 +244,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016375004",
           "posted_date": "2026-06-29T11:33:25-04:00"
-        },
-        {
-          "title": "Lifecycle Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
-          "posted_date": "2026-07-08T11:52:20-04:00"
         },
         {
           "title": "Project Manager - US Remote",
@@ -562,6 +562,13 @@
       "source": "tebra"
     },
     {
+      "title": "Senior Digital Marketing Manager",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4722381005",
+      "posted_date": "2026-08-18T16:26:27-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Senior Outbound Program Manager",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4703699005",
@@ -650,13 +657,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016375004",
       "posted_date": "2026-06-29T11:33:25-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Lifecycle Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6097387004",
-      "posted_date": "2026-07-08T11:52:20-04:00",
       "source": "perfectserve"
     },
     {
