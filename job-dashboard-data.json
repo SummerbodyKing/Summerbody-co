@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T21:32:50.022087+00:00",
+  "generated_at": "2026-08-18T21:56:25.915046+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -286,8 +286,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
-      "matched": 9,
+      "found": 18,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -343,6 +343,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5376937008",
           "posted_date": "2026-08-18T12:43:58-04:00"
+        },
+        {
+          "title": "Staff Software Engineer - Next Gen",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383665008",
+          "posted_date": "2026-08-18T17:44:32-04:00"
         }
       ]
     },
@@ -758,6 +764,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Staff Software Engineer - Next Gen",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383665008",
+      "posted_date": "2026-08-18T17:44:32-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Customer Success Manager (Enterprise) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
@@ -849,5 +862,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 59
 }
