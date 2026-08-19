@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T17:31:20.824769+00:00",
+  "generated_at": "2026-08-19T17:57:51.352187+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -211,8 +211,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 10,
-      "matched": 9,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -244,6 +244,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016375004",
           "posted_date": "2026-06-29T11:33:25-04:00"
+        },
+        {
+          "title": "Platform Engineering Manager - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144278004",
+          "posted_date": "2026-08-19T13:36:35-04:00"
         },
         {
           "title": "Project Manager - US Remote",
@@ -660,6 +666,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Platform Engineering Manager - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144278004",
+      "posted_date": "2026-08-19T13:36:35-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Project Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
@@ -849,5 +862,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 59
 }
