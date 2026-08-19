@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T19:57:41.608976+00:00",
+  "generated_at": "2026-08-19T20:37:45.474907+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -354,10 +354,16 @@
     },
     {
       "name": "knowbe4",
-      "found": 76,
-      "matched": 12,
+      "found": 77,
+      "matched": 13,
       "error": null,
       "jobs": [
+        {
+          "title": "Director of Customer Service Process Automation (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8731094002",
+          "posted_date": "2026-08-19T16:02:52-04:00"
+        },
         {
           "title": "Executive Assistant to CFO (Remote)",
           "location": "Remote",
@@ -771,6 +777,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Director of Customer Service Process Automation (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8731094002",
+      "posted_date": "2026-08-19T16:02:52-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Executive Assistant to CFO (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
@@ -862,5 +875,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 59
+  "total_matched": 60
 }
