@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T14:02:01.680329+00:00",
+  "generated_at": "2026-08-19T14:57:09.529249+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -348,8 +348,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 77,
-      "matched": 11,
+      "found": 78,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -399,6 +399,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
           "posted_date": "2026-08-10T14:06:07-04:00"
+        },
+        {
+          "title": "Snr. Marketing Experiences Manager (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8729761002",
+          "posted_date": "2026-08-19T10:22:10-04:00"
         },
         {
           "title": "Staff Engineer (Remote)",
@@ -808,6 +814,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Marketing Experiences Manager (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8729761002",
+      "posted_date": "2026-08-19T10:22:10-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Staff Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
@@ -836,5 +849,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 57
+  "total_matched": 58
 }
