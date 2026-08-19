@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T13:03:32.631514+00:00",
+  "generated_at": "2026-08-19T14:02:01.680329+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -211,8 +211,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 10,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -250,12 +250,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
           "posted_date": "2026-08-13T10:26:29-04:00"
-        },
-        {
-          "title": "QA Engineer - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111930004",
-          "posted_date": "2026-07-09T12:51:23-04:00"
         },
         {
           "title": "Senior Financial Analyst - Canada Remote",
@@ -667,13 +661,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "QA Engineer - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6111930004",
-      "posted_date": "2026-07-09T12:51:23-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Senior Financial Analyst - Canada Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6020450004",
@@ -849,5 +836,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 57
 }
