@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T11:59:09.199982+00:00",
+  "generated_at": "2026-08-19T13:03:32.631514+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -354,16 +354,10 @@
     },
     {
       "name": "knowbe4",
-      "found": 78,
-      "matched": 12,
+      "found": 77,
+      "matched": 11,
       "error": null,
       "jobs": [
-        {
-          "title": "Customer Success Manager (Enterprise) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
-          "posted_date": "2026-08-10T14:06:07-04:00"
-        },
         {
           "title": "Executive Assistant to CFO (Remote)",
           "location": "Remote",
@@ -771,13 +765,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Customer Success Manager (Enterprise) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8620789002",
-      "posted_date": "2026-08-10T14:06:07-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Executive Assistant to CFO (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
@@ -862,5 +849,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 59
+  "total_matched": 58
 }
