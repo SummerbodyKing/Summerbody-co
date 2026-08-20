@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T19:06:11.362800+00:00",
+  "generated_at": "2026-08-20T19:50:19.765690+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 3,
+      "matched": 4,
       "error": null,
       "jobs": [
+        {
+          "title": "Customer Success Manager, Key",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -57,7 +63,7 @@
     },
     {
       "name": "tebra",
-      "found": 26,
+      "found": 27,
       "matched": 22,
       "error": null,
       "jobs": [
@@ -368,79 +374,79 @@
           "title": "Director of Customer Service Process Automation (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8731094002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Director, Strategic Channel Enablement & Activation (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733634002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Director, Technology & Hyperscaler Alliances (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Executive Assistant to CGO (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8696836002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Organic Search Manager (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Snr. Employee Relations Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Snr. Manager, Demand Generation (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Staff Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "VP Financial Planning & Analysis (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Workday Analyst (PATT) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
-          "posted_date": "2026-08-20T14:54:19-04:00"
+          "posted_date": "2026-08-20T15:27:17-04:00"
         }
       ]
     },
@@ -460,6 +466,13 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Customer Success Manager, Key",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
     {
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
@@ -793,91 +806,91 @@
       "title": "Director of Customer Service Process Automation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8731094002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Director, Strategic Channel Enablement & Activation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733634002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Director, Technology & Hyperscaler Alliances (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Executive Assistant to CGO (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8696836002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Organic Search Manager (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Sales Engineer (LATAM) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Employee Relations Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Manager, Demand Generation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Staff Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "VP Financial Planning & Analysis (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8615634002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Workday Analyst (PATT) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
-      "posted_date": "2026-08-20T14:54:19-04:00",
+      "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
     {
@@ -888,5 +901,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 62
 }
