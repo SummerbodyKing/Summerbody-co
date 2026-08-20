@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T16:55:52.571243+00:00",
+  "generated_at": "2026-08-20T17:36:06.916564+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -286,10 +286,16 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
-      "matched": 10,
+      "found": 19,
+      "matched": 11,
       "error": null,
       "jobs": [
+        {
+          "title": "Director, Product & Segment Marketing Manager",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
+          "posted_date": "2026-08-20T13:14:32-04:00"
+        },
         {
           "title": "Legal Innovation Partner",
           "location": "Remote - US",
@@ -300,7 +306,7 @@
           "title": "Manager, Software Engineering - AI Assistant",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
-          "posted_date": "2026-08-18T12:43:58-04:00"
+          "posted_date": "2026-08-20T12:57:51-04:00"
         },
         {
           "title": "Manager, Software Engineering - Platform",
@@ -354,8 +360,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 79,
-      "matched": 15,
+      "found": 78,
+      "matched": 14,
       "error": null,
       "jobs": [
         {
@@ -375,12 +381,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
           "posted_date": "2026-08-20T12:06:08-04:00"
-        },
-        {
-          "title": "Executive Assistant to CFO (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
-          "posted_date": "2026-08-12T07:35:04-04:00"
         },
         {
           "title": "Executive Assistant to CGO (Remote)",
@@ -719,6 +719,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Director, Product & Segment Marketing Manager",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
+      "posted_date": "2026-08-20T13:14:32-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Legal Innovation Partner",
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5394193008",
@@ -729,7 +736,7 @@
       "title": "Manager, Software Engineering - AI Assistant",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350526008",
-      "posted_date": "2026-08-18T12:43:58-04:00",
+      "posted_date": "2026-08-20T12:57:51-04:00",
       "source": "netdocuments"
     },
     {
@@ -807,13 +814,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
       "posted_date": "2026-08-20T12:06:08-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Executive Assistant to CFO (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
-      "posted_date": "2026-08-12T07:35:04-04:00",
       "source": "knowbe4"
     },
     {
