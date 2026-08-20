@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T19:50:19.765690+00:00",
+  "generated_at": "2026-08-20T20:34:32.588628+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -366,16 +366,10 @@
     },
     {
       "name": "knowbe4",
-      "found": 77,
-      "matched": 13,
+      "found": 76,
+      "matched": 12,
       "error": null,
       "jobs": [
-        {
-          "title": "Director of Customer Service Process Automation (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8731094002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
-        },
         {
           "title": "Director, Strategic Channel Enablement & Activation (Remote)",
           "location": "Remote",
@@ -803,13 +797,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Director of Customer Service Process Automation (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8731094002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Director, Strategic Channel Enablement & Activation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733634002",
@@ -901,5 +888,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 62
+  "total_matched": 61
 }
