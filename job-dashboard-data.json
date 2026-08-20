@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T16:05:23.112265+00:00",
+  "generated_at": "2026-08-20T16:55:52.571243+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -354,8 +354,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 78,
-      "matched": 14,
+      "found": 79,
+      "matched": 15,
       "error": null,
       "jobs": [
         {
@@ -369,6 +369,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733634002",
           "posted_date": "2026-08-20T12:02:54-04:00"
+        },
+        {
+          "title": "Director, Technology & Hyperscaler Alliances (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
+          "posted_date": "2026-08-20T12:06:08-04:00"
         },
         {
           "title": "Executive Assistant to CFO (Remote)",
@@ -797,6 +803,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Director, Technology & Hyperscaler Alliances (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
+      "posted_date": "2026-08-20T12:06:08-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Executive Assistant to CFO (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8628870002",
@@ -888,5 +901,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 62
 }
