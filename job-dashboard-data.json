@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T16:56:22.922449+00:00",
+  "generated_at": "2026-08-21T17:36:45.100888+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -223,8 +223,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 12,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -232,6 +232,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
           "posted_date": "2026-08-18T13:00:08-04:00"
+        },
+        {
+          "title": "Customer Success Advisor - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
+          "posted_date": "2026-08-21T13:09:57-04:00"
         },
         {
           "title": "Director of Product Management  - US Remote",
@@ -658,6 +664,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Customer Success Advisor - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
+      "posted_date": "2026-08-21T13:09:57-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Director of Product Management  - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
@@ -875,5 +888,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 60
+  "total_matched": 61
 }
