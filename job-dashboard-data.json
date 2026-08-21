@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T22:59:00.974122+00:00",
+  "generated_at": "2026-08-21T23:32:38.293403+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -304,8 +304,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
-      "matched": 10,
+      "found": 19,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -367,6 +367,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383665008",
           "posted_date": "2026-08-18T17:44:32-04:00"
+        },
+        {
+          "title": "Staff Software Engineer - OCR / Text Extraction",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
+          "posted_date": "2026-08-21T19:06:15-04:00"
         }
       ]
     },
@@ -804,6 +810,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Staff Software Engineer - OCR / Text Extraction",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
+      "posted_date": "2026-08-21T19:06:15-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Director, Strategic Channel Enablement & Activation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733634002",
@@ -888,5 +901,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 62
 }
