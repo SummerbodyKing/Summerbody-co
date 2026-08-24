@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T14:24:22.585684+00:00",
+  "generated_at": "2026-08-24T15:21:33.823325+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -304,8 +304,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 20,
-      "matched": 11,
+      "found": 19,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -354,12 +354,6 @@
           "title": "Senior Software Engineer - Next-Gen",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
-          "posted_date": "2026-08-18T12:43:58-04:00"
-        },
-        {
-          "title": "Sr Legal Consultant - Legal Tech Project Manager",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5376937008",
           "posted_date": "2026-08-18T12:43:58-04:00"
         },
         {
@@ -796,13 +790,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Sr Legal Consultant - Legal Tech Project Manager",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5376937008",
-      "posted_date": "2026-08-18T12:43:58-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Staff Software Engineer - Next Gen",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383665008",
@@ -901,5 +888,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 62
+  "total_matched": 61
 }
