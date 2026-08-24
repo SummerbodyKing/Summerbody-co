@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T07:15:11.232648+00:00",
+  "generated_at": "2026-08-24T08:08:00.140122+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -452,10 +452,17 @@
     },
     {
       "name": "dronedeploy",
-      "found": 0,
-      "matched": 0,
-      "error": "HTTPSConnectionPool(host='api.lever.co', port=443): Read timed out. (read timeout=30)",
-      "jobs": []
+      "found": 7,
+      "matched": 1,
+      "error": null,
+      "jobs": [
+        {
+          "title": "Senior Marketing Operations Manager (USA)",
+          "location": "Remote",
+          "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
+          "posted_date": "2026-06-30T23:34:49.211000+00:00"
+        }
+      ]
     }
   ],
   "jobs": [
@@ -885,7 +892,14 @@
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
       "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
+    },
+    {
+      "title": "Senior Marketing Operations Manager (USA)",
+      "location": "Remote",
+      "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
+      "posted_date": "2026-06-30T23:34:49.211000+00:00",
+      "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 62
 }
