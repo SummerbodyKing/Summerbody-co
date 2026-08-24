@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T19:49:03.764746+00:00",
+  "generated_at": "2026-08-24T20:36:45.593179+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -223,8 +223,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 11,
+      "found": 10,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -274,18 +274,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
           "posted_date": "2026-08-13T10:26:29-04:00"
-        },
-        {
-          "title": "Senior Financial Analyst - Canada Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6020450004",
-          "posted_date": "2026-06-16T09:05:43-04:00"
-        },
-        {
-          "title": "Senior Financial Analyst - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6012313004",
-          "posted_date": "2026-06-29T11:35:39-04:00"
         },
         {
           "title": "Senior Software Engineer, .NET - US Remote",
@@ -446,7 +434,7 @@
     },
     {
       "name": "dronedeploy",
-      "found": 7,
+      "found": 8,
       "matched": 1,
       "error": null,
       "jobs": [
@@ -713,20 +701,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Senior Financial Analyst - Canada Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6020450004",
-      "posted_date": "2026-06-16T09:05:43-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Senior Financial Analyst - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6012313004",
-      "posted_date": "2026-06-29T11:35:39-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Senior Software Engineer, .NET - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5826519004",
@@ -888,5 +862,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 59
 }
