@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T21:04:53.293766+00:00",
+  "generated_at": "2026-08-24T21:48:42.455428+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -69,8 +69,8 @@
     },
     {
       "name": "tebra",
-      "found": 27,
-      "matched": 22,
+      "found": 28,
+      "matched": 23,
       "error": null,
       "jobs": [
         {
@@ -144,6 +144,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
           "posted_date": "2026-07-30T15:18:56-04:00"
+        },
+        {
+          "title": "Manager, Sales Development",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4724134005",
+          "posted_date": "2026-08-24T17:22:59-04:00"
         },
         {
           "title": "Sales Development Representative",
@@ -568,6 +574,13 @@
       "source": "tebra"
     },
     {
+      "title": "Manager, Sales Development",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4724134005",
+      "posted_date": "2026-08-24T17:22:59-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Sales Development Representative",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
@@ -862,5 +875,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 59
+  "total_matched": 60
 }
