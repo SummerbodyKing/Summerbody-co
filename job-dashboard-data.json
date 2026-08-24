@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T05:57:31.281428+00:00",
+  "generated_at": "2026-08-24T07:15:11.232648+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -32,31 +32,31 @@
           "title": "Digital Strategist",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Digital-Strategist_R4899",
-          "posted_date": "Posted 2 Days Ago"
+          "posted_date": "Posted 3 Days Ago"
         },
         {
           "title": "Customer Success Manager, Key",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
-          "posted_date": "Posted 3 Days Ago"
+          "posted_date": "Posted 4 Days Ago"
         },
         {
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted 5 Days Ago"
+          "posted_date": "Posted 6 Days Ago"
         },
         {
           "title": "Senior Manager, Customer Success",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-          "posted_date": "Posted 23 Days Ago"
+          "posted_date": "Posted 24 Days Ago"
         },
         {
           "title": "Senior Director, Customer Success Enablement & Strategy",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
-          "posted_date": "Posted 26 Days Ago"
+          "posted_date": "Posted 27 Days Ago"
         }
       ]
     },
@@ -304,7 +304,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 19,
+      "found": 20,
       "matched": 11,
       "error": null,
       "jobs": [
@@ -452,17 +452,10 @@
     },
     {
       "name": "dronedeploy",
-      "found": 7,
-      "matched": 1,
-      "error": null,
-      "jobs": [
-        {
-          "title": "Senior Marketing Operations Manager (USA)",
-          "location": "Remote",
-          "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
-          "posted_date": "2026-06-30T23:34:49.211000+00:00"
-        }
-      ]
+      "found": 0,
+      "matched": 0,
+      "error": "HTTPSConnectionPool(host='api.lever.co', port=443): Read timed out. (read timeout=30)",
+      "jobs": []
     }
   ],
   "jobs": [
@@ -470,35 +463,35 @@
       "title": "Digital Strategist",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Digital-Strategist_R4899",
-      "posted_date": "Posted 2 Days Ago",
+      "posted_date": "Posted 3 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Customer Success Manager, Key",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
-      "posted_date": "Posted 3 Days Ago",
+      "posted_date": "Posted 4 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted 5 Days Ago",
+      "posted_date": "Posted 6 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Senior Manager, Customer Success",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-      "posted_date": "Posted 23 Days Ago",
+      "posted_date": "Posted 24 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Senior Director, Customer Success Enablement & Strategy",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
-      "posted_date": "Posted 26 Days Ago",
+      "posted_date": "Posted 27 Days Ago",
       "source": "modmed"
     },
     {
@@ -892,14 +885,7 @@
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
       "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
-    },
-    {
-      "title": "Senior Marketing Operations Manager (USA)",
-      "location": "Remote",
-      "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
-      "posted_date": "2026-06-30T23:34:49.211000+00:00",
-      "source": "dronedeploy"
     }
   ],
-  "total_matched": 62
+  "total_matched": 61
 }
