@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T20:35:12.633868+00:00",
+  "generated_at": "2026-08-25T21:01:25.473163+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,15 +25,9 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 5,
+      "matched": 4,
       "error": null,
       "jobs": [
-        {
-          "title": "Digital Strategist",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Digital-Strategist_R4899",
-          "posted_date": "Posted 4 Days Ago"
-        },
         {
           "title": "Customer Success Manager, Key",
           "location": "Remote - USA",
@@ -304,7 +298,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
+      "found": 17,
       "matched": 10,
       "error": null,
       "jobs": [
@@ -460,13 +454,6 @@
     }
   ],
   "jobs": [
-    {
-      "title": "Digital Strategist",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Digital-Strategist_R4899",
-      "posted_date": "Posted 4 Days Ago",
-      "source": "modmed"
-    },
     {
       "title": "Customer Success Manager, Key",
       "location": "Remote - USA",
@@ -888,5 +875,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 61
+  "total_matched": 60
 }
