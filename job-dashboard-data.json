@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T21:48:04.376501+00:00",
+  "generated_at": "2026-08-25T22:33:07.739515+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -63,16 +63,10 @@
     },
     {
       "name": "tebra",
-      "found": 29,
-      "matched": 24,
+      "found": 28,
+      "matched": 23,
       "error": null,
       "jobs": [
-        {
-          "title": "Account Executive, Billing Company",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4711474005",
-          "posted_date": "2026-07-23T19:03:08-04:00"
-        },
         {
           "title": "Account Executive, Customer Growth",
           "location": "United States - Remote",
@@ -440,7 +434,7 @@
     },
     {
       "name": "dronedeploy",
-      "found": 8,
+      "found": 9,
       "matched": 1,
       "error": null,
       "jobs": [
@@ -481,13 +475,6 @@
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
       "posted_date": "Posted 28 Days Ago",
       "source": "modmed"
-    },
-    {
-      "title": "Account Executive, Billing Company",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4711474005",
-      "posted_date": "2026-07-23T19:03:08-04:00",
-      "source": "tebra"
     },
     {
       "title": "Account Executive, Customer Growth",
@@ -875,5 +862,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 60
+  "total_matched": 59
 }
