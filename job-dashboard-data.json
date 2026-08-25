@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T17:36:07.920506+00:00",
+  "generated_at": "2026-08-25T18:02:50.428174+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -62,9 +62,9 @@
     },
     {
       "name": "ap-companies",
-      "found": 1,
+      "found": 0,
       "matched": 0,
-      "error": null,
+      "error": "HTTPSConnectionPool(host='apcompanies.isolvedhire.com', port=443): Max retries exceeded with url: /jobs/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))",
       "jobs": []
     },
     {
