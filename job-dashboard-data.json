@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T14:08:40.034226+00:00",
+  "generated_at": "2026-08-26T15:55:50.149318+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -231,7 +231,7 @@
           "title": "Customer Success Advisor - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
-          "posted_date": "2026-08-21T13:09:57-04:00"
+          "posted_date": "2026-08-26T10:36:58-04:00"
         },
         {
           "title": "Director of Product Management  - US Remote",
@@ -286,8 +286,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
-      "matched": 10,
+      "found": 16,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -301,12 +301,6 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5394193008",
           "posted_date": "2026-08-18T14:43:10-04:00"
-        },
-        {
-          "title": "Manager, Software Engineering - Platform",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
-          "posted_date": "2026-08-18T12:43:58-04:00"
         },
         {
           "title": "Senior Manager, Software Engineering - AI",
@@ -355,7 +349,7 @@
     {
       "name": "knowbe4",
       "found": 72,
-      "matched": 11,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -377,15 +371,15 @@
           "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
+          "title": "Manager, Revenue Operations (Customer Services)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750767002",
+          "posted_date": "2026-08-26T11:46:05-04:00"
+        },
+        {
           "title": "Organic Search Manager (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
-        },
-        {
-          "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
           "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
@@ -401,10 +395,16 @@
           "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
+          "title": "Snr. Analyst, Revenue Operations (Customer Management)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
+          "posted_date": "2026-08-26T11:46:46-04:00"
+        },
+        {
           "title": "Snr. Employee Relations Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
+          "posted_date": "2026-08-26T11:37:06-04:00"
         },
         {
           "title": "Snr. Manager, Demand Generation (Remote)",
@@ -642,7 +642,7 @@
       "title": "Customer Success Advisor - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
-      "posted_date": "2026-08-21T13:09:57-04:00",
+      "posted_date": "2026-08-26T10:36:58-04:00",
       "source": "perfectserve"
     },
     {
@@ -706,13 +706,6 @@
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5394193008",
       "posted_date": "2026-08-18T14:43:10-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Manager, Software Engineering - Platform",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350440008",
-      "posted_date": "2026-08-18T12:43:58-04:00",
       "source": "netdocuments"
     },
     {
@@ -786,16 +779,16 @@
       "source": "knowbe4"
     },
     {
-      "title": "Organic Search Manager (Remote)",
+      "title": "Manager, Revenue Operations (Customer Services)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750767002",
+      "posted_date": "2026-08-26T11:46:05-04:00",
       "source": "knowbe4"
     },
     {
-      "title": "Partner Success Manager (MSP Per Client) (Spanish Speaking) (Remote)",
+      "title": "Organic Search Manager (Remote)",
       "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8608630002",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
       "posted_date": "2026-08-20T15:27:17-04:00",
       "source": "knowbe4"
     },
@@ -814,10 +807,17 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Analyst, Revenue Operations (Customer Management)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
+      "posted_date": "2026-08-26T11:46:46-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Snr. Employee Relations Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
+      "posted_date": "2026-08-26T11:37:06-04:00",
       "source": "knowbe4"
     },
     {
