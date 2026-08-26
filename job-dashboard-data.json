@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T15:55:50.149318+00:00",
+  "generated_at": "2026-08-26T16:51:39.264420+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -348,8 +348,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 72,
-      "matched": 12,
+      "found": 73,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -371,10 +371,10 @@
           "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
-          "title": "Manager, Revenue Operations (Customer Services)",
+          "title": "Manager, Revenue Operations (Customer Services) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750767002",
-          "posted_date": "2026-08-26T11:46:05-04:00"
+          "posted_date": "2026-08-26T11:55:51-04:00"
         },
         {
           "title": "Organic Search Manager (Remote)",
@@ -395,10 +395,16 @@
           "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
-          "title": "Snr. Analyst, Revenue Operations (Customer Management)",
+          "title": "Snr. Analyst, Revenue Operations (Customer Management) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-          "posted_date": "2026-08-26T11:46:46-04:00"
+          "posted_date": "2026-08-26T11:56:11-04:00"
+        },
+        {
+          "title": "Snr. Commissions Analyst (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
+          "posted_date": "2026-08-26T12:03:57-04:00"
         },
         {
           "title": "Snr. Employee Relations Partner (Remote)",
@@ -779,10 +785,10 @@
       "source": "knowbe4"
     },
     {
-      "title": "Manager, Revenue Operations (Customer Services)",
+      "title": "Manager, Revenue Operations (Customer Services) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750767002",
-      "posted_date": "2026-08-26T11:46:05-04:00",
+      "posted_date": "2026-08-26T11:55:51-04:00",
       "source": "knowbe4"
     },
     {
@@ -807,10 +813,17 @@
       "source": "knowbe4"
     },
     {
-      "title": "Snr. Analyst, Revenue Operations (Customer Management)",
+      "title": "Snr. Analyst, Revenue Operations (Customer Management) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-      "posted_date": "2026-08-26T11:46:46-04:00",
+      "posted_date": "2026-08-26T11:56:11-04:00",
+      "source": "knowbe4"
+    },
+    {
+      "title": "Snr. Commissions Analyst (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
+      "posted_date": "2026-08-26T12:03:57-04:00",
       "source": "knowbe4"
     },
     {
@@ -849,5 +862,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 59
 }
