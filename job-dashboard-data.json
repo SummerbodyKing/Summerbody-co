@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T11:50:52.592834+00:00",
+  "generated_at": "2026-08-26T13:03:07.033610+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 4,
+      "matched": 3,
       "error": null,
       "jobs": [
         {
@@ -45,12 +45,6 @@
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
           "posted_date": "Posted 26 Days Ago"
-        },
-        {
-          "title": "Senior Director, Customer Success Enablement & Strategy",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
-          "posted_date": "Posted 29 Days Ago"
         }
       ]
     },
@@ -470,13 +464,6 @@
       "source": "modmed"
     },
     {
-      "title": "Senior Director, Customer Success Enablement & Strategy",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Director--Customer-Success-Enablement---Strategy_R4838",
-      "posted_date": "Posted 29 Days Ago",
-      "source": "modmed"
-    },
-    {
       "title": "Account Executive, Customer Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4631714005",
@@ -862,5 +849,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 59
+  "total_matched": 58
 }
