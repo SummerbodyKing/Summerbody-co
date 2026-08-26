@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T16:51:39.264420+00:00",
+  "generated_at": "2026-08-26T19:09:34.851839+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,8 +57,8 @@
     },
     {
       "name": "tebra",
-      "found": 28,
-      "matched": 23,
+      "found": 27,
+      "matched": 22,
       "error": null,
       "jobs": [
         {
@@ -126,12 +126,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
           "posted_date": "2026-07-30T15:18:56-04:00"
-        },
-        {
-          "title": "Manager, Sales Development",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4724134005",
-          "posted_date": "2026-08-25T12:11:11-04:00"
         },
         {
           "title": "Product Marketing Manager (TEMPORARY)",
@@ -348,7 +342,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 73,
+      "found": 72,
       "matched": 13,
       "error": null,
       "jobs": [
@@ -544,13 +538,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
       "posted_date": "2026-07-30T15:18:56-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Manager, Sales Development",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4724134005",
-      "posted_date": "2026-08-25T12:11:11-04:00",
       "source": "tebra"
     },
     {
@@ -862,5 +849,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 59
+  "total_matched": 58
 }
