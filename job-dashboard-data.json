@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T03:25:08.193164+00:00",
+  "generated_at": "2026-08-27T14:45:37.981531+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,26 +25,20 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 3,
+      "matched": 2,
       "error": null,
       "jobs": [
         {
           "title": "Customer Success Manager, Key",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
-          "posted_date": "Posted 6 Days Ago"
+          "posted_date": "Posted 7 Days Ago"
         },
         {
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted 8 Days Ago"
-        },
-        {
-          "title": "Senior Manager, Customer Success",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-          "posted_date": "Posted 26 Days Ago"
+          "posted_date": "Posted 9 Days Ago"
         }
       ]
     },
@@ -342,27 +336,21 @@
     },
     {
       "name": "knowbe4",
-      "found": 72,
-      "matched": 13,
+      "found": 70,
+      "matched": 11,
       "error": null,
       "jobs": [
-        {
-          "title": "Director, Strategic Channel Enablement & Activation (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733634002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
-        },
-        {
-          "title": "Director, Technology & Hyperscaler Alliances (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
-          "posted_date": "2026-08-26T09:42:21-04:00"
-        },
         {
           "title": "Executive Assistant to CGO (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8696836002",
           "posted_date": "2026-08-20T15:27:17-04:00"
+        },
+        {
+          "title": "Manager, Revenue Operations (Customer Management) (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
+          "posted_date": "2026-08-27T09:34:05-04:00"
         },
         {
           "title": "Manager, Revenue Operations (Customer Services) (Remote)",
@@ -387,12 +375,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
           "posted_date": "2026-08-20T15:27:17-04:00"
-        },
-        {
-          "title": "Snr. Analyst, Revenue Operations (Customer Management) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-          "posted_date": "2026-08-26T11:56:11-04:00"
         },
         {
           "title": "Snr. Commissions Analyst (Remote)",
@@ -446,21 +428,14 @@
       "title": "Customer Success Manager, Key",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
-      "posted_date": "Posted 6 Days Ago",
+      "posted_date": "Posted 7 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted 8 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Manager, Customer Success",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-      "posted_date": "Posted 26 Days Ago",
+      "posted_date": "Posted 9 Days Ago",
       "source": "modmed"
     },
     {
@@ -751,24 +726,17 @@
       "source": "netdocuments"
     },
     {
-      "title": "Director, Strategic Channel Enablement & Activation (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733634002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Director, Technology & Hyperscaler Alliances (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8733670002",
-      "posted_date": "2026-08-26T09:42:21-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Executive Assistant to CGO (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8696836002",
       "posted_date": "2026-08-20T15:27:17-04:00",
+      "source": "knowbe4"
+    },
+    {
+      "title": "Manager, Revenue Operations (Customer Management) (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
+      "posted_date": "2026-08-27T09:34:05-04:00",
       "source": "knowbe4"
     },
     {
@@ -797,13 +765,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
       "posted_date": "2026-08-20T15:27:17-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Snr. Analyst, Revenue Operations (Customer Management) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-      "posted_date": "2026-08-26T11:56:11-04:00",
       "source": "knowbe4"
     },
     {
@@ -849,5 +810,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 58
+  "total_matched": 55
 }
