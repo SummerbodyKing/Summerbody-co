@@ -1,0 +1,189 @@
+/* ==========================================================================
+   OG Presido Design System — Tokens
+   "Scrapbook Editorial" · extracted from the @joel_ooreofe carousel series
+   ========================================================================== */
+
+:root {
+  /* ----- Color ----- */
+  --ink-black: #17140f;
+  --espresso: #4a4238;
+  --espresso-deep: #332c24;
+  --paper-cream: #e9dfc2;
+  --paper-shadow: #d6c9a6;
+  --presido-yellow: #f2c230;
+  --yellow-deep: #d9a81c;
+  --signal-red: #a93226;
+  --chalk-white: #ffffff;
+  --stone-gray: #b7afa2;
+  --ink-brown: #3b2f23;
+  --rule-pink: #d99c8f;
+
+  /* ----- Typography ----- */
+  --font-shout: "Anton", "Archivo Black", "Arial Narrow", sans-serif;
+  --font-explain: "Poppins", "Montserrat", "Helvetica Neue", sans-serif;
+  --font-whisper: "Caveat", "Shadows Into Light", cursive;
+
+  /* Scale relative to a 1080x1350 canvas; rem-based for web use */
+  --text-display: clamp(3.5rem, 12vw, 9rem);      /* 150–220px on canvas */
+  --text-cta: clamp(1.75rem, 4.5vw, 3.25rem);     /* 64–80px  */
+  --text-hand: clamp(1.5rem, 3.5vw, 2.6rem);      /* 48–64px  */
+  --text-body: clamp(0.95rem, 1.8vw, 1.25rem);    /* 30–36px  */
+  --text-label: clamp(0.7rem, 1.2vw, 0.85rem);    /* 20–24px  */
+
+  --leading-display: 0.85;
+  --leading-body: 1.45;
+  --leading-hand: 1.7;
+  --tracking-display: -0.01em;
+  --tracking-label: 0.12em;
+
+  /* ----- Spacing (canvas margin = 72/1080) ----- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --margin-safe: 6.66%;
+
+  /* ----- Motifs ----- */
+  --tilt-1: rotate(-1.5deg);
+  --tilt-2: rotate(2deg);
+  --border-dashed: 2px dashed;
+  --radius-chip: 6px;
+  --radius-pill: 999px;
+  --shadow-sticker: 0 6px 18px rgba(23, 20, 15, 0.35);
+  --grain-opacity: 0.1;
+}
+
+/* ----- Background recipes ----- */
+
+.bg-poster {
+  background-color: var(--espresso);
+  background-image: radial-gradient(
+    ellipse at center,
+    var(--espresso) 40%,
+    var(--espresso-deep) 100%
+  );
+  color: var(--chalk-white);
+}
+
+.bg-notebook {
+  background-color: var(--paper-cream);
+  /* ruled lines + red margin */
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 11.5%,
+      var(--signal-red) 11.5%,
+      var(--signal-red) calc(11.5% + 2px),
+      transparent calc(11.5% + 2px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 62px,
+      var(--rule-pink) 62px,
+      var(--rule-pink) 64px
+    );
+  color: var(--ink-brown);
+}
+
+/* ----- Type voices ----- */
+
+.type-shout {
+  font-family: var(--font-shout);
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--chalk-white);
+}
+
+.type-explain {
+  font-family: var(--font-explain);
+  font-weight: 300;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--stone-gray);
+}
+
+.type-whisper {
+  font-family: var(--font-whisper);
+  font-weight: 600;
+  font-size: var(--text-hand);
+  line-height: var(--leading-hand);
+  color: var(--ink-brown);
+}
+
+.type-label {
+  font-family: var(--font-explain);
+  font-weight: 600;
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* ----- Components ----- */
+
+.chip {
+  display: inline-block;
+  background: var(--ink-black);
+  color: var(--chalk-white);
+  font-family: var(--font-explain);
+  font-weight: 700;
+  padding: 0.35em 0.9em;
+  border-radius: var(--radius-chip);
+  transform: var(--tilt-2);
+}
+
+.cta-sticker {
+  display: inline-block;
+  background: var(--presido-yellow);
+  border: var(--border-dashed) rgba(23, 20, 15, 0.35);
+  outline: 6px solid var(--presido-yellow);
+  padding: var(--space-4) var(--space-5);
+  transform: var(--tilt-1);
+  box-shadow: var(--shadow-sticker);
+}
+
+.cta-sticker .cta-script {
+  font-family: var(--font-explain);
+  font-weight: 700;
+  font-size: var(--text-cta);
+  color: var(--chalk-white);
+  line-height: 1.1;
+}
+
+.cta-sticker .cta-label {
+  color: var(--ink-black);
+}
+
+.pill-ghost {
+  display: inline-block;
+  background: rgba(23, 20, 15, 0.35);
+  border: var(--border-dashed) var(--chalk-white);
+  border-radius: var(--radius-pill);
+  color: var(--chalk-white);
+  padding: 0.9em 1.8em;
+}
+
+.highlight-bar {
+  background: linear-gradient(var(--presido-yellow), var(--yellow-deep));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.12em;
+}
+
+.red-ink {
+  color: var(--signal-red);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.quote-box {
+  border: 3px solid var(--ink-brown);
+  border-radius: 14px 10px 16px 8px; /* wobbly, hand-drawn corners */
+  padding: var(--space-3) var(--space-4);
+}
