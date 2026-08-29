@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KINGsjobs 👑 — Your Job Alert Throne</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+  :root{
+    --gold:#D4AF37; --gold-soft:#e9cf76; --ink:#0d0d0f; --panel:#16161a;
+    --panel-2:#1f1f25; --line:#2c2c34; --text:#f3f0e7; --muted:#9b968a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;background:
+    radial-gradient(1200px 600px at 50% -200px, #2a2410 0%, var(--ink) 55%);
+    color:var(--text);min-height:100vh;padding:0 0 60px}
+  header{text-align:center;padding:54px 20px 30px}
+  .crown{font-size:54px;filter:drop-shadow(0 4px 14px rgba(212,175,55,.45))}
+  h1{font-weight:800;font-size:clamp(34px,6vw,56px);letter-spacing:-1px;
+    background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-top:6px}
+  .tagline{color:var(--muted);font-weight:400;margin-top:8px;font-size:15px}
+  .bar{max-width:920px;margin:18px auto 0;display:flex;gap:14px;flex-wrap:wrap;
+    justify-content:center;align-items:center;color:var(--muted);font-size:13px}
+  .pill{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px}
+  .pill b{color:var(--gold-soft);font-weight:600}
+  main{max-width:920px;margin:30px auto 0;padding:0 18px}
+  .empty{text-align:center;color:var(--muted);padding:70px 20px;
+    border:1px dashed var(--line);border-radius:18px;background:rgba(255,255,255,.01)}
+  .empty .big{font-size:30px;margin-bottom:10px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel-2));
+    border:1px solid var(--line);border-left:4px solid var(--gold);
+    border-radius:16px;padding:20px 22px;margin-bottom:16px;
+    transition:transform .15s ease, box-shadow .15s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:0 18px 30px -16px rgba(212,175,55,.4)}
+  .card .top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+  .card h2{font-size:19px;font-weight:600;line-height:1.3}
+  .new{background:var(--gold);color:#1a1606;font-weight:700;font-size:11px;
+    padding:4px 10px;border-radius:999px;white-space:nowrap;letter-spacing:.5px}
+  .meta{color:var(--muted);font-size:13.5px;margin-top:8px;display:flex;
+    gap:16px;flex-wrap:wrap}
+  .meta span b{color:var(--text);font-weight:500}
+  .apply{display:inline-block;margin-top:16px;background:var(--gold);
+    color:#1a1606;font-weight:700;text-decoration:none;padding:10px 20px;
+    border-radius:10px;font-size:14px;transition:background .15s}
+  .apply:hover{background:var(--gold-soft)}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;line-height:1.7}
+  a.link{color:var(--gold-soft)}
+</style>
+</head>
+<body>
+  <header>
+    <div class="crown">👑</div>
+    <h1>KINGsjobs</h1>
+    <div class="tagline">First to know. First to apply.</div>
+    <div class="bar">
+      <span class="pill">Watching <b id="targetCount">…</b> employers</span>
+      <span class="pill"><b id="jobCount">…</b> matching openings</span>
+      <span class="pill">Updated <b id="updated">…</b></span>
+    </div>
+  </header>
+
+  <main id="list">
+    <div class="empty"><div class="big">⏳</div>Loading your kingdom…</div>
+  </main>
+
+  <footer>
+    KINGsjobs monitors employer career pages politely and legally.<br/>
+    Alerts also arrive instantly on your phone via ntfy.
+  </footer>
+
+<script>
+const EMPLOYERS = 2; // ModMed + AP Companies
+
+function timeAgo(iso){
+  if(!iso) return "never";
+  const d = new Date(iso), s = (Date.now()-d)/1000;
+  if(s<60) return "just now";
+  if(s<3600) return Math.floor(s/60)+" min ago";
+  if(s<86400) return Math.floor(s/3600)+" hr ago";
+  return Math.floor(s/86400)+" days ago";
+}
+function esc(t){const d=document.createElement('div');d.textContent=t||"";return d.innerHTML;}
+
+async function load(){
+  document.getElementById('targetCount').textContent = EMPLOYERS;
+  let data;
+  try{
+    const r = await fetch('./data/jobs.json?ts=' + Date.now());
+    data = await r.json();
+  }catch(e){
+    document.getElementById('list').innerHTML =
+      '<div class="empty"><div class="big">⚠️</div>Could not load job data yet.</div>';
+    return;
+  }
+  document.getElementById('jobCount').textContent = data.count || 0;
+  document.getElementById('updated').textContent = timeAgo(data.updated_at);
+
+  const list = document.getElementById('list');
+  if(!data.jobs || !data.jobs.length){
+    list.innerHTML = '<div class="empty"><div class="big">🟢</div>'
+      + 'All set — KINGsjobs is watching.<br/>New matching jobs will appear here '
+      + 'and ping your phone the moment they post.</div>';
+    return;
+  }
+  list.innerHTML = data.jobs.map(j => `
+    <div class="card">
+      <div class="top">
+        <h2>${esc(j.title)}</h2>
+        ${j.is_new ? '<span class="new">NEW</span>' : ''}
+      </div>
+      <div class="meta">
+        <span>🏢 <b>${esc(j.company)}</b></span>
+        ${j.location ? `<span>📍 <b>${esc(j.location)}</b></span>` : ''}
+        ${j.posted_date ? `<span>🕒 ${esc(j.posted_date)}</span>` : ''}
+      </div>
+      <a class="apply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply →</a>
+    </div>`).join('');
+}
+load();
+setInterval(load, 60000); // refresh the view every minute
+</script>
+</body>
+</html>
