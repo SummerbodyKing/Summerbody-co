@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T07:06:00.847133+00:00",
+  "generated_at": "2026-08-31T15:11:28.205652+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -268,7 +268,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 15,
+      "found": 14,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -330,8 +330,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 70,
-      "matched": 11,
+      "found": 68,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -377,12 +377,6 @@
           "posted_date": "2026-08-26T12:03:57-04:00"
         },
         {
-          "title": "Snr. Employee Relations Partner (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-          "posted_date": "2026-08-26T11:37:06-04:00"
-        },
-        {
           "title": "Snr. Manager, Demand Generation (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
@@ -392,12 +386,6 @@
           "title": "Staff Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
-        },
-        {
-          "title": "Workday Analyst (PATT) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
           "posted_date": "2026-08-20T15:27:17-04:00"
         }
       ]
@@ -762,13 +750,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Snr. Employee Relations Partner (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8610005002",
-      "posted_date": "2026-08-26T11:37:06-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Snr. Manager, Demand Generation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
@@ -783,13 +764,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Workday Analyst (PATT) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8697083002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Senior Marketing Operations Manager (USA)",
       "location": "Remote",
       "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
@@ -797,5 +771,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 54
+  "total_matched": 52
 }
