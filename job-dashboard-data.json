@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T21:21:04.507807+00:00",
+  "generated_at": "2026-09-01T23:33:13.752169+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 25,
-      "matched": 20,
+      "found": 24,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -132,12 +132,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4722381005",
           "posted_date": "2026-08-18T16:26:27-04:00"
-        },
-        {
-          "title": "Senior Outbound Program Manager",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4703699005",
-          "posted_date": "2026-06-23T22:15:53-04:00"
         },
         {
           "title": "Senior Product Manager",
@@ -494,13 +488,6 @@
       "source": "tebra"
     },
     {
-      "title": "Senior Outbound Program Manager",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4703699005",
-      "posted_date": "2026-06-23T22:15:53-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Senior Product Manager",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
@@ -732,5 +719,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 49
+  "total_matched": 48
 }
