@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T15:11:07.647887+00:00",
+  "generated_at": "2026-09-01T18:38:56.584542+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,15 +25,9 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 1,
       "error": null,
       "jobs": [
-        {
-          "title": "Customer Success Manager, Key",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
-          "posted_date": "Posted 12 Days Ago"
-        },
         {
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -401,13 +395,6 @@
   ],
   "jobs": [
     {
-      "title": "Customer Success Manager, Key",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Key_R4922",
-      "posted_date": "Posted 12 Days Ago",
-      "source": "modmed"
-    },
-    {
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
@@ -758,5 +745,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 51
+  "total_matched": 50
 }
