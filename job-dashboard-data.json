@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T10:29:16.432221+00:00",
+  "generated_at": "2026-09-01T15:11:07.647887+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -330,8 +330,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 67,
-      "matched": 9,
+      "found": 66,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -345,12 +345,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
           "posted_date": "2026-08-27T09:34:05-04:00"
-        },
-        {
-          "title": "Manager, Revenue Operations (Customer Services) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750767002",
-          "posted_date": "2026-08-26T11:55:51-04:00"
         },
         {
           "title": "Organic Search Manager (Remote)",
@@ -715,13 +709,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Manager, Revenue Operations (Customer Services) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750767002",
-      "posted_date": "2026-08-26T11:55:51-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Organic Search Manager (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
@@ -771,5 +758,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 52
+  "total_matched": 51
 }
