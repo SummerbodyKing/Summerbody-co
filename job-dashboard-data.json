@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T11:43:13.183261+00:00",
+  "generated_at": "2026-09-02T16:21:47.710419+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -318,8 +318,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 65,
-      "matched": 8,
+      "found": 63,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -345,12 +345,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
           "posted_date": "2026-08-24T13:33:38-04:00"
-        },
-        {
-          "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
           "title": "Snr. Commissions Analyst (Remote)",
@@ -697,13 +691,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Salesforce Delivery Manager (Channel/Portal Squad) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8627213002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Snr. Commissions Analyst (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
@@ -732,5 +719,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 49
+  "total_matched": 48
 }
