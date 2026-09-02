@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T23:33:13.752169+00:00",
+  "generated_at": "2026-09-02T01:23:50.050466+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 24,
-      "matched": 19,
+      "found": 25,
+      "matched": 20,
       "error": null,
       "jobs": [
         {
@@ -144,6 +144,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4670199005",
           "posted_date": "2026-04-14T12:43:46-04:00"
+        },
+        {
+          "title": "Software Engineer I",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4726985005",
+          "posted_date": "2026-09-01T19:55:48-04:00"
         },
         {
           "title": "Software Engineer III",
@@ -502,6 +508,13 @@
       "source": "tebra"
     },
     {
+      "title": "Software Engineer I",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4726985005",
+      "posted_date": "2026-09-01T19:55:48-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Software Engineer III",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4679086005",
@@ -719,5 +732,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 48
+  "total_matched": 49
 }
