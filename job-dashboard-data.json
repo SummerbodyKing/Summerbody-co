@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T19:29:59.813067+00:00",
+  "generated_at": "2026-09-02T21:58:17.857723+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -193,8 +193,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 10,
-      "matched": 9,
+      "found": 7,
+      "matched": 6,
       "error": null,
       "jobs": [
         {
@@ -202,12 +202,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
           "posted_date": "2026-08-18T13:00:08-04:00"
-        },
-        {
-          "title": "Customer Success Advisor - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
-          "posted_date": "2026-08-26T10:36:58-04:00"
         },
         {
           "title": "Director of Product Management  - US Remote",
@@ -234,22 +228,10 @@
           "posted_date": "2026-06-29T11:33:25-04:00"
         },
         {
-          "title": "Platform Engineering Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144278004",
-          "posted_date": "2026-08-21T12:21:34-04:00"
-        },
-        {
           "title": "Project Manager - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
           "posted_date": "2026-08-13T10:26:29-04:00"
-        },
-        {
-          "title": "Senior Software Engineer, .NET - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5826519004",
-          "posted_date": "2026-06-29T11:36:31-04:00"
         }
       ]
     },
@@ -563,13 +545,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Customer Success Advisor - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
-      "posted_date": "2026-08-26T10:36:58-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Director of Product Management  - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
@@ -598,24 +573,10 @@
       "source": "perfectserve"
     },
     {
-      "title": "Platform Engineering Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144278004",
-      "posted_date": "2026-08-21T12:21:34-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Project Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
       "posted_date": "2026-08-13T10:26:29-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Senior Software Engineer, .NET - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/5826519004",
-      "posted_date": "2026-06-29T11:36:31-04:00",
       "source": "perfectserve"
     },
     {
@@ -745,5 +706,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 50
+  "total_matched": 47
 }
