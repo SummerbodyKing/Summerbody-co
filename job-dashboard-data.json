@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T16:21:47.710419+00:00",
+  "generated_at": "2026-09-02T19:29:59.813067+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 1,
+      "matched": 2,
       "error": null,
       "jobs": [
         {
@@ -33,6 +33,12 @@
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
           "posted_date": "Posted 15 Days Ago"
+        },
+        {
+          "title": "Senior Manager, Customer Success",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -318,8 +324,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 63,
-      "matched": 7,
+      "found": 64,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -359,6 +365,12 @@
           "posted_date": "2026-08-20T15:27:17-04:00"
         },
         {
+          "title": "Snr. Manager, Email & Lifecycle Marketing (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
+          "posted_date": "2026-09-02T14:16:50-04:00"
+        },
+        {
           "title": "Staff Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
@@ -387,6 +399,13 @@
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
       "posted_date": "Posted 15 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Senior Manager, Customer Success",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+      "posted_date": "Posted 30+ Days Ago",
       "source": "modmed"
     },
     {
@@ -705,6 +724,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Manager, Email & Lifecycle Marketing (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
+      "posted_date": "2026-09-02T14:16:50-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Staff Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
@@ -719,5 +745,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 48
+  "total_matched": 50
 }
