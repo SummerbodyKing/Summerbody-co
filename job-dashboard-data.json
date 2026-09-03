@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T17:44:20.252704+00:00",
+  "generated_at": "2026-09-03T20:49:48.624167+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 1,
+      "matched": 2,
       "error": null,
       "jobs": [
         {
@@ -33,6 +33,12 @@
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
           "posted_date": "Posted 16 Days Ago"
+        },
+        {
+          "title": "Senior Manager, Customer Success",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -45,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 25,
-      "matched": 20,
+      "found": 24,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -66,12 +72,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
           "posted_date": "2026-08-14T16:42:35-04:00"
-        },
-        {
-          "title": "Customer Success Manager, Strategic",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4722131005",
-          "posted_date": "2026-08-17T17:48:41-04:00"
         },
         {
           "title": "Data Engineer",
@@ -187,8 +187,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 7,
-      "matched": 6,
+      "found": 8,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -226,6 +226,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
           "posted_date": "2026-08-13T10:26:29-04:00"
+        },
+        {
+          "title": "Technical Lead - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
+          "posted_date": "2026-09-03T15:12:28-04:00"
         }
       ]
     },
@@ -378,6 +384,13 @@
       "source": "modmed"
     },
     {
+      "title": "Senior Manager, Customer Success",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
+      "posted_date": "Posted 30+ Days Ago",
+      "source": "modmed"
+    },
+    {
       "title": "Account Executive, Customer Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4631714005",
@@ -396,13 +409,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
       "posted_date": "2026-08-14T16:42:35-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Customer Success Manager, Strategic",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4722131005",
-      "posted_date": "2026-08-17T17:48:41-04:00",
       "source": "tebra"
     },
     {
@@ -567,6 +573,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Technical Lead - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
+      "posted_date": "2026-09-03T15:12:28-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Director, Product & Segment Marketing Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
@@ -693,5 +706,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 46
+  "total_matched": 47
 }
