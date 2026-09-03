@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T13:52:04.113756+00:00",
+  "generated_at": "2026-09-03T17:44:20.252704+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 1,
       "error": null,
       "jobs": [
         {
@@ -33,12 +33,6 @@
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
           "posted_date": "Posted 16 Days Ago"
-        },
-        {
-          "title": "Senior Manager, Customer Success",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -244,7 +238,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 14,
+      "found": 13,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -381,13 +375,6 @@
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
       "posted_date": "Posted 16 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Manager, Customer Success",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-      "posted_date": "Posted 30+ Days Ago",
       "source": "modmed"
     },
     {
@@ -706,5 +693,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 47
+  "total_matched": 46
 }
