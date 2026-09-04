@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T15:05:44.471296+00:00",
+  "generated_at": "2026-09-04T18:29:19.193516+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 24,
-      "matched": 19,
+      "found": 23,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -78,12 +78,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
           "posted_date": "2026-07-27T17:21:39-04:00"
-        },
-        {
-          "title": "Director, Analytics Engineering",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
-          "posted_date": "2026-07-07T13:08:13-04:00"
         },
         {
           "title": "Director, GTM Operations",
@@ -413,13 +407,6 @@
       "source": "tebra"
     },
     {
-      "title": "Director, Analytics Engineering",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4705514005",
-      "posted_date": "2026-07-07T13:08:13-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Director, GTM Operations",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
@@ -693,5 +680,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 46
+  "total_matched": 45
 }
