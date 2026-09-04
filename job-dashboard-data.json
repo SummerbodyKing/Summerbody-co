@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T21:02:21.904388+00:00",
+  "generated_at": "2026-09-04T23:05:08.261997+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 23,
-      "matched": 18,
+      "found": 24,
+      "matched": 19,
       "error": null,
       "jobs": [
         {
@@ -126,6 +126,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4722381005",
           "posted_date": "2026-08-18T16:26:27-04:00"
+        },
+        {
+          "title": "Senior Director, Sales",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4729903005",
+          "posted_date": "2026-09-04T18:52:14-04:00"
         },
         {
           "title": "Senior Product Manager",
@@ -463,6 +469,13 @@
       "source": "tebra"
     },
     {
+      "title": "Senior Director, Sales",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4729903005",
+      "posted_date": "2026-09-04T18:52:14-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Senior Product Manager",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
@@ -680,5 +693,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 45
+  "total_matched": 46
 }
