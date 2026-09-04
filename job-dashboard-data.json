@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T11:28:20.153868+00:00",
+  "generated_at": "2026-09-04T15:05:44.471296+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -306,16 +306,10 @@
     },
     {
       "name": "knowbe4",
-      "found": 63,
-      "matched": 8,
+      "found": 62,
+      "matched": 7,
       "error": null,
       "jobs": [
-        {
-          "title": "Executive Assistant to CGO (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8696836002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
-        },
         {
           "title": "Manager, Revenue Operations (Customer Management) (Remote)",
           "location": "Remote",
@@ -643,13 +637,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Executive Assistant to CGO (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8696836002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Manager, Revenue Operations (Customer Management) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
@@ -706,5 +693,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 47
+  "total_matched": 46
 }
