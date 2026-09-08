@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T13:27:33.126528+00:00",
+  "generated_at": "2026-09-08T17:30:11.462780+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -187,8 +187,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 8,
-      "matched": 7,
+      "found": 6,
+      "matched": 5,
       "error": null,
       "jobs": [
         {
@@ -202,18 +202,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
           "posted_date": "2026-07-08T16:38:26-04:00"
-        },
-        {
-          "title": "Forward Deployment Engineer, AI - Canada Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131764004",
-          "posted_date": "2026-08-11T17:19:49-04:00"
-        },
-        {
-          "title": "Forward Deployment Engineer, AI - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6130290004",
-          "posted_date": "2026-08-11T17:20:01-04:00"
         },
         {
           "title": "Implementation Consultant I - US Remote",
@@ -306,7 +294,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 62,
+      "found": 61,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -539,20 +527,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Forward Deployment Engineer, AI - Canada Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131764004",
-      "posted_date": "2026-08-11T17:19:49-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Forward Deployment Engineer, AI - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6130290004",
-      "posted_date": "2026-08-11T17:20:01-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Implementation Consultant I - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016375004",
@@ -693,5 +667,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 46
+  "total_matched": 44
 }
