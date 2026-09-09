@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T18:43:22.990942+00:00",
+  "generated_at": "2026-09-09T21:34:58.079121+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -56,12 +56,6 @@
           "posted_date": "2026-07-14T13:35:26-04:00"
         },
         {
-          "title": "Account Executive, Patient Experience",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
-          "posted_date": "2026-08-14T16:42:35-04:00"
-        },
-        {
           "title": "Data Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -78,6 +72,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4720327005",
           "posted_date": "2026-08-12T17:42:02-04:00"
+        },
+        {
+          "title": "Director, Strategic Finance",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4726450005",
+          "posted_date": "2026-09-09T17:03:18-04:00"
         },
         {
           "title": "Head of AI Engineering & Enablement",
@@ -232,21 +232,27 @@
     },
     {
       "name": "netdocuments",
-      "found": 13,
-      "matched": 9,
+      "found": 14,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
           "title": "Director, Product & Segment Marketing Manager",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
-          "posted_date": "2026-08-24T11:31:46-04:00"
+          "posted_date": "2026-09-09T15:21:11-04:00"
         },
         {
           "title": "Legal Innovation Partner",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5394193008",
           "posted_date": "2026-08-18T14:43:10-04:00"
+        },
+        {
+          "title": "Principal Software Engineer",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
+          "posted_date": "2026-09-09T16:40:51-04:00"
         },
         {
           "title": "Senior Manager, Software Engineering - AI",
@@ -294,8 +300,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 61,
-      "matched": 7,
+      "found": 63,
+      "matched": 6,
       "error": null,
       "jobs": [
         {
@@ -333,28 +339,15 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
           "posted_date": "2026-09-02T14:16:50-04:00"
-        },
-        {
-          "title": "Staff Engineer (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
         }
       ]
     },
     {
       "name": "dronedeploy",
-      "found": 9,
-      "matched": 1,
+      "found": 7,
+      "matched": 0,
       "error": null,
-      "jobs": [
-        {
-          "title": "Senior Marketing Operations Manager (USA)",
-          "location": "Remote",
-          "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
-          "posted_date": "2026-06-30T23:34:49.211000+00:00"
-        }
-      ]
+      "jobs": []
     }
   ],
   "jobs": [
@@ -370,13 +363,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
       "posted_date": "2026-07-14T13:35:26-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Account Executive, Patient Experience",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4681866005",
-      "posted_date": "2026-08-14T16:42:35-04:00",
       "source": "tebra"
     },
     {
@@ -398,6 +384,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4720327005",
       "posted_date": "2026-08-12T17:42:02-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Director, Strategic Finance",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4726450005",
+      "posted_date": "2026-09-09T17:03:18-04:00",
       "source": "tebra"
     },
     {
@@ -551,7 +544,7 @@
       "title": "Director, Product & Segment Marketing Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
-      "posted_date": "2026-08-24T11:31:46-04:00",
+      "posted_date": "2026-09-09T15:21:11-04:00",
       "source": "netdocuments"
     },
     {
@@ -559,6 +552,13 @@
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5394193008",
       "posted_date": "2026-08-18T14:43:10-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Principal Software Engineer",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
+      "posted_date": "2026-09-09T16:40:51-04:00",
       "source": "netdocuments"
     },
     {
@@ -651,21 +651,7 @@
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
       "posted_date": "2026-09-02T14:16:50-04:00",
       "source": "knowbe4"
-    },
-    {
-      "title": "Staff Engineer (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8644906002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Senior Marketing Operations Manager (USA)",
-      "location": "Remote",
-      "url": "https://jobs.lever.co/dronedeploy/8c48b69c-0311-4b2f-835e-81f720befcd3",
-      "posted_date": "2026-06-30T23:34:49.211000+00:00",
-      "source": "dronedeploy"
     }
   ],
-  "total_matched": 44
+  "total_matched": 43
 }
