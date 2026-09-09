@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T15:16:51.318892+00:00",
+  "generated_at": "2026-09-09T18:43:22.990942+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 1,
       "error": null,
       "jobs": [
         {
@@ -33,12 +33,6 @@
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
           "posted_date": "Posted 22 Days Ago"
-        },
-        {
-          "title": "Senior Manager, Customer Success",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -51,7 +45,7 @@
     },
     {
       "name": "tebra",
-      "found": 23,
+      "found": 24,
       "matched": 19,
       "error": null,
       "jobs": [
@@ -372,13 +366,6 @@
       "source": "modmed"
     },
     {
-      "title": "Senior Manager, Customer Success",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Manager--Customer-Success_R4818",
-      "posted_date": "Posted 30+ Days Ago",
-      "source": "modmed"
-    },
-    {
       "title": "Account Executive, Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
@@ -680,5 +667,5 @@
       "source": "dronedeploy"
     }
   ],
-  "total_matched": 45
+  "total_matched": 44
 }
