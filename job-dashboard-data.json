@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T06:38:22.815023+00:00",
+  "generated_at": "2026-09-10T11:50:31.544541+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -32,7 +32,7 @@
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted 22 Days Ago"
+          "posted_date": "Posted 23 Days Ago"
         }
       ]
     },
@@ -300,8 +300,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 63,
-      "matched": 6,
+      "found": 64,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -339,6 +339,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
           "posted_date": "2026-09-02T14:16:50-04:00"
+        },
+        {
+          "title": "Total Rewards Analyst (Americas)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
+          "posted_date": "2026-09-10T07:26:02-04:00"
         }
       ]
     },
@@ -355,7 +361,7 @@
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted 22 Days Ago",
+      "posted_date": "Posted 23 Days Ago",
       "source": "modmed"
     },
     {
@@ -651,7 +657,14 @@
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
       "posted_date": "2026-09-02T14:16:50-04:00",
       "source": "knowbe4"
+    },
+    {
+      "title": "Total Rewards Analyst (Americas)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
+      "posted_date": "2026-09-10T07:26:02-04:00",
+      "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 44
 }
