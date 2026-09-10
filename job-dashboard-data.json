@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T11:50:31.544541+00:00",
+  "generated_at": "2026-09-10T16:11:13.510313+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -32,7 +32,7 @@
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted 23 Days Ago"
+          "posted_date": "Posted Today"
         }
       ]
     },
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 24,
-      "matched": 19,
+      "found": 23,
+      "matched": 18,
       "error": null,
       "jobs": [
         {
@@ -126,12 +126,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4729903005",
           "posted_date": "2026-09-04T18:52:14-04:00"
-        },
-        {
-          "title": "Senior Product Manager",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
-          "posted_date": "2026-07-14T13:26:19-04:00"
         },
         {
           "title": "Senior Software Engineer",
@@ -300,7 +294,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 64,
+      "found": 63,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -361,7 +355,7 @@
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted 23 Days Ago",
+      "posted_date": "Posted Today",
       "source": "modmed"
     },
     {
@@ -453,13 +447,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4729903005",
       "posted_date": "2026-09-04T18:52:14-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Senior Product Manager",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4707163005",
-      "posted_date": "2026-07-14T13:26:19-04:00",
       "source": "tebra"
     },
     {
@@ -666,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 44
+  "total_matched": 43
 }
