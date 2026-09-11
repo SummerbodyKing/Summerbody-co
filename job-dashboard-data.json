@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T13:28:55.830569+00:00",
+  "generated_at": "2026-09-11T17:14:00.049902+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -288,10 +288,16 @@
     },
     {
       "name": "knowbe4",
-      "found": 64,
-      "matched": 7,
+      "found": 66,
+      "matched": 9,
       "error": null,
       "jobs": [
+        {
+          "title": "HR Business Partner (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
+          "posted_date": "2026-09-11T12:58:42-04:00"
+        },
         {
           "title": "Manager, Revenue Operations (Customer Management) (Remote)",
           "location": "Remote",
@@ -327,6 +333,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
           "posted_date": "2026-09-02T14:16:50-04:00"
+        },
+        {
+          "title": "Snr. Onboarding Consultant (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
+          "posted_date": "2026-09-11T09:53:25-04:00"
         },
         {
           "title": "Total Rewards Analyst (Americas)",
@@ -591,6 +603,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "HR Business Partner (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
+      "posted_date": "2026-09-11T12:58:42-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Manager, Revenue Operations (Customer Management) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
@@ -633,6 +652,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Onboarding Consultant (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
+      "posted_date": "2026-09-11T09:53:25-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Total Rewards Analyst (Americas)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
@@ -640,5 +666,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 42
+  "total_matched": 44
 }
