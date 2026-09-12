@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T00:37:21.686603+00:00",
+  "generated_at": "2026-09-12T05:04:29.487751+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -226,8 +226,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 13,
-      "matched": 9,
+      "found": 12,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -258,12 +258,6 @@
           "title": "Senior Sales Director, Corporate",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-          "posted_date": "2026-08-18T12:43:58-04:00"
-        },
-        {
-          "title": "Senior Social Manager",
-          "location": "Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
           "posted_date": "2026-08-18T12:43:58-04:00"
         },
         {
@@ -575,13 +569,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Social Manager",
-      "location": "Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5365114008",
-      "posted_date": "2026-08-18T12:43:58-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Senior Software Engineer - Next-Gen",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
@@ -666,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 44
+  "total_matched": 43
 }
