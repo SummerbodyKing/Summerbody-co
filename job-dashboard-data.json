@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T14:14:22.475813+00:00",
+  "generated_at": "2026-09-14T19:28:52.895437+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -175,8 +175,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 7,
-      "matched": 6,
+      "found": 6,
+      "matched": 5,
       "error": null,
       "jobs": [
         {
@@ -190,12 +190,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
           "posted_date": "2026-07-08T16:38:26-04:00"
-        },
-        {
-          "title": "Implementation Consultant I - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016375004",
-          "posted_date": "2026-06-29T11:33:25-04:00"
         },
         {
           "title": "Project Manager - US Remote",
@@ -282,7 +276,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 65,
+      "found": 64,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -506,13 +500,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Implementation Consultant I - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016375004",
-      "posted_date": "2026-06-29T11:33:25-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Project Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
@@ -653,5 +640,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 42
 }
