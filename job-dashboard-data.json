@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T11:48:42.528235+00:00",
+  "generated_at": "2026-09-16T16:35:13.192733+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 1,
+      "matched": 2,
       "error": null,
       "jobs": [
+        {
+          "title": "RCM Customer Success Specialist 1",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Senior Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -276,7 +282,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 65,
+      "found": 64,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -296,7 +302,7 @@
           "title": "Organic Search Manager (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
+          "posted_date": "2026-09-16T09:50:29-04:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
@@ -314,7 +320,7 @@
           "title": "Snr. Manager, Demand Generation (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-          "posted_date": "2026-08-20T15:27:17-04:00"
+          "posted_date": "2026-09-16T09:49:53-04:00"
         },
         {
           "title": "Snr. Manager, Email & Lifecycle Marketing (Remote)",
@@ -345,6 +351,13 @@
     }
   ],
   "jobs": [
+    {
+      "title": "RCM Customer Success Specialist 1",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
     {
       "title": "Senior Marketing Events Specialist",
       "location": "Boca Raton, FL",
@@ -594,7 +607,7 @@
       "title": "Organic Search Manager (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
+      "posted_date": "2026-09-16T09:50:29-04:00",
       "source": "knowbe4"
     },
     {
@@ -615,7 +628,7 @@
       "title": "Snr. Manager, Demand Generation (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-      "posted_date": "2026-08-20T15:27:17-04:00",
+      "posted_date": "2026-09-16T09:49:53-04:00",
       "source": "knowbe4"
     },
     {
@@ -640,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 42
+  "total_matched": 43
 }
