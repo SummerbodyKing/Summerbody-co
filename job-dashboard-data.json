@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T16:35:13.192733+00:00",
+  "generated_at": "2026-09-16T19:41:58.733511+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,7 +51,7 @@
     },
     {
       "name": "tebra",
-      "found": 22,
+      "found": 23,
       "matched": 18,
       "error": null,
       "jobs": [
@@ -282,8 +282,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 64,
-      "matched": 9,
+      "found": 65,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -291,6 +291,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
           "posted_date": "2026-09-11T12:58:42-04:00"
+        },
+        {
+          "title": "Manager, Communications & Engagement (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8815053002",
+          "posted_date": "2026-09-16T14:28:31-04:00"
         },
         {
           "title": "Manager, Revenue Operations (Customer Management) (Remote)",
@@ -597,6 +603,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Manager, Communications & Engagement (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8815053002",
+      "posted_date": "2026-09-16T14:28:31-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Manager, Revenue Operations (Customer Management) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
@@ -653,5 +666,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 44
 }
