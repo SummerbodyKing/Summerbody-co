@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T16:40:58.628263+00:00",
+  "generated_at": "2026-09-17T20:06:54.992458+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 20,
-      "matched": 17,
+      "found": 19,
+      "matched": 16,
       "error": null,
       "jobs": [
         {
@@ -89,12 +89,6 @@
           "title": "Head of AI Engineering & Enablement",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Lead Sales & Growth Operations Analyst",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
           "posted_date": "2026-09-10T12:51:56-04:00"
         },
         {
@@ -175,8 +169,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 6,
-      "matched": 5,
+      "found": 9,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -190,6 +184,18 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
           "posted_date": "2026-07-08T16:38:26-04:00"
+        },
+        {
+          "title": "Junior QA Engineer - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188132004",
+          "posted_date": "2026-09-17T13:53:27-04:00"
+        },
+        {
+          "title": "Mobile Developer I - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
+          "posted_date": "2026-09-17T13:54:19-04:00"
         },
         {
           "title": "Project Manager - US Remote",
@@ -208,6 +214,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
           "posted_date": "2026-09-03T15:12:28-04:00"
+        },
+        {
+          "title": "Technical Support Specialist - Tier 1 - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6196317004",
+          "posted_date": "2026-09-17T13:51:27-04:00"
         }
       ]
     },
@@ -276,7 +288,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 65,
+      "found": 66,
       "matched": 10,
       "error": null,
       "jobs": [
@@ -408,13 +420,6 @@
       "source": "tebra"
     },
     {
-      "title": "Lead Sales & Growth Operations Analyst",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4641537005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Marketing Development Representative",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4729901005",
@@ -506,6 +511,20 @@
       "source": "perfectserve"
     },
     {
+      "title": "Junior QA Engineer - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188132004",
+      "posted_date": "2026-09-17T13:53:27-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Mobile Developer I - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
+      "posted_date": "2026-09-17T13:54:19-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Project Manager - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
@@ -524,6 +543,13 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
       "posted_date": "2026-09-03T15:12:28-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Technical Support Specialist - Tier 1 - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6196317004",
+      "posted_date": "2026-09-17T13:51:27-04:00",
       "source": "perfectserve"
     },
     {
@@ -653,5 +679,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 45
 }
