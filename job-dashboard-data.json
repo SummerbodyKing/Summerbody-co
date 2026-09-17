@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T20:06:54.992458+00:00",
+  "generated_at": "2026-09-17T22:54:07.911056+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -169,8 +169,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 9,
-      "matched": 8,
+      "found": 8,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -204,12 +204,6 @@
           "posted_date": "2026-08-13T10:26:29-04:00"
         },
         {
-          "title": "QA Engineer - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6185734004",
-          "posted_date": "2026-09-08T16:20:52-04:00"
-        },
-        {
           "title": "Technical Lead - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
@@ -232,8 +226,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 12,
-      "matched": 8,
+      "found": 13,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -253,6 +247,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
           "posted_date": "2026-09-09T16:40:51-04:00"
+        },
+        {
+          "title": "Senior Manager, Infrastructure",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5427887008",
+          "posted_date": "2026-09-17T18:26:13-04:00"
         },
         {
           "title": "Senior Manager, Software Engineering - AI",
@@ -532,13 +532,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "QA Engineer - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6185734004",
-      "posted_date": "2026-09-08T16:20:52-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Technical Lead - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
@@ -571,6 +564,13 @@
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
       "posted_date": "2026-09-09T16:40:51-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Senior Manager, Infrastructure",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5427887008",
+      "posted_date": "2026-09-17T18:26:13-04:00",
       "source": "netdocuments"
     },
     {
