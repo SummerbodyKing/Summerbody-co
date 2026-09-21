@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:55:38.251805+00:00",
+  "generated_at": "2026-09-21T23:58:40.293518+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,7 +51,7 @@
     },
     {
       "name": "tebra",
-      "found": 19,
+      "found": 18,
       "matched": 16,
       "error": null,
       "jobs": [
@@ -273,10 +273,10 @@
           "posted_date": "2026-08-18T12:43:58-04:00"
         },
         {
-          "title": "Staff Software Engineer - Next Gen",
+          "title": "Staff Software Engineer",
           "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383665008",
-          "posted_date": "2026-09-18T12:41:54-04:00"
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
+          "posted_date": "2026-09-21T17:02:42-04:00"
         },
         {
           "title": "Staff Software Engineer - OCR / Text Extraction",
@@ -595,10 +595,10 @@
       "source": "netdocuments"
     },
     {
-      "title": "Staff Software Engineer - Next Gen",
+      "title": "Staff Software Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5383665008",
-      "posted_date": "2026-09-18T12:41:54-04:00",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
+      "posted_date": "2026-09-21T17:02:42-04:00",
       "source": "netdocuments"
     },
     {
