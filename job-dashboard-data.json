@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T21:29:08.804163+00:00",
+  "generated_at": "2026-09-22T23:48:28.878118+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 18,
-      "matched": 16,
+      "found": 19,
+      "matched": 17,
       "error": null,
       "jobs": [
         {
@@ -60,6 +60,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
           "posted_date": "2026-09-10T12:51:56-04:00"
+        },
+        {
+          "title": "Associate Manager, Sales",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4736683005",
+          "posted_date": "2026-09-22T17:43:36-04:00"
         },
         {
           "title": "Data Engineer",
@@ -373,6 +379,13 @@
       "source": "tebra"
     },
     {
+      "title": "Associate Manager, Sales",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4736683005",
+      "posted_date": "2026-09-22T17:43:36-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -653,5 +666,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 44
 }
