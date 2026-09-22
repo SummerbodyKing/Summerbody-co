@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T18:16:24.652952+00:00",
+  "generated_at": "2026-09-22T21:29:08.804163+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -83,7 +83,7 @@
           "title": "Director, Strategic Finance",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4726450005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
+          "posted_date": "2026-09-22T16:26:07-04:00"
         },
         {
           "title": "Head of AI Engineering & Enablement",
@@ -169,8 +169,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 8,
-      "matched": 7,
+      "found": 7,
+      "matched": 6,
       "error": null,
       "jobs": [
         {
@@ -196,12 +196,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
           "posted_date": "2026-09-17T13:54:19-04:00"
-        },
-        {
-          "title": "Project Manager - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
-          "posted_date": "2026-08-13T10:26:29-04:00"
         },
         {
           "title": "Technical Lead - US Remote",
@@ -403,7 +397,7 @@
       "title": "Director, Strategic Finance",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4726450005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
+      "posted_date": "2026-09-22T16:26:07-04:00",
       "source": "tebra"
     },
     {
@@ -516,13 +510,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
       "posted_date": "2026-09-17T13:54:19-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Project Manager - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6016381004",
-      "posted_date": "2026-08-13T10:26:29-04:00",
       "source": "perfectserve"
     },
     {
@@ -666,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 44
+  "total_matched": 43
 }
