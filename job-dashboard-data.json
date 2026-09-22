@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T09:45:49.338612+00:00",
+  "generated_at": "2026-09-22T14:34:14.996560+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -288,8 +288,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 65,
-      "matched": 10,
+      "found": 64,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -297,12 +297,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
           "posted_date": "2026-09-11T12:58:42-04:00"
-        },
-        {
-          "title": "Manager, Communications & Engagement (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8815053002",
-          "posted_date": "2026-09-16T14:28:31-04:00"
         },
         {
           "title": "Manager, Revenue Operations (Customer Management) (Remote)",
@@ -616,13 +610,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Manager, Communications & Engagement (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8815053002",
-      "posted_date": "2026-09-16T14:28:31-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Manager, Revenue Operations (Customer Management) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
@@ -679,5 +666,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 45
+  "total_matched": 44
 }
