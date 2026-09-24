@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T10:12:15.438404+00:00",
+  "generated_at": "2026-09-24T15:15:43.849564+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -226,8 +226,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 12,
-      "matched": 8,
+      "found": 13,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -235,6 +235,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
           "posted_date": "2026-09-09T15:21:11-04:00"
+        },
+        {
+          "title": "Legal Engineer - QA",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
+          "posted_date": "2026-09-24T10:57:22-04:00"
         },
         {
           "title": "Principal Software Engineer",
@@ -541,6 +547,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Legal Engineer - QA",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
+      "posted_date": "2026-09-24T10:57:22-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Principal Software Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
@@ -653,5 +666,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 44
 }
