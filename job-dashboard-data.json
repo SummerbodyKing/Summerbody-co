@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T15:15:43.849564+00:00",
+  "generated_at": "2026-09-24T19:18:13.833615+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -226,8 +226,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 13,
-      "matched": 9,
+      "found": 11,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -235,12 +235,6 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
           "posted_date": "2026-09-09T15:21:11-04:00"
-        },
-        {
-          "title": "Legal Engineer - QA",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
-          "posted_date": "2026-09-24T10:57:22-04:00"
         },
         {
           "title": "Principal Software Engineer",
@@ -264,7 +258,7 @@
           "title": "Senior Sales Director, Corporate",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-          "posted_date": "2026-08-18T12:43:58-04:00"
+          "posted_date": "2026-09-24T12:01:34-04:00"
         },
         {
           "title": "Senior Software Engineer - Next-Gen",
@@ -288,7 +282,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 62,
+      "found": 64,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -547,13 +541,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Legal Engineer - QA",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
-      "posted_date": "2026-09-24T10:57:22-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Principal Software Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
@@ -578,7 +565,7 @@
       "title": "Senior Sales Director, Corporate",
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-      "posted_date": "2026-08-18T12:43:58-04:00",
+      "posted_date": "2026-09-24T12:01:34-04:00",
       "source": "netdocuments"
     },
     {
@@ -666,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 44
+  "total_matched": 43
 }
