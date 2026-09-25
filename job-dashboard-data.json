@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T20:22:45.686157+00:00",
+  "generated_at": "2026-09-25T23:32:25.787854+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 18,
-      "matched": 17,
+      "found": 17,
+      "matched": 16,
       "error": null,
       "jobs": [
         {
@@ -71,12 +71,6 @@
           "title": "Data Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Director, GTM Operations",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
           "posted_date": "2026-09-10T12:51:56-04:00"
         },
         {
@@ -282,7 +276,7 @@
           "title": "Senior Manager, Software Engineering - AI",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-08-18T12:43:58-04:00"
+          "posted_date": "2026-09-25T16:31:20-04:00"
         },
         {
           "title": "Staff Software Engineer",
@@ -401,13 +395,6 @@
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Director, GTM Operations",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4708633005",
       "posted_date": "2026-09-10T12:51:56-04:00",
       "source": "tebra"
     },
@@ -611,7 +598,7 @@
       "title": "Senior Manager, Software Engineering - AI",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-08-18T12:43:58-04:00",
+      "posted_date": "2026-09-25T16:31:20-04:00",
       "source": "netdocuments"
     },
     {
@@ -692,5 +679,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 46
+  "total_matched": 45
 }
