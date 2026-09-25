@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T16:57:48.831136+00:00",
+  "generated_at": "2026-09-25T20:22:45.686157+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,7 +51,7 @@
     },
     {
       "name": "tebra",
-      "found": 19,
+      "found": 18,
       "matched": 17,
       "error": null,
       "jobs": [
@@ -250,8 +250,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 12,
-      "matched": 9,
+      "found": 10,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -285,18 +285,6 @@
           "posted_date": "2026-08-18T12:43:58-04:00"
         },
         {
-          "title": "Senior Sales Director, Corporate",
-          "location": "Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-          "posted_date": "2026-09-24T12:01:34-04:00"
-        },
-        {
-          "title": "Senior Software Engineer - Next-Gen",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
-          "posted_date": "2026-08-18T12:43:58-04:00"
-        },
-        {
           "title": "Staff Software Engineer",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
@@ -312,7 +300,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 62,
+      "found": 61,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -627,20 +615,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Sales Director, Corporate",
-      "location": "Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5231545008",
-      "posted_date": "2026-09-24T12:01:34-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Senior Software Engineer - Next-Gen",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
-      "posted_date": "2026-08-18T12:43:58-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Staff Software Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
@@ -718,5 +692,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 48
+  "total_matched": 46
 }
