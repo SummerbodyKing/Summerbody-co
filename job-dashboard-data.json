@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T11:43:42.402548+00:00",
+  "generated_at": "2026-09-25T16:57:48.831136+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -250,8 +250,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 11,
-      "matched": 8,
+      "found": 12,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -259,6 +259,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
           "posted_date": "2026-09-09T15:21:11-04:00"
+        },
+        {
+          "title": "Legal Engineer",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
+          "posted_date": "2026-09-25T10:43:35-04:00"
         },
         {
           "title": "Principal Software Engineer",
@@ -306,7 +312,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 63,
+      "found": 62,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -315,12 +321,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
           "posted_date": "2026-09-11T12:58:42-04:00"
-        },
-        {
-          "title": "Manager, Revenue Operations (Customer Management) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-          "posted_date": "2026-08-27T09:34:05-04:00"
         },
         {
           "title": "Organic Search Manager (Remote)",
@@ -351,6 +351,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
           "posted_date": "2026-09-02T14:16:50-04:00"
+        },
+        {
+          "title": "Snr. Manager, Revenue Operations (Customer Management) (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
+          "posted_date": "2026-09-25T09:24:32-04:00"
         },
         {
           "title": "Snr. Onboarding Consultant (Remote)",
@@ -593,6 +599,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Legal Engineer",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
+      "posted_date": "2026-09-25T10:43:35-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Principal Software Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
@@ -649,13 +662,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Manager, Revenue Operations (Customer Management) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-      "posted_date": "2026-08-27T09:34:05-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Organic Search Manager (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
@@ -691,6 +697,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Manager, Revenue Operations (Customer Management) (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
+      "posted_date": "2026-09-25T09:24:32-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Snr. Onboarding Consultant (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
@@ -705,5 +718,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 47
+  "total_matched": 48
 }
