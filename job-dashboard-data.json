@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T23:32:25.787854+00:00",
+  "generated_at": "2026-09-26T01:59:01.775960+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 17,
-      "matched": 16,
+      "found": 15,
+      "matched": 14,
       "error": null,
       "jobs": [
         {
@@ -72,18 +72,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
           "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Director, Sales Enablement",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4720327005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Director, Strategic Finance",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4726450005",
-          "posted_date": "2026-09-22T16:26:07-04:00"
         },
         {
           "title": "Head of AI Engineering & Enablement",
@@ -399,20 +387,6 @@
       "source": "tebra"
     },
     {
-      "title": "Director, Sales Enablement",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4720327005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Director, Strategic Finance",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4726450005",
-      "posted_date": "2026-09-22T16:26:07-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Head of AI Engineering & Enablement",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
@@ -679,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 45
+  "total_matched": 43
 }
