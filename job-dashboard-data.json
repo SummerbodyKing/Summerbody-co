@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T17:00:08.218615+00:00",
+  "generated_at": "2026-09-28T22:30:15.930433+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -157,8 +157,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 12,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -196,6 +196,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
           "posted_date": "2026-09-17T13:54:19-04:00"
+        },
+        {
+          "title": "Practice Consultant I - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
+          "posted_date": "2026-09-28T17:05:30-04:00"
         },
         {
           "title": "Senior Platform Engineer - US Remote",
@@ -513,6 +519,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Practice Consultant I - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
+      "posted_date": "2026-09-28T17:05:30-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Senior Platform Engineer - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200434004",
@@ -653,5 +666,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 44
 }
