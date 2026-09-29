@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T15:35:50.883880+00:00",
+  "generated_at": "2026-09-29T20:13:35.538289+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -32,7 +32,7 @@
           "title": "RCM Customer Success Specialist 1",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-          "posted_date": "Posted 13 Days Ago"
+          "posted_date": "Posted Today"
         },
         {
           "title": "Senior Marketing Events Specialist",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 15,
-      "matched": 14,
+      "found": 13,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -77,12 +77,6 @@
           "title": "Head of AI Engineering & Enablement",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Marketing Development Representative",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4729901005",
           "posted_date": "2026-09-10T12:51:56-04:00"
         },
         {
@@ -122,12 +116,6 @@
           "posted_date": "2026-09-10T12:51:56-04:00"
         },
         {
-          "title": "Software Engineer I",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4726985005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
           "title": "Staff Software Engineer, AI Engineering",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4666555005",
@@ -157,8 +145,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 11,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -178,12 +166,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200392004",
           "posted_date": "2026-09-24T16:22:31-04:00"
-        },
-        {
-          "title": "Director of Product Management  - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
-          "posted_date": "2026-07-08T16:38:26-04:00"
         },
         {
           "title": "Junior QA Engineer - US Remote",
@@ -238,7 +220,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 11,
+      "found": 10,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -361,7 +343,7 @@
       "title": "RCM Customer Success Specialist 1",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-      "posted_date": "Posted 13 Days Ago",
+      "posted_date": "Posted Today",
       "source": "modmed"
     },
     {
@@ -396,13 +378,6 @@
       "title": "Head of AI Engineering & Enablement",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Marketing Development Representative",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4729901005",
       "posted_date": "2026-09-10T12:51:56-04:00",
       "source": "tebra"
     },
@@ -449,13 +424,6 @@
       "source": "tebra"
     },
     {
-      "title": "Software Engineer I",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4726985005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Staff Software Engineer, AI Engineering",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4666555005",
@@ -495,13 +463,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200392004",
       "posted_date": "2026-09-24T16:22:31-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Director of Product Management  - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6013939004",
-      "posted_date": "2026-07-08T16:38:26-04:00",
       "source": "perfectserve"
     },
     {
@@ -666,5 +627,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 44
+  "total_matched": 41
 }
