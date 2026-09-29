@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T08:44:08.168288+00:00",
+  "generated_at": "2026-09-29T15:35:50.883880+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -238,7 +238,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 10,
+      "found": 11,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -273,10 +273,10 @@
           "posted_date": "2026-09-25T16:31:20-04:00"
         },
         {
-          "title": "Staff Software Engineer",
+          "title": "Staff Software Engineer - AI",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
-          "posted_date": "2026-09-21T17:02:42-04:00"
+          "posted_date": "2026-09-29T10:59:29-04:00"
         },
         {
           "title": "Staff Software Engineer - OCR / Text Extraction",
@@ -589,10 +589,10 @@
       "source": "netdocuments"
     },
     {
-      "title": "Staff Software Engineer",
+      "title": "Staff Software Engineer - AI",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
-      "posted_date": "2026-09-21T17:02:42-04:00",
+      "posted_date": "2026-09-29T10:59:29-04:00",
       "source": "netdocuments"
     },
     {
