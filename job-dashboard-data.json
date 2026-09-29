@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T20:13:35.538289+00:00",
+  "generated_at": "2026-09-29T23:47:15.013492+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 13,
-      "matched": 12,
+      "found": 14,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -90,6 +90,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
           "posted_date": "2026-09-10T12:51:56-04:00"
+        },
+        {
+          "title": "Senior Benefits Administrator",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4735721005",
+          "posted_date": "2026-09-29T17:39:38-04:00"
         },
         {
           "title": "Senior Customer Success Manager, Strategic",
@@ -220,7 +226,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 10,
+      "found": 11,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -393,6 +399,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
       "posted_date": "2026-09-10T12:51:56-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Senior Benefits Administrator",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4735721005",
+      "posted_date": "2026-09-29T17:39:38-04:00",
       "source": "tebra"
     },
     {
@@ -627,5 +640,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 41
+  "total_matched": 42
 }
