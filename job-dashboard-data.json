@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T16:51:37.318777+00:00",
+  "generated_at": "2026-09-30T21:20:51.508291+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -29,10 +29,10 @@
       "error": null,
       "jobs": [
         {
-          "title": "RCM Customer Success Specialist 1",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-          "posted_date": "Posted Yesterday"
+          "title": "Marketing Events Specialist",
+          "location": "Boca Raton, FL",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
+          "posted_date": "Posted Today"
         },
         {
           "title": "Senior Marketing Events Specialist",
@@ -276,8 +276,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 61,
-      "matched": 9,
+      "found": 63,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -329,6 +329,12 @@
           "posted_date": "2026-09-11T09:53:25-04:00"
         },
         {
+          "title": "Snr. Site Reliability Engineer (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
+          "posted_date": "2026-09-30T17:19:13-04:00"
+        },
+        {
           "title": "Total Rewards Analyst (Americas)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
@@ -346,10 +352,10 @@
   ],
   "jobs": [
     {
-      "title": "RCM Customer Success Specialist 1",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-      "posted_date": "Posted Yesterday",
+      "title": "Marketing Events Specialist",
+      "location": "Boca Raton, FL",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
+      "posted_date": "Posted Today",
       "source": "modmed"
     },
     {
@@ -633,6 +639,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Site Reliability Engineer (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
+      "posted_date": "2026-09-30T17:19:13-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Total Rewards Analyst (Americas)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
@@ -640,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 42
+  "total_matched": 43
 }
