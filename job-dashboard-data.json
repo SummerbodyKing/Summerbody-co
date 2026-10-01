@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T19:48:49.364789+00:00",
+  "generated_at": "2026-10-01T23:49:15.600771+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -271,7 +271,7 @@
     {
       "name": "knowbe4",
       "found": 64,
-      "matched": 10,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -327,6 +327,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
           "posted_date": "2026-09-30T17:19:13-04:00"
+        },
+        {
+          "title": "Staff Site Reliability Engineer (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
+          "posted_date": "2026-10-01T16:09:03-04:00"
         },
         {
           "title": "Total Rewards Analyst (Americas)",
@@ -633,6 +639,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Staff Site Reliability Engineer (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
+      "posted_date": "2026-10-01T16:09:03-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Total Rewards Analyst (Americas)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
@@ -640,5 +653,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 42
+  "total_matched": 43
 }
