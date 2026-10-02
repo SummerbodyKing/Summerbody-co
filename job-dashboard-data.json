@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T16:42:25.580795+00:00",
+  "generated_at": "2026-10-02T21:14:25.692267+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -145,15 +145,21 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 12,
+      "matched": 11,
       "error": null,
       "jobs": [
+        {
+          "title": "Analyst, Corporate Development & Strategic Partnerships",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
+          "posted_date": "2026-10-02T16:51:15-04:00"
+        },
         {
           "title": "Clinical Integration Analyst - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6206915004",
-          "posted_date": "2026-09-24T16:18:55-04:00"
+          "posted_date": "2026-10-02T15:29:23-04:00"
         },
         {
           "title": "Customer & Field Marketing Manager  - US Remote",
@@ -220,8 +226,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 12,
-      "matched": 7,
+      "found": 13,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -253,6 +259,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
           "posted_date": "2026-09-25T16:31:20-04:00"
+        },
+        {
+          "title": "Senior Software Engineer - AI Growth",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
+          "posted_date": "2026-10-02T14:50:00-04:00"
         },
         {
           "title": "Staff Software Engineer - AI",
@@ -457,10 +469,17 @@
       "source": "sift-healthcare"
     },
     {
+      "title": "Analyst, Corporate Development & Strategic Partnerships",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
+      "posted_date": "2026-10-02T16:51:15-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Clinical Integration Analyst - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6206915004",
-      "posted_date": "2026-09-24T16:18:55-04:00",
+      "posted_date": "2026-10-02T15:29:23-04:00",
       "source": "perfectserve"
     },
     {
@@ -562,6 +581,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Senior Software Engineer - AI Growth",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
+      "posted_date": "2026-10-02T14:50:00-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Staff Software Engineer - AI",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
@@ -653,5 +679,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 45
 }
