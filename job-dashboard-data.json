@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T19:49:22.238306+00:00",
+  "generated_at": "2026-10-06T23:41:41.135686+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -94,8 +94,8 @@
         {
           "title": "Senior Customer Success Manager, Strategic",
           "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4733231005",
-          "posted_date": "2026-09-11T14:04:41-04:00"
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4732836005",
+          "posted_date": "2026-10-06T16:32:24-04:00"
         },
         {
           "title": "Senior Digital Marketing Manager",
@@ -106,8 +106,8 @@
         {
           "title": "Senior Director, Sales",
           "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4729903005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4736646005",
+          "posted_date": "2026-10-06T16:21:54-04:00"
         },
         {
           "title": "Senior Software Engineer",
@@ -240,25 +240,25 @@
           "title": "Senior Manager, Infrastructure",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5427887008",
-          "posted_date": "2026-09-17T18:26:13-04:00"
-        },
-        {
-          "title": "Senior Manager, Software Engineering - AI",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-09-25T16:31:20-04:00"
+          "posted_date": "2026-10-06T17:27:25-04:00"
         },
         {
           "title": "Senior Software Engineer - AI Growth",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
-          "posted_date": "2026-10-02T14:50:00-04:00"
+          "posted_date": "2026-10-06T17:28:13-04:00"
         },
         {
           "title": "Staff Software Engineer - AI",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
           "posted_date": "2026-09-29T10:59:29-04:00"
+        },
+        {
+          "title": "Staff Software Engineer - Next-Gen",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
+          "posted_date": "2026-10-06T15:56:10-04:00"
         },
         {
           "title": "Staff Software Engineer - OCR / Text Extraction",
@@ -270,8 +270,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 66,
-      "matched": 9,
+      "found": 68,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -315,6 +315,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
           "posted_date": "2026-10-02T11:30:50-04:00"
+        },
+        {
+          "title": "Software Engineer Intern (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8870749002",
+          "posted_date": "2026-10-06T16:08:53-04:00"
         },
         {
           "title": "Staff Site Reliability Engineer (Remote)",
@@ -398,8 +404,8 @@
     {
       "title": "Senior Customer Success Manager, Strategic",
       "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4733231005",
-      "posted_date": "2026-09-11T14:04:41-04:00",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4732836005",
+      "posted_date": "2026-10-06T16:32:24-04:00",
       "source": "tebra"
     },
     {
@@ -412,8 +418,8 @@
     {
       "title": "Senior Director, Sales",
       "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4729903005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4736646005",
+      "posted_date": "2026-10-06T16:21:54-04:00",
       "source": "tebra"
     },
     {
@@ -532,21 +538,14 @@
       "title": "Senior Manager, Infrastructure",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5427887008",
-      "posted_date": "2026-09-17T18:26:13-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Senior Manager, Software Engineering - AI",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-09-25T16:31:20-04:00",
+      "posted_date": "2026-10-06T17:27:25-04:00",
       "source": "netdocuments"
     },
     {
       "title": "Senior Software Engineer - AI Growth",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
-      "posted_date": "2026-10-02T14:50:00-04:00",
+      "posted_date": "2026-10-06T17:28:13-04:00",
       "source": "netdocuments"
     },
     {
@@ -554,6 +553,13 @@
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
       "posted_date": "2026-09-29T10:59:29-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Staff Software Engineer - Next-Gen",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
+      "posted_date": "2026-10-06T15:56:10-04:00",
       "source": "netdocuments"
     },
     {
@@ -613,6 +619,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Software Engineer Intern (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8870749002",
+      "posted_date": "2026-10-06T16:08:53-04:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Staff Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
@@ -627,5 +640,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 41
+  "total_matched": 42
 }
