@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T14:27:42.497669+00:00",
+  "generated_at": "2026-10-06T19:49:22.238306+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,15 +25,9 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 3,
+      "matched": 2,
       "error": null,
       "jobs": [
-        {
-          "title": "Product Marketing Manager",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Product-Marketing-Manager_R5104",
-          "posted_date": "Posted Today"
-        },
         {
           "title": "Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -145,8 +139,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 11,
+      "found": 10,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -186,12 +180,6 @@
           "posted_date": "2026-09-17T13:54:19-04:00"
         },
         {
-          "title": "Practice Consultant I - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
-          "posted_date": "2026-09-28T17:05:30-04:00"
-        },
-        {
           "title": "Senior Platform Engineer - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200434004",
@@ -202,12 +190,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200382004",
           "posted_date": "2026-09-24T16:23:27-04:00"
-        },
-        {
-          "title": "Technical Lead - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
-          "posted_date": "2026-09-03T15:12:28-04:00"
         },
         {
           "title": "Technical Support Specialist - Tier 1 - US Remote",
@@ -358,13 +340,6 @@
   ],
   "jobs": [
     {
-      "title": "Product Marketing Manager",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Product-Marketing-Manager_R5104",
-      "posted_date": "Posted Today",
-      "source": "modmed"
-    },
-    {
       "title": "Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
@@ -505,13 +480,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Practice Consultant I - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6131036004",
-      "posted_date": "2026-09-28T17:05:30-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Senior Platform Engineer - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200434004",
@@ -523,13 +491,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200382004",
       "posted_date": "2026-09-24T16:23:27-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Technical Lead - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6180982004",
-      "posted_date": "2026-09-03T15:12:28-04:00",
       "source": "perfectserve"
     },
     {
@@ -666,5 +627,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 44
+  "total_matched": 41
 }
