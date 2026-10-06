@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T07:23:51.741041+00:00",
+  "generated_at": "2026-10-06T14:27:42.497669+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 3,
       "error": null,
       "jobs": [
+        {
+          "title": "Product Marketing Manager",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Product-Marketing-Manager_R5104",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -282,8 +288,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 67,
-      "matched": 11,
+      "found": 66,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -291,12 +297,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
           "posted_date": "2026-09-11T12:58:42-04:00"
-        },
-        {
-          "title": "Organic Search Manager (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-          "posted_date": "2026-09-16T09:50:29-04:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
@@ -321,12 +321,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
           "posted_date": "2026-09-02T14:16:50-04:00"
-        },
-        {
-          "title": "Snr. Manager, Revenue Operations (Customer Management) (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-          "posted_date": "2026-09-25T09:24:32-04:00"
         },
         {
           "title": "Snr. Onboarding Consultant (Remote)",
@@ -363,6 +357,13 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Product Marketing Manager",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Product-Marketing-Manager_R5104",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
     {
       "title": "Marketing Events Specialist",
       "location": "Boca Raton, FL",
@@ -609,13 +610,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Organic Search Manager (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8508849002",
-      "posted_date": "2026-09-16T09:50:29-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Sales Engineer (LATAM) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
@@ -641,13 +635,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
       "posted_date": "2026-09-02T14:16:50-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Snr. Manager, Revenue Operations (Customer Management) (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750803002",
-      "posted_date": "2026-09-25T09:24:32-04:00",
       "source": "knowbe4"
     },
     {
@@ -679,5 +666,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 45
+  "total_matched": 44
 }
