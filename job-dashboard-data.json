@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T18:49:58.435826+00:00",
+  "generated_at": "2026-10-06T00:41:51.519527+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 13,
-      "matched": 12,
+      "found": 12,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -120,12 +120,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4666555005",
           "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Vice President, Technology Operations",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4715321005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
         }
       ]
     },
@@ -150,10 +144,10 @@
       "error": null,
       "jobs": [
         {
-          "title": "Analyst, Corporate Development & Strategic Partnerships",
+          "title": "Analyst, Corporate Development & Strategic Partnerships for portfolio company of K1 Investment Management",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
-          "posted_date": "2026-10-02T16:51:15-04:00"
+          "posted_date": "2026-10-05T15:49:49-04:00"
         },
         {
           "title": "Clinical Integration Analyst - US Remote",
@@ -226,8 +220,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 13,
-      "matched": 8,
+      "found": 14,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -247,6 +241,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
           "posted_date": "2026-09-09T16:40:51-04:00"
+        },
+        {
+          "title": "Senior Account Executive, Public Sector",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5440218008",
+          "posted_date": "2026-10-05T18:45:49-04:00"
         },
         {
           "title": "Senior Manager, Infrastructure",
@@ -455,13 +455,6 @@
       "source": "tebra"
     },
     {
-      "title": "Vice President, Technology Operations",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4715321005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Enterprise Sales Director",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/sifthealthcare/jobs/5187449008",
@@ -469,10 +462,10 @@
       "source": "sift-healthcare"
     },
     {
-      "title": "Analyst, Corporate Development & Strategic Partnerships",
+      "title": "Analyst, Corporate Development & Strategic Partnerships for portfolio company of K1 Investment Management",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
-      "posted_date": "2026-10-02T16:51:15-04:00",
+      "posted_date": "2026-10-05T15:49:49-04:00",
       "source": "perfectserve"
     },
     {
@@ -564,6 +557,13 @@
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
       "posted_date": "2026-09-09T16:40:51-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Senior Account Executive, Public Sector",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5440218008",
+      "posted_date": "2026-10-05T18:45:49-04:00",
       "source": "netdocuments"
     },
     {
