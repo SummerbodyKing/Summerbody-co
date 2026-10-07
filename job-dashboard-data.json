@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T11:59:43.412177+00:00",
+  "generated_at": "2026-10-07T18:51:36.091213+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -29,16 +29,16 @@
       "error": null,
       "jobs": [
         {
+          "title": "Senior Marketing Events Specialist",
+          "location": "Remote-FL",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote-FL/Senior-Marketing-Events-Specialist_R4755",
+          "posted_date": "Posted Today"
+        },
+        {
           "title": "Marketing Events Specialist",
           "location": "Boca Raton, FL",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
           "posted_date": "Posted 7 Days Ago"
-        },
-        {
-          "title": "Senior Marketing Events Specialist",
-          "location": "Boca Raton, FL",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted 27 Days Ago"
         }
       ]
     },
@@ -270,8 +270,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 70,
-      "matched": 10,
+      "found": 69,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -317,12 +317,6 @@
           "posted_date": "2026-10-02T11:30:50-04:00"
         },
         {
-          "title": "Software Engineer Intern (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8870749002",
-          "posted_date": "2026-10-06T16:08:53-04:00"
-        },
-        {
           "title": "Staff Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
@@ -346,17 +340,17 @@
   ],
   "jobs": [
     {
+      "title": "Senior Marketing Events Specialist",
+      "location": "Remote-FL",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote-FL/Senior-Marketing-Events-Specialist_R4755",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
+    {
       "title": "Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
       "posted_date": "Posted 7 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Marketing Events Specialist",
-      "location": "Boca Raton, FL",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted 27 Days Ago",
       "source": "modmed"
     },
     {
@@ -619,13 +613,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Software Engineer Intern (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8870749002",
-      "posted_date": "2026-10-06T16:08:53-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Staff Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
@@ -640,5 +627,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 42
+  "total_matched": 41
 }
