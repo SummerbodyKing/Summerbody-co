@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T17:27:17.217787+00:00",
+  "generated_at": "2026-10-08T22:27:08.163469+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,9 +25,15 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 1,
+      "matched": 2,
       "error": null,
       "jobs": [
+        {
+          "title": "Senior Customer Success Manager",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5063",
+          "posted_date": "Posted Today"
+        },
         {
           "title": "Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -45,7 +51,7 @@
     },
     {
       "name": "tebra",
-      "found": 11,
+      "found": 12,
       "matched": 10,
       "error": null,
       "jobs": [
@@ -202,10 +208,16 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
-      "matched": 9,
+      "found": 18,
+      "matched": 10,
       "error": null,
       "jobs": [
+        {
+          "title": "Account Executive, Public Sector",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5440218008",
+          "posted_date": "2026-10-08T14:52:31-04:00"
+        },
         {
           "title": "Director, Product & Segment Marketing Manager",
           "location": "Lehi, Utah, United States; Remote - US",
@@ -227,8 +239,8 @@
         {
           "title": "Senior Account Executive, Public Sector",
           "location": "Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5440218008",
-          "posted_date": "2026-10-05T18:45:49-04:00"
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5447905008",
+          "posted_date": "2026-10-08T14:54:07-04:00"
         },
         {
           "title": "Senior Manager, Infrastructure",
@@ -264,7 +276,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 68,
+      "found": 69,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -333,6 +345,13 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Senior Customer Success Manager",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5063",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
     {
       "title": "Marketing Events Specialist",
       "location": "Boca Raton, FL",
@@ -488,6 +507,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Account Executive, Public Sector",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5440218008",
+      "posted_date": "2026-10-08T14:52:31-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Director, Product & Segment Marketing Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
@@ -511,8 +537,8 @@
     {
       "title": "Senior Account Executive, Public Sector",
       "location": "Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5440218008",
-      "posted_date": "2026-10-05T18:45:49-04:00",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5447905008",
+      "posted_date": "2026-10-08T14:54:07-04:00",
       "source": "netdocuments"
     },
     {
@@ -614,5 +640,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 40
+  "total_matched": 42
 }
