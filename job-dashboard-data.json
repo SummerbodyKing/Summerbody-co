@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T10:17:59.457108+00:00",
+  "generated_at": "2026-10-08T17:27:17.217787+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,15 +25,9 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 1,
       "error": null,
       "jobs": [
-        {
-          "title": "Senior Marketing Events Specialist",
-          "location": "Remote-FL",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote-FL/Senior-Marketing-Events-Specialist_R4755",
-          "posted_date": "Posted Yesterday"
-        },
         {
           "title": "Marketing Events Specialist",
           "location": "Boca Raton, FL",
@@ -51,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 12,
-      "matched": 11,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -65,12 +59,6 @@
           "title": "Data Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Head of AI Engineering & Enablement",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
           "posted_date": "2026-09-10T12:51:56-04:00"
         },
         {
@@ -139,8 +127,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 10,
-      "matched": 9,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -166,6 +154,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200392004",
           "posted_date": "2026-09-24T16:22:31-04:00"
+        },
+        {
+          "title": "Enterprise Implementation Consultant - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6219663004",
+          "posted_date": "2026-10-08T12:57:18-04:00"
         },
         {
           "title": "Junior QA Engineer - US Remote",
@@ -208,7 +202,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 14,
+      "found": 17,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -270,7 +264,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 70,
+      "found": 68,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -278,7 +272,7 @@
           "title": "HR Business Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
-          "posted_date": "2026-09-11T12:58:42-04:00"
+          "posted_date": "2026-10-08T11:49:15-04:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
@@ -340,13 +334,6 @@
   ],
   "jobs": [
     {
-      "title": "Senior Marketing Events Specialist",
-      "location": "Remote-FL",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote-FL/Senior-Marketing-Events-Specialist_R4755",
-      "posted_date": "Posted Yesterday",
-      "source": "modmed"
-    },
-    {
       "title": "Marketing Events Specialist",
       "location": "Boca Raton, FL",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
@@ -364,13 +351,6 @@
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Head of AI Engineering & Enablement",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4713311005",
       "posted_date": "2026-09-10T12:51:56-04:00",
       "source": "tebra"
     },
@@ -463,6 +443,13 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200392004",
       "posted_date": "2026-09-24T16:22:31-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Enterprise Implementation Consultant - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6219663004",
+      "posted_date": "2026-10-08T12:57:18-04:00",
       "source": "perfectserve"
     },
     {
@@ -567,7 +554,7 @@
       "title": "HR Business Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
-      "posted_date": "2026-09-11T12:58:42-04:00",
+      "posted_date": "2026-10-08T11:49:15-04:00",
       "source": "knowbe4"
     },
     {
@@ -627,5 +614,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 41
+  "total_matched": 40
 }
