@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T22:45:53.131731+00:00",
+  "generated_at": "2026-10-12T02:12:20.395761+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -44,9 +44,9 @@
     },
     {
       "name": "ap-companies",
-      "found": 0,
+      "found": 1,
       "matched": 0,
-      "error": "HTTPSConnectionPool(host='apcompanies.isolvedhire.com', port=443): Read timed out. (read timeout=30)",
+      "error": null,
       "jobs": []
     },
     {
