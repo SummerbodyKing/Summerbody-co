@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T19:19:02.973145+00:00",
+  "generated_at": "2026-10-13T01:29:12.237855+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -208,8 +208,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
-      "matched": 10,
+      "found": 17,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -253,12 +253,6 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
           "posted_date": "2026-10-06T17:28:13-04:00"
-        },
-        {
-          "title": "Staff Software Engineer - AI",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
-          "posted_date": "2026-09-29T10:59:29-04:00"
         },
         {
           "title": "Staff Software Engineer - Next-Gen",
@@ -556,13 +550,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Staff Software Engineer - AI",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5430716008",
-      "posted_date": "2026-09-29T10:59:29-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Staff Software Engineer - Next-Gen",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
@@ -640,5 +627,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 42
+  "total_matched": 41
 }
