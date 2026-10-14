@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T21:32:29.286548+00:00",
+  "generated_at": "2026-10-14T00:36:46.273259+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,16 +57,10 @@
     },
     {
       "name": "tebra",
-      "found": 11,
-      "matched": 9,
+      "found": 10,
+      "matched": 8,
       "error": null,
       "jobs": [
-        {
-          "title": "Account Executive, Growth",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
         {
           "title": "Data Engineer",
           "location": "United States - Remote",
@@ -202,8 +196,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
-      "matched": 9,
+      "found": 16,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -235,12 +229,6 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5447905008",
           "posted_date": "2026-10-08T14:54:07-04:00"
-        },
-        {
-          "title": "Senior Manager, Infrastructure",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5427887008",
-          "posted_date": "2026-10-06T17:27:25-04:00"
         },
         {
           "title": "Senior Software Engineer - AI Growth",
@@ -353,13 +341,6 @@
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
       "posted_date": "Posted 13 Days Ago",
       "source": "modmed"
-    },
-    {
-      "title": "Account Executive, Growth",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
     },
     {
       "title": "Data Engineer",
@@ -523,13 +504,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Manager, Infrastructure",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5427887008",
-      "posted_date": "2026-10-06T17:27:25-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Senior Software Engineer - AI Growth",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
@@ -614,5 +588,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 40
+  "total_matched": 38
 }
