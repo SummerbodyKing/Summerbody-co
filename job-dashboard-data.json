@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T15:28:44.729067+00:00",
+  "generated_at": "2026-10-14T19:41:14.273328+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,10 +57,16 @@
     },
     {
       "name": "tebra",
-      "found": 10,
-      "matched": 8,
+      "found": 11,
+      "matched": 9,
       "error": null,
       "jobs": [
+        {
+          "title": "Account Executive, Growth",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+          "posted_date": "2026-10-14T12:00:28-04:00"
+        },
         {
           "title": "Data Engineer",
           "location": "United States - Remote",
@@ -228,7 +234,7 @@
           "title": "Senior Account Executive, Public Sector",
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5447905008",
-          "posted_date": "2026-10-08T14:54:07-04:00"
+          "posted_date": "2026-10-14T14:16:45-04:00"
         },
         {
           "title": "Senior Software Engineer - AI Growth",
@@ -341,6 +347,13 @@
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
       "posted_date": "Posted 14 Days Ago",
       "source": "modmed"
+    },
+    {
+      "title": "Account Executive, Growth",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+      "posted_date": "2026-10-14T12:00:28-04:00",
+      "source": "tebra"
     },
     {
       "title": "Data Engineer",
@@ -500,7 +513,7 @@
       "title": "Senior Account Executive, Public Sector",
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5447905008",
-      "posted_date": "2026-10-08T14:54:07-04:00",
+      "posted_date": "2026-10-14T14:16:45-04:00",
       "source": "netdocuments"
     },
     {
@@ -588,5 +601,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 38
+  "total_matched": 39
 }
