@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T11:54:11.588311+00:00",
+  "generated_at": "2026-10-16T16:25:30.924211+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -133,8 +133,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 10,
-      "matched": 9,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -148,6 +148,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6206915004",
           "posted_date": "2026-10-02T15:29:23-04:00"
+        },
+        {
+          "title": "Customer & Field Marketing Manager  - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
+          "posted_date": "2026-10-16T11:45:15-04:00"
         },
         {
           "title": "Data Engineer - US Remote",
@@ -258,7 +264,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 68,
+      "found": 70,
       "matched": 9,
       "error": null,
       "jobs": [
@@ -433,6 +439,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Customer & Field Marketing Manager  - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
+      "posted_date": "2026-10-16T11:45:15-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Data Engineer - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200392004",
@@ -601,5 +614,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 39
+  "total_matched": 40
 }
