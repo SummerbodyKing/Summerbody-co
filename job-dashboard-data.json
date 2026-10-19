@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T20:31:40.714145+00:00",
+  "generated_at": "2026-10-19T23:55:54.958084+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -196,8 +196,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 16,
-      "matched": 8,
+      "found": 17,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -229,6 +229,12 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5447905008",
           "posted_date": "2026-10-14T14:16:45-04:00"
+        },
+        {
+          "title": "Senior Manager, Software Engineering - AI",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
+          "posted_date": "2026-10-19T17:33:04-04:00"
         },
         {
           "title": "Senior Software Engineer - AI Growth",
@@ -492,6 +498,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Senior Manager, Software Engineering - AI",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
+      "posted_date": "2026-10-19T17:33:04-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Senior Software Engineer - AI Growth",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
@@ -562,5 +575,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 36
+  "total_matched": 37
 }
