@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T07:33:23.169902+00:00",
+  "generated_at": "2026-10-19T14:58:04.675972+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -133,8 +133,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 9,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -142,12 +142,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
           "posted_date": "2026-10-05T15:49:49-04:00"
-        },
-        {
-          "title": "Clinical Integration Analyst - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6206915004",
-          "posted_date": "2026-10-02T15:29:23-04:00"
         },
         {
           "title": "Customer & Field Marketing Manager  - US Remote",
@@ -190,12 +184,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200382004",
           "posted_date": "2026-09-24T16:23:27-04:00"
-        },
-        {
-          "title": "Technical Support Specialist - Tier 1 - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6196317004",
-          "posted_date": "2026-09-17T13:51:27-04:00"
         }
       ]
     },
@@ -208,7 +196,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
+      "found": 16,
       "matched": 8,
       "error": null,
       "jobs": [
@@ -264,8 +252,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 69,
-      "matched": 9,
+      "found": 65,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -285,18 +273,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
           "posted_date": "2026-08-26T12:03:57-04:00"
-        },
-        {
-          "title": "Snr. Manager, Demand Generation (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-          "posted_date": "2026-09-16T09:49:53-04:00"
-        },
-        {
-          "title": "Snr. Manager, Email & Lifecycle Marketing (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
-          "posted_date": "2026-09-02T14:16:50-04:00"
         },
         {
           "title": "Snr. Onboarding Consultant (Remote)",
@@ -432,13 +408,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Clinical Integration Analyst - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6206915004",
-      "posted_date": "2026-10-02T15:29:23-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Customer & Field Marketing Manager  - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
@@ -485,13 +454,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200382004",
       "posted_date": "2026-09-24T16:23:27-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Technical Support Specialist - Tier 1 - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6196317004",
-      "posted_date": "2026-09-17T13:51:27-04:00",
       "source": "perfectserve"
     },
     {
@@ -572,20 +534,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Snr. Manager, Demand Generation (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8493377002",
-      "posted_date": "2026-09-16T09:49:53-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Snr. Manager, Email & Lifecycle Marketing (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8778299002",
-      "posted_date": "2026-09-02T14:16:50-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Snr. Onboarding Consultant (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
@@ -614,5 +562,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 40
+  "total_matched": 36
 }
