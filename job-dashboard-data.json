@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T11:31:32.459542+00:00",
+  "generated_at": "2026-10-21T16:05:52.167047+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -44,9 +44,9 @@
     },
     {
       "name": "ap-companies",
-      "found": 1,
+      "found": 0,
       "matched": 0,
-      "error": null,
+      "error": "robots",
       "jobs": []
     },
     {
@@ -127,8 +127,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 9,
-      "matched": 8,
+      "found": 8,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -154,12 +154,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6219663004",
           "posted_date": "2026-10-08T12:57:18-04:00"
-        },
-        {
-          "title": "Junior QA Engineer - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188132004",
-          "posted_date": "2026-09-17T13:53:27-04:00"
         },
         {
           "title": "Mobile Developer I - US Remote",
@@ -264,7 +258,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 69,
+      "found": 70,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -284,7 +278,7 @@
           "title": "Snr. Commissions Analyst (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-          "posted_date": "2026-08-26T12:03:57-04:00"
+          "posted_date": "2026-10-21T09:54:20-04:00"
         },
         {
           "title": "Snr. Onboarding Consultant (Remote)",
@@ -434,13 +428,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "Junior QA Engineer - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188132004",
-      "posted_date": "2026-09-17T13:53:27-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Mobile Developer I - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
@@ -556,7 +543,7 @@
       "title": "Snr. Commissions Analyst (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-      "posted_date": "2026-08-26T12:03:57-04:00",
+      "posted_date": "2026-10-21T09:54:20-04:00",
       "source": "knowbe4"
     },
     {
@@ -588,5 +575,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 38
+  "total_matched": 37
 }
