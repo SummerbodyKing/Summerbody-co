@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T22:11:29.586814+00:00",
+  "generated_at": "2026-10-21T00:41:13.001726+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -190,8 +190,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
-      "matched": 9,
+      "found": 19,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -199,6 +199,12 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5440218008",
           "posted_date": "2026-10-08T14:52:31-04:00"
+        },
+        {
+          "title": "Associate Renewals Specialist",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5441571008",
+          "posted_date": "2026-10-20T18:58:31-04:00"
         },
         {
           "title": "Director, Product & Segment Marketing Manager",
@@ -217,6 +223,12 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
           "posted_date": "2026-09-09T16:40:51-04:00"
+        },
+        {
+          "title": "Renewals Specialist",
+          "location": "Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5441435008",
+          "posted_date": "2026-10-20T18:43:26-04:00"
         },
         {
           "title": "Senior Account Executive, Public Sector",
@@ -457,6 +469,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Associate Renewals Specialist",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5441571008",
+      "posted_date": "2026-10-20T18:58:31-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Director, Product & Segment Marketing Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
@@ -475,6 +494,13 @@
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
       "posted_date": "2026-09-09T16:40:51-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Renewals Specialist",
+      "location": "Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5441435008",
+      "posted_date": "2026-10-20T18:43:26-04:00",
       "source": "netdocuments"
     },
     {
@@ -562,5 +588,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 36
+  "total_matched": 38
 }
