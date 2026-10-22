@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T18:02:41.454479+00:00",
+  "generated_at": "2026-10-22T21:45:04.318269+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -127,8 +127,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 8,
-      "matched": 7,
+      "found": 9,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -154,6 +154,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6219663004",
           "posted_date": "2026-10-08T12:57:18-04:00"
+        },
+        {
+          "title": "Junior Accountant - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6229405004",
+          "posted_date": "2026-10-22T15:21:51-04:00"
         },
         {
           "title": "Mobile Developer I - US Remote",
@@ -259,7 +265,7 @@
     {
       "name": "knowbe4",
       "found": 69,
-      "matched": 7,
+      "matched": 6,
       "error": null,
       "jobs": [
         {
@@ -297,12 +303,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
           "posted_date": "2026-10-01T16:09:03-04:00"
-        },
-        {
-          "title": "Total Rewards Analyst (Americas)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
-          "posted_date": "2026-09-10T07:26:02-04:00"
         }
       ]
     },
@@ -425,6 +425,13 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6219663004",
       "posted_date": "2026-10-08T12:57:18-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Junior Accountant - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6229405004",
+      "posted_date": "2026-10-22T15:21:51-04:00",
       "source": "perfectserve"
     },
     {
@@ -565,13 +572,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
       "posted_date": "2026-10-01T16:09:03-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Total Rewards Analyst (Americas)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8794554002",
-      "posted_date": "2026-09-10T07:26:02-04:00",
       "source": "knowbe4"
     }
   ],
