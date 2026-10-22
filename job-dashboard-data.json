@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T23:27:11.442056+00:00",
+  "generated_at": "2026-10-22T01:51:05.581737+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 11,
-      "matched": 9,
+      "found": 10,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -84,12 +84,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4735721005",
           "posted_date": "2026-09-29T17:39:38-04:00"
-        },
-        {
-          "title": "Senior Digital Marketing Manager",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4722381005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
         },
         {
           "title": "Senior Director, Sales",
@@ -365,13 +359,6 @@
       "source": "tebra"
     },
     {
-      "title": "Senior Digital Marketing Manager",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4722381005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
       "title": "Senior Director, Sales",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4736646005",
@@ -575,5 +562,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 37
+  "total_matched": 36
 }
