@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T10:30:34.769240+00:00",
+  "generated_at": "2026-10-23T15:27:42.158594+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -127,8 +127,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 9,
-      "matched": 8,
+      "found": 10,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -142,6 +142,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
           "posted_date": "2026-10-16T11:45:15-04:00"
+        },
+        {
+          "title": "Customer Success Advisor - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
+          "posted_date": "2026-10-23T10:57:01-04:00"
         },
         {
           "title": "Data Engineer - US Remote",
@@ -264,7 +270,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 69,
+      "found": 71,
       "matched": 6,
       "error": null,
       "jobs": [
@@ -411,6 +417,13 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
       "posted_date": "2026-10-16T11:45:15-04:00",
+      "source": "perfectserve"
+    },
+    {
+      "title": "Customer Success Advisor - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6150021004",
+      "posted_date": "2026-10-23T10:57:01-04:00",
       "source": "perfectserve"
     },
     {
@@ -575,5 +588,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 37
+  "total_matched": 38
 }
