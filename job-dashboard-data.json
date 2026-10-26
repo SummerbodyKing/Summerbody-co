@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T13:33:51.714234+00:00",
+  "generated_at": "2026-10-26T19:33:54.032336+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,7 +57,7 @@
     },
     {
       "name": "tebra",
-      "found": 9,
+      "found": 10,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -284,7 +284,7 @@
           "title": "Snr. Commissions Analyst (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-          "posted_date": "2026-10-26T08:49:21-04:00"
+          "posted_date": "2026-10-26T12:01:45-04:00"
         },
         {
           "title": "Snr. Onboarding Consultant (Remote)",
@@ -296,13 +296,13 @@
           "title": "Snr. Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
-          "posted_date": "2026-10-26T09:07:16-04:00"
+          "posted_date": "2026-10-26T12:02:24-04:00"
         },
         {
           "title": "Staff Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
-          "posted_date": "2026-10-26T09:08:19-04:00"
+          "posted_date": "2026-10-26T12:03:03-04:00"
         }
       ]
     },
@@ -550,7 +550,7 @@
       "title": "Snr. Commissions Analyst (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-      "posted_date": "2026-10-26T08:49:21-04:00",
+      "posted_date": "2026-10-26T12:01:45-04:00",
       "source": "knowbe4"
     },
     {
@@ -564,14 +564,14 @@
       "title": "Snr. Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
-      "posted_date": "2026-10-26T09:07:16-04:00",
+      "posted_date": "2026-10-26T12:02:24-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Staff Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
-      "posted_date": "2026-10-26T09:08:19-04:00",
+      "posted_date": "2026-10-26T12:03:03-04:00",
       "source": "knowbe4"
     }
   ],
