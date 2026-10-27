@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:58:23.577702+00:00",
+  "generated_at": "2026-10-27T23:42:53.914877+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -121,8 +121,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 10,
-      "matched": 9,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -130,6 +130,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
           "posted_date": "2026-10-05T15:49:49-04:00"
+        },
+        {
+          "title": "Billing Associate - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6232179004",
+          "posted_date": "2026-10-27T16:20:11-04:00"
         },
         {
           "title": "Customer & Field Marketing Manager  - US Remote",
@@ -190,7 +196,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 19,
+      "found": 18,
       "matched": 11,
       "error": null,
       "jobs": [
@@ -400,6 +406,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Billing Associate - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6232179004",
+      "posted_date": "2026-10-27T16:20:11-04:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Customer & Field Marketing Manager  - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
@@ -575,5 +588,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 37
+  "total_matched": 38
 }
