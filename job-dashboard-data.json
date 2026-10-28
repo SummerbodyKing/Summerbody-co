@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T11:25:45.469457+00:00",
+  "generated_at": "2026-10-28T17:23:06.788672+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -57,8 +57,8 @@
     },
     {
       "name": "tebra",
-      "found": 10,
-      "matched": 7,
+      "found": 9,
+      "matched": 6,
       "error": null,
       "jobs": [
         {
@@ -90,12 +90,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4736646005",
           "posted_date": "2026-10-06T16:21:54-04:00"
-        },
-        {
-          "title": "Senior Software Engineer",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4743714005",
-          "posted_date": "2026-10-14T16:27:16-04:00"
         },
         {
           "title": "Staff Software Engineer, AI Engineering",
@@ -270,7 +264,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 57,
+      "found": 56,
       "matched": 6,
       "error": null,
       "jobs": [
@@ -375,13 +369,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4736646005",
       "posted_date": "2026-10-06T16:21:54-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Senior Software Engineer",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4743714005",
-      "posted_date": "2026-10-14T16:27:16-04:00",
       "source": "tebra"
     },
     {
@@ -588,5 +575,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 38
+  "total_matched": 37
 }
