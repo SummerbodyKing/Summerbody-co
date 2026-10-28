@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T17:23:06.788672+00:00",
+  "generated_at": "2026-10-28T21:53:59.675030+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -190,8 +190,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
-      "matched": 11,
+      "found": 17,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -243,12 +243,6 @@
           "posted_date": "2026-10-19T17:33:04-04:00"
         },
         {
-          "title": "Senior Software Engineer - AI Growth",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
-          "posted_date": "2026-10-22T11:31:04-04:00"
-        },
-        {
           "title": "Staff Software Engineer - Next-Gen",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
@@ -264,7 +258,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 56,
+      "found": 57,
       "matched": 6,
       "error": null,
       "jobs": [
@@ -272,37 +266,37 @@
           "title": "HR Business Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
-          "posted_date": "2026-10-26T07:45:32-04:00"
+          "posted_date": "2026-10-28T15:22:58-04:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
-          "posted_date": "2026-10-26T08:29:42-04:00"
+          "posted_date": "2026-10-28T15:22:57-04:00"
         },
         {
           "title": "Snr. Commissions Analyst (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-          "posted_date": "2026-10-26T12:01:45-04:00"
+          "posted_date": "2026-10-28T15:22:57-04:00"
         },
         {
           "title": "Snr. Onboarding Consultant (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
-          "posted_date": "2026-10-26T08:51:28-04:00"
+          "posted_date": "2026-10-28T15:22:58-04:00"
         },
         {
           "title": "Snr. Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
-          "posted_date": "2026-10-26T12:02:24-04:00"
+          "posted_date": "2026-10-28T15:22:58-04:00"
         },
         {
           "title": "Staff Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
-          "posted_date": "2026-10-26T12:03:03-04:00"
+          "posted_date": "2026-10-28T15:22:58-04:00"
         }
       ]
     },
@@ -512,13 +506,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Software Engineer - AI Growth",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5442591008",
-      "posted_date": "2026-10-22T11:31:04-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Staff Software Engineer - Next-Gen",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
@@ -536,44 +523,44 @@
       "title": "HR Business Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
-      "posted_date": "2026-10-26T07:45:32-04:00",
+      "posted_date": "2026-10-28T15:22:58-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Sales Engineer (LATAM) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
-      "posted_date": "2026-10-26T08:29:42-04:00",
+      "posted_date": "2026-10-28T15:22:57-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Commissions Analyst (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-      "posted_date": "2026-10-26T12:01:45-04:00",
+      "posted_date": "2026-10-28T15:22:57-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Onboarding Consultant (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
-      "posted_date": "2026-10-26T08:51:28-04:00",
+      "posted_date": "2026-10-28T15:22:58-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
-      "posted_date": "2026-10-26T12:02:24-04:00",
+      "posted_date": "2026-10-28T15:22:58-04:00",
       "source": "knowbe4"
     },
     {
       "title": "Staff Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
-      "posted_date": "2026-10-26T12:03:03-04:00",
+      "posted_date": "2026-10-28T15:22:58-04:00",
       "source": "knowbe4"
     }
   ],
-  "total_matched": 37
+  "total_matched": 36
 }
