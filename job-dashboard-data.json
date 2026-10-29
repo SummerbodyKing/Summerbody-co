@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T15:05:28.216440+00:00",
+  "generated_at": "2026-10-29T20:21:51.447825+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,15 +25,9 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 3,
+      "matched": 2,
       "error": null,
       "jobs": [
-        {
-          "title": "Senior Customer Success Manager",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-          "posted_date": "Posted 7 Days Ago"
-        },
         {
           "title": "RCM Customer Success Specialist 1",
           "location": "Remote - USA",
@@ -190,7 +184,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
+      "found": 16,
       "matched": 10,
       "error": null,
       "jobs": [
@@ -309,13 +303,6 @@
     }
   ],
   "jobs": [
-    {
-      "title": "Senior Customer Success Manager",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-      "posted_date": "Posted 7 Days Ago",
-      "source": "modmed"
-    },
     {
       "title": "RCM Customer Success Specialist 1",
       "location": "Remote - USA",
@@ -562,5 +549,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 36
+  "total_matched": 35
 }
