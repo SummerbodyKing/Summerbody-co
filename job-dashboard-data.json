@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:33:38.653493+00:00",
+  "generated_at": "2026-10-30T18:52:12.041821+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -184,8 +184,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 16,
-      "matched": 10,
+      "found": 17,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -199,6 +199,12 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5441571008",
           "posted_date": "2026-10-20T18:58:31-04:00"
+        },
+        {
+          "title": "Content Strategist",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5468057008",
+          "posted_date": "2026-10-30T09:53:16-04:00"
         },
         {
           "title": "Director, Product & Segment Marketing Manager",
@@ -252,7 +258,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 54,
+      "found": 53,
       "matched": 6,
       "error": null,
       "jobs": [
@@ -451,6 +457,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Content Strategist",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5468057008",
+      "posted_date": "2026-10-30T09:53:16-04:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Director, Product & Segment Marketing Manager",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
@@ -549,5 +562,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 35
+  "total_matched": 36
 }
