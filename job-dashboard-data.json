@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:52:12.041821+00:00",
+  "generated_at": "2026-10-30T22:53:28.083705+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 9,
-      "matched": 6,
+      "found": 10,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -84,6 +84,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4736646005",
           "posted_date": "2026-10-06T16:21:54-04:00"
+        },
+        {
+          "title": "Senior Product Manager",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4744648005",
+          "posted_date": "2026-10-30T16:51:29-04:00"
         },
         {
           "title": "Staff Software Engineer, AI Engineering",
@@ -359,6 +365,13 @@
       "source": "tebra"
     },
     {
+      "title": "Senior Product Manager",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4744648005",
+      "posted_date": "2026-10-30T16:51:29-04:00",
+      "source": "tebra"
+    },
+    {
       "title": "Staff Software Engineer, AI Engineering",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4666555005",
@@ -562,5 +575,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 36
+  "total_matched": 37
 }
