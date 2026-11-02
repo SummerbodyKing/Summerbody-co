@@ -6,12 +6,17 @@
 <h1>MAKE YOUR NEXT MEAL <span class="accent">SIMPLER.</span></h1>
 <p>Get the free <b>No-Math Meal Blueprint</b>, a practical starting point for building balanced plates without turning every meal into a math exam.</p>
 <p>From KING SUMMERBODY, who lost 180 pounds naturally. Your journey will be your own. No miracle claims or guaranteed pant-size changes.</p>
-<form name="meal-blueprint" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/blueprint/thanks/">
+<p id="form-error" role="alert" hidden style="color:#ff884d">Please enter your first name and a valid email address.</p>
+<script>if(/[?&]error=invalid/.test(location.search)){var e=document.getElementById("form-error");if(e)e.hidden=false}</script>
+<form name="meal-blueprint" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/.netlify/functions/blueprint-intake">
 <input type="hidden" name="form-name" value="meal-blueprint">
+<input type="hidden" name="consent_version" value="blueprint-v1">
+<input type="hidden" name="utm_source" id="utm_source"><input type="hidden" name="utm_medium" id="utm_medium"><input type="hidden" name="utm_campaign" id="utm_campaign">
 <p hidden><label>Do not fill this out <input name="bot-field"></label></p>
 <label for="name">First name</label><input id="name" name="first_name" type="text" autocomplete="given-name" required maxlength="80">
 <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
 <label class="consent"><input type="checkbox" name="marketing_consent" value="yes"><span>Optional: Send me SUMMERBODY tips and offers by email. I can unsubscribe anytime.</span></label>
 <button type="submit">GET THE FREE BLUEPRINT</button>
 <small>The resource request is separate from optional marketing consent. We will use your email to deliver the resource. Do not enter sensitive health information.</small>
+<script>try{var q=new URLSearchParams(location.search);["utm_source","utm_medium","utm_campaign"].forEach(function(k){var v=q.get(k),e=document.getElementById(k);if(v&&e)e.value=v.slice(0,100)})}catch(e){}</script>
 </form><footer>BETTER &amp; BEYOND. · <a href="/guide">Explore Break The Cycle</a></footer></main></body></html>

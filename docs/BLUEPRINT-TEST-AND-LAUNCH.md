@@ -1,5 +1,5 @@
 # No-Math Blueprint: Test and Launch Gate
-Status: staged in draft PR #17. NOT deployed or tested in Netlify.
+Status: staged in draft PR #17. Staging project created, NOT yet deployed. Code and local browser tests pass. See docs/STAGING-AND-INTEGRATION.md.
 Production branch: claude/setup-quiz-email-mbZOq
 Working branch: audit/sweatdept-revenue-safety-2026-11-01
 
@@ -11,7 +11,7 @@ Working branch: audit/sweatdept-revenue-safety-2026-11-01
 
 ## Important blockers
 1. Netlify Forms must detect the form on a deployed HTML page. GitHub file presence alone does not activate it.
-2. No MailerLite integration exists for meal-blueprint yet. Do not claim automated delivery or subscriber enrollment.
+2. MailerLite handler is written and passes mocked tests (netlify/functions/blueprint-intake.js). It has NOT been tested against live MailerLite and needs the group ID. Do not claim live enrollment.
 3. Do not reuse quiz-results function for this form. It parses quiz answers and would send incorrect content.
 4. Opt-in is optional: do not add non-consenting downloaders to marketing lists.
 5. Resource page is accessible via URL, appropriate for a free lead magnet; not a secure paid-content gate.
