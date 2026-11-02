@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T10:48:46.561184+00:00",
+  "generated_at": "2026-11-02T20:41:42.535962+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -264,10 +264,16 @@
     },
     {
       "name": "knowbe4",
-      "found": 59,
-      "matched": 6,
+      "found": 62,
+      "matched": 7,
       "error": null,
       "jobs": [
+        {
+          "title": "Compliance Summer Internship (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8926721002",
+          "posted_date": "2026-11-02T14:10:55-05:00"
+        },
         {
           "title": "HR Business Partner (Remote)",
           "location": "Remote",
@@ -533,6 +539,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Compliance Summer Internship (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8926721002",
+      "posted_date": "2026-11-02T14:10:55-05:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "HR Business Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
@@ -575,5 +588,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 37
+  "total_matched": 38
 }
