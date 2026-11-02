@@ -279,3 +279,16 @@ test('utm values are sanitized before being recorded', async () => {
   assert.equal(sent.get('utm_source'), 'canvasrebelscript');
   assert.equal(sent.get('utm_campaign'), 'story2026');
 });
+
+test('staging mode never contacts MailerLite even when credentials and consent are present', async () => {
+  const h = harness();
+  h.deps.staging = true;
+  const handler = createHandler(h.deps);
+  const res = await handler(post({ marketing_consent: 'yes' }));
+  assert.equal(res.headers.Location, THANKS);
+  assert.equal(h.calls.ml.length, 0);
+  assert.equal(h.calls.forms.length, 1);
+  const out = [...h.store.m.entries()].find(([k]) => k.startsWith('outcome/'))[1];
+  assert.equal(out.steps.mailerlite, 'skipped_staging');
+  assert.equal([...h.store.m.keys()].filter((k) => k.startsWith('pending/')).length, 0);
+});

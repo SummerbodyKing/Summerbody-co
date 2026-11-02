@@ -21,6 +21,7 @@
 //   MAILERLITE_API_KEY               existing MailerLite API credential
 //   MAILERLITE_BLUEPRINT_GROUP_ID    group for opted-in blueprint subscribers (must be created and approved first)
 //   URL                              provided by Netlify at runtime (site origin)
+// Staging builds also ship netlify/functions/staging-config.json, which switches MailerLite off completely.
 
 const crypto = require('crypto');
 
@@ -103,8 +104,19 @@ function netlifyBlobsStore() {
   };
 }
 
+// scripts/build-staging.js writes netlify/functions/staging-config.json ({"staging": true}) into staging builds only.
+// When present, this handler never contacts MailerLite, even if MailerLite credentials leak into the environment.
+function loadStagingFlag() {
+  try {
+    return require('./staging-config.json').staging === true;
+  } catch (e) {
+    return false;
+  }
+}
+
 function defaultDeps() {
   return {
+    staging: loadStagingFlag(),
     env: process.env,
     fetch: (...args) => fetch(...args),
     store: netlifyBlobsStore(),
@@ -156,6 +168,7 @@ async function recordWithNetlifyForms(job, deps, origin) {
 }
 
 async function addToMailerLite(job, deps) {
+  if (deps.staging) return 'skipped_staging';
   if (!job.consent) return 'skipped_no_consent';
   const apiKey = deps.env.MAILERLITE_API_KEY;
   const groupId = deps.env.MAILERLITE_BLUEPRINT_GROUP_ID;
@@ -183,7 +196,7 @@ async function addToMailerLite(job, deps) {
   }
 }
 
-const TERMINAL_ML = new Set(['done', 'skipped_no_consent', 'skipped_not_configured', 'failed_permanent']);
+const TERMINAL_ML = new Set(['done', 'skipped_no_consent', 'skipped_not_configured', 'skipped_staging', 'failed_permanent']);
 
 function isComplete(job) {
   return job.steps.netlify === 'done' && TERMINAL_ML.has(job.steps.mailerlite);

@@ -18,7 +18,7 @@ Working branch: audit/sweatdept-revenue-safety-2026-11-01
 6. Live production uses an API-sourced deploy. A GitHub PR does not guarantee a preview or automatic deployment.
 
 ## Staging acceptance checklist
-- [ ] Obtain Netlify deploy preview URL for this branch or deploy a separate staging site after explicit approval.
+- [ ] Link project sweatdept-staging-blueprint to this branch with `npm run build:staging` (see docs/STAGING-AND-INTEGRATION.md section 1).
 - [ ] Confirm /blueprint/ and /blueprint/thanks/ render on mobile and desktop.
 - [ ] Submit a synthetic test address; confirm Netlify Forms records one submission.
 - [ ] Verify thank-you page link resolves and resource is readable.

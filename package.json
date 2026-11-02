@@ -9,6 +9,11 @@
     "stripe": "^17.4.0"
   },
   "scripts": {
-    "test": "node --test \"test/*.test.js\""
+    "test": "node --test \"test/*.test.js\"",
+    "build:staging": "node scripts/build-staging.js && node scripts/verify-staging.js",
+    "verify:staging": "node scripts/verify-staging.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
   }
 }
