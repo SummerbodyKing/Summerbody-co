@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The No-Math Meal Blueprint | SWEAT DEPT.</title><meta name="description" content="A practical, no-math approach to building balanced meals from KING SUMMERBODY.">
+<style>:root{font-family:system-ui,Arial,sans-serif;color:#fff;background:#101010}*{box-sizing:border-box}body{margin:0}main{max-width:760px;margin:auto;padding:48px 22px}header{font-weight:900;letter-spacing:.08em}strong,.accent{color:#f15002}h1{font-size:clamp(2.5rem,8vw,4.7rem);line-height:1.05;margin:42px 0 20px}p{line-height:1.65;color:#ddd}form{background:#1c1c1c;border:1px solid #444;border-radius:16px;padding:24px;margin:28px 0}label{display:block;margin:16px 0 7px}input[type=email],input[type=text]{width:100%;padding:14px;border-radius:8px;border:1px solid #777;font-size:1rem}button{background:#f15002;color:white;border:0;padding:16px 24px;font-weight:800;border-radius:8px;margin-top:18px;cursor:pointer;width:100%}.consent{display:flex;gap:12px;align-items:flex-start;font-size:.85rem}.consent input{margin-top:4px}a{color:#ff884d}small{color:#aaa}footer{padding:28px 0;border-top:1px solid #333}</style></head>
+<body><main><header>THE SWEAT <strong>DEPARTMENT</strong></header>
+<h1>MAKE YOUR NEXT MEAL <span class="accent">SIMPLER.</span></h1>
+<p>Get the free <b>No-Math Meal Blueprint</b>, a practical starting point for building balanced plates without turning every meal into a math exam.</p>
+<p>From KING SUMMERBODY, who lost 180 pounds naturally. Your journey will be your own. No miracle claims or guaranteed pant-size changes.</p>
+<p id="form-error" role="alert" hidden style="color:#ff884d">Please enter your first name and a valid email address.</p>
+<script>if(/[?&]error=invalid/.test(location.search)){var e=document.getElementById("form-error");if(e)e.hidden=false}</script>
+<form name="meal-blueprint" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/.netlify/functions/blueprint-intake">
+<input type="hidden" name="form-name" value="meal-blueprint">
+<input type="hidden" name="consent_version" value="blueprint-v1">
+<input type="hidden" name="utm_source" id="utm_source"><input type="hidden" name="utm_medium" id="utm_medium"><input type="hidden" name="utm_campaign" id="utm_campaign">
+<p hidden><label>Do not fill this out <input name="bot-field"></label></p>
+<label for="name">First name</label><input id="name" name="first_name" type="text" autocomplete="given-name" required maxlength="80">
+<label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+<label class="consent"><input type="checkbox" name="marketing_consent" value="yes"><span>Optional: Send me SUMMERBODY tips and offers by email. I can unsubscribe anytime.</span></label>
+<button type="submit">GET THE FREE BLUEPRINT</button>
+<small>The resource request is separate from optional marketing consent. We will use your email to deliver the resource. Do not enter sensitive health information.</small>
+<script>try{var q=new URLSearchParams(location.search);["utm_source","utm_medium","utm_campaign"].forEach(function(k){var v=q.get(k),e=document.getElementById(k);if(v&&e)e.value=v.slice(0,100)})}catch(e){}</script>
+</form><footer>BETTER &amp; BEYOND. · <a href="/guide">Explore Break The Cycle</a></footer></main></body></html>

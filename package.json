@@ -4,7 +4,16 @@
   "description": "Netlify Functions for SUMMERBODY quiz email pipeline + Stripe purchase webhook",
   "private": true,
   "dependencies": {
+    "@netlify/blobs": "^8.2.0",
     "resend": "^4.8.0",
     "stripe": "^17.4.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "build:staging": "node scripts/build-staging.js && node scripts/verify-staging.js",
+    "verify:staging": "node scripts/verify-staging.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
   }
 }
