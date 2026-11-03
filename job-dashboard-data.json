@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T10:39:49.475938+00:00",
+  "generated_at": "2026-11-03T18:04:04.859105+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -115,8 +115,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 12,
+      "matched": 11,
       "error": null,
       "jobs": [
         {
@@ -172,6 +172,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200434004",
           "posted_date": "2026-09-24T16:22:55-04:00"
+        },
+        {
+          "title": "Senior QA Engineer - US Remote",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6233242004",
+          "posted_date": "2026-11-03T10:46:55-05:00"
         },
         {
           "title": "Staff Data Engineer - US Remote",
@@ -264,8 +270,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 59,
-      "matched": 7,
+      "found": 60,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -279,6 +285,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
           "posted_date": "2026-10-28T15:22:58-04:00"
+        },
+        {
+          "title": "Principal Product Marketing Manager (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8928180002",
+          "posted_date": "2026-11-03T10:13:50-05:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
@@ -455,6 +467,13 @@
       "source": "perfectserve"
     },
     {
+      "title": "Senior QA Engineer - US Remote",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6233242004",
+      "posted_date": "2026-11-03T10:46:55-05:00",
+      "source": "perfectserve"
+    },
+    {
       "title": "Staff Data Engineer - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200382004",
@@ -553,6 +572,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Principal Product Marketing Manager (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8928180002",
+      "posted_date": "2026-11-03T10:13:50-05:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Sales Engineer (LATAM) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
@@ -588,5 +614,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 38
+  "total_matched": 40
 }
