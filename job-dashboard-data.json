@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T18:04:04.859105+00:00",
+  "generated_at": "2026-11-03T23:30:08.909469+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,10 +51,16 @@
     },
     {
       "name": "tebra",
-      "found": 10,
-      "matched": 7,
+      "found": 11,
+      "matched": 8,
       "error": null,
       "jobs": [
+        {
+          "title": "Account Executive, Growth",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+          "posted_date": "2026-11-03T13:56:16-05:00"
+        },
         {
           "title": "Data Engineer",
           "location": "United States - Remote",
@@ -270,7 +276,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 60,
+      "found": 59,
       "matched": 8,
       "error": null,
       "jobs": [
@@ -346,6 +352,13 @@
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
       "posted_date": "Posted 30+ Days Ago",
       "source": "modmed"
+    },
+    {
+      "title": "Account Executive, Growth",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+      "posted_date": "2026-11-03T13:56:16-05:00",
+      "source": "tebra"
     },
     {
       "title": "Data Engineer",
@@ -614,5 +627,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 40
+  "total_matched": 41
 }
