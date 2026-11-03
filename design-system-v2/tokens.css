@@ -1,0 +1,213 @@
+/* ==========================================================================
+   RISO PRESS — Design System v2 Tokens
+   Two inks. One stock. Vintage print-shop carousel system.
+   ========================================================================== */
+
+:root {
+  /* ----- Two Inks, One Stock ----- */
+  --stock-cream: #efe5cf;
+  --stock-aged: #e3d5b6;
+  --ink-orange: #c14e2b;
+  --ink-orange-heavy: #a8401f;
+  --ink-black: #2a241d;
+  --ink-black-soft: #4a4238;
+
+  /* ----- Typography ----- */
+  --font-press: "Oswald", "Arial Narrow", sans-serif;      /* headlines */
+  --font-cover: "Anton", "Oswald", sans-serif;             /* single cover word */
+  --font-type: "Courier Prime", "Space Mono", "Courier New", monospace;
+
+  /* Scale relative to a 1080x1350 canvas; rem-based for web use */
+  --text-cover: clamp(6rem, 26vw, 20rem);      /* 380–460px */
+  --text-headline: clamp(2.6rem, 7vw, 5.6rem); /* 105–130px */
+  --text-step: clamp(5rem, 14vw, 11rem);       /* 200–260px */
+  --text-body: clamp(1rem, 2.4vw, 1.5rem);     /* 40–48px  */
+  --text-footer: clamp(0.9rem, 2vw, 1.2rem);   /* 34–40px  */
+  --text-serial: clamp(0.7rem, 1.5vw, 0.95rem);/* 26–32px  */
+  --text-ticker: clamp(0.6rem, 1.2vw, 0.8rem); /* 20–24px  */
+
+  --leading-press: 1.0;
+  --leading-type: 1.6;
+  --tracking-type: 0.02em;
+  --tracking-ticker: 0.2em;
+
+  /* ----- Grid (1080x1350, margin 80px) ----- */
+  --page-margin: 7.4%;
+  --rule-w: 96px;
+  --rule-h: 10px;
+
+  /* ----- Texture ----- */
+  --grain-opacity: 0.07;
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  /* white base + faint noise: keeps glyphs solid, eats only the edges */
+  --erode-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' fill='white'/%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   Pages ("stock")
+   ========================================================================== */
+
+.page {
+  position: relative;
+  background: var(--stock-cream);
+  color: var(--ink-black);
+  overflow: hidden;
+}
+
+/* paper grain on every page */
+.page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--noise);
+  opacity: var(--grain-opacity);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* orange flood page: everything on it is cream */
+.page--flood {
+  background:
+    radial-gradient(120% 100% at 50% 45%, var(--ink-orange) 62%, var(--ink-orange-heavy) 100%);
+  color: var(--stock-cream);
+}
+
+/* ==========================================================================
+   Type voices
+   ========================================================================== */
+
+.press {
+  font-family: var(--font-press);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: var(--leading-press);
+  letter-spacing: 0;
+}
+
+.headline { font-size: var(--text-headline); }
+.step-number { font-size: var(--text-step); }
+
+.cover-word {
+  font-family: var(--font-cover);
+  font-size: var(--text-cover);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--stock-cream);
+}
+
+.type {
+  font-family: var(--font-type);
+  font-size: var(--text-body);
+  line-height: var(--leading-type);
+  letter-spacing: var(--tracking-type);
+}
+
+.type--caps { text-transform: uppercase; }
+
+.footer-line {
+  font-family: var(--font-type);
+  font-size: var(--text-footer);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.serial,
+.counter {
+  font-family: var(--font-type);
+  font-size: var(--text-serial);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.counter { color: var(--ink-black-soft); }
+.page--flood .counter { color: var(--stock-cream); }
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+/* kicker rule under headlines: opposite ink */
+.kicker-rule {
+  width: var(--rule-w);
+  height: var(--rule-h);
+  background: var(--ink-orange);
+  margin-top: 0.6em;
+}
+.page--flood .kicker-rule { background: var(--stock-cream); }
+.kicker-rule--center { margin-left: auto; margin-right: auto; }
+
+/* strike (x) and check lists */
+.list-strike,
+.list-check {
+  list-style: none;
+  font-family: var(--font-type);
+  font-size: var(--text-body);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-type);
+  display: grid;
+  gap: 1.4em;
+  padding: 0;
+}
+.list-strike li,
+.list-check li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9em;
+}
+.list-strike li::before {
+  content: "\2718"; /* ✘ */
+  font-family: var(--font-press);
+  font-size: 1.2em;
+  line-height: 1;
+}
+.list-check li::before {
+  content: "\2713"; /* ✓ */
+  font-family: var(--font-press);
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* solid directional arrow (printed mark, not a chevron) */
+.arrow-mark {
+  display: inline-block;
+  width: 5.4em;
+  height: 1.9em;
+  background: currentColor;
+  clip-path: polygon(
+    0 34%, 62% 34%, 62% 0, 100% 50%, 62% 100%, 62% 66%, 0 66%
+  );
+}
+
+/* vertical ticker rail (cover only) */
+.ticker-rail {
+  font-family: var(--font-type);
+  font-size: var(--text-ticker);
+  letter-spacing: var(--tracking-ticker);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  color: var(--ink-black);
+}
+
+/* misprint offset: duplicate headline text via data-text attribute */
+.misprint {
+  position: relative;
+}
+.misprint::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  color: var(--ink-black-soft);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* ink erosion for display type (approximation: noise-masked text) */
+.eroded {
+  -webkit-mask-image: var(--erode-mask);
+  mask-image: var(--erode-mask);
+  -webkit-mask-size: 340px;
+  mask-size: 340px;
+}

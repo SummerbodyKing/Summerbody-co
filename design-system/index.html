@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OG Presido Design System — Scrapbook Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink-black);
+    color: var(--chalk-white);
+    font-family: var(--font-explain);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+
+  /* ---------- page chrome ---------- */
+  header.hero { text-align: left; padding-bottom: 2rem; }
+  header.hero h1 {
+    font-family: var(--font-shout);
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+  header.hero h1 .hl { background: linear-gradient(var(--presido-yellow), var(--yellow-deep)); color: var(--ink-black); padding: 0 0.1em; }
+  header.hero p { color: var(--stone-gray); max-width: 46ch; margin-top: 1.25rem; }
+
+  section { margin-top: 5rem; }
+  h2.sec {
+    font-family: var(--font-shout);
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    border-bottom: 2px dashed var(--espresso);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  h2.sec span { color: var(--presido-yellow); margin-right: 0.5rem; }
+
+  /* ---------- palette ---------- */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+  .swatch { border-radius: 8px; overflow: hidden; border: 1px solid #2a251e; }
+  .swatch .chipc { height: 90px; }
+  .swatch .meta { padding: 0.6rem 0.8rem; font-size: 0.75rem; background: #201c16; }
+  .swatch .meta b { display: block; font-weight: 600; letter-spacing: 0.06em; }
+  .swatch .meta code { color: var(--stone-gray); }
+
+  /* ---------- type specimens ---------- */
+  .spec { padding: 1.5rem 0; border-bottom: 1px solid #2a251e; }
+  .spec .tag { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--presido-yellow); font-weight: 600; display: block; margin-bottom: 0.75rem; }
+
+  /* ---------- slide mockups ---------- */
+  .slides { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .slide {
+    aspect-ratio: 4 / 5;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* poster slide */
+  .slide.poster { padding: 8% 7%; }
+  .poster .headline { font-family: var(--font-shout); text-transform: uppercase; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 0.85; letter-spacing: -0.01em; }
+  .poster .headline .chip { font-size: 0.85rem; vertical-align: middle; margin-left: 0.2em; }
+  .poster .body { margin-top: 1.25rem; max-width: 26ch; font-size: 0.72rem; color: var(--stone-gray); }
+  .poster .cta-sticker { margin-top: auto; align-self: flex-start; padding: 0.9rem 1.4rem; }
+  .poster .cta-script { font-size: 1.4rem !important; }
+  .poster .cta-label { font-size: 0.6rem; }
+  .poster .credit { position: absolute; bottom: 4%; right: 6%; text-align: right; font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+  .poster .credit small { display: block; color: var(--stone-gray); font-weight: 400; }
+  .poster .doodle { position: absolute; top: 6%; right: 8%; font-size: 1.6rem; transform: rotate(12deg); }
+
+  /* photo poster slide */
+  .slide.photo {
+    padding: 8% 7%;
+    background:
+      linear-gradient(rgba(23,20,15,0.25), rgba(23,20,15,0.65)),
+      repeating-linear-gradient(115deg, #6a655d 0 14px, #57534b 14px 30px, #7b766d 30px 46px);
+    background-blend-mode: normal;
+  }
+  .photo .headline { font-family: var(--font-shout); text-transform: uppercase; font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 0.85; }
+  .photo .body { margin-top: auto; font-size: 0.72rem; color: var(--chalk-white); max-width: 30ch; }
+  .photo .pill-ghost { align-self: flex-end; margin-top: 1rem; font-size: 0.6rem; padding: 0.7em 1.6em; }
+
+  /* notebook slide */
+  .slide.notebook { padding: 7% 7% 7% 16%; }
+  .notebook .handle { font-family: var(--font-whisper); font-size: 1rem; margin-bottom: 5%; }
+  .notebook .line { font-family: var(--font-whisper); font-weight: 600; font-size: 1.05rem; line-height: 1.5; }
+  .notebook .line u { text-decoration-thickness: 2px; text-underline-offset: 0.15em; }
+  .notebook .quote-box { margin: 0.8rem 0; padding: 0.6rem 0.9rem; }
+  .notebook .red-ink { font-family: var(--font-whisper); font-weight: 700; font-size: 1.05rem; }
+  .notebook .holes { position: absolute; left: 4%; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: space-around; }
+  .notebook .holes i { width: 14px; height: 14px; background: var(--ink-black); border-radius: 50%; }
+  .notebook .sticker { position: absolute; top: 5%; right: 8%; font-size: 2rem; transform: rotate(8deg); filter: drop-shadow(0 3px 4px rgba(0,0,0,0.25)); }
+
+  /* ---------- component grid ---------- */
+  .comps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .comp { background: #201c16; border: 1px solid #2a251e; border-radius: 10px; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
+  .comp.on-cream { background: var(--paper-cream); color: var(--ink-brown); }
+  .comp h3 { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--presido-yellow); }
+  .comp.on-cream h3 { color: var(--signal-red); }
+  .comp .cta-sticker .cta-script { font-size: 1.5rem; }
+  .comp .cta-sticker .cta-label { font-size: 0.6rem; }
+  .comp .pill-ghost { font-size: 0.65rem; }
+  .comp .pill-ghost.on-dark { background: rgba(23,20,15,0.6); }
+  .credit-demo { display: flex; gap: 0.7rem; align-items: center; }
+  .credit-demo .avatar { width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #8a8177, #4a4238); border: 2px solid var(--chalk-white); }
+  .credit-demo b { display: block; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .credit-demo small { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone-gray); }
+
+  footer { margin-top: 6rem; padding-top: 2rem; border-top: 2px dashed var(--espresso); color: var(--stone-gray); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Scrapbook<br><span class="hl">Editorial</span></h1>
+    <p>The OG Presido design system — extracted from the @joel_ooreofe carousel series.
+    Loud condensed headlines, analog collage, one yellow moment per slide, and
+    handwritten notebook interludes. Full spec in <a href="design.md" style="color:var(--presido-yellow)">design.md</a>.</p>
+  </header>
+
+  <section>
+    <h2 class="sec"><span>01</span>Color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chipc" style="background:#17140f"></div><div class="meta"><b>Ink Black</b><code>#17140F</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#4a4238"></div><div class="meta"><b>Espresso</b><code>#4A4238</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#332c24"></div><div class="meta"><b>Espresso Deep</b><code>#332C24</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#e9dfc2"></div><div class="meta"><b>Paper Cream</b><code>#E9DFC2</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#f2c230"></div><div class="meta"><b>Presido Yellow</b><code>#F2C230</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#d9a81c"></div><div class="meta"><b>Yellow Deep</b><code>#D9A81C</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#a93226"></div><div class="meta"><b>Signal Red</b><code>#A93226</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#ffffff"></div><div class="meta"><b>Chalk White</b><code>#FFFFFF</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#b7afa2"></div><div class="meta"><b>Stone Gray</b><code>#B7AFA2</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#3b2f23"></div><div class="meta"><b>Ink Brown</b><code>#3B2F23</code></div></div>
+      <div class="swatch"><div class="chipc" style="background:#d99c8f"></div><div class="meta"><b>Rule Pink</b><code>#D99C8F</code></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec"><span>02</span>Type Voices</h2>
+    <div class="spec">
+      <span class="tag">Shout — Anton · uppercase · leading 0.85</span>
+      <div class="type-shout" style="font-size:clamp(3rem,9vw,6rem)">Clarity<br>Calls</div>
+    </div>
+    <div class="spec">
+      <span class="tag">Explain — Poppins Light · stone gray · leading 1.45</span>
+      <p class="type-explain" style="max-width:52ch">I help creatives, creators, and personal brands gain clarity on their ideas, direction, content, and positioning.</p>
+    </div>
+    <div class="spec" style="background:var(--paper-cream); border-radius:8px; padding:1.5rem;">
+      <span class="tag" style="color:var(--signal-red)">Whisper — Caveat · handwritten · leading 1.7</span>
+      <p class="type-whisper">would you still create, <u>without the noise</u>?</p>
+    </div>
+    <div class="spec">
+      <span class="tag">Label — Poppins SemiBold · tracked small caps</span>
+      <span class="type-label">Joel Ooreofe &nbsp;·&nbsp; OG Presido &nbsp;·&nbsp; Link in bio</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec"><span>03</span>Slide Templates</h2>
+    <div class="slides">
+
+      <!-- Poster slide -->
+      <div class="slide poster bg-poster">
+        <div class="doodle">⚡</div>
+        <div class="headline">Clarity<br>Calls <span class="chip">&amp; Strategy</span></div>
+        <p class="body type-explain">I help creatives, creators, and personal brands gain clarity on their ideas, direction, content, and positioning.</p>
+        <div class="cta-sticker">
+          <div class="cta-script">Book a call!</div>
+          <div class="cta-label type-label">Link in bio</div>
+        </div>
+        <div class="credit">Joel Ooreofe<small>OG Presido</small></div>
+      </div>
+
+      <!-- Photo poster slide -->
+      <div class="slide photo">
+        <div class="headline">Creative<br><span class="highlight-bar" style="color:var(--ink-black)">Writing</span></div>
+        <p class="body">We craft compelling and emotionally engaging written content that connects with audiences and leaves a lasting impression.</p>
+        <span class="pill-ghost type-label">Shoot me a DM</span>
+      </div>
+
+      <!-- Notebook slide -->
+      <div class="slide notebook bg-notebook">
+        <div class="holes"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="sticker">🎈</div>
+        <div class="handle">@joel_ooreofe</div>
+        <p class="line">would you still create, without the <u>noise</u>?</p>
+        <div class="quote-box">
+          <p class="line">would you still believe in your gift, without the crowd CHEERING?</p>
+        </div>
+        <p class="red-ink">would you have the courage to start over again?</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec"><span>04</span>Components</h2>
+    <div class="comps">
+      <div class="comp">
+        <h3>Yellow CTA Sticker</h3>
+        <div class="cta-sticker">
+          <div class="cta-script">Book a call!</div>
+          <div class="cta-label type-label">Link in bio</div>
+        </div>
+      </div>
+      <div class="comp">
+        <h3>Ghost Pill Button</h3>
+        <span class="pill-ghost on-dark type-label">Shoot me a DM</span>
+      </div>
+      <div class="comp">
+        <h3>Chip / Tag</h3>
+        <span class="chip">&amp; Strategy</span>
+      </div>
+      <div class="comp">
+        <h3>Credit Block</h3>
+        <div class="credit-demo">
+          <div class="avatar"></div>
+          <div><b>Joel Ooreofe</b><small>OG Presido</small></div>
+        </div>
+      </div>
+      <div class="comp">
+        <h3>Highlight Bar</h3>
+        <span class="type-shout" style="font-size:2.2rem"><span class="highlight-bar" style="color:var(--ink-black)">Writing</span></span>
+      </div>
+      <div class="comp on-cream">
+        <h3>Quote Box + Red Ink</h3>
+        <div class="quote-box" style="width:100%">
+          <p class="type-whisper" style="font-size:1.2rem">one box per slide, maximum.</p>
+        </div>
+        <p class="type-whisper red-ink" style="font-size:1.2rem">the most emotional line goes red.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    OG Presido · Scrapbook Editorial design system · tokens in <code>tokens.css</code> · full spec in <code>design.md</code>
+  </footer>
+
+</div>
+</body>
+</html>
