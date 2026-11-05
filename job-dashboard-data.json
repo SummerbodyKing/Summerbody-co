@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T15:23:12.104454+00:00",
+  "generated_at": "2026-11-05T21:33:49.285307+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,8 +51,8 @@
     },
     {
       "name": "tebra",
-      "found": 11,
-      "matched": 8,
+      "found": 10,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -65,12 +65,6 @@
           "title": "Data Engineer",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
-          "posted_date": "2026-09-10T12:51:56-04:00"
-        },
-        {
-          "title": "Product Marketing Manager (TEMPORARY)",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4724258005",
           "posted_date": "2026-09-10T12:51:56-04:00"
         },
         {
@@ -202,7 +196,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
+      "found": 16,
       "matched": 11,
       "error": null,
       "jobs": [
@@ -276,7 +270,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 56,
+      "found": 55,
       "matched": 8,
       "error": null,
       "jobs": [
@@ -364,13 +358,6 @@
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
-      "posted_date": "2026-09-10T12:51:56-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Product Marketing Manager (TEMPORARY)",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4724258005",
       "posted_date": "2026-09-10T12:51:56-04:00",
       "source": "tebra"
     },
@@ -627,5 +614,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 41
+  "total_matched": 40
 }
