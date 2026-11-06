@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T09:08:01.175312+00:00",
+  "generated_at": "2026-11-06T16:50:26.553028+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -25,7 +25,7 @@
     {
       "name": "modmed",
       "found": 40,
-      "matched": 2,
+      "matched": 1,
       "error": null,
       "jobs": [
         {
@@ -33,12 +33,6 @@
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
           "posted_date": "Posted 25 Days Ago"
-        },
-        {
-          "title": "Marketing Events Specialist",
-          "location": "Boca Raton, FL",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
-          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -156,10 +150,10 @@
           "posted_date": "2026-10-22T15:21:51-04:00"
         },
         {
-          "title": "Mobile Developer I - US Remote",
+          "title": "L1 Junior Engineer",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
-          "posted_date": "2026-09-17T13:54:19-04:00"
+          "posted_date": "2026-11-06T09:40:24-05:00"
         },
         {
           "title": "Senior Platform Engineer - US Remote",
@@ -190,8 +184,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 16,
-      "matched": 11,
+      "found": 17,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -259,12 +253,18 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
           "posted_date": "2026-10-22T11:41:26-04:00"
+        },
+        {
+          "title": "Technical Support Engineer",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5473019008",
+          "posted_date": "2026-11-06T09:56:12-05:00"
         }
       ]
     },
     {
       "name": "knowbe4",
-      "found": 55,
+      "found": 54,
       "matched": 8,
       "error": null,
       "jobs": [
@@ -332,13 +332,6 @@
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
       "posted_date": "Posted 25 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Marketing Events Specialist",
-      "location": "Boca Raton, FL",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Events-Specialist_R5013",
-      "posted_date": "Posted 30+ Days Ago",
       "source": "modmed"
     },
     {
@@ -440,10 +433,10 @@
       "source": "perfectserve"
     },
     {
-      "title": "Mobile Developer I - US Remote",
+      "title": "L1 Junior Engineer",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
-      "posted_date": "2026-09-17T13:54:19-04:00",
+      "posted_date": "2026-11-06T09:40:24-05:00",
       "source": "perfectserve"
     },
     {
@@ -542,6 +535,13 @@
       "location": "Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
       "posted_date": "2026-10-22T11:41:26-04:00",
+      "source": "netdocuments"
+    },
+    {
+      "title": "Technical Support Engineer",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5473019008",
+      "posted_date": "2026-11-06T09:56:12-05:00",
       "source": "netdocuments"
     },
     {
