@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T06:52:31.485092+00:00",
+  "generated_at": "2026-11-09T17:19:40.494134+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -32,7 +32,7 @@
           "title": "RCM Customer Success Specialist 1",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-          "posted_date": "Posted 27 Days Ago"
+          "posted_date": "Posted 28 Days Ago"
         }
       ]
     },
@@ -109,8 +109,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 11,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -156,12 +156,6 @@
           "posted_date": "2026-10-22T15:21:51-04:00"
         },
         {
-          "title": "L1 Junior Engineer",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
-          "posted_date": "2026-11-06T09:40:24-05:00"
-        },
-        {
           "title": "Senior Platform Engineer - US Remote",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200434004",
@@ -190,8 +184,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
-      "matched": 13,
+      "found": 17,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -265,18 +259,12 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
           "posted_date": "2026-10-22T11:41:26-04:00"
-        },
-        {
-          "title": "Technical Support Engineer",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5473019008",
-          "posted_date": "2026-11-06T09:56:12-05:00"
         }
       ]
     },
     {
       "name": "knowbe4",
-      "found": 54,
+      "found": 50,
       "matched": 8,
       "error": null,
       "jobs": [
@@ -343,7 +331,7 @@
       "title": "RCM Customer Success Specialist 1",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-      "posted_date": "Posted 27 Days Ago",
+      "posted_date": "Posted 28 Days Ago",
       "source": "modmed"
     },
     {
@@ -452,13 +440,6 @@
       "source": "perfectserve"
     },
     {
-      "title": "L1 Junior Engineer",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6188374004",
-      "posted_date": "2026-11-06T09:40:24-05:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Senior Platform Engineer - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200434004",
@@ -564,13 +545,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Technical Support Engineer",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5473019008",
-      "posted_date": "2026-11-06T09:56:12-05:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Compliance Summer Internship (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8926721002",
@@ -627,5 +601,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 41
+  "total_matched": 39
 }
