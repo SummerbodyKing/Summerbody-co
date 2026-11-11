@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T21:57:16.038264+00:00",
+  "generated_at": "2026-11-11T01:50:10.492739+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -45,8 +45,8 @@
     },
     {
       "name": "tebra",
-      "found": 10,
-      "matched": 7,
+      "found": 11,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -78,6 +78,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4744648005",
           "posted_date": "2026-10-30T16:51:29-04:00"
+        },
+        {
+          "title": "Senior Sales Training and Enablement Manager",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4747155005",
+          "posted_date": "2026-11-10T19:17:13-05:00"
         },
         {
           "title": "Senior Software Engineer",
@@ -370,6 +376,13 @@
       "source": "tebra"
     },
     {
+      "title": "Senior Sales Training and Enablement Manager",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4747155005",
+      "posted_date": "2026-11-10T19:17:13-05:00",
+      "source": "tebra"
+    },
+    {
       "title": "Senior Software Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4747683005",
@@ -601,5 +614,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 39
+  "total_matched": 40
 }
