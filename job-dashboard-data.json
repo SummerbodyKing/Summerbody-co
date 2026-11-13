@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T20:44:25.902910+00:00",
+  "generated_at": "2026-11-13T01:44:05.063286+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -51,16 +51,10 @@
     },
     {
       "name": "tebra",
-      "found": 11,
-      "matched": 8,
+      "found": 10,
+      "matched": 6,
       "error": null,
       "jobs": [
-        {
-          "title": "Account Executive, Growth",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
-          "posted_date": "2026-11-10T01:20:09-05:00"
-        },
         {
           "title": "Data Engineer",
           "location": "United States - Remote",
@@ -71,13 +65,7 @@
           "title": "Sales Development Representative",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
-          "posted_date": "2026-11-04T13:13:26-05:00"
-        },
-        {
-          "title": "Senior Benefits Administrator",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4735721005",
-          "posted_date": "2026-09-29T17:39:38-04:00"
+          "posted_date": "2026-11-12T18:11:27-05:00"
         },
         {
           "title": "Senior Product Manager",
@@ -196,7 +184,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 17,
+      "found": 19,
       "matched": 12,
       "error": null,
       "jobs": [
@@ -354,13 +342,6 @@
       "source": "modmed"
     },
     {
-      "title": "Account Executive, Growth",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
-      "posted_date": "2026-11-10T01:20:09-05:00",
-      "source": "tebra"
-    },
-    {
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -371,14 +352,7 @@
       "title": "Sales Development Representative",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
-      "posted_date": "2026-11-04T13:13:26-05:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Senior Benefits Administrator",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4735721005",
-      "posted_date": "2026-09-29T17:39:38-04:00",
+      "posted_date": "2026-11-12T18:11:27-05:00",
       "source": "tebra"
     },
     {
@@ -627,5 +601,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 41
+  "total_matched": 39
 }
