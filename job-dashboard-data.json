@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:17:35.006151+00:00",
+  "generated_at": "2026-11-13T22:43:06.960426+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -29,6 +29,12 @@
       "error": null,
       "jobs": [
         {
+          "title": "Senior Director, Customer Success",
+          "location": "Remote - Virginia",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+          "posted_date": "Posted Today"
+        },
+        {
           "title": "Customer Success Manager, Strategic",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
@@ -39,12 +45,6 @@
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
           "posted_date": "Posted Yesterday"
-        },
-        {
-          "title": "RCM Customer Success Specialist 1",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -57,10 +57,16 @@
     },
     {
       "name": "tebra",
-      "found": 10,
-      "matched": 6,
+      "found": 11,
+      "matched": 7,
       "error": null,
       "jobs": [
+        {
+          "title": "Account Executive, Growth",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+          "posted_date": "2026-11-13T12:58:31-05:00"
+        },
         {
           "title": "Data Engineer",
           "location": "United States - Remote",
@@ -276,8 +282,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 52,
-      "matched": 8,
+      "found": 58,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -291,12 +297,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
           "posted_date": "2026-10-28T15:22:58-04:00"
-        },
-        {
-          "title": "Principal Product Marketing Manager (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8928180002",
-          "posted_date": "2026-11-03T10:13:50-05:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
@@ -340,6 +340,13 @@
   ],
   "jobs": [
     {
+      "title": "Senior Director, Customer Success",
+      "location": "Remote - Virginia",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
+    {
       "title": "Customer Success Manager, Strategic",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
@@ -354,11 +361,11 @@
       "source": "modmed"
     },
     {
-      "title": "RCM Customer Success Specialist 1",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-      "posted_date": "Posted 30+ Days Ago",
-      "source": "modmed"
+      "title": "Account Executive, Growth",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
+      "posted_date": "2026-11-13T12:58:31-05:00",
+      "source": "tebra"
     },
     {
       "title": "Data Engineer",
@@ -582,13 +589,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
       "posted_date": "2026-10-28T15:22:58-04:00",
-      "source": "knowbe4"
-    },
-    {
-      "title": "Principal Product Marketing Manager (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8928180002",
-      "posted_date": "2026-11-03T10:13:50-05:00",
       "source": "knowbe4"
     },
     {
