@@ -1,4 +1,7 @@
 [build]
+  # STAGING BRANCH ONLY. Never merge this branch. scripts/build-staging.js refuses to run on any other Netlify site.
+  command = "npm run build:staging"
+  publish = "dist"
   functions = "netlify/functions"
 
 [functions]
