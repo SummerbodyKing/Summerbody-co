@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T07:15:41.354295+00:00",
+  "generated_at": "2026-11-16T17:10:13.253662+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -29,28 +29,28 @@
       "error": null,
       "jobs": [
         {
+          "title": "Customer Success Manager",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
+          "posted_date": "Posted Today"
+        },
+        {
           "title": "Senior Director, Customer Success",
           "location": "Remote - Virginia",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-          "posted_date": "Posted 2 Days Ago"
+          "posted_date": "Posted 3 Days Ago"
         },
         {
           "title": "Customer Success Manager, Strategic",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-          "posted_date": "Posted 2 Days Ago"
+          "posted_date": "Posted 3 Days Ago"
         },
         {
           "title": "Senior Customer Success Manager",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-          "posted_date": "Posted 3 Days Ago"
-        },
-        {
-          "title": "RCM Customer Success Specialist 1",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-          "posted_date": "Posted 30+ Days Ago"
+          "posted_date": "Posted 4 Days Ago"
         }
       ]
     },
@@ -201,7 +201,7 @@
     },
     {
       "name": "netdocuments",
-      "found": 19,
+      "found": 20,
       "matched": 12,
       "error": null,
       "jobs": [
@@ -339,31 +339,31 @@
   ],
   "jobs": [
     {
+      "title": "Customer Success Manager",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
+    {
       "title": "Senior Director, Customer Success",
       "location": "Remote - Virginia",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-      "posted_date": "Posted 2 Days Ago",
+      "posted_date": "Posted 3 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Customer Success Manager, Strategic",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-      "posted_date": "Posted 2 Days Ago",
+      "posted_date": "Posted 3 Days Ago",
       "source": "modmed"
     },
     {
       "title": "Senior Customer Success Manager",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-      "posted_date": "Posted 3 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "RCM Customer Success Specialist 1",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-      "posted_date": "Posted 30+ Days Ago",
+      "posted_date": "Posted 4 Days Ago",
       "source": "modmed"
     },
     {
