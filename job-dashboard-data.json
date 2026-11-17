@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T17:10:13.253662+00:00",
+  "generated_at": "2026-11-17T00:52:00.238378+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,35 +24,10 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 40,
-      "matched": 4,
-      "error": null,
-      "jobs": [
-        {
-          "title": "Customer Success Manager",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
-          "posted_date": "Posted Today"
-        },
-        {
-          "title": "Senior Director, Customer Success",
-          "location": "Remote - Virginia",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-          "posted_date": "Posted 3 Days Ago"
-        },
-        {
-          "title": "Customer Success Manager, Strategic",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-          "posted_date": "Posted 3 Days Ago"
-        },
-        {
-          "title": "Senior Customer Success Manager",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-          "posted_date": "Posted 4 Days Ago"
-        }
-      ]
+      "found": 0,
+      "matched": 0,
+      "error": "429 Client Error: Too Many Requests for url: https://modmed.wd501.myworkdayjobs.com/wday/cxs/modmed/ModMed12/jobs",
+      "jobs": []
     },
     {
       "name": "ap-companies",
@@ -63,8 +38,8 @@
     },
     {
       "name": "tebra",
-      "found": 11,
-      "matched": 7,
+      "found": 12,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -78,6 +53,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
           "posted_date": "2026-09-10T12:51:56-04:00"
+        },
+        {
+          "title": "Product Designer",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4751287005",
+          "posted_date": "2026-11-16T12:54:14-05:00"
         },
         {
           "title": "Sales Development Representative",
@@ -201,8 +182,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 20,
-      "matched": 12,
+      "found": 21,
+      "matched": 13,
       "error": null,
       "jobs": [
         {
@@ -276,6 +257,12 @@
           "location": "Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
           "posted_date": "2026-11-11T14:21:10-05:00"
+        },
+        {
+          "title": "Technical Trainer - Legal AI",
+          "location": "Lehi, Utah, United States; Remote - US",
+          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5479288008",
+          "posted_date": "2026-11-16T12:47:52-05:00"
         }
       ]
     },
@@ -339,34 +326,6 @@
   ],
   "jobs": [
     {
-      "title": "Customer Success Manager",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
-      "posted_date": "Posted Today",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Director, Customer Success",
-      "location": "Remote - Virginia",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-      "posted_date": "Posted 3 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Customer Success Manager, Strategic",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-      "posted_date": "Posted 3 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Customer Success Manager",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-      "posted_date": "Posted 4 Days Ago",
-      "source": "modmed"
-    },
-    {
       "title": "Account Executive, Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
@@ -378,6 +337,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
       "posted_date": "2026-09-10T12:51:56-04:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Product Designer",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4751287005",
+      "posted_date": "2026-11-16T12:54:14-05:00",
       "source": "tebra"
     },
     {
@@ -577,6 +543,13 @@
       "source": "netdocuments"
     },
     {
+      "title": "Technical Trainer - Legal AI",
+      "location": "Lehi, Utah, United States; Remote - US",
+      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5479288008",
+      "posted_date": "2026-11-16T12:47:52-05:00",
+      "source": "netdocuments"
+    },
+    {
       "title": "Compliance Summer Internship (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8926721002",
@@ -626,5 +599,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 41
+  "total_matched": 39
 }
