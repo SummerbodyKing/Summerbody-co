@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T08:56:50.815135+00:00",
+  "generated_at": "2026-11-17T18:24:16.297383+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,10 +24,41 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 0,
-      "matched": 0,
-      "error": "429 Client Error: Too Many Requests for url: https://modmed.wd501.myworkdayjobs.com/wday/cxs/modmed/ModMed12/jobs",
-      "jobs": []
+      "found": 40,
+      "matched": 5,
+      "error": null,
+      "jobs": [
+        {
+          "title": "Customer Success Manager",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
+          "posted_date": "Posted Yesterday"
+        },
+        {
+          "title": "Senior Director, Customer Success",
+          "location": "Remote - Virginia",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+          "posted_date": "Posted 4 Days Ago"
+        },
+        {
+          "title": "Customer Success Manager, Strategic",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
+          "posted_date": "Posted 4 Days Ago"
+        },
+        {
+          "title": "Senior Customer Success Manager",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
+          "posted_date": "Posted 5 Days Ago"
+        },
+        {
+          "title": "RCM Customer Success Specialist 1",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
+          "posted_date": "Posted 30+ Days Ago"
+        }
+      ]
     },
     {
       "name": "ap-companies",
@@ -101,8 +132,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 12,
-      "matched": 11,
+      "found": 11,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -134,12 +165,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200392004",
           "posted_date": "2026-09-24T16:22:31-04:00"
-        },
-        {
-          "title": "Enterprise Implementation Consultant - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6219663004",
-          "posted_date": "2026-10-08T12:57:18-04:00"
         },
         {
           "title": "Junior Accountant - US Remote",
@@ -268,7 +293,7 @@
     },
     {
       "name": "knowbe4",
-      "found": 58,
+      "found": 55,
       "matched": 7,
       "error": null,
       "jobs": [
@@ -325,6 +350,41 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Customer Success Manager",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
+      "posted_date": "Posted Yesterday",
+      "source": "modmed"
+    },
+    {
+      "title": "Senior Director, Customer Success",
+      "location": "Remote - Virginia",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+      "posted_date": "Posted 4 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Customer Success Manager, Strategic",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
+      "posted_date": "Posted 4 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Senior Customer Success Manager",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
+      "posted_date": "Posted 5 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "RCM Customer Success Specialist 1",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
+      "posted_date": "Posted 30+ Days Ago",
+      "source": "modmed"
+    },
     {
       "title": "Account Executive, Growth",
       "location": "United States - Remote",
@@ -414,13 +474,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6200392004",
       "posted_date": "2026-09-24T16:22:31-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Enterprise Implementation Consultant - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6219663004",
-      "posted_date": "2026-10-08T12:57:18-04:00",
       "source": "perfectserve"
     },
     {
@@ -599,5 +652,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 39
+  "total_matched": 43
 }
