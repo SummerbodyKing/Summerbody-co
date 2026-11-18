@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T18:24:16.297383+00:00",
+  "generated_at": "2026-11-18T01:17:44.265867+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -29,6 +29,12 @@
       "error": null,
       "jobs": [
         {
+          "title": "Customer Success Specialist",
+          "location": "Remote - Florida",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
+          "posted_date": "Posted Today"
+        },
+        {
           "title": "Customer Success Manager",
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
@@ -51,12 +57,6 @@
           "location": "Remote - USA",
           "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
           "posted_date": "Posted 5 Days Ago"
-        },
-        {
-          "title": "RCM Customer Success Specialist 1",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-          "posted_date": "Posted 30+ Days Ago"
         }
       ]
     },
@@ -351,6 +351,13 @@
   ],
   "jobs": [
     {
+      "title": "Customer Success Specialist",
+      "location": "Remote - Florida",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
+      "posted_date": "Posted Today",
+      "source": "modmed"
+    },
+    {
       "title": "Customer Success Manager",
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
@@ -376,13 +383,6 @@
       "location": "Remote - USA",
       "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
       "posted_date": "Posted 5 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "RCM Customer Success Specialist 1",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/RCM-Customer-Success-Specialist-1_R4942",
-      "posted_date": "Posted 30+ Days Ago",
       "source": "modmed"
     },
     {
