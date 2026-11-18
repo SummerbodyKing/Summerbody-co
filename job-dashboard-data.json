@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T08:39:29.764393+00:00",
+  "generated_at": "2026-11-18T17:36:05.182884+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -132,16 +132,10 @@
     },
     {
       "name": "perfectserve",
-      "found": 11,
-      "matched": 10,
+      "found": 10,
+      "matched": 9,
       "error": null,
       "jobs": [
-        {
-          "title": "Analyst, Corporate Development & Strategic Partnerships for portfolio company of K1 Investment Management",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
-          "posted_date": "2026-10-05T15:49:49-04:00"
-        },
         {
           "title": "Billing Associate - US Remote",
           "location": "Remote",
@@ -442,13 +436,6 @@
       "source": "tebra"
     },
     {
-      "title": "Analyst, Corporate Development & Strategic Partnerships for portfolio company of K1 Investment Management",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6216138004",
-      "posted_date": "2026-10-05T15:49:49-04:00",
-      "source": "perfectserve"
-    },
-    {
       "title": "Billing Associate - US Remote",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6232179004",
@@ -652,5 +639,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 43
+  "total_matched": 42
 }
