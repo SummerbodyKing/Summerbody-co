@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T17:36:05.182884+00:00",
+  "generated_at": "2026-11-18T23:34:53.660270+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -132,8 +132,8 @@
     },
     {
       "name": "perfectserve",
-      "found": 10,
-      "matched": 9,
+      "found": 9,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -141,12 +141,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6232179004",
           "posted_date": "2026-10-27T16:20:11-04:00"
-        },
-        {
-          "title": "Customer & Field Marketing Manager  - US Remote",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
-          "posted_date": "2026-10-16T11:45:15-04:00"
         },
         {
           "title": "Customer Success Advisor - US Remote",
@@ -287,8 +281,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 55,
-      "matched": 7,
+      "found": 53,
+      "matched": 6,
       "error": null,
       "jobs": [
         {
@@ -314,12 +308,6 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
           "posted_date": "2026-10-28T15:22:57-04:00"
-        },
-        {
-          "title": "Snr. Onboarding Consultant (Remote)",
-          "location": "Remote",
-          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
-          "posted_date": "2026-10-28T15:22:58-04:00"
         },
         {
           "title": "Snr. Site Reliability Engineer (Remote)",
@@ -440,13 +428,6 @@
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6232179004",
       "posted_date": "2026-10-27T16:20:11-04:00",
-      "source": "perfectserve"
-    },
-    {
-      "title": "Customer & Field Marketing Manager  - US Remote",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/perfectserve/jobs/6144267004",
-      "posted_date": "2026-10-16T11:45:15-04:00",
       "source": "perfectserve"
     },
     {
@@ -618,13 +599,6 @@
       "source": "knowbe4"
     },
     {
-      "title": "Snr. Onboarding Consultant (Remote)",
-      "location": "Remote",
-      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8800492002",
-      "posted_date": "2026-10-28T15:22:58-04:00",
-      "source": "knowbe4"
-    },
-    {
       "title": "Snr. Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
@@ -639,5 +613,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 42
+  "total_matched": 40
 }
