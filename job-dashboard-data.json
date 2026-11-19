@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T23:34:53.660270+00:00",
+  "generated_at": "2026-11-19T04:30:23.290678+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,41 +24,10 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 40,
-      "matched": 5,
-      "error": null,
-      "jobs": [
-        {
-          "title": "Customer Success Specialist",
-          "location": "Remote - Florida",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
-          "posted_date": "Posted Yesterday"
-        },
-        {
-          "title": "Customer Success Manager",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
-          "posted_date": "Posted 2 Days Ago"
-        },
-        {
-          "title": "Senior Director, Customer Success",
-          "location": "Remote - Virginia",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-          "posted_date": "Posted 5 Days Ago"
-        },
-        {
-          "title": "Customer Success Manager, Strategic",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-          "posted_date": "Posted 5 Days Ago"
-        },
-        {
-          "title": "Senior Customer Success Manager",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-          "posted_date": "Posted 6 Days Ago"
-        }
-      ]
+      "found": 0,
+      "matched": 0,
+      "error": "429 Client Error: Too Many Requests for url: https://modmed.wd501.myworkdayjobs.com/wday/cxs/modmed/ModMed12/jobs",
+      "jobs": []
     },
     {
       "name": "ap-companies",
@@ -69,8 +38,8 @@
     },
     {
       "name": "tebra",
-      "found": 12,
-      "matched": 8,
+      "found": 13,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -96,6 +65,12 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
           "posted_date": "2026-11-12T18:11:27-05:00"
+        },
+        {
+          "title": "Senior Analytics Engineer",
+          "location": "United States - Remote",
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4749058005",
+          "posted_date": "2026-11-18T18:46:24-05:00"
         },
         {
           "title": "Senior Product Manager",
@@ -333,41 +308,6 @@
   ],
   "jobs": [
     {
-      "title": "Customer Success Specialist",
-      "location": "Remote - Florida",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
-      "posted_date": "Posted Yesterday",
-      "source": "modmed"
-    },
-    {
-      "title": "Customer Success Manager",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
-      "posted_date": "Posted 2 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Director, Customer Success",
-      "location": "Remote - Virginia",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-      "posted_date": "Posted 5 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Customer Success Manager, Strategic",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-      "posted_date": "Posted 5 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Customer Success Manager",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
-      "posted_date": "Posted 6 Days Ago",
-      "source": "modmed"
-    },
-    {
       "title": "Account Executive, Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
@@ -393,6 +333,13 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
       "posted_date": "2026-11-12T18:11:27-05:00",
+      "source": "tebra"
+    },
+    {
+      "title": "Senior Analytics Engineer",
+      "location": "United States - Remote",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4749058005",
+      "posted_date": "2026-11-18T18:46:24-05:00",
       "source": "tebra"
     },
     {
@@ -613,5 +560,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 40
+  "total_matched": 36
 }
