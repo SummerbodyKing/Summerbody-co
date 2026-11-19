@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T13:53:32.720988+00:00",
+  "generated_at": "2026-11-19T22:01:57.467850+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,10 +24,35 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 0,
-      "matched": 0,
-      "error": "429 Client Error: Too Many Requests for url: https://modmed.wd501.myworkdayjobs.com/wday/cxs/modmed/ModMed12/jobs",
-      "jobs": []
+      "found": 40,
+      "matched": 4,
+      "error": null,
+      "jobs": [
+        {
+          "title": "Customer Success Specialist",
+          "location": "Remote - Florida",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
+          "posted_date": "Posted 2 Days Ago"
+        },
+        {
+          "title": "Customer Success Manager",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
+          "posted_date": "Posted 3 Days Ago"
+        },
+        {
+          "title": "Senior Director, Customer Success",
+          "location": "Remote - Virginia",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+          "posted_date": "Posted 6 Days Ago"
+        },
+        {
+          "title": "Customer Success Manager, Strategic",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
+          "posted_date": "Posted 6 Days Ago"
+        }
+      ]
     },
     {
       "name": "ap-companies",
@@ -63,8 +88,8 @@
         {
           "title": "Sales Development Representative",
           "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
-          "posted_date": "2026-11-12T18:11:27-05:00"
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4757086005",
+          "posted_date": "2026-11-19T16:45:01-05:00"
         },
         {
           "title": "Senior Analytics Engineer",
@@ -170,8 +195,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 21,
-      "matched": 13,
+      "found": 20,
+      "matched": 12,
       "error": null,
       "jobs": [
         {
@@ -191,12 +216,6 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5468057008",
           "posted_date": "2026-11-04T11:16:56-05:00"
-        },
-        {
-          "title": "Director, Product & Segment Marketing Manager",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
-          "posted_date": "2026-09-09T15:21:11-04:00"
         },
         {
           "title": "Legal Engineer",
@@ -256,8 +275,8 @@
     },
     {
       "name": "knowbe4",
-      "found": 52,
-      "matched": 6,
+      "found": 54,
+      "matched": 7,
       "error": null,
       "jobs": [
         {
@@ -285,6 +304,12 @@
           "posted_date": "2026-10-28T15:22:57-04:00"
         },
         {
+          "title": "Snr. Manager, Customer Lifecycle Marketing (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8952077002",
+          "posted_date": "2026-11-19T12:09:53-05:00"
+        },
+        {
           "title": "Snr. Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
@@ -307,6 +332,34 @@
     }
   ],
   "jobs": [
+    {
+      "title": "Customer Success Specialist",
+      "location": "Remote - Florida",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
+      "posted_date": "Posted 2 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Customer Success Manager",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
+      "posted_date": "Posted 3 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Senior Director, Customer Success",
+      "location": "Remote - Virginia",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+      "posted_date": "Posted 6 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Customer Success Manager, Strategic",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
+      "posted_date": "Posted 6 Days Ago",
+      "source": "modmed"
+    },
     {
       "title": "Account Executive, Growth",
       "location": "United States - Remote",
@@ -331,8 +384,8 @@
     {
       "title": "Sales Development Representative",
       "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4719577005",
-      "posted_date": "2026-11-12T18:11:27-05:00",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4757086005",
+      "posted_date": "2026-11-19T16:45:01-05:00",
       "source": "tebra"
     },
     {
@@ -448,13 +501,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Director, Product & Segment Marketing Manager",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5371893008",
-      "posted_date": "2026-09-09T15:21:11-04:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Legal Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
@@ -546,6 +592,13 @@
       "source": "knowbe4"
     },
     {
+      "title": "Snr. Manager, Customer Lifecycle Marketing (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8952077002",
+      "posted_date": "2026-11-19T12:09:53-05:00",
+      "source": "knowbe4"
+    },
+    {
       "title": "Snr. Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
@@ -560,5 +613,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 36
+  "total_matched": 40
 }
