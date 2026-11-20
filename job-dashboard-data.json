@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T22:01:57.467850+00:00",
+  "generated_at": "2026-11-20T03:31:30.560149+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -63,15 +63,15 @@
     },
     {
       "name": "tebra",
-      "found": 13,
+      "found": 12,
       "matched": 9,
       "error": null,
       "jobs": [
         {
           "title": "Account Executive, Growth",
           "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
-          "posted_date": "2026-11-13T12:58:31-05:00"
+          "url": "https://job-boards.greenhouse.io/tebra/jobs/4757112005",
+          "posted_date": "2026-11-19T18:00:38-05:00"
         },
         {
           "title": "Data Engineer",
@@ -89,7 +89,7 @@
           "title": "Sales Development Representative",
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4757086005",
-          "posted_date": "2026-11-19T16:45:01-05:00"
+          "posted_date": "2026-11-19T18:00:02-05:00"
         },
         {
           "title": "Senior Analytics Engineer",
@@ -363,8 +363,8 @@
     {
       "title": "Account Executive, Growth",
       "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4712282005",
-      "posted_date": "2026-11-13T12:58:31-05:00",
+      "url": "https://job-boards.greenhouse.io/tebra/jobs/4757112005",
+      "posted_date": "2026-11-19T18:00:38-05:00",
       "source": "tebra"
     },
     {
@@ -385,7 +385,7 @@
       "title": "Sales Development Representative",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4757086005",
-      "posted_date": "2026-11-19T16:45:01-05:00",
+      "posted_date": "2026-11-19T18:00:02-05:00",
       "source": "tebra"
     },
     {
