@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T20:32:00.212929+00:00",
+  "generated_at": "2026-11-21T01:44:20.580519+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -195,8 +195,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 20,
-      "matched": 12,
+      "found": 18,
+      "matched": 10,
       "error": null,
       "jobs": [
         {
@@ -222,12 +222,6 @@
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5434028008",
           "posted_date": "2026-09-25T10:43:35-04:00"
-        },
-        {
-          "title": "Manager, Software Engineering",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5476068008",
-          "posted_date": "2026-11-06T18:26:11-05:00"
         },
         {
           "title": "Principal Software Engineer",
@@ -260,12 +254,6 @@
           "posted_date": "2026-10-06T15:56:10-04:00"
         },
         {
-          "title": "Staff Software Engineer - OCR / Text Extraction",
-          "location": "Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
-          "posted_date": "2026-11-11T14:21:10-05:00"
-        },
-        {
           "title": "Technical Trainer - Legal AI",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5479288008",
@@ -276,7 +264,7 @@
     {
       "name": "knowbe4",
       "found": 58,
-      "matched": 7,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -320,6 +308,12 @@
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
           "posted_date": "2026-10-28T15:22:58-04:00"
+        },
+        {
+          "title": "VP Global Total Rewards and Analytics (Remote)",
+          "location": "Remote",
+          "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8957185002",
+          "posted_date": "2026-11-20T15:58:44-05:00"
         }
       ]
     },
@@ -508,13 +502,6 @@
       "source": "netdocuments"
     },
     {
-      "title": "Manager, Software Engineering",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5476068008",
-      "posted_date": "2026-11-06T18:26:11-05:00",
-      "source": "netdocuments"
-    },
-    {
       "title": "Principal Software Engineer",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5419946008",
@@ -547,13 +534,6 @@
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
       "posted_date": "2026-10-06T15:56:10-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Staff Software Engineer - OCR / Text Extraction",
-      "location": "Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5398761008",
-      "posted_date": "2026-11-11T14:21:10-05:00",
       "source": "netdocuments"
     },
     {
@@ -611,7 +591,14 @@
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
       "posted_date": "2026-10-28T15:22:58-04:00",
       "source": "knowbe4"
+    },
+    {
+      "title": "VP Global Total Rewards and Analytics (Remote)",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8957185002",
+      "posted_date": "2026-11-20T15:58:44-05:00",
+      "source": "knowbe4"
     }
   ],
-  "total_matched": 40
+  "total_matched": 39
 }
