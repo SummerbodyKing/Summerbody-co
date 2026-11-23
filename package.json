@@ -5,6 +5,13 @@
   "private": true,
   "dependencies": {
     "resend": "^4.8.0",
-    "stripe": "^17.4.0"
+    "stripe": "^17.4.0",
+    "@netlify/blobs": "^8.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
   }
 }

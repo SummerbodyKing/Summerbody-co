@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const { Resend } = require('resend');
 const tips = require('./tips.json');
 const { buildEmailHtml, buildEmailText } = require('./email-template');
@@ -53,11 +54,14 @@ exports.handler = async (event) => {
   ).trim();
 
   if (!email || !email.includes('@')) {
-    console.error('invalid_email', { email });
+    console.error('invalid_email', { email_present: Boolean(email) });
     return { statusCode: 400, body: 'invalid email' };
   }
 
   const answers = parseAnswers(data || {});
+  if (answers.length === 0) {
+    console.warn('quiz_no_answers', { ref: refHash(email) });
+  }
   console.log('answers_parsed', {
     count: answers.length,
     pairs: answers.map((a) => `${a.q}=${(a.a || '').slice(0, 40)}`),
@@ -102,8 +106,7 @@ exports.handler = async (event) => {
   });
 
   console.log('quiz_submission_processed', {
-    email,
-    firstName,
+    ref: refHash(email),
     tips_count: tipsArray.length,
     resend: summarizeResult(resendResult),
     mailerlite: summarizeResult(mlResult),
@@ -111,6 +114,10 @@ exports.handler = async (event) => {
 
   return { statusCode: 200, body: 'ok' };
 };
+
+function refHash(s) {
+  return crypto.createHash('sha256').update(String(s).trim().toLowerCase()).digest('hex').slice(0, 8);
+}
 
 function maskEmail(s) {
   return String(s).replace(/(.{0,4}).*?(@.*)/, '$1...$2');
@@ -165,7 +172,7 @@ async function sendResendEmail({ apiKey, fromEmail, toEmail, firstName, tipsArra
 
     console.log('resend_send_attempt', {
       from_preview: maskEmail(fromEmail),
-      to_preview: maskEmail(toEmail),
+      to_ref: refHash(toEmail),
       subject,
       html_len: html.length,
     });
