@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T14:26:35.901562+00:00",
+  "generated_at": "2026-11-24T01:53:35.127666+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,41 +24,10 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 40,
-      "matched": 5,
-      "error": null,
-      "jobs": [
-        {
-          "title": "Marketing Traffic and Project Specialist",
-          "location": "Boca Raton, FL",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Traffic-and-Project-Specialist_R5287",
-          "posted_date": "Posted 3 Days Ago"
-        },
-        {
-          "title": "Customer Success Specialist",
-          "location": "Remote - Florida",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
-          "posted_date": "Posted 6 Days Ago"
-        },
-        {
-          "title": "Customer Success Manager",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
-          "posted_date": "Posted 7 Days Ago"
-        },
-        {
-          "title": "Senior Director, Customer Success",
-          "location": "Remote - Virginia",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-          "posted_date": "Posted 10 Days Ago"
-        },
-        {
-          "title": "Customer Success Manager, Strategic",
-          "location": "Remote - USA",
-          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-          "posted_date": "Posted 10 Days Ago"
-        }
-      ]
+      "found": 0,
+      "matched": 0,
+      "error": "429 Client Error: Too Many Requests for url: https://modmed.wd501.myworkdayjobs.com/wday/cxs/modmed/ModMed12/jobs",
+      "jobs": []
     },
     {
       "name": "ap-companies",
@@ -69,8 +38,8 @@
     },
     {
       "name": "tebra",
-      "found": 12,
-      "matched": 9,
+      "found": 11,
+      "matched": 8,
       "error": null,
       "jobs": [
         {
@@ -108,12 +77,6 @@
           "location": "United States - Remote",
           "url": "https://job-boards.greenhouse.io/tebra/jobs/4744648005",
           "posted_date": "2026-10-30T16:51:29-04:00"
-        },
-        {
-          "title": "Senior Sales Training and Enablement Manager",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4747155005",
-          "posted_date": "2026-11-10T19:17:13-05:00"
         },
         {
           "title": "Senior Software Engineer",
@@ -195,8 +158,8 @@
     },
     {
       "name": "netdocuments",
-      "found": 18,
-      "matched": 10,
+      "found": 17,
+      "matched": 9,
       "error": null,
       "jobs": [
         {
@@ -242,16 +205,10 @@
           "posted_date": "2026-10-30T08:56:17-04:00"
         },
         {
-          "title": "Senior Manager, Software Engineering - AI",
-          "location": "Lehi, Utah, United States; Remote - US",
-          "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-          "posted_date": "2026-10-19T17:33:04-04:00"
-        },
-        {
-          "title": "Staff Software Engineer - Next-Gen",
+          "title": "Staff Software Engineer - M365",
           "location": "Lehi, Utah, United States; Remote - US",
           "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
-          "posted_date": "2026-10-06T15:56:10-04:00"
+          "posted_date": "2026-11-23T12:14:28-05:00"
         },
         {
           "title": "Technical Trainer - Legal AI",
@@ -327,41 +284,6 @@
   ],
   "jobs": [
     {
-      "title": "Marketing Traffic and Project Specialist",
-      "location": "Boca Raton, FL",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Traffic-and-Project-Specialist_R5287",
-      "posted_date": "Posted 3 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Customer Success Specialist",
-      "location": "Remote - Florida",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
-      "posted_date": "Posted 6 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Customer Success Manager",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager_R5279",
-      "posted_date": "Posted 7 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Senior Director, Customer Success",
-      "location": "Remote - Virginia",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
-      "posted_date": "Posted 10 Days Ago",
-      "source": "modmed"
-    },
-    {
-      "title": "Customer Success Manager, Strategic",
-      "location": "Remote - USA",
-      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
-      "posted_date": "Posted 10 Days Ago",
-      "source": "modmed"
-    },
-    {
       "title": "Account Executive, Growth",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4757112005",
@@ -401,13 +323,6 @@
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4744648005",
       "posted_date": "2026-10-30T16:51:29-04:00",
-      "source": "tebra"
-    },
-    {
-      "title": "Senior Sales Training and Enablement Manager",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4747155005",
-      "posted_date": "2026-11-10T19:17:13-05:00",
       "source": "tebra"
     },
     {
@@ -523,17 +438,10 @@
       "source": "netdocuments"
     },
     {
-      "title": "Senior Manager, Software Engineering - AI",
-      "location": "Lehi, Utah, United States; Remote - US",
-      "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5258074008",
-      "posted_date": "2026-10-19T17:33:04-04:00",
-      "source": "netdocuments"
-    },
-    {
-      "title": "Staff Software Engineer - Next-Gen",
+      "title": "Staff Software Engineer - M365",
       "location": "Lehi, Utah, United States; Remote - US",
       "url": "https://job-boards.greenhouse.io/netdocuments/jobs/5350687008",
-      "posted_date": "2026-10-06T15:56:10-04:00",
+      "posted_date": "2026-11-23T12:14:28-05:00",
       "source": "netdocuments"
     },
     {
@@ -600,5 +508,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 39
+  "total_matched": 32
 }
