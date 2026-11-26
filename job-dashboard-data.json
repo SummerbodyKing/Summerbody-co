@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T15:46:51.566810+00:00",
+  "generated_at": "2026-11-26T00:05:55.594496+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -38,16 +38,10 @@
     },
     {
       "name": "tebra",
-      "found": 12,
-      "matched": 9,
+      "found": 11,
+      "matched": 8,
       "error": null,
       "jobs": [
-        {
-          "title": "Account Executive, Growth",
-          "location": "United States - Remote",
-          "url": "https://job-boards.greenhouse.io/tebra/jobs/4757112005",
-          "posted_date": "2026-11-19T18:00:38-05:00"
-        },
         {
           "title": "Data Engineer",
           "location": "United States - Remote",
@@ -228,49 +222,49 @@
           "title": "Compliance Summer Internship (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8926721002",
-          "posted_date": "2026-11-02T14:10:55-05:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         },
         {
           "title": "HR Business Partner (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
-          "posted_date": "2026-10-28T15:22:58-04:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         },
         {
           "title": "Sales Engineer (LATAM) (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
-          "posted_date": "2026-10-28T15:22:57-04:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         },
         {
           "title": "Snr. Commissions Analyst (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-          "posted_date": "2026-10-28T15:22:57-04:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         },
         {
           "title": "Snr. Manager, Customer Lifecycle Marketing (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8952077002",
-          "posted_date": "2026-11-19T12:09:53-05:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         },
         {
           "title": "Snr. Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
-          "posted_date": "2026-10-28T15:22:58-04:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         },
         {
           "title": "Staff Site Reliability Engineer (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
-          "posted_date": "2026-10-28T15:22:58-04:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         },
         {
           "title": "VP Global Total Rewards and Analytics (Remote)",
           "location": "Remote",
           "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8957185002",
-          "posted_date": "2026-11-22T10:22:27-05:00"
+          "posted_date": "2026-11-25T17:05:01-05:00"
         }
       ]
     },
@@ -283,13 +277,6 @@
     }
   ],
   "jobs": [
-    {
-      "title": "Account Executive, Growth",
-      "location": "United States - Remote",
-      "url": "https://job-boards.greenhouse.io/tebra/jobs/4757112005",
-      "posted_date": "2026-11-19T18:00:38-05:00",
-      "source": "tebra"
-    },
     {
       "title": "Data Engineer",
       "location": "United States - Remote",
@@ -455,58 +442,58 @@
       "title": "Compliance Summer Internship (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8926721002",
-      "posted_date": "2026-11-02T14:10:55-05:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     },
     {
       "title": "HR Business Partner (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8801211002",
-      "posted_date": "2026-10-28T15:22:58-04:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     },
     {
       "title": "Sales Engineer (LATAM) (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8673949002",
-      "posted_date": "2026-10-28T15:22:57-04:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Commissions Analyst (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8750835002",
-      "posted_date": "2026-10-28T15:22:57-04:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Manager, Customer Lifecycle Marketing (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8952077002",
-      "posted_date": "2026-11-19T12:09:53-05:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     },
     {
       "title": "Snr. Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8856989002",
-      "posted_date": "2026-10-28T15:22:58-04:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     },
     {
       "title": "Staff Site Reliability Engineer (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8857004002",
-      "posted_date": "2026-10-28T15:22:58-04:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     },
     {
       "title": "VP Global Total Rewards and Analytics (Remote)",
       "location": "Remote",
       "url": "https://job-boards.greenhouse.io/knowbe4/jobs/8957185002",
-      "posted_date": "2026-11-22T10:22:27-05:00",
+      "posted_date": "2026-11-25T17:05:01-05:00",
       "source": "knowbe4"
     }
   ],
-  "total_matched": 32
+  "total_matched": 31
 }
