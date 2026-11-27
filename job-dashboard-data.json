@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T01:56:45.247375+00:00",
+  "generated_at": "2026-11-27T10:44:49.596207+00:00",
   "keywords": [
     "marketing",
     "communications",
@@ -24,10 +24,47 @@
   "targets": [
     {
       "name": "modmed",
-      "found": 0,
-      "matched": 0,
-      "error": "429 Client Error: Too Many Requests for url: https://modmed.wd501.myworkdayjobs.com/wday/cxs/modmed/ModMed12/jobs",
-      "jobs": []
+      "found": 40,
+      "matched": 6,
+      "error": null,
+      "jobs": [
+        {
+          "title": "Marketing Traffic and Project Specialist",
+          "location": "Boca Raton, FL",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Traffic-and-Project-Specialist_R5287",
+          "posted_date": "Posted 7 Days Ago"
+        },
+        {
+          "title": "Demand Generation Manager",
+          "location": "Boca Raton, FL",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Demand-Generation-Manager_R5376",
+          "posted_date": "Posted 3 Days Ago"
+        },
+        {
+          "title": "Senior Customer Success Manager",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
+          "posted_date": "Posted 4 Days Ago"
+        },
+        {
+          "title": "Customer Success Specialist",
+          "location": "Remote - Florida",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
+          "posted_date": "Posted 10 Days Ago"
+        },
+        {
+          "title": "Senior Director, Customer Success",
+          "location": "Remote - Virginia",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+          "posted_date": "Posted 14 Days Ago"
+        },
+        {
+          "title": "Customer Success Manager, Strategic",
+          "location": "Remote - USA",
+          "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
+          "posted_date": "Posted 14 Days Ago"
+        }
+      ]
     },
     {
       "name": "ap-companies",
@@ -278,6 +315,48 @@
   ],
   "jobs": [
     {
+      "title": "Marketing Traffic and Project Specialist",
+      "location": "Boca Raton, FL",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Marketing-Traffic-and-Project-Specialist_R5287",
+      "posted_date": "Posted 7 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Demand Generation Manager",
+      "location": "Boca Raton, FL",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Boca-Raton-FL/Demand-Generation-Manager_R5376",
+      "posted_date": "Posted 3 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Senior Customer Success Manager",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Senior-Customer-Success-Manager_R5222-1",
+      "posted_date": "Posted 4 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Customer Success Specialist",
+      "location": "Remote - Florida",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Florida/Customer-Success-Specialist_R5238",
+      "posted_date": "Posted 10 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Senior Director, Customer Success",
+      "location": "Remote - Virginia",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---Virginia/Senior-Director--Customer-Success_R5311",
+      "posted_date": "Posted 14 Days Ago",
+      "source": "modmed"
+    },
+    {
+      "title": "Customer Success Manager, Strategic",
+      "location": "Remote - USA",
+      "url": "https://modmed.wd501.myworkdayjobs.com/job/Remote---USA/Customer-Success-Manager--Strategic_R4349",
+      "posted_date": "Posted 14 Days Ago",
+      "source": "modmed"
+    },
+    {
       "title": "Data Engineer",
       "location": "United States - Remote",
       "url": "https://job-boards.greenhouse.io/tebra/jobs/4710332005",
@@ -495,5 +574,5 @@
       "source": "knowbe4"
     }
   ],
-  "total_matched": 31
+  "total_matched": 37
 }
